@@ -21,7 +21,7 @@ graph TD
 
 ## 2. In-Memory SQLite FTS5 Database
 
-To bypass model loading overhead and achieve sub-millisecond turnarounds, the agent indices the full 50,000 product catalog into an in-memory **SQLite FTS5 virtual table** on startup.
+To bypass model loading overhead and achieve sub-millisecond turnarounds, the agent indexes the full 50,000 product catalog into an in-memory **SQLite FTS5 virtual table** on startup.
 *   **Weighted Columns**: FTS5 scores matches across fields using column-specific weights:
     *   `Title`: 6.0
     *   `Categories`: 4.0
@@ -57,6 +57,6 @@ For each candidate retrieved by FTS5, the final rank score is calculated as foll
 
 $$\text{Score} = -0.001 \times \text{FTS5\_Index} + 0.3 \times \text{Active\_Boost} + 0.05 \times \text{Stashed\_Boost} + 0.02 \times \text{Popularity\_Prior} - \text{Brand\_Filter}$$
 
-*   **FTS5 Index Penalty (`-0.001 * idx`)**: Reduced from `-0.01` to `-0.001` so that any candidate matching extra active or stashed keywords will easily override the default FTS5 order.
+*   **FTS5 Index Penalty (`-0.001 * idx`)**: Small penalty so that any candidate matching extra active/stashed keywords will override FTS5's default order.
 *   **Brand Hard Filter**: If the user discloses a brand, any candidate whose brand name does not contain the target brand is penalized by `-10.0`.
-*   **Diversification**: Limits identical brands to a maximum of 2 recommendations per list, and filters out titles with a token Jaccard similarity greater than 60%.
+*   **Diversification**: Limits identical brands to a maximum of 2 recommendations per list, and filters out titles with a token Jaccard similarity greater than 80% to ensure correct targets are never deduplicated.

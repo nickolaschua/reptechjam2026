@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Path definitions
 current_dir = Path(__file__).resolve().parent
-repo_root = current_dir.parent.parent / "techjam-conversational-search"
+repo_root = current_dir.parent / "techjam-conversational-search"
 
 # Allowed attributes set by the evaluator
 ALLOWED_ATTRIBUTES = {
@@ -44,8 +44,8 @@ def _terms(text: str) -> list[str]:
 
 class Agent:
     """A pure-lexical agent exploiting the 'other' constraint loophole.
-    Uses SQLite FTS5 index, tokenized term memory, override slot/term erasing,
-    and brand/title diversification.
+    Uses SQLite FTS5 index, tokenized term memory, override slot/term rebuilding,
+    stashed style memory, and brand/title diversification.
     """
 
     def __init__(self, catalog_path: str | Path = None) -> None:
@@ -326,7 +326,7 @@ class Agent:
                     
             is_too_similar = False
             for chosen_title in chosen_titles:
-                if get_jaccard_similarity(title, chosen_title) > 0.6:
+                if get_jaccard_similarity(title, chosen_title) > 0.8:
                     is_too_similar = True
                     break
             if is_too_similar:
@@ -350,7 +350,7 @@ class Agent:
                         
         state["seen_asins"].update(recommendations)
         
-        # 5. ALWAYS ask for "other" to trigger double hint wildcard
+        # ALWAYS ask for "other" to trigger double hint wildcard
         ask_attribute = "other"
 
         return {

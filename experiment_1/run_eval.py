@@ -8,7 +8,7 @@ from agent import Agent
 
 # Setup paths to import evaluator
 current_dir = Path(__file__).resolve().parent
-repo_root = current_dir.parent.parent / "techjam-conversational-search"
+repo_root = current_dir.parent / "techjam-conversational-search"
 sys.path.insert(0, str(repo_root))
 
 from evaluator.local_evaluator import (

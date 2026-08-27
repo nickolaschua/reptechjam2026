@@ -29,3 +29,8 @@ __pycache__/
 
 # Personal development directories
 yangxu/
+
+# Evaluation outputs and caches
+*.npz
+successful_*.txt
+failed_sessions.txt
