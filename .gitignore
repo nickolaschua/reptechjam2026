@@ -32,5 +32,6 @@ yangxu/
 
 # Evaluation outputs and caches
 *.npz
+sessions/
 successful_*.txt
 failed_sessions.txt

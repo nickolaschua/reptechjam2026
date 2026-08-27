@@ -135,8 +135,12 @@ def evaluate_custom(agent, samples, catalog_ids, categories, products):
         "scenario_metrics": {name: metric_summary(grouped[name]) for name in sorted(grouped)},
     }
     
+    # Save logs to a dedicated 'sessions' subdirectory
+    sessions_dir = current_dir / "sessions"
+    sessions_dir.mkdir(parents=True, exist_ok=True)
+    
     # Save failed logs
-    with open(current_dir / "failed_sessions.txt", "w", encoding="utf-8") as f:
+    with open(sessions_dir / "failed_sessions.txt", "w", encoding="utf-8") as f:
         f.write("".join(failed_logs))
         
     # Save successful logs by scenario
@@ -144,7 +148,7 @@ def evaluate_custom(agent, samples, catalog_ids, categories, products):
     for scen in scenarios:
         logs_list = successful_logs[scen]
         filename = f"successful_{scen}.txt"
-        with open(current_dir / filename, "w", encoding="utf-8") as f:
+        with open(sessions_dir / filename, "w", encoding="utf-8") as f:
             f.write(f"=== SUCCESSFUL SESSIONS FOR SCENARIO: {scen.upper()} ({len(logs_list)} total successes) ===\n\n")
             f.write("".join(logs_list))
         
@@ -179,8 +183,8 @@ def main():
     print(json.dumps(metrics, indent=2))
     print(f"Total time: {time.time() - t_start:.2f} seconds")
     print(f"Average time per session: {(time.time() - t_start) / len(samples) * 1000:.1f} ms")
-    print(f"Failed sessions saved to: yangxu/experiment_1/failed_sessions.txt")
-    print(f"Successful sessions saved to scenario-specific files (e.g. successful_buying.txt)")
+    print(f"Failed sessions saved to: experiment_1/sessions/failed_sessions.txt")
+    print(f"Successful sessions saved to: experiment_1/sessions/ (e.g., successful_buying.txt)")
     print("=" * 60)
 
 if __name__ == "__main__":
