@@ -1,0 +1,63 @@
+{
+  "archive_type": "experiment_10_colab_input",
+  "bundle_revision": 3,
+  "document_count": 50000,
+  "experiment": 10,
+  "files": [
+    {
+      "bytes": 699,
+      "path": "README.txt",
+      "sha256": "1b0b67c21d2d739ac2afac28051baf75032f617200b6c757bc9ea0770d8d1d3f"
+    },
+    {
+      "bytes": 5648,
+      "path": "bootstrap_and_run.sh",
+      "sha256": "19d209f1310fb76c31607add4b45c93d11b661d20417a91258774f6d388da43f"
+    },
+    {
+      "bytes": 49621828,
+      "path": "collection.tsv",
+      "sha256": "43ca5b3bdd918ec9019a3a6a8a62604b0d88bd1cd6f4bac861aea18220df663e"
+    },
+    {
+      "bytes": 712,
+      "path": "environment.yml",
+      "sha256": "a270f2ff9ca180ca5cd9936596a12a130b55272f337d2d0d2f040890e832678a"
+    },
+    {
+      "bytes": 2966,
+      "path": "experiment_10_config.json",
+      "sha256": "45c971458e4bdcc82d315260bb1a152dea40829f3287a9bc5300469821bde26b"
+    },
+    {
+      "bytes": 26046,
+      "path": "experiment_10_pipeline.py",
+      "sha256": "89d4779e64ddee03c3d9bfeb6ffc8e7bb926825b795d8e7ce2e9fa00222b8b3d"
+    },
+    {
+      "bytes": 900104,
+      "path": "pid_to_asin.json",
+      "sha256": "aafaad0dd7370a90edfb0c123972ca8371fceebd88b1e3bed104bddd1b93b5f7"
+    },
+    {
+      "bytes": 64165,
+      "path": "queries.tsv",
+      "sha256": "7a6fa08c83d5b2b9e0a6c0cc543192c6ffe5ce7c20af2812b148ceb201fc3f8c"
+    },
+    {
+      "bytes": 12934,
+      "path": "xtr_warp_compat.patch",
+      "sha256": "f8f5ce66276c01e6644c3d2716ad3f3b93be8924c607a91776d7d6d7580c3d66"
+    }
+  ],
+  "privacy": {
+    "contains_future_turns": false,
+    "contains_hidden_cards": false,
+    "contains_profiles": false,
+    "contains_sample_ids": false,
+    "contains_scenario_labels": false,
+    "contains_targets": false
+  },
+  "query_count": 600,
+  "schema_version": 1
+}

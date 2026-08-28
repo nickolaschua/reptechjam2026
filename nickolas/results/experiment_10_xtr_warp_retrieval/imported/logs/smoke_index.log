@@ -1,0 +1,108 @@
+[2026-08-26 18:34:30] stage=index
+Building smoke 4-bit WARP index at /content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke
+
+
+[Aug 26, 18:34:33] #> Creating directory /content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke 
+
+
+{
+    "query_token_id": "[unused0]",
+    "doc_token_id": "[unused1]",
+    "query_token": "[Q]",
+    "doc_token": "[D]",
+    "ncells": null,
+    "centroid_score_threshold": null,
+    "ndocs": null,
+    "load_index_with_mmap": false,
+    "index_path": "\/content\/experiment_10_work\/raw_indexes\/smoke\/techjam26-products-xtr-warp.nbits=4.smoke",
+    "index_bsize": 8,
+    "nbits": 4,
+    "kmeans_niters": 2,
+    "resume": false,
+    "similarity": "cosine",
+    "bsize": 64,
+    "accumsteps": 1,
+    "lr": 3e-6,
+    "maxsteps": 500000,
+    "save_every": null,
+    "warmup": null,
+    "warmup_bert": null,
+    "relu": false,
+    "nway": 2,
+    "use_ib_negatives": false,
+    "reranker": false,
+    "distillation_alpha": 1.0,
+    "ignore_scores": false,
+    "model_name": null,
+    "query_maxlen": 32,
+    "attend_to_mask_tokens": false,
+    "interaction": "colbert",
+    "dim": 128,
+    "doc_maxlen": 512,
+    "mask_punctuation": true,
+    "checkpoint": "google\/xtr-base-en",
+    "triples": null,
+    "collection": "\/content\/experiment_10_work\/runtime_data\/smoke_collection.tsv",
+    "queries": null,
+    "index_name": "techjam26-products-xtr-warp.nbits=4.smoke",
+    "overwrite": false,
+    "root": "\/content\/experiment_10_work",
+    "experiment": "experiment10-smoke",
+    "index_root": null,
+    "name": "2026-08\/26\/18.34.31",
+    "rank": 0,
+    "nranks": 1,
+    "amp": true,
+    "gpus": 1,
+    "avoid_fork_if_possible": true
+}
+[Aug 26, 18:34:33] #> Loading collection...
+0M 
+config.json:   0%|          | 0.00/780 [00:00<?, ?B/s]config.json: 100%|██████████| 780/780 [00:00<00:00, 66.0kB/s]
+model.safetensors:   0%|          | 0.00/439M [00:00<?, ?B/s]model.safetensors:   2%|▏         | 10.5M/439M [00:01<01:21, 5.27MB/s]model.safetensors:   7%|▋         | 31.5M/439M [00:02<00:22, 17.9MB/s]model.safetensors:  12%|█▏        | 52.4M/439M [00:02<00:12, 31.5MB/s]model.safetensors:  17%|█▋        | 73.4M/439M [00:04<00:19, 19.1MB/s]model.safetensors:  19%|█▉        | 83.9M/439M [00:04<00:15, 23.4MB/s]model.safetensors:  22%|██▏       | 94.4M/439M [00:04<00:11, 29.0MB/s]model.safetensors:  24%|██▍       | 105M/439M [00:04<00:09, 35.7MB/s] model.safetensors:  29%|██▊       | 126M/439M [00:04<00:06, 50.6MB/s]model.safetensors:  31%|███       | 136M/439M [00:05<00:10, 29.4MB/s]model.safetensors:  33%|███▎      | 147M/439M [00:05<00:08, 34.2MB/s]model.safetensors:  36%|███▌      | 157M/439M [00:05<00:06, 41.6MB/s]model.safetensors:  38%|███▊      | 168M/439M [00:05<00:05, 49.7MB/s]model.safetensors:  41%|████      | 178M/439M [00:05<00:04, 57.5MB/s]model.safetensors:  45%|████▌     | 199M/439M [00:06<00:03, 74.9MB/s]model.safetensors:  48%|████▊     | 210M/439M [00:07<00:07, 29.3MB/s]model.safetensors:  53%|█████▎    | 231M/439M [00:07<00:04, 41.6MB/s]model.safetensors:  57%|█████▋    | 252M/439M [00:07<00:03, 54.8MB/s]model.safetensors:  62%|██████▏   | 273M/439M [00:08<00:04, 35.4MB/s]model.safetensors:  65%|██████▍   | 283M/439M [00:08<00:03, 40.3MB/s]model.safetensors:  69%|██████▉   | 304M/439M [00:08<00:02, 53.1MB/s]model.safetensors:  72%|███████▏  | 315M/439M [00:08<00:02, 58.9MB/s]model.safetensors:  77%|███████▋  | 336M/439M [00:09<00:02, 42.3MB/s]model.safetensors:  79%|███████▉  | 346M/439M [00:09<00:02, 40.2MB/s]model.safetensors:  84%|████████▎ | 367M/439M [00:10<00:01, 52.9MB/s]model.safetensors:  88%|████████▊ | 388M/439M [00:10<00:00, 65.0MB/s]model.safetensors:  91%|█████████ | 398M/439M [00:10<00:00, 70.3MB/s]model.safetensors:  93%|█████████▎| 409M/439M [00:11<00:00, 32.4MB/s]model.safetensors:  96%|█████████▌| 419M/439M [00:11<00:00, 37.7MB/s]model.safetensors:  98%|█████████▊| 430M/439M [00:11<00:00, 44.5MB/s]model.safetensors: 100%|██████████| 439M/439M [00:11<00:00, 37.7MB/s]
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 20.8kB [00:00, 39.0MB/s]
+spiece.model:   0%|          | 0.00/792k [00:00<?, ?B/s]spiece.model: 100%|██████████| 792k/792k [00:00<00:00, 1.96MB/s]spiece.model: 100%|██████████| 792k/792k [00:00<00:00, 1.95MB/s]
+tokenizer.json: 0.00B [00:00, ?B/s]tokenizer.json: 2.42MB [00:00, 47.1MB/s]
+special_tokens_map.json: 0.00B [00:00, ?B/s]special_tokens_map.json: 2.54kB [00:00, 7.73MB/s]
+pytorch_model.bin:   0%|          | 0.00/395k [00:00<?, ?B/s]pytorch_model.bin: 100%|██████████| 395k/395k [00:00<00:00, 1.29MB/s]pytorch_model.bin: 100%|██████████| 395k/395k [00:00<00:00, 1.29MB/s]
+[Aug 26, 18:34:55] [0] 		 # of sampled PIDs = 256 	 sampled_pids[:3] = [213, 187, 2]
+[Aug 26, 18:34:55] [0] 		 #> Encoding 256 passages..
+[Aug 26, 18:35:06] [0] 		 avg_doclen_est = 316.12109375 	 len(local_sample) = 256
+[Aug 26, 18:35:06] [0] 		 Creating 256 partitions.
+[Aug 26, 18:35:06] [0] 		 *Estimated* 80,927 embeddings.
+[Aug 26, 18:35:06] [0] 		 #> Saving the indexing plan to /content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke/plan.json ..
+[Aug 26, 18:35:07] [0] 		 #> use_gpu = True
+Sampling a subset of 65536 / 76881 for training
+Clustering 65536 points in 128D to 256 clusters, redo 1 times, 2 iterations
+  Preprocessing in 0.04 s
+  Iteration 0 (0.03 s, search 0.01 s): objective=49953.6 imbalance=1.904 nsplit=0         Iteration 1 (0.04 s, search 0.02 s): objective=53853.2 imbalance=1.421 nsplit=0       
+[Aug 26, 18:35:07] Loading decompress_residuals_cpp extension (set COLBERT_LOAD_TORCH_EXTENSION_VERBOSE=True for more info)...
+[Aug 26, 18:36:22] Loading packbits_cpp extension (set COLBERT_LOAD_TORCH_EXTENSION_VERBOSE=True for more info)...
+[0.047, 0.039, 0.038, 0.041, 0.04, 0.039, 0.036, 0.04, 0.037, 0.042, 0.04, 0.039, 0.045, 0.039, 0.037, 0.042, 0.038, 0.036, 0.039, 0.038, 0.034, 0.039, 0.044, 0.035, 0.037, 0.042, 0.042, 0.041, 0.04, 0.034, 0.044, 0.044, 0.041, 0.039, 0.039, 0.037, 0.041, 0.042, 0.039, 0.037, 0.042, 0.042, 0.039, 0.041, 0.041, 0.042, 0.04, 0.044, 0.04, 0.042, 0.037, 0.042, 0.035, 0.039, 0.039, 0.042, 0.04, 0.045, 0.038, 0.04, 0.039, 0.041, 0.036, 0.04, 0.04, 0.04, 0.039, 0.037, 0.039, 0.035, 0.037, 0.035, 0.038, 0.041, 0.038, 0.041, 0.037, 0.039, 0.035, 0.037, 0.036, 0.041, 0.04, 0.038, 0.036, 0.052, 0.035, 0.04, 0.043, 0.042, 0.036, 0.036, 0.04, 0.043, 0.036, 0.043, 0.041, 0.041, 0.035, 0.041, 0.046, 0.036, 0.041, 0.035, 0.034, 0.033, 0.041, 0.039, 0.037, 0.039, 0.041, 0.037, 0.033, 0.043, 0.038, 0.039, 0.038, 0.038, 0.046, 0.041, 0.038, 0.035, 0.042, 0.036, 0.044, 0.041, 0.036, 0.042]
+[Aug 26, 18:37:33] #> Got bucket_cutoffs_quantiles = tensor([0.0625, 0.1250, 0.1875, 0.2500, 0.3125, 0.3750, 0.4375, 0.5000, 0.5625,
+        0.6250, 0.6875, 0.7500, 0.8125, 0.8750, 0.9375], device='cuda:0') and bucket_weights_quantiles = tensor([0.0312, 0.0938, 0.1562, 0.2188, 0.2812, 0.3438, 0.4062, 0.4688, 0.5312,
+        0.5938, 0.6562, 0.7188, 0.7812, 0.8438, 0.9062, 0.9688],
+       device='cuda:0')
+[Aug 26, 18:37:33] #> Got bucket_cutoffs = tensor([-0.0789, -0.0568, -0.0429, -0.0324, -0.0235, -0.0156, -0.0082, -0.0011,
+         0.0060,  0.0133,  0.0212,  0.0300,  0.0404,  0.0541,  0.0759],
+       device='cuda:0') and bucket_weights = tensor([-0.0992, -0.0662, -0.0493, -0.0374, -0.0278, -0.0195, -0.0119, -0.0046,
+         0.0024,  0.0096,  0.0172,  0.0254,  0.0349,  0.0467,  0.0633,  0.0964],
+       device='cuda:0')
+[Aug 26, 18:37:33] avg_residual = 0.03936392068862915
+0it [00:00, ?it/s][Aug 26, 18:37:33] [0] 		 #> Encoding 256 passages..
+[Aug 26, 18:37:42] [0] 		 #> Saving chunk 0: 	 256 passages and 80,927 embeddings. From #0 onward.
+1it [00:09,  9.70s/it]1it [00:09,  9.70s/it]
+[Aug 26, 18:37:42] [0] 		 #> Checking all files were saved...
+[Aug 26, 18:37:42] [0] 		 Found all files!
+[Aug 26, 18:37:42] [0] 		 #> Building IVF...
+[Aug 26, 18:37:42] [0] 		 #> Loading codes...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 996.75it/s]
+[Aug 26, 18:37:42] [0] 		 Sorting codes...
+[Aug 26, 18:37:42] [0] 		 Getting unique codes...
+[Aug 26, 18:37:42] #> Optimizing IVF to store map from centroids to list of pids..
+[Aug 26, 18:37:42] #> Building the emb2pid mapping..
+[Aug 26, 18:37:42] len(emb2pid) = 80927
+  0%|          | 0/256 [00:00<?, ?it/s]100%|██████████| 256/256 [00:00<00:00, 20055.70it/s]
+[Aug 26, 18:37:42] #> Saved optimized IVF to /content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke/ivf.pid.pt
+[Aug 26, 18:37:42] [0] 		 #> Saving the indexing metadata to /content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke/metadata.json ..
+Finished smoke indexing in 3.21 minutes.

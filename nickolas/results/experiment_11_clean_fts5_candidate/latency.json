@@ -1,0 +1,34 @@
+{
+  "clean_other_query_pagination": {
+    "count": 358,
+    "max_ms": 345.589,
+    "mean_ms": 66.639391,
+    "p50_ms": 11.475,
+    "p95_ms": 240.529,
+    "p99_ms": 298.1456
+  },
+  "clean_specific_global_pagination": {
+    "count": 356,
+    "max_ms": 1599.0047,
+    "mean_ms": 154.105339,
+    "p50_ms": 16.5278,
+    "p95_ms": 585.3058,
+    "p99_ms": 1224.7684
+  },
+  "clean_specific_no_pagination": {
+    "count": 405,
+    "max_ms": 290.3767,
+    "mean_ms": 60.239704,
+    "p50_ms": 8.4647,
+    "p95_ms": 221.2323,
+    "p99_ms": 268.9542
+  },
+  "clean_specific_query_pagination": {
+    "count": 363,
+    "max_ms": 1665.907,
+    "mean_ms": 113.906306,
+    "p50_ms": 12.4272,
+    "p95_ms": 430.1442,
+    "p99_ms": 963.9222
+  }
+}

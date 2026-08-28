@@ -1,0 +1,4 @@
+2026-08-26 23:19:29,949 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:19:29,950 INFO AGENT-REALISTIC EVALUATION: beginning intent-routed dense browsing
+2026-08-26 23:19:29,952 INFO Reproducing frozen current submission result before Experiment 8 comparison
+2026-08-26 23:26:25,798 INFO Completed experiment_08_intent_routed_dense_browsing in 415.54s

@@ -1,0 +1,9 @@
+transform,method,sample_count,technical_score,mrr,hit_rate_at_10,technical_score_degradation,mrr_degradation
+synonym_substitution,exp7_same_parser_control,90,0.569545,0.274039,0.722222,0.280995,0.35739
+synonym_substitution,intent_routed_dense_browsing,90,0.384462,0.257835,0.455556,0.058023,0.043042
+clause_reordering,exp7_same_parser_control,90,0.600475,0.34825,0.733333,0.250065,0.283179
+clause_reordering,intent_routed_dense_browsing,90,0.385573,0.235613,0.466667,0.056912,0.065264
+lexical_compression,exp7_same_parser_control,90,0.598702,0.324563,0.744444,0.251838,0.306866
+lexical_compression,intent_routed_dense_browsing,90,0.315254,0.176032,0.388889,0.127231,0.124845
+punctuation_changes,exp7_same_parser_control,90,0.668638,0.352496,0.833333,0.181902,0.278933
+punctuation_changes,intent_routed_dense_browsing,90,0.407058,0.25612,0.488889,0.035427,0.044757

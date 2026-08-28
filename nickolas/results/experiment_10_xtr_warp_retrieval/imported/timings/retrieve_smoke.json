@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 84.588894,
+  "queries": 3,
+  "stage": "retrieve_smoke",
+  "top_k": 10
+}

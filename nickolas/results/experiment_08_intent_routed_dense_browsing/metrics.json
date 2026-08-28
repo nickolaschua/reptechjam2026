@@ -1,0 +1,818 @@
+{
+  "comparisons_to_control": {
+    "calibration": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 0,
+      "regressed_sample_ids": [
+        "public_0021",
+        "public_0025",
+        "public_0035",
+        "public_0039",
+        "public_0040",
+        "public_0060",
+        "public_0074",
+        "public_0081",
+        "public_0092",
+        "public_0099",
+        "public_0120",
+        "public_0126",
+        "public_0147",
+        "public_0153",
+        "public_0169",
+        "public_0176",
+        "public_0181",
+        "public_0184",
+        "public_0187",
+        "public_0196"
+      ],
+      "regressions": 20,
+      "rescued_sample_ids": []
+    },
+    "evaluation": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 0,
+      "regressed_sample_ids": [
+        "public_0007",
+        "public_0012",
+        "public_0015",
+        "public_0016",
+        "public_0043",
+        "public_0050",
+        "public_0056",
+        "public_0057",
+        "public_0062",
+        "public_0100",
+        "public_0110",
+        "public_0112",
+        "public_0137",
+        "public_0138",
+        "public_0140",
+        "public_0167",
+        "public_0172",
+        "public_0175",
+        "public_0180",
+        "public_0192",
+        "public_0195"
+      ],
+      "regressions": 21,
+      "rescued_sample_ids": []
+    },
+    "full": {
+      "baseline_hard_failures": 10,
+      "hard_failure_rescues": 0,
+      "regressed_sample_ids": [
+        "public_0007",
+        "public_0012",
+        "public_0015",
+        "public_0016",
+        "public_0021",
+        "public_0025",
+        "public_0035",
+        "public_0039",
+        "public_0040",
+        "public_0043",
+        "public_0050",
+        "public_0056",
+        "public_0057",
+        "public_0060",
+        "public_0062",
+        "public_0074",
+        "public_0081",
+        "public_0092",
+        "public_0099",
+        "public_0100",
+        "public_0110",
+        "public_0112",
+        "public_0120",
+        "public_0126",
+        "public_0137",
+        "public_0138",
+        "public_0140",
+        "public_0147",
+        "public_0153",
+        "public_0167",
+        "public_0169",
+        "public_0172",
+        "public_0175",
+        "public_0176",
+        "public_0180",
+        "public_0181",
+        "public_0184",
+        "public_0187",
+        "public_0192",
+        "public_0195",
+        "public_0196"
+      ],
+      "regressions": 41,
+      "rescued_sample_ids": []
+    }
+  },
+  "elapsed_seconds": 415.536,
+  "experiment": 8,
+  "hashes": {
+    "catalog": {
+      "path": "techjam-conversational-search\\data\\catalog.jsonl",
+      "sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67"
+    },
+    "dense_embeddings": {
+      "path": "nickolas\\results\\cache\\dense_da979b05a68af864_minilm_seq128.npy",
+      "sha256": "ef51a7c67a9cceaa39d6cd1930c2093563b7e689a97961ac10876cfc54a19b31"
+    },
+    "dense_model": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "tree_sha256": "c8da0e48a39ce6b179bdf81a15d387dc3a70a0e79ee76a3a117b864ab4c17cb1"
+    },
+    "experiment_07_baseline_source": {
+      "path": "nickolas\\experiments\\experiment_07_residual_failure_analysis.py",
+      "sha256": "6c2bf77ef7d3a7974190349f0ec8acd75cf318be3065d1f3b6ec5d560c7b5de1"
+    },
+    "frozen_split": {
+      "path": "nickolas\\results\\experiment_06_slate_width_counterfactuals\\metrics.json",
+      "sha256": "afc88e024d7dda56f6fb6300f34e9c46e644bd7e197104d878bb3823167be14b"
+    },
+    "public_set": {
+      "path": "techjam-conversational-search\\data\\public_set.jsonl",
+      "sha256": "857259f7a438e6188ac63e18995b6ff4489bfcfc4a716a798b9a2aa0ee8f7579"
+    },
+    "source": {
+      "path": "nickolas\\experiments\\experiment_08_intent_routed_dense_browsing.py",
+      "sha256": "e9664fb263eebce823407359757b3fc2580c84633fc67124f7c6eb5a70a05c21"
+    },
+    "submission_agent_baseline": {
+      "path": "techjam-conversational-search\\starter\\agent.py",
+      "sha256": "852122aaf9cd27eee5c05cfc0a7516e12cd9ee918b095aa0643bf3abb1a49b93"
+    },
+    "submission_baseline_result": {
+      "path": "techjam-conversational-search\\current_agent_results.json",
+      "sha256": "659ce57cad183f5d7f05ff9ce36560dab9318de6809d3fc67b5be8b87cf2f2c5"
+    }
+  },
+  "identity": {
+    "buying_turns_bit_for_bit_identical": 1100,
+    "route_locked": true,
+    "same_parser_rankings_match_frozen_experiment_07": true
+  },
+  "latency": {
+    "exp7_same_parser_control": {
+      "count": 2000,
+      "mean": 193.082978,
+      "median": 106.96065,
+      "p25": 47.6527,
+      "p75": 187.1376,
+      "p90": 368.1542,
+      "p95": 607.747185
+    },
+    "intent_routed_dense_browsing": {
+      "count": 2000,
+      "mean": 16.614355,
+      "median": 21.1685,
+      "p25": 0.759975,
+      "p75": 27.172875,
+      "p90": 31.3938,
+      "p95": 33.8609
+    },
+    "unit": "milliseconds_per_unique-state ranking (cache hits retain originating measurement)"
+  },
+  "method_metrics": {
+    "exp7_same_parser_control": {
+      "calibration": {
+        "efficiency": 0.801667,
+        "hit_rate_at_10": 0.916667,
+        "mrr": 0.659114,
+        "mttc": 2.983333,
+        "sample_count": 60,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.766667,
+            "hit_rate_at_10": 1.0,
+            "mrr": 1.0,
+            "mttc": 3.333333,
+            "sample_count": 3,
+            "technical_score": 0.953333
+          },
+          "browsing": {
+            "efficiency": 0.804167,
+            "hit_rate_at_10": 0.916667,
+            "mrr": 0.568618,
+            "mttc": 2.958333,
+            "sample_count": 24,
+            "technical_score": 0.789752
+          },
+          "buying": {
+            "efficiency": 0.8625,
+            "hit_rate_at_10": 0.916667,
+            "mrr": 0.686111,
+            "mttc": 2.375,
+            "sample_count": 24,
+            "technical_score": 0.836667
+          },
+          "intent_override": {
+            "efficiency": 0.644444,
+            "hit_rate_at_10": 0.888889,
+            "mrr": 0.714815,
+            "mttc": 4.555556,
+            "sample_count": 9,
+            "technical_score": 0.787778
+          }
+        },
+        "technical_score": 0.816401
+      },
+      "evaluation": {
+        "efficiency": 0.848571,
+        "hit_rate_at_10": 0.964286,
+        "mrr": 0.647506,
+        "mttc": 2.514286,
+        "sample_count": 140,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.8,
+            "hit_rate_at_10": 1.0,
+            "mrr": 0.638095,
+            "mttc": 3.0,
+            "sample_count": 7,
+            "technical_score": 0.851429
+          },
+          "browsing": {
+            "efficiency": 0.898214,
+            "hit_rate_at_10": 1.0,
+            "mrr": 0.637769,
+            "mttc": 2.017857,
+            "sample_count": 56,
+            "technical_score": 0.870974
+          },
+          "buying": {
+            "efficiency": 0.860714,
+            "hit_rate_at_10": 0.928571,
+            "mrr": 0.621322,
+            "mttc": 2.392857,
+            "sample_count": 56,
+            "technical_score": 0.822825
+          },
+          "intent_override": {
+            "efficiency": 0.7,
+            "hit_rate_at_10": 0.952381,
+            "mrr": 0.746429,
+            "mttc": 4.0,
+            "sample_count": 21,
+            "technical_score": 0.840119
+          }
+        },
+        "technical_score": 0.846109
+      },
+      "full": {
+        "efficiency": 0.8345,
+        "hit_rate_at_10": 0.95,
+        "mrr": 0.650988,
+        "mttc": 2.655,
+        "sample_count": 200,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.79,
+            "hit_rate_at_10": 1.0,
+            "mrr": 0.746667,
+            "mttc": 3.1,
+            "sample_count": 10,
+            "technical_score": 0.882
+          },
+          "browsing": {
+            "efficiency": 0.87,
+            "hit_rate_at_10": 0.975,
+            "mrr": 0.617024,
+            "mttc": 2.3,
+            "sample_count": 80,
+            "technical_score": 0.846607
+          },
+          "buying": {
+            "efficiency": 0.86125,
+            "hit_rate_at_10": 0.925,
+            "mrr": 0.640759,
+            "mttc": 2.3875,
+            "sample_count": 80,
+            "technical_score": 0.826978
+          },
+          "intent_override": {
+            "efficiency": 0.683333,
+            "hit_rate_at_10": 0.933333,
+            "mrr": 0.736944,
+            "mttc": 4.166667,
+            "sample_count": 30,
+            "technical_score": 0.824417
+          }
+        },
+        "technical_score": 0.837196
+      },
+      "route_metrics": {
+        "browsing": {
+          "efficiency": 0.861111,
+          "hit_rate_at_10": 0.977778,
+          "mrr": 0.631429,
+          "mttc": 2.388889,
+          "sample_count": 90,
+          "technical_score": 0.85054
+        },
+        "buying": {
+          "efficiency": 0.812727,
+          "hit_rate_at_10": 0.927273,
+          "mrr": 0.666991,
+          "mttc": 2.872727,
+          "sample_count": 110,
+          "technical_score": 0.826279
+        }
+      }
+    },
+    "intent_routed_dense_browsing": {
+      "calibration": {
+        "efficiency": 0.515,
+        "hit_rate_at_10": 0.583333,
+        "mrr": 0.41877,
+        "mttc": 5.85,
+        "sample_count": 60,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.0,
+            "hit_rate_at_10": 0.0,
+            "mrr": 0.0,
+            "mttc": 11.0,
+            "sample_count": 3,
+            "technical_score": 0.0
+          },
+          "browsing": {
+            "efficiency": 0.183333,
+            "hit_rate_at_10": 0.208333,
+            "mrr": 0.092758,
+            "mttc": 9.166667,
+            "sample_count": 24,
+            "technical_score": 0.168661
+          },
+          "buying": {
+            "efficiency": 0.8625,
+            "hit_rate_at_10": 0.916667,
+            "mrr": 0.686111,
+            "mttc": 2.375,
+            "sample_count": 24,
+            "technical_score": 0.836667
+          },
+          "intent_override": {
+            "efficiency": 0.644444,
+            "hit_rate_at_10": 0.888889,
+            "mrr": 0.714815,
+            "mttc": 4.555556,
+            "sample_count": 9,
+            "technical_score": 0.787778
+          }
+        },
+        "technical_score": 0.520298
+      },
+      "evaluation": {
+        "efficiency": 0.710714,
+        "hit_rate_at_10": 0.814286,
+        "mrr": 0.538013,
+        "mttc": 3.892857,
+        "sample_count": 140,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.342857,
+            "hit_rate_at_10": 0.428571,
+            "mrr": 0.357143,
+            "mttc": 7.571429,
+            "sample_count": 7,
+            "technical_score": 0.39
+          },
+          "browsing": {
+            "efficiency": 0.610714,
+            "hit_rate_at_10": 0.696429,
+            "mrr": 0.399157,
+            "mttc": 4.892857,
+            "sample_count": 56,
+            "technical_score": 0.590104
+          },
+          "buying": {
+            "efficiency": 0.860714,
+            "hit_rate_at_10": 0.928571,
+            "mrr": 0.621322,
+            "mttc": 2.392857,
+            "sample_count": 56,
+            "technical_score": 0.822825
+          },
+          "intent_override": {
+            "efficiency": 0.7,
+            "hit_rate_at_10": 0.952381,
+            "mrr": 0.746429,
+            "mttc": 4.0,
+            "sample_count": 21,
+            "technical_score": 0.840119
+          }
+        },
+        "technical_score": 0.71069
+      },
+      "full": {
+        "efficiency": 0.652,
+        "hit_rate_at_10": 0.745,
+        "mrr": 0.50224,
+        "mttc": 4.48,
+        "sample_count": 200,
+        "scenario_metrics": {
+          "boundary": {
+            "efficiency": 0.24,
+            "hit_rate_at_10": 0.3,
+            "mrr": 0.25,
+            "mttc": 8.6,
+            "sample_count": 10,
+            "technical_score": 0.273
+          },
+          "browsing": {
+            "efficiency": 0.4825,
+            "hit_rate_at_10": 0.55,
+            "mrr": 0.307237,
+            "mttc": 6.175,
+            "sample_count": 80,
+            "technical_score": 0.463671
+          },
+          "buying": {
+            "efficiency": 0.86125,
+            "hit_rate_at_10": 0.925,
+            "mrr": 0.640759,
+            "mttc": 2.3875,
+            "sample_count": 80,
+            "technical_score": 0.826978
+          },
+          "intent_override": {
+            "efficiency": 0.683333,
+            "hit_rate_at_10": 0.933333,
+            "mrr": 0.736944,
+            "mttc": 4.166667,
+            "sample_count": 30,
+            "technical_score": 0.824417
+          }
+        },
+        "technical_score": 0.653572
+      },
+      "route_metrics": {
+        "browsing": {
+          "efficiency": 0.455556,
+          "hit_rate_at_10": 0.522222,
+          "mrr": 0.300877,
+          "mttc": 6.444444,
+          "sample_count": 90,
+          "technical_score": 0.442485
+        },
+        "buying": {
+          "efficiency": 0.812727,
+          "hit_rate_at_10": 0.927273,
+          "mrr": 0.666991,
+          "mttc": 2.872727,
+          "sample_count": 110,
+          "technical_score": 0.826279
+        }
+      }
+    }
+  },
+  "model": {
+    "dtype": "float32",
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_sequence_length": 128,
+    "normalized": true,
+    "similarity": "cosine"
+  },
+  "paraphrase_robustness": [
+    {
+      "hit_rate_at_10": 0.722222,
+      "method": "exp7_same_parser_control",
+      "mrr": 0.274039,
+      "mrr_degradation": 0.35739,
+      "sample_count": 90,
+      "technical_score": 0.569545,
+      "technical_score_degradation": 0.280995,
+      "transform": "synonym_substitution"
+    },
+    {
+      "hit_rate_at_10": 0.455556,
+      "method": "intent_routed_dense_browsing",
+      "mrr": 0.257835,
+      "mrr_degradation": 0.043042,
+      "sample_count": 90,
+      "technical_score": 0.384462,
+      "technical_score_degradation": 0.058023,
+      "transform": "synonym_substitution"
+    },
+    {
+      "hit_rate_at_10": 0.733333,
+      "method": "exp7_same_parser_control",
+      "mrr": 0.34825,
+      "mrr_degradation": 0.283179,
+      "sample_count": 90,
+      "technical_score": 0.600475,
+      "technical_score_degradation": 0.250065,
+      "transform": "clause_reordering"
+    },
+    {
+      "hit_rate_at_10": 0.466667,
+      "method": "intent_routed_dense_browsing",
+      "mrr": 0.235613,
+      "mrr_degradation": 0.065264,
+      "sample_count": 90,
+      "technical_score": 0.385573,
+      "technical_score_degradation": 0.056912,
+      "transform": "clause_reordering"
+    },
+    {
+      "hit_rate_at_10": 0.744444,
+      "method": "exp7_same_parser_control",
+      "mrr": 0.324563,
+      "mrr_degradation": 0.306866,
+      "sample_count": 90,
+      "technical_score": 0.598702,
+      "technical_score_degradation": 0.251838,
+      "transform": "lexical_compression"
+    },
+    {
+      "hit_rate_at_10": 0.388889,
+      "method": "intent_routed_dense_browsing",
+      "mrr": 0.176032,
+      "mrr_degradation": 0.124845,
+      "sample_count": 90,
+      "technical_score": 0.315254,
+      "technical_score_degradation": 0.127231,
+      "transform": "lexical_compression"
+    },
+    {
+      "hit_rate_at_10": 0.833333,
+      "method": "exp7_same_parser_control",
+      "mrr": 0.352496,
+      "mrr_degradation": 0.278933,
+      "sample_count": 90,
+      "technical_score": 0.668638,
+      "technical_score_degradation": 0.181902,
+      "transform": "punctuation_changes"
+    },
+    {
+      "hit_rate_at_10": 0.488889,
+      "method": "intent_routed_dense_browsing",
+      "mrr": 0.25612,
+      "mrr_degradation": 0.044757,
+      "sample_count": 90,
+      "technical_score": 0.407058,
+      "technical_score_degradation": 0.035427,
+      "transform": "punctuation_changes"
+    }
+  ],
+  "retrieval_contract": {
+    "ask_attribute": "other",
+    "browsing_bm25_calls": 0,
+    "browsing_exact_calls": 0,
+    "excluded_before_freeze": [
+      "sample_id",
+      "scenario_type",
+      "target_asin",
+      "oracle_card",
+      "user_profile"
+    ],
+    "input_fields_before_freeze": [
+      "category",
+      "active_constraints",
+      "locked_intent"
+    ],
+    "rankings_frozen_before_oracle_join": true,
+    "top_k": 10
+  },
+  "routing": {
+    "accuracy": 1.0,
+    "confusion": {
+      "browsing": {
+        "browsing": 90,
+        "buying": 0
+      },
+      "buying": {
+        "browsing": 0,
+        "buying": 110
+      }
+    },
+    "correct": 200,
+    "total": 200
+  },
+  "slug": "intent_routed_dense_browsing",
+  "split": {
+    "calibration_count": 60,
+    "calibration_ids": [
+      "public_0001",
+      "public_0003",
+      "public_0004",
+      "public_0005",
+      "public_0010",
+      "public_0013",
+      "public_0021",
+      "public_0022",
+      "public_0025",
+      "public_0026",
+      "public_0028",
+      "public_0035",
+      "public_0039",
+      "public_0040",
+      "public_0052",
+      "public_0053",
+      "public_0054",
+      "public_0055",
+      "public_0060",
+      "public_0061",
+      "public_0065",
+      "public_0074",
+      "public_0076",
+      "public_0081",
+      "public_0083",
+      "public_0087",
+      "public_0092",
+      "public_0094",
+      "public_0098",
+      "public_0099",
+      "public_0103",
+      "public_0108",
+      "public_0115",
+      "public_0116",
+      "public_0118",
+      "public_0120",
+      "public_0125",
+      "public_0126",
+      "public_0132",
+      "public_0134",
+      "public_0147",
+      "public_0152",
+      "public_0153",
+      "public_0154",
+      "public_0155",
+      "public_0160",
+      "public_0165",
+      "public_0166",
+      "public_0169",
+      "public_0170",
+      "public_0176",
+      "public_0179",
+      "public_0181",
+      "public_0184",
+      "public_0185",
+      "public_0186",
+      "public_0187",
+      "public_0188",
+      "public_0196",
+      "public_0198"
+    ],
+    "evaluation_count": 140,
+    "evaluation_ids": [
+      "public_0002",
+      "public_0006",
+      "public_0007",
+      "public_0008",
+      "public_0009",
+      "public_0011",
+      "public_0012",
+      "public_0014",
+      "public_0015",
+      "public_0016",
+      "public_0017",
+      "public_0018",
+      "public_0019",
+      "public_0020",
+      "public_0023",
+      "public_0024",
+      "public_0027",
+      "public_0029",
+      "public_0030",
+      "public_0031",
+      "public_0032",
+      "public_0033",
+      "public_0034",
+      "public_0036",
+      "public_0037",
+      "public_0038",
+      "public_0041",
+      "public_0042",
+      "public_0043",
+      "public_0044",
+      "public_0045",
+      "public_0046",
+      "public_0047",
+      "public_0048",
+      "public_0049",
+      "public_0050",
+      "public_0051",
+      "public_0056",
+      "public_0057",
+      "public_0058",
+      "public_0059",
+      "public_0062",
+      "public_0063",
+      "public_0064",
+      "public_0066",
+      "public_0067",
+      "public_0068",
+      "public_0069",
+      "public_0070",
+      "public_0071",
+      "public_0072",
+      "public_0073",
+      "public_0075",
+      "public_0077",
+      "public_0078",
+      "public_0079",
+      "public_0080",
+      "public_0082",
+      "public_0084",
+      "public_0085",
+      "public_0086",
+      "public_0088",
+      "public_0089",
+      "public_0090",
+      "public_0091",
+      "public_0093",
+      "public_0095",
+      "public_0096",
+      "public_0097",
+      "public_0100",
+      "public_0101",
+      "public_0102",
+      "public_0104",
+      "public_0105",
+      "public_0106",
+      "public_0107",
+      "public_0109",
+      "public_0110",
+      "public_0111",
+      "public_0112",
+      "public_0113",
+      "public_0114",
+      "public_0117",
+      "public_0119",
+      "public_0121",
+      "public_0122",
+      "public_0123",
+      "public_0124",
+      "public_0127",
+      "public_0128",
+      "public_0129",
+      "public_0130",
+      "public_0131",
+      "public_0133",
+      "public_0135",
+      "public_0136",
+      "public_0137",
+      "public_0138",
+      "public_0139",
+      "public_0140",
+      "public_0141",
+      "public_0142",
+      "public_0143",
+      "public_0144",
+      "public_0145",
+      "public_0146",
+      "public_0148",
+      "public_0149",
+      "public_0150",
+      "public_0151",
+      "public_0156",
+      "public_0157",
+      "public_0158",
+      "public_0159",
+      "public_0161",
+      "public_0162",
+      "public_0163",
+      "public_0164",
+      "public_0167",
+      "public_0168",
+      "public_0171",
+      "public_0172",
+      "public_0173",
+      "public_0174",
+      "public_0175",
+      "public_0177",
+      "public_0178",
+      "public_0180",
+      "public_0182",
+      "public_0183",
+      "public_0189",
+      "public_0190",
+      "public_0191",
+      "public_0192",
+      "public_0193",
+      "public_0194",
+      "public_0195",
+      "public_0197",
+      "public_0199",
+      "public_0200"
+    ],
+    "source": "C:\\Users\\nicko\\Desktop\\techjam26\\nickolas\\results\\experiment_06_slate_width_counterfactuals\\metrics.json",
+    "source_sha256": "afc88e024d7dda56f6fb6300f34e9c46e644bd7e197104d878bb3823167be14b",
+    "validated_partition": true
+  },
+  "submission_agent_modified": false,
+  "submission_baseline_reproduction": {
+    "command": "C:\\Users\\nicko\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\evaluator\\local_evaluator.py --catalog C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\data\\catalog.jsonl --dataset C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\data\\public_set.jsonl --output C:\\Users\\nicko\\Desktop\\techjam26\\nickolas\\results\\experiment_08_intent_routed_dense_browsing\\submission_baseline_reproduction.json",
+    "frozen_path": "techjam-conversational-search\\current_agent_results.json",
+    "frozen_sha256": "659ce57cad183f5d7f05ff9ce36560dab9318de6809d3fc67b5be8b87cf2f2c5",
+    "full_json_identity": true,
+    "mrr": 0.651821,
+    "passed": true,
+    "recommended_technical_score": 0.840846,
+    "reproduction_path": "nickolas\\results\\experiment_08_intent_routed_dense_browsing\\submission_baseline_reproduction.json",
+    "reproduction_sha256": "659ce57cad183f5d7f05ff9ce36560dab9318de6809d3fc67b5be8b87cf2f2c5",
+    "session_identity_count": 200
+  }
+}

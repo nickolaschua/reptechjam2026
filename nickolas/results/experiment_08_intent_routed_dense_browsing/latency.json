@@ -1,0 +1,21 @@
+{
+  "exp7_same_parser_control": {
+    "count": 2000,
+    "mean": 193.082978,
+    "median": 106.96065,
+    "p25": 47.6527,
+    "p75": 187.1376,
+    "p90": 368.1542,
+    "p95": 607.747185
+  },
+  "intent_routed_dense_browsing": {
+    "count": 2000,
+    "mean": 16.614355,
+    "median": 21.1685,
+    "p25": 0.759975,
+    "p75": 27.172875,
+    "p90": 31.3938,
+    "p95": 33.8609
+  },
+  "unit": "milliseconds_per_unique-state ranking (cache hits retain originating measurement)"
+}

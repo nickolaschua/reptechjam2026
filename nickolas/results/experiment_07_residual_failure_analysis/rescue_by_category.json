@@ -1,0 +1,1082 @@
+[
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 10
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 12
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_only",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.7,
+    "rescued_hard_failures": 7,
+    "split": "full",
+    "tagged_hard_failures": 10
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.6,
+    "rescued_hard_failures": 3,
+    "split": "calibration",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.8,
+    "rescued_hard_failures": 4,
+    "split": "evaluation",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.583333,
+    "rescued_hard_failures": 7,
+    "split": "full",
+    "tagged_hard_failures": 12
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.5,
+    "rescued_hard_failures": 3,
+    "split": "calibration",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.666667,
+    "rescued_hard_failures": 4,
+    "split": "evaluation",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.5,
+    "rescued_hard_failures": 7,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.428571,
+    "rescued_hard_failures": 3,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.571429,
+    "rescued_hard_failures": 4,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.5,
+    "rescued_hard_failures": 7,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.428571,
+    "rescued_hard_failures": 3,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.571429,
+    "rescued_hard_failures": 4,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_stateful_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.2,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 10
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.4,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.166667,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 12
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.333333,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.285714,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.285714,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_field_aware_bm25_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.1,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 10
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.2,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.083333,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 12
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.166667,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.071429,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.071429,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.2,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 10
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "no_exact_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.4,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 5
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.166667,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 12
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.333333,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 6
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "ranking_failure",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.285714,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.142857,
+    "rescued_hard_failures": 2,
+    "split": "full",
+    "tagged_hard_failures": 14
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.285714,
+    "rescued_hard_failures": 2,
+    "split": "evaluation",
+    "tagged_hard_failures": 7
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "normalization_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "full",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "evaluation",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "full",
+    "tagged_hard_failures": 1
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 0.0,
+    "rescued_hard_failures": 0,
+    "split": "calibration",
+    "tagged_hard_failures": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "method": "exact_generic_field_dense_rrf",
+    "non_exclusive": true,
+    "rescue_percentage": 1.0,
+    "rescued_hard_failures": 1,
+    "split": "evaluation",
+    "tagged_hard_failures": 1
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "brand_unrevealed": 800,
+  "category_unrevealed": 800,
+  "color_classification_mismatches": 20,
+  "disclosure_turn_counts": {
+    "1": 80,
+    "2": 380,
+    "3": 296,
+    "4": 44
+  },
+  "elapsed_seconds": 0.297,
+  "experiment": 4,
+  "hard_soft_position_counts": {
+    "hard_1:feature": 42,
+    "hard_1:material": 153,
+    "hard_1:style": 4,
+    "hard_1:use_case": 1,
+    "hard_2:color": 44,
+    "hard_2:feature": 48,
+    "hard_2:material": 105,
+    "hard_2:size": 2,
+    "hard_2:style": 1,
+    "soft_1:color": 8,
+    "soft_1:feature": 156,
+    "soft_1:material": 25,
+    "soft_1:size": 3,
+    "soft_1:style": 7,
+    "soft_1:use_case": 1,
+    "soft_2:color": 8,
+    "soft_2:feature": 158,
+    "soft_2:material": 19,
+    "soft_2:size": 6,
+    "soft_2:style": 7,
+    "soft_2:use_case": 2
+  },
+  "label": "ORACLE DIAGNOSTIC",
+  "multi_rule_precedence_resolutions": 19,
+  "other_revealed": 800,
+  "rows": 800,
+  "scenario_type_counts": {
+    "boundary": {
+      "color": 2,
+      "feature": 20,
+      "material": 17,
+      "use_case": 1
+    },
+    "browsing": {
+      "color": 22,
+      "feature": 169,
+      "material": 117,
+      "size": 3,
+      "style": 8,
+      "use_case": 1
+    },
+    "buying": {
+      "color": 27,
+      "feature": 153,
+      "material": 129,
+      "size": 3,
+      "style": 7,
+      "use_case": 1
+    },
+    "intent_override": {
+      "color": 9,
+      "feature": 62,
+      "material": 39,
+      "size": 5,
+      "style": 4,
+      "use_case": 1
+    }
+  },
+  "type_counts": {
+    "color": 60,
+    "feature": 404,
+    "material": 302,
+    "size": 11,
+    "style": 19,
+    "use_case": 4
+  }
+}

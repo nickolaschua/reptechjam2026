@@ -1,0 +1,99 @@
+{
+  "corpus_serialization": {
+    "field_order": [
+      "title",
+      "categories",
+      "store",
+      "features",
+      "details",
+      "description",
+      "price"
+    ],
+    "field_values": "Experiment harness product_field_text",
+    "format": "pid<TAB>text, UTF-8, LF, no header",
+    "whitespace": "all runs collapsed to one ASCII space"
+  },
+  "counts": {
+    "documents": 50000,
+    "queries": 600
+  },
+  "experiment": 10,
+  "hashes": {
+    "catalog_jsonl_sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+    "collection_tsv_sha256": "43ca5b3bdd918ec9019a3a6a8a62604b0d88bd1cd6f4bac861aea18220df663e",
+    "experiment_07_source_sha256": "6c2bf77ef7d3a7974190349f0ec8acd75cf318be3065d1f3b6ec5d560c7b5de1",
+    "pid_to_asin_sha256": "aafaad0dd7370a90edfb0c123972ca8371fceebd88b1e3bed104bddd1b93b5f7",
+    "public_set_jsonl_sha256": "857259f7a438e6188ac63e18995b6ff4489bfcfc4a716a798b9a2aa0ee8f7579",
+    "queries_tsv_sha256": "7a6fa08c83d5b2b9e0a6c0cc543192c6ffe5ce7c20af2812b148ceb201fc3f8c"
+  },
+  "index": {
+    "device": "cuda",
+    "doc_maxlen": 512,
+    "index_bsize": 16,
+    "kmeans_niters": 4,
+    "name": "techjam26-products-xtr-warp.nbits=4",
+    "nbits": 4,
+    "nranks": 1,
+    "num_partitions": 16384,
+    "query_maxlen": 32,
+    "sample_pid_cap": 4096
+  },
+  "name": "exact_stateful_xtr_warp_rrf_retrieval_freeze",
+  "pins": {
+    "micromamba": {
+      "sha256": "366cd9cd8be14df1ab8ed50352a82111082a36686b2d389fdb79a92c3fafb3e3",
+      "url": "https://github.com/mamba-org/micromamba-releases/releases/download/2.9.0-0/micromamba-linux-64",
+      "version": "2.9.0-0"
+    },
+    "xtr_model": {
+      "model_id": "google/xtr-base-en",
+      "revision": "f40cd399e67dfc8ec974e922ad828610e3c83a36"
+    },
+    "xtr_warp": {
+      "repository": "https://github.com/jlscheerer/xtr-warp.git",
+      "revision": "cca97613e6f969ac89f259946b976f8c5a6f1399"
+    }
+  },
+  "privacy": {
+    "contains_future_turns": false,
+    "contains_hidden_cards": false,
+    "contains_profiles": false,
+    "contains_sample_ids": false,
+    "contains_scenario_labels": false,
+    "contains_targets": false
+  },
+  "query_serialization": {
+    "definition": "distinct Experiment 7 RetrievalInput.query values sorted by (casefold, original)",
+    "format": "zero-based-query-id<TAB>query, UTF-8, LF, no header",
+    "ranker_visible_fields": [
+      "category",
+      "active_constraints"
+    ]
+  },
+  "retrieval": {
+    "bound": 128,
+    "device": "cpu",
+    "nprobe": 32,
+    "num_threads": 1,
+    "t_prime": null,
+    "tie_break": "score_desc_then_pid_asc",
+    "top_k": 1000
+  },
+  "schema_version": 1,
+  "seed": 20260826,
+  "smoke": {
+    "documents": 256,
+    "index": {
+      "doc_maxlen": 512,
+      "index_bsize": 8,
+      "kmeans_niters": 2,
+      "nbits": 4,
+      "num_partitions": 256,
+      "query_maxlen": 32,
+      "sample_pid_cap": 256
+    },
+    "queries": 3,
+    "retrieval_top_k": 10
+  },
+  "training_performed": false
+}

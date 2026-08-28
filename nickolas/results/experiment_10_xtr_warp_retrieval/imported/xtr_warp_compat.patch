@@ -1,0 +1,321 @@
+diff --git a/warp/data/queries.py b/warp/data/queries.py
+index 0588e3f..52ac65e 100644
+--- a/warp/data/queries.py
++++ b/warp/data/queries.py
+@@ -4,7 +4,6 @@ import os
+ import jsonlines
+ import ujson
+ 
+-from beir.datasets.data_loader import GenericDataLoader
+ from warp.evaluation.loaders import load_queries
+ 
+ from warp.infra import Run, RunConfig
+@@ -146,6 +145,8 @@ class WARPQRels:
+     def __init__(self, config):
+         self.config = config
+         if self.config.collection == "beir":
++            from beir.datasets.data_loader import GenericDataLoader
++
+             BEIR_COLLECTION_PATH = os.environ["BEIR_COLLECTION_PATH"]
+             dataset_path = os.path.join(BEIR_COLLECTION_PATH, self.config.dataset)
+             corpus, queries, qrels = GenericDataLoader(dataset_path).load(split=self.config.datasplit)
+@@ -183,4 +184,4 @@ class WARPQueries:
+ 
+     @property
+     def qrels(self):
+-        return WARPQRels(self.config)
+\ No newline at end of file
++        return WARPQRels(self.config)
+diff --git a/warp/data/ranking.py b/warp/data/ranking.py
+index 4ee0c9b..6a9bd62 100644
+--- a/warp/data/ranking.py
++++ b/warp/data/ranking.py
+@@ -4,8 +4,6 @@ import ujson
+ import sys
+ from dataclasses import dataclass
+ 
+-import pytrec_eval
+-
+ from warp.infra.provenance import Provenance
+ from warp.infra.run import Run
+ from warp.utils.utils import print_message, groupby_first_item
+@@ -142,6 +140,8 @@ def eval_metrics_lotte(qas, rankings, k):
+     return final_metrics
+ 
+ def eval_metrics_beir(qrels, rankings):
++    import pytrec_eval
++
+     K_VALUES = [5, 10, 50, 100]
+     METRIC_NAMES = ['ndcg_cut', 'map_cut', 'recall']
+ 
+@@ -212,4 +212,4 @@ class WARPRankingItems:
+         ranking = Ranking(data=self.data, provenance=provenance)
+         if searcher.collection_map is not None:
+             ranking.apply_collection_map(searcher.collection_map)
+-        return WARPRanking(ranking)
+\ No newline at end of file
++        return WARPRanking(ranking)
+diff --git a/warp/engine/config.py b/warp/engine/config.py
+index add8902..4d7325c 100644
+--- a/warp/engine/config.py
++++ b/warp/engine/config.py
+@@ -1,19 +1,15 @@
+ import os
+ from dataclasses import dataclass
+-from typing import Literal, Optional, Union
++from typing import Any, Literal, Optional
+ 
+ from warp.modeling.xtr import DOC_MAXLEN, QUERY_MAXLEN
+ from warp.infra import ColBERTConfig
+ 
+ USE_CORE_ML = False
+ 
+-from warp.engine.runtime.onnx_model import XTROnnxConfig
+-
+-if USE_CORE_ML:
+-    from warp.engine.runtime.coreml_model import XTRCoreMLConfig
+-    RuntimeConfig = Union[XTROnnxConfig, XTRCoreMLConfig]
+-else:
+-    RuntimeConfig = XTROnnxConfig
++# Experiment 10 uses the default PyTorch runtime. Keep optional ONNX/CoreML
++# dependencies out of the import path so the pinned minimal environment is enough.
++RuntimeConfig = Any
+ 
+ @dataclass
+ class WARPRunConfig:
+diff --git a/warp/engine/search/index_storage.py b/warp/engine/search/index_storage.py
+index de32be6..576ed4d 100644
+--- a/warp/engine/search/index_storage.py
++++ b/warp/engine/search/index_storage.py
+@@ -49,14 +49,13 @@ class IndexLoaderWARP:
+             os.path.join(self.index_path, "codes.compacted.pt")
+         )
+ 
+-        residuals_compacted = torch.load(
+-            os.path.join(self.index_path, "residuals.compacted.pt")
+-        )
+-
+         num_centroids = centroids.shape[0]
+         assert sizes_compacted.shape == (num_centroids,)
+ 
+-        num_embeddings = residuals_compacted.shape[0]
++        # The repacked tensor loaded by __init__ is the retrieval representation.
++        # Derive the count from passage codes instead of retaining the converter's
++        # redundant intermediate residual tensor in portable output archives.
++        num_embeddings = codes_compacted.shape[0]
+         assert sizes_compacted.sum() == num_embeddings
+         assert codes_compacted.shape == (num_embeddings,)
+ 
+@@ -72,7 +71,7 @@ class IndexLoaderWARP:
+         self.centroids = centroids
+         print("#> Not averaging centroids.")
+ 
+-        return residuals_compacted
++        return None
+ 
+ 
+ class IndexScorerWARP(IndexLoaderWARP):
+diff --git a/warp/engine/utils/index_converter.py b/warp/engine/utils/index_converter.py
+index 363f724..c3f9069 100644
+--- a/warp/engine/utils/index_converter.py
++++ b/warp/engine/utils/index_converter.py
+@@ -66,11 +66,11 @@ def convert_index(index_path, destination_path=None):
+ 
+     np.save(
+         os.path.join(destination_path, "bucket_cutoffs.npy"),
+-        bucket_cutoffs.float().numpy(force=True),
++        bucket_cutoffs.detach().float().cpu().numpy(),
+     )
+     np.save(
+         os.path.join(destination_path, "bucket_weights.npy"),
+-        bucket_weights.float().numpy(force=True),
++        bucket_weights.detach().float().cpu().numpy(),
+     )
+ 
+     print("#> centroids.dtype =", centroids.dtype)
+@@ -78,7 +78,7 @@ def convert_index(index_path, destination_path=None):
+     centroids = centroids.float()
+     np.save(
+         os.path.join(destination_path, "centroids.npy"),
+-        centroids.numpy(force=True).astype(np.float32),
++        centroids.detach().cpu().numpy().astype(np.float32),
+     )
+ 
+     ivf, ivf_lengths = torch.load(os.path.join(index_path, "ivf.pid.pt"))
+diff --git a/warp/indexing/collection_indexer.py b/warp/indexing/collection_indexer.py
+index 1d0f964..62dc63d 100644
+--- a/warp/indexing/collection_indexer.py
++++ b/warp/indexing/collection_indexer.py
+@@ -103,7 +103,9 @@ class CollectionIndexer():
+         # Select the number of partitions
+         num_passages = len(self.collection)
+         self.num_embeddings_est = num_passages * avg_doclen_est
+-        self.num_partitions = int(2 ** np.floor(np.log2(16 * np.sqrt(self.num_embeddings_est))))
++        default_num_partitions = int(2 ** np.floor(np.log2(16 * np.sqrt(self.num_embeddings_est))))
++        self.num_partitions = int(os.environ.get("EXPERIMENT10_NUM_PARTITIONS", default_num_partitions))
++        assert self.num_partitions > 0 and self.num_partitions & (self.num_partitions - 1) == 0
+ 
+         if self.verbose > 0:
+             Run().print_main(f'Creating {self.num_partitions:,} partitions.')
+@@ -123,6 +125,8 @@ class CollectionIndexer():
+         sampled_pids = 16 * np.sqrt(typical_doclen * num_passages)
+         # sampled_pids = int(2 ** np.floor(np.log2(1 + sampled_pids)))
+         sampled_pids = min(1 + int(sampled_pids), num_passages)
++        sample_cap = int(os.environ.get("EXPERIMENT10_SAMPLE_PID_CAP", sampled_pids))
++        sampled_pids = min(sampled_pids, sample_cap)
+ 
+         sampled_pids = random.sample(range(num_passages), sampled_pids)
+         if self.verbose > 1:
+diff --git a/warp/infra/config/base_config.py b/warp/infra/config/base_config.py
+index 601babc..538a42a 100644
+--- a/warp/infra/config/base_config.py
++++ b/warp/infra/config/base_config.py
+@@ -13,6 +13,8 @@ from warp.utils.utils import timestamp, torch_load_dnn
+ from utility.utils.save_metadata import get_metadata_only
+ from .core_config import *
+ 
++XTR_MODEL_REVISION = "f40cd399e67dfc8ec974e922ad828610e3c83a36"
++
+ 
+ @dataclass
+ class BaseConfig(CoreConfig):
+@@ -64,7 +66,9 @@ class BaseConfig(CoreConfig):
+ 
+         try:
+             checkpoint_path = hf_hub_download(
+-                repo_id=checkpoint_path, filename="artifact.metadata"
++                repo_id=checkpoint_path,
++                filename="artifact.metadata",
++                revision=XTR_MODEL_REVISION if checkpoint_path == "google/xtr-base-en" else None,
+             ).split("artifact")[0]
+         except Exception:
+             pass
+diff --git a/warp/modeling/checkpoint.py b/warp/modeling/checkpoint.py
+index 0e67f87..f1d243a 100644
+--- a/warp/modeling/checkpoint.py
++++ b/warp/modeling/checkpoint.py
+@@ -8,11 +8,8 @@ from warp.modeling.colbert import ColBERT
+ from warp.modeling.xtr import XTRCheckpoint, build_xtr_model
+ from warp.engine.config import USE_CORE_ML
+ 
+-from warp.engine.runtime.torchscript_model import XTRTorchScriptConfig, XTRTorchScriptModel
+-from warp.engine.runtime.onnx_model import XTROnnxConfig, XTROnnxModel
+-from warp.engine.runtime.openvino_model import XTROpenVinoConfig, XTROpenVinoModel
+-if USE_CORE_ML:
+-    from warp.engine.runtime.coreml_model import XTRCoreMLConfig, XTRCoreMLModel
++# Experiment 10 uses only the default PyTorch runtime. Optional inference
++# runtime packages are intentionally absent from its isolated environment.
+ 
+ class Checkpoint(ColBERT):
+     """
+@@ -30,25 +27,7 @@ class Checkpoint(ColBERT):
+                     config = warp_config.colbert()
+                 return XTRCheckpoint(xtr, config)
+ 
+-            if isinstance(warp_config.runtime, XTRTorchScriptConfig):
+-                model = XTRTorchScriptModel(warp_config.runtime)
+-                return XTRCheckpoint(model, warp_config.colbert())
+-
+-            if isinstance(warp_config.runtime, XTROnnxConfig):
+-                model = XTROnnxModel(warp_config.runtime)
+-                return XTRCheckpoint(model, warp_config.colbert())
+-
+-            if isinstance(warp_config.runtime, XTROpenVinoConfig):
+-                model = XTROpenVinoModel(warp_config.runtime)
+-                return XTRCheckpoint(model, warp_config.colbert())
+-
+-            if USE_CORE_ML:
+-                if isinstance(warp_config.runtime, XTRCoreMLConfig):
+-                    model = XTRCoreMLModel(warp_config.runtime)
+-                    return XTRCheckpoint(model, warp_config.colbert())
+-
+-            # We should never reach this point!
+-            assert False
++            raise ValueError("Experiment 10 supports only the pinned PyTorch XTR runtime")
+         instance = super().__new__(cls)
+         instance.__init__(name, colbert_config, verbose)
+         return instance
+diff --git a/warp/modeling/xtr.py b/warp/modeling/xtr.py
+index c7bd3ff..69c5668 100644
+--- a/warp/modeling/xtr.py
++++ b/warp/modeling/xtr.py
+@@ -6,6 +6,9 @@ from huggingface_hub import hf_hub_download
+ from warp.parameters import DEVICE
+ from warp.engine.constants import *
+ 
++XTR_MODEL_ID = "google/xtr-base-en"
++XTR_MODEL_REVISION = "f40cd399e67dfc8ec974e922ad828610e3c83a36"
++
+ 
+ class XTRTokenizer:
+     def __init__(self, tokenizer):
+@@ -55,14 +58,22 @@ def build_xtr_model():
+     # NOTE Warning about unitialized decoder weights is to be expected.
+     #      We only make use of the encoder anyways.
+     logging.set_verbosity_error()
+-    model = AutoModel.from_pretrained("google/xtr-base-en", use_safetensors=True)
++    model = AutoModel.from_pretrained(
++        XTR_MODEL_ID, revision=XTR_MODEL_REVISION, use_safetensors=True
++    )
+ 
+-    tokenizer = XTRTokenizer(AutoTokenizer.from_pretrained("google/xtr-base-en"))
++    tokenizer = XTRTokenizer(
++        AutoTokenizer.from_pretrained(XTR_MODEL_ID, revision=XTR_MODEL_REVISION)
++    )
+     xtr = XTR(tokenizer, model.encoder)
+ 
+     # Source: https://huggingface.co/google/xtr-base-en/
+-    to_dense_path = hf_hub_download(repo_id="google/xtr-base-en", filename="2_Dense/pytorch_model.bin")
+-    xtr.linear.load_state_dict(torch.load(to_dense_path))
++    to_dense_path = hf_hub_download(
++        repo_id=XTR_MODEL_ID,
++        filename="2_Dense/pytorch_model.bin",
++        revision=XTR_MODEL_REVISION,
++    )
++    xtr.linear.load_state_dict(torch.load(to_dense_path, map_location="cpu"))
+ 
+     logging.set_verbosity_warning()
+     return xtr
+@@ -143,4 +154,4 @@ class XTRCheckpoint:
+     def query_tokenizer(self):
+         class XTRQueryTokenizerPlaceholder:
+             query_maxlen: int
+-        return XTRQueryTokenizerPlaceholder()
+\ No newline at end of file
++        return XTRQueryTokenizerPlaceholder()
+diff --git a/warp/searcher.py b/warp/searcher.py
+index b2e6f8a..8591113 100644
+--- a/warp/searcher.py
++++ b/warp/searcher.py
+@@ -55,7 +55,10 @@ class Searcher:
+             self.checkpoint_config, self.index_config, initial_config
+         )
+ 
+-        self.collection = Collection.cast(collection or self.config.collection)
++        # WARP ranks passage IDs directly and does not need document text at
++        # retrieval time. Avoid baking the Colab extraction path into portable
++        # index loading; callers can still pass a collection when they need it.
++        self.collection = None if warp_engine and collection is None else Collection.cast(collection or self.config.collection)
+         self.configure(checkpoint=self.checkpoint, collection=self.collection)
+ 
+         self.checkpoint = Checkpoint(
+diff --git a/warp/utils/tracker.py b/warp/utils/tracker.py
+--- a/warp/utils/tracker.py
++++ b/warp/utils/tracker.py
+@@ -1,6 +1,4 @@
+ import time
+-import matplotlib.pyplot as plt
+-import pandas as pd
+ 
+ 
+ class ExecutionTrackerIteration:
+@@ -83,6 +81,9 @@ class ExecutionTracker:
+         return self._time_per_step[key] / self._num_iterations
+ 
+     def display(self, steps=None, bound=None):
++        import matplotlib.pyplot as plt
++        import pandas as pd
++
+         iteration_time, breakdown = self.summary(steps)
+         df = pd.DataFrame(
+             {

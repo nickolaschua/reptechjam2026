@@ -1,0 +1,102 @@
+[2026-08-26 18:39:11] stage=index
+Building full 4-bit WARP index at /content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4
+
+
+[Aug 26, 18:39:15] #> Creating directory /content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4 
+
+
+{
+    "query_token_id": "[unused0]",
+    "doc_token_id": "[unused1]",
+    "query_token": "[Q]",
+    "doc_token": "[D]",
+    "ncells": null,
+    "centroid_score_threshold": null,
+    "ndocs": null,
+    "load_index_with_mmap": false,
+    "index_path": "\/content\/experiment_10_work\/raw_indexes\/full\/techjam26-products-xtr-warp.nbits=4",
+    "index_bsize": 16,
+    "nbits": 4,
+    "kmeans_niters": 4,
+    "resume": false,
+    "similarity": "cosine",
+    "bsize": 64,
+    "accumsteps": 1,
+    "lr": 3e-6,
+    "maxsteps": 500000,
+    "save_every": null,
+    "warmup": null,
+    "warmup_bert": null,
+    "relu": false,
+    "nway": 2,
+    "use_ib_negatives": false,
+    "reranker": false,
+    "distillation_alpha": 1.0,
+    "ignore_scores": false,
+    "model_name": null,
+    "query_maxlen": 32,
+    "attend_to_mask_tokens": false,
+    "interaction": "colbert",
+    "dim": 128,
+    "doc_maxlen": 512,
+    "mask_punctuation": true,
+    "checkpoint": "google\/xtr-base-en",
+    "triples": null,
+    "collection": "\/content\/experiment_10_work\/input\/collection.tsv",
+    "queries": null,
+    "index_name": "techjam26-products-xtr-warp.nbits=4",
+    "overwrite": false,
+    "root": "\/content\/experiment_10_work",
+    "experiment": "experiment10-full",
+    "index_root": null,
+    "name": "2026-08\/26\/18.39.13",
+    "rank": 0,
+    "nranks": 1,
+    "amp": true,
+    "gpus": 1,
+    "avoid_fork_if_possible": true
+}
+[Aug 26, 18:39:15] #> Loading collection...
+0M 
+[Aug 26, 18:39:21] [0] 		 # of sampled PIDs = 4096 	 sampled_pids[:3] = [27303, 48017, 666]
+[Aug 26, 18:39:21] [0] 		 #> Encoding 4096 passages..
+[Aug 26, 18:42:00] [0] 		 avg_doclen_est = 233.533935546875 	 len(local_sample) = 4,096
+[Aug 26, 18:42:09] [0] 		 Creating 16,384 partitions.
+[Aug 26, 18:42:09] [0] 		 *Estimated* 11,676,696 embeddings.
+[Aug 26, 18:42:09] [0] 		 #> Saving the indexing plan to /content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4/plan.json ..
+[Aug 26, 18:42:11] [0] 		 #> use_gpu = True
+Clustering 908728 points in 128D to 16384 clusters, redo 1 times, 4 iterations
+  Preprocessing in 0.10 s
+  Iteration 0 (1.68 s, search 1.57 s): objective=810680 imbalance=1.724 nsplit=0         Iteration 1 (3.29 s, search 3.10 s): objective=840091 imbalance=1.476 nsplit=0         Iteration 2 (4.93 s, search 4.64 s): objective=844539 imbalance=1.416 nsplit=2         Iteration 3 (6.56 s, search 6.19 s): objective=846432 imbalance=1.390 nsplit=1       
+[Aug 26, 18:42:18] Loading decompress_residuals_cpp extension (set COLBERT_LOAD_TORCH_EXTENSION_VERBOSE=True for more info)...
+[Aug 26, 18:42:19] Loading packbits_cpp extension (set COLBERT_LOAD_TORCH_EXTENSION_VERBOSE=True for more info)...
+[0.03, 0.025, 0.024, 0.025, 0.024, 0.024, 0.024, 0.025, 0.023, 0.027, 0.024, 0.024, 0.027, 0.025, 0.024, 0.026, 0.025, 0.024, 0.025, 0.027, 0.023, 0.026, 0.029, 0.023, 0.026, 0.027, 0.026, 0.027, 0.026, 0.022, 0.027, 0.026, 0.027, 0.025, 0.024, 0.025, 0.026, 0.027, 0.026, 0.024, 0.027, 0.026, 0.026, 0.026, 0.027, 0.029, 0.026, 0.027, 0.028, 0.025, 0.024, 0.026, 0.021, 0.026, 0.026, 0.024, 0.024, 0.027, 0.026, 0.026, 0.026, 0.025, 0.024, 0.025, 0.025, 0.024, 0.026, 0.026, 0.024, 0.023, 0.026, 0.023, 0.025, 0.027, 0.026, 0.027, 0.023, 0.025, 0.022, 0.024, 0.024, 0.026, 0.026, 0.025, 0.023, 0.028, 0.023, 0.025, 0.028, 0.026, 0.023, 0.023, 0.026, 0.027, 0.023, 0.028, 0.024, 0.029, 0.022, 0.026, 0.031, 0.023, 0.026, 0.023, 0.023, 0.022, 0.025, 0.024, 0.025, 0.026, 0.027, 0.025, 0.021, 0.028, 0.025, 0.025, 0.025, 0.024, 0.027, 0.027, 0.022, 0.024, 0.027, 0.023, 0.029, 0.025, 0.022, 0.026]
+[Aug 26, 18:42:19] #> Got bucket_cutoffs_quantiles = tensor([0.0625, 0.1250, 0.1875, 0.2500, 0.3125, 0.3750, 0.4375, 0.5000, 0.5625,
+        0.6250, 0.6875, 0.7500, 0.8125, 0.8750, 0.9375], device='cuda:0') and bucket_weights_quantiles = tensor([0.0312, 0.0938, 0.1562, 0.2188, 0.2812, 0.3438, 0.4062, 0.4688, 0.5312,
+        0.5938, 0.6562, 0.7188, 0.7812, 0.8438, 0.9062, 0.9688],
+       device='cuda:0')
+[Aug 26, 18:42:19] #> Got bucket_cutoffs = tensor([-0.0501, -0.0357, -0.0268, -0.0200, -0.0144, -0.0094, -0.0048, -0.0003,
+         0.0041,  0.0087,  0.0137,  0.0192,  0.0259,  0.0348,  0.0490],
+       device='cuda:0') and bucket_weights = tensor([-0.0641, -0.0418, -0.0308, -0.0232, -0.0171, -0.0118, -0.0071, -0.0026,
+         0.0019,  0.0064,  0.0111,  0.0163,  0.0224,  0.0300,  0.0408,  0.0627],
+       device='cuda:0')
+[Aug 26, 18:42:19] avg_residual = 0.025213662534952164
+0it [00:00, ?it/s][Aug 26, 18:42:19] [0] 		 #> Encoding 25000 passages..
+[Aug 26, 18:59:31] [0] 		 #> Saving chunk 0: 	 25,000 passages and 5,833,131 embeddings. From #0 onward.
+1it [17:30, 1050.12s/it][Aug 26, 18:59:49] [0] 		 #> Encoding 25000 passages..
+[Aug 26, 19:17:05] [0] 		 #> Saving chunk 1: 	 25,000 passages and 5,746,000 embeddings. From #25,000 onward.
+2it [34:56, 1047.84s/it]2it [34:56, 1048.18s/it]
+[Aug 26, 19:17:58] [0] 		 #> Checking all files were saved...
+[Aug 26, 19:17:58] [0] 		 Found all files!
+[Aug 26, 19:17:58] [0] 		 #> Building IVF...
+[Aug 26, 19:17:58] [0] 		 #> Loading codes...
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:00<00:00,  6.11it/s]100%|██████████| 2/2 [00:00<00:00, 10.93it/s]
+[Aug 26, 19:17:58] [0] 		 Sorting codes...
+[Aug 26, 19:17:59] [0] 		 Getting unique codes...
+[Aug 26, 19:17:59] #> Optimizing IVF to store map from centroids to list of pids..
+[Aug 26, 19:17:59] #> Building the emb2pid mapping..
+[Aug 26, 19:18:00] len(emb2pid) = 11579131
+  0%|          | 0/16384 [00:00<?, ?it/s]  5%|▍         | 772/16384 [00:00<00:02, 7716.92it/s] 10%|▉         | 1570/16384 [00:00<00:01, 7867.50it/s] 14%|█▍        | 2357/16384 [00:00<00:01, 7815.07it/s] 19%|█▉        | 3139/16384 [00:00<00:01, 7615.07it/s] 24%|██▍       | 3927/16384 [00:00<00:01, 7706.51it/s] 29%|██▊       | 4699/16384 [00:00<00:01, 7491.06it/s] 33%|███▎      | 5450/16384 [00:00<00:01, 7240.34it/s] 38%|███▊      | 6176/16384 [00:00<00:01, 7121.02it/s] 42%|████▏     | 6890/16384 [00:00<00:01, 7117.45it/s] 46%|████▋     | 7603/16384 [00:01<00:01, 6678.25it/s] 51%|█████     | 8276/16384 [00:01<00:01, 6446.60it/s] 55%|█████▍    | 8985/16384 [00:01<00:01, 6627.97it/s] 59%|█████▉    | 9652/16384 [00:01<00:01, 6386.45it/s] 63%|██████▎   | 10314/16384 [00:01<00:00, 6451.51it/s] 67%|██████▋   | 10963/16384 [00:01<00:00, 6198.14it/s] 71%|███████   | 11633/16384 [00:01<00:00, 6339.27it/s] 75%|███████▍  | 12271/16384 [00:01<00:00, 6273.63it/s] 79%|███████▊  | 12901/16384 [00:01<00:00, 5994.94it/s] 82%|████████▏ | 13504/16384 [00:02<00:00, 5792.50it/s] 86%|████████▌ | 14087/16384 [00:02<00:00, 4457.99it/s] 91%|█████████ | 14861/16384 [00:02<00:00, 5228.44it/s] 96%|█████████▌| 15745/16384 [00:02<00:00, 6134.79it/s]100%|██████████| 16384/16384 [00:02<00:00, 6528.70it/s]
+[Aug 26, 19:18:03] #> Saved optimized IVF to /content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4/ivf.pid.pt
+[Aug 26, 19:18:03] [0] 		 #> Saving the indexing metadata to /content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4/metadata.json ..
+Finished full indexing in 38.85 minutes.

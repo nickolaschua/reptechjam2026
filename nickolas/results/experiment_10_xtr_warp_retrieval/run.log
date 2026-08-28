@@ -1,0 +1,13 @@
+2026-08-27 10:20:59,267 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-27 10:20:59,267 INFO AGENT-REALISTIC XTR/WARP EVALUATION: validating returned Colab archive
+2026-08-27 10:21:03,103 INFO Validated all returned checksums; imported 45 members
+2026-08-27 10:21:12,878 INFO Frozen 250/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:19,483 INFO Frozen 500/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:25,502 INFO Frozen 750/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:31,996 INFO Frozen 1000/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:38,749 INFO Frozen 1250/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:45,618 INFO Frozen 1500/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:52,832 INFO Frozen 1750/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:59,529 INFO Frozen 2000/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:59,612 INFO Exact and BM25 controls reproduced all turn slates and session outcomes bit-for-bit
+2026-08-27 10:22:00,655 INFO Completed experiment_10_xtr_warp_retrieval in 60.45s; WARP held-out score=0.846892 BM25=0.846109 recommendation=exact_stateful_xtr_warp_rrf

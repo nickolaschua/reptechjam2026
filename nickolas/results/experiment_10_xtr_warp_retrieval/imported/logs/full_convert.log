@@ -1,0 +1,11 @@
+[2026-08-26 19:18:04] stage=convert
+Converting full index to the WARP CPU layout...
+Compacting index at '/content/experiment_10_work/raw_indexes/full/techjam26-products-xtr-warp.nbits=4' to '/content/experiment_10_work/converted_indexes/full/techjam26-products-xtr-warp.nbits=4'
+#> centroids.dtype = torch.float32
+> Loading centroid information
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.55it/s]
+> Compacting index
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:03<00:03,  3.18s/it]100%|██████████| 2/2 [00:06<00:00,  3.44s/it]100%|██████████| 2/2 [00:06<00:00,  3.40s/it]
+> Saving compacted index
+> Repacking residuals
+Converted full index: 0.741 GiB in 1.49 minutes.

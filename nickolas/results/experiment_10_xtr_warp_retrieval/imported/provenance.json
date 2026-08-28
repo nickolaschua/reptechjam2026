@@ -1,0 +1,45 @@
+{
+  "engine": "XTR/WARP",
+  "experiment": 10,
+  "hashes": {
+    "catalog_jsonl_sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+    "collection_tsv_sha256": "43ca5b3bdd918ec9019a3a6a8a62604b0d88bd1cd6f4bac861aea18220df663e",
+    "compatibility_patch_sha256": "f8f5ce66276c01e6644c3d2716ad3f3b93be8924c607a91776d7d6d7580c3d66",
+    "configuration_sha256": "45c971458e4bdcc82d315260bb1a152dea40829f3287a9bc5300469821bde26b",
+    "input_manifest_sha256": "ee8cef470c91f4535c594fc07919fa23dc23c58425ee5b12572180d3077fbe4e",
+    "pid_to_asin_sha256": "aafaad0dd7370a90edfb0c123972ca8371fceebd88b1e3bed104bddd1b93b5f7",
+    "public_set_jsonl_sha256": "857259f7a438e6188ac63e18995b6ff4489bfcfc4a716a798b9a2aa0ee8f7579",
+    "queries_tsv_sha256": "7a6fa08c83d5b2b9e0a6c0cc543192c6ffe5ce7c20af2812b148ceb201fc3f8c"
+  },
+  "index": {
+    "device": "cuda",
+    "doc_maxlen": 512,
+    "index_bsize": 16,
+    "kmeans_niters": 4,
+    "name": "techjam26-products-xtr-warp.nbits=4",
+    "nbits": 4,
+    "nranks": 1,
+    "num_partitions": 16384,
+    "query_maxlen": 32,
+    "sample_pid_cap": 4096
+  },
+  "model": {
+    "model_id": "google/xtr-base-en",
+    "revision": "f40cd399e67dfc8ec974e922ad828610e3c83a36"
+  },
+  "retrieval": {
+    "bound": 128,
+    "device": "cpu",
+    "nprobe": 32,
+    "num_threads": 1,
+    "t_prime": null,
+    "tie_break": "score_desc_then_pid_asc",
+    "top_k": 1000
+  },
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/jlscheerer/xtr-warp.git",
+    "revision": "cca97613e6f969ac89f259946b976f8c5a6f1399"
+  },
+  "training_performed": false
+}

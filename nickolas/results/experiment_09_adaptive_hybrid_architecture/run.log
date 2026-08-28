@@ -1,0 +1,9 @@
+2026-08-26 23:27:49,821 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:27:49,822 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:29:24,362 INFO Calibration ablation adaptive_hybrid_fixed_other
+2026-08-26 23:30:10,631 INFO Calibration ablation deterministic_reranker_fixed_other
+2026-08-26 23:30:16,316 INFO Calibration ablation deterministic_reranker_entropy
+2026-08-26 23:30:48,940 INFO Calibration ablation deterministic_reranker_rank_aware
+2026-08-26 23:31:12,595 INFO Final profile/decay ablation profile_decay_fixed_other
+2026-08-26 23:31:18,245 INFO One-shot held-out evaluation of structured_state_identity_fixed_other
+2026-08-26 23:31:19,122 INFO Completed experiment_09_adaptive_hybrid_architecture in 208.67s; selected=structured_state_identity_fixed_other promote=False

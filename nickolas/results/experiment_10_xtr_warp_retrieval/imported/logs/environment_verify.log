@@ -1,0 +1,5 @@
+torch=1.13.1
+mkl=2024.0.0
+cuda_runtime=11.7
+cuda_available=True
+gpu=Tesla T4

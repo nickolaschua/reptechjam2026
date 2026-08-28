@@ -1,0 +1,24 @@
+2026-08-26 21:00:09,544 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 21:00:09,545 INFO AGENT-REALISTIC EVALUATION + ORACLE-AFTER-FREEZE DIAGNOSTIC: beginning residual analysis
+2026-08-26 21:00:49,272 INFO Frozen 100/2000 oracle-free turn rankings
+2026-08-26 21:00:55,770 INFO Frozen 200/2000 oracle-free turn rankings
+2026-08-26 21:01:03,212 INFO Frozen 300/2000 oracle-free turn rankings
+2026-08-26 21:01:11,656 INFO Frozen 400/2000 oracle-free turn rankings
+2026-08-26 21:01:19,295 INFO Frozen 500/2000 oracle-free turn rankings
+2026-08-26 21:01:25,616 INFO Frozen 600/2000 oracle-free turn rankings
+2026-08-26 21:01:33,206 INFO Frozen 700/2000 oracle-free turn rankings
+2026-08-26 21:01:40,823 INFO Frozen 800/2000 oracle-free turn rankings
+2026-08-26 21:01:48,808 INFO Frozen 900/2000 oracle-free turn rankings
+2026-08-26 21:01:56,137 INFO Frozen 1000/2000 oracle-free turn rankings
+2026-08-26 21:02:03,359 INFO Frozen 1100/2000 oracle-free turn rankings
+2026-08-26 21:02:10,397 INFO Frozen 1200/2000 oracle-free turn rankings
+2026-08-26 21:02:16,052 INFO Frozen 1300/2000 oracle-free turn rankings
+2026-08-26 21:02:21,723 INFO Frozen 1400/2000 oracle-free turn rankings
+2026-08-26 21:02:28,818 INFO Frozen 1500/2000 oracle-free turn rankings
+2026-08-26 21:02:35,549 INFO Frozen 1600/2000 oracle-free turn rankings
+2026-08-26 21:02:42,375 INFO Frozen 1700/2000 oracle-free turn rankings
+2026-08-26 21:02:48,802 INFO Frozen 1800/2000 oracle-free turn rankings
+2026-08-26 21:02:54,499 INFO Frozen 1900/2000 oracle-free turn rankings
+2026-08-26 21:03:02,095 INFO Frozen 2000/2000 oracle-free turn rankings
+2026-08-26 21:03:02,098 INFO All 2000 rankings frozen; joining oracle labels for scoring
+2026-08-26 21:03:03,555 INFO Completed experiment_07_residual_failure_analysis in 173.28s; calibration selected exact_stateful_bm25_rrf; production recommendation=exact_stateful_bm25_rrf

@@ -1,0 +1,9 @@
+failure_category,hard_failure_sessions,weak_success_sessions,session_count,non_exclusive
+no_exact_match,10,7,17,True
+ambiguous_exact_evidence,12,24,36,True
+ranking_failure,14,34,48,True
+cross_field_partial_match,14,26,40,True
+normalization_problem,0,0,0,True
+dialogue_state_problem,0,0,0,True
+insufficient_information,0,0,0,True
+semantic_retrieval_opportunity,1,0,1,True

@@ -1,0 +1,23 @@
+2026-08-26 16:17:24,521 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:17:24,521 INFO AGENT-REALISTIC EVALUATION: beginning target rank curves
+2026-08-26 16:17:58,868 INFO Ranked 100/2000 trace turns
+2026-08-26 16:18:07,506 INFO Ranked 200/2000 trace turns
+2026-08-26 16:18:16,003 INFO Ranked 300/2000 trace turns
+2026-08-26 16:18:24,173 INFO Ranked 400/2000 trace turns
+2026-08-26 16:18:32,465 INFO Ranked 500/2000 trace turns
+2026-08-26 16:18:39,669 INFO Ranked 600/2000 trace turns
+2026-08-26 16:18:47,696 INFO Ranked 700/2000 trace turns
+2026-08-26 16:18:56,228 INFO Ranked 800/2000 trace turns
+2026-08-26 16:19:04,305 INFO Ranked 900/2000 trace turns
+2026-08-26 16:19:11,330 INFO Ranked 1000/2000 trace turns
+2026-08-26 16:19:19,254 INFO Ranked 1100/2000 trace turns
+2026-08-26 16:19:27,223 INFO Ranked 1200/2000 trace turns
+2026-08-26 16:19:35,201 INFO Ranked 1300/2000 trace turns
+2026-08-26 16:19:43,143 INFO Ranked 1400/2000 trace turns
+2026-08-26 16:19:51,308 INFO Ranked 1500/2000 trace turns
+2026-08-26 16:19:59,292 INFO Ranked 1600/2000 trace turns
+2026-08-26 16:20:08,051 INFO Ranked 1700/2000 trace turns
+2026-08-26 16:20:16,250 INFO Ranked 1800/2000 trace turns
+2026-08-26 16:20:24,056 INFO Ranked 1900/2000 trace turns
+2026-08-26 16:20:33,502 INFO Ranked 2000/2000 trace turns
+2026-08-26 16:20:34,487 INFO Completed experiment_02_target_rank_curves in 189.91s

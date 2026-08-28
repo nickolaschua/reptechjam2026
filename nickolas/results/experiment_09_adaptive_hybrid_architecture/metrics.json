@@ -1,0 +1,527 @@
+{
+  "adaptive_weights": {
+    "exploratory": {
+      "bm25": 0.25,
+      "dense": 1.0,
+      "exact": 0.0,
+      "pool": 100,
+      "structured": 0.25
+    },
+    "mixed": {
+      "bm25": 0.75,
+      "dense": 0.75,
+      "exact": 0.5,
+      "pool": 75,
+      "structured": 0.5
+    },
+    "specific": {
+      "bm25": 1.0,
+      "dense": 0.25,
+      "exact": 1.0,
+      "pool": 50,
+      "structured": 1.0
+    }
+  },
+  "baseline_metrics": {
+    "calibration": {
+      "efficiency": 0.801667,
+      "hit_rate_at_10": 0.916667,
+      "mrr": 0.659114,
+      "mttc": 2.983333,
+      "sample_count": 60,
+      "technical_score": 0.816401
+    },
+    "evaluation": {
+      "efficiency": 0.848571,
+      "hit_rate_at_10": 0.964286,
+      "mrr": 0.647506,
+      "mttc": 2.514286,
+      "sample_count": 140,
+      "technical_score": 0.846109
+    },
+    "full": {
+      "efficiency": 0.8345,
+      "hit_rate_at_10": 0.95,
+      "mrr": 0.650988,
+      "mttc": 2.655,
+      "sample_count": 200,
+      "technical_score": 0.837196
+    }
+  },
+  "calibration_ablation_metrics": {
+    "adaptive_hybrid_fixed_other": {
+      "efficiency": 0.78,
+      "hit_rate_at_10": 0.9,
+      "mrr": 0.532586,
+      "mttc": 3.2,
+      "sample_count": 60,
+      "technical_score": 0.765776
+    },
+    "deterministic_reranker_entropy": {
+      "efficiency": 0.603333,
+      "hit_rate_at_10": 0.866667,
+      "mrr": 0.490933,
+      "mttc": 4.966667,
+      "sample_count": 60,
+      "technical_score": 0.70128
+    },
+    "deterministic_reranker_fixed_other": {
+      "efficiency": 0.751667,
+      "hit_rate_at_10": 0.866667,
+      "mrr": 0.524008,
+      "mttc": 3.483333,
+      "sample_count": 60,
+      "technical_score": 0.740869
+    },
+    "deterministic_reranker_rank_aware": {
+      "efficiency": 0.62,
+      "hit_rate_at_10": 0.866667,
+      "mrr": 0.482302,
+      "mttc": 4.8,
+      "sample_count": 60,
+      "technical_score": 0.702024
+    },
+    "profile_decay_fixed_other": {
+      "efficiency": 0.728333,
+      "hit_rate_at_10": 0.833333,
+      "mrr": 0.449339,
+      "mttc": 3.716667,
+      "sample_count": 60,
+      "technical_score": 0.697135
+    },
+    "structured_state_identity_fixed_other": {
+      "efficiency": 0.801667,
+      "hit_rate_at_10": 0.916667,
+      "mrr": 0.659114,
+      "mttc": 2.983333,
+      "sample_count": 60,
+      "technical_score": 0.816401
+    }
+  },
+  "calibration_comparisons": {
+    "adaptive_hybrid_fixed_other": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 1,
+      "regressed_sample_ids": [
+        "public_0081",
+        "public_0103"
+      ],
+      "regressions": 2,
+      "rescued_sample_ids": [
+        "public_0076"
+      ]
+    },
+    "deterministic_reranker_entropy": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 1,
+      "regressed_sample_ids": [
+        "public_0081",
+        "public_0103",
+        "public_0120",
+        "public_0179"
+      ],
+      "regressions": 4,
+      "rescued_sample_ids": [
+        "public_0076"
+      ]
+    },
+    "deterministic_reranker_fixed_other": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 1,
+      "regressed_sample_ids": [
+        "public_0081",
+        "public_0103",
+        "public_0120",
+        "public_0179"
+      ],
+      "regressions": 4,
+      "rescued_sample_ids": [
+        "public_0076"
+      ]
+    },
+    "deterministic_reranker_rank_aware": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 1,
+      "regressed_sample_ids": [
+        "public_0081",
+        "public_0103",
+        "public_0120",
+        "public_0179"
+      ],
+      "regressions": 4,
+      "rescued_sample_ids": [
+        "public_0076"
+      ]
+    },
+    "profile_decay_fixed_other": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 1,
+      "regressed_sample_ids": [
+        "public_0013",
+        "public_0081",
+        "public_0092",
+        "public_0103",
+        "public_0120",
+        "public_0179"
+      ],
+      "regressions": 6,
+      "rescued_sample_ids": [
+        "public_0076"
+      ]
+    },
+    "structured_state_identity_fixed_other": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 0,
+      "regressed_sample_ids": [],
+      "regressions": 0,
+      "rescued_sample_ids": []
+    }
+  },
+  "clarification_selection": {
+    "candidates": [
+      "deterministic_reranker_fixed_other",
+      "deterministic_reranker_entropy",
+      "deterministic_reranker_rank_aware"
+    ],
+    "selected": "deterministic_reranker_fixed_other",
+    "selected_question_method": "fixed_other"
+  },
+  "elapsed_seconds": 208.667,
+  "experiment": 9,
+  "hashes": {
+    "catalog": {
+      "path": "techjam-conversational-search\\data\\catalog.jsonl",
+      "sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67"
+    },
+    "dense_embeddings": {
+      "path": "nickolas\\results\\cache\\dense_da979b05a68af864_minilm_seq128.npy",
+      "sha256": "ef51a7c67a9cceaa39d6cd1930c2093563b7e689a97961ac10876cfc54a19b31"
+    },
+    "dense_model": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "tree_sha256": "c8da0e48a39ce6b179bdf81a15d387dc3a70a0e79ee76a3a117b864ab4c17cb1"
+    },
+    "experiment_07_baseline_source": {
+      "path": "nickolas\\experiments\\experiment_07_residual_failure_analysis.py",
+      "sha256": "6c2bf77ef7d3a7974190349f0ec8acd75cf318be3065d1f3b6ec5d560c7b5de1"
+    },
+    "frozen_split": {
+      "path": "nickolas\\results\\experiment_06_slate_width_counterfactuals\\metrics.json",
+      "sha256": "afc88e024d7dda56f6fb6300f34e9c46e644bd7e197104d878bb3823167be14b"
+    },
+    "public_set": {
+      "path": "techjam-conversational-search\\data\\public_set.jsonl",
+      "sha256": "857259f7a438e6188ac63e18995b6ff4489bfcfc4a716a798b9a2aa0ee8f7579"
+    },
+    "source": {
+      "path": "nickolas\\experiments\\experiment_09_adaptive_hybrid_architecture.py",
+      "sha256": "f9c4a277511d2e8483bd12e12ce7bcf5a0476a797bc9fe90617dc256ac752464"
+    },
+    "submission_agent_baseline": {
+      "path": "techjam-conversational-search\\starter\\agent.py",
+      "sha256": "852122aaf9cd27eee5c05cfc0a7516e12cd9ee918b095aa0643bf3abb1a49b93"
+    }
+  },
+  "latency": {
+    "count": 2000,
+    "mean_ms": 6.922791,
+    "p50_ms": 0.7829,
+    "p95_ms": 22.79188
+  },
+  "reranker_formula": {
+    "category_consistency": 0.1,
+    "dense_similarity": 0.2,
+    "explicit_or_negated_violations": -0.3,
+    "hard_constraint_satisfaction": 0.25,
+    "hybrid_retrieval": 0.35,
+    "profile_final_ablation": {
+      "hybrid_retrieval": 0.3,
+      "profile_evidence": 0.05,
+      "soft_decay": "0.9^turn_age"
+    },
+    "soft_preference_satisfaction": 0.1
+  },
+  "retrieval_contract": {
+    "excluded_before_freeze": [
+      "sample_id",
+      "scenario_type",
+      "target_asin",
+      "oracle_card",
+      "future_turns"
+    ],
+    "no_llm_cross_encoder_vector_database_or_new_service": true,
+    "offline_deterministic_only": true,
+    "ranker_input_fields": [
+      "category",
+      "intent_seed",
+      "typed_constraints",
+      "negations",
+      "source_turn",
+      "strength",
+      "profile_tags",
+      "asked_attributes"
+    ]
+  },
+  "selection": {
+    "cumulative_candidates": [
+      "structured_state_identity_fixed_other",
+      "adaptive_hybrid_fixed_other",
+      "deterministic_reranker_fixed_other",
+      "profile_decay_fixed_other"
+    ],
+    "held_out_comparison_to_experiment_07": {
+      "baseline_hard_failures": 5,
+      "hard_failure_rescues": 0,
+      "regressed_sample_ids": [],
+      "regressions": 0,
+      "rescued_sample_ids": []
+    },
+    "held_out_evaluated_once": true,
+    "held_out_metrics": {
+      "efficiency": 0.848571,
+      "hit_rate_at_10": 0.964286,
+      "mrr": 0.647506,
+      "mttc": 2.514286,
+      "sample_count": 140,
+      "technical_score": 0.846109
+    },
+    "production_recommendation": "experiment_07_exact_stateful_bm25_rrf",
+    "promotion_gates": {
+      "mrr_at_least_experiment_07": true,
+      "regressions_do_not_exceed_rescues": true,
+      "rescues_at_least_one_hard_failure": false,
+      "technical_score_at_least_experiment_07": true
+    },
+    "recommend_promotion": false,
+    "selected_on_calibration": "structured_state_identity_fixed_other",
+    "submission_agent_modified": false,
+    "tie_break_order": [
+      "TechnicalScore",
+      "rescues",
+      "fewer regressions",
+      "MRR",
+      "method name"
+    ]
+  },
+  "slug": "adaptive_hybrid_architecture",
+  "split": {
+    "calibration_count": 60,
+    "calibration_ids": [
+      "public_0001",
+      "public_0003",
+      "public_0004",
+      "public_0005",
+      "public_0010",
+      "public_0013",
+      "public_0021",
+      "public_0022",
+      "public_0025",
+      "public_0026",
+      "public_0028",
+      "public_0035",
+      "public_0039",
+      "public_0040",
+      "public_0052",
+      "public_0053",
+      "public_0054",
+      "public_0055",
+      "public_0060",
+      "public_0061",
+      "public_0065",
+      "public_0074",
+      "public_0076",
+      "public_0081",
+      "public_0083",
+      "public_0087",
+      "public_0092",
+      "public_0094",
+      "public_0098",
+      "public_0099",
+      "public_0103",
+      "public_0108",
+      "public_0115",
+      "public_0116",
+      "public_0118",
+      "public_0120",
+      "public_0125",
+      "public_0126",
+      "public_0132",
+      "public_0134",
+      "public_0147",
+      "public_0152",
+      "public_0153",
+      "public_0154",
+      "public_0155",
+      "public_0160",
+      "public_0165",
+      "public_0166",
+      "public_0169",
+      "public_0170",
+      "public_0176",
+      "public_0179",
+      "public_0181",
+      "public_0184",
+      "public_0185",
+      "public_0186",
+      "public_0187",
+      "public_0188",
+      "public_0196",
+      "public_0198"
+    ],
+    "evaluation_count": 140,
+    "evaluation_ids": [
+      "public_0002",
+      "public_0006",
+      "public_0007",
+      "public_0008",
+      "public_0009",
+      "public_0011",
+      "public_0012",
+      "public_0014",
+      "public_0015",
+      "public_0016",
+      "public_0017",
+      "public_0018",
+      "public_0019",
+      "public_0020",
+      "public_0023",
+      "public_0024",
+      "public_0027",
+      "public_0029",
+      "public_0030",
+      "public_0031",
+      "public_0032",
+      "public_0033",
+      "public_0034",
+      "public_0036",
+      "public_0037",
+      "public_0038",
+      "public_0041",
+      "public_0042",
+      "public_0043",
+      "public_0044",
+      "public_0045",
+      "public_0046",
+      "public_0047",
+      "public_0048",
+      "public_0049",
+      "public_0050",
+      "public_0051",
+      "public_0056",
+      "public_0057",
+      "public_0058",
+      "public_0059",
+      "public_0062",
+      "public_0063",
+      "public_0064",
+      "public_0066",
+      "public_0067",
+      "public_0068",
+      "public_0069",
+      "public_0070",
+      "public_0071",
+      "public_0072",
+      "public_0073",
+      "public_0075",
+      "public_0077",
+      "public_0078",
+      "public_0079",
+      "public_0080",
+      "public_0082",
+      "public_0084",
+      "public_0085",
+      "public_0086",
+      "public_0088",
+      "public_0089",
+      "public_0090",
+      "public_0091",
+      "public_0093",
+      "public_0095",
+      "public_0096",
+      "public_0097",
+      "public_0100",
+      "public_0101",
+      "public_0102",
+      "public_0104",
+      "public_0105",
+      "public_0106",
+      "public_0107",
+      "public_0109",
+      "public_0110",
+      "public_0111",
+      "public_0112",
+      "public_0113",
+      "public_0114",
+      "public_0117",
+      "public_0119",
+      "public_0121",
+      "public_0122",
+      "public_0123",
+      "public_0124",
+      "public_0127",
+      "public_0128",
+      "public_0129",
+      "public_0130",
+      "public_0131",
+      "public_0133",
+      "public_0135",
+      "public_0136",
+      "public_0137",
+      "public_0138",
+      "public_0139",
+      "public_0140",
+      "public_0141",
+      "public_0142",
+      "public_0143",
+      "public_0144",
+      "public_0145",
+      "public_0146",
+      "public_0148",
+      "public_0149",
+      "public_0150",
+      "public_0151",
+      "public_0156",
+      "public_0157",
+      "public_0158",
+      "public_0159",
+      "public_0161",
+      "public_0162",
+      "public_0163",
+      "public_0164",
+      "public_0167",
+      "public_0168",
+      "public_0171",
+      "public_0172",
+      "public_0173",
+      "public_0174",
+      "public_0175",
+      "public_0177",
+      "public_0178",
+      "public_0180",
+      "public_0182",
+      "public_0183",
+      "public_0189",
+      "public_0190",
+      "public_0191",
+      "public_0192",
+      "public_0193",
+      "public_0194",
+      "public_0195",
+      "public_0197",
+      "public_0199",
+      "public_0200"
+    ],
+    "source": "C:\\Users\\nicko\\Desktop\\techjam26\\nickolas\\results\\experiment_06_slate_width_counterfactuals\\metrics.json",
+    "source_sha256": "afc88e024d7dda56f6fb6300f34e9c46e644bd7e197104d878bb3823167be14b",
+    "validated_partition": true
+  },
+  "state_identity": {
+    "bit_for_bit_experiment_07_identity": true,
+    "specificity_counts": {
+      "exploratory": 100,
+      "mixed": 30,
+      "specific": 1870
+    },
+    "turn_rankings_reproduced": 2000
+  }
+}
