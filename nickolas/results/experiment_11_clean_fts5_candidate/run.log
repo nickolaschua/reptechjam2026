@@ -1,0 +1,9 @@
+2026-08-27 11:25:41,754 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-27 11:25:41,756 INFO RETROSPECTIVE AGENT EVALUATION: clean FTS5 candidate
+2026-08-27 11:25:41,766 INFO Evaluating current submission control
+2026-08-27 11:28:21,533 INFO Evaluating Yang Experiment 1 control
+2026-08-27 11:29:23,304 INFO Evaluating clean candidate configuration clean_specific_global_pagination
+2026-08-27 11:30:18,624 INFO Evaluating clean candidate configuration clean_specific_query_pagination
+2026-08-27 11:31:00,304 INFO Evaluating clean candidate configuration clean_other_query_pagination
+2026-08-27 11:31:24,317 INFO Evaluating clean candidate configuration clean_specific_no_pagination
+2026-08-27 11:31:49,192 INFO Completed experiment_11_clean_fts5_candidate in 367.14s; selected=clean_specific_query_pagination full=0.894362 evaluation=0.896425

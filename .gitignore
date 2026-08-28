@@ -35,3 +35,13 @@ yangxu/
 sessions/
 successful_*.txt
 failed_sessions.txt
+
+# Experiment 10 large retrieval artifacts and transfer archives
+experiment_10_colab_input.zip
+experiment_10_colab_output.zip
+**/experiment_10_colab_output.zip
+nickolas/results/experiment_10*/warp_index/
+nickolas/results/experiment_10*/imported/warp_index/
+retrieval/experiment_10_build/
+retrieval/experiment_10_staging/
+retrieval/xtr-warp-inspect/

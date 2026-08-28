@@ -1,0 +1,2392 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-26T13:32:03.807339+00:00",
+  "metadata": {
+    "dataset": "C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\data\\public_set.jsonl",
+    "catalog": "C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\data\\catalog.jsonl",
+    "baseline_agent": {
+      "label": "Provided agent",
+      "path": "C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search-participant-kit\\starter\\agent.py"
+    },
+    "candidate_agent": {
+      "label": "Current system",
+      "path": "C:\\Users\\nicko\\Desktop\\techjam26\\techjam-conversational-search\\starter\\agent.py"
+    },
+    "max_turns": 10,
+    "top_k": 10
+  },
+  "aggregate": {
+    "baseline": {
+      "sample_count": 200,
+      "hit_rate_at_10": 0.125,
+      "mrr": 0.068034,
+      "mttc": 9.81,
+      "efficiency": 0.119,
+      "technical_score": 0.10671,
+      "scenario_metrics": {
+        "boundary": {
+          "sample_count": 10,
+          "hit_rate_at_10": 0.0,
+          "mrr": 0.0,
+          "mttc": 11.0,
+          "efficiency": 0.0,
+          "technical_score": 0.0
+        },
+        "browsing": {
+          "sample_count": 80,
+          "hit_rate_at_10": 0.025,
+          "mrr": 0.004514,
+          "mttc": 10.75,
+          "efficiency": 0.025,
+          "technical_score": 0.018854
+        },
+        "buying": {
+          "sample_count": 80,
+          "hit_rate_at_10": 0.2375,
+          "mrr": 0.126508,
+          "mttc": 8.625,
+          "efficiency": 0.2375,
+          "technical_score": 0.204202
+        },
+        "intent_override": {
+          "sample_count": 30,
+          "hit_rate_at_10": 0.133333,
+          "mrr": 0.104167,
+          "mttc": 10.066667,
+          "efficiency": 0.093333,
+          "technical_score": 0.116583
+        }
+      }
+    },
+    "candidate": {
+      "sample_count": 200,
+      "hit_rate_at_10": 0.955,
+      "mrr": 0.651821,
+      "mttc": 2.61,
+      "efficiency": 0.839,
+      "technical_score": 0.840846,
+      "scenario_metrics": {
+        "boundary": {
+          "sample_count": 10,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.746667,
+          "mttc": 3.1,
+          "efficiency": 0.79,
+          "technical_score": 0.882
+        },
+        "browsing": {
+          "sample_count": 80,
+          "hit_rate_at_10": 0.975,
+          "mrr": 0.617024,
+          "mttc": 2.3,
+          "efficiency": 0.87,
+          "technical_score": 0.846607
+        },
+        "buying": {
+          "sample_count": 80,
+          "hit_rate_at_10": 0.9375,
+          "mrr": 0.642842,
+          "mttc": 2.275,
+          "efficiency": 0.8725,
+          "technical_score": 0.836103
+        },
+        "intent_override": {
+          "sample_count": 30,
+          "hit_rate_at_10": 0.933333,
+          "mrr": 0.736944,
+          "mttc": 4.166667,
+          "efficiency": 0.683333,
+          "technical_score": 0.824417
+        }
+      }
+    },
+    "delta": {
+      "hit_rate_at_10": 0.83,
+      "mrr": 0.583787,
+      "mttc_improvement": 7.2,
+      "technical_score": 0.734136
+    },
+    "session_status_counts": {
+      "baseline_better": 7,
+      "candidate_better": 8,
+      "candidate_win": 166,
+      "same": 19
+    }
+  },
+  "example": {
+    "sample_id": "public_0001",
+    "scenario_type": "buying",
+    "category_bucket": "clothing",
+    "difficulty_bucket": "easy",
+    "user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "fit",
+        "comfort",
+        "durability"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize fit, comfort, durability; ratings are usually positive."
+    },
+    "target": {
+      "parent_asin": "B09PYB7B6Z",
+      "title": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+      "store": "QIAN0813",
+      "price": 9.99,
+      "average_rating": 4.5,
+      "rating_number": 490,
+      "categories": [
+        "Clothing, Shoes & Jewelry",
+        "Boys",
+        "Jewelry",
+        "Necklaces"
+      ]
+    },
+    "simulator": {
+      "intent_card": {
+        "target_category": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+        "hard_constraints": [
+          "Material:alloy",
+          "Triple Moon Pentagram Symbol"
+        ],
+        "soft_preferences": [
+          "The Triple Moon represents the Phases of the Moon which are linked to the three aspects of the Goddess and the phases of the Life of Women.The Pentagram representing the holistic r",
+          "♥ a special gift to your wife/mom/girlfriend/daughter/grandmother/best friend/kids on St. Valentine’s Day, Easter， Christmas day,Birthday,Anniversary ,Independence Day,Labor Day,Th"
+        ]
+      },
+      "behavior": {
+        "scenario_type": "buying"
+      }
+    },
+    "baseline": {
+      "sample_id": "public_0001",
+      "scenario_type": "buying",
+      "hit": false,
+      "first_hit_turn": null,
+      "best_rank": null,
+      "reciprocal_rank": 0.0,
+      "reported_token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "turns": [
+        {
+          "turn": 1,
+          "user_message": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B06XBRZC6T",
+              "title": "Charmed Craft Floating Charm Living Memory Lockets Keychain Magnetic Glass Key Ring Jewelry (regular heart)",
+              "store": "Charmed Craft",
+              "price": null,
+              "average_rating": 3.6,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Jewelry",
+                "Necklaces & Pendants",
+                "Pendants"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B01IGYIPFI",
+              "title": "Palovenir Handmade Sloth Pendant Necklace Collection",
+              "store": "Palovenir",
+              "price": 15.99,
+              "average_rating": 4.4,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B073PD4VDL",
+              "title": "Sindary Austrian Crystal Unique 3.35\" Unicorn Horse Keychain Pendant K6172",
+              "store": "Animal Key Chain-Sindary Jewelry",
+              "price": 15.95,
+              "average_rating": 4.0,
+              "rating_number": 28,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B079KSQDR3",
+              "title": "FL BEAUTY Sterling Silver Plated 3D Dark green Dinosaur Charm Women Girls Hook Dangle Earring",
+              "store": "FL BEAUTY",
+              "price": 6.99,
+              "average_rating": 4.3,
+              "rating_number": 126,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B09PTKKFTZ",
+              "title": "SONGCHANGJEWELRY Genshin-I Game HuTao Keychain - Anime Figure Enamel Key Pendant - Key Accessories for Anime Lovers (K00599-02)",
+              "store": "SONGCHANGJEWELRY",
+              "price": 9.99,
+              "average_rating": 4.7,
+              "rating_number": 19,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Accessories",
+                "Keychains"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09MH2HT6J",
+              "title": "PADRIO Vintage Skull Keychain Personalized Bag Charm for Father's Day and Birthdays Metal Key Ring Leather Dad Men's Gift",
+              "store": "PADRIO",
+              "price": 10.99,
+              "average_rating": 4.5,
+              "rating_number": 88,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Accessories",
+                "Keyrings, Keychains & Charms"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B01MTMO516",
+              "title": "AKOAK 6 Pieces Pizza Pendant Key Chain Buckle Purse Bag Charm Key Jewelry Chic Accessories Ornaments",
+              "store": "AKOAK",
+              "price": 7.98,
+              "average_rating": 3.9,
+              "rating_number": 50,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Accessories",
+                "Keyrings, Keychains & Charms"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B00VWBP5II",
+              "title": "Clearly Charming Round Floating Charm Locket Necklace with Alloy Chain",
+              "store": "Clearly Charming",
+              "price": null,
+              "average_rating": 3.6,
+              "rating_number": 7,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B00TPW9ZS2",
+              "title": "One Pair Couple Key Chain Love Rabbit Bunny Alloy Keychains Key Ring Ideal Gift for Lovers",
+              "store": "None",
+              "price": null,
+              "average_rating": 5.0,
+              "rating_number": 2,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Accessories",
+                "Keychains"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B0BXP9MW6Z",
+              "title": "HOSBY 3 Pcs Smile Expression Keychains for Women Bag Charms Key Chains Car Key Pendant for Purse Handbag Bag Decoration",
+              "store": "HOSBY",
+              "price": 10.9,
+              "average_rating": 4.6,
+              "rating_number": 49,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Accessories",
+                "Keyrings, Keychains & Charms"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 2,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 3,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 4,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 5,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 6,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 7,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 8,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 9,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": "Those options are not quite right yet. Ask me about one specific attribute."
+        },
+        {
+          "turn": 10,
+          "user_message": "Those options are not quite right yet. Ask me about one specific attribute.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "Here are the closest matches I found.",
+          "ask_attribute": null,
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": false,
+              "parent_asin": "B07VBL18RL",
+              "title": "Inpro Men's ECO Recyclable Padded Bike Shorts, Cycling Bibs Shorts Optional UPF50+",
+              "store": "BlackSports",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 231,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Cycling",
+                "Men",
+                "Tights, Pants & Shorts",
+                "Shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07KFZTLKB",
+              "title": "Bslingerie Ladies Yellow Long Sleeves Peplum Bodycon One Piece Dress",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.5,
+              "rating_number": 157,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Club & Night Out"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B08J47KN34",
+              "title": "CHIC DIARY Halloween Socks Novelty Socks Women Crazy Casual Socks Funny Lovely Pattern Crew Socks",
+              "store": "CHIC DIARY",
+              "price": 3.99,
+              "average_rating": 5.0,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B01MY0762X",
+              "title": "Bslingerie Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B01JYYRJFG",
+              "title": "Bslingerie® Womens Waist Trainer Vest Shaperwear Waist Cincher Sauna Suit",
+              "store": "bslingerie",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 94,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Lingerie, Sleep & Lounge",
+                "Lingerie",
+                "Shapewear",
+                "Waist Cinchers"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B09VT59HR8",
+              "title": "American Trends Women Swimsuits Retro One Piece Bathing Suit Tummy Control Swimwear High Waist Monokini",
+              "store": "American Trends",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 16,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Competitive Swimwear",
+                "Women",
+                "One-Piece Suits"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B07H8PYFD6",
+              "title": "The Hippies were Right Funny T Shirt Love and Peace Tee",
+              "store": "Think Out Loud Apparel",
+              "price": 21.99,
+              "average_rating": 4.7,
+              "rating_number": 5,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B08HCP9YTV",
+              "title": "1pc Surgical Steel Piercing Ring for Nose Septum Cartilage Helix Tragus Conch Rook Daith Lobe 20g-18g-16g-14g-12g-10g 5mm-6mm-7mm-8mm-9mm-10mm-11mm-12mm-14mm-16mm Silver/Gold/Rose Gold/Black/Rainbow",
+              "store": "JOFUKIN",
+              "price": 9.99,
+              "average_rating": 4.3,
+              "rating_number": 10297,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Body Jewelry",
+                "Piercing Jewelry",
+                "Rings"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B08TVHKLLZ",
+              "title": "CAMEL Men's Running Jackets Lightweight Upf 50+ Sun Protective Hoodie Quick Dry Packable Sunblock Golf Windbreaker",
+              "store": "CAMEL",
+              "price": null,
+              "average_rating": 4.0,
+              "rating_number": 20,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Running",
+                "Men",
+                "Jackets"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B06WVDY38N",
+              "title": "Womens Girls Best Socks Collection - Novelty Cute Lovely Animal Character Design Patterned, Perfect Secret Santa Present - Good for Gift Under $20 - One Size Fits All (Cute Dogs 6 Set)",
+              "store": "Happy Tree",
+              "price": null,
+              "average_rating": 4.3,
+              "rating_number": 71,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            }
+          ],
+          "target_rank": null,
+          "eligible_hit": false,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": null,
+          "error": null,
+          "next_user_message": null
+        }
+      ]
+    },
+    "candidate": {
+      "sample_id": "public_0001",
+      "scenario_type": "buying",
+      "hit": true,
+      "first_hit_turn": 1,
+      "best_rank": 1,
+      "reciprocal_rank": 1.0,
+      "reported_token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "turns": [
+        {
+          "turn": 1,
+          "user_message": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "I am using 1 stated preference. What other requirement should I consider?",
+          "ask_attribute": "other",
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": true,
+              "parent_asin": "B09PYB7B6Z",
+              "title": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+              "store": "QIAN0813",
+              "price": 9.99,
+              "average_rating": 4.5,
+              "rating_number": 490,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07CVVF3G2",
+              "title": "PANGRUI Exquisite Minimalism Style Kangaroo Animal Pendant Antique Simple Seahorse Necklace",
+              "store": "PANGRUI",
+              "price": 9.7,
+              "average_rating": 4.0,
+              "rating_number": 1,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B075KXNBNF",
+              "title": "OIDEA Double Mens Punk Cool Black Military Dog Tag Pendant Necklace for Birthday",
+              "store": "OIDEA",
+              "price": 8.99,
+              "average_rating": 5.0,
+              "rating_number": 2,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B0140NWUGE",
+              "title": "Elobeth 1Pc Silver- Women Lady Amazing Retro Alloy Crucifix Cross Pendant Chain Necklace Accessories",
+              "store": "EloBeth",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B017NHP88G",
+              "title": "Jovivi Retro Bohemia Style Millet Chain Crystal Phoenix Peacock Pendant Necklace for Women Girls",
+              "store": "Jovivi",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 23,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B077J2Y5FB",
+              "title": "Joya Gift Dainty Beads Gold Choker Necklace for Women Simple Boho Minimalist Jewellry",
+              "store": "Joya Gift",
+              "price": 8.58,
+              "average_rating": 3.7,
+              "rating_number": 48,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Chokers"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B072PTLN1L",
+              "title": "Z-Jeris Women's Fashion Jewelry Simple Tassel Pendant Long Chain Necklace",
+              "store": "Z-Jeris",
+              "price": 10.68,
+              "average_rating": 3.9,
+              "rating_number": 15,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B07ZFM77HB",
+              "title": "SanLan Big Skull and Dead Moth Head Insect Jewellery Butterfly Pendant Necklace",
+              "store": "SanLan",
+              "price": 10.0,
+              "average_rating": 4.6,
+              "rating_number": 390,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B07CZ2TPVB",
+              "title": "WLL Gold Enamel Colorful Rainbow Pendant Necklace Girls Gifts",
+              "store": "WLL",
+              "price": 9.99,
+              "average_rating": 4.1,
+              "rating_number": 47,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Jewelry",
+                "Necklaces & Pendants",
+                "Pendants"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B0046EC1NK",
+              "title": "Amazon Collection Sterling Silver Diamond Accent Lotus Flower Pendant Necklace, 18\"",
+              "store": "Amazon Collection",
+              "price": null,
+              "average_rating": 4.5,
+              "rating_number": 240,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            }
+          ],
+          "target_rank": 1,
+          "eligible_hit": true,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": {
+            "mode": "exact_stateful_bm25_rrf",
+            "category": "Jewelry Necklaces",
+            "constraints": [
+              "Material:alloy"
+            ]
+          },
+          "error": null,
+          "next_user_message": null
+        }
+      ]
+    },
+    "comparison": {
+      "status": "candidate_win",
+      "hit_delta": 1,
+      "turn_delta": null,
+      "rank_delta": null
+    }
+  }
+}

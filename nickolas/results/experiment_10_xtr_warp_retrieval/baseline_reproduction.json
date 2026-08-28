@@ -1,0 +1,25 @@
+{
+  "bm25_full_metrics_bit_for_bit": true,
+  "bm25_sessions_bit_for_bit": true,
+  "bm25_top_10_bit_for_bit": true,
+  "exact_full_metrics_bit_for_bit": true,
+  "exact_sessions_bit_for_bit": true,
+  "exact_top_10_bit_for_bit": true,
+  "passed": true,
+  "session_outcomes_checked_per_control": 200,
+  "sources": {
+    "metrics": {
+      "path": "nickolas\\results\\experiment_07_residual_failure_analysis\\metrics.json",
+      "sha256": "3b6f1f707080ff7781fefe7743dd29615d378f0fa6b757f975f4a3a23af1a9d8"
+    },
+    "rows": {
+      "path": "nickolas\\results\\experiment_07_residual_failure_analysis\\rows.csv",
+      "sha256": "36ca387ef11017a0d74dd93d3e3ac29c7fff84ffbf9f54d6645dc28669d2faac"
+    },
+    "sessions": {
+      "path": "nickolas\\results\\experiment_07_residual_failure_analysis\\sessions.json",
+      "sha256": "071dbcfa355f9bea09e454e6d27991e732ca1cb9a1e3533c69e9accd75ce0d53"
+    }
+  },
+  "turn_slates_checked_per_control": 2000
+}

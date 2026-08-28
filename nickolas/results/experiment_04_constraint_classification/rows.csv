@@ -1,0 +1,801 @@
+sample_id,scenario_type,constraint_kind,position_within_kind,constraint,assigned_type,matching_rules_in_order,multi_rule,precedence_winner,disclosure_turn,full_color_regex_match,color_classification_mismatch,revealed_by_category,revealed_by_brand,revealed_by_other,oracle_only
+public_0001,buying,hard,1,Material:alloy,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0001,buying,hard,2,Triple Moon Pentagram Symbol,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0001,buying,soft,1,The Triple Moon represents the Phases of the Moon which are linked to the three aspects of the Goddess and the phases of the Life of Women.The Pentagram representing the holistic r,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0001,buying,soft,2,"♥ a special gift to your wife/mom/girlfriend/daughter/grandmother/best friend/kids on St. Valentine’s Day, Easter， Christmas day,Birthday,Anniversary ,Independence Day,Labor Day,Th",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0002,intent_override,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0002,intent_override,hard,2,100% Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0002,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0002,intent_override,soft,2,Buckle closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0003,intent_override,hard,1,Water Resistant,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0003,intent_override,hard,2,3 Year Battery,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0003,intent_override,soft,1,Day / Date Indicator,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0003,intent_override,soft,2,Stainless Steel Band,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0004,intent_override,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0004,intent_override,hard,2,"Polyester,Cotton,Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0004,intent_override,soft,1,"Quality soft cottonblend camisole, 95% cotton, 5% spandex, Neon Colors 57% cotton 38% polyester 5% spandex",material,"[""material"", ""color""]",True,material,4,False,False,False,False,True,True
+public_0004,intent_override,soft,2,Long torso camisole for extra coverage with spagetti adjustable strap for perfect fit,style,"[""style""]",False,style,4,False,False,False,False,True,True
+public_0005,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0005,buying,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0005,buying,soft,1,"Shaft measures approximately 8.37"" from arch",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0005,buying,soft,2,Warm And Comfortable Women’s Winter Boots: These Women Winter Boots Featuring Thermolite Insulation Rated To -15F. Fully Lined With Soft Faux Fur To Keep The Feet Warm All Day Long,use_case,"[""use_case""]",False,use_case,3,False,False,False,False,True,True
+public_0006,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0006,browsing,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0006,browsing,soft,1,Drawstring closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0006,browsing,soft,2,High quality mesh for maximum breathability to keep you cool,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0007,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0007,browsing,hard,2,"75% Polyester, 20% Rayon, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0007,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0007,browsing,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0008,buying,hard,1,nylon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0008,buying,hard,2,"96% Nylon, 4% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0008,buying,soft,1,Pull-On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0008,buying,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0009,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0009,buying,hard,2,Soft Washed PU Leather with Convenient side Pockets,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0009,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0009,buying,soft,2,Adjustable and Removable Shoulder Strap,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0010,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0010,buying,hard,2,"Stretchy fabric: 95% modal, 5% spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0010,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0010,buying,soft,2,Snap closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0011,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0011,browsing,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0011,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0011,browsing,soft,2,undershirts closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0012,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0012,browsing,hard,2,"95% Polyester, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0012,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0012,browsing,soft,2,Wrap closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0013,intent_override,hard,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0013,intent_override,hard,2,Textile Upper. Textile Covered EVA Footbed. Rubber Outsole,color,"[""color""]",False,color,2,False,True,False,False,True,True
+public_0013,intent_override,soft,1,Received APMA (American Podiatric Medical Association) Seal of Acceptance,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0013,intent_override,soft,2,"YOUR NEW FAVORITE SLIPPERS: Slip into divine comfort with Gemma, a plush mule-style spa slipper with an adjustable hook-and-loop closure across the vamp",style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0014,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0014,browsing,hard,2,"Solids: 100% Cotton; heathers: 75% cotton, 25% polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0014,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0014,browsing,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0015,browsing,hard,1,fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0015,browsing,hard,2,Made in the USA or Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0015,browsing,soft,1,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0015,browsing,soft,2,Shaft measures approximately 8#inches from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0016,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0016,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0016,browsing,soft,1,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0016,browsing,soft,2,Shaft measures approximately ankle-high from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0017,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0017,buying,hard,2,color: red,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0017,buying,soft,1,Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0017,buying,soft,2,Leather lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0018,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0018,buying,hard,2,"Modal,Polyester,Cotton",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0018,buying,soft,1,Pull On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0018,buying,soft,2,"Material: 95%Cotton & 5%Polyester - Made of Superior Quality Modal Fiber, Ultra Light-Weight, Soft & Smooth, Feels Really Comfortable, Which Keep You Cool & Dry All Day Long",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0019,browsing,hard,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0019,browsing,hard,2,"Shaft measures approximately 5.5"" from arch",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0019,browsing,soft,1,"Platform measures approximately 0.5""",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0019,browsing,soft,2,"Boot opening measures approximately 6.5"" around",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0020,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0020,buying,hard,2,color: grey,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0020,buying,soft,1,"Solid colors: 100% Cotton; Heather Grey: 90% Cotton, 10% Polyester; All Other Heathers: 50% Cotton, 50% Polyester",material,"[""material"", ""color""]",True,material,2,True,True,False,False,True,True
+public_0020,buying,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0021,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0021,browsing,hard,2,"98% Polyester, 2% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0021,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0021,browsing,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0022,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0022,buying,hard,2,"Fabric: 100% Cotton, Soft, Comfy, Breathable and keep you cool",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0022,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0022,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0023,intent_override,hard,1,Hand Wash Only,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0023,intent_override,hard,2,Item model number: G796,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0023,intent_override,soft,1,Department: Womens,style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0023,intent_override,soft,2,"Date First Available: March 19, 2021",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0024,buying,hard,1,rayon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0024,buying,hard,2,100 rayon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0024,buying,soft,1,Machine Wash,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0024,buying,soft,2,BOHOSTYLE: Your womens off shoulder jumpsuit has an exaggerated loose fit with beautiful embroidery. It is perfect if you want to keep up with the latest trends without sacrificing,style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0025,browsing,hard,1,spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0025,browsing,hard,2,65%Polyester30%Viscose5%Spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0025,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0025,browsing,soft,2,Hook and Eye closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0026,buying,hard,1,100% Synthetic,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0026,buying,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0026,buying,soft,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0026,buying,soft,2,Shaft measures approximately low-top from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0027,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0027,buying,hard,2,"73% Cotton, 25% Polyester, 2% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0027,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0027,buying,soft,2,Zipper fly with button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0028,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0028,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0028,buying,soft,1,Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0028,buying,soft,2,Polyester lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0029,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0029,buying,hard,2,"Back for a second time, it's the ever comfy, ever stylish Yoga Sling 2 sandal from Sanuk®. A sandal that's a flexible as you—win!",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0029,buying,soft,1,"New lightweight, two-way stretch knit upper with sling comfort construction",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0029,buying,soft,2,Sealed edge footbed made from real yoga mats,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0030,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0030,buying,hard,2,"Polyester,Polar Fleece",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0030,buying,soft,1,Button closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0030,buying,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0031,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0031,buying,hard,2,"78% Cotton, 20% Polyester, 2% Elastane",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0031,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0031,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0032,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0032,buying,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0032,buying,soft,1,Pull On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0032,buying,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0033,browsing,hard,1,fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0033,browsing,hard,2,Mesh Fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0033,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0033,browsing,soft,2,MD + Air Cushion sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0034,intent_override,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0034,intent_override,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0034,intent_override,soft,1,"Cowhide Leather,Rubber Sole,Hand-Sewn Loafers for Women",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0034,intent_override,soft,2,"Leather Loafers Women:can be bend and curled in 360°,soft and comfortable",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0035,boundary,hard,1,fabric,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0035,boundary,hard,2,100% Textile,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0035,boundary,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0035,boundary,soft,2,Rubber sole,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0036,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0036,browsing,hard,2,color: pink,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0036,browsing,soft,1,"DAILY JEWELRY SET: 47 Pairs earrings in 1 collection Box, Various trendy styles, hoop earrings, drop earrings, dangle earrings,stud earrings, offer you many options to wear, Chic d",style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0036,browsing,soft,2,"FASHIONABLE EARRINGS BULK: Each pair of the earrings is carefully selected from the most popular earrings favored by customers.These fashion dangle earring set including butterfly,",color,"[""color""]",False,color,3,False,True,False,False,True,True
+public_0037,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0037,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0037,browsing,soft,1,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0037,browsing,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0038,intent_override,hard,1,Textile,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0038,intent_override,hard,2,Made in the USA or Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0038,intent_override,soft,1,Synthetic sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0038,intent_override,soft,2,Lace Slip On Sneaker,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0039,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0039,browsing,hard,2,"80% Polyester, 20% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0039,browsing,soft,1,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0039,browsing,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0040,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0040,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0040,browsing,soft,1,100% Cotton,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0040,browsing,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0041,boundary,hard,1,polyester,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0041,boundary,hard,2,3X women tops care: Hand wash or machine wash in gentle; Hang to dry; No ironing; No shrinkage,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0041,boundary,soft,1,进口,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0041,boundary,soft,2,Pull On closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0042,buying,hard,1,Imported,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0042,buying,hard,2,color: green,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0042,buying,soft,1,Gold-tone 18mm stainless steel expansion band fits up to 8-inch wrist circumference,style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0042,buying,soft,2,"100-hour chronograph with lap & split times; month, day & date calendar",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0043,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0043,browsing,hard,2,"60% Cotton, 23% Viscose, 16% Polyester, 1% Elastane",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0043,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0043,browsing,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0044,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0044,buying,hard,2,"Polyester,Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0044,buying,soft,1,Rope closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0044,buying,soft,2,"【100% chlorine-resistant durable】KGKE mens swimming jammer swimsuit have 4-Level chlorine resistant fabric,worth to prevent chaffing and fadding.FBT fabrics keep shape retention af",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0045,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0045,buying,hard,2,"95% Polyester, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0045,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0045,buying,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0046,intent_override,hard,1,wool,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0046,intent_override,hard,2,"44% Acrylic, 28% Cotton, 20% Merino Wool, 8% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0046,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0046,intent_override,soft,2,No Closure closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0047,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0047,browsing,hard,2,color: pink,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0047,browsing,soft,1,100% Polyester,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0047,browsing,soft,2,Adjustable closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0048,browsing,hard,1,100% Synthetic,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0048,browsing,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0048,browsing,soft,1,FEATURES: Infinity style cleats are constructed from durable synthetic materials that are water resistant. Easily adjustable laces allow these shoes to easily form to your foot,style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0048,browsing,soft,2,RUGGED OUTSOLE: Our flexible rubber outsoles have a two tone design and feature rugged studs to aid with traction on turf and outdoor fields,use_case,"[""use_case""]",False,use_case,3,False,False,False,False,True,True
+public_0049,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0049,browsing,hard,2,color: brown,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0049,browsing,soft,1,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0049,browsing,soft,2,"👟BEST MATERIAL.These mens shoes casual slip on has premium microfiber leather upper,soft rubber sole.It's a good choice for outdoor all season",material,"[""material"", ""use_case""]",True,material,3,False,False,False,False,True,True
+public_0050,boundary,hard,1,leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0050,boundary,hard,2,100% Leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0050,boundary,soft,1,EVA/Rubber sole,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0050,boundary,soft,2,Shaft measures approximately 6inch from arch,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0051,browsing,hard,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0051,browsing,hard,2,Skechers Go Walk 5-True shoe is designed with high-rebound comfort pillar technology underfoot that reacts to your every step for the ultimate comfort,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0051,browsing,soft,1,Our Go Walk 5-True shoe is made with Skechers Air Cooled Goga Mat a breathable insole that provides high-rebound cushioning,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0051,browsing,soft,2,Our Skechers shoe provides a dual density outsole for added stability and support,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0052,intent_override,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0052,intent_override,hard,2,60% polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0052,intent_override,soft,1,Button closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0052,intent_override,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0053,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0053,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0053,buying,soft,1,Leather lining,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0053,buying,soft,2,Dry Cloth Clean,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0054,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0054,buying,hard,2,Soft Fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0054,buying,soft,1,Pull On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0054,buying,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0055,browsing,hard,1,100% Croslite Foam,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0055,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0055,browsing,soft,1,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0055,browsing,soft,2,"Shaft measures approximately 1"" from arch",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0056,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0056,browsing,hard,2,"Solids: 100% Cotton; Heathers: 60% Cotton, 40% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0056,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0056,browsing,soft,2,No Closure closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0057,browsing,hard,1,100% Croslite,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0057,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0057,browsing,soft,1,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0057,browsing,soft,2,Shaft measures approximately 0#inches from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0058,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0058,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0058,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0058,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0059,browsing,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0059,browsing,hard,2,62.4% Nylon 37.6% Spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0059,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0059,browsing,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0060,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0060,browsing,hard,2,"55% Cotton, 45% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0060,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0060,browsing,soft,2,Drawstring Waist closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0061,buying,hard,1,Snap closure,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0061,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0061,buying,soft,1,"Sold by piece! 14g nose hoop ring size: 14 gauge (ring thickness: 1.6mm), inner diameter 6mm (15/64"" ).Gauge means the thickness of the hoop.Please decide the gauge firstly (measur",size,"[""size""]",False,size,2,False,False,False,False,True,True
+public_0061,buying,soft,2,"This hinged nose ring hoop is very easy to put in and close and you can't see the seams, comfortable to wear without sharp edge. It spins completely, makes for easy cleaning. You c",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0062,browsing,hard,1,fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0062,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0062,browsing,soft,1,"Fabric: 70%Cotton, 28.5%Polyester, 1.5%Spandex",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0062,browsing,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0063,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0063,browsing,hard,2,"Body: 95% Polyester, 5% Spandex; Waist: 90% Polyester, 10% Spandex; Liner: 90% Polyester, 10% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0063,browsing,soft,1,elastic closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0063,browsing,soft,2,"3"" Width Waistband: The elastic flat waist provides tummy control and features 4-way stretch performance",size,"[""size""]",False,size,3,False,False,False,False,True,True
+public_0064,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0064,intent_override,hard,2,cotton blend,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0064,intent_override,soft,1,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0064,intent_override,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0065,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0065,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0065,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0065,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0066,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0066,buying,hard,2,"96% Polyester, 4% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0066,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0066,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0067,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0067,buying,hard,2,Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0067,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0067,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0068,intent_override,hard,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0068,intent_override,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0068,intent_override,soft,1,Dual-density outsole with Hyper Pillar comfort technology,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0068,intent_override,soft,2,Lightweight and responsive Ultra Go midsole cushioning,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0069,browsing,hard,1,【FASHION DESIGN 】—Acrylic mottled hoop earrings. Square and oval silhouette. Marbled Floral and Leopard design. Post back. Light-weight earrings. these acrylic earrings are the per,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0069,browsing,hard,2,"【COMFORTABLE TO WEAR】—Acrylic Leopard dangle earring give a summer-ready feel to any look. Post back closures for pieced ears. Size: 2.5''in length weight 0.2oz a pair,Lightweight,",size,"[""size""]",False,size,2,False,False,False,False,True,True
+public_0069,browsing,soft,1,"【PERFECT GIFT】—Geometric drop dangle earring with Excellent Luster and Unimpeachable Rust very popular with women and girls packaged in a velvet bag, a wonderful gift giving mom, w",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0069,browsing,soft,2,"【MATCH TO MOST OCCASIONS】—Minimalist Acrylic Hoop Earrings works well with your daily outfit,Can wear it with many things go to many occasions.Such as Valentine’s Day, Christmas’ D",style,"[""style"", ""use_case""]",True,style,3,False,False,False,False,True,True
+public_0070,browsing,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0070,browsing,hard,2,"✅ PERFECT FOR TRAVEL - COMFORTABLE, LIGHTWEIGHT, AND WATER RESISTANT PASSPORT AND VACCINE CARD HOLDER designed to offer you a safe and secure location to store valuables , passport",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0070,browsing,soft,1,"✅ RFID BLOCKING – RFID WALLET LINED WITH RADIO FREQUENCY SHIELDING MATERIAL WHICH BLOCKS UNWANTED SCANS , ensuring that your cards and personal information remain private and confi",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0070,browsing,soft,2,Nylon lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0071,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0071,intent_override,hard,2,"90% Cotton, 10% Others",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0071,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0071,intent_override,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0072,intent_override,hard,1,Faux Fur,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0072,intent_override,hard,2,Drawstring closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0072,intent_override,soft,1,Hand Wash Only,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0072,intent_override,soft,2,Department: womens,style,"[""style""]",False,style,4,False,False,False,False,True,True
+public_0073,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0073,browsing,hard,2,"♥【Try RISK FREE】: Wear COMFORTABLE or Your MONEY BACK! 30-day wear test! FREE shipping and returns.If for any reason you’re unhappy with your purchase,feel free to contact us",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0073,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0073,browsing,soft,2,Elastic closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0074,browsing,hard,1,mesh,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0074,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0074,browsing,soft,1,Synthetic sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0074,browsing,soft,2,Shaft measures approximately not_applicable from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0075,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0075,browsing,hard,2,100% Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0075,browsing,soft,1,"Genuine Leather,New Design for Exact Fit,Width 1 3/8""",material,"[""material"", ""size"", ""style""]",True,material,3,False,False,False,False,True,True
+public_0075,browsing,soft,2,Ratchet closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0076,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0076,browsing,hard,2,color: grey,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0076,browsing,soft,1,"Solid colors: 80% Cotton, 20% Polyester; Heather Grey: 78% Cotton, 22% Poly; Dark Heather: 50% Cotton, 50% Polyester",material,"[""material"", ""color""]",True,material,3,True,True,False,False,True,True
+public_0076,browsing,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0077,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0077,browsing,hard,2,55% Cotton /45% Polyester Flannel,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0077,browsing,soft,1,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0077,browsing,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0078,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0078,intent_override,hard,2,"78% Cotton, 21% Polyester, 1% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0078,intent_override,soft,1,Made in the USA or Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0078,intent_override,soft,2,Pull On closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0079,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0079,browsing,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0079,browsing,soft,1,"Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0079,browsing,soft,2,"Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0080,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0080,intent_override,hard,2,"60% Cotton, 40% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0080,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0080,intent_override,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0081,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0081,browsing,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0081,browsing,soft,1,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0081,browsing,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0082,buying,hard,1,"21 Styles: the package contains 21 pieces beach bracelet anklets in different styles as shown in the picture, coming with various elements, enough quantity to use and share with fa",style,"[""style""]",False,style,1,False,False,False,False,True,True
+public_0082,buying,hard,2,color: blue,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0082,buying,soft,1,"Waterproof and fadeless: these boho style pull cord anklets are made of a combination of wax and cords, featuring good resistance of water, not easy to fade even if you go surfing",style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0082,buying,soft,2,"Summer vibe accessories: blue and orange colors of the wave strand bracelet set can easily make you look vibrant, going well with different clothes; Nice accessories to wear in sum",color,"[""color""]",False,color,3,True,False,False,False,True,True
+public_0083,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0083,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0083,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0083,buying,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0084,intent_override,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0084,intent_override,hard,2,"33% Elastic, 34% Nylon, 33% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0084,intent_override,soft,1,Hook and Loop closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0084,intent_override,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0085,browsing,hard,1,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0085,browsing,hard,2,"Heel measures approximately 1.57""",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0085,browsing,soft,1,"【High-Quality】:Slides for women and men are made of high-quality EVA, environmentally friendly, no special smell, no noise, no water absorption, and easy to clean",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0085,browsing,soft,2,"【Ergonomic Design】:About 30° forward tilt head protection design,so that the sole of the foot does not rush out. The sunken footbed fits the curve of the foot pelvic floor and make",style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0086,browsing,hard,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0086,browsing,hard,2,PRETTY ANKLE BOOTS - Cozy up the cold season with these attractive warm house slippers while luxe chenille knit styling adds a chic and cute touch to your comfort. Subtle scrunchin,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0086,browsing,soft,1,"COMFY & SOFT - Nice chenille velvet upper and fuzzy plush fleece lining hug your feet and provide toasty warmth plus ultra softness, which make you feel like walking on a cloud. Wh",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0086,browsing,soft,2,"CUSHION & SUPPORT - Long lasting 80D memory foam insole provides superior cushioning and padding, feels like ergonomic pillows under your feet. Supportive insole relaxes your arch",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0087,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0087,browsing,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0087,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0087,browsing,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0088,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0088,buying,hard,2,"95% Cotton, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0088,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0088,buying,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0089,intent_override,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0089,intent_override,hard,2,100% Nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0089,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0089,intent_override,soft,2,Elastic closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0090,buying,hard,1,"Decorative lightweight scarf: 2 wearing ways of this mardi gras scarf, wrap the scarf around your neck, or wearing it as a shawl, just change the orientation of the scarf, you can",style,"[""style""]",False,style,1,False,False,False,False,True,True
+public_0090,buying,hard,2,color: purple,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0090,buying,soft,1,"Classic mardi gras scarf: designed with gold, purple, green color, the scarf measure: 55 x 134 cm, tassel: 15 cm/ 5.9 inch",color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0090,buying,soft,2,"Pattern: the end of the mardi gras shawl is tassel, stripe pattern is shimmering, gold speckled with green and purple",color,"[""color""]",False,color,3,True,False,False,False,True,True
+public_0091,browsing,hard,1,"【HIGH QUALITY】This Sterling Silver Huggie Hoop Earring is made of 925 Sterling Silver post,Hypoallergenic.Best Choice for Sensitive Ears. Earrings Surface Mounted with Sparkling AA",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0091,browsing,hard,2,color: white,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0091,browsing,soft,1,"【CLASSICAL&TIMELESS】Simple and Classical Hoop design,Classical and Timeless.You will be more Beautiful and Elegant when You Wearing this CZ Hoop Earrings.This Small Rose Gold Hoop",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0091,browsing,soft,2,"【PACKAGE INCLUDES】Order includes 3 Pairs 8/10/12mm(0.31/0.4/0.48in) Small Cubic Zirconia Hoop Earrings.The Small Hoop Earring is Cuff Design,Easy to Open and Close.Note:The 925 Ste",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0092,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0092,browsing,hard,2,"95% Polyester, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0092,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0092,browsing,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0093,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0093,buying,hard,2,"Solid: 100% Cotton; Heathers: 75% Cotton, 25% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0093,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0093,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0094,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0094,buying,hard,2,Synthetic sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0094,buying,soft,1,"Shaft measures approximately 8"" from arch",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0094,buying,soft,2,"SUPPORTIVE AND CUSHIONED: Featuring the 4LR technology for support and cushioning, these western boots make sure you have the most comfortable boot possible, whether you’re in the",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0095,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0095,buying,hard,2,"75% Polyester, 25% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0095,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0095,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0096,intent_override,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0096,intent_override,hard,2,"95% Polyester, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0096,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0096,intent_override,soft,2,Pull On closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0097,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0097,buying,hard,2,92% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0097,buying,soft,1,Elastic closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0097,buying,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0098,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0098,browsing,hard,2,100% Rubber,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0098,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0098,browsing,soft,2,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0099,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0099,browsing,hard,2,"60% Cotton, 40% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0099,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0099,browsing,soft,2,Drawstring closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0100,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0100,browsing,hard,2,100% Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0100,browsing,soft,1,Manmade sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0100,browsing,soft,2,"Platform measures approximately 0.5""",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0101,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0101,buying,hard,2,color: white,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0101,buying,soft,1,"65% Polyester, 35% Cotton",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0101,buying,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0102,browsing,hard,1,Hand Wash Only,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0102,browsing,hard,2,"Push Up Bra, A/B/C cup 3 centimeters Thickness Pad inside. But noted that D cup is thin cup,lightly padded",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0102,browsing,soft,1,Underwire,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0102,browsing,soft,2,Lace Design,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0103,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0103,intent_override,hard,2,color: white,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0103,intent_override,soft,1,100% Cotton,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0103,intent_override,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0104,boundary,hard,1,leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0104,boundary,hard,2,color: black,color,"[""color""]",False,color,3,True,False,False,False,True,True
+public_0104,boundary,soft,1,Classy Leather-like Fabric,material,"[""material""]",False,material,4,False,False,False,False,True,True
+public_0104,boundary,soft,2,Durable Headband,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0105,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0105,browsing,hard,2,"77% Polyester, 23% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0105,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0105,browsing,soft,2,"IUGA is a lifestyle brand that combines Style, Comfort and Performance. The High Quality Activewear is perfect for Fitness Enthusiasts and Everyday Athleisure as it is Affordable a",style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0106,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0106,buying,hard,2,"Polyester,Cotton,Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0106,buying,soft,1,Machine Wash,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0106,buying,soft,2,"❤ 【Material】：Our mens dress socks are are expertly fabricated with the perfect formulation, made with 76% cotton,2% spandex and 22% polyester to keep your feet a elasticity and sof",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0107,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0107,buying,hard,2,Shell 100% Cotton Lining 100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0107,buying,soft,1,Zipper closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0107,buying,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0108,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0108,buying,hard,2,"54% Cotton, 36% Polyester, 10% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0108,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0108,buying,soft,2,Elastic closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0109,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0109,buying,hard,2,100% Other Fibers,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0109,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0109,buying,soft,2,No Closure closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0110,browsing,hard,1,wool,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0110,browsing,hard,2,"35% wool, 29% cotton, 36% polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0110,browsing,soft,1,"Machine Wash,Hand Wash",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0110,browsing,soft,2,"Material: Womens winter warm socks made of 35% wool, 29% cotton, 36% polyester. These cabin socks are super soft, breathable and wearable. Elegant, classic wool socks hosiery, colo",material,"[""material"", ""use_case""]",True,material,3,False,False,False,False,True,True
+public_0111,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0111,buying,hard,2,"60% Polyester, 35% Cotton, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0111,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0111,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0112,boundary,hard,1,leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0112,boundary,hard,2,Leather sole,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0112,boundary,soft,1,"A Lightweight Sneaker, Which Is Suitable For Running, Sports, Hiking, Walking, Tourism And Climbing",use_case,"[""use_case""]",False,use_case,4,False,False,False,False,True,True
+public_0112,boundary,soft,2,Slip-on For Easy On And Off,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0113,browsing,hard,1,Sherpa Fleece,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0113,browsing,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0113,browsing,soft,1,"CLOSED HEEL - These slippers hug your feet entirely so they won't fly off when walking, especially on stairs. Made of soft uppers, you can also step over the back and wear them as",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0113,browsing,soft,2,"TOASTY WARM - Covered in plush sherpa fleece from inside to outside, this slipper will wrap your feet in a cocoon of warmth so they'll never feel cold",color,"[""color""]",False,color,3,False,True,False,False,True,True
+public_0114,buying,hard,1,Rubber sole,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0114,buying,hard,2,Great go-to shoes with multicolor choice and steady design suitable for all age,color,"[""color""]",False,color,2,False,True,False,False,True,True
+public_0114,buying,soft,1,"Take a natural step forward with a clean look, for sure go with your daily t-shirt and jeans, jackets,casual midi dress,any outfit you have",style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0114,buying,soft,2,"Anti slip and durable rubber sole and cushioned insole keeps your balance at all time so you can enjoy any type of activity,walking,playing",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0115,browsing,hard,1,rayon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0115,browsing,hard,2,"95% Rayon, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0115,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0115,browsing,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0116,buying,hard,1,100% Canvas,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0116,buying,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0116,buying,soft,1,Cushioned Insole for added comfort,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0116,buying,soft,2,Canvas Upper,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0117,buying,hard,1,Synthetic Rubber sole,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0117,buying,hard,2,"Mule-style slipper, adjustable strap with hook-and-loop closure, silvertone button detail",style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0117,buying,soft,1,"Terrycloth-covered EVA midsole absorbs shock, helping reduce stress on feet, ankles, and knees",color,"[""color""]",False,color,2,False,True,False,False,True,True
+public_0117,buying,soft,2,"Podiatrist-designed, biomechanical orthotic footbed with Orthaheel technology and a deep heel cup helps stabilize, support, and realign feet back to their natural position while we",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0118,buying,hard,1,nylon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0118,buying,hard,2,"Nylon,Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0118,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0118,buying,soft,2,Straps closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0119,buying,hard,1,"Pvc,Resin",feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0119,buying,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0119,buying,soft,1,"Material: High Quality PVC Material. Made from Natural resin, not plastic",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0119,buying,soft,2,"Size: <1>Big handbag:26*15*18cm/10.2""*7""*5.9""(Length*Width*Height), handle height:4.3"" <2>Mini handbag :6.7’’(L) x 3.9’’(W) x4.7” (H), handle height :3.15”",size,"[""size""]",False,size,3,False,False,False,False,True,True
+public_0120,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0120,browsing,hard,2,color: red,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0120,browsing,soft,1,Leather lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0120,browsing,soft,2,Snap closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0121,browsing,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0121,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0121,browsing,soft,1,"91.6%Nylon, 8.4%Spandex",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0121,browsing,soft,2,"Classic color: package include 5 pieces lace bralettes for women in 3 classic colors, black, beige and white bralettes are available, you can free to match with different color clo",color,"[""color""]",False,color,3,True,False,False,False,True,True
+public_0122,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0122,browsing,hard,2,"75% Cotton, 17% Polyester, 8% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0122,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0122,browsing,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0123,intent_override,hard,1,wool,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0123,intent_override,hard,2,"65% Polyester, 35% Wool",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0123,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0123,intent_override,soft,2,Buckle closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0124,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0124,buying,hard,2,"52% Polyester, 32% Nylon, 10% EVA, 2% POM, 2% Cotton, 2% Metal",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0124,buying,soft,1,Made in the USA,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0124,buying,soft,2,Buckle closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0125,intent_override,hard,1,100% Acrylic,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0125,intent_override,hard,2,Hook and Loop closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0125,intent_override,soft,1,PREMIUM QUALITY: Take your outfit to the next level with our 100% acrylic 6 panels mid-profile structured baseball hat that provides maximum comfort. Fits men and women!,color,"[""color"", ""style""]",True,color,3,False,True,False,False,True,True
+public_0125,intent_override,soft,2,HOOK & LOOP CLOSURE: Our hats for women and men feature a strap closure in the back letting you easily adjust the size for a perfect fit,size,"[""size"", ""style""]",True,size,3,False,False,False,False,True,True
+public_0126,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0126,browsing,hard,2,"95% Polyester, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0126,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0126,browsing,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0127,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0127,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0127,browsing,soft,1,100% Polyester,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0127,browsing,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0128,browsing,hard,1,"✦18K GOLD VERMEIL✦ A premium offering of our best selling styles, our vermeil jewelry is made with a solid s925 sterling silver base and plated in 18K gold that is 10x thicker than",style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0128,browsing,hard,2,color: yellow,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0128,browsing,soft,1,PAVOI 4.5mm Thick 40mm Diameter Yellow Gold Earrings for Women,feature,"[""feature""]",False,feature,3,True,True,False,False,True,True
+public_0128,browsing,soft,2,"✦ 60-DAY GUARANTEE ✦ Your happiness is our number one priority. To ensure your complete satisfaction, we offer a hassle-free 60-Day money-back guarantee. To get in touch, email or",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0129,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0129,buying,hard,2,"Stretchy fabric: 95% gossypium, 5% spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0129,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0129,buying,soft,2,Snap closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0130,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0130,intent_override,hard,2,"95% Cotton, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0130,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0130,intent_override,soft,2,Hand Wash or Machine Wash with laundry bag (30°C Max),feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0131,boundary,hard,1,cotton,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0131,boundary,hard,2,"Thigh high socks: 20% Stretchy Yarn, 80% cotton",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0131,boundary,soft,1,Hand Wash Only,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0131,boundary,soft,2,"◆ Soft & Breathable: Being knitted by cotton and stretchy yarn, the mid thigh high socks for women are comfortable, soft, lightweight and breathable. ( 80% Cotton, 20% Stretchy Yar",material,"[""material""]",False,material,4,False,False,False,False,True,True
+public_0132,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0132,buying,hard,2,"80% Cotton, 20% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0132,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0132,buying,soft,2,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0133,buying,hard,1,Imported,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0133,buying,hard,2,color: gray,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0133,buying,soft,1,Polycarbonate frame,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0133,buying,soft,2,Polycarbonate lens,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0134,browsing,hard,1,"Gauge in Choice: 8g(3mm), 6g(4mm), 4g(5mm), 2g(6mm), 0g(8mm), 00g(10mm), 1/2""(12mm), 9/16""(14mm)",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0134,browsing,hard,2,"You will get 3 pairs fashion gem double flare screw-fit tunnels in same size, in same color",color,"[""color"", ""size"", ""style""]",True,color,2,False,True,False,False,True,True
+public_0134,browsing,soft,1,"Material: Stainless Steel With Rhinestones, Look Nice, Light Weight, Smooth Polish Surface and Long Lasting Color",color,"[""color""]",False,color,3,False,True,False,False,True,True
+public_0134,browsing,soft,2,"The screw-on method tunnels are pretty, you can twist on from one head, very easy to wear and take off. Fashion party and wedding body piercing jewelry",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0135,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0135,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0135,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0135,buying,soft,2,Thermoplastic Elastomers sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0136,buying,hard,1,spandex,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0136,buying,hard,2,"92% Polyester, 8% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0136,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0136,buying,soft,2,Elastic closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0137,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0137,browsing,hard,2,"60% Cotton, 40% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0137,browsing,soft,1,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0137,browsing,soft,2,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0138,browsing,hard,1,rayon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0138,browsing,hard,2,"95% Rayon, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0138,browsing,soft,1,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0138,browsing,soft,2,"Standard US Size: S(US 4-6), M(US 8-10), L(US 12-14), XL(US 16-18), XXL(US 20-22), 3XL(US 24-26). This women's casual loose dress is available in a variety of solid colors and prin",color,"[""color"", ""size""]",True,color,3,False,True,False,False,True,True
+public_0139,browsing,hard,1,fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0139,browsing,hard,2,"Fabric: 35%Rayon,60% Polyester and 5% Spandex,very soft and comfortable for spring and summer",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0139,browsing,soft,1,"Cute ruffle sleeve tops for spring summer and fall, pull on and down closure",style,"[""style""]",False,style,3,False,False,False,False,True,True
+public_0139,browsing,soft,2,"Care: Machine or hand wash in cold water, no bleach, no dry clean, hang or line dry, low iron if need",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0140,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0140,browsing,hard,2,"Polyester,Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0140,browsing,soft,1,Polyester lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0140,browsing,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0141,browsing,hard,1,"You will receive 6 Pcs silver nose studs, coming with one free gift velvet bag. Can be used as nose rings, nose piercings, nose rings studs, nose piercing jewelry, nostril piercing",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0141,browsing,hard,2,color: red,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0141,browsing,soft,1,"Nose Rings Studs Size: 20 gauge (0.8mm), Pin Length: 7mm (9/32""), Round Cubic Zirconia Size: 2mm. Easy to Put In and Take Off, absolutely make you feel beautiful, comfortable, happ",size,"[""size""]",False,size,3,False,False,False,False,True,True
+public_0141,browsing,soft,2,"High quality 316L surgical stainless steel, hypoallergenic, nickel and lead free, never rust and tarnish resistance, lightweight. High-polished finishing and electroplating, super",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0142,intent_override,hard,1,"Stainless Steel Bike Bracelet: Handcrafted with high quality material, 100% HYPOALLERGENIC, Lead & Nickel Free, Stronger and very LOW MAINTENANCE Metal, long lasting IP vacuum Plat",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0142,intent_override,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0142,intent_override,soft,1,"Unique Design: Inspire from Royal Knight, high polished bright chain links, with strong fold-over clasp, personalized colors match can highlights the low-key but noble quality and",color,"[""color""]",False,color,3,False,True,False,False,True,True
+public_0142,intent_override,soft,2,"Bracelet Size: Length-8.34 inch, width-0.4 inch, weight: 54g. smooth chain, lightweight and comfortable to wear, perfect for bike enthusiasts etc",size,"[""size""]",False,size,3,False,False,False,False,True,True
+public_0143,buying,hard,1,rayon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0143,buying,hard,2,"65% Rayon, 30% Cotton, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0143,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0143,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0144,intent_override,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0144,intent_override,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0144,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0144,intent_override,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0145,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0145,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0145,buying,soft,1,Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0145,buying,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0146,buying,hard,1,rayon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0146,buying,hard,2,50%Rayon+45%Polyester+5%Spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0146,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0146,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0147,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0147,browsing,hard,2,"95% Combed Cotton, 5% Spandex of Women's 4-PACK High Waisted Underwear. Machine Wash with laundry bag (30°C)",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0147,browsing,soft,1,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0147,browsing,soft,2,"STRETCHY COVERED WAISTBAND: Soft stretchy DOUBLE-LAYER fabric covered waistband sits right at the waist. No rolling or bunching, with no compression but perfectly snuggish. The hig",material,"[""material"", ""color""]",True,material,3,False,False,False,False,True,True
+public_0148,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0148,buying,hard,2,"50% Cotton, 50% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0148,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0148,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0149,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0149,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0149,buying,soft,1,PU,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0149,buying,soft,2,进口,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0150,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0150,browsing,hard,2,"65% Polyester, 35% Cotton",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0150,browsing,soft,1,CLOSURE: Zip Front closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0150,browsing,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0151,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0151,browsing,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0151,browsing,soft,1,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0151,browsing,soft,2,Shaft measures approximately Ankle from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0152,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0152,buying,hard,2,color: brown,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0152,buying,soft,1,Gold-tone watch in stainless steel featuring black two-step dial with date window at 3 o'clock and croco-embossed leather band. Case diameter : 36 mm,material,"[""material"", ""color""]",True,material,2,True,True,False,False,True,True
+public_0152,buying,soft,2,Japanese quartz movement with analog display,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0153,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0153,browsing,hard,2,PU Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0153,browsing,soft,1,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0153,browsing,soft,2,Shaft measures approximately Ankle from arch,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0154,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0154,buying,hard,2,color: white,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0154,buying,soft,1,Hand Wash Only,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0154,buying,soft,2,Item model number: 5006715,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0155,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0155,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0155,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0155,buying,soft,2,Drawstring closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0156,buying,hard,1,Easy cinch opening with durable cording,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0156,buying,hard,2,color: grey,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0156,buying,soft,1,Zippered valuables pocket to hold your phone and small stuff,color,"[""color""]",False,color,2,False,True,False,False,True,True
+public_0156,buying,soft,2,Bold 3-stripe brand read,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0157,buying,hard,1,nylon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0157,buying,hard,2,Nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0157,buying,soft,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0157,buying,soft,2,"Seam-sealed waterproof snow boot featuring plush faux-fur collar, quick bungee lacing, and grippy PEAK snow and ice traction sole",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0158,browsing,hard,1,Roomy enough to fit any adult.You can see through the nostrils or the mouth,style,"[""style""]",False,style,2,False,False,False,False,True,True
+public_0158,browsing,hard,2,"Made from 100% natural latex, environmental friendly and non-toxic. We offer a range of quality choices with the best price",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0158,browsing,soft,1,"Perfect for a fun meme, Halloween, Christmas, Easter, Carnival, Costume parties, tag party or simply for going to a night club. It is perfect for so many occasions",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0158,browsing,soft,2,"CreepyParty is an amazon registered brand, more creepy and funny masks, please visit our store",color,"[""color""]",False,color,3,False,True,False,False,True,True
+public_0159,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0159,buying,hard,2,"60% Cotton, 40% Polyester",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0159,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0159,buying,soft,2,Drawstring closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0160,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0160,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0160,buying,soft,1,Double zipper pulls make opening/closing simple and fast,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0160,buying,soft,2,"Mesh top panel for easy identification of contents, and ventilation",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0161,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0161,buying,hard,2,cotton blend,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0161,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0161,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0162,browsing,hard,1,silk,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0162,browsing,hard,2,Satin,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0162,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0162,browsing,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0163,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0163,buying,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0163,buying,soft,1,1.Mesh Fabric + Air Cushion sole,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0163,buying,soft,2,2.Slip-on Design: Slip on design with Elastic Cuff is convenient for user to put on and take off,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0164,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0164,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0164,browsing,soft,1,Buckle closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0164,browsing,soft,2,"SWAP IN SECONDS: Quick release spring bars allow you to swap bands in seconds to compliment your wardrobe or mix and match with BARTON's other Leather, Canvas and Silicone quick re",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0165,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0165,buying,hard,2,"Watch Band Material: Made of good quality crazy-horse leather, they are durable that they may take some breaking in when you first start get them. But once you start wearing them,",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0165,buying,soft,1,"Vintage Design: Equipped with classic buckle, neat stitching and proper padding, creating a simple yet charming look, adding a retro vibe to any occasion. Please avoid soaking the",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0165,buying,soft,2,"Available Size (Band Width): 14mm, 16mm, 18mm, 19mm, 20mm, 21mm, 22mm, 23mm, 24mm. Designed to fit most traditional watches and smart watches. In order to get a suitable strap, ple",size,"[""size"", ""style""]",True,size,3,False,False,False,False,True,True
+public_0166,intent_override,hard,1,100% waterproof women's boots are suitable for any season and any outdoor activity,use_case,"[""use_case""]",False,use_case,2,False,False,False,False,True,True
+public_0166,intent_override,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0166,intent_override,soft,1,Lightweight and breathable mesh lining keeps feet well ventilated for long-wearing dryness; comfort rated from subfreezing to 65 °F/18 °C,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0166,intent_override,soft,2,Women's-specific last is designed to match the contours of women's feet,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0167,browsing,hard,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0167,browsing,hard,2,Pull-On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0167,browsing,soft,1,Machine Wash,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0167,browsing,soft,2,Wicking for moisture management,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0168,buying,hard,1,"Mother Daughter Bracelets - Heart bracelet on card meaning “Never Truly Part,Maybe in Distance,But Never in Heart”. All daughters love their mom, but sometimes we just forget to sa",feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0168,buying,hard,2,"Size & High Quality -The heart Bracelets are adjustable, don’t worried about size.The Bracelet is made of stainless steel, strong, corrosion-resistant, and will not change color af",color,"[""color"", ""size""]",True,color,2,False,True,False,False,True,True
+public_0168,buying,soft,1,"Daughter Gifts from Mom - This mother bracelet suitable Christmas Day, Mothers Day, Birthday, Thanksgiving, as a gift for mom, daughter, stepdaughter,daughter in law or for yoursel",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0168,buying,soft,2,"Classical Design - Our product comes with a beautiful box, it is packed with 4 message cards and 4 bracelets, the bracelet uses a heart-to-heart design, it is meaningful & practica",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0169,boundary,hard,1,cotton,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0169,boundary,hard,2,"57% Cotton, 26% Polyester, 10% Other Fibers, 7% Elastane",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0169,boundary,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0169,boundary,soft,2,Pull On closure,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0170,browsing,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0170,browsing,hard,2,100% Leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0170,browsing,soft,1,Made in the USA or Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0170,browsing,soft,2,Rubber sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0171,buying,hard,1,nylon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0171,buying,hard,2,Elastic,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0171,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0171,buying,soft,2,Nylon lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0172,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0172,browsing,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0172,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0172,browsing,soft,2,Synthetic sole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0173,browsing,hard,1,fabric,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0173,browsing,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0173,browsing,soft,1,"Comfortable feeling: Super lightweight and flexible just like socks,breathable and smooth fabric provide great freedom and comfortable feeling. Let you enjoy your your beach trip o",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0173,browsing,soft,2,"Convenience: Quick-dry water shoes, ultra light weight smooth stretchy fabrics and easy slip-on design make it convenient to wear and take off. Lightweight and compressible, easy t",material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0174,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0174,buying,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0174,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0174,buying,soft,2,Tie closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0175,browsing,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0175,browsing,hard,2,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0175,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0175,browsing,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0176,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0176,browsing,hard,2,"93% Polyester, 3% Natural Latex Rubber, 2% Spandex, 2% Nylon",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0176,browsing,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0176,browsing,soft,2,Polyester lining,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0177,intent_override,hard,1,cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0177,intent_override,hard,2,"Cotton, Rayon",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0177,intent_override,soft,1,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0177,intent_override,soft,2,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0178,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0178,buying,hard,2,color: red,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0178,buying,soft,1,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0178,buying,soft,2,Made in the USA,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0179,buying,hard,1,spandex,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0179,buying,hard,2,5% spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0179,buying,soft,1,Made in the USA,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0179,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0180,boundary,hard,1,100% Mesh,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0180,boundary,hard,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0180,boundary,soft,1,Rubber sole,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0180,boundary,soft,2,"GRID, Injection EVA",feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0181,browsing,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0181,browsing,hard,2,Drawstring closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0181,browsing,soft,1,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0181,browsing,soft,2,Casual 2 piece active sweatsuit pant set,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0182,browsing,hard,1,UPDATED ALUMINUM WALLET with high quality aluminum materials and Environmentally friendly plastic(ABS) clasp closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0182,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0182,browsing,soft,1,PEACE OF MIND when Travelling: It is a Must Have a protector case ID slots when on vacations or traveling overseas. Using on public transportation and crowded places - keep the wor,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0182,browsing,soft,2,MOST RELIABLE RFID BLOCKING PROTECTION. Most RFID blocking hard shell aluma wallets can NOT block 125KHz signals. But Elfish metal id cases are able to Block both 13.56 MHz and 125,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0183,intent_override,hard,1,polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0183,intent_override,hard,2,100% Polyester,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0183,intent_override,soft,1,Button closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0183,intent_override,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0184,browsing,hard,1,nylon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0184,browsing,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0184,browsing,soft,1,Composite/Plastic Frame,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0184,browsing,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0185,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0185,buying,hard,2,92%Cotton/8%Spandex,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0185,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0185,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0186,intent_override,hard,1,100% Synthetic,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0186,intent_override,hard,2,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0186,intent_override,soft,1,"AmpliFoam Midsole: Engineered to maintain durability at softer densities, providing better flexibility, comfort, and platform adaptability ideal for natural running",color,"[""color"", ""use_case""]",True,color,4,False,True,False,False,True,True
+public_0186,intent_override,soft,2,Ortholite Sockliner: Moisture management (Ortholite is a registered trademark of O2 Partners LLC),color,"[""color""]",False,color,4,False,True,False,False,True,True
+public_0187,boundary,hard,1,leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0187,boundary,hard,2,100% Leather,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0187,boundary,soft,1,Leather sole,material,"[""material""]",False,material,4,False,False,False,False,True,True
+public_0187,boundary,soft,2,Leather slip-on featuring dual gore panels at entry and padded collar,material,"[""material""]",False,material,4,False,False,False,False,True,True
+public_0188,buying,hard,1,leather,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0188,buying,hard,2,"Artificial Leather,Leather,Pu Leather",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0188,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0188,buying,soft,2,Zipper closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0189,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0189,buying,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0189,buying,soft,1,100% Cotton,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0189,buying,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0190,buying,hard,1,polyester,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0190,buying,hard,2,"94% Polyester, 6% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0190,buying,soft,1,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0190,buying,soft,2,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0191,browsing,hard,1,"Polyamide,Mesh",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0191,browsing,hard,2,Machine Wash,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0191,browsing,soft,1,"Moisture Wicking & Breathable: These compression socks for women are made of lightweight farbic and polyamide, Moisture-wicking yarn and breathable mesh pulls perspiration away fro",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0191,browsing,soft,2,"Friction & Shock Protection: Our mens compression socks use the seamless toe design, these compression socks for men circulation have targeted cushioning on the footbed for shock a",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0192,boundary,hard,1,100% Textile Synthetics,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0192,boundary,hard,2,color: pink,color,"[""color""]",False,color,3,True,False,False,False,True,True
+public_0192,boundary,soft,1,Imported,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0192,boundary,soft,2,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,4,False,False,False,False,True,True
+public_0193,buying,hard,1,fabric,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0193,buying,hard,2,color: red,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0193,buying,soft,1,Chiffon,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0193,buying,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0194,buying,hard,1,rayon,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0194,buying,hard,2,"95% Rayon, 5% Spandex",material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0194,buying,soft,1,Pull On closure,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0194,buying,soft,2,Hand Wash Only,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0195,browsing,hard,1,rayon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0195,browsing,hard,2,100% Rayon,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0195,browsing,soft,1,Pull On closure,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0195,browsing,soft,2,100%Rayon,material,"[""material""]",False,material,3,False,False,False,False,True,True
+public_0196,browsing,hard,1,Rubber sole,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0196,browsing,hard,2,Design in USA,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0196,browsing,soft,1,"Heel height: 0.15"" (approx)",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0196,browsing,soft,2,Ultra Flexible Rubber Outsole,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0197,intent_override,hard,1,"What is in the package?EFIXTK watch band tool kit comes with a watch band link pin remover with 6 extra tips, a plastic watch holder, a dual head hammer, 4 pin punches,20pcs cotter",feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0197,intent_override,hard,2,"Easy to use: Size your watch band yourself with this small, simple tool effectively without wiggling",size,"[""size""]",False,size,2,False,False,False,False,True,True
+public_0197,intent_override,soft,1,"Fit for different sizes,Fit bands up to 30mm wide ,6 replacement pins and an adjustable base allow for use with different band thicknesses",size,"[""size"", ""style""]",True,size,3,False,False,False,False,True,True
+public_0197,intent_override,soft,2,"VALUE KIT FOR MONEY SAVING - This watch band link remover is great for removing and inserting spring bars straps, and widely used in up to 30mm wide watch band replace, watch repai",size,"[""size""]",False,size,3,False,False,False,False,True,True
+public_0198,intent_override,hard,1,leather,material,"[""material""]",False,material,2,False,False,False,False,True,True
+public_0198,intent_override,hard,2,color: black,color,"[""color""]",False,color,2,True,False,False,False,True,True
+public_0198,intent_override,soft,1,PU,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0198,intent_override,soft,2,Imported,feature,"[""feature""]",False,feature,3,False,False,False,False,True,True
+public_0199,buying,hard,1,cotton,material,"[""material""]",False,material,1,False,False,False,False,True,True
+public_0199,buying,hard,2,Imported,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0199,buying,soft,1,Machine Wash,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0199,buying,soft,2,"100% Cotton Size:3T (2-3), 4T (3-4), 5 (5-6), 6 (6-7), 8 (7-8), 10 (9-10), 12 (10-12)",material,"[""material"", ""size""]",True,material,3,False,False,False,False,True,True
+public_0200,buying,hard,1,Ethylene Vinyl Acetate sole,feature,"[""feature""]",False,feature,1,False,False,False,False,True,True
+public_0200,buying,hard,2,Heel measures approximately 2.3 centimeters,feature,"[""feature""]",False,feature,2,False,False,False,False,True,True
+public_0200,buying,soft,1,"【Concise Style】Diamond pattern and raised design, pure color, casual style are quite suitable for home and any other casual occasion",color,"[""color"", ""style""]",True,color,2,False,True,False,False,True,True
+public_0200,buying,soft,2,"【Soft & Lightweight】Which only weight about 200g, lightweight and durable EVA material can arbitrary bending, thick soles design with light rebound ability, give your feet ultimate",feature,"[""feature""]",False,feature,3,False,False,False,False,True,True

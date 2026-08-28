@@ -1,0 +1,58 @@
+[
+  {
+    "failure_category": "no_exact_match",
+    "hard_failure_sessions": 10,
+    "non_exclusive": true,
+    "session_count": 17,
+    "weak_success_sessions": 7
+  },
+  {
+    "failure_category": "ambiguous_exact_evidence",
+    "hard_failure_sessions": 12,
+    "non_exclusive": true,
+    "session_count": 36,
+    "weak_success_sessions": 24
+  },
+  {
+    "failure_category": "ranking_failure",
+    "hard_failure_sessions": 14,
+    "non_exclusive": true,
+    "session_count": 48,
+    "weak_success_sessions": 34
+  },
+  {
+    "failure_category": "cross_field_partial_match",
+    "hard_failure_sessions": 14,
+    "non_exclusive": true,
+    "session_count": 40,
+    "weak_success_sessions": 26
+  },
+  {
+    "failure_category": "normalization_problem",
+    "hard_failure_sessions": 0,
+    "non_exclusive": true,
+    "session_count": 0,
+    "weak_success_sessions": 0
+  },
+  {
+    "failure_category": "dialogue_state_problem",
+    "hard_failure_sessions": 0,
+    "non_exclusive": true,
+    "session_count": 0,
+    "weak_success_sessions": 0
+  },
+  {
+    "failure_category": "insufficient_information",
+    "hard_failure_sessions": 0,
+    "non_exclusive": true,
+    "session_count": 0,
+    "weak_success_sessions": 0
+  },
+  {
+    "failure_category": "semantic_retrieval_opportunity",
+    "hard_failure_sessions": 1,
+    "non_exclusive": true,
+    "session_count": 1,
+    "weak_success_sessions": 0
+  }
+]

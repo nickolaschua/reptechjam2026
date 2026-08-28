@@ -1,0 +1,7 @@
+method,sample_count,hit_rate_at_10,mrr,mttc,efficiency,technical_score,baseline_hard_failures,hard_failure_rescues,rescued_sample_ids,regressions,regressed_sample_ids,selected_clarification_branch,selected_cumulative_configuration
+structured_state_identity_fixed_other,60,0.916667,0.659114,2.983333,0.801667,0.816401,5,0,[],0,[],False,True
+adaptive_hybrid_fixed_other,60,0.9,0.532586,3.2,0.78,0.765776,5,1,"[""public_0076""]",2,"[""public_0081"", ""public_0103""]",False,False
+deterministic_reranker_fixed_other,60,0.866667,0.524008,3.483333,0.751667,0.740869,5,1,"[""public_0076""]",4,"[""public_0081"", ""public_0103"", ""public_0120"", ""public_0179""]",True,False
+deterministic_reranker_entropy,60,0.866667,0.490933,4.966667,0.603333,0.70128,5,1,"[""public_0076""]",4,"[""public_0081"", ""public_0103"", ""public_0120"", ""public_0179""]",False,False
+deterministic_reranker_rank_aware,60,0.866667,0.482302,4.8,0.62,0.702024,5,1,"[""public_0076""]",4,"[""public_0081"", ""public_0103"", ""public_0120"", ""public_0179""]",False,False
+profile_decay_fixed_other,60,0.833333,0.449339,3.716667,0.728333,0.697135,5,1,"[""public_0076""]",6,"[""public_0013"", ""public_0081"", ""public_0092"", ""public_0103"", ""public_0120"", ""public_0179""]",False,False

@@ -1,0 +1,34 @@
+{
+  "catalog": {
+    "path": "techjam-conversational-search\\data\\catalog.jsonl",
+    "sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67"
+  },
+  "dense_embeddings": {
+    "path": "nickolas\\results\\cache\\dense_da979b05a68af864_minilm_seq128.npy",
+    "sha256": "ef51a7c67a9cceaa39d6cd1930c2093563b7e689a97961ac10876cfc54a19b31"
+  },
+  "dense_model": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "tree_sha256": "c8da0e48a39ce6b179bdf81a15d387dc3a70a0e79ee76a3a117b864ab4c17cb1"
+  },
+  "experiment_07_baseline_source": {
+    "path": "nickolas\\experiments\\experiment_07_residual_failure_analysis.py",
+    "sha256": "6c2bf77ef7d3a7974190349f0ec8acd75cf318be3065d1f3b6ec5d560c7b5de1"
+  },
+  "frozen_split": {
+    "path": "nickolas\\results\\experiment_06_slate_width_counterfactuals\\metrics.json",
+    "sha256": "afc88e024d7dda56f6fb6300f34e9c46e644bd7e197104d878bb3823167be14b"
+  },
+  "public_set": {
+    "path": "techjam-conversational-search\\data\\public_set.jsonl",
+    "sha256": "857259f7a438e6188ac63e18995b6ff4489bfcfc4a716a798b9a2aa0ee8f7579"
+  },
+  "source": {
+    "path": "nickolas\\experiments\\experiment_09_adaptive_hybrid_architecture.py",
+    "sha256": "f9c4a277511d2e8483bd12e12ce7bcf5a0476a797bc9fe90617dc256ac752464"
+  },
+  "submission_agent_baseline": {
+    "path": "techjam-conversational-search\\starter\\agent.py",
+    "sha256": "852122aaf9cd27eee5c05cfc0a7516e12cd9ee918b095aa0643bf3abb1a49b93"
+  }
+}

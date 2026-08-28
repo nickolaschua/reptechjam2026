@@ -1,0 +1,11 @@
+2026-08-26 16:22:55,853 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:22:55,854 INFO ORACLE DIAGNOSTIC: beginning candidate-set shrinkage
+2026-08-26 16:23:03,529 INFO Processed 25/200 sessions
+2026-08-26 16:23:07,456 INFO Processed 50/200 sessions
+2026-08-26 16:23:11,974 INFO Processed 75/200 sessions
+2026-08-26 16:23:16,283 INFO Processed 100/200 sessions
+2026-08-26 16:23:20,092 INFO Processed 125/200 sessions
+2026-08-26 16:23:24,357 INFO Processed 150/200 sessions
+2026-08-26 16:23:28,522 INFO Processed 175/200 sessions
+2026-08-26 16:23:33,413 INFO Processed 200/200 sessions
+2026-08-26 16:23:34,223 INFO Completed experiment_05_candidate_set_shrinkage in 38.35s

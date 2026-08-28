@@ -1,0 +1,6 @@
+{
+  "documents": 50000,
+  "elapsed_seconds": 0.718522,
+  "queries": 600,
+  "stage": "validate_input"
+}

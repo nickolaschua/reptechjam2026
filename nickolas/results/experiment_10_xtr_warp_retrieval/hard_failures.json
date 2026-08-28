@@ -1,0 +1,5658 @@
+[
+  {
+    "active_evidence": [
+      "leather",
+      "color: black",
+      "Leather",
+      "Polyester lining"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "material",
+        "fit"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize material, fit; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": true,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "leather",
+      "color: black",
+      "Leather",
+      "Polyester lining"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "leather",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          }
+        }
+      },
+      {
+        "evidence": "color: black",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "black",
+              "color"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Leather",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          }
+        }
+      },
+      {
+        "evidence": "Polyester lining",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "lining",
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 5,
+    "diagnostic_exact_target_full_rank": 17,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "leather",
+      "color: black",
+      "Leather",
+      "Polyester lining"
+    ],
+    "exact_all_phrases_candidate_count": 2,
+    "exact_highest_tier_candidate_count": 2,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": false,
+    "fallback_reasons": [],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B0B9ZYDDZ1",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Card Cases & Money Organizers Wallets",
+    "sample_id": "public_0028",
+    "split": "calibration",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "Imported",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 1.0,
+      "preference_tags": [
+        "material",
+        "fit"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "critical",
+      "summary": "Prior purchases emphasize material, fit; ratings are critical."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": 8,
+      "exact": null,
+      "field_aware": 3
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "Imported",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Pull On closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "pull"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "pull"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          }
+        }
+      },
+      {
+        "evidence": "Machine Wash",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "machine",
+              "wash"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 126,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match",
+      "semantic_retrieval_opportunity"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": 2,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 10,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "Imported",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 1359,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 10,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": true,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "browsing",
+    "oracle_target_asin": "B08KKBBMMD",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Boys Pants",
+    "sample_id": "public_0037",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 4.0,
+      "preference_tags": [
+        "material",
+        "comfort",
+        "fit",
+        "style"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "mixed",
+      "summary": "Prior purchases emphasize material, comfort, fit, style; ratings are mixed."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "color: black",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "black"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 18,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 34,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": 2,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": true,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "browsing",
+    "oracle_target_asin": "B08ZJWTCDR",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Active Pants Sweatpants",
+    "sample_id": "public_0040",
+    "split": "calibration",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "fabric",
+      "Soft Fabric",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "weather",
+        "comfort",
+        "durability",
+        "style"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize weather, comfort, durability, style; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": 8,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "fabric",
+      "Soft Fabric",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "fabric",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "fabric"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Soft Fabric",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "fabric",
+              "soft"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Pull On closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "pull"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Machine Wash",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "machine",
+              "wash"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 57,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 3,
+        "first_hit_turn": 2,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "fabric",
+      "Soft Fabric",
+      "Pull On closure",
+      "Machine Wash"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 181,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 3,
+        "first_hit_turn": 2,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B08PP1ZJQ5",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Women Fashion Hoodies & Sweatshirts",
+    "sample_id": "public_0054",
+    "split": "calibration",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Button closure"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 1.0,
+      "preference_tags": [
+        "fit",
+        "material",
+        "comfort",
+        "style"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "critical",
+      "summary": "Prior purchases emphasize fit, material, comfort, style; ratings are critical."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Button closure"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Button closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "button"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "button",
+              "closure"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "button"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 5,
+    "diagnostic_exact_target_full_rank": 12,
+    "diagnostic_exact_target_phrase_matches": 5,
+    "diagnostic_failure_tags": [
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Button closure"
+    ],
+    "exact_all_phrases_candidate_count": 31,
+    "exact_highest_tier_candidate_count": 31,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B0BPMCJ1RD",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Tees & Blouses Blouses & Button-Down Shirts",
+    "sample_id": "public_0083",
+    "split": "calibration",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Button closure"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "material",
+        "fit",
+        "comfort"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize material, fit, comfort; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Button closure"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Button closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "button"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "button",
+              "closure"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 5,
+    "diagnostic_exact_target_full_rank": 60,
+    "diagnostic_exact_target_phrase_matches": 5,
+    "diagnostic_failure_tags": [
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Button closure"
+    ],
+    "exact_all_phrases_candidate_count": 60,
+    "exact_highest_tier_candidate_count": 60,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "browsing",
+    "oracle_target_asin": "B0BT158RRR",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Shirts Casual Button-Down Shirts",
+    "sample_id": "public_0087",
+    "split": "calibration",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "polyester",
+      "92% Polyester",
+      "Elastic closure",
+      "Machine Wash"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 1.0,
+      "preference_tags": [
+        "fit",
+        "comfort",
+        "material",
+        "durability"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "critical",
+      "summary": "Prior purchases emphasize fit, comfort, material, durability; ratings are critical."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": 2,
+      "dense": null,
+      "exact": null,
+      "field_aware": 9
+    },
+    "diagnostic_corrected_active_evidence": [
+      "polyester",
+      "92% Polyester",
+      "Elastic closure",
+      "Machine Wash"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "92% Polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "92",
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Elastic closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "elastic"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Machine Wash",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "machine",
+              "wash"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 5,
+    "diagnostic_exact_target_full_rank": 12,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "polyester",
+      "92% Polyester",
+      "Elastic closure",
+      "Machine Wash"
+    ],
+    "exact_all_phrases_candidate_count": 4,
+    "exact_highest_tier_candidate_count": 4,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": false,
+    "fallback_reasons": [],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B0785RCKBT",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Women Leggings",
+    "sample_id": "public_0097",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "color: white",
+      "100% Cotton"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 1.0,
+      "preference_tags": [
+        "material",
+        "comfort",
+        "fit",
+        "style"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "critical",
+      "summary": "Prior purchases emphasize material, comfort, fit, style; ratings are critical."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": 7,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "color: white",
+      "100% Cotton"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          }
+        }
+      },
+      {
+        "evidence": "color: white",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "white"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 3,
+    "diagnostic_exact_target_full_rank": 24,
+    "diagnostic_exact_target_phrase_matches": 3,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 10,
+        "first_hit_turn": 4,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "Imported",
+      "cotton",
+      "color: white",
+      "100% Cotton"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 34,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 10,
+        "first_hit_turn": 4,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "intent_override",
+    "oracle_target_asin": "B0BT8T2FQ3",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Underwear Undershirts",
+    "sample_id": "public_0103",
+    "split": "calibration",
+    "superseded_evidence": [
+      "Imported"
+    ]
+  },
+  {
+    "active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 2.0,
+      "preference_tags": [
+        "comfort",
+        "material"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "critical",
+      "summary": "Prior purchases emphasize comfort, material; ratings are critical."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "Zipper closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "zipper"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 17,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "Zipper closure",
+      "polyester",
+      "100% Polyester",
+      "Imported"
+    ],
+    "exact_all_phrases_candidate_count": 28,
+    "exact_highest_tier_candidate_count": 28,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "intent_override",
+    "oracle_target_asin": "B08LMMDYV7",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Jackets & Vests Down Jackets & Parkas",
+    "sample_id": "public_0144",
+    "split": "evaluation",
+    "superseded_evidence": [
+      "Zipper closure"
+    ]
+  },
+  {
+    "active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Tie closure"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "fit",
+        "comfort",
+        "material",
+        "durability"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize fit, comfort, material, durability; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Tie closure"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Polyester",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "polyester"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Tie closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "tie"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 5,
+    "diagnostic_exact_target_full_rank": 12,
+    "diagnostic_exact_target_phrase_matches": 5,
+    "diagnostic_failure_tags": [
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "polyester",
+      "100% Polyester",
+      "Imported",
+      "Tie closure"
+    ],
+    "exact_all_phrases_candidate_count": 12,
+    "exact_highest_tier_candidate_count": 12,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": 5,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": true,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B0794VPVBH",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Sleep & Lounge Robes",
+    "sample_id": "public_0174",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Zipper closure"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "fit",
+        "style",
+        "material",
+        "comfort"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize fit, style, material, comfort; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Zipper closure"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Zipper closure",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "closure",
+              "zipper"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 60,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 9,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "100% Cotton",
+      "Imported",
+      "Zipper closure"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 77,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 9,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "browsing",
+    "oracle_target_asin": "B07D5M61T2",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Men Jeans",
+    "sample_id": "public_0175",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "color: red",
+      "100% Cotton",
+      "Made in the USA"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "comfort",
+        "material",
+        "fit"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize comfort, material, fit; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": 2,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "color: red",
+      "100% Cotton",
+      "Made in the USA"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "color: red",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "red"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "red"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.5
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Made in the USA",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "made",
+              "usa"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 45,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 8,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "color: red",
+      "100% Cotton",
+      "Made in the USA"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 64,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 8,
+        "first_hit_turn": 3,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B01FWQ8NH8",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Shirts T-Shirts",
+    "sample_id": "public_0178",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "comfort",
+        "material"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize comfort, material; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": 1,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "color: black",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "black",
+              "color"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "100% Cotton",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "100",
+              "cotton"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 4,
+    "diagnostic_exact_target_full_rank": 30,
+    "diagnostic_exact_target_phrase_matches": 4,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": 7,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": 9,
+        "first_hit_turn": 3,
+        "hit": true
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": 3,
+        "first_hit_turn": 2,
+        "hit": true
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "cotton",
+      "color: black",
+      "100% Cotton",
+      "Imported"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 32,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": 3,
+        "first_hit_turn": 2,
+        "hit": true
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "buying",
+    "oracle_target_asin": "B0C614ZPK3",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Shorts Denim",
+    "sample_id": "public_0189",
+    "split": "evaluation",
+    "superseded_evidence": []
+  },
+  {
+    "active_evidence": [
+      "leather",
+      "color: black",
+      "PU"
+    ],
+    "audit_user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "material",
+        "durability",
+        "fit",
+        "comfort"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize material, durability, fit, comfort; ratings are usually positive."
+    },
+    "diagnostic_complete_oracle_card_rank": null,
+    "diagnostic_complete_token_coverage_spans_fields": false,
+    "diagnostic_component_top_10_ranks": {
+      "bm25": null,
+      "dense": null,
+      "exact": null,
+      "field_aware": null
+    },
+    "diagnostic_corrected_active_evidence": [
+      "leather",
+      "color: black",
+      "PU"
+    ],
+    "diagnostic_corrected_state_rank": null,
+    "diagnostic_corrected_state_rescue": false,
+    "diagnostic_cross_field_half_token_coverage": true,
+    "diagnostic_dense_only_rescue": false,
+    "diagnostic_evidence_attribution": [
+      {
+        "evidence": "Imported",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "imported"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "leather",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "leather"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "color: black",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 2,
+            "matched_tokens": [
+              "black",
+              "color"
+            ],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": false,
+            "evidence_token_count": 2,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      },
+      {
+        "evidence": "PU",
+        "fields": {
+          "categories": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "description": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "details": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "features": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 1,
+            "matched_tokens": [
+              "pu"
+            ],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 1.0
+          },
+          "price": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "synthetic_price",
+            "token_coverage": 0.0
+          },
+          "store": {
+            "current_exact": false,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": false,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          },
+          "title": {
+            "current_exact": true,
+            "evidence_token_count": 1,
+            "matched_token_count": 0,
+            "matched_tokens": [],
+            "nfkc_casefold_punctuation_exact": true,
+            "source": "catalog_metadata",
+            "token_coverage": 0.0
+          }
+        }
+      }
+    ],
+    "diagnostic_exact_highest_phrase_matches": 3,
+    "diagnostic_exact_target_full_rank": 132,
+    "diagnostic_exact_target_phrase_matches": 3,
+    "diagnostic_failure_tags": [
+      "no_exact_match",
+      "ambiguous_exact_evidence",
+      "ranking_failure",
+      "cross_field_partial_match"
+    ],
+    "diagnostic_intrinsic_ambiguity": true,
+    "diagnostic_missing_non_superseded_evidence": [],
+    "diagnostic_normalization_strings": [],
+    "diagnostic_residual_type": "hard_failure",
+    "diagnostic_route_outcomes": {
+      "exact_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_field_aware_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_generic_field_dense_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "diagnostic_superseded_evidence_still_active": [],
+    "diagnostic_turn": 10,
+    "diagnostic_undisclosed_constraint_rescues": [],
+    "disclosed_evidence": [
+      "Imported",
+      "leather",
+      "color: black",
+      "PU"
+    ],
+    "exact_all_phrases_candidate_count": 0,
+    "exact_highest_tier_candidate_count": 185,
+    "experiment_10_route_outcomes": {
+      "exact_only": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "exact_stateful_xtr_warp_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      },
+      "experiment_07_exact_stateful_bm25_rrf": {
+        "best_rank": null,
+        "first_hit_turn": null,
+        "hit": false
+      }
+    },
+    "experiment_10_xtr_warp_regression": false,
+    "experiment_10_xtr_warp_rescue": false,
+    "fallback_activated": true,
+    "fallback_reasons": [
+      "no_catalog_product_matches_all_active_phrases",
+      "highest_exact_match_tier_exceeds_top_10"
+    ],
+    "oracle_scenario_type": "intent_override",
+    "oracle_target_asin": "B08K1ZJZ4N",
+    "oracle_undisclosed_constraints": [],
+    "retrieval_category": "Handbags & Wallets Crossbody Bags",
+    "sample_id": "public_0198",
+    "split": "calibration",
+    "superseded_evidence": [
+      "Imported"
+    ]
+  }
+]

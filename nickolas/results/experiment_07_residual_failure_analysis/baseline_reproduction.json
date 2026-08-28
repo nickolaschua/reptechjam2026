@@ -1,0 +1,23 @@
+{
+  "actual": {
+    "efficiency": 0.825,
+    "hit_rate_at_10": 0.93,
+    "mrr": 0.623058,
+    "mttc": 2.75,
+    "sample_count": 200,
+    "technical_score": 0.816917
+  },
+  "expected": {
+    "efficiency": 0.825,
+    "hit_rate_at_10": 0.93,
+    "mrr": 0.623058,
+    "mttc": 2.75,
+    "sample_count": 200,
+    "technical_score": 0.816917
+  },
+  "passed": true,
+  "session_identity_count": 200,
+  "session_identity_passed": true,
+  "source": "nickolas\\results\\experiment_02_target_rank_curves\\early_termination_sessions.json",
+  "source_sha256": "a708b444a04b03173e65aaf032a2008e5e55640929f37064982b481b012521f1"
+}

@@ -1,0 +1,24 @@
+{
+  "cpu_count": 2,
+  "cuda_available": false,
+  "cuda_device_count": 0,
+  "nprobe": 32,
+  "nvidia_smi": "Tesla T4, 580.82.07, 15360 MiB",
+  "packages": {
+    "faiss-gpu": null,
+    "huggingface-hub": "0.20.3",
+    "ninja": null,
+    "numpy": "1.24.4",
+    "scipy": "1.10.1",
+    "torch": "1.13.1",
+    "transformers": "4.35.2",
+    "ujson": "5.10.0"
+  },
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.17",
+  "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+  "query_count": 600,
+  "scope": "full",
+  "top_k": 1000,
+  "torch": "1.13.1",
+  "torch_cuda_runtime": "11.7"
+}

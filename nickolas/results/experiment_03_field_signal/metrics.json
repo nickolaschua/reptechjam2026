@@ -1,0 +1,520 @@
+{
+  "elapsed_seconds": 140.793,
+  "experiment": 3,
+  "field_metrics": {
+    "categories": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 40,
+            "mean": 193.075,
+            "median": 174.5,
+            "p25": 15.0,
+            "p75": 340.0,
+            "p90": 466.1,
+            "p95": 467.0
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 320,
+            "mean": 240.275,
+            "median": 143.0,
+            "p25": 43.0,
+            "p75": 351.0,
+            "p90": 515.0,
+            "p95": 649.4
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 320,
+            "mean": 226.025,
+            "median": 98.0,
+            "p25": 36.0,
+            "p75": 262.0,
+            "p90": 671.0,
+            "p95": 854.0
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 120,
+            "mean": 233.8,
+            "median": 95.5,
+            "p25": 32.0,
+            "p75": 456.0,
+            "p90": 638.0,
+            "p95": 835.0
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.0,
+      "incremental_rank_improvement": {
+        "count": 800,
+        "mean": -17.23375,
+        "median": 0.0,
+        "p25": -1.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0
+      },
+      "retrieval_coverage": 1.0,
+      "target_rank": {
+        "count": 800,
+        "mean": 231.24375,
+        "median": 126.0,
+        "p25": 38.0,
+        "p75": 340.0,
+        "p90": 562.6,
+        "p95": 796.05
+      }
+    },
+    "description": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.05,
+          "with_constraint_rank": {
+            "count": 20,
+            "mean": 1368.5,
+            "median": 295.0,
+            "p25": 208.25,
+            "p75": 1683.25,
+            "p90": 4220.1,
+            "p95": 4623.5
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.040625,
+          "with_constraint_rank": {
+            "count": 94,
+            "mean": 914.106383,
+            "median": 222.0,
+            "p25": 30.5,
+            "p75": 1216.75,
+            "p90": 2644.2,
+            "p95": 3454.0
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.0375,
+          "with_constraint_rank": {
+            "count": 123,
+            "mean": 579.487805,
+            "median": 202.0,
+            "p25": 46.0,
+            "p75": 580.0,
+            "p90": 1366.4,
+            "p95": 2323.1
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.008333,
+          "with_constraint_rank": {
+            "count": 24,
+            "mean": 917.875,
+            "median": 345.0,
+            "p25": 13.5,
+            "p75": 1598.75,
+            "p90": 2426.3,
+            "p95": 2719.05
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.035,
+      "incremental_rank_improvement": {
+        "count": 236,
+        "mean": -239.110169,
+        "median": -56.0,
+        "p25": -295.0,
+        "p75": 24.5,
+        "p90": 333.0,
+        "p95": 517.0
+      },
+      "retrieval_coverage": 0.32625,
+      "target_rank": {
+        "count": 261,
+        "mean": 791.578544,
+        "median": 220.0,
+        "p25": 40.0,
+        "p75": 762.0,
+        "p90": 2389.0,
+        "p95": 3230.0
+      }
+    },
+    "details": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.05,
+          "with_constraint_rank": {
+            "count": 5,
+            "mean": 1857.0,
+            "median": 50.0,
+            "p25": 20.0,
+            "p75": 116.0,
+            "p90": 5497.4,
+            "p95": 7291.2
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.0125,
+          "with_constraint_rank": {
+            "count": 42,
+            "mean": 2146.190476,
+            "median": 35.0,
+            "p25": 8.5,
+            "p75": 468.25,
+            "p90": 863.2,
+            "p95": 13843.3
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.03125,
+          "with_constraint_rank": {
+            "count": 55,
+            "mean": 3459.309091,
+            "median": 112.0,
+            "p25": 11.0,
+            "p75": 432.0,
+            "p90": 12844.8,
+            "p95": 19179.9
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.05,
+          "with_constraint_rank": {
+            "count": 19,
+            "mean": 3469.105263,
+            "median": 110.0,
+            "p25": 31.0,
+            "p75": 565.5,
+            "p90": 6478.6,
+            "p95": 15594.7
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.0275,
+      "incremental_rank_improvement": {
+        "count": 60,
+        "mean": -55.583333,
+        "median": -6.5,
+        "p25": -43.0,
+        "p75": 0.0,
+        "p90": 2.1,
+        "p95": 7.15
+      },
+      "retrieval_coverage": 0.15125,
+      "target_rank": {
+        "count": 121,
+        "mean": 2938.842975,
+        "median": 96.0,
+        "p25": 12.0,
+        "p75": 457.0,
+        "p90": 9085.0,
+        "p95": 15312.0
+      }
+    },
+    "features": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.95,
+          "with_constraint_rank": {
+            "count": 39,
+            "mean": 1605.820513,
+            "median": 87.0,
+            "p25": 4.0,
+            "p75": 1334.0,
+            "p90": 5033.2,
+            "p95": 6358.4
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.95,
+          "with_constraint_rank": {
+            "count": 320,
+            "mean": 2046.759375,
+            "median": 178.5,
+            "p25": 4.75,
+            "p75": 2145.25,
+            "p90": 7281.1,
+            "p95": 9694.85
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.928125,
+          "with_constraint_rank": {
+            "count": 310,
+            "mean": 1644.522581,
+            "median": 92.5,
+            "p25": 4.0,
+            "p75": 1481.0,
+            "p90": 5919.3,
+            "p95": 9655.5
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.933333,
+          "with_constraint_rank": {
+            "count": 115,
+            "mean": 1759.33913,
+            "median": 138.0,
+            "p25": 3.5,
+            "p75": 868.0,
+            "p90": 7197.0,
+            "p95": 10678.3
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.93875,
+      "incremental_rank_improvement": {
+        "count": 468,
+        "mean": 182.215812,
+        "median": 37.0,
+        "p25": 2.0,
+        "p75": 207.0,
+        "p90": 904.9,
+        "p95": 1627.45
+      },
+      "retrieval_coverage": 0.98,
+      "target_rank": {
+        "count": 784,
+        "mean": 1823.617347,
+        "median": 136.0,
+        "p25": 4.0,
+        "p75": 1712.5,
+        "p90": 6925.5,
+        "p95": 9894.5
+      }
+    },
+    "price": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p25": null,
+            "p75": null,
+            "p90": null,
+            "p95": null
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 5,
+            "mean": 1780.6,
+            "median": 177.0,
+            "p25": 135.0,
+            "p75": 3634.0,
+            "p90": 4417.0,
+            "p95": 4678.0
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 1,
+            "mean": 5865.0,
+            "median": 5865.0,
+            "p25": 5865.0,
+            "p75": 5865.0,
+            "p90": 5865.0,
+            "p95": 5865.0
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p25": null,
+            "p75": null,
+            "p90": null,
+            "p95": null
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.0,
+      "incremental_rank_improvement": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p25": null,
+        "p75": null,
+        "p90": null,
+        "p95": null
+      },
+      "retrieval_coverage": 0.0075,
+      "target_rank": {
+        "count": 6,
+        "mean": 2461.333333,
+        "median": 1905.5,
+        "p25": 145.5,
+        "p75": 4612.75,
+        "p90": 5402.0,
+        "p95": 5633.5
+      }
+    },
+    "store": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 4,
+            "mean": 33.75,
+            "median": 32.5,
+            "p25": 32.0,
+            "p75": 34.25,
+            "p90": 36.5,
+            "p95": 37.25
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 15,
+            "mean": 87.266667,
+            "median": 6.0,
+            "p25": 3.5,
+            "p75": 28.0,
+            "p90": 377.4,
+            "p95": 408.5
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 9,
+            "mean": 50.111111,
+            "median": 40.0,
+            "p25": 20.0,
+            "p75": 59.0,
+            "p90": 79.4,
+            "p95": 118.2
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.0,
+          "with_constraint_rank": {
+            "count": 1,
+            "mean": 4.0,
+            "median": 4.0,
+            "p25": 4.0,
+            "p75": 4.0,
+            "p90": 4.0,
+            "p95": 4.0
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.0,
+      "incremental_rank_improvement": {
+        "count": 20,
+        "mean": -7.7,
+        "median": 0.0,
+        "p25": -6.25,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.2
+      },
+      "retrieval_coverage": 0.03625,
+      "target_rank": {
+        "count": 29,
+        "mean": 65.482759,
+        "median": 23.0,
+        "p25": 5.0,
+        "p75": 40.0,
+        "p90": 195.8,
+        "p95": 377.4
+      }
+    },
+    "title": {
+      "by_scenario": {
+        "boundary": {
+          "exact_match_frequency": 0.075,
+          "with_constraint_rank": {
+            "count": 30,
+            "mean": 1628.733333,
+            "median": 183.0,
+            "p25": 31.5,
+            "p75": 1293.0,
+            "p90": 4554.5,
+            "p95": 10872.7
+          }
+        },
+        "browsing": {
+          "exact_match_frequency": 0.0375,
+          "with_constraint_rank": {
+            "count": 227,
+            "mean": 1104.700441,
+            "median": 118.0,
+            "p25": 24.5,
+            "p75": 684.5,
+            "p90": 2584.6,
+            "p95": 5298.4
+          }
+        },
+        "buying": {
+          "exact_match_frequency": 0.0625,
+          "with_constraint_rank": {
+            "count": 217,
+            "mean": 1300.262673,
+            "median": 289.0,
+            "p25": 74.0,
+            "p75": 790.0,
+            "p90": 2838.8,
+            "p95": 9030.6
+          }
+        },
+        "intent_override": {
+          "exact_match_frequency": 0.066667,
+          "with_constraint_rank": {
+            "count": 79,
+            "mean": 1027.810127,
+            "median": 331.0,
+            "p25": 43.5,
+            "p75": 785.0,
+            "p90": 2354.4,
+            "p95": 3594.4
+          }
+        }
+      },
+      "constraints": 800,
+      "exact_match_frequency": 0.05375,
+      "incremental_rank_improvement": {
+        "count": 484,
+        "mean": -107.299587,
+        "median": -20.0,
+        "p25": -137.25,
+        "p75": 7.25,
+        "p90": 161.9,
+        "p95": 476.7
+      },
+      "retrieval_coverage": 0.69125,
+      "target_rank": {
+        "count": 553,
+        "mean": 1198.884268,
+        "median": 196.0,
+        "p25": 33.0,
+        "p75": 750.0,
+        "p90": 2580.8,
+        "p95": 8848.6
+      }
+    }
+  },
+  "label": "ORACLE DIAGNOSTIC",
+  "multi_field_constraints": 62,
+  "rows": 5600
+}

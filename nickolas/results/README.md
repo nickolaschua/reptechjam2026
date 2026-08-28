@@ -1,0 +1,29 @@
+# Eleven-experiment evaluation results
+
+- Experiment 1: [constraint_uniqueness](experiment_01_constraint_uniqueness/summary.md) — `completed` ([metrics](experiment_01_constraint_uniqueness/metrics.json), [raw rows](experiment_01_constraint_uniqueness/rows.csv), [log](experiment_01_constraint_uniqueness/run.log), [chart](experiment_01_constraint_uniqueness/candidate_uniqueness.png))
+- Experiment 2: [target_rank_curves](experiment_02_target_rank_curves/summary.md) — `completed` ([metrics](experiment_02_target_rank_curves/metrics.json), [raw rows](experiment_02_target_rank_curves/rows.csv), [log](experiment_02_target_rank_curves/run.log), [chart](experiment_02_target_rank_curves/target_rank_curves.png), [early-termination sessions](experiment_02_target_rank_curves/early_termination_sessions.json))
+- Experiment 3: [field_signal](experiment_03_field_signal/summary.md) — `completed` ([metrics](experiment_03_field_signal/metrics.json), [raw rows](experiment_03_field_signal/rows.csv), [log](experiment_03_field_signal/run.log), [chart](experiment_03_field_signal/field_coverage.png))
+- Experiment 4: [constraint_classification](experiment_04_constraint_classification/summary.md) — `completed` ([metrics](experiment_04_constraint_classification/metrics.json), [raw rows](experiment_04_constraint_classification/rows.csv), [log](experiment_04_constraint_classification/run.log), [chart](experiment_04_constraint_classification/classification_distribution.png))
+- Experiment 5: [candidate_set_shrinkage](experiment_05_candidate_set_shrinkage/summary.md) — `completed` ([metrics](experiment_05_candidate_set_shrinkage/metrics.json), [raw rows](experiment_05_candidate_set_shrinkage/rows.csv), [log](experiment_05_candidate_set_shrinkage/run.log), [chart](experiment_05_candidate_set_shrinkage/shrinkage_curves.png))
+- Experiment 6: [slate_width_counterfactuals](experiment_06_slate_width_counterfactuals/summary.md) — `completed` ([metrics](experiment_06_slate_width_counterfactuals/metrics.json), [raw rows](experiment_06_slate_width_counterfactuals/rows.csv), [log](experiment_06_slate_width_counterfactuals/run.log), [chart](experiment_06_slate_width_counterfactuals/slate_comparison.png))
+- Experiment 7: [residual_failure_analysis](experiment_07_residual_failure_analysis/summary.md) — `completed` ([metrics](experiment_07_residual_failure_analysis/metrics.json), [raw rows](experiment_07_residual_failure_analysis/rows.csv), [log](experiment_07_residual_failure_analysis/run.log), [chart](experiment_07_residual_failure_analysis/rescue_comparison.png), [residual turns](experiment_07_residual_failure_analysis/residual_turns.json), [hard failures](experiment_07_residual_failure_analysis/hard_failures.json), [weak successes](experiment_07_residual_failure_analysis/weak_successes.json))
+- Experiment 8: [intent_routed_dense_browsing](experiment_08_intent_routed_dense_browsing/summary.md) — `completed` ([metrics](experiment_08_intent_routed_dense_browsing/metrics.json), [raw rows](experiment_08_intent_routed_dense_browsing/rows.csv), [log](experiment_08_intent_routed_dense_browsing/run.log), [chart](experiment_08_intent_routed_dense_browsing/route_comparison.png), [route diagnostics](experiment_08_intent_routed_dense_browsing/route_diagnostics.json), [paraphrase stress test](experiment_08_intent_routed_dense_browsing/paraphrase_results.json))
+- Experiment 9: [adaptive_hybrid_architecture](experiment_09_adaptive_hybrid_architecture/summary.md) — `completed` ([metrics](experiment_09_adaptive_hybrid_architecture/metrics.json), [raw rows](experiment_09_adaptive_hybrid_architecture/rows.csv), [log](experiment_09_adaptive_hybrid_architecture/run.log), [chart](experiment_09_adaptive_hybrid_architecture/ablation_comparison.png), [state diagnostics](experiment_09_adaptive_hybrid_architecture/state_diagnostics.json), [ablations](experiment_09_adaptive_hybrid_architecture/ablation_comparisons.json))
+- Experiment 10: [xtr_warp_retrieval](experiment_10_xtr_warp_retrieval/summary.md) — `completed` ([metrics](experiment_10_xtr_warp_retrieval/metrics.json), [raw rows](experiment_10_xtr_warp_retrieval/rows.csv), [log](experiment_10_xtr_warp_retrieval/run.log), [chart](experiment_10_xtr_warp_retrieval/technical_score_comparison.png), [Colab import report](experiment_10_xtr_warp_retrieval/colab_import_report.json), [control reproduction](experiment_10_xtr_warp_retrieval/baseline_reproduction.json), [rescue comparison](experiment_10_xtr_warp_retrieval/rescue_comparisons.json))
+- Experiment 11: [clean_fts5_candidate](experiment_11_clean_fts5_candidate/summary.md) — `completed` ([metrics](experiment_11_clean_fts5_candidate/metrics.json), [raw rows](experiment_11_clean_fts5_candidate/rows.csv), [log](experiment_11_clean_fts5_candidate/run.log), [chart](experiment_11_clean_fts5_candidate/agent_comparison.png), [comparisons](experiment_11_clean_fts5_candidate/comparisons.json), [candidate snapshot](experiment_11_clean_fts5_candidate/candidate_agent_snapshot.py), [latency](experiment_11_clean_fts5_candidate/latency.json))
+
+- [Combined summary](combined_summary.md)
+- [Methodology](../experiments/methodology.md)
+- [Manifest](manifest.json)
+- [Baseline verification](baseline_verification.json)
+- [Runner log](run_all.log)
+- [Cache documentation](cache/README.md)
+
+## Interactive Experiment 7 CLI
+
+Open existing traces with `python -m nickolas.experiments.experiment_07_cli`. Add `--run` to rerun Experiment 7 with live logs before opening the viewer.
+Run `python -m nickolas.experiments.experiment_07_cli --demo` for a presentation-ready single-case rescue replay.
+
+## Experiment 10 CLI
+
+Inspect the WARP comparison with `python -m nickolas.experiments.experiment_10_cli --summary`; use `--demo` for a held-out case replay or `--run` to validate/import and rerun Experiment 10.

@@ -1,0 +1,367 @@
+Fetch Shard Index for pytorch/linux-64                                                          ⧖ Starting
+Fetch Shard Index for pytorch/linux-64                                                    ✔ Done (0.1 sec)
+Fetch Shard Index for pytorch/noarch                                                            ⧖ Starting
+Fetch Shard Index for pytorch/noarch                                                      ✔ Done (0.1 sec)
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.3 sec)
+Fetch Shard Index for nvidia/linux-64                                                           ⧖ Starting
+Fetch Shard Index for nvidia/linux-64                                                     ✔ Done (0.1 sec)
+Fetch Shard Index for nvidia/noarch                                                             ⧖ Starting
+Fetch Shard Index for nvidia/noarch                                                       ✔ Done (0.1 sec)
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (3.3 sec)
+Fetch Shard Index for conda-forge/linux-64                                                      ⧖ Starting
+Fetch Shard Index for conda-forge/linux-64                                                ✔ Done (0.6 sec)
+Fetch Shard Index for conda-forge/noarch                                                        ⧖ Starting
+Fetch Shard Index for conda-forge/noarch                                                  ✔ Done (0.1 sec)
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                    ✔ Done (39.1 sec)
+Using Cached Shard Index for pytorch/linux-64                                                       ✔ Done
+Using Cached Shard Index for pytorch/noarch                                                         ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+Using Cached Shard Index for nvidia/linux-64                                                        ✔ Done
+Using Cached Shard Index for nvidia/noarch                                                          ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.6 sec)
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (1.2 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.9 sec)
+
+Transaction
+
+  Prefix: /content/experiment_10_work/python38
+
+  Updating specs:
+
+   - python=3.8.20
+   - pip=24.2
+   - pytorch[version="=1.13.1",build="^py3.8_cuda11.7_cudnn8.5.0_0$"]
+   - pytorch-cuda=11.7
+   - faiss-gpu[version="=1.7.2",build="^py3.8_h28a55e0_0_cuda11.3$"]
+   - mkl=2024.0.0
+   - numpy=1.24.4
+   - scipy=1.10.1
+   - ninja=1.11.1
+   - pip
+
+
+  Package                  Version  Build                        Channel          Size
+────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex              4.5  7_kmp_llvm                   conda-forge       8kB
+  + blas                     2.121  mkl                          conda-forge      15kB
+  + blas-devel               3.9.0  21_linux64_mkl               conda-forge      14kB
+  + brotli-python            1.1.0  py38h17151c0_1               conda-forge     351kB
+  + bzip2                    1.0.8  hda65f42_10                  conda-forge     258kB
+  + ca-certificates      2026.7.22  hbd8a1cb_0                   conda-forge     132kB
+  + certifi              2024.8.30  pyhd8ed1ab_0                 conda-forge     164kB
+  + cffi                    1.17.0  py38heb5c249_0               conda-forge     240kB
+  + charset-normalizer       3.4.0  pyhd8ed1ab_0                 conda-forge      47kB
+  + cuda-cudart            11.7.99  0                            nvidia          199kB
+  + cuda-cupti            11.7.101  0                            nvidia           24MB
+  + cuda-libraries          11.7.1  0                            nvidia            2kB
+  + cuda-nvrtc             11.7.99  0                            nvidia           18MB
+  + cuda-nvtx              11.7.91  0                            nvidia           58kB
+  + cuda-runtime            11.7.1  0                            nvidia            1kB
+  + cudatoolkit             11.3.1  ha36c431_9                   nvidia          855MB
+  + faiss-gpu                1.7.2  py3.8_h28a55e0_0_cuda11.3    pytorch           3MB
+  + h2                       4.1.0  pyhd8ed1ab_0                 conda-forge      47kB
+  + hpack                    4.0.0  pyh9f0ad1d_0                 conda-forge      25kB
+  + hyperframe               6.0.1  pyhd8ed1ab_0                 conda-forge      15kB
+  + icu                       78.3  py310h44b86e0_2              conda-forge      14MB
+  + idna                      3.10  pyhd8ed1ab_0                 conda-forge      50kB
+  + ld_impl_linux-64        2.46.1  default_hbd61a6d_102         conda-forge     745kB
+  + libblas                  3.9.0  21_linux64_mkl               conda-forge      15kB
+  + libcblas                 3.9.0  21_linux64_mkl               conda-forge      15kB
+  + libcublas           11.10.3.66  0                            nvidia          300MB
+  + libcufft            10.7.2.124  h4fbf590_0                   nvidia           98MB
+  + libcufile              1.9.1.3  0                            nvidia            1MB
+  + libcurand           10.3.5.147  0                            nvidia           54MB
+  + libcusolver           11.4.0.1  0                            nvidia           83MB
+  + libcusparse          11.7.4.91  0                            nvidia          158MB
+  + libfaiss                 1.7.2  hfc2d529_0_cuda11.3          pytorch         406MB
+  + libffi                   3.7.0  h81df57d_1                   conda-forge      68kB
+  + libgcc                  16.2.0  ha9f2e26_4                   conda-forge       1MB
+  + libgcc-ng               16.2.0  h69a702a_4                   conda-forge      28kB
+  + libgfortran             16.2.0  h69a702a_4                   conda-forge      28kB
+  + libgfortran-ng          16.2.0  h69a702a_4                   conda-forge      28kB
+  + libgfortran5            16.2.0  h6b99dfc_4                   conda-forge       3MB
+  + libhwloc                2.13.0  default_he001693_1000        conda-forge       2MB
+  + libiconv                  1.18  h0cb94f2_3                   conda-forge     789kB
+  + liblapack                3.9.0  21_linux64_mkl               conda-forge      15kB
+  + liblapacke               3.9.0  21_linux64_mkl               conda-forge      15kB
+  + liblzma                  5.8.3  hb03c661_1                   conda-forge     113kB
+  + liblzma-devel            5.8.3  hb03c661_1                   conda-forge     492kB
+  + libnpp               11.7.4.75  0                            nvidia          136MB
+  + libnsl                   2.0.1  hb9d3cd8_1                   conda-forge      34kB
+  + libnvjpeg             11.8.0.2  0                            nvidia            2MB
+  + libsqlite               3.53.4  h13e7031_1                   conda-forge     974kB
+  + libstdcxx               16.2.0  h934c35e_4                   conda-forge       7MB
+  + libstdcxx-ng            16.2.0  hdf11a46_4                   conda-forge      28kB
+  + libuuid                 2.42.2  h5347b49_0                   conda-forge      40kB
+  + libxcrypt               4.4.38  h280c20c_0                   conda-forge     102kB
+  + libxml2                 2.15.3  h49c6c72_1                   conda-forge      46kB
+  + libxml2-16              2.15.3  hca6bf5a_1                   conda-forge     560kB
+  + libzlib                  1.3.2  h25fd6f3_3                   conda-forge      64kB
+  + llvm-openmp             23.1.0  h7148c6a_0                   conda-forge       6MB
+  + mkl                   2024.0.0  ha957f24_49657               conda-forge     126MB
+  + mkl-devel             2024.0.0  ha770c72_49657               conda-forge      32kB
+  + mkl-include           2024.0.0  ha957f24_49657               conda-forge     768kB
+  + ncurses                    6.6  hdb14827_1                   conda-forge     911kB
+  + ninja                   1.11.1  h924138e_0                   conda-forge       2MB
+  + numpy                   1.24.4  py38h59b608b_0               conda-forge       7MB
+  + openssl                  3.6.4  h781a0a9_0                   conda-forge       3MB
+  + packaging                 26.2  pyhc364b38_0                 conda-forge      92kB
+  + pip                       24.2  pyh8b19718_1                 conda-forge       1MB
+  + platformdirs             4.3.6  pyhd8ed1ab_0                 conda-forge      21kB
+  + pooch                    1.8.2  pyhd8ed1ab_0                 conda-forge      54kB
+  + pycparser                 2.22  pyhd8ed1ab_0                 conda-forge     105kB
+  + pysocks                  1.7.1  pyha2e5f31_6                 conda-forge      19kB
+  + python                  3.8.20  h4a871b0_2_cpython           conda-forge      22MB
+  + python_abi                 3.8  8_cp38                       conda-forge       7kB
+  + pytorch                 1.13.1  py3.8_cuda11.7_cudnn8.5.0_0  pytorch           1GB
+  + pytorch-cuda              11.7  h778d358_5                   pytorch           4kB
+  + pytorch-mutex              1.0  cuda                         pytorch           3kB
+  + readline                   8.3  hd6e31c0_1                   conda-forge     349kB
+  + requests                2.32.3  pyhd8ed1ab_0                 conda-forge      59kB
+  + scipy                   1.10.1  py38h59b608b_3               conda-forge      15MB
+  + setuptools              75.3.0  pyhd8ed1ab_0                 conda-forge     780kB
+  + tbb                  2021.13.0  hb700be7_6                   conda-forge     172kB
+  + tk                      8.6.13  noxft_h1df4ec4_4             conda-forge       4MB
+  + typing_extensions       4.12.2  pyha770c72_0                 conda-forge      40kB
+  + urllib3                  2.2.3  pyhd8ed1ab_0                 conda-forge      98kB
+  + wheel                   0.45.1  pyhd8ed1ab_0                 conda-forge      63kB
+  + xz                       5.8.3  ha02ee65_1                   conda-forge      24kB
+  + xz-gpl-tools             5.8.3  ha02ee65_1                   conda-forge      40kB
+  + xz-tools                 5.8.3  hb03c661_1                   conda-forge      96kB
+  + zstandard               0.19.0  py38h0a891b7_0               conda-forge     688kB
+  + zstd                     1.5.7  hb78ec9c_7                   conda-forge     601kB
+
+  Summary:
+
+  Install: 88 packages
+
+  Total download: 4GB
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking pytorch-mutex-1.0-cuda
+Linking python_abi-3.8-8_cp38
+Linking ca-certificates-2026.7.22-hbd8a1cb_0
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking llvm-openmp-23.1.0-h7148c6a_0
+Linking mkl-include-2024.0.0-ha957f24_49657
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-7_kmp_llvm
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_102
+Linking libgcc-16.2.0-ha9f2e26_4
+Linking libiconv-1.18-h0cb94f2_3
+Linking bzip2-1.0.8-hda65f42_10
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libuuid-2.42.2-h5347b49_0
+Linking openssl-3.6.4-h781a0a9_0
+Linking libffi-3.7.0-h81df57d_1
+Linking libxcrypt-4.4.38-h280c20c_0
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking libstdcxx-16.2.0-h934c35e_4
+Linking libgcc-ng-16.2.0-h69a702a_4
+Linking libgfortran5-16.2.0-h6b99dfc_4
+Linking xz-gpl-tools-5.8.3-ha02ee65_1
+Linking xz-tools-5.8.3-hb03c661_1
+Linking liblzma-devel-5.8.3-hb03c661_1
+Linking readline-8.3-hd6e31c0_1
+Linking icu-78.3-py310h44b86e0_2
+Linking libstdcxx-ng-16.2.0-hdf11a46_4
+Linking libgfortran-16.2.0-h69a702a_4
+Linking xz-5.8.3-ha02ee65_1
+Linking libsqlite-3.53.4-h13e7031_1
+Linking libxml2-16-2.15.3-hca6bf5a_1
+Linking ninja-1.11.1-h924138e_0
+Linking libgfortran-ng-16.2.0-h69a702a_4
+Linking python-3.8.20-h4a871b0_2_cpython
+Linking libxml2-2.15.3-h49c6c72_1
+Linking libhwloc-2.13.0-default_he001693_1000
+Linking tbb-2021.13.0-hb700be7_6
+Linking mkl-2024.0.0-ha957f24_49657
+Linking mkl-devel-2024.0.0-ha770c72_49657
+Linking libblas-3.9.0-21_linux64_mkl
+Linking libcblas-3.9.0-21_linux64_mkl
+Linking liblapack-3.9.0-21_linux64_mkl
+Linking liblapacke-3.9.0-21_linux64_mkl
+Linking blas-devel-3.9.0-21_linux64_mkl
+Linking blas-2.121-mkl
+Linking libcublas-11.10.3.66-0
+Linking libnvjpeg-11.8.0.2-0
+Linking cuda-cupti-11.7.101-0
+Linking cuda-nvrtc-11.7.99-0
+Linking cuda-cudart-11.7.99-0
+Linking cuda-nvtx-11.7.91-0
+warning  libmamba [cuda-nvtx-11.7.91-0] The following files were already present in the environment:
+    - LICENSE
+Linking libcusparse-11.7.4.91-0
+Linking libnpp-11.7.4.75-0
+Linking libcusolver-11.4.0.1-0
+Linking libcufft-10.7.2.124-h4fbf590_0
+Linking libcurand-10.3.5.147-0
+Linking libcufile-1.9.1.3-0
+Linking cudatoolkit-11.3.1-ha36c431_9
+warning  libmamba Executing post-link script for package 'cudatoolkit'.
+By downloading and using the CUDA Toolkit conda packages, you accept the terms and conditions of the CUDA End User License Agreement (EULA): https://docs.nvidia.com/cuda/eula/index.html
+
+warning  libmamba [cudatoolkit-11.3.1-ha36c431_9] The following files were already present in the environment:
+    - lib/libcublas.so.11
+    - lib/libcublasLt.so.11
+    - lib/libcudart.so.11.0
+    - lib/libcufft.so.10
+    - lib/libcufftw.so.10
+    - lib/libcupti.so
+    - lib/libcurand.so.10
+    - lib/libcusolver.so.11
+    - lib/libcusolverMg.so.11
+    - lib/libcusparse.so.11
+    - lib/libnppc.so.11
+    - lib/libnppial.so.11
+    - lib/libnppicc.so.11
+    - lib/libnppidei.so.11
+    - lib/libnppif.so.11
+    - lib/libnppig.so.11
+    - lib/libnppim.so.11
+    - lib/libnppist.so.11
+    - lib/libnppisu.so.11
+    - lib/libnppitc.so.11
+    - lib/libnpps.so.11
+    - lib/libnvToolsExt.so
+    - lib/libnvToolsExt.so.1
+    - lib/libnvToolsExt.so.1.0.0
+    - lib/libnvblas.so.11
+    - lib/libnvjpeg.so.11
+    - lib/libnvrtc.so.11.2
+Linking cuda-libraries-11.7.1-0
+Linking cuda-runtime-11.7.1-0
+Linking wheel-0.45.1-pyhd8ed1ab_0
+Linking setuptools-75.3.0-pyhd8ed1ab_0
+Linking pip-24.2-pyh8b19718_1
+Linking hyperframe-6.0.1-pyhd8ed1ab_0
+Linking hpack-4.0.0-pyh9f0ad1d_0
+Linking pycparser-2.22-pyhd8ed1ab_0
+Linking pysocks-1.7.1-pyha2e5f31_6
+Linking charset-normalizer-3.4.0-pyhd8ed1ab_0
+Linking idna-3.10-pyhd8ed1ab_0
+Linking certifi-2024.8.30-pyhd8ed1ab_0
+Linking platformdirs-4.3.6-pyhd8ed1ab_0
+Linking packaging-26.2-pyhc364b38_0
+Linking typing_extensions-4.12.2-pyha770c72_0
+Linking h2-4.1.0-pyhd8ed1ab_0
+Linking libfaiss-1.7.2-hfc2d529_0_cuda11.3
+Linking pytorch-cuda-11.7-h778d358_5
+Linking pytorch-1.13.1-py3.8_cuda11.7_cudnn8.5.0_0
+Linking brotli-python-1.1.0-py38h17151c0_1
+Linking numpy-1.24.4-py38h59b608b_0
+Linking cffi-1.17.0-py38heb5c249_0
+Linking zstandard-0.19.0-py38h0a891b7_0
+Linking faiss-gpu-1.7.2-py3.8_h28a55e0_0_cuda11.3
+Linking urllib3-2.2.3-pyhd8ed1ab_0
+Linking requests-2.32.3-pyhd8ed1ab_0
+Linking pooch-1.8.2-pyhd8ed1ab_0
+Linking scipy-1.10.1-py38h59b608b_3
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /content/experiment_10_work/python38
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /content/experiment_10_work/python38 mycommand
+
+warning  libmamba You are using 'pip' as an additional package manager.
+    Be aware that packages installed with 'pip' are managed independently from 'conda-forge' channel.
+
+Installing pip packages: bitarray==2.9.2, GitPython==3.1.43, huggingface-hub==0.20.3, jsonlines==4.0.0, protobuf==4.25.3, python-dotenv==1.0.1, safetensors==0.4.5, sentencepiece==0.1.99, tqdm==4.66.5, transformers==4.35.2, ujson==5.10.0
+Collecting bitarray==2.9.2 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 1))
+  Downloading bitarray-2.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+Collecting GitPython==3.1.43 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 2))
+  Downloading GitPython-3.1.43-py3-none-any.whl.metadata (13 kB)
+Collecting huggingface-hub==0.20.3 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 3))
+  Downloading huggingface_hub-0.20.3-py3-none-any.whl.metadata (12 kB)
+Collecting jsonlines==4.0.0 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 4))
+  Downloading jsonlines-4.0.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting protobuf==4.25.3 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 5))
+  Downloading protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+Collecting python-dotenv==1.0.1 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 6))
+  Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting safetensors==0.4.5 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 7))
+  Downloading safetensors-0.4.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting sentencepiece==0.1.99 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 8))
+  Downloading sentencepiece-0.1.99-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting tqdm==4.66.5 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 9))
+  Downloading tqdm-4.66.5-py3-none-any.whl.metadata (57 kB)
+Collecting transformers==4.35.2 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 10))
+  Downloading transformers-4.35.2-py3-none-any.whl.metadata (123 kB)
+Collecting ujson==5.10.0 (from -r /content/experiment_10_work/input/mambafnqnjme64sj (line 11))
+  Downloading ujson-5.10.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.3 kB)
+Collecting gitdb<5,>=4.0.1 (from GitPython==3.1.43->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 2))
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting filelock (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3))
+  Downloading filelock-3.16.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=2023.5.0 (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3))
+  Downloading fsspec-2025.3.0-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: requests in /content/experiment_10_work/python38/lib/python3.8/site-packages (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (2.32.3)
+Collecting pyyaml>=5.1 (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3))
+  Downloading PyYAML-6.0.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (4.12.2)
+Requirement already satisfied: packaging>=20.9 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (26.2)
+Collecting attrs>=19.2.0 (from jsonlines==4.0.0->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 4))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: numpy>=1.17 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from transformers==4.35.2->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 10)) (1.24.4)
+Collecting regex!=2019.12.17 (from transformers==4.35.2->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 10))
+  Downloading regex-2024.11.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+Collecting tokenizers<0.19,>=0.14 (from transformers==4.35.2->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 10))
+  Downloading tokenizers-0.15.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->GitPython==3.1.43->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 2))
+  Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from requests->huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (3.4.0)
+Requirement already satisfied: idna<4,>=2.5 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from requests->huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from requests->huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in /content/experiment_10_work/python38/lib/python3.8/site-packages (from requests->huggingface-hub==0.20.3->-r /content/experiment_10_work/input/mambafnqnjme64sj (line 3)) (2024.8.30)
+Downloading bitarray-2.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+Downloading GitPython-3.1.43-py3-none-any.whl (207 kB)
+Downloading huggingface_hub-0.20.3-py3-none-any.whl (330 kB)
+Downloading jsonlines-4.0.0-py3-none-any.whl (8.7 kB)
+Downloading protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Downloading safetensors-0.4.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (436 kB)
+Downloading sentencepiece-0.1.99-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 52.3 MB/s eta 0:00:00
+Downloading tqdm-4.66.5-py3-none-any.whl (78 kB)
+Downloading transformers-4.35.2-py3-none-any.whl (7.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.9/7.9 MB 91.8 MB/s eta 0:00:00
+Downloading ujson-5.10.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (53 kB)
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+Downloading PyYAML-6.0.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.0/806.0 kB 39.5 MB/s eta 0:00:00
+Downloading regex-2024.11.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (785 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 785.1/785.1 kB 40.9 MB/s eta 0:00:00
+Downloading tokenizers-0.15.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 125.1 MB/s eta 0:00:00
+Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+Installing collected packages: sentencepiece, bitarray, ujson, tqdm, smmap, safetensors, regex, pyyaml, python-dotenv, protobuf, fsspec, filelock, attrs, jsonlines, huggingface-hub, gitdb, tokenizers, GitPython, transformers
+Successfully installed GitPython-3.1.43 attrs-25.3.0 bitarray-2.9.2 filelock-3.16.1 fsspec-2025.3.0 gitdb-4.0.12 huggingface-hub-0.20.3 jsonlines-4.0.0 protobuf-4.25.3 python-dotenv-1.0.1 pyyaml-6.0.3 regex-2024.11.6 safetensors-0.4.5 sentencepiece-0.1.99 smmap-5.0.3 tokenizers-0.15.2 tqdm-4.66.5 transformers-4.35.2 ujson-5.10.0

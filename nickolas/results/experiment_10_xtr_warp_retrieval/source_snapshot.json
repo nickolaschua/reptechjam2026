@@ -1,0 +1,7 @@
+{
+  "identical": true,
+  "snapshot": "nickolas\\results\\experiment_10_xtr_warp_retrieval\\source_snapshot.py",
+  "snapshot_sha256": "9046b43e508a1305e523d339012269a17671ef72ebac65c8ceae0a73ef5e848b",
+  "source": "nickolas\\experiments\\experiment_10_xtr_warp_retrieval.py",
+  "source_sha256": "9046b43e508a1305e523d339012269a17671ef72ebac65c8ceae0a73ef5e848b"
+}

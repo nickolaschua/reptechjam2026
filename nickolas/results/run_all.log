@@ -1,0 +1,524 @@
+2026-08-26 15:35:55,660 INFO Built lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 38.88s
+2026-08-26 15:35:55,967 INFO ORACLE DIAGNOSTIC: beginning constraint uniqueness
+2026-08-26 15:35:55,967 INFO ORACLE DIAGNOSTIC: beginning constraint uniqueness
+2026-08-26 15:36:01,347 ERROR Experiment 1 failed; prior results remain intact
+TypeError: float() argument must be a string or a real number, not 'csr_matrix'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 109, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiments.py", line 92, in run_01
+    exact, overlap, all_token = h.exact_scores(phrases)
+                                ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\harness.py", line 493, in exact_scores
+    phrase_overlap = (counts / q.nnz).astype(np.float32)
+ValueError: setting an array element with a sequence.
+2026-08-26 15:36:01,356 INFO Run complete with exit code 1
+2026-08-26 15:36:27,892 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.19s
+2026-08-26 15:36:28,231 INFO ORACLE DIAGNOSTIC: beginning constraint uniqueness
+2026-08-26 15:36:28,231 INFO ORACLE DIAGNOSTIC: beginning constraint uniqueness
+2026-08-26 15:37:25,429 INFO Completed experiment_01_constraint_uniqueness in 57.18s
+2026-08-26 15:37:25,429 INFO Completed experiment_01_constraint_uniqueness in 57.18s
+2026-08-26 15:37:25,450 INFO Run complete with exit code 0
+2026-08-26 15:40:38,669 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 0.88s
+2026-08-26 15:40:38,812 INFO ORACLE DIAGNOSTIC: beginning field attribution
+2026-08-26 15:42:03,201 INFO Completed experiment_03_field_signal in 84.26s
+2026-08-26 15:42:03,209 INFO ORACLE DIAGNOSTIC: beginning evaluator classifier analysis
+2026-08-26 15:42:03,543 INFO Completed experiment_04_constraint_classification in 0.30s
+2026-08-26 15:42:03,549 INFO Run complete with exit code 0
+2026-08-26 15:42:16,351 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.77s
+2026-08-26 15:42:16,635 INFO AGENT-REALISTIC EVALUATION: beginning target rank curves
+2026-08-26 15:44:07,160 ERROR Experiment 2 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1191, in __iter__
+    self.update(n - last_print_n)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1242, in update
+    self.refresh(lock_args=self.lock_args)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1347, in refresh
+    self.display()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 457, in print_status
+    fp_write('\r' + s + (' ' * max(last_len[0] - len_s, 0)))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 450, in fp_write
+    fp.write(str(s))
+    ~~~~~~~~^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\utils.py", line 179, in inner
+    return func(*args, **kwargs)
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 109, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiments.py", line 164, in run_02
+    order, _ = ranker(state)
+               ~~~~~~^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiments.py", line 143, in <lambda>
+    "dense": lambda s: h.dense.ranked(s.state_query),
+                       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\harness.py", line 316, in ranked
+    self.ensure()
+    ~~~~~~~~~~~^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\harness.py", line 305, in ensure
+    values = model.encode(
+             ~~~~~~~~~~~~^
+        list(self.texts), batch_size=64, show_progress_bar=True,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        convert_to_numpy=True, normalize_embeddings=True,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).astype(np.float32)
+    ^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\sentence_transformers\sentence_transformer\model.py", line 652, in encode
+    for start_index in trange(0, len(inputs_sorted), batch_size, desc="Batches", disable=not show_progress_bar):
+                       ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1196, in __iter__
+    self.close()
+    ~~~~~~~~~~^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1302, in close
+    self.display(pos=0)
+    ~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 457, in print_status
+    fp_write('\r' + s + (' ' * max(last_len[0] - len_s, 0)))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 450, in fp_write
+    fp.write(str(s))
+    ~~~~~~~~^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\utils.py", line 179, in inner
+    return func(*args, **kwargs)
+OSError: [Errno 22] Invalid argument
+2026-08-26 15:44:07,184 INFO Run complete with exit code 1
+2026-08-26 15:44:51,765 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.82s
+2026-08-26 15:44:52,062 INFO AGENT-REALISTIC EVALUATION: beginning target rank curves
+2026-08-26 15:46:24,392 ERROR Experiment 2 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1191, in __iter__
+    self.update(n - last_print_n)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1242, in update
+    self.refresh(lock_args=self.lock_args)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1347, in refresh
+    self.display()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 457, in print_status
+    fp_write('\r' + s + (' ' * max(last_len[0] - len_s, 0)))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 450, in fp_write
+    fp.write(str(s))
+    ~~~~~~~~^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\utils.py", line 179, in inner
+    return func(*args, **kwargs)
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 109, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiments.py", line 154, in run_02
+    h.dense.preload_queries(state.state_query for state in h.traces)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\harness.py", line 335, in preload_queries
+    if not missing:
+    ^^^^^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\harness.py", line 306, in ensure
+    model = self._load_model()
+             ^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        list(self.texts), batch_size=256, show_progress_bar=True,
+    
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\sentence_transformers\sentence_transformer\model.py", line 652, in encode
+    for start_index in trange(0, len(inputs_sorted), batch_size, desc="Batches", disable=not show_progress_bar):
+                       ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1196, in __iter__
+    self.close()
+    ~~~~~~~~~~^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1302, in close
+    self.display(pos=0)
+    ~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 457, in print_status
+    fp_write('\r' + s + (' ' * max(last_len[0] - len_s, 0)))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\std.py", line 450, in fp_write
+    fp.write(str(s))
+    ~~~~~~~~^^^^^^^^
+  File "C:\Users\nicko\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\tqdm\utils.py", line 179, in inner
+    return func(*args, **kwargs)
+OSError: [Errno 22] Invalid argument
+2026-08-26 15:46:24,429 INFO Run complete with exit code 1
+2026-08-26 15:46:28,965 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.20s
+2026-08-26 15:46:29,212 INFO AGENT-REALISTIC EVALUATION: beginning target rank curves
+2026-08-26 16:06:51,795 INFO Encoded 50000 products in 1207.10s
+2026-08-26 16:07:18,335 INFO Ranked 100/2000 trace turns
+2026-08-26 16:07:29,347 INFO Ranked 200/2000 trace turns
+2026-08-26 16:07:39,816 INFO Ranked 300/2000 trace turns
+2026-08-26 16:07:49,319 INFO Ranked 400/2000 trace turns
+2026-08-26 16:07:58,722 INFO Ranked 500/2000 trace turns
+2026-08-26 16:08:07,340 INFO Ranked 600/2000 trace turns
+2026-08-26 16:08:17,123 INFO Ranked 700/2000 trace turns
+2026-08-26 16:08:26,315 INFO Ranked 800/2000 trace turns
+2026-08-26 16:08:35,624 INFO Ranked 900/2000 trace turns
+2026-08-26 16:08:42,837 INFO Ranked 1000/2000 trace turns
+2026-08-26 16:08:51,401 INFO Ranked 1100/2000 trace turns
+2026-08-26 16:09:00,689 INFO Ranked 1200/2000 trace turns
+2026-08-26 16:09:09,256 INFO Ranked 1300/2000 trace turns
+2026-08-26 16:09:17,812 INFO Ranked 1400/2000 trace turns
+2026-08-26 16:09:26,649 INFO Ranked 1500/2000 trace turns
+2026-08-26 16:09:35,566 INFO Ranked 1600/2000 trace turns
+2026-08-26 16:09:45,441 INFO Ranked 1700/2000 trace turns
+2026-08-26 16:09:53,943 INFO Ranked 1800/2000 trace turns
+2026-08-26 16:10:01,928 INFO Ranked 1900/2000 trace turns
+2026-08-26 16:10:11,939 INFO Ranked 2000/2000 trace turns
+2026-08-26 16:10:12,934 INFO Completed experiment_02_target_rank_curves in 1423.67s
+2026-08-26 16:10:12,941 INFO Run complete with exit code 0
+2026-08-26 16:10:37,200 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.26s
+2026-08-26 16:10:37,642 INFO ORACLE DIAGNOSTIC: beginning candidate-set shrinkage
+2026-08-26 16:10:37,655 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 16:11:39,480 INFO Processed 25/200 sessions
+2026-08-26 16:11:54,186 INFO Processed 50/200 sessions
+2026-08-26 16:12:08,407 INFO Processed 75/200 sessions
+2026-08-26 16:12:22,380 INFO Processed 100/200 sessions
+2026-08-26 16:12:36,793 INFO Processed 125/200 sessions
+2026-08-26 16:12:52,273 INFO Processed 150/200 sessions
+2026-08-26 16:13:06,603 INFO Processed 175/200 sessions
+2026-08-26 16:13:20,490 INFO Processed 200/200 sessions
+2026-08-26 16:13:21,404 INFO Completed experiment_05_candidate_set_shrinkage in 163.74s
+2026-08-26 16:13:21,413 INFO Run complete with exit code 0
+2026-08-26 16:13:37,239 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.01s
+2026-08-26 16:13:37,694 INFO AGENT-REALISTIC EVALUATION: beginning slate counterfactuals
+2026-08-26 16:13:37,722 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 16:15:05,087 INFO Completed experiment_06_slate_width_counterfactuals in 87.39s
+2026-08-26 16:15:05,099 INFO Run complete with exit code 0
+2026-08-26 16:16:34,285 INFO Verifying unmodified starter baseline
+2026-08-26 16:17:00,235 INFO Baseline verified at 0.10671
+2026-08-26 16:17:02,463 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.15s
+2026-08-26 16:17:02,709 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:17:02,709 INFO ORACLE DIAGNOSTIC: beginning constraint uniqueness
+2026-08-26 16:17:24,509 INFO Completed experiment_01_constraint_uniqueness in 21.79s
+2026-08-26 16:17:24,521 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:17:24,521 INFO AGENT-REALISTIC EVALUATION: beginning target rank curves
+2026-08-26 16:17:24,532 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 16:17:58,868 INFO Ranked 100/2000 trace turns
+2026-08-26 16:18:07,506 INFO Ranked 200/2000 trace turns
+2026-08-26 16:18:16,003 INFO Ranked 300/2000 trace turns
+2026-08-26 16:18:24,173 INFO Ranked 400/2000 trace turns
+2026-08-26 16:18:32,465 INFO Ranked 500/2000 trace turns
+2026-08-26 16:18:39,669 INFO Ranked 600/2000 trace turns
+2026-08-26 16:18:47,696 INFO Ranked 700/2000 trace turns
+2026-08-26 16:18:56,228 INFO Ranked 800/2000 trace turns
+2026-08-26 16:19:04,305 INFO Ranked 900/2000 trace turns
+2026-08-26 16:19:11,330 INFO Ranked 1000/2000 trace turns
+2026-08-26 16:19:19,254 INFO Ranked 1100/2000 trace turns
+2026-08-26 16:19:27,223 INFO Ranked 1200/2000 trace turns
+2026-08-26 16:19:35,201 INFO Ranked 1300/2000 trace turns
+2026-08-26 16:19:43,143 INFO Ranked 1400/2000 trace turns
+2026-08-26 16:19:51,308 INFO Ranked 1500/2000 trace turns
+2026-08-26 16:19:59,292 INFO Ranked 1600/2000 trace turns
+2026-08-26 16:20:08,051 INFO Ranked 1700/2000 trace turns
+2026-08-26 16:20:16,250 INFO Ranked 1800/2000 trace turns
+2026-08-26 16:20:24,056 INFO Ranked 1900/2000 trace turns
+2026-08-26 16:20:33,502 INFO Ranked 2000/2000 trace turns
+2026-08-26 16:20:34,487 INFO Completed experiment_02_target_rank_curves in 189.91s
+2026-08-26 16:20:34,524 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:20:34,525 INFO ORACLE DIAGNOSTIC: beginning field attribution
+2026-08-26 16:22:55,450 INFO Completed experiment_03_field_signal in 140.79s
+2026-08-26 16:22:55,491 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:22:55,491 INFO ORACLE DIAGNOSTIC: beginning evaluator classifier analysis
+2026-08-26 16:22:55,814 INFO Completed experiment_04_constraint_classification in 0.30s
+2026-08-26 16:22:55,853 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:22:55,854 INFO ORACLE DIAGNOSTIC: beginning candidate-set shrinkage
+2026-08-26 16:23:03,529 INFO Processed 25/200 sessions
+2026-08-26 16:23:07,456 INFO Processed 50/200 sessions
+2026-08-26 16:23:11,974 INFO Processed 75/200 sessions
+2026-08-26 16:23:16,283 INFO Processed 100/200 sessions
+2026-08-26 16:23:20,092 INFO Processed 125/200 sessions
+2026-08-26 16:23:24,357 INFO Processed 150/200 sessions
+2026-08-26 16:23:28,522 INFO Processed 175/200 sessions
+2026-08-26 16:23:33,413 INFO Processed 200/200 sessions
+2026-08-26 16:23:34,223 INFO Completed experiment_05_candidate_set_shrinkage in 38.35s
+2026-08-26 16:23:34,258 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 16:23:34,258 INFO AGENT-REALISTIC EVALUATION: beginning slate counterfactuals
+2026-08-26 16:23:37,405 INFO Completed experiment_06_slate_width_counterfactuals in 3.14s
+2026-08-26 16:23:37,421 INFO Run complete with exit code 0
+2026-08-26 19:56:08,620 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 0.86s
+2026-08-26 19:56:09,002 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 19:56:09,003 INFO AGENT-REALISTIC EVALUATION + ORACLE-AFTER-FREEZE DIAGNOSTIC: beginning residual analysis
+2026-08-26 19:56:09,010 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 19:58:48,729 INFO Frozen 100/2000 oracle-free turn rankings
+2026-08-26 19:58:53,593 INFO Frozen 200/2000 oracle-free turn rankings
+2026-08-26 19:58:57,918 INFO Frozen 300/2000 oracle-free turn rankings
+2026-08-26 19:59:03,320 INFO Frozen 400/2000 oracle-free turn rankings
+2026-08-26 19:59:07,492 INFO Frozen 500/2000 oracle-free turn rankings
+2026-08-26 19:59:10,717 INFO Frozen 600/2000 oracle-free turn rankings
+2026-08-26 19:59:14,534 INFO Frozen 700/2000 oracle-free turn rankings
+2026-08-26 19:59:18,849 INFO Frozen 800/2000 oracle-free turn rankings
+2026-08-26 19:59:23,250 INFO Frozen 900/2000 oracle-free turn rankings
+2026-08-26 19:59:27,074 INFO Frozen 1000/2000 oracle-free turn rankings
+2026-08-26 19:59:30,799 INFO Frozen 1100/2000 oracle-free turn rankings
+2026-08-26 19:59:34,449 INFO Frozen 1200/2000 oracle-free turn rankings
+2026-08-26 19:59:38,367 INFO Frozen 1300/2000 oracle-free turn rankings
+2026-08-26 19:59:42,258 INFO Frozen 1400/2000 oracle-free turn rankings
+2026-08-26 19:59:46,530 INFO Frozen 1500/2000 oracle-free turn rankings
+2026-08-26 19:59:50,638 INFO Frozen 1600/2000 oracle-free turn rankings
+2026-08-26 19:59:55,019 INFO Frozen 1700/2000 oracle-free turn rankings
+2026-08-26 19:59:58,795 INFO Frozen 1800/2000 oracle-free turn rankings
+2026-08-26 20:00:02,394 INFO Frozen 1900/2000 oracle-free turn rankings
+2026-08-26 20:00:06,958 INFO Frozen 2000/2000 oracle-free turn rankings
+2026-08-26 20:00:06,960 INFO All 2000 rankings frozen; joining oracle labels for scoring
+2026-08-26 20:00:08,176 INFO Completed experiment_07_residual_failure_analysis in 238.50s; calibration selected exact_stateful_bm25_rrf; production recommendation=exact_stateful_bm25_rrf
+2026-08-26 20:00:08,189 INFO Run complete with exit code 0
+2026-08-26 20:01:57,121 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 0.93s
+2026-08-26 20:01:57,358 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 20:01:57,358 INFO AGENT-REALISTIC EVALUATION + ORACLE-AFTER-FREEZE DIAGNOSTIC: beginning residual analysis
+2026-08-26 20:01:57,360 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 20:02:28,875 INFO Frozen 100/2000 oracle-free turn rankings
+2026-08-26 20:02:34,007 INFO Frozen 200/2000 oracle-free turn rankings
+2026-08-26 20:02:39,317 INFO Frozen 300/2000 oracle-free turn rankings
+2026-08-26 20:02:44,863 INFO Frozen 400/2000 oracle-free turn rankings
+2026-08-26 20:02:50,217 INFO Frozen 500/2000 oracle-free turn rankings
+2026-08-26 20:02:54,020 INFO Frozen 600/2000 oracle-free turn rankings
+2026-08-26 20:02:58,425 INFO Frozen 700/2000 oracle-free turn rankings
+2026-08-26 20:03:02,527 INFO Frozen 800/2000 oracle-free turn rankings
+2026-08-26 20:03:07,073 INFO Frozen 900/2000 oracle-free turn rankings
+2026-08-26 20:03:11,055 INFO Frozen 1000/2000 oracle-free turn rankings
+2026-08-26 20:03:15,203 INFO Frozen 1100/2000 oracle-free turn rankings
+2026-08-26 20:03:19,389 INFO Frozen 1200/2000 oracle-free turn rankings
+2026-08-26 20:03:23,347 INFO Frozen 1300/2000 oracle-free turn rankings
+2026-08-26 20:03:27,752 INFO Frozen 1400/2000 oracle-free turn rankings
+2026-08-26 20:03:31,879 INFO Frozen 1500/2000 oracle-free turn rankings
+2026-08-26 20:03:35,825 INFO Frozen 1600/2000 oracle-free turn rankings
+2026-08-26 20:03:40,198 INFO Frozen 1700/2000 oracle-free turn rankings
+2026-08-26 20:03:44,160 INFO Frozen 1800/2000 oracle-free turn rankings
+2026-08-26 20:03:47,759 INFO Frozen 1900/2000 oracle-free turn rankings
+2026-08-26 20:03:53,201 INFO Frozen 2000/2000 oracle-free turn rankings
+2026-08-26 20:03:53,202 INFO All 2000 rankings frozen; joining oracle labels for scoring
+2026-08-26 20:03:54,094 INFO Completed experiment_07_residual_failure_analysis in 116.29s; calibration selected exact_stateful_bm25_rrf; production recommendation=exact_stateful_bm25_rrf
+2026-08-26 20:03:54,110 INFO Run complete with exit code 0
+2026-08-26 20:05:01,584 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 0.88s
+2026-08-26 20:05:01,800 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 20:05:01,801 INFO AGENT-REALISTIC EVALUATION + ORACLE-AFTER-FREEZE DIAGNOSTIC: beginning residual analysis
+2026-08-26 20:05:01,802 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 20:05:32,239 INFO Frozen 100/2000 oracle-free turn rankings
+2026-08-26 20:05:37,789 INFO Frozen 200/2000 oracle-free turn rankings
+2026-08-26 20:05:43,132 INFO Frozen 300/2000 oracle-free turn rankings
+2026-08-26 20:05:46,872 INFO Frozen 400/2000 oracle-free turn rankings
+2026-08-26 20:05:51,439 INFO Frozen 500/2000 oracle-free turn rankings
+2026-08-26 20:05:56,141 INFO Frozen 600/2000 oracle-free turn rankings
+2026-08-26 20:06:01,475 INFO Frozen 700/2000 oracle-free turn rankings
+2026-08-26 20:06:06,423 INFO Frozen 800/2000 oracle-free turn rankings
+2026-08-26 20:06:11,424 INFO Frozen 900/2000 oracle-free turn rankings
+2026-08-26 20:06:15,642 INFO Frozen 1000/2000 oracle-free turn rankings
+2026-08-26 20:06:20,538 INFO Frozen 1100/2000 oracle-free turn rankings
+2026-08-26 20:06:25,656 INFO Frozen 1200/2000 oracle-free turn rankings
+2026-08-26 20:06:30,316 INFO Frozen 1300/2000 oracle-free turn rankings
+2026-08-26 20:06:34,499 INFO Frozen 1400/2000 oracle-free turn rankings
+2026-08-26 20:06:38,247 INFO Frozen 1500/2000 oracle-free turn rankings
+2026-08-26 20:06:42,817 INFO Frozen 1600/2000 oracle-free turn rankings
+2026-08-26 20:06:47,398 INFO Frozen 1700/2000 oracle-free turn rankings
+2026-08-26 20:06:51,388 INFO Frozen 1800/2000 oracle-free turn rankings
+2026-08-26 20:06:55,087 INFO Frozen 1900/2000 oracle-free turn rankings
+2026-08-26 20:07:01,640 INFO Frozen 2000/2000 oracle-free turn rankings
+2026-08-26 20:07:01,642 INFO All 2000 rankings frozen; joining oracle labels for scoring
+2026-08-26 20:07:02,754 INFO Completed experiment_07_residual_failure_analysis in 120.38s; calibration selected exact_stateful_bm25_rrf; production recommendation=exact_stateful_bm25_rrf
+2026-08-26 20:07:02,773 INFO Run complete with exit code 0
+2026-08-26 21:00:09,053 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.87s
+2026-08-26 21:00:09,544 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 21:00:09,545 INFO AGENT-REALISTIC EVALUATION + ORACLE-AFTER-FREEZE DIAGNOSTIC: beginning residual analysis
+2026-08-26 21:00:09,548 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 21:00:49,272 INFO Frozen 100/2000 oracle-free turn rankings
+2026-08-26 21:00:55,770 INFO Frozen 200/2000 oracle-free turn rankings
+2026-08-26 21:01:03,212 INFO Frozen 300/2000 oracle-free turn rankings
+2026-08-26 21:01:11,656 INFO Frozen 400/2000 oracle-free turn rankings
+2026-08-26 21:01:19,295 INFO Frozen 500/2000 oracle-free turn rankings
+2026-08-26 21:01:25,616 INFO Frozen 600/2000 oracle-free turn rankings
+2026-08-26 21:01:33,206 INFO Frozen 700/2000 oracle-free turn rankings
+2026-08-26 21:01:40,823 INFO Frozen 800/2000 oracle-free turn rankings
+2026-08-26 21:01:48,808 INFO Frozen 900/2000 oracle-free turn rankings
+2026-08-26 21:01:56,137 INFO Frozen 1000/2000 oracle-free turn rankings
+2026-08-26 21:02:03,359 INFO Frozen 1100/2000 oracle-free turn rankings
+2026-08-26 21:02:10,397 INFO Frozen 1200/2000 oracle-free turn rankings
+2026-08-26 21:02:16,052 INFO Frozen 1300/2000 oracle-free turn rankings
+2026-08-26 21:02:21,723 INFO Frozen 1400/2000 oracle-free turn rankings
+2026-08-26 21:02:28,818 INFO Frozen 1500/2000 oracle-free turn rankings
+2026-08-26 21:02:35,549 INFO Frozen 1600/2000 oracle-free turn rankings
+2026-08-26 21:02:42,375 INFO Frozen 1700/2000 oracle-free turn rankings
+2026-08-26 21:02:48,802 INFO Frozen 1800/2000 oracle-free turn rankings
+2026-08-26 21:02:54,499 INFO Frozen 1900/2000 oracle-free turn rankings
+2026-08-26 21:03:02,095 INFO Frozen 2000/2000 oracle-free turn rankings
+2026-08-26 21:03:02,098 INFO All 2000 rankings frozen; joining oracle labels for scoring
+2026-08-26 21:03:03,555 INFO Completed experiment_07_residual_failure_analysis in 173.28s; calibration selected exact_stateful_bm25_rrf; production recommendation=exact_stateful_bm25_rrf
+2026-08-26 21:03:03,577 INFO Run complete with exit code 0
+2026-08-26 22:53:48,580 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.17s
+2026-08-26 22:53:49,058 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 22:53:49,058 INFO AGENT-REALISTIC EVALUATION: beginning intent-routed dense browsing
+2026-08-26 22:53:49,061 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 22:53:49,156 ERROR Experiment 8 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 191, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_08_intent_routed_dense_browsing.py", line 474, in run_08
+    assert_parser_identity(h, parsed)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_08_intent_routed_dense_browsing.py", line 259, in assert_parser_identity
+    raise RuntimeError(f"Same-parser identity failed: {mismatches[:5]}")
+RuntimeError: Same-parser identity failed: [(131, 'public_0014', 2, ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton; heathers: 75% cotton, 25% polyester'), ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton', 'heathers: 75% cotton, 25% polyester')), (132, 'public_0014', 3, ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton; heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure'), ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton', 'heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure')), (133, 'public_0014', 4, ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton; heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure'), ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton', 'heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure')), (134, 'public_0014', 5, ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton; heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure'), ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton', 'heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure')), (135, 'public_0014', 6, ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton; heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure'), ('Underwear Briefs', 'cotton', 'Solids: 100% Cotton', 'heathers: 75% cotton, 25% polyester', 'Imported', 'Pull On closure'))]
+2026-08-26 22:53:49,175 INFO Run complete with exit code 1
+2026-08-26 22:54:22,474 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.07s
+2026-08-26 22:56:10,938 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.37s
+2026-08-26 22:57:15,015 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 10.57s
+2026-08-26 22:57:29,156 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 9.11s
+2026-08-26 22:58:27,411 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.35s
+2026-08-26 22:58:28,114 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 22:58:28,115 INFO AGENT-REALISTIC EVALUATION: beginning intent-routed dense browsing
+2026-08-26 22:58:28,117 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 22:58:34,541 ERROR Experiment 8 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 191, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_08_intent_routed_dense_browsing.py", line 534, in run_08
+    assert_parser_identity(h, parsed)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_08_intent_routed_dense_browsing.py", line 318, in assert_parser_identity
+    raise RuntimeError(f"Same-parser identity failed: {mismatches[:5]}")
+RuntimeError: Same-parser identity failed: [(782, 'public_0079', 3, ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'), ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy')), (783, 'public_0079', 4, ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'), ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy')), (784, 'public_0079', 5, ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'), ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy')), (785, 'public_0079', 6, ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'), ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy')), (786, 'public_0079', 7, ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'), ('Socks & Hosiery Slipper Socks', 'polyester', 'Rubber sole', 'Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom', 'Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy'))]
+2026-08-26 22:58:34,590 INFO Run complete with exit code 1
+2026-08-26 22:59:12,897 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 10.17s
+2026-08-26 22:59:18,076 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 22:59:18,076 INFO AGENT-REALISTIC EVALUATION: beginning intent-routed dense browsing
+2026-08-26 22:59:18,081 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:05:16,276 INFO Completed experiment_08_intent_routed_dense_browsing in 357.80s
+2026-08-26 23:05:16,354 INFO Run complete with exit code 0
+2026-08-26 23:05:51,964 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.67s
+2026-08-26 23:05:52,444 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:05:52,444 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:05:52,448 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:05:57,923 ERROR Experiment 9 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 191, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_09_adaptive_hybrid_architecture.py", line 624, in run_09
+    ranker = AdaptiveHybridRanker(h)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_09_adaptive_hybrid_architecture.py", line 224, in __init__
+    float(product.get("price")) if product.get("price") not in (None, "") else np.nan
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '—'
+2026-08-26 23:05:57,965 INFO Run complete with exit code 1
+2026-08-26 23:06:27,277 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.82s
+2026-08-26 23:06:27,766 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:06:27,767 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:06:27,770 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:07:46,809 ERROR Experiment 9 failed; prior results remain intact
+Traceback (most recent call last):
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\run_all.py", line 191, in main
+    metrics = RUNNERS[number](harness, logger)
+  File "C:\Users\nicko\Desktop\techjam26\nickolas\experiments\experiment_09_adaptive_hybrid_architecture.py", line 660, in run_09
+    raise RuntimeError(f"Structured state identity changed Experiment 7 row {index}")
+RuntimeError: Structured state identity changed Experiment 7 row 161
+2026-08-26 23:07:46,864 INFO Run complete with exit code 1
+2026-08-26 23:08:16,470 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.86s
+2026-08-26 23:08:37,138 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.04s
+2026-08-26 23:08:37,600 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:08:37,601 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:08:37,603 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:10:15,702 INFO Calibration ablation adaptive_hybrid_fixed_other
+2026-08-26 23:11:04,030 INFO Calibration ablation deterministic_reranker_fixed_other
+2026-08-26 23:11:09,745 INFO Calibration ablation deterministic_reranker_entropy
+2026-08-26 23:11:45,400 INFO Calibration ablation deterministic_reranker_rank_aware
+2026-08-26 23:12:08,867 INFO Final profile/decay ablation profile_decay_fixed_other
+2026-08-26 23:12:14,704 INFO One-shot held-out evaluation of structured_state_identity_fixed_other
+2026-08-26 23:12:15,636 INFO Completed experiment_09_adaptive_hybrid_architecture in 217.37s; selected=structured_state_identity_fixed_other promote=False
+2026-08-26 23:12:15,715 INFO Run complete with exit code 0
+2026-08-26 23:13:26,273 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.92s
+2026-08-26 23:13:26,901 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:13:26,902 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:13:26,904 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:14:54,208 INFO Calibration ablation adaptive_hybrid_fixed_other
+2026-08-26 23:15:36,475 INFO Calibration ablation deterministic_reranker_fixed_other
+2026-08-26 23:15:41,211 INFO Calibration ablation deterministic_reranker_entropy
+2026-08-26 23:16:13,771 INFO Calibration ablation deterministic_reranker_rank_aware
+2026-08-26 23:16:35,950 INFO Final profile/decay ablation profile_decay_fixed_other
+2026-08-26 23:16:41,260 INFO One-shot held-out evaluation of structured_state_identity_fixed_other
+2026-08-26 23:16:42,176 INFO Completed experiment_09_adaptive_hybrid_architecture in 194.60s; selected=structured_state_identity_fixed_other promote=False
+2026-08-26 23:16:42,236 INFO Run complete with exit code 0
+2026-08-26 23:19:29,293 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 1.90s
+2026-08-26 23:19:29,949 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:19:29,950 INFO AGENT-REALISTIC EVALUATION: beginning intent-routed dense browsing
+2026-08-26 23:19:29,952 INFO Reproducing frozen current submission result before Experiment 8 comparison
+2026-08-26 23:20:36,343 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:26:25,798 INFO Completed experiment_08_intent_routed_dense_browsing in 415.54s
+2026-08-26 23:26:25,860 INFO Run complete with exit code 0
+2026-08-26 23:27:49,291 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.00s
+2026-08-26 23:27:49,821 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-26 23:27:49,822 INFO AGENT-REALISTIC EVALUATION: beginning adaptive hybrid architecture ablations
+2026-08-26 23:27:49,825 INFO Loaded dense embeddings from C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\dense_da979b05a68af864_minilm_seq128.npy
+2026-08-26 23:29:24,362 INFO Calibration ablation adaptive_hybrid_fixed_other
+2026-08-26 23:30:10,631 INFO Calibration ablation deterministic_reranker_fixed_other
+2026-08-26 23:30:16,316 INFO Calibration ablation deterministic_reranker_entropy
+2026-08-26 23:30:48,940 INFO Calibration ablation deterministic_reranker_rank_aware
+2026-08-26 23:31:12,595 INFO Final profile/decay ablation profile_decay_fixed_other
+2026-08-26 23:31:18,245 INFO One-shot held-out evaluation of structured_state_identity_fixed_other
+2026-08-26 23:31:19,122 INFO Completed experiment_09_adaptive_hybrid_architecture in 208.67s; selected=structured_state_identity_fixed_other promote=False
+2026-08-26 23:31:19,190 INFO Run complete with exit code 0
+2026-08-27 10:20:59,017 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 0.95s
+2026-08-27 10:20:59,267 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-27 10:20:59,267 INFO AGENT-REALISTIC XTR/WARP EVALUATION: validating returned Colab archive
+2026-08-27 10:21:03,103 INFO Validated all returned checksums; imported 45 members
+2026-08-27 10:21:12,878 INFO Frozen 250/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:19,483 INFO Frozen 500/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:25,502 INFO Frozen 750/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:31,996 INFO Frozen 1000/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:38,749 INFO Frozen 1250/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:45,618 INFO Frozen 1500/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:52,832 INFO Frozen 1750/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:59,529 INFO Frozen 2000/2000 exact/BM25/XTR-WARP turn rankings
+2026-08-27 10:21:59,612 INFO Exact and BM25 controls reproduced all turn slates and session outcomes bit-for-bit
+2026-08-27 10:22:00,655 INFO Completed experiment_10_xtr_warp_retrieval in 60.45s; WARP held-out score=0.846892 BM25=0.846109 recommendation=exact_stateful_xtr_warp_rrf
+2026-08-27 10:22:00,689 INFO Run complete with exit code 0
+2026-08-27 11:17:14,301 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 2.94s
+2026-08-27 11:17:15,083 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-27 11:17:15,084 INFO RETROSPECTIVE AGENT EVALUATION: clean FTS5 candidate
+2026-08-27 11:17:15,091 INFO Evaluating current submission control
+2026-08-27 11:18:46,676 INFO Evaluating Yang Experiment 1 control
+2026-08-27 11:19:19,013 INFO Evaluating clean candidate configuration clean_specific_global_pagination
+2026-08-27 11:19:46,535 INFO Evaluating clean candidate configuration clean_specific_query_pagination
+2026-08-27 11:20:15,235 INFO Evaluating clean candidate configuration clean_other_query_pagination
+2026-08-27 11:20:40,856 INFO Evaluating clean candidate configuration clean_specific_no_pagination
+2026-08-27 11:21:07,878 INFO Completed experiment_11_clean_fts5_candidate in 232.31s; selected=clean_specific_query_pagination full=0.894362 evaluation=0.896425
+2026-08-27 11:21:07,947 INFO Run complete with exit code 0
+2026-08-27 11:25:40,681 INFO Loaded lexical cache C:\Users\nicko\Desktop\techjam26\nickolas\results\cache\lexical_da979b05a68af864.joblib in 8.09s
+2026-08-27 11:25:41,754 INFO Environment: python=3.13.14 platform=Windows-11-10.0.26200-SP0 packages={'numpy': '2.4.3', 'scipy': '1.18.0', 'scikit-learn': '1.6.1', 'pandas': '2.2.3', 'matplotlib': '3.10.5', 'sentence-transformers': '5.6.0', 'transformers': '5.13.0', 'torch': '2.12.1'} model=sentence-transformers/all-MiniLM-L6-v2 device=cpu seed=20260826
+2026-08-27 11:25:41,756 INFO RETROSPECTIVE AGENT EVALUATION: clean FTS5 candidate
+2026-08-27 11:25:41,766 INFO Evaluating current submission control
+2026-08-27 11:28:21,533 INFO Evaluating Yang Experiment 1 control
+2026-08-27 11:29:23,304 INFO Evaluating clean candidate configuration clean_specific_global_pagination
+2026-08-27 11:30:18,624 INFO Evaluating clean candidate configuration clean_specific_query_pagination
+2026-08-27 11:31:00,304 INFO Evaluating clean candidate configuration clean_other_query_pagination
+2026-08-27 11:31:24,317 INFO Evaluating clean candidate configuration clean_specific_no_pagination
+2026-08-27 11:31:49,192 INFO Completed experiment_11_clean_fts5_candidate in 367.14s; selected=clean_specific_query_pagination full=0.894362 evaluation=0.896425
+2026-08-27 11:31:49,240 INFO Run complete with exit code 0

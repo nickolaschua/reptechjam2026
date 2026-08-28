@@ -1,0 +1,1802 @@
+[
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0001"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Accessories Belts. Buckle closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0002"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Watches Wrist Watches. Stainless Steel Band",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0003"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tops & Tees Tanks & Camis. Long torso camisole for extra coverage with spagetti adjustable strap for perfect fit",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0004"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Outdoor & Work Snow & Cold Weather. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0005"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Basketball Men, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0006"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses Tunics, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0007"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bras Everyday Bras. A key requirement is: nylon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0008"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Handbags & Wallets Totes. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0009"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Bodysuits. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0010"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Underwear Undershirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0011"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Dresses, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0012"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Slippers. YOUR NEW FAVORITE SLIPPERS: Slip into divine comfort with Gemma, a plush mule-style spa slipper with an adjustable hook-and-loop closure across the vamp",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0013"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Underwear Briefs, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0014"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Mules & Clogs, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0015"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Boots Mid-Calf, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0016"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0017"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shirts Tanks Tops. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0018"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Outdoor & Work Rain, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0019"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Novelty Women. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0020"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Men Pants, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0021"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Dresses Casual. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0022"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bras Everyday Bras. Date First Available: March 19, 2021",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0023"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Rompers & Overalls Jumpsuits. A key requirement is: rayon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0024"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Rompers & Overalls Rompers, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0025"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Running Trail Running. A key requirement is: 100% Synthetic.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0026"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Jeans. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0027"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0028"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sandals Flats. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0029"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sleep & Lounge Sleep Bottoms. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0030"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Jeans. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0031"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sleep & Lounge Nightgowns & Sleepshirts. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0032"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Walking, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0033"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Loafers & Slip-Ons. Leather Loafers Women:can be bend and curled in 360°,soft and comfortable",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0034"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Walking, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0035"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Earrings Drop & Dangle, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0036"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Boys Pants, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0037"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Fashion Sneakers. Lace Slip On Sneaker",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0038"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Jerseys, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0039"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Active Pants Sweatpants, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0040"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses Tunics, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0041"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Watches Wrist Watches. A key requirement is: Imported.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0042"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Jeans, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0043"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Men Jammers. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0044"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses Tunics. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0045"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Socks & Hosiery Leg Warmers. No Closure closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0046"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Accessories Bandanas, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0047"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Soccer, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0048"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Loafers & Slip-Ons, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0049"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Work & Utility Industrial & Construction Boots, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0050"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Walking, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0051"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses Tunics. Hand Wash Only",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0052"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Travel Accessories Passport Covers. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0053"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Fashion Hoodies & Sweatshirts. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0054"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Mules & Clogs, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0055"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shirts T-Shirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0056"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Mules & Clogs, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0057"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Rain & Anoraks Raincoats. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0058"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shapewear Bodysuits, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0059"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sleep & Lounge Sleep Bottoms, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0060"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Piercing Jewelry Rings. A key requirement is: Snap closure.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0061"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Skirts Casual, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0062"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Shorts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0063"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Dresses Club & Night Out. Hand Wash Only",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0064"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bibs & Pants Bibs. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0065"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Dresses Formal. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0066"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Lightweight Jackets Windbreakers. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0067"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Athletic Walking. Lightweight and responsive Ultra Go midsole cushioning",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0068"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Earrings Drop & Dangle, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0069"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Travel Accessories Travel Wallets, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0070"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Fashion Hoodies & Sweatshirts. Pull On closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0071"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Rain & Anoraks Anoraks. Department: womens",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0072"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Dresses Casual, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0073"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Walking, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0074"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Accessories Belts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0075"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Hoodies, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0076"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sleep & Lounge Sleep Tops, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0077"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Socks No Show & Liner Socks. Pull On closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0078"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Socks & Hosiery Slipper Socks, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0079"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shirts Polos. Button closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0080"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Underwear Undershirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0081"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bracelets Strand. A key requirement is: 21 Styles: the package contains 21 pieces beach bracelet anklets in different styles as shown in the picture, coming with various elements, enough quantity to use and share with fa.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0082"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses Blouses & Button-Down Shirts. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0083"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Accessories Belts. Hand Wash Only",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0084"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sandals Slides, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0085"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Slippers, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0086"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shirts Casual Button-Down Shirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0087"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Bikinis. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0088"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Briefs. Elastic closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0089"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Accessories. A key requirement is: Decorative lightweight scarf: 2 wearing ways of this mardi gras scarf, wrap the scarf around your neck, or wearing it as a shawl, just change the orientation of the scarf, you can.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0090"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Jewelry Earrings, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0091"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sleep & Lounge Sets, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0092"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Briefs. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0093"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Boots Mid-Calf. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0094"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Leggings. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0095"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses T-Shirts. Pull On closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0096"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Leggings. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0097"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Running Road Running, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0098"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Active Pants Sweatpants, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0099"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Loafers & Slip-Ons, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0100"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Medical Scrub Bottoms. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0101"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Bras Everyday Bras, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0102"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Underwear Undershirts. Imported",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0103"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Hats & Caps Headbands, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0104"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Leggings, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0105"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Socks Calf Socks. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0106"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Rain & Anoraks Anoraks. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0107"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Pants & Shorts Shorts. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0108"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shirts T-Shirts. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0109"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Active Athletic Socks, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0110"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sweaters Pullovers. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0111"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Walking, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0112"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Slippers, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0113"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Fashion Sneakers. A key requirement is: Rubber sole.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0114"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sleep & Lounge Nightgowns & Sleepshirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0115"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Fashion Sneakers. A key requirement is: 100% Canvas.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0116"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Slippers. A key requirement is: Synthetic Rubber sole.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0117"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bikinis Sets. A key requirement is: nylon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0118"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Handbags & Wallets Top-Handle Bags. A key requirement is: Pvc,Resin.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0119"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Card Cases & Money Organizers Wallets, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0120"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Bras Everyday Bras, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0121"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Leggings, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0122"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Hats & Caps Fedoras. Buckle closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0123"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Hats & Caps Baseball Caps. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0124"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Hats & Caps Baseball Caps. HOOK & LOOP CLOSURE: Our hats for women and men feature a strap closure in the back letting you easily adjust the size for a perfect fit",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0125"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses Blouses & Button-Down Shirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0126"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Gloves & Mittens Cold Weather Gloves, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0127"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Earrings Hoop, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0128"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Bodysuits. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0129"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Briefs. Hand Wash or Machine Wash with laundry bag (30°C Max)",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0130"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Socks & Hosiery Leg Warmers, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0131"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Slippers. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0132"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sunglasses & Eyewear Accessories Sunglasses. A key requirement is: Imported.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0133"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Piercing Jewelry Tunnels, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0134"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes Slippers. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0135"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Active Active Shorts. A key requirement is: spandex.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0136"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Fashion Hoodies & Sweatshirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0137"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses Tunics, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0138"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses T-Shirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0139"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Suiting & Blazers Blazers, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0140"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Piercing Jewelry Screws, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0141"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bracelets Link. Bracelet Size: Length-8.34 inch, width-0.4 inch, weight: 54g. smooth chain, lightweight and comfortable to wear, perfect for bike enthusiasts etc",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0142"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Dresses Work. A key requirement is: rayon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0143"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Jackets & Vests Down Jackets & Parkas. Zipper closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0144"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Active Athletic Socks. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0145"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Women Dresses. A key requirement is: rayon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0146"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sleep & Lounge Lingerie, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0147"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Bikinis. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0148"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Backpacks Casual Daypacks. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0149"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Medical Scrub Jackets, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0150"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Outdoor & Work Work & Safety, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0151"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Watches Wrist Watches. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0152"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Boots Ankle & Bootie, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0153"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bras Everyday Bras. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0154"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Hats & Caps Sun Hats. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0155"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Gym Bags Drawstring Bags. A key requirement is: Easy cinch opening with durable cording.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0156"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Outdoor & Work Snow & Cold Weather. A key requirement is: nylon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0157"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Men Masks, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0158"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sleep & Lounge Sleep Bottoms. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0159"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Travel Accessories Packing Organizers. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0160"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses T-Shirts. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0161"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Dresses, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0162"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Athletic Walking. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0163"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Watches Watch Bands, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0164"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Watches Watch Bands. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0165"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Boots Rain. Women's-specific last is designed to match the contours of women's feet",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0166"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Bras Sports Bras, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0167"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Necklaces & Pendants Pendants. A key requirement is: Mother Daughter Bracelets - Heart bracelet on card meaning “Never Truly Part,Maybe in Distance,But Never in Heart”. All daughters love their mom, but sometimes we just forget to sa.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0168"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Women Jeans, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0169"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Fashion Combat, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0170"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Bikinis Sets. A key requirement is: nylon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0171"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Fashion Sneakers, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0172"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Water Shoes, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0173"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Sleep & Lounge Robes. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0174"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Men Jeans, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0175"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Luggage & Travel Gear Waist Packs, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0176"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tops Tees & Blouses. Button closure",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0177"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shirts T-Shirts. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0178"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses Tunics. A key requirement is: spandex.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0179"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Fashion Sneakers, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0180"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sets Tracksuits, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0181"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Card & ID Cases Card Cases, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0182"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Jackets & Vests Vests. Hand Wash Only",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0183"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Sunglasses & Eyewear Accessories Sunglasses, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0184"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Panties Boy Shorts. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0185"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Running Road Running. Ortholite Sockliner: Moisture management (Ortholite is a registered trademark of O2 Partners LLC)",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0186"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Loafers & Slip-Ons, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0187"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Handbags & Wallets Crossbody Bags. A key requirement is: leather.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0188"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shorts Denim. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0189"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Medical Scrub Bottoms. A key requirement is: polyester.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0190"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Men Active, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0191"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Athletic Sport Sandals & Slides, but I'm still exploring.",
+    "oracle_scenario_type": "boundary",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0192"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Scarves & Wraps Fashion Scarves. A key requirement is: fabric.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0193"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Tees & Blouses T-Shirts. A key requirement is: rayon.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0194"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Tees & Blouses Blouses & Button-Down Shirts, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0195"
+  },
+  {
+    "correct": true,
+    "detected_route": "browsing",
+    "expected_route_after_freeze": "browsing",
+    "first_message": "I'm looking for Shoes Flats, but I'm still exploring.",
+    "oracle_scenario_type": "browsing",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0196"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Watch Accessories Repair Tools & Kits. VALUE KIT FOR MONEY SAVING - This watch band link remover is great for removing and inserting spring bars straps, and widely used in up to 30mm wide watch band replace, watch repai",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0197"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Handbags & Wallets Crossbody Bags. Imported",
+    "oracle_scenario_type": "intent_override",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0198"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Underwear Briefs. A key requirement is: cotton.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0199"
+  },
+  {
+    "correct": true,
+    "detected_route": "buying",
+    "expected_route_after_freeze": "buying",
+    "first_message": "I'm looking for Shoes & Jewelry Men. A key requirement is: Ethylene Vinyl Acetate sole.",
+    "oracle_scenario_type": "buying",
+    "route_locked_all_turns": true,
+    "sample_id": "public_0200"
+  }
+]

@@ -1,0 +1,11 @@
+[2026-08-26 18:37:43] stage=convert
+Converting smoke index to the WARP CPU layout...
+Compacting index at '/content/experiment_10_work/raw_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke' to '/content/experiment_10_work/converted_indexes/smoke/techjam26-products-xtr-warp.nbits=4.smoke'
+#> centroids.dtype = torch.float32
+> Loading centroid information
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 200.21it/s]
+> Compacting index
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18.81it/s]
+> Saving compacted index
+> Repacking residuals
+Converted smoke index: 0.005 GiB in 0.04 minutes.
