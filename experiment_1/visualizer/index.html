@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepTechJam 2026 - Conversational Debugger</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0B0C10;
+            --bg-sidebar: #111218;
+            --bg-card: rgba(26, 27, 35, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            
+            --accent-primary: #6C5CE7;
+            --accent-primary-glow: rgba(108, 92, 231, 0.35);
+            
+            --accent-cyan: #00CEC9;
+            --accent-cyan-glow: rgba(0, 206, 201, 0.35);
+            
+            --accent-red: #FF7675;
+            --accent-red-glow: rgba(255, 118, 117, 0.3);
+            
+            --text-main: #F5F6FA;
+            --text-muted: #A0A5B5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(108, 92, 231, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 206, 201, 0.06) 0px, transparent 50%);
+        }
+
+        /* Top Header */
+        header {
+            height: 70px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(11, 12, 16, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 100;
+        }
+
+        .logo-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-section span {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: var(--accent-primary);
+            padding: 2px 8px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .header-stats {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .stat-success .dot { background-color: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
+        .stat-fail .dot { background-color: var(--accent-red); box-shadow: 0 0 8px var(--accent-red); }
+
+        /* Dashboard Workspace Layout */
+        .workspace {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* Sidebar: Session Directory */
+        .sidebar {
+            width: 320px;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-container {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.3s ease;
+            font-size: 13.5px;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 8px var(--accent-primary-glow);
+        }
+
+        .filter-tabs {
+            display: flex;
+            padding: 8px 16px;
+            gap: 6px;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-tab {
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            font-size: 11.5px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            color: var(--text-muted);
+        }
+
+        .filter-tab:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .filter-tab.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .session-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .session-item {
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .session-item:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .session-item.active {
+            background: rgba(108, 92, 231, 0.08);
+            border-color: var(--accent-primary);
+        }
+
+        .session-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .session-id {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .session-scenario {
+            font-size: 10px;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .session-item-details {
+            font-size: 11px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Center Section: Main Chat Board */
+        .chat-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(11, 12, 16, 0.2);
+            position: relative;
+            min-width: 0; /* CRITICAL FLEXBOX OVERFLOW FIX */
+        }
+
+        .chat-header {
+            height: 70px;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(11, 12, 16, 0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        .chat-header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .active-session-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .active-session-scenario {
+            font-size: 11px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .chat-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+            border: 1px solid var(--accent-primary);
+            box-shadow: 0 4px 12px var(--accent-primary-glow);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Message Board */
+        .chat-board {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden; /* Prevent horizontal parent scrolling */
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Chat Message Layouts */
+        .msg-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0; /* Enable children scroll container to collapse */
+            animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .msg-wrapper.customer-msg {
+            align-items: flex-end;
+        }
+
+        .msg-wrapper.copilot-msg {
+            align-items: flex-start;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .msg-sender {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            padding: 0 8px;
+        }
+
+        .msg-sender.shopper { color: var(--accent-cyan); }
+        .msg-sender.copilot { color: var(--accent-primary); }
+
+        .msg-bubble {
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 14.5px;
+            line-height: 1.5;
+            max-width: 80%;
+        }
+
+        /* Shopper (Customer) on the Right */
+        .msg-wrapper.customer-msg .msg-bubble {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #5b4cc4 100%);
+            color: white;
+            border: 1px solid var(--accent-primary);
+            border-top-right-radius: 4px;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.15);
+        }
+
+        /* Copilot (Assistant) on the Left */
+        .msg-wrapper.copilot-msg .msg-bubble {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-top-left-radius: 4px;
+        }
+
+        /* Horizontal/Inline Product Recommendations list */
+        .recs-row {
+            display: flex;
+            gap: 14px;
+            margin-top: 14px;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 4px 8px 12px 8px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .recs-row::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .recs-row::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+        }
+
+        .rec-card {
+            flex: 0 0 240px; /* fixed size for horizontal scroll */
+            width: 240px;
+            max-width: 240px;
+            min-width: 0;
+            overflow: hidden;
+            scroll-snap-align: start;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.25s ease;
+        }
+
+        .rec-card.is-target {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 206, 201, 0.04);
+            box-shadow: 0 0 10px rgba(0, 206, 201, 0.15);
+        }
+
+        .target-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-cyan);
+            color: black;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .rec-rank {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 4px;
+        }
+        .rec-card.is-target .rec-rank {
+            color: var(--accent-cyan);
+        }
+
+        .rec-brand {
+            font-size: 9px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .rec-title {
+            font-size: 12px;
+            line-height: 1.4;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 34px;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+
+        .rec-asin {
+            font-size: 10px;
+            font-family: monospace;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 6px;
+            margin-top: 4px;
+        }
+
+        /* Banner Status */
+        .status-banner {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        .banner-success {
+            background: rgba(0, 206, 201, 0.08);
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .banner-failed {
+            background: rgba(255, 118, 117, 0.08);
+            border: 1px solid var(--accent-red);
+            color: var(--accent-red);
+        }
+
+        /* Right Sidebar: Details Inspector */
+        .inspector {
+            width: 320px;
+            border-left: 1px solid var(--border-color);
+            background: var(--bg-sidebar);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .inspector-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .inspector-section {
+            margin-bottom: 20px;
+        }
+
+        .inspector-section-lbl {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .inspector-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .meta-item {
+            margin-bottom: 10px;
+        }
+
+        .meta-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-key {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .meta-value {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .tag-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 11.5px;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 20px;
+        }
+
+        .empty-state h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-section">
+            <h1>RepTechJam <span>Debugger V2</span></h1>
+        </div>
+        <div class="header-stats">
+            <div class="stat-item">
+                <span style="color: var(--text-muted);">Simulator Model:</span>
+                <span style="color: var(--accent-cyan); font-weight: 600;">Llama 3.1</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+        <!-- Sidebar: Sessions List -->
+        <div class="sidebar">
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-bar" placeholder="Search sessions...">
+            </div>
+            <div class="filter-tabs">
+                <div class="filter-tab active" data-filter="all">All</div>
+                <div class="filter-tab" data-filter="buying">Buying</div>
+                <div class="filter-tab" data-filter="browsing">Browsing</div>
+                <div class="filter-tab" data-filter="intent_override">Override</div>
+            </div>
+            <div class="session-list" id="session-list-container">
+                <!-- Session items populated dynamically -->
+            </div>
+        </div>
+
+        <!-- Center: Chat Board -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div>
+                        <div class="active-session-title" id="active-session-lbl">No Session Selected</div>
+                        <div class="active-session-scenario" id="active-scenario-lbl">-</div>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn btn-primary" id="btn-start" style="display: none;" onclick="startSimulation()">
+                        ▶ Run Live Simulation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat message logs board -->
+            <div class="chat-board" id="chat-board-container">
+                <div class="empty-state">
+                    <h3>Select a Session</h3>
+                    <p>Choose a public session from the sidebar directory on the left to start a real-time conversational simulation with Llama 3.1 shopper.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Inspector -->
+        <div class="inspector" id="inspector-container">
+            <h2 class="inspector-title">Target Item Inspector</h2>
+            <div class="empty-state" style="padding: 0;">
+                <p>Select a session to view target constraints and attributes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script logic -->
+    <script>
+        let sessionsList = [];
+        let selectedSessionId = '';
+        let currentFilter = 'all';
+        let searchQuery = '';
+        let eventSource = null;
+
+        // Fetch session directory
+        async function fetchSessions() {
+            try {
+                const res = await fetch('/sessions_list');
+                sessionsList = await res.json();
+                renderSessionList();
+            } catch(e) {
+                console.error("Failed to load sessions list from server:", e);
+                document.getElementById('session-list-container').innerHTML = `
+                    <div class="empty-state">
+                        <p style="color: var(--accent-red);">Failed to connect to backend server.</p>
+                        <p style="font-size: 11px; margin-top: 8px;">Please run <code>python server.py</code> in the terminal first.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Render sessions directory
+        function renderSessionList() {
+            const container = document.getElementById('session-list-container');
+            container.innerHTML = '';
+            
+            const filtered = sessionsList.filter(s => {
+                if (currentFilter !== 'all' && s.scenario !== currentFilter) return false;
+                if (searchQuery && !s.sample_id.toLowerCase().includes(searchQuery.toLowerCase()) && !s.target_title.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="empty-state"><p>No sessions found.</p></div>`;
+                return;
+            }
+
+            filtered.forEach(s => {
+                const item = document.createElement('div');
+                item.className = 'session-item';
+                item.id = `item-${s.sample_id}`;
+                item.onclick = () => selectSession(s);
+                item.innerHTML = `
+                    <div class="session-item-header">
+                        <div class="session-id">${s.sample_id}</div>
+                        <div class="session-scenario">${s.scenario}</div>
+                    </div>
+                    <div class="session-item-details">[${s.target_brand}] ${s.target_title}</div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        // Select session
+        function selectSession(session) {
+            selectedSessionId = session.sample_id;
+            document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
+            const selectedItem = document.getElementById(`item-${session.sample_id}`);
+            if (selectedItem) selectedItem.classList.add('active');
+
+            document.getElementById('active-session-lbl').innerText = `Session ${session.sample_id}`;
+            document.getElementById('active-scenario-lbl').innerText = `${session.scenario} scenario`;
+            
+            // Show run button
+            document.getElementById('btn-start').style.display = 'flex';
+            
+            // Clear board
+            document.getElementById('chat-board-container').innerHTML = `
+                <div class="empty-state">
+                    <h3>Simulation Ready</h3>
+                    <p>Click "Run Live Simulation" to initialize the shopper simulator (Llama 3.1) and watch the search cascade turns stream in real time.</p>
+                </div>
+            `;
+            
+            // Render basic inspector
+            const inspector = document.getElementById('inspector-container');
+            inspector.innerHTML = `
+                <h2 class="inspector-title">Target Item Inspector</h2>
+                <div class="inspector-section">
+                    <div class="inspector-section-lbl">Target Details</div>
+                    <div class="inspector-card">
+                        <div class="meta-item">
+                            <div class="meta-key">Brand</div>
+                            <div class="meta-value">${session.target_brand}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Title</div>
+                            <div class="meta-value" style="font-size: 12.5px;">${session.target_title}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Close active EventSource if open
+            if (eventSource) {
+                eventSource.close();
+            }
+        }
+
+        // Start Live Simulation Stream
+        function startSimulation() {
+            if (!selectedSessionId) return;
+            
+            const board = document.getElementById('chat-board-container');
+            board.innerHTML = ''; // Clear chat board
+            
+            const startBtn = document.getElementById('btn-start');
+            startBtn.disabled = true;
+            startBtn.innerText = '⏳ Initializing Agent...';
+            
+            if (eventSource) {
+                eventSource.close();
+            }
+            
+            eventSource = new EventSource(`/stream?sample_id=${selectedSessionId}`);
+            
+            eventSource.addEventListener('target', (e) => {
+                const data = JSON.parse(e.data);
+                updateInspector(data);
+                startBtn.innerText = '🔴 Streaming Turns...';
+            });
+            
+            eventSource.addEventListener('msg', (e) => {
+                const msg = JSON.parse(e.data);
+                appendChatMessage(msg);
+            });
+            
+            eventSource.addEventListener('status', (e) => {
+                const status = JSON.parse(e.data);
+                appendStatusBanner(status);
+                eventSource.close();
+                startBtn.disabled = false;
+                startBtn.innerText = '▶ Run Live Simulation';
+            });
+            
+            eventSource.addEventListener('error', (e) => {
+                console.error("SSE stream encountered an error:", e);
+                eventSource.close();
+                startBtn.disabled = false;
+                startBtn.innerText = '▶ Run Live Simulation';
+            });
+        }
+
+        // Append Chat Bubble
+        function appendChatMessage(msg) {
+            const board = document.getElementById('chat-board-container');
+            
+            const msgWrapper = document.createElement('div');
+            msgWrapper.className = `msg-wrapper ${msg.role}-msg`;
+            
+            const senderClass = msg.role === 'customer' ? 'shopper' : 'copilot';
+            const senderName = msg.role === 'customer' ? 'Shopper (Llama 3.1)' : 'Copilot Assistant (Hybrid)';
+            
+            let recommendationsHtml = '';
+            if (msg.recommendations && msg.recommendations.length > 0) {
+                recommendationsHtml = `
+                    <div class="recs-row">
+                        ${msg.recommendations.map(r => `
+                            <div class="rec-card ${r.is_target ? 'is-target' : ''}">
+                                ${r.is_target ? `<span class="target-tag">Target Item</span>` : ''}
+                                <div>
+                                    <div class="rec-rank">Rank #${r.rank}</div>
+                                    <div class="rec-brand">${r.brand}</div>
+                                    <div class="rec-title">${r.title}</div>
+                                </div>
+                                <div class="rec-asin">ASIN: ${r.asin}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            msgWrapper.innerHTML = `
+                <div class="msg-sender ${senderClass}">${senderName} • Turn ${msg.turn}</div>
+                <div class="msg-bubble">${msg.content}</div>
+                ${recommendationsHtml}
+            `;
+            board.appendChild(msgWrapper);
+            
+            // Scroll to bottom
+            board.scrollTop = board.scrollHeight;
+        }
+
+        // Append final conversion status banner
+        function appendStatusBanner(status) {
+            const board = document.getElementById('chat-board-container');
+            const banner = document.createElement('div');
+            
+            if (status.success) {
+                banner.className = 'status-banner banner-success';
+                banner.innerHTML = `
+                    <strong>🏆 SUCCESSFUL CONVERSION!</strong> Target item found at Rank #${status.rank} on Turn ${status.turn}!
+                `;
+            } else {
+                banner.className = 'status-banner banner-failed';
+                banner.innerHTML = `
+                    <strong>❌ SESSION CONVERSION FAILED!</strong> Target ASIN was not recommended within the 10 turn limit.
+                `;
+            }
+            board.appendChild(banner);
+            board.scrollTop = board.scrollHeight;
+        }
+
+        // Update inspector panel dynamically
+        function updateInspector(target) {
+            const container = document.getElementById('inspector-container');
+            container.innerHTML = `
+                <h2 class="inspector-title">Target Item Inspector</h2>
+                <div class="inspector-section">
+                    <div class="inspector-section-lbl">Target Details</div>
+                    <div class="inspector-card">
+                        <div class="meta-item">
+                            <div class="meta-key">Brand</div>
+                            <div class="meta-value">${target.target_brand}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Title</div>
+                            <div class="meta-value" style="font-size: 12.5px;">${target.target_title}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Target ASIN</div>
+                            <div class="meta-value" style="font-family: monospace; color: var(--accent-cyan);">${target.target_asin}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inspector-section">
+                    <div class="inspector-section-lbl">Hard Constraints (Must-Haves)</div>
+                    <div>
+                        ${target.hard_constraints.map(tag => `<span class="tag-badge" style="border-color: var(--accent-cyan); color: var(--accent-cyan);">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
+                    </div>
+                </div>
+
+                <div class="inspector-section">
+                    <div class="inspector-section-lbl">Soft Preferences (Nice-to-Haves)</div>
+                    <div>
+                        ${target.soft_preferences.map(tag => `<span class="tag-badge">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Search inputs
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderSessionList();
+        });
+
+        // Tabs
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentFilter = tab.getAttribute('data-filter');
+                renderSessionList();
+            });
+        });
+
+        // Load initial sessions
+        fetchSessions();
+    </script>
+</body>
+</html>

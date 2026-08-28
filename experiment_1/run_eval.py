@@ -55,6 +55,7 @@ def evaluate_custom(agent, samples, catalog_ids, categories, products):
                 "turn": turn,
                 "customer": user_message,
                 "copilot_ask": response.get("ask_attribute"),
+                "copilot_msg": response.get("message") or "Here are the top matches.",
                 "recommendations": ranked
             })
             
@@ -103,6 +104,7 @@ def evaluate_custom(agent, samples, catalog_ids, categories, products):
         for turn_log in history:
             log.append(f"[Turn {turn_log['turn']}]")
             log.append(f"Customer: \"{turn_log['customer']}\"")
+            log.append(f"Copilot: \"{turn_log['copilot_msg']}\"")
             log.append(f"Copilot requested attribute: {turn_log['copilot_ask']}")
             log.append(f"Copilot Top Recommendations:")
             for idx, r_asin in enumerate(turn_log['recommendations']):
