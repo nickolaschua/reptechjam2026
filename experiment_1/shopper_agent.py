@@ -26,6 +26,82 @@ from shop_agent import Agent
 MAX_TURNS = 10
 TOP_K = 10
 
+
+def _normalize_constraint(value: object) -> str:
+    return re.sub(r"\s+", " ", str(value or "").lower()).strip()
+
+
+class ShopperIntentState:
+    """Tracks which simulated shopper preferences remain active after an override."""
+
+    def __init__(self, initial_preference: str = "") -> None:
+        self.constraint_provenance: list[dict] = []
+        self.search_epoch = 0
+        if initial_preference:
+            self.record_constraint(
+                initial_preference,
+                source_turn=1,
+                source_type="initial_preference",
+            )
+
+    @classmethod
+    def from_sample(cls, sample: dict) -> "ShopperIntentState":
+        override = sample.get("behavior", {}).get("override", {})
+        initial_preference = (
+            str(override.get("old_value") or "")
+            if sample.get("scenario_type") == "intent_override"
+            else ""
+        )
+        return cls(initial_preference)
+
+    def record_constraint(
+        self,
+        value: str,
+        source_turn: int,
+        source_type: str,
+    ) -> None:
+        normalized = _normalize_constraint(value)
+        for record in self.constraint_provenance:
+            if (
+                _normalize_constraint(record["value"]) == normalized
+                and record["status"] == "active"
+            ):
+                if source_type == "explicit_override":
+                    record["source_turn"] = source_turn
+                    record["source_type"] = source_type
+                return
+        self.constraint_provenance.append({
+            "value": value,
+            "source_turn": source_turn,
+            "source_type": source_type,
+            "status": "active",
+        })
+
+    def apply_override(self, new_value: str, turn: int) -> None:
+        for record in self.constraint_provenance:
+            if (
+                record["status"] == "active"
+                and record["source_type"] in {"initial_preference", "explicit_override"}
+            ):
+                record["status"] = "revoked"
+        if _normalize_constraint(new_value):
+            self.record_constraint(new_value, turn, "explicit_override")
+        self.search_epoch += 1
+
+    def active_values(self) -> list[str]:
+        return [
+            str(record["value"])
+            for record in self.constraint_provenance
+            if record["status"] == "active"
+        ]
+
+    def revoked_values(self) -> list[str]:
+        return [
+            str(record["value"])
+            for record in self.constraint_provenance
+            if record["status"] == "revoked"
+        ]
+
 # ANSI colors for terminal prints
 COLOR_USER = "\033[92m"       # Green
 COLOR_COPILOT = "\033[94m"    # Blue
@@ -160,7 +236,12 @@ def call_shopper_llm(prompt: str, system_prompt: str = "", model_name: str = "ll
 
     return res_text
 
-def make_system_prompt(sample: dict, product: dict, target_category: str) -> str:
+def make_system_prompt(
+    sample: dict,
+    product: dict,
+    target_category: str,
+    intent_state: ShopperIntentState | None = None,
+) -> str:
     card = sample["intent_card"]
     behavior = sample["behavior"]
     scenario = sample["scenario_type"]
@@ -173,12 +254,25 @@ def make_system_prompt(sample: dict, product: dict, target_category: str) -> str
     details = product.get('details', {})
     details_str = " ".join(f"{k}: {v}" for k, v in details.items()) if isinstance(details, dict) else str(details)
     
+    hard_constraints = [str(value) for value in card.get("hard_constraints", [])]
+    soft_preferences = [str(value) for value in card.get("soft_preferences", [])]
+    if intent_state is not None:
+        revoked = {_normalize_constraint(value) for value in intent_state.revoked_values()}
+        hard_constraints = [
+            value for value in hard_constraints
+            if _normalize_constraint(value) not in revoked
+        ]
+        soft_preferences = [
+            value for value in soft_preferences
+            if _normalize_constraint(value) not in revoked
+        ]
+
     prompt = (
         "You are acting as a real customer shopping online. Your target product you want to find is:\n"
         f"Target Product Title: {title}\n"
         f"Category: {target_category}\n"
-        f"Hard Constraints (Must-Haves): {', '.join(card.get('hard_constraints', []))}\n"
-        f"Soft Preferences (Nice-to-Haves): {', '.join(card.get('soft_preferences', []))}\n"
+        f"Hard Constraints (Must-Haves): {', '.join(hard_constraints)}\n"
+        f"Soft Preferences (Nice-to-Haves): {', '.join(soft_preferences)}\n"
         f"Ground Truth ASIN: {product.get('parent_asin')}\n\n"
         f"Target Product Details: {details_str}\n"
         f"Target Product Description: {description[:300]}\n\n"
@@ -191,12 +285,21 @@ def make_system_prompt(sample: dict, product: dict, target_category: str) -> str
     
     if scenario == "intent_override":
         override = behavior.get("override", {})
-        prompt += (
-            f"Instruction for Intent Override:\n"
-            f"- For the first few turns, you prefer the soft style: '{override.get('old_value')}'\n"
-            f"- When the turn counter hits {override.get('turn')}, you must override your preference. "
-            f"You will say: '{override.get('message')}' and pivot your search to require: '{override.get('new_value')}'\n\n"
-        )
+        if intent_state is not None and intent_state.search_epoch > 0:
+            prompt += (
+                "Current Intent State After Override:\n"
+                f"- Active explicit requirements: {', '.join(intent_state.active_values())}\n"
+                f"- Revoked preferences: {', '.join(intent_state.revoked_values())}\n"
+                "- Never mention, request, or positively reinforce a revoked preference again. "
+                "Continue the conversation using only active requirements and compatible target constraints.\n\n"
+            )
+        else:
+            prompt += (
+                f"Instruction for Intent Override:\n"
+                f"- For the first few turns, you prefer the soft style: '{override.get('old_value')}'\n"
+                f"- When the turn counter hits {override.get('turn')}, you must override your preference. "
+                f"You will say: '{override.get('message')}' and pivot your search to require: '{override.get('new_value')}'\n\n"
+            )
     elif scenario == "boundary":
         prompt += (
             "Instruction for Boundary Case:\n"
@@ -295,7 +398,13 @@ def main():
     agent.reset(session_id, sample["user_profile"])
 
     # LLM User state and prompts setup
-    system_prompt = make_system_prompt(sample, target_product, coarse_cat)
+    shopper_intent_state = ShopperIntentState.from_sample(sample)
+    system_prompt = make_system_prompt(
+        sample,
+        target_product,
+        coarse_cat,
+        shopper_intent_state,
+    )
     history = []
     
     # Run loop
@@ -327,6 +436,16 @@ def main():
         elif not override_applied and turn == int(override.get("turn", 3)):
             # Override turn (no LLM call)
             override_applied = True
+            shopper_intent_state.apply_override(
+                str(override.get("new_value") or ""),
+                turn,
+            )
+            system_prompt = make_system_prompt(
+                sample,
+                target_product,
+                coarse_cat,
+                shopper_intent_state,
+            )
             user_message = override.get("message", "Actually, ignore my earlier preference.")
             t_call_start = time.time()  # Reset start so latency is 0.0s for forced triggers
         else:
