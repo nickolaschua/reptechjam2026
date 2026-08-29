@@ -9,7 +9,7 @@ from __future__ import annotations
 import random
 import re
 
-TOKEN_RE = re.compile(r"[a-z]+")
+TOKEN_RE = re.compile(r"[a-z0-9]+")     # alphanumeric: model codes like bm8242 must survive (spec 4.5)
 
 # Deliberately larger than exp11's list: the forbidden list must not be padded
 # with function words, and overlap must not be inflated by them.
@@ -42,7 +42,7 @@ STYLE_INSTRUCTIONS = {
                       "accessory itself."),
     "plain": "Tell the assistant what you're looking for.",
     "lay": ("Describe what you want in everyday words. You must not use any of these "
-            "words: {forbidden}."),
+            "words, or their plurals: {forbidden}."),
 }
 
 MODIFIER_INSTRUCTIONS = {
@@ -64,7 +64,8 @@ RELATIONS = {
 
 
 def content_words(text: str) -> list[str]:
-    """Lowercase alphabetic tokens, stopwords removed, first-occurrence order, unique."""
+    """Lowercase alphanumeric tokens, stopwords and single characters removed,
+    first-occurrence order, unique. Shared by the forbidden list and the overlap metric."""
     seen: dict[str, None] = {}
     for tok in TOKEN_RE.findall(str(text or "").lower()):
         if tok not in STOPWORDS and len(tok) > 1:
@@ -76,7 +77,8 @@ def forbidden_list(product: dict, cap: int = 40) -> list[str]:
     """The listing's own vocabulary, so the `lay` style cannot paraphrase it back."""
     feats = product.get("features") or []
     text = " ".join([str(product.get("title") or ""), *map(str, feats)])
-    return content_words(text)[:cap]
+    # "100" from "100% cotton" is not vocabulary; "bm8242" is
+    return [w for w in content_words(text) if not w.isdigit()][:cap]
 
 
 def relation_for(department: str | None, rng: random.Random) -> str:
@@ -88,7 +90,11 @@ def relation_for(department: str | None, rng: random.Random) -> str:
 def build_system_prompt(product: dict, card: dict, profile: dict, style: str,
                         modifiers: list[str], code: str | None = None,
                         relation: str | None = None, anchor: str | None = None) -> str:
-    """v2's shopper prompt with rule 3 removed and the style/modifier rules appended."""
+    """The v2 shopper prompt, single-turn. Relative to experiment_1/shopper_agent.py:
+    rule 1 (lead with hard constraints) dropped - it would contradict the use_case /
+    symptom styles; rule 3 (paraphrase the listing) dropped - the opposite of messy;
+    rule 5 (recognise the product, end the chat) dropped - multi-turn only; the
+    Ground Truth ASIN and Category lines dropped - leakage. Rule 5 here is new."""
     if style not in STYLES:
         raise ValueError(f"unknown style {style!r}")
     desc = product.get("description") or ""

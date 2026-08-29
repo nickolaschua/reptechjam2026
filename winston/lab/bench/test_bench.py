@@ -15,7 +15,15 @@ class TestPrompts(unittest.TestCase):
         words = forbidden_list(product, cap=5)
         self.assertEqual(len(words), 5)
         self.assertIn("merrell", words)
-        self.assertNotIn("100", words)          # digits are not vocabulary
+        self.assertNotIn("100", forbidden_list(product, cap=40))   # pure digits are not vocabulary
+
+    def test_content_words_keeps_alphanumeric_codes(self):
+        from prompts import content_words
+        self.assertEqual(content_words("BM8242-08E in black"), ["bm8242", "08e", "black"])
+
+    def test_forbidden_list_handles_missing_fields(self):
+        from prompts import forbidden_list
+        self.assertEqual(forbidden_list({"title": None, "features": None}), [])
 
     def test_relation_matches_department(self):
         from prompts import relation_for
