@@ -29,7 +29,8 @@ MATERIAL_RE = re.compile(r"\b(cotton|polyester|nylon|leather|wool|spandex|silk|r
 # letters then digits, e.g. E760Y-0143, WA1200, J03918. Pure digits never match.
 MODEL_CODE_RE = re.compile(r"\b([A-Z]{1,4}-?\d{3,}[A-Z0-9-]*)\b")
 # purity marks and steel grades that look like codes and are not
-GRADE_EXCLUDE = frozenset({"316L", "925", "14K", "18K", "10K", "585", "750", "24K", "9K"})
+GRADE_EXCLUDE = frozenset({"316L", "925", "S925", "14K", "18K", "10K", "585", "750", "24K", "9K",
+                           "UV400"})   # S925 = sterling mark, UV400 = lens standard; both looked like codes
 CANON_DEPARTMENTS = frozenset({
     "Women", "Men", "Girls", "Boys", "Baby", "Novelty & More", "Sport Specific Clothing",
     "Luggage & Travel Gear", "Costumes & Accessories", "Shoe, Jewelry & Watch Accessories",

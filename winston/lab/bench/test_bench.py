@@ -136,13 +136,14 @@ class TestCovariates(unittest.TestCase):
         self.assertTrue(c["promo_bucket"])             # Westlake path
         self.assertTrue(c["compat_eligible"])          # bucket is a watch-band bucket
         self.assertEqual(c["compat_anchor"], "watch")
-        self.assertFalse(c["silent_on_material"])      # "cotton" and "silver"
+        self.assertFalse(c["silent_on_material"])      # "cotton" (silver is not in MATERIAL_RE)
         self.assertFalse(c["has_model_code"])
         self.assertFalse(c["has_near_duplicate"])
         self.assertTrue(c["price_present"])
         self.assertEqual(c["bucket_size"], 1)
         self.assertEqual(c["category_depth"], 2)
         self.assertGreater(c["descriptiveness"], 0.0)
+        self.assertTrue(c["jargon"] is None or 0.0 <= c["jargon"] <= 1.0)   # None only without wordfreq
         c2 = covariates_for("B2", ix, set())
         self.assertFalse(c2["compat_eligible"])
         self.assertIsNone(c2["compat_anchor"])
