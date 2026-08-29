@@ -45,3 +45,7 @@ nickolas/results/experiment_10*/imported/warp_index/
 retrieval/experiment_10_build/
 retrieval/experiment_10_staging/
 retrieval/xtr-warp-inspect/
+
+# Experiment 1 model weights and session logs
+experiment_1/model_finetuned/
+experiment_1/eval_sessions/
