@@ -123,6 +123,8 @@ class TestCovariates(unittest.TestCase):
         self.assertIsNone(model_code("316L Surgical Steel Ring"))
         self.assertIsNone(model_code("14K Gold Chain"))
         self.assertIsNone(model_code("Plain Hoodie"))
+        self.assertIsNone(model_code("Sterling S925 Silver Ring"))                  # purity mark, not a code
+        self.assertEqual(model_code("Shades UV400 Protection B2599"), "B2599")      # standard skipped, real code found
 
     def test_near_duplicates_by_title_jaccard_within_bucket(self):
         from covariates import near_duplicates
@@ -151,6 +153,40 @@ class TestCovariates(unittest.TestCase):
         self.assertTrue(c2["silent_on_material"])
         self.assertEqual(c2["descriptiveness"], 0.0)   # no features at all
         self.assertFalse(c2["price_present"] is None)
+
+
+class TestSample(unittest.TestCase):
+    def _cov(self, n=400):
+        rows = {}
+        for i in range(n):
+            a = f"P{i:04d}"
+            rows[a] = {"asin": a, "popularity": i, "silent_on_material": i % 7 == 0,
+                       "has_near_duplicate": i % 11 == 0, "has_model_code": i % 13 == 0,
+                       "model_code": "X100" if i % 13 == 0 else None, "promo_bucket": False,
+                       "compat_eligible": i % 17 == 0}
+        return rows
+
+    def test_pools_are_tagged_and_deduped(self):
+        from sample import sample_products
+        rows = self._cov()
+        out = sample_products(rows, seed=1, base=50, per_pool=10)
+        asins = [r["asin"] for r in out]
+        self.assertEqual(len(asins), len(set(asins)))
+        pools = {}
+        for r in out:
+            for pl in r["pools"]:
+                pools[pl] = pools.get(pl, 0) + 1
+        for pl in ("base", "silent_on_material", "has_near_duplicate", "low_popularity", "has_model_code", "compat_eligible"):
+            self.assertGreaterEqual(pools[pl], 10, pl)
+        low = [r for r in out if "low_popularity" in r["pools"]]
+        self.assertTrue(all(r["popularity"] < 100 for r in low))   # bottom quartile of 0..399
+
+    def test_seed_reproduces(self):
+        from sample import sample_products
+        rows = self._cov()
+        a = [r["asin"] for r in sample_products(rows, seed=7, base=30, per_pool=5)]
+        b = [r["asin"] for r in sample_products(rows, seed=7, base=30, per_pool=5)]
+        self.assertEqual(a, b)
 
 
 if __name__ == "__main__":
