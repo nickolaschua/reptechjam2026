@@ -69,6 +69,88 @@ class TestPrompts(unittest.TestCase):
         p = build_system_prompt(self._product(), {}, {}, "exact", ["format_noise"], code="WA1200")
         self.assertIn("different spacing", p)
 
+    def test_context_block_renders_card_and_profile(self):
+        # if the card or profile silently stopped rendering, every utterance would be
+        # generated without its constraints and the run would still "succeed"
+        from prompts import build_system_prompt
+        p = build_system_prompt(self._product(), {"hard_constraints": ["foam"], "soft_preferences": ["ventilated"]},
+                                {"preference_tags": ["comfort"], "summary": "buys clogs"}, "plain", [])
+        for needle in ("foam", "ventilated", "comfort", "buys clogs", "Crocs Classic Clog", "unisex-adult"):
+            self.assertIn(needle, p)
+
+    def test_description_truncated_to_300(self):
+        from prompts import build_system_prompt
+        product = {**self._product(), "description": ["x" * 400 + "TAIL"]}
+        p = build_system_prompt(product, {}, {}, "plain", [])
+        self.assertNotIn("TAIL", p)
+        self.assertIn("x" * 300, p)
+
+
+def _fake_ix():
+    """Four products, two buckets. Enough to exercise every covariate branch."""
+    import math
+    products = {
+        "A1": {"title": "Asics E760Y-0143 Gel Tennis Shoe", "features": ["Rubber sole", "GEL cushioning system"],
+               "details": {}, "description": "", "price": 80.0, "rating_number": 500, "categories": ["Clothing, Shoes & Jewelry", "Men", "Shoes"]},
+        "A2": {"title": "Asics Gel Tennis Shoe Blue", "features": ["Rubber sole"],
+               "details": {}, "description": "", "price": None, "rating_number": 3, "categories": ["Clothing, Shoes & Jewelry", "Men", "Shoes"]},
+        "B1": {"title": "Sterling Silver 925 Pendant", "features": ["100% Cotton cord"],
+               "details": {"Material": "silver"}, "description": "", "price": 12.0, "rating_number": 40, "categories": ["Clothing, Shoes & Jewelry", "Westlake"]},
+        "B2": {"title": "Plain Hoodie", "features": [],
+               "details": {}, "description": "", "price": 20.0, "rating_number": 10, "categories": ["Clothing, Shoes & Jewelry", "Women", "Clothing", "Hoodies"]},
+    }
+    text = {a: " ".join([p["title"], *p["features"], str(p["details"]), str(p["description"])]).lower() for a, p in products.items()}
+    fields = {a: {"title": p["title"].lower(), "features": " ".join(p["features"]).lower()} for a, p in products.items()}
+    df = {}
+    for t in text.values():
+        for tok in set(t.split()):
+            df[tok] = df.get(tok, 0) + 1
+    idf = {tok: math.log(4 / c) for tok, c in df.items()}
+    bucket_of = {"A1": "men shoes", "A2": "men shoes", "B1": "watches watch bands", "B2": "clothing hoodies"}
+    buckets = {}
+    for a, b in bucket_of.items():
+        buckets.setdefault(b, []).append(a)
+    return SimpleNamespace(products=products, text=text, fields=fields, idf=idf, buckets=buckets, bucket_of=bucket_of,
+                           categories={a: p["categories"] for a, p in products.items()})
+
+
+class TestCovariates(unittest.TestCase):
+    def test_model_code_accepts_real_codes_and_rejects_grades(self):
+        from covariates import model_code
+        self.assertEqual(model_code("Asics E760Y-0143 Gel"), "E760Y-0143")
+        self.assertEqual(model_code("VICTONY WA1200 Extender"), "WA1200")
+        self.assertIsNone(model_code("Sterling Silver 925 Pendant"))
+        self.assertIsNone(model_code("316L Surgical Steel Ring"))
+        self.assertIsNone(model_code("14K Gold Chain"))
+        self.assertIsNone(model_code("Plain Hoodie"))
+
+    def test_near_duplicates_by_title_jaccard_within_bucket(self):
+        from covariates import near_duplicates
+        dups = near_duplicates(_fake_ix())
+        self.assertEqual(dups, {"A1", "A2"})          # B1 and B2 are alone in their buckets
+
+    def test_covariates_for_fields(self):
+        from covariates import covariates_for, near_duplicates
+        ix = _fake_ix()
+        c = covariates_for("B1", ix, near_duplicates(ix))
+        self.assertTrue(c["promo_bucket"])             # Westlake path
+        self.assertTrue(c["compat_eligible"])          # bucket is a watch-band bucket
+        self.assertEqual(c["compat_anchor"], "watch")
+        self.assertFalse(c["silent_on_material"])      # "cotton" and "silver"
+        self.assertFalse(c["has_model_code"])
+        self.assertFalse(c["has_near_duplicate"])
+        self.assertTrue(c["price_present"])
+        self.assertEqual(c["bucket_size"], 1)
+        self.assertEqual(c["category_depth"], 2)
+        self.assertGreater(c["descriptiveness"], 0.0)
+        c2 = covariates_for("B2", ix, set())
+        self.assertFalse(c2["compat_eligible"])
+        self.assertIsNone(c2["compat_anchor"])
+        self.assertIsNone(c2["department"])
+        self.assertTrue(c2["silent_on_material"])
+        self.assertEqual(c2["descriptiveness"], 0.0)   # no features at all
+        self.assertFalse(c2["price_present"] is None)
+
 
 if __name__ == "__main__":
     unittest.main()
