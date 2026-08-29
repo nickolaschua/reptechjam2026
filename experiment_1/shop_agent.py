@@ -67,6 +67,8 @@ ALLOWED_ATTRIBUTES = {
 # Standard keyword lists for local parsing
 COLORS = {"black", "white", "blue", "red", "pink", "green", "brown", "gray", "grey", "purple", "yellow", "orange"}
 MATERIALS = {"cotton", "polyester", "nylon", "leather", "wool", "spandex", "silk", "rayon", "fabric"}
+SINGLE_VALUE_ATTRIBUTES = {"brand", "budget", "color", "material", "size", "sole", "style"}
+OVERRIDE_VALUE_RE = re.compile(r"what i need is:\s*(.+?)\.?\s*$", re.IGNORECASE | re.DOTALL)
 TOKEN_RE = re.compile(r"[a-z0-9]+", re.IGNORECASE)
 STOPWORDS = {
     "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "from",
@@ -563,32 +565,177 @@ class Agent:
             return "style"
         return "feature"
 
+    @staticmethod
+    def _slot_values(value: object) -> set[str]:
+        if value is None:
+            return set()
+        values = value if isinstance(value, (set, list, tuple)) else [value]
+        return {str(item).strip() for item in values if str(item).strip()}
+
+    def _record_constraint(
+        self,
+        state: dict,
+        attr: str,
+        value: str,
+        turn: int,
+        source_type: str,
+        promote_existing: bool = False,
+    ) -> None:
+        normalized = _normalize(value)
+        for record in state["constraint_provenance"]:
+            if (
+                record["attribute"] == attr
+                and _normalize(record["value"]) == normalized
+                and record["status"] == "active"
+            ):
+                if source_type == "explicit_override" or promote_existing:
+                    record["source_turn"] = turn
+                    record["source_type"] = source_type
+                return
+        state["constraint_provenance"].append({
+            "attribute": attr,
+            "value": value,
+            "source_turn": turn,
+            "source_type": source_type,
+            "status": "active",
+        })
+
+    def _revoke_constraint_record(self, state: dict, record: dict) -> None:
+        if record["status"] != "active":
+            return
+        record["status"] = "revoked"
+        for term in _terms(record["value"]):
+            if term not in state["stashed_terms"]:
+                state["stashed_terms"].append(term)
+
+        attr = record["attribute"]
+        active_values = self._slot_values(state["disclosed_slots"].get(attr))
+        remaining = {
+            value for value in active_values
+            if _normalize(value) != _normalize(record["value"])
+        }
+        if remaining:
+            state["disclosed_slots"][attr] = remaining
+        else:
+            state["disclosed_slots"].pop(attr, None)
+
+    def _set_constraint(
+        self,
+        state: dict,
+        attr: str,
+        values: object,
+        turn: int,
+        source_type: str,
+        source_message: str = "",
+    ) -> None:
+        new_values = self._slot_values(values)
+        normalized_new_values = {_normalize(value) for value in new_values}
+        for record in state["constraint_provenance"]:
+            if (
+                record["attribute"] == attr
+                and record["status"] == "active"
+                and _normalize(record["value"]) not in normalized_new_values
+            ):
+                self._revoke_constraint_record(state, record)
+        if new_values:
+            state["disclosed_slots"][attr] = new_values
+        else:
+            state["disclosed_slots"].pop(attr, None)
+        for value in new_values:
+            promote_existing = (
+                source_type == "clarification"
+                and bool(source_message)
+                and _normalize(value) in _normalize(source_message)
+            )
+            self._record_constraint(
+                state,
+                attr,
+                value,
+                turn,
+                source_type,
+                promote_existing=promote_existing,
+            )
+
+    def _rebuild_active_terms(self, state: dict) -> None:
+        terms_list: list[str] = []
+        for value in [state.get("category", "")]:
+            for term in _terms(value):
+                if term not in terms_list:
+                    terms_list.append(term)
+        for attr, values in state["disclosed_slots"].items():
+            for value in self._slot_values(values):
+                value_lower = value.lower()
+                source = attr if value_lower in {"true", "yes", "affirmative", "required", "included"} else value
+                if value_lower in {"false", "no", "none", "n/a", "null", "other"}:
+                    continue
+                for term in _terms(source):
+                    if term not in terms_list and term not in state.get("negated_terms", set()):
+                        terms_list.append(term)
+        state["accumulated_terms"] = terms_list
+
+    @staticmethod
+    def _advance_search_epoch(state: dict) -> None:
+        state["search_epoch"] += 1
+        current_seen: set[str] = set()
+        state["seen_asins_by_epoch"][state["search_epoch"]] = current_seen
+        state["seen_asins"] = current_seen
+
+    @staticmethod
+    def _extract_override_value(message: str) -> str | None:
+        match = OVERRIDE_VALUE_RE.search(message)
+        if not match:
+            return None
+        return match.group(1).strip().rstrip(".").strip() or None
+
+    @staticmethod
+    def _vector_query_text(state: dict) -> str:
+        if state.get("search_epoch", 0) > 0:
+            return " ".join(state.get("accumulated_terms", []))
+        return " ".join(
+            message["content"]
+            for message in state.get("history", [])
+            if message.get("role") == "user"
+        )
+
+    def _apply_explicit_override(self, state: dict, new_value: str, turn: int) -> None:
+        new_attr = self._classify_constraint_locally(new_value)
+        for record in list(state["constraint_provenance"]):
+            revoke_initial = record["source_type"] == "initial_preference"
+            revoke_conflict = (
+                new_attr in SINGLE_VALUE_ATTRIBUTES
+                and record["attribute"] == new_attr
+                and _normalize(record["value"]) != _normalize(new_value)
+            )
+            if record["status"] == "active" and (revoke_initial or revoke_conflict):
+                self._revoke_constraint_record(state, record)
+
+        retained_values = self._slot_values(state["disclosed_slots"].get(new_attr))
+        if new_attr in SINGLE_VALUE_ATTRIBUTES:
+            retained_values = set()
+        retained_values.add(new_value)
+        state["disclosed_slots"][new_attr] = retained_values
+        self._record_constraint(state, new_attr, new_value, turn, "explicit_override")
+        self._advance_search_epoch(state)
+        self._rebuild_active_terms(state)
+
     def _erase_attribute_memory(self, state: dict, attr: str) -> None:
         """Purge the attribute from active slot memory, stash its keywords, and update terms."""
-        old_val = state["disclosed_slots"].pop(attr, None)
-        if old_val:
-            val_terms = []
-            if isinstance(old_val, set):
-                for val in old_val:
-                    val_terms.extend(_terms(val))
-            else:
-                val_terms.extend(_terms(old_val))
-                
-            for w in val_terms:
-                if w not in state["stashed_terms"]:
-                    state["stashed_terms"].append(w)
-                if w in state["accumulated_terms"]:
-                    try:
-                        state["accumulated_terms"].remove(w)
-                    except ValueError:
-                        pass
+        for record in state["constraint_provenance"]:
+            if record["attribute"] == attr and record["status"] == "active":
+                self._revoke_constraint_record(state, record)
+        state["disclosed_slots"].pop(attr, None)
+        self._rebuild_active_terms(state)
 
     def reset(self, session_id: str, user_profile: dict) -> None:
+        initial_seen: set[str] = set()
         self._sessions[session_id] = {
             "disclosed_slots": {},
+            "constraint_provenance": [],
             "accumulated_terms": [],
             "stashed_terms": [],
-            "seen_asins": set(),
+            "search_epoch": 0,
+            "seen_asins": initial_seen,
+            "seen_asins_by_epoch": {0: initial_seen},
             "history": [],
             "negated_terms": set(),
             "asked_attributes": set(),
@@ -602,39 +749,14 @@ class Agent:
         self._simulator_sessions[session_id] = True
 
 
-    def _parse_message_locally(self, session_id: str, message: str) -> None:
+    def _parse_message_locally(self, session_id: str, message: str, turn: int = 0) -> None:
         state = self._sessions[session_id]
         msg_lower = message.lower()
         
         # 1. Check for Intent Override
-        if "what i need is:" in msg_lower:
-            idx = msg_lower.find("what i need is:")
-            val_part = message[idx + len("what i need is:"):].strip()
-            if val_part.endswith("."):
-                val_part = val_part[:-1]
-            attr = self._classify_constraint_locally(val_part)
-            
-            # Erase all prior active slots and stash them to avoid query pollution
-            for a in list(state["disclosed_slots"].keys()):
-                self._erase_attribute_memory(state, a)
-                
-            # Move all current accumulated terms to stashed_terms
-            for term in state["accumulated_terms"]:
-                if term not in state["stashed_terms"]:
-                    state["stashed_terms"].append(term)
-            state["accumulated_terms"] = []
-            
-            # Set the new slot
-            state["disclosed_slots"][attr] = val_part
-            state["seen_asins"].clear()
-            
-            # Re-seed accumulated terms with category + new message terms
-            for term in _terms(state["category"]):
-                if term not in state["accumulated_terms"]:
-                    state["accumulated_terms"].append(term)
-            for term in _terms(val_part):
-                if term not in state["accumulated_terms"] and term not in state["negated_terms"]:
-                    state["accumulated_terms"].append(term)
+        override_value = self._extract_override_value(message)
+        if override_value:
+            self._apply_explicit_override(state, override_value, turn)
             return
 
         # 2. Check for Boundary Case
@@ -691,7 +813,8 @@ class Agent:
             if val_part.endswith("."):
                 val_part = val_part[:-1]
             attr = self._classify_constraint_locally(val_part)
-            state["disclosed_slots"][attr] = val_part
+            source_type = "initial_preference" if turn <= 1 else "clarification"
+            self._set_constraint(state, attr, val_part, turn, source_type, message)
             
         if "what matters is:" in msg_lower:
             idx = msg_lower.find("what matters is:")
@@ -701,47 +824,45 @@ class Agent:
             values = [v.strip() for v in val_part.split(";")]
             for val in values:
                 attr = self._classify_constraint_locally(val)
-                state["disclosed_slots"][attr] = val
+                current_values = self._slot_values(state["disclosed_slots"].get(attr))
+                if attr not in SINGLE_VALUE_ATTRIBUTES:
+                    current_values.add(val)
+                else:
+                    current_values = {val}
+                self._set_constraint(state, attr, current_values, turn, "clarification", message)
 
         # Extract brand
         brand_match = re.search(r"brand(?:s)? like\s+([a-zA-Z0-9\s]+)", msg_lower)
         if brand_match:
             b_val = brand_match.group(1).strip().lower()
-            state["disclosed_slots"]["brand"] = b_val
+            self._set_constraint(state, "brand", b_val, turn, "initial_preference" if turn <= 1 else "clarification", message)
 
         # Extract material
         materials_found = [m for m in ["leather", "wool", "cotton", "polyester", "nylon", "silk", "pvc", "resin", "denim", "canvas"] if m in msg_lower]
         if materials_found:
-            state["disclosed_slots"]["material"] = materials_found[0]
+            self._set_constraint(state, "material", materials_found[0], turn, "initial_preference" if turn <= 1 else "clarification", message)
             
         # Extract sole
         sole_found = [s for s in ["rubber", "flat", "heel", "wedge", "cushion"] if s in msg_lower]
         if sole_found:
-            state["disclosed_slots"]["sole"] = sole_found[0]
+            self._set_constraint(state, "sole", sole_found[0], turn, "initial_preference" if turn <= 1 else "clarification", message)
             
         # Extract style
         style_found = [st for st in ["combat", "fashion", "riding", "chelsea", "casual", "dressy", "western", "cowboy", "rain", "snow", "bootie"] if st in msg_lower]
         if style_found:
-            state["disclosed_slots"]["style"] = style_found[0]
+            self._set_constraint(state, "style", style_found[0], turn, "initial_preference" if turn <= 1 else "clarification", message)
             
         # Extract color
         colors_found = [c for c in COLORS if c in msg_lower]
         if colors_found:
-            state["disclosed_slots"]["color"] = colors_found[0]
+            self._set_constraint(state, "color", colors_found[0], turn, "initial_preference" if turn <= 1 else "clarification", message)
             
         # Extract color
         color_found = [c for c in ["black", "white", "blue", "red", "pink", "green", "brown", "gray", "grey", "purple", "yellow", "orange", "gold", "silver"] if c in msg_lower]
         if color_found:
-            state["disclosed_slots"]["color"] = color_found[0]
+            self._set_constraint(state, "color", color_found[0], turn, "initial_preference" if turn <= 1 else "clarification", message)
 
-        # Accumulate terms from the message
-        new_terms = _terms(message)
-        for term in new_terms:
-            if term not in state["accumulated_terms"] and term not in state["negated_terms"]:
-                state["accumulated_terms"].append(term)
-                
-        # Clean any previously accumulated terms that are now negated
-        state["accumulated_terms"] = [t for t in state["accumulated_terms"] if t not in state["negated_terms"]]
+        self._rebuild_active_terms(state)
 
     def respond(self, session_id: str, user_message: str, turn: int, top_k: int) -> dict:
         msg_lower = user_message.lower().strip()
@@ -801,7 +922,7 @@ class Agent:
 
         return self._respond_custom(session_id, user_message, turn, top_k)
 
-    def _update_state_via_llm(self, session_id: str, user_message: str) -> None:
+    def _update_state_via_llm(self, session_id: str, user_message: str, turn: int) -> None:
         import json
         import urllib.request
         state = self._sessions[session_id]
@@ -868,12 +989,25 @@ class Agent:
                 if new_cat != state.get("category"):
                     state["category"] = new_cat
                     state["seen_asins"].clear() # Clear recommendations if product category changed
+                    for record in state["constraint_provenance"]:
+                        if record["status"] == "active":
+                            self._revoke_constraint_record(state, record)
                     state["disclosed_slots"].clear() # Rule 3: Clear old constraints if category changed
                     
             if "department" in new_state:
                 dept_val = str(new_state["department"]).strip().lower()
                 if dept_val in ["men", "women", "boys", "girls", "kids", "toddler"]:
-                    state["disclosed_slots"].setdefault("use_case", set()).add(dept_val)
+                    use_case_values = self._slot_values(state["disclosed_slots"].get("use_case"))
+                    use_case_values.add(dept_val)
+                    source_type = "initial_preference" if turn <= 1 else "clarification"
+                    self._set_constraint(
+                        state,
+                        "use_case",
+                        use_case_values,
+                        turn,
+                        source_type,
+                        user_message,
+                    )
                     cat_val = state.get("category", "").lower()
                     if any(w in cat_val for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat"]):
                         state["department"] = "shoes"
@@ -893,10 +1027,8 @@ class Agent:
             if "disclosed_slots" in new_state and isinstance(new_state["disclosed_slots"], dict):
                 # Clean and merge to existing slots to prevent old requirements from disappearing due to LLM forgetting
                 for k, v in new_state["disclosed_slots"].items():
-                    if isinstance(v, list):
-                        state["disclosed_slots"][k] = set(str(item).strip() for item in v)
-                    else:
-                        state["disclosed_slots"][k] = {str(v).strip()}
+                    source_type = "initial_preference" if turn <= 1 else "clarification"
+                    self._set_constraint(state, k, v, turn, source_type, user_message)
                         
             if "negated_terms" in new_state and isinstance(new_state["negated_terms"], list):
                 state["negated_terms"] = set(str(term).strip() for term in new_state["negated_terms"])
@@ -907,29 +1039,9 @@ class Agent:
         except Exception as parse_err:
             print(f"[Hybrid Agent] Failed to parse updated state JSON: {parse_err}. Content: {res_text}")
             # Fallback to local regex-based parsing if LLM Call 1 fails
-            self._parse_message_locally(session_id, user_message)
+            self._parse_message_locally(session_id, user_message, turn)
             
-        # Rebuild accumulated_terms in Python
-        terms_list = []
-        # Add category terms
-        for w in _terms(state["category"]):
-            if w not in terms_list:
-                terms_list.append(w)
-        # Add disclosed constraints terms
-        for attr, vals in state["disclosed_slots"].items():
-            for val in vals:
-                val_str = str(val).strip().lower()
-                if val_str in ["true", "yes", "affirmative", "required", "included"]:
-                    for w in _terms(attr):
-                        if w not in terms_list:
-                            terms_list.append(w)
-                elif val_str in ["false", "no", "none", "n/a", "null", "other"]:
-                    continue
-                else:
-                    for w in _terms(val):
-                        if w not in terms_list:
-                            terms_list.append(w)
-        state["accumulated_terms"] = terms_list
+        self._rebuild_active_terms(state)
 
     def _parse_generator_json(self, res_text: str, all_attrs: set[str]) -> tuple[str, str]:
         import re
@@ -1022,8 +1134,12 @@ class Agent:
         state["history"].append({"role": "user", "content": user_message})
         state["debug_info"] = {"vector_fallback": False, "fts5_count": 0}
         
-        # 1. Parse current message state using LLM Call 1
-        self._update_state_via_llm(session_id, user_message)
+        # 1. Apply explicit overrides deterministically; use the LLM for other state updates.
+        override_value = self._extract_override_value(user_message)
+        if override_value:
+            self._apply_explicit_override(state, override_value, turn)
+        else:
+            self._update_state_via_llm(session_id, user_message, turn)
         
         # 2. Always compute Price Filtering Mask (Hard/Safe)
         price_mask = np.ones(len(self.catalog_ids), dtype=bool)
@@ -1097,7 +1213,7 @@ class Agent:
         if len(candidate_ids) < 10:
             state["debug_info"]["vector_fallback"] = True
             # Vector Route MIPS (Top 150)
-            query_text = " ".join([m["content"] for m in state["history"] if m["role"] == "user"])
+            query_text = self._vector_query_text(state)
             
             # Prepend instruction prefix if BGE model is used (required for retrieval queries)
             if "bge" in self.model_path.lower() or "model_finetuned" in self.model_path.lower():
@@ -1165,11 +1281,6 @@ class Agent:
                 if val.lower() in meta["searchable_bag"]:
                     score += 0.3
                     
-            # Boost stashed keyword matches
-            for val in state.get("stashed_terms", []):
-                if val.lower() in meta["searchable_bag"]:
-                    score += 0.05
-
             # Boost exact constraint phrase matches (crucial for simulator constraint matching)
             for attr, vals in state["disclosed_slots"].items():
                 val_list = list(vals) if isinstance(vals, (set, list)) else [vals]
@@ -1312,6 +1423,8 @@ class Agent:
             "negated_terms": list(state.get("negated_terms", set())),
             "accumulated_terms": list(state.get("accumulated_terms", [])),
             "stashed_terms": list(state.get("stashed_terms", [])),
+            "constraint_provenance": list(state.get("constraint_provenance", [])),
+            "search_epoch": state.get("search_epoch", 0),
             "fts5_count": state["debug_info"].get("fts5_count", 0),
             "vector_fallback": state["debug_info"].get("vector_fallback", False),
         }
@@ -1452,10 +1565,13 @@ class BaselineAgent:
         self.connection.commit()
 
     def reset(self, session_id: str, user_profile: dict) -> None:
+        initial_seen: set[str] = set()
         self._sessions[session_id] = {
             "disclosed_slots": {},
             "asked_attributes": set(),
-            "seen_asins": set(),
+            "search_epoch": 0,
+            "seen_asins": initial_seen,
+            "seen_asins_by_epoch": {0: initial_seen},
             "category": "clothing",
             "accumulated_terms": [],
             "stashed_terms": set()
@@ -1526,7 +1642,10 @@ class BaselineAgent:
             self._erase_attribute_memory(state, attr)
             state["disclosed_slots"][attr] = {new_val}
             self._rebuild_accumulated_terms(state)
-            state["seen_asins"].clear()
+            state["search_epoch"] += 1
+            current_seen: set[str] = set()
+            state["seen_asins_by_epoch"][state["search_epoch"]] = current_seen
+            state["seen_asins"] = current_seen
             return
 
         req_match = re.search(r"A key requirement is: ([^.]+)\.", message)
@@ -1597,10 +1716,6 @@ class BaselineAgent:
                 if val.lower() in meta["searchable_bag"]:
                     score += 0.3
                     
-            for val in state["stashed_terms"]:
-                if val.lower() in meta["searchable_bag"]:
-                    score += 0.05
-                    
             score += 0.02 * (meta["rating_number"] ** 0.1)
             scored_candidates.append((score, pid))
             
@@ -1658,4 +1773,3 @@ class BaselineAgent:
             "recommendations": [{"parent_asin": r} for r in recommendations],
             "usage": {"prompt_tokens": 0, "completion_tokens": 0}
         }
-
