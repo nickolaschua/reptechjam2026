@@ -21,7 +21,7 @@ from evaluator.local_evaluator import (
     behavior_for,
     normalize_recommendations
 )
-from agent import Agent
+from shop_agent import Agent
 
 MAX_TURNS = 10
 TOP_K = 10
@@ -43,41 +43,145 @@ def materialize_hidden_fields(sample: dict, products: dict[str, dict]) -> tuple[
     behavior = behavior_for(str(sample["scenario_type"]), card, rng)
     return card, behavior
 
-def call_ollama(prompt: str, system_prompt: str = "", model_name: str = "llama2") -> str:
-    url = "http://localhost:11434/api/chat"
-    payload = {
-        "model": model_name,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": prompt}
-        ],
-        "stream": False,
-        "options": {
-            "temperature": 0.4
+def call_shopper_llm(prompt: str, system_prompt: str = "", model_name: str = "llama2") -> str:
+    import urllib.request
+    
+    openai_key = os.environ.get("OPENAI_API_KEY")
+    deepseek_key = os.environ.get("DEEPSEEK_API_KEY")
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    
+    # Cleanup placeholders
+    if openai_key and (openai_key.startswith("your_") or "placeholder" in openai_key.lower()):
+        openai_key = None
+    if deepseek_key and (deepseek_key.startswith("your_") or "placeholder" in deepseek_key.lower()):
+        deepseek_key = None
+    if gemini_key and (gemini_key.startswith("your_") or "placeholder" in gemini_key.lower()):
+        gemini_key = None
+
+    res_text = ""
+
+    # 1. Attempt DeepSeek if key is present
+    if deepseek_key:
+        url = "https://api.deepseek.com/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {deepseek_key}"
         }
-    }
-    try:
-        res = requests.post(url, json=payload, timeout=30)
-        res.raise_for_status()
-        data = res.json()
-        return data["message"]["content"].strip()
-    except Exception as e:
-        print(f"\n{COLOR_SYSTEM}[System Error] Failed to connect to Ollama: {e}{COLOR_RESET}")
-        print("Please make sure Ollama is running locally and you have pulled the model (`ollama run llama2`).")
-        raise e
+        payload = {
+            "model": "deepseek-chat",
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.4,
+            "max_tokens": 150
+        }
+        try:
+            res = requests.post(url, json=payload, timeout=3)
+            res.raise_for_status()
+            data = res.json()
+            res_text = data["choices"][0]["message"]["content"].strip()
+        except Exception:
+            pass
+
+    # 2. Attempt OpenAI if key is present
+    if not res_text and openai_key:
+        url = "https://api.openai.com/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {openai_key}",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+        }
+        payload = {
+            "model": "gpt-4o-mini",
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.4,
+            "max_tokens": 150
+        }
+        try:
+            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=3) as response:
+                data = json.loads(response.read().decode("utf-8"))
+                res_text = data["choices"][0]["message"]["content"].strip()
+        except Exception:
+            pass
+
+    # 3. Attempt Gemini if key is present
+    if not res_text and gemini_key:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+        headers = {
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+        }
+        payload = {
+            "contents": [{
+                "role": "user",
+                "parts": [{"text": f"{system_prompt}\n\nUser request: {prompt}"}]
+            }],
+            "generationConfig": {
+                "temperature": 0.4,
+                "maxOutputTokens": 150
+            }
+        }
+        try:
+            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=3) as response:
+                data = json.loads(response.read().decode("utf-8"))
+                res_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception:
+            pass
+
+    # 4. Attempt local Ollama as final fallback
+    if not res_text:
+        url = "http://localhost:11434/api/chat"
+        payload = {
+            "model": model_name,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            "stream": False,
+            "options": {
+                "temperature": 0.4
+            }
+        }
+        try:
+            res = requests.post(url, json=payload, timeout=30)
+            res.raise_for_status()
+            data = res.json()
+            res_text = data["message"]["content"].strip()
+        except Exception as e:
+            print(f"\n{COLOR_SYSTEM}[System Error] Failed to connect to Ollama: {e}{COLOR_RESET}")
+            print("Please make sure Ollama is running locally and you have pulled the model (`ollama run llama2`).")
+            raise e
+
+    return res_text
 
 def make_system_prompt(sample: dict, product: dict, target_category: str) -> str:
     card = sample["intent_card"]
     behavior = sample["behavior"]
     scenario = sample["scenario_type"]
     
+    title = product.get('title', '')
+    description = product.get('description', '')
+    if isinstance(description, list):
+        description = " ".join(description)
+    
+    details = product.get('details', {})
+    details_str = " ".join(f"{k}: {v}" for k, v in details.items()) if isinstance(details, dict) else str(details)
+    
     prompt = (
         "You are acting as a real customer shopping online. Your target product you want to find is:\n"
-        f"Target Product Title: {product.get('title')}\n"
+        f"Target Product Title: {title}\n"
         f"Category: {target_category}\n"
         f"Hard Constraints (Must-Haves): {', '.join(card.get('hard_constraints', []))}\n"
         f"Soft Preferences (Nice-to-Haves): {', '.join(card.get('soft_preferences', []))}\n"
         f"Ground Truth ASIN: {product.get('parent_asin')}\n\n"
+        f"Target Product Details: {details_str}\n"
+        f"Target Product Description: {description[:300]}\n\n"
         f"Your Shopping Profile:\n"
         f"Purchase Frequency: {sample['user_profile'].get('purchase_frequency', 'Regular')}\n"
         f"Preference Tags: {', '.join(sample['user_profile'].get('preference_tags', []))}\n"
@@ -103,10 +207,12 @@ def make_system_prompt(sample: dict, product: dict, target_category: str) -> str
     prompt += (
         "Rules of Dialogue:\n"
         "1. Prioritize your Hard Constraints (must-haves) first. Disclose your Soft Preferences (nice-to-haves) using softer, negotiable language (e.g., 'ideally...', 'I'd also prefer...').\n"
-        "2. Do NOT state the product title or ASIN directly to the assistant. Speak like a real human.\n"
-        "3. Answer the assistant's questions in a natural conversational way. Use synonyms or subjective phrases instead of copy-pasting.\n"
-        "4. Review the assistant's suggestions. If the correct product is recommended in the list, you should recognize it and state that you want to buy/select it (which will end the conversation).\n"
-        "5. Keep your responses short and conversational (1-2 sentences)."
+        "2. Do NOT state the exact product title or ASIN directly to the assistant. Speak like a real human.\n"
+        "3. Drop descriptive hints from the product details/description in your messages (e.g. mention specific design features, patterns, materials, or style elements from the target item) to help the assistant find it faster. Do NOT invent or spawn any new preferences or use-cases (like 'biking' or 'travel') unless they are explicitly mentioned in the target product title, details, or description.\n"
+        "4. Answer the assistant's questions in a natural conversational way. Use synonyms or subjective phrases instead of copy-pasting.\n"
+        "5. Review the assistant's suggestions. If the correct product is recommended in the list, you should recognize it and state that you want to buy/select it (which will end the conversation).\n"
+        "6. Keep your responses short, informal and conversational (1-2 sentences).\n"
+        "7. Write your entire message in lowercase letters with simple punctuation. Avoid proper capitalization or capital letters completely (to mimic a casual chat message)."
     )
     return prompt
 
@@ -217,7 +323,7 @@ def main():
                 hard_val = card["hard_constraints"][0]
                 prompt += f" Mention your key requirement: '{hard_val}'."
                 
-            user_message = call_ollama(prompt, system_prompt, args.model)
+            user_message = call_shopper_llm(prompt, system_prompt, args.model)
         elif not override_applied and turn == int(override.get("turn", 3)):
             # Override turn (no LLM call)
             override_applied = True
@@ -237,7 +343,7 @@ def main():
                 "If the target product (ASIN: " + target_asin + ") is in the recommendations, "
                 "acknowledge it and say you want to buy it."
             )
-            user_message = call_ollama(prompt, system_prompt, args.model)
+            user_message = call_shopper_llm(prompt, system_prompt, args.model)
 
         latency = time.time() - t_call_start
         if not (not override_applied and turn == int(override.get("turn", 3))):

@@ -509,6 +509,33 @@
             border: 1px solid var(--accent-red);
             color: var(--accent-red);
         }
+        
+        /* Chat Input Area for Manual Mode */
+        .chat-input-area {
+            padding: 16px 30px;
+            border-top: 1px solid var(--border-color);
+            background: rgba(17, 18, 24, 0.9);
+            display: none; /* hidden by default */
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-input-field {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            border-radius: 10px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input-field:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 10px var(--accent-primary-glow);
+        }
 
         /* Right Sidebar: Details Inspector */
         .inspector {
@@ -610,6 +637,13 @@
             <h1>RepTechJam <span>Debugger V2</span></h1>
         </div>
         <div class="header-stats">
+            <div class="stat-item" style="padding: 2px 6px;">
+                <span style="color: var(--text-muted); font-size: 12px;">Mode:</span>
+                <select id="mode-select" class="search-bar" style="padding: 4px 10px; border-radius: 6px; font-size: 12px; width: auto; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); outline: none;">
+                    <option value="auto">Auto (Llama 3.1 Shopper)</option>
+                    <option value="manual">Manual (Write as Shopper)</option>
+                </select>
+            </div>
             <div class="stat-item">
                 <span style="color: var(--text-muted);">Simulator Model:</span>
                 <span style="color: var(--accent-cyan); font-weight: 600;">Llama 3.1</span>
@@ -645,7 +679,7 @@
                     </div>
                 </div>
                 <div class="chat-actions">
-                    <button class="btn btn-primary" id="btn-start" style="display: none;" onclick="startSimulation()">
+                    <button class="btn btn-primary" id="btn-start" style="display: none;" onclick="handleStartClick()">
                         ▶ Run Live Simulation
                     </button>
                 </div>
@@ -657,6 +691,12 @@
                     <h3>Select a Session</h3>
                     <p>Choose a public session from the sidebar directory on the left to start a real-time conversational simulation with Llama 3.1 shopper.</p>
                 </div>
+            </div>
+
+            <!-- Chat input area for manual mode -->
+            <div class="chat-input-area" id="chat-input-area">
+                <input type="text" id="chat-input" class="chat-input-field" placeholder="Enter your shopper request here... (e.g., I'm looking for boots made of leather)">
+                <button class="btn btn-primary" id="btn-send" onclick="sendManualMessage()">Send</button>
             </div>
         </div>
 
@@ -676,6 +716,8 @@
         let currentFilter = 'all';
         let searchQuery = '';
         let eventSource = null;
+        let currentMode = 'auto';
+        let manualTurn = 0;
 
         // Fetch session directory
         async function fetchSessions() {
@@ -737,13 +779,13 @@
             document.getElementById('active-scenario-lbl').innerText = `${session.scenario} scenario`;
             
             // Show run button
-            document.getElementById('btn-start').style.display = 'flex';
+            updateStartButtonState();
             
             // Clear board
             document.getElementById('chat-board-container').innerHTML = `
                 <div class="empty-state">
                     <h3>Simulation Ready</h3>
-                    <p>Click "Run Live Simulation" to initialize the shopper simulator (Llama 3.1) and watch the search cascade turns stream in real time.</p>
+                    <p>Click "Run Live Simulation" to initialize the shopper simulator and watch the search cascade turns stream in real time.</p>
                 </div>
             `;
             
@@ -769,6 +811,38 @@
             // Close active EventSource if open
             if (eventSource) {
                 eventSource.close();
+            }
+            
+            // Hide input area when selecting a new session
+            document.getElementById('chat-input-area').style.display = 'none';
+        }
+
+        function updateStartButtonState() {
+            const btn = document.getElementById('btn-start');
+            if (!selectedSessionId) {
+                btn.style.display = 'none';
+                return;
+            }
+            btn.style.display = 'flex';
+            btn.disabled = false;
+            if (currentMode === 'auto') {
+                btn.innerText = '▶ Run Live Simulation';
+            } else {
+                btn.innerText = '▶ Start Manual Session';
+            }
+        }
+
+        document.getElementById('mode-select').addEventListener('change', (e) => {
+            currentMode = e.target.value;
+            updateStartButtonState();
+            document.getElementById('chat-input-area').style.display = 'none';
+        });
+
+        function handleStartClick() {
+            if (currentMode === 'auto') {
+                startSimulation();
+            } else {
+                startManualSimulation();
             }
         }
 
@@ -815,6 +889,111 @@
                 startBtn.innerText = '▶ Run Live Simulation';
             });
         }
+
+        // Start Manual Session
+        async function startManualSimulation() {
+            if (!selectedSessionId) return;
+            
+            const board = document.getElementById('chat-board-container');
+            board.innerHTML = '';
+            
+            const startBtn = document.getElementById('btn-start');
+            startBtn.disabled = true;
+            startBtn.innerText = '⏳ Initializing Manual Session...';
+            
+            try {
+                const res = await fetch(`/manual_start?sample_id=${selectedSessionId}`);
+                const data = await res.json();
+                
+                updateInspector(data);
+                
+                // Welcome Instruction bubble
+                const welcomeWrapper = document.createElement('div');
+                welcomeWrapper.className = 'msg-wrapper copilot-msg';
+                welcomeWrapper.innerHTML = `
+                    <div class="msg-sender copilot">System Instruction</div>
+                    <div class="msg-bubble" style="background: rgba(108, 92, 231, 0.1); border-color: var(--accent-primary);">
+                        <strong>Manual shopper session active!</strong><br>
+                        You are now acting as the shopper. Check the Target Item Inspector in the right sidebar, then write your request in the box below to test the copilot agent's search logic.
+                    </div>
+                `;
+                board.appendChild(welcomeWrapper);
+                board.scrollTop = board.scrollHeight;
+                
+                // Display and enable input field
+                const chatInputArea = document.getElementById('chat-input-area');
+                chatInputArea.style.display = 'flex';
+                
+                const chatInput = document.getElementById('chat-input');
+                chatInput.disabled = false;
+                chatInput.value = '';
+                chatInput.focus();
+                
+                document.getElementById('btn-send').disabled = false;
+                startBtn.innerText = '🟢 Manual Session Active';
+                manualTurn = 0;
+            } catch(e) {
+                console.error("Failed to start manual session:", e);
+                startBtn.disabled = false;
+                startBtn.innerText = '▶ Start Manual Session';
+            }
+        }
+
+        async function sendManualMessage() {
+            const inputEl = document.getElementById('chat-input');
+            const userMsg = inputEl.value.trim();
+            if (!userMsg) return;
+            
+            inputEl.value = '';
+            inputEl.disabled = true;
+            document.getElementById('btn-send').disabled = true;
+            
+            manualTurn++;
+            appendChatMessage({
+                role: 'customer',
+                content: userMsg,
+                turn: manualTurn
+            });
+            
+            try {
+                const res = await fetch(`/manual_step?sample_id=${selectedSessionId}&message=${encodeURIComponent(userMsg)}`);
+                const data = await res.json();
+                
+                appendChatMessage({
+                    role: 'copilot',
+                    content: data.message,
+                    ask: data.ask_attribute,
+                    recommendations: data.recommendations,
+                    turn: data.turn
+                });
+                
+                if (data.success) {
+                    appendStatusBanner({ success: true, rank: data.recommendations.find(r => r.is_target).rank, turn: data.turn });
+                    document.getElementById('chat-input-area').style.display = 'none';
+                    document.getElementById('btn-start').disabled = false;
+                    document.getElementById('btn-start').innerText = '▶ Start Manual Session';
+                } else if (data.turn >= 10) {
+                    appendStatusBanner({ success: false, turn: 10 });
+                    document.getElementById('chat-input-area').style.display = 'none';
+                    document.getElementById('btn-start').disabled = false;
+                    document.getElementById('btn-start').innerText = '▶ Start Manual Session';
+                } else {
+                    inputEl.disabled = false;
+                    document.getElementById('btn-send').disabled = false;
+                    inputEl.focus();
+                }
+            } catch(e) {
+                console.error("Failed to send shopper message:", e);
+                inputEl.disabled = false;
+                document.getElementById('btn-send').disabled = false;
+            }
+        }
+
+        document.getElementById('chat-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                sendManualMessage();
+            }
+        });
 
         // Append Chat Bubble
         function appendChatMessage(msg) {

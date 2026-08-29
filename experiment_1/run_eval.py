@@ -4,7 +4,7 @@ import sys
 import statistics
 from collections import defaultdict
 from pathlib import Path
-from agent import Agent
+from shop_agent import Agent
 
 # Setup paths to import evaluator
 current_dir = Path(__file__).resolve().parent
