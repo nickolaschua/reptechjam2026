@@ -1,0 +1,21 @@
+{
+  "catalog_products": 50000,
+  "products_with_categories": 50000,
+  "unique_category_labels": 863,
+  "unique_full_paths": 1628,
+  "unique_hierarchy_nodes": 1832,
+  "maximum_depth": 8,
+  "depth_distribution": {
+    "2": 2139,
+    "3": 2280,
+    "4": 12979,
+    "5": 23544,
+    "6": 5858,
+    "7": 3099,
+    "8": 101
+  },
+  "root_category_counts": {
+    "Clothing, Shoes & Jewelry": 49990,
+    "Shoe, Jewelry & Watch Accessories": 10
+  }
+}
