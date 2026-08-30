@@ -221,8 +221,10 @@ SCHEMA = {
                         "description": "true ONLY if the user said they do not care "
                                        "about this attribute. Otherwise false.",
                     },
-                    # The team's TypedConstraint has `negated`; without it "not
-                    # leather" becomes a positive leather filter. Top failure mode.
+                    # The team's TypedConstraint has `negated`; without it a
+                    # rejected material becomes a positive filter. Top failure mode.
+                    # No literal examples anywhere near this field: the 7B copied
+                    # "no logos" / "not leather" from the prompt into 41/236 parses.
                     "negated": {
                         "type": "boolean",
                         "description": "true ONLY if the user said they do NOT want "
@@ -273,8 +275,8 @@ Rules:
 - quality_prior is "none" unless the user actually mentions ratings, reviews,
   popularity, or wanting a reputable/trusted brand. Default to "none".
 - declined is true only when the user says they do not care about something.
-- negated is true only when the user says they do NOT want that value ("no logos",
-  "not leather"). Still record the value; mark it negated.
+- negated is true only when the user explicitly rejects that value. Still record
+  the value; mark it negated. Never invent a rejected value the user did not say.
 - specificity: scenario_only if no product type is named, type_with_wishes for a
   product type plus soft preferences, type_with_requirements only when there are
   firm requirements (size, brand, material, price limit).
