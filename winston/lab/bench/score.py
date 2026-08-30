@@ -130,6 +130,8 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--cases", type=Path, default=CASES_PATH)
     ap.add_argument("--out", type=Path, default=RESULTS_PATH)
+    ap.add_argument("--reparse-ids", type=Path, help="file of case_ids to parse afresh (ignores "
+                    "their cached parse and prior result row); readers keep the LAST row per case")
     args = ap.parse_args()
 
     from common import get_index
@@ -151,7 +153,13 @@ def main() -> None:
     cases = [json.loads(l) for l in args.cases.open() if l.strip()][:args.limit]
     done = {json.loads(l)["case_id"] for l in args.out.open()} if args.out.exists() else set()
     parses = load_parses()
-    todo = [c for c in cases if c["case_id"] not in done]
+    if args.reparse_ids:
+        wanted = {l.strip() for l in args.reparse_ids.open() if l.strip()}
+        todo = [c for c in cases if c["case_id"] in wanted]
+        for c in todo:
+            parses.pop(c["case_id"], None)
+    else:
+        todo = [c for c in cases if c["case_id"] not in done]
     print(f"cases {len(cases)} | scored {len(done)} | this run {len(todo)}")
 
     t0 = time.time()
