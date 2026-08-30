@@ -86,12 +86,14 @@ def main() -> None:
         """Specificity decides the mix (exp08: weights, never a switch). A vague,
         unresolvable message is the embedder's case; a message with catalog-
         filterable constraints is the lexical route's."""
+        import os
+        scale = float(os.environ.get("FUSE_WLEX", "1.0"))   # a fine-tuned embedder wants the lexical list quieter
         hard = n_hard(parse)
         if hard == 0 and conf < 0.2:
-            return 0.5, 1.5          # symptom / use_case regime
+            return 0.5 * scale, 1.5          # symptom / use_case regime
         if hard >= 1:
-            return 1.5, 1.0          # buying regime
-        return 1.0, 1.0
+            return 1.5 * scale, 1.0          # buying regime
+        return 1.0 * scale, 1.0
 
     def sink_contradictions(ranked: list[str], parse: dict, message: str = "") -> list[str]:
         keep, sink = [], []
@@ -117,7 +119,9 @@ def main() -> None:
         rows.append({"case_id": c["case_id"], "style": c["style"], "modifiers": c["modifiers"],
                      "resolver_confidence": round(conf, 3),
                      **{k: rank_of(v, c["asin"]) for k, v in lists.items()}})
-    (LAB / "bench" / f"results_fuse{_TAG}.jsonl").write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+    import os
+    _suffix = "" if os.environ.get("FUSE_WLEX", "1.0") == "1.0" else "_wlex" + os.environ["FUSE_WLEX"]
+    (LAB / "bench" / f"results_fuse{_TAG}{_suffix}.jsonl").write_text("\n".join(json.dumps(r) for r in rows) + "\n")
 
     def table(groups: dict, title: str) -> None:
         print(f"\n{title:16s} n   " + "  ".join(f"{s:>11s}" for s in systems) + "   (HitRate@10 / MRR)")
