@@ -144,6 +144,23 @@ JUNK_VALUES = frozenset({"", "not specified", "unspecified", "none", "n/a", "na"
                          "not applicable", "null", "unknown"})
 
 
+# Words that license a department at all. The 7B sets one with no such word in
+# ~half of messy utterances ("womens" for "brown leather watch band"). This does
+# not pick the department - the model does - it only vetoes one with no evidence.
+_DEPT_EVIDENCE = re.compile(
+    r"\b(women|woman|womens|ladies|lady|female|wife|mum|mom|mother|sister|daughter|"
+    r"girl|girls|niece|her|she|men|mens|man|male|husband|dad|father|brother|son|"
+    r"boy|boys|nephew|him|his|he|baby|babies|infant|toddler|kid|kids|child|children|"
+    r"unisex|gender)\b", re.I)
+
+
+def clean_department(parse: dict, utterance: str) -> dict:
+    """Null the department unless the utterance names a gender, recipient or age group."""
+    if parse.get("department") and not _DEPT_EVIDENCE.search(utterance or ""):
+        return {**parse, "department": None}
+    return parse
+
+
 def clean_slots(parse: dict) -> list[dict]:
     """Slots worth acting on: junk placeholder values dropped. Declined slots keep
     their value (it names what the user waved off) unless the value itself is junk."""
@@ -528,7 +545,7 @@ def parse_with_ollama(utterance: str, model: str, host: str = "http://localhost:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 parsed = json.loads(json.loads(response.read())["response"])
                 parsed["slots"] = clean_slots(parsed)     # placeholder values never leave here
-                return parsed
+                return clean_department(parsed, utterance)
         except Exception as exc:                       # noqa: BLE001 - retried, then raised
             last = exc
     raise RuntimeError(f"ollama call failed after {retries + 1} attempts: {last}")
@@ -627,6 +644,9 @@ def self_check() -> None:
     assert normalize_department("teen-boys;mens") == "boys"
     assert normalize_department(None) is None
     assert normalize_department("watches") is None          # not a department; stay silent
+    assert clean_department({"department": "womens"}, "brown leather watch band")["department"] is None
+    assert clean_department({"department": "girls"}, "a set for my daughter")["department"] == "girls"
+    assert clean_slots({"slots": [slot("brand", "not specified"), slot("color", "red")]}) == [slot("color", "red")]
     print("self-check: pass")
 
 

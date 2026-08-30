@@ -267,8 +267,9 @@ class TestScore(unittest.TestCase):
             {"attribute": "use_case", "value": "trail", "declined": False, "negated": False},
             {"attribute": "brand", "value": "not specified", "declined": False, "negated": False},
         ]}
-        # department is never a term; junk values never reach the query
-        self.assertEqual(parsed_state(parse), ("running shoes", ["black", "trail"]))
+        # a kept department becomes exp11's own term; junk values never reach the query
+        self.assertEqual(parsed_state(parse), ("women running shoes", ["black", "trail"]))
+        self.assertEqual(parsed_state({**parse, "department": None})[0], "running shoes")
         self.assertEqual(resolver_query(parse), ["running shoes", "black", "trail"])
         self.assertEqual(parsed_state({"category_phrase": "", "slots": []}), ("clothing item", []))
 

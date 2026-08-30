@@ -55,13 +55,20 @@ def parsed_state(parse: dict) -> tuple[str, list[str]]:
     """Map a parse onto exp11's own {category, constraints} state. The parse replaces
     the template regex; retrieval is exp11's untouched _rank. Negated, declined and
     junk slots are dropped; price is not a term. The parsed department is NOT a
-    term: the 7B sets one with no gender word in the utterance in ~half of cases
-    (\"womens\" for \"brown leather watch band\"), and as an AND term that excludes
-    the target. When the user said it, category_phrase already carries it."""
+    term unless the parser kept it, which clean_department() only allows when the
+    utterance names a gender, recipient or age group."""
     from nlp_parse import clean_slots, tier_of
+    # exp11 tokenises "women's" to "women"; the catalog's categories say Women/Men/Girls/Boys/Baby.
+    # Safe only because clean_department() has vetoed departments the user never stated.
+    dept = _DEPT_TERM.get(parse.get("department") or "")
+    category = " ".join(t for t in (dept, parse.get("category_phrase")) if t)
     constraints = [s["value"] for s in clean_slots(parse)
                    if tier_of(s) != "decline" and not s.get("negated")]
-    return parse.get("category_phrase") or "clothing item", constraints
+    return category or "clothing item", constraints
+
+
+_DEPT_TERM = {"womens": "women", "mens": "men", "girls": "girls", "boys": "boys",
+              "baby-girls": "baby", "baby-boys": "baby"}
 
 
 def parsed_rank(agent, sid: str, parse: dict, asin: str) -> int | None:
@@ -136,7 +143,7 @@ def main() -> None:
     parse_fn = None
     if not args.skip_resolver:
         from pipeline import content_profiles, resolve as _resolve
-        from nlp_parse import parse_with_ollama
+        from nlp_parse import parse_with_ollama, clean_department
         profiles = content_profiles(ix)
         resolve = _resolve
         parse_fn = parse_with_ollama
@@ -166,6 +173,7 @@ def main() -> None:
                     parse = parse_fn(c["utterance"], PARSER_MODEL)
                     pf.write(json.dumps({"case_id": sid, "parse": parse}) + "\n")
                     pf.flush()
+                parse = clean_department(parse, c["utterance"])   # cached parses predate the gate
                 ranked, conf = resolve(resolver_query(parse), ix, profiles, top_n=len(ix.buckets))
                 row["bucket_rank"] = rank_of(ranked, ix.bucket_of[c["asin"]])
                 row["resolver_confidence"] = round(conf, 3)
