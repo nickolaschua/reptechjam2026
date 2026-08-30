@@ -110,6 +110,10 @@ def run(products: list[dict], plan: list[dict], ix, samples_profile: dict, *, dr
     if out_path.exists():
         done = {json.loads(l)["case_id"] for l in out_path.open() if l.strip()}
     todo = [c for c in plan if c["case_id"] not in done][:limit]
+    # ponytail: group by generator so Ollama swaps a 5 GB model once per run, not
+    # once per call - on a 16 GB machine that swap was the whole cost. The shuffled
+    # plan still gives a balanced prefix within each generator's block.
+    todo.sort(key=lambda c: c["generator"])
     print(f"plan {len(plan)} | done {len(done)} | this run {len(todo)}")
 
     started = time.time()
@@ -169,9 +173,20 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=CASES_PATH)
     args = ap.parse_args()
 
-    from common import get_index
-    ix = get_index()
     products = [json.loads(l) for l in PRODUCTS_PATH.open()]
+    # ponytail: read the 269 sampled products straight from the catalog instead of
+    # get_index() - that holds all 50k products (~1 GB resident) and this process
+    # shares a 16 GB machine with the models it is calling.
+    from types import SimpleNamespace
+    wanted = {r["asin"] for r in products}
+    catalog = {}
+    with (KIT / "data" / "catalog.jsonl").open(encoding="utf-8") as fh:
+        for line in fh:
+            if line.strip():
+                row = json.loads(line)
+                if row["parent_asin"] in wanted:
+                    catalog[row["parent_asin"]] = row
+    ix = SimpleNamespace(products=catalog)
     # profile text is only flavour for the shopper; keep it constant and neutral
     profile = {"purchase_frequency": "a few prior purchases", "preference_tags": ["fit", "comfort"],
                "summary": "Prior purchases emphasize fit and comfort."}
