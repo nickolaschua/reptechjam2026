@@ -1,0 +1,18 @@
+{
+  "backend_id": "openai-text-embedding-3-large",
+  "baseline_name": "M0_OPENAI",
+  "catalog_embedding_attempted": false,
+  "dimension": 3072,
+  "embedding_api": {
+    "input_tokens": 5,
+    "request_count": 1,
+    "request_latencies_seconds": [
+      12.65711420000298
+    ]
+  },
+  "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+  "generated_at": "2026-08-29T16:12:12.183939+00:00",
+  "model_id": "text-embedding-3-large",
+  "norm": 1.0,
+  "wall_seconds": 12.657283800013829
+}

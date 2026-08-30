@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "users": [
+    {
+      "user_id": "synthetic_user_1",
+      "constant_profile": {
+        "purchase_frequency": "regular shopper",
+        "average_prior_rating": null,
+        "rating_style": "balanced",
+        "preference_tags": [],
+        "summary": "A regular shopper with no longitudinal preferences preloaded into the persona."
+      },
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "source_sample_id": "public_0001",
+          "memory_relevance": "none"
+        },
+        {
+          "sequence_index": 1,
+          "source_sample_id": "public_0002",
+          "memory_relevance": "helpful",
+          "relevant_prior_sequence_indices": [0]
+        },
+        {
+          "sequence_index": 2,
+          "source_sample_id": "public_0003",
+          "memory_relevance": "conflicting",
+          "relevant_prior_sequence_indices": [0, 1]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_user_2",
+      "constant_profile": {
+        "purchase_frequency": "occasional shopper",
+        "average_prior_rating": null,
+        "rating_style": "concise",
+        "preference_tags": [],
+        "summary": "An occasional shopper with no longitudinal preferences preloaded into the persona."
+      },
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "source_sample_id": "public_0004",
+          "memory_relevance": "none"
+        },
+        {
+          "sequence_index": 1,
+          "source_sample_id": "public_0005",
+          "memory_relevance": "stale",
+          "relevant_prior_sequence_indices": [0]
+        },
+        {
+          "sequence_index": 2,
+          "source_sample_id": "public_0006",
+          "memory_relevance": "override",
+          "relevant_prior_sequence_indices": [0, 1]
+        }
+      ]
+    }
+  ]
+}

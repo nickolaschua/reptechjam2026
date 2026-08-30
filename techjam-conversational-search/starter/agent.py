@@ -69,19 +69,43 @@ def _clean_constraint(value: str) -> str:
 
 
 class Agent:
-    """Stateful exact-match + BM25 retrieval agent selected by Experiment 7.
+    """Stateful exact-match + BM25 agent with opt-in longitudinal memory.
 
     The primary ranker implements the preregistered ``exact_stateful_bm25_rrf``
     policy. It uses only the category and constraints visible in the dialogue;
     it never reads public labels or target identifiers. If scientific Python
     packages are unavailable, the same dialogue state falls back to SQLite FTS5.
+
+    The positional ``Agent``, ``reset``, and ``respond`` contract remains the
+    legacy evaluator interface. Longitudinal state is enabled only when
+    ``reset`` receives an explicit ``user_id``; callers must invoke
+    :meth:`end_session` after scoring to make that session visible to later
+    sessions for the same user. No identity or outcome is inferred.
     """
 
-    def __init__(self, catalog_path: str | Path = "data/catalog.jsonl") -> None:
+    def __init__(
+        self,
+        catalog_path: str | Path = "data/catalog.jsonl",
+        *,
+        memory_mode: str | None = None,
+        memory_config: Any | None = None,
+    ) -> None:
+        if memory_mode is not None and memory_config is not None:
+            raise ValueError("pass either memory_mode or memory_config, not both")
+        if memory_mode is not None and str(memory_mode).upper() not in {"M0", "M1"}:
+            raise ValueError(f"Unknown memory mode {memory_mode!r}; expected 'M0' or 'M1'")
+        if memory_config is not None:
+            from memory import MemoryConfig
+
+            if not isinstance(memory_config, MemoryConfig):
+                raise TypeError("memory_config must be a MemoryConfig")
         self.catalog_path = Path(catalog_path)
         self.sessions: dict[str, dict[str, Any]] = {}
         self.ids: list[str] = []
         self.products: list[dict[str, Any]] = []
+        self._memory_mode = "M1" if memory_mode is None else str(memory_mode).upper()
+        self._memory_config = memory_config
+        self._memory_system: Any | None = None
         self._phrase_cache: OrderedDict[str, tuple[Any, Any]] = OrderedDict()
         self._exact_cache: OrderedDict[tuple[str, ...], tuple[Any, int, int]] = OrderedDict()
         self._bm25_cache: OrderedDict[str, Any] = OrderedDict()
@@ -248,7 +272,14 @@ class Agent:
                 scores[index] += 1.0 / (RRF_K + rank)
         return sorted(scores, key=lambda index: (-scores[index], self.ids[index]))
 
-    def _research_recommendations(self, category: str, constraints: list[str], top_k: int) -> list[str]:
+    def _research_recommendations(
+        self,
+        category: str,
+        constraints: list[str],
+        top_k: int,
+        *,
+        candidate_depth: int | None = None,
+    ) -> list[str]:
         phrases = (category, *constraints)
         exact, all_phrases_count, highest_tier_count = self._exact_ranked(phrases)
         use_fallback = (
@@ -261,9 +292,19 @@ class Agent:
             ranked = self._rrf((exact, self._bm25_ranked(query)))
         else:
             ranked = [int(index) for index in exact]
-        return [self.ids[index] for index in ranked[:top_k]]
+        return [
+            self.ids[index]
+            for index in ranked[:top_k if candidate_depth is None else candidate_depth]
+        ]
 
-    def _sqlite_recommendations(self, category: str, constraints: list[str], top_k: int) -> list[str]:
+    def _sqlite_recommendations(
+        self,
+        category: str,
+        constraints: list[str],
+        top_k: int,
+        *,
+        candidate_depth: int | None = None,
+    ) -> list[str]:
         query = " ".join((category, *constraints)).strip()
         unique_terms = list(dict.fromkeys(_terms(query)))[:80]
         if not unique_terms:
@@ -272,18 +313,76 @@ class Agent:
         rows = self.connection.execute(
             "SELECT parent_asin FROM products WHERE products MATCH ? "
             "ORDER BY bm25(products, 0.0, 6.0, 4.0, 2.5, 2.5, 1.5, 1.0) LIMIT ?",
-            (expression, top_k),
+            (expression, top_k if candidate_depth is None else candidate_depth),
         ).fetchall()
         return [str(row[0]) for row in rows]
 
-    def reset(self, session_id: str, user_profile: dict) -> None:
-        self.sessions[session_id] = {
+    def _legacy_recommendations(
+        self,
+        category: str,
+        constraints: list[str],
+        top_k: int,
+        *,
+        candidate_depth: int | None = None,
+    ) -> list[str]:
+        """Run the unchanged pre-memory final retrieval policy."""
+
+        if self.mode == "exact_stateful_bm25_rrf":
+            return self._research_recommendations(
+                category,
+                constraints,
+                top_k,
+                candidate_depth=candidate_depth,
+            )
+        return self._sqlite_recommendations(
+            category,
+            constraints,
+            top_k,
+            candidate_depth=candidate_depth,
+        )
+
+    def _get_memory_system(self) -> Any:
+        """Create this Agent instance's memory store only when first requested."""
+
+        if self._memory_system is None:
+            from memory import MemorySystem, memory_config_for_mode
+
+            config = self._memory_config or memory_config_for_mode(self._memory_mode)
+
+            self._memory_system = MemorySystem(
+                self.catalog_path,
+                self.ids,
+                self.products,
+                config=config,
+            )
+        return self._memory_system
+
+    def reset(
+        self,
+        session_id: str,
+        user_profile: dict,
+        *,
+        user_id: str | None = None,
+        sequence_index: int | None = None,
+    ) -> None:
+        resolved_user_id = None if user_id is None else str(user_id)
+        memory_enabled = bool(resolved_user_id and resolved_user_id.strip())
+        state = {
             "category": "",
             "constraints": [],
             "override_seed": None,
             "history": [],
             "profile": user_profile,
+            "memory_enabled": memory_enabled,
         }
+        if memory_enabled:
+            self._get_memory_system().begin_session(
+                resolved_user_id,
+                session_id,
+                user_profile,
+                sequence_index,
+            )
+        self.sessions[session_id] = state
 
     @staticmethod
     def _append_constraint(state: dict[str, Any], value: str) -> None:
@@ -347,10 +446,20 @@ class Agent:
         self._update_state(state, user_message, turn)
         category = state["category"] or "clothing item"
         constraints = state["constraints"]
-        if self.mode == "exact_stateful_bm25_rrf":
-            identifiers = self._research_recommendations(category, constraints, top_k)
+        if state["memory_enabled"]:
+            memory = self._get_memory_system()
+            fast_state = memory.update_session(session_id, user_message, turn)
+            category = fast_state.category or "clothing item"
+            constraints = list(fast_state.constraint_values)
+            baseline = self._legacy_recommendations(
+                category,
+                constraints,
+                top_k,
+                candidate_depth=max(top_k, memory.config.candidate_depth),
+            )
+            identifiers = memory.rerank_candidates(session_id, baseline)[:top_k]
         else:
-            identifiers = self._sqlite_recommendations(category, constraints, top_k)
+            identifiers = self._legacy_recommendations(category, constraints, top_k)
 
         if constraints:
             message = (
@@ -365,3 +474,33 @@ class Agent:
             "recommendations": [{"parent_asin": identifier} for identifier in identifiers],
             "usage": {"prompt_tokens": 0, "completion_tokens": 0},
         }
+
+    def end_session(
+        self,
+        session_id: str,
+        outcome: Any = None,
+        purchased_product: Any = None,
+        evidence: Any = None,
+    ) -> Any:
+        """Commit an explicitly identified session after external scoring."""
+
+        if session_id not in self.sessions:
+            raise RuntimeError("reset must be called before end_session")
+        if not self.sessions[session_id]["memory_enabled"]:
+            return None
+        episode = self._get_memory_system().end_session(
+            session_id,
+            outcome,
+            purchased_product,
+            evidence,
+        )
+        del self.sessions[session_id]
+        return episode
+
+    def get_debug_trace(self, session_id: str, turn: int | None = None) -> dict[str, Any] | None:
+        """Return memory retrieval accounting for an opted-in session."""
+
+        state = self.sessions.get(session_id)
+        if state is None or not state["memory_enabled"] or self._memory_system is None:
+            return None
+        return self._memory_system.get_debug_trace(session_id, turn)

@@ -22,7 +22,12 @@ from evaluator.local_evaluator import (
     metric_summary
 )
 from shop_agent import Agent
-from shopper_agent import materialize_hidden_fields, make_system_prompt, call_shopper_llm
+from shopper_agent import (
+    ShopperIntentState,
+    call_shopper_llm,
+    make_system_prompt,
+    materialize_hidden_fields,
+)
 
 MAX_TURNS = 10
 TOP_K = 10
@@ -46,7 +51,13 @@ def evaluate_v2(agent, samples, catalog_ids, categories, products, model_name="l
         target_product = products[target_asin]
         coarse_cat = coarse_category(categories.get(target_asin, []))
         
-        system_prompt = make_system_prompt(sample, target_product, coarse_cat)
+        shopper_intent_state = ShopperIntentState.from_sample(sample)
+        system_prompt = make_system_prompt(
+            sample,
+            target_product,
+            coarse_cat,
+            shopper_intent_state,
+        )
         user_message = ""
         override = behavior.get("override", {})
         override_applied = sample["scenario_type"] != "intent_override"
@@ -79,6 +90,16 @@ def evaluate_v2(agent, samples, catalog_ids, categories, products, model_name="l
                     user_message = f"I'm looking for {coarse_cat}."
             elif not override_applied and turn == int(override.get("turn", 3)):
                 override_applied = True
+                shopper_intent_state.apply_override(
+                    str(override.get("new_value") or ""),
+                    turn,
+                )
+                system_prompt = make_system_prompt(
+                    sample,
+                    target_product,
+                    coarse_cat,
+                    shopper_intent_state,
+                )
                 user_message = override.get("message", "Actually, ignore my earlier preference.")
             else:
                 prompt = (

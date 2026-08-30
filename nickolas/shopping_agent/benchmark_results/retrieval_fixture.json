@@ -1,0 +1,5202 @@
+[
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Jewelry Necklaces",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Material:alloy",
+          "The Triple Moon represents the Phases of the Moon which are linked to the three aspects of the Goddess and the phases of the Life of Women.The Pentagram representing the holistic r",
+          "Triple Moon Pentagram Symbol",
+          "\u2665 a special gift to your wife/mom/girlfriend/daughter/grandmother/best friend/kids on St. Valentine\u2019s Day, Easter\uff0c Christmas day,Birthday,Anniversary ,Independence Day,Labor Day,Th"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Jewelry Necklaces Material:alloy The Triple Moon represents the Phases of the Moon which are linked to the three aspects of the Goddess and the phases of the Life of Women.The Pentagram representing the holistic r Triple Moon Pentagram Symbol \u2665 a special gift to your wife/mom/girlfriend/daughter/grandmother/best friend/kids on St. Valentine\u2019s Day, Easter\uff0c Christmas day,Birthday,Anniversary ,Independence Day,Labor Day,Th",
+    "sample_id": "public_0001",
+    "scenario_type": "buying",
+    "target_asin": "B09PYB7B6Z"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Accessories Belts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "Buckle closure",
+          "Imported",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Accessories Belts 100% Leather Buckle closure Imported leather",
+    "sample_id": "public_0002",
+    "scenario_type": "intent_override",
+    "target_asin": "B071X54486"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watches Wrist Watches",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "3 Year Battery",
+          "Day / Date Indicator",
+          "Stainless Steel Band",
+          "Water Resistant"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watches Wrist Watches 3 Year Battery Day / Date Indicator Stainless Steel Band Water Resistant",
+    "sample_id": "public_0003",
+    "scenario_type": "intent_override",
+    "target_asin": "B09YMTWDXJ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tops & Tees Tanks & Camis",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Long torso camisole for extra coverage with spagetti adjustable strap for perfect fit",
+          "Polyester,Cotton,Spandex",
+          "Quality soft cottonblend camisole, 95% cotton, 5% spandex, Neon Colors 57% cotton 38% polyester 5% spandex",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tops & Tees Tanks & Camis Long torso camisole for extra coverage with spagetti adjustable strap for perfect fit polyester Polyester,Cotton,Spandex Quality soft cottonblend camisole, 95% cotton, 5% spandex, Neon Colors 57% cotton 38% polyester 5% spandex",
+    "sample_id": "public_0004",
+    "scenario_type": "intent_override",
+    "target_asin": "B07C2XPZ6D"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Outdoor & Work Snow & Cold Weather",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Rubber sole",
+          "Shaft measures approximately 8.37\" from arch",
+          "Warm And Comfortable Women\u2019s Winter Boots: These Women Winter Boots Featuring Thermolite Insulation Rated To -15F. Fully Lined With Soft Faux Fur To Keep The Feet Warm All Day Long",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Outdoor & Work Snow & Cold Weather leather Rubber sole Shaft measures approximately 8.37\" from arch Warm And Comfortable Women\u2019s Winter Boots: These Women Winter Boots Featuring Thermolite Insulation Rated To -15F. Fully Lined With Soft Faux Fur To Keep The Feet Warm All Day Long",
+    "sample_id": "public_0005",
+    "scenario_type": "buying",
+    "target_asin": "B074G1JP8Z"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Basketball Men",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Drawstring closure",
+          "High quality mesh for maximum breathability to keep you cool",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Basketball Men 100% Polyester Drawstring closure High quality mesh for maximum breathability to keep you cool polyester",
+    "sample_id": "public_0006",
+    "scenario_type": "browsing",
+    "target_asin": "B071F2Z7JG"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "75% Polyester, 20% Rayon, 5% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 75% Polyester, 20% Rayon, 5% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0007",
+    "scenario_type": "browsing",
+    "target_asin": "B08PF98BV4"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Everyday Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "96% Nylon, 4% Spandex",
+          "Hand Wash Only",
+          "Pull-On closure",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Everyday Bras 96% Nylon, 4% Spandex Hand Wash Only nylon Pull-On closure",
+    "sample_id": "public_0008",
+    "scenario_type": "buying",
+    "target_asin": "B0BPCC1KBT"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Handbags & Wallets Totes",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Adjustable and Removable Shoulder Strap",
+          "Imported",
+          "Soft Washed PU Leather with Convenient side Pockets",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Handbags & Wallets Totes Adjustable and Removable Shoulder Strap Imported leather Soft Washed PU Leather with Convenient side Pockets",
+    "sample_id": "public_0009",
+    "scenario_type": "buying",
+    "target_asin": "B07GXHPWTJ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Bodysuits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Snap closure",
+          "Stretchy fabric: 95% modal, 5% spandex",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Bodysuits fabric Imported Snap closure Stretchy fabric: 95% modal, 5% spandex",
+    "sample_id": "public_0010",
+    "scenario_type": "buying",
+    "target_asin": "B0929KL5W7"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Underwear Undershirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "cotton",
+          "undershirts closure"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Underwear Undershirts 100% Cotton cotton Imported undershirts closure",
+    "sample_id": "public_0011",
+    "scenario_type": "browsing",
+    "target_asin": "B0BXP6MG3X"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Dresses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Polyester, 5% Spandex",
+          "Imported",
+          "Wrap closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Dresses 95% Polyester, 5% Spandex Imported polyester Wrap closure",
+    "sample_id": "public_0012",
+    "scenario_type": "browsing",
+    "target_asin": "B08FFGQF72"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Received APMA (American Podiatric Medical Association) Seal of Acceptance",
+          "Rubber sole",
+          "Textile Upper. Textile Covered EVA Footbed. Rubber Outsole",
+          "YOUR NEW FAVORITE SLIPPERS: Slip into divine comfort with Gemma, a plush mule-style spa slipper with an adjustable hook-and-loop closure across the vamp"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers Received APMA (American Podiatric Medical Association) Seal of Acceptance Rubber sole Textile Upper. Textile Covered EVA Footbed. Rubber Outsole YOUR NEW FAVORITE SLIPPERS: Slip into divine comfort with Gemma, a plush mule-style spa slipper with an adjustable hook-and-loop closure across the vamp",
+    "sample_id": "public_0013",
+    "scenario_type": "intent_override",
+    "target_asin": "B0C65TFM9F"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Underwear Briefs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Pull On closure",
+          "Solids: 100% Cotton; heathers: 75% cotton, 25% polyester",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Underwear Briefs cotton Imported Pull On closure Solids: 100% Cotton; heathers: 75% cotton, 25% polyester",
+    "sample_id": "public_0014",
+    "scenario_type": "browsing",
+    "target_asin": "B088QF5G58"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Mules & Clogs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Ethylene Vinyl Acetate sole",
+          "Made in the USA or Imported",
+          "Shaft measures approximately 8#inches from arch",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Mules & Clogs Ethylene Vinyl Acetate sole fabric Made in the USA or Imported Shaft measures approximately 8#inches from arch",
+    "sample_id": "public_0015",
+    "scenario_type": "browsing",
+    "target_asin": "B08513YB2T"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Boots Mid-Calf",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Rubber sole",
+          "Shaft measures approximately ankle-high from arch",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Boots Mid-Calf Imported leather Rubber sole Shaft measures approximately ankle-high from arch",
+    "sample_id": "public_0016",
+    "scenario_type": "browsing",
+    "target_asin": "B07PH3X7QK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Card Cases & Money Organizers Wallets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Leather",
+          "Leather lining",
+          "color: red",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Card Cases & Money Organizers Wallets color: red leather Leather Leather lining",
+    "sample_id": "public_0017",
+    "scenario_type": "buying",
+    "target_asin": "B089RXP8K2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts Tanks Tops",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Material: 95%Cotton & 5%Polyester - Made of Superior Quality Modal Fiber, Ultra Light-Weight, Soft & Smooth, Feels Really Comfortable, Which Keep You Cool & Dry All Day Long",
+          "Modal,Polyester,Cotton",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts Tanks Tops Material: 95%Cotton & 5%Polyester - Made of Superior Quality Modal Fiber, Ultra Light-Weight, Soft & Smooth, Feels Really Comfortable, Which Keep You Cool & Dry All Day Long Modal,Polyester,Cotton polyester Pull On closure",
+    "sample_id": "public_0018",
+    "scenario_type": "buying",
+    "target_asin": "B07H3T5YGH"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Outdoor & Work Rain",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Boot opening measures approximately 6.5\" around",
+          "Platform measures approximately 0.5\"",
+          "Rubber sole",
+          "Shaft measures approximately 5.5\" from arch"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Outdoor & Work Rain Boot opening measures approximately 6.5\" around Platform measures approximately 0.5\" Rubber sole Shaft measures approximately 5.5\" from arch",
+    "sample_id": "public_0019",
+    "scenario_type": "browsing",
+    "target_asin": "B076VQQ962"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Novelty Women",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Solid colors: 100% Cotton; Heather Grey: 90% Cotton, 10% Polyester; All Other Heathers: 50% Cotton, 50% Polyester",
+          "color: grey",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Novelty Women color: grey cotton Imported Solid colors: 100% Cotton; Heather Grey: 90% Cotton, 10% Polyester; All Other Heathers: 50% Cotton, 50% Polyester",
+    "sample_id": "public_0020",
+    "scenario_type": "buying",
+    "target_asin": "B08P4SSFX4"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Men Pants",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "98% Polyester, 2% Spandex",
+          "Imported",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Men Pants 98% Polyester, 2% Spandex Imported polyester Zipper closure",
+    "sample_id": "public_0021",
+    "scenario_type": "browsing",
+    "target_asin": "B07K4FX4WZ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Dresses Casual",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Fabric: 100% Cotton, Soft, Comfy, Breathable and keep you cool",
+          "Imported",
+          "Pull On closure",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Dresses Casual fabric Fabric: 100% Cotton, Soft, Comfy, Breathable and keep you cool Imported Pull On closure",
+    "sample_id": "public_0022",
+    "scenario_type": "buying",
+    "target_asin": "B08F5G843H"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Everyday Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Date First Available: March 19, 2021",
+          "Department: Womens",
+          "Hand Wash Only",
+          "Item model number: G796"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Everyday Bras Date First Available: March 19, 2021 Department: Womens Hand Wash Only Item model number: G796",
+    "sample_id": "public_0023",
+    "scenario_type": "intent_override",
+    "target_asin": "B08ZKFD4GM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Rompers & Overalls Jumpsuits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100 rayon",
+          "BOHOSTYLE: Your womens off shoulder jumpsuit has an exaggerated loose fit with beautiful embroidery. It is perfect if you want to keep up with the latest trends without sacrificing",
+          "Machine Wash",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Rompers & Overalls Jumpsuits 100 rayon BOHOSTYLE: Your womens off shoulder jumpsuit has an exaggerated loose fit with beautiful embroidery. It is perfect if you want to keep up with the latest trends without sacrificing Machine Wash rayon",
+    "sample_id": "public_0024",
+    "scenario_type": "buying",
+    "target_asin": "B076X3JXMW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Rompers & Overalls Rompers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "65%Polyester30%Viscose5%Spandex",
+          "Hook and Eye closure",
+          "Imported",
+          "spandex"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Rompers & Overalls Rompers 65%Polyester30%Viscose5%Spandex Hook and Eye closure Imported spandex",
+    "sample_id": "public_0025",
+    "scenario_type": "browsing",
+    "target_asin": "B0BRS1DHVQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Running Trail Running",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Synthetic",
+          "Imported",
+          "Rubber sole",
+          "Shaft measures approximately low-top from arch"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Running Trail Running 100% Synthetic Imported Rubber sole Shaft measures approximately low-top from arch",
+    "sample_id": "public_0026",
+    "scenario_type": "buying",
+    "target_asin": "B093R14VP1"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Jeans",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "73% Cotton, 25% Polyester, 2% Spandex",
+          "Imported",
+          "Zipper fly with button closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Jeans 73% Cotton, 25% Polyester, 2% Spandex cotton Imported Zipper fly with button closure",
+    "sample_id": "public_0027",
+    "scenario_type": "buying",
+    "target_asin": "B0858VDFDW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Card Cases & Money Organizers Wallets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Leather",
+          "Polyester lining",
+          "color: black",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Card Cases & Money Organizers Wallets color: black leather Leather Polyester lining",
+    "sample_id": "public_0028",
+    "scenario_type": "buying",
+    "target_asin": "B0B9ZYDDZ1"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sandals Flats",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Back for a second time, it's the ever comfy, ever stylish Yoga Sling 2 sandal from Sanuk\u00ae. A sandal that's a flexible as you\u2014win!",
+          "New lightweight, two-way stretch knit upper with sling comfort construction",
+          "Sealed edge footbed made from real yoga mats",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sandals Flats Back for a second time, it's the ever comfy, ever stylish Yoga Sling 2 sandal from Sanuk\u00ae. A sandal that's a flexible as you\u2014win! fabric New lightweight, two-way stretch knit upper with sling comfort construction Sealed edge footbed made from real yoga mats",
+    "sample_id": "public_0029",
+    "scenario_type": "buying",
+    "target_asin": "B01IAKCZEK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Sleep Bottoms",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Button closure",
+          "Hand Wash Only",
+          "Polyester,Polar Fleece",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Sleep Bottoms Button closure Hand Wash Only polyester Polyester,Polar Fleece",
+    "sample_id": "public_0030",
+    "scenario_type": "buying",
+    "target_asin": "B09V5RTXG9"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Jeans",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "78% Cotton, 20% Polyester, 2% Elastane",
+          "Imported",
+          "Zipper closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Jeans 78% Cotton, 20% Polyester, 2% Elastane cotton Imported Zipper closure",
+    "sample_id": "public_0031",
+    "scenario_type": "buying",
+    "target_asin": "B0BQDTGHMZ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Nightgowns & Sleepshirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Hand Wash Only",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Nightgowns & Sleepshirts 100% Cotton cotton Hand Wash Only Pull On closure",
+    "sample_id": "public_0032",
+    "scenario_type": "buying",
+    "target_asin": "B0834HZQZF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "MD + Air Cushion sole",
+          "Mesh Fabric",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking fabric Imported MD + Air Cushion sole Mesh Fabric",
+    "sample_id": "public_0033",
+    "scenario_type": "browsing",
+    "target_asin": "B08134XNNB"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Loafers & Slip-Ons",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Cowhide Leather,Rubber Sole,Hand-Sewn Loafers for Women",
+          "Leather Loafers Women:can be bend and curled in 360\u00b0,soft and comfortable",
+          "Rubber sole",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Loafers & Slip-Ons Cowhide Leather,Rubber Sole,Hand-Sewn Loafers for Women leather Leather Loafers Women:can be bend and curled in 360\u00b0,soft and comfortable Rubber sole",
+    "sample_id": "public_0034",
+    "scenario_type": "intent_override",
+    "target_asin": "B07Q9PNNB5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Textile",
+          "Imported",
+          "Rubber sole",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking 100% Textile fabric Imported Rubber sole",
+    "sample_id": "public_0035",
+    "scenario_type": "boundary",
+    "target_asin": "B0BN6CCHB7"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Earrings Drop & Dangle",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "DAILY JEWELRY SET: 47 Pairs earrings in 1 collection Box, Various trendy styles, hoop earrings, drop earrings, dangle earrings,stud earrings, offer you many options to wear, Chic d",
+          "FASHIONABLE EARRINGS BULK: Each pair of the earrings is carefully selected from the most popular earrings favored by customers.These fashion dangle earring set including butterfly,",
+          "color: pink",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Earrings Drop & Dangle color: pink DAILY JEWELRY SET: 47 Pairs earrings in 1 collection Box, Various trendy styles, hoop earrings, drop earrings, dangle earrings,stud earrings, offer you many options to wear, Chic d FASHIONABLE EARRINGS BULK: Each pair of the earrings is carefully selected from the most popular earrings favored by customers.These fashion dangle earring set including butterfly, leather",
+    "sample_id": "public_0036",
+    "scenario_type": "browsing",
+    "target_asin": "B08BWR1T58"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Boys Pants",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Machine Wash",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Boys Pants cotton Imported Machine Wash Pull On closure",
+    "sample_id": "public_0037",
+    "scenario_type": "browsing",
+    "target_asin": "B08KKBBMMD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Fashion Sneakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Lace Slip On Sneaker",
+          "Made in the USA or Imported",
+          "Synthetic sole",
+          "Textile"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Fashion Sneakers Lace Slip On Sneaker Made in the USA or Imported Synthetic sole Textile",
+    "sample_id": "public_0038",
+    "scenario_type": "intent_override",
+    "target_asin": "B07B5RGY2N"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Jerseys",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "80% Polyester, 20% Spandex",
+          "Hand Wash Only",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Jerseys 80% Polyester, 20% Spandex Hand Wash Only polyester Zipper closure",
+    "sample_id": "public_0039",
+    "scenario_type": "browsing",
+    "target_asin": "B07TZCJW9X"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Active Pants Sweatpants",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "color: black",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Active Pants Sweatpants 100% Cotton color: black cotton Imported",
+    "sample_id": "public_0040",
+    "scenario_type": "browsing",
+    "target_asin": "B08ZJWTCDR"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "3X women tops care: Hand wash or machine wash in gentle; Hang to dry; No ironing; No shrinkage",
+          "Pull On closure",
+          "polyester",
+          "\u8fdb\u53e3"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 3X women tops care: Hand wash or machine wash in gentle; Hang to dry; No ironing; No shrinkage polyester Pull On closure \u8fdb\u53e3",
+    "sample_id": "public_0041",
+    "scenario_type": "boundary",
+    "target_asin": "B09MSY8926"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watches Wrist Watches",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100-hour chronograph with lap & split times; month, day & date calendar",
+          "Gold-tone 18mm stainless steel expansion band fits up to 8-inch wrist circumference",
+          "Imported",
+          "color: green"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watches Wrist Watches 100-hour chronograph with lap & split times; month, day & date calendar color: green Gold-tone 18mm stainless steel expansion band fits up to 8-inch wrist circumference Imported",
+    "sample_id": "public_0042",
+    "scenario_type": "buying",
+    "target_asin": "B01LWOGORL"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Jeans",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Cotton, 23% Viscose, 16% Polyester, 1% Elastane",
+          "Imported",
+          "Zipper closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Jeans 60% Cotton, 23% Viscose, 16% Polyester, 1% Elastane cotton Imported Zipper closure",
+    "sample_id": "public_0043",
+    "scenario_type": "browsing",
+    "target_asin": "B0C1KNGLPX"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Men Jammers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Polyester,Spandex",
+          "Rope closure",
+          "fabric",
+          "\u3010100% chlorine-resistant durable\u3011KGKE mens swimming jammer swimsuit have 4-Level chlorine resistant fabric,worth to prevent chaffing and fadding.FBT fabrics keep shape retention af"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Men Jammers fabric Polyester,Spandex Rope closure \u3010100% chlorine-resistant durable\u3011KGKE mens swimming jammer swimsuit have 4-Level chlorine resistant fabric,worth to prevent chaffing and fadding.FBT fabrics keep shape retention af",
+    "sample_id": "public_0044",
+    "scenario_type": "buying",
+    "target_asin": "B09BQ4G5BD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Polyester, 5% Spandex",
+          "Button closure",
+          "Imported",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 95% Polyester, 5% Spandex Button closure Imported polyester",
+    "sample_id": "public_0045",
+    "scenario_type": "buying",
+    "target_asin": "B07Z8NTWVV"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Socks & Hosiery Leg Warmers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "44% Acrylic, 28% Cotton, 20% Merino Wool, 8% Polyester",
+          "Imported",
+          "No Closure closure",
+          "wool"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Socks & Hosiery Leg Warmers 44% Acrylic, 28% Cotton, 20% Merino Wool, 8% Polyester Imported No Closure closure wool",
+    "sample_id": "public_0046",
+    "scenario_type": "intent_override",
+    "target_asin": "B0B42PVX1F"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Accessories Bandanas",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Adjustable closure",
+          "color: pink",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Accessories Bandanas 100% Polyester Adjustable closure color: pink polyester",
+    "sample_id": "public_0047",
+    "scenario_type": "browsing",
+    "target_asin": "B0BYZX7B1L"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Soccer",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Synthetic",
+          "FEATURES: Infinity style cleats are constructed from durable synthetic materials that are water resistant. Easily adjustable laces allow these shoes to easily form to your foot",
+          "RUGGED OUTSOLE: Our flexible rubber outsoles have a two tone design and feature rugged studs to aid with traction on turf and outdoor fields",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Soccer 100% Synthetic FEATURES: Infinity style cleats are constructed from durable synthetic materials that are water resistant. Easily adjustable laces allow these shoes to easily form to your foot Rubber sole RUGGED OUTSOLE: Our flexible rubber outsoles have a two tone design and feature rugged studs to aid with traction on turf and outdoor fields",
+    "sample_id": "public_0048",
+    "scenario_type": "browsing",
+    "target_asin": "B00VQBMJUQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Loafers & Slip-Ons",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Rubber sole",
+          "color: brown",
+          "leather",
+          "\ud83d\udc5fBEST MATERIAL.These mens shoes casual slip on has premium microfiber leather upper,soft rubber sole.It's a good choice for outdoor all season"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Loafers & Slip-Ons color: brown leather Rubber sole \ud83d\udc5fBEST MATERIAL.These mens shoes casual slip on has premium microfiber leather upper,soft rubber sole.It's a good choice for outdoor all season",
+    "sample_id": "public_0049",
+    "scenario_type": "browsing",
+    "target_asin": "B08G4WVYLJ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Work & Utility Industrial & Construction Boots",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "EVA/Rubber sole",
+          "Shaft measures approximately 6inch from arch",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Work & Utility Industrial & Construction Boots 100% Leather EVA/Rubber sole leather Shaft measures approximately 6inch from arch",
+    "sample_id": "public_0050",
+    "scenario_type": "boundary",
+    "target_asin": "B07BYR6T7W"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Our Go Walk 5-True shoe is made with Skechers Air Cooled Goga Mat a breathable insole that provides high-rebound cushioning",
+          "Our Skechers shoe provides a dual density outsole for added stability and support",
+          "Rubber sole",
+          "Skechers Go Walk 5-True shoe is designed with high-rebound comfort pillar technology underfoot that reacts to your every step for the ultimate comfort"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking Our Go Walk 5-True shoe is made with Skechers Air Cooled Goga Mat a breathable insole that provides high-rebound cushioning Our Skechers shoe provides a dual density outsole for added stability and support Rubber sole Skechers Go Walk 5-True shoe is designed with high-rebound comfort pillar technology underfoot that reacts to your every step for the ultimate comfort",
+    "sample_id": "public_0051",
+    "scenario_type": "browsing",
+    "target_asin": "B07N1624C5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% polyester",
+          "Button closure",
+          "Hand Wash Only",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 60% polyester Button closure Hand Wash Only polyester",
+    "sample_id": "public_0052",
+    "scenario_type": "intent_override",
+    "target_asin": "B09G2ZNZY4"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Travel Accessories Passport Covers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Dry Cloth Clean",
+          "Leather lining",
+          "color: black",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Travel Accessories Passport Covers color: black Dry Cloth Clean leather Leather lining",
+    "sample_id": "public_0053",
+    "scenario_type": "buying",
+    "target_asin": "B07TZK3GZK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Fashion Hoodies & Sweatshirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Machine Wash",
+          "Pull On closure",
+          "Soft Fabric",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Fashion Hoodies & Sweatshirts fabric Machine Wash Pull On closure Soft Fabric",
+    "sample_id": "public_0054",
+    "scenario_type": "buying",
+    "target_asin": "B08PP1ZJQ5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Mules & Clogs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Croslite Foam",
+          "Ethylene Vinyl Acetate sole",
+          "Imported",
+          "Shaft measures approximately 1\" from arch"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Mules & Clogs 100% Croslite Foam Ethylene Vinyl Acetate sole Imported Shaft measures approximately 1\" from arch",
+    "sample_id": "public_0055",
+    "scenario_type": "browsing",
+    "target_asin": "B0C1TDJ9HZ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "No Closure closure",
+          "Solids: 100% Cotton; Heathers: 60% Cotton, 40% Polyester",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts T-Shirts cotton Imported No Closure closure Solids: 100% Cotton; Heathers: 60% Cotton, 40% Polyester",
+    "sample_id": "public_0056",
+    "scenario_type": "browsing",
+    "target_asin": "B0B2RF64YD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Mules & Clogs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Croslite",
+          "Ethylene Vinyl Acetate sole",
+          "Imported",
+          "Shaft measures approximately 0#inches from arch"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Mules & Clogs 100% Croslite Ethylene Vinyl Acetate sole Imported Shaft measures approximately 0#inches from arch",
+    "sample_id": "public_0057",
+    "scenario_type": "browsing",
+    "target_asin": "B085RX192V"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Rain & Anoraks Raincoats",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Rain & Anoraks Raincoats 100% Polyester Imported polyester Zipper closure",
+    "sample_id": "public_0058",
+    "scenario_type": "buying",
+    "target_asin": "B08L83YQTZ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shapewear Bodysuits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "62.4% Nylon 37.6% Spandex",
+          "Imported",
+          "Pull On closure",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shapewear Bodysuits 62.4% Nylon 37.6% Spandex Imported nylon Pull On closure",
+    "sample_id": "public_0059",
+    "scenario_type": "browsing",
+    "target_asin": "B01H6DGA16"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Sleep Bottoms",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "55% Cotton, 45% Polyester",
+          "Drawstring Waist closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Sleep Bottoms 55% Cotton, 45% Polyester cotton Drawstring Waist closure Imported",
+    "sample_id": "public_0060",
+    "scenario_type": "browsing",
+    "target_asin": "B08R61K9B9"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Piercing Jewelry Rings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Snap closure",
+          "Sold by piece! 14g nose hoop ring size: 14 gauge (ring thickness: 1.6mm), inner diameter 6mm (15/64\" ).Gauge means the thickness of the hoop.Please decide the gauge firstly (measur",
+          "This hinged nose ring hoop is very easy to put in and close and you can't see the seams, comfortable to wear without sharp edge. It spins completely, makes for easy cleaning. You c",
+          "color: black"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Piercing Jewelry Rings color: black Snap closure Sold by piece! 14g nose hoop ring size: 14 gauge (ring thickness: 1.6mm), inner diameter 6mm (15/64\" ).Gauge means the thickness of the hoop.Please decide the gauge firstly (measur This hinged nose ring hoop is very easy to put in and close and you can't see the seams, comfortable to wear without sharp edge. It spins completely, makes for easy cleaning. You c",
+    "sample_id": "public_0061",
+    "scenario_type": "buying",
+    "target_asin": "B08HCP9YTV"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Skirts Casual",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Fabric: 70%Cotton, 28.5%Polyester, 1.5%Spandex",
+          "Imported",
+          "color: black",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Skirts Casual color: black fabric Fabric: 70%Cotton, 28.5%Polyester, 1.5%Spandex Imported",
+    "sample_id": "public_0062",
+    "scenario_type": "browsing",
+    "target_asin": "B015K51VPM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Shorts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "3\" Width Waistband: The elastic flat waist provides tummy control and features 4-way stretch performance",
+          "Body: 95% Polyester, 5% Spandex; Waist: 90% Polyester, 10% Spandex; Liner: 90% Polyester, 10% Spandex",
+          "elastic closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Shorts 3\" Width Waistband: The elastic flat waist provides tummy control and features 4-way stretch performance Body: 95% Polyester, 5% Spandex; Waist: 90% Polyester, 10% Spandex; Liner: 90% Polyester, 10% Spandex elastic closure polyester",
+    "sample_id": "public_0063",
+    "scenario_type": "browsing",
+    "target_asin": "B09MKL5TBK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Dresses Club & Night Out",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Hand Wash Only",
+          "Pull On closure",
+          "cotton",
+          "cotton blend"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Dresses Club & Night Out cotton cotton blend Hand Wash Only Pull On closure",
+    "sample_id": "public_0064",
+    "scenario_type": "intent_override",
+    "target_asin": "B019DU687Q"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bibs & Pants Bibs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bibs & Pants Bibs 100% Polyester Imported polyester Zipper closure",
+    "sample_id": "public_0065",
+    "scenario_type": "buying",
+    "target_asin": "B0BSQ9TCYC"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Dresses Formal",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "96% Polyester, 4% Spandex",
+          "Imported",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Dresses Formal 96% Polyester, 4% Spandex Imported polyester Zipper closure",
+    "sample_id": "public_0066",
+    "scenario_type": "buying",
+    "target_asin": "B0BFLFSB2Y"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Lightweight Jackets Windbreakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Polyester",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Lightweight Jackets Windbreakers Imported Polyester polyester Zipper closure",
+    "sample_id": "public_0067",
+    "scenario_type": "buying",
+    "target_asin": "B09G9BXJZM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Dual-density outsole with Hyper Pillar comfort technology",
+          "Imported",
+          "Lightweight and responsive Ultra Go midsole cushioning",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking Dual-density outsole with Hyper Pillar comfort technology Imported Lightweight and responsive Ultra Go midsole cushioning Rubber sole",
+    "sample_id": "public_0068",
+    "scenario_type": "intent_override",
+    "target_asin": "B08SH8GF6K"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Earrings Drop & Dangle",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "\u3010COMFORTABLE TO WEAR\u3011\u2014Acrylic Leopard dangle earring give a summer-ready feel to any look. Post back closures for pieced ears. Size: 2.5''in length weight 0.2oz a pair,Lightweight,",
+          "\u3010FASHION DESIGN \u3011\u2014Acrylic mottled hoop earrings. Square and oval silhouette. Marbled Floral and Leopard design. Post back. Light-weight earrings. these acrylic earrings are the per",
+          "\u3010MATCH TO MOST OCCASIONS\u3011\u2014Minimalist Acrylic Hoop Earrings works well with your daily outfit,Can wear it with many things go to many occasions.Such as Valentine\u2019s Day, Christmas\u2019 D",
+          "\u3010PERFECT GIFT\u3011\u2014Geometric drop dangle earring with Excellent Luster and Unimpeachable Rust very popular with women and girls packaged in a velvet bag, a wonderful gift giving mom, w"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Earrings Drop & Dangle \u3010COMFORTABLE TO WEAR\u3011\u2014Acrylic Leopard dangle earring give a summer-ready feel to any look. Post back closures for pieced ears. Size: 2.5''in length weight 0.2oz a pair,Lightweight, \u3010FASHION DESIGN \u3011\u2014Acrylic mottled hoop earrings. Square and oval silhouette. Marbled Floral and Leopard design. Post back. Light-weight earrings. these acrylic earrings are the per \u3010MATCH TO MOST OCCASIONS\u3011\u2014Minimalist Acrylic Hoop Earrings works well with your daily outfit,Can wear it with many things go to many occasions.Such as Valentine\u2019s Day, Christmas\u2019 D \u3010PERFECT GIFT\u3011\u2014Geometric drop dangle earring with Excellent Luster and Unimpeachable Rust very popular with women and girls packaged in a velvet bag, a wonderful gift giving mom, w",
+    "sample_id": "public_0069",
+    "scenario_type": "browsing",
+    "target_asin": "B07ZFBQ76H"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Travel Accessories Travel Wallets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Nylon lining",
+          "nylon",
+          "\u2705 PERFECT FOR TRAVEL - COMFORTABLE, LIGHTWEIGHT, AND WATER RESISTANT PASSPORT AND VACCINE CARD HOLDER designed to offer you a safe and secure location to store valuables , passport",
+          "\u2705 RFID BLOCKING \u2013 RFID WALLET LINED WITH RADIO FREQUENCY SHIELDING MATERIAL WHICH BLOCKS UNWANTED SCANS , ensuring that your cards and personal information remain private and confi"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Travel Accessories Travel Wallets nylon Nylon lining \u2705 PERFECT FOR TRAVEL - COMFORTABLE, LIGHTWEIGHT, AND WATER RESISTANT PASSPORT AND VACCINE CARD HOLDER designed to offer you a safe and secure location to store valuables , passport \u2705 RFID BLOCKING \u2013 RFID WALLET LINED WITH RADIO FREQUENCY SHIELDING MATERIAL WHICH BLOCKS UNWANTED SCANS , ensuring that your cards and personal information remain private and confi",
+    "sample_id": "public_0070",
+    "scenario_type": "browsing",
+    "target_asin": "B010LVBVKA"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Fashion Hoodies & Sweatshirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "90% Cotton, 10% Others",
+          "Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Fashion Hoodies & Sweatshirts 90% Cotton, 10% Others cotton Imported Pull On closure",
+    "sample_id": "public_0071",
+    "scenario_type": "intent_override",
+    "target_asin": "B06XRFSDL4"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Rain & Anoraks Anoraks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Department: womens",
+          "Drawstring closure",
+          "Faux Fur",
+          "Hand Wash Only"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Rain & Anoraks Anoraks Department: womens Drawstring closure Faux Fur Hand Wash Only",
+    "sample_id": "public_0072",
+    "scenario_type": "intent_override",
+    "target_asin": "B09JG4V9ZR"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Dresses Casual",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Elastic closure",
+          "Imported",
+          "polyester",
+          "\u2665\u3010Try RISK FREE\u3011: Wear COMFORTABLE or Your MONEY BACK! 30-day wear test! FREE shipping and returns.If for any reason you\u2019re unhappy with your purchase,feel free to contact us"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Dresses Casual Elastic closure Imported polyester \u2665\u3010Try RISK FREE\u3011: Wear COMFORTABLE or Your MONEY BACK! 30-day wear test! FREE shipping and returns.If for any reason you\u2019re unhappy with your purchase,feel free to contact us",
+    "sample_id": "public_0073",
+    "scenario_type": "browsing",
+    "target_asin": "B07QPM54V7"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Shaft measures approximately not_applicable from arch",
+          "Synthetic sole",
+          "mesh"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking Imported mesh Shaft measures approximately not_applicable from arch Synthetic sole",
+    "sample_id": "public_0074",
+    "scenario_type": "browsing",
+    "target_asin": "B07N15QTKC"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Accessories Belts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "Genuine Leather,New Design for Exact Fit,Width 1 3/8\"",
+          "Ratchet closure",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Accessories Belts 100% Leather Genuine Leather,New Design for Exact Fit,Width 1 3/8\" leather Ratchet closure",
+    "sample_id": "public_0075",
+    "scenario_type": "browsing",
+    "target_asin": "B08L13LJ5M"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Hoodies",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Solid colors: 80% Cotton, 20% Polyester; Heather Grey: 78% Cotton, 22% Poly; Dark Heather: 50% Cotton, 50% Polyester",
+          "color: grey",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Hoodies color: grey cotton Imported Solid colors: 80% Cotton, 20% Polyester; Heather Grey: 78% Cotton, 22% Poly; Dark Heather: 50% Cotton, 50% Polyester",
+    "sample_id": "public_0076",
+    "scenario_type": "browsing",
+    "target_asin": "B07XT6PLTB"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Sleep Tops",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "55% Cotton /45% Polyester Flannel",
+          "Button closure",
+          "Machine Wash",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Sleep Tops 55% Cotton /45% Polyester Flannel Button closure cotton Machine Wash",
+    "sample_id": "public_0077",
+    "scenario_type": "browsing",
+    "target_asin": "B077JDSZ27"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Socks No Show & Liner Socks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "78% Cotton, 21% Polyester, 1% Spandex",
+          "Made in the USA or Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Socks No Show & Liner Socks 78% Cotton, 21% Polyester, 1% Spandex cotton Made in the USA or Imported Pull On closure",
+    "sample_id": "public_0078",
+    "scenario_type": "intent_override",
+    "target_asin": "B0C5RLJDSF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Socks & Hosiery Slipper Socks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom.",
+          "Rubber sole",
+          "Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Socks & Hosiery Slipper Socks Best Gifts Ideas: These cute fluffy slipper socks are featuring lovely animals pattern-owl, dog, cat, fox, penguin and reindeer. They are very good gifts for women. Gifts for mom. polyester Rubber sole Super Soft and Cozy: These fuzzy slipper socks are made of Polyester 95%, Spandex 5%. The material is extraordinary soft and comfy",
+    "sample_id": "public_0079",
+    "scenario_type": "browsing",
+    "target_asin": "B0BFRMX3JG"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts Polos",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Cotton, 40% Polyester",
+          "Button closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts Polos 60% Cotton, 40% Polyester Button closure cotton Imported",
+    "sample_id": "public_0080",
+    "scenario_type": "intent_override",
+    "target_asin": "B0BPRQY4CF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Underwear Undershirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Machine Wash",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Underwear Undershirts 100% Cotton cotton Machine Wash Pull On closure",
+    "sample_id": "public_0081",
+    "scenario_type": "browsing",
+    "target_asin": "B0BSS36XCS"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bracelets Strand",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "21 Styles: the package contains 21 pieces beach bracelet anklets in different styles as shown in the picture, coming with various elements, enough quantity to use and share with fa",
+          "Summer vibe accessories: blue and orange colors of the wave strand bracelet set can easily make you look vibrant, going well with different clothes; Nice accessories to wear in sum",
+          "Waterproof and fadeless: these boho style pull cord anklets are made of a combination of wax and cords, featuring good resistance of water, not easy to fade even if you go surfing",
+          "color: blue"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bracelets Strand 21 Styles: the package contains 21 pieces beach bracelet anklets in different styles as shown in the picture, coming with various elements, enough quantity to use and share with fa color: blue Summer vibe accessories: blue and orange colors of the wave strand bracelet set can easily make you look vibrant, going well with different clothes; Nice accessories to wear in sum Waterproof and fadeless: these boho style pull cord anklets are made of a combination of wax and cords, featuring good resistance of water, not easy to fade even if you go surfing",
+    "sample_id": "public_0082",
+    "scenario_type": "buying",
+    "target_asin": "B09BPZCWDP"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Blouses & Button-Down Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Button closure",
+          "Imported",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Blouses & Button-Down Shirts 100% Polyester Button closure Imported polyester",
+    "sample_id": "public_0083",
+    "scenario_type": "buying",
+    "target_asin": "B0BPMCJ1RD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Accessories Belts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "33% Elastic, 34% Nylon, 33% Polyester",
+          "Hand Wash Only",
+          "Hook and Loop closure",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Accessories Belts 33% Elastic, 34% Nylon, 33% Polyester Hand Wash Only Hook and Loop closure nylon",
+    "sample_id": "public_0084",
+    "scenario_type": "intent_override",
+    "target_asin": "B08WKZNFG2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sandals Slides",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Ethylene Vinyl Acetate sole",
+          "Heel measures approximately 1.57\"",
+          "\u3010Ergonomic Design\u3011:About 30\u00b0 forward tilt head protection design,so that the sole of the foot does not rush out. The sunken footbed fits the curve of the foot pelvic floor and make",
+          "\u3010High-Quality\u3011:Slides for women and men are made of high-quality EVA, environmentally friendly, no special smell, no noise, no water absorption, and easy to clean"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sandals Slides Ethylene Vinyl Acetate sole Heel measures approximately 1.57\" \u3010Ergonomic Design\u3011:About 30\u00b0 forward tilt head protection design,so that the sole of the foot does not rush out. The sunken footbed fits the curve of the foot pelvic floor and make \u3010High-Quality\u3011:Slides for women and men are made of high-quality EVA, environmentally friendly, no special smell, no noise, no water absorption, and easy to clean",
+    "sample_id": "public_0085",
+    "scenario_type": "browsing",
+    "target_asin": "B0C3YJMRRD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "COMFY & SOFT - Nice chenille velvet upper and fuzzy plush fleece lining hug your feet and provide toasty warmth plus ultra softness, which make you feel like walking on a cloud. Wh",
+          "CUSHION & SUPPORT - Long lasting 80D memory foam insole provides superior cushioning and padding, feels like ergonomic pillows under your feet. Supportive insole relaxes your arch",
+          "PRETTY ANKLE BOOTS - Cozy up the cold season with these attractive warm house slippers while luxe chenille knit styling adds a chic and cute touch to your comfort. Subtle scrunchin",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers COMFY & SOFT - Nice chenille velvet upper and fuzzy plush fleece lining hug your feet and provide toasty warmth plus ultra softness, which make you feel like walking on a cloud. Wh CUSHION & SUPPORT - Long lasting 80D memory foam insole provides superior cushioning and padding, feels like ergonomic pillows under your feet. Supportive insole relaxes your arch PRETTY ANKLE BOOTS - Cozy up the cold season with these attractive warm house slippers while luxe chenille knit styling adds a chic and cute touch to your comfort. Subtle scrunchin Rubber sole",
+    "sample_id": "public_0086",
+    "scenario_type": "browsing",
+    "target_asin": "B07WN8N9Q7"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts Casual Button-Down Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Button closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts Casual Button-Down Shirts 100% Cotton Button closure cotton Imported",
+    "sample_id": "public_0087",
+    "scenario_type": "browsing",
+    "target_asin": "B0BT158RRR"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Bikinis",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Cotton, 5% Spandex",
+          "Imported",
+          "Machine Wash",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Bikinis 95% Cotton, 5% Spandex cotton Imported Machine Wash",
+    "sample_id": "public_0088",
+    "scenario_type": "buying",
+    "target_asin": "B07Z6J5N6Y"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Briefs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Nylon",
+          "Elastic closure",
+          "Imported",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Briefs 100% Nylon Elastic closure Imported nylon",
+    "sample_id": "public_0089",
+    "scenario_type": "intent_override",
+    "target_asin": "B0BXMCZLZV"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Accessories",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Classic mardi gras scarf: designed with gold, purple, green color, the scarf measure: 55 x 134 cm, tassel: 15 cm/ 5.9 inch",
+          "Decorative lightweight scarf: 2 wearing ways of this mardi gras scarf, wrap the scarf around your neck, or wearing it as a shawl, just change the orientation of the scarf, you can",
+          "Pattern: the end of the mardi gras shawl is tassel, stripe pattern is shimmering, gold speckled with green and purple",
+          "color: purple"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Accessories Classic mardi gras scarf: designed with gold, purple, green color, the scarf measure: 55 x 134 cm, tassel: 15 cm/ 5.9 inch color: purple Decorative lightweight scarf: 2 wearing ways of this mardi gras scarf, wrap the scarf around your neck, or wearing it as a shawl, just change the orientation of the scarf, you can Pattern: the end of the mardi gras shawl is tassel, stripe pattern is shimmering, gold speckled with green and purple",
+    "sample_id": "public_0090",
+    "scenario_type": "buying",
+    "target_asin": "B07MGR6D5M"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Jewelry Earrings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "color: white",
+          "\u3010CLASSICAL&TIMELESS\u3011Simple and Classical Hoop design,Classical and Timeless.You will be more Beautiful and Elegant when You Wearing this CZ Hoop Earrings.This Small Rose Gold Hoop",
+          "\u3010HIGH QUALITY\u3011This Sterling Silver Huggie Hoop Earring is made of 925 Sterling Silver post,Hypoallergenic.Best Choice for Sensitive Ears. Earrings Surface Mounted with Sparkling AA",
+          "\u3010PACKAGE INCLUDES\u3011Order includes 3 Pairs 8/10/12mm(0.31/0.4/0.48in) Small Cubic Zirconia Hoop Earrings.The Small Hoop Earring is Cuff Design,Easy to Open and Close.Note:The 925 Ste"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Jewelry Earrings color: white \u3010CLASSICAL&TIMELESS\u3011Simple and Classical Hoop design,Classical and Timeless.You will be more Beautiful and Elegant when You Wearing this CZ Hoop Earrings.This Small Rose Gold Hoop \u3010HIGH QUALITY\u3011This Sterling Silver Huggie Hoop Earring is made of 925 Sterling Silver post,Hypoallergenic.Best Choice for Sensitive Ears. Earrings Surface Mounted with Sparkling AA \u3010PACKAGE INCLUDES\u3011Order includes 3 Pairs 8/10/12mm(0.31/0.4/0.48in) Small Cubic Zirconia Hoop Earrings.The Small Hoop Earring is Cuff Design,Easy to Open and Close.Note:The 925 Ste",
+    "sample_id": "public_0091",
+    "scenario_type": "browsing",
+    "target_asin": "B0C5XB43GG"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Sets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Polyester, 5% Spandex",
+          "Button closure",
+          "Imported",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Sets 95% Polyester, 5% Spandex Button closure Imported polyester",
+    "sample_id": "public_0092",
+    "scenario_type": "browsing",
+    "target_asin": "B07FKNZC43"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Briefs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Pull On closure",
+          "Solid: 100% Cotton; Heathers: 75% Cotton, 25% Polyester",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Briefs cotton Imported Pull On closure Solid: 100% Cotton; Heathers: 75% Cotton, 25% Polyester",
+    "sample_id": "public_0093",
+    "scenario_type": "buying",
+    "target_asin": "B07PYB8F1G"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Boots Mid-Calf",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "SUPPORTIVE AND CUSHIONED: Featuring the 4LR technology for support and cushioning, these western boots make sure you have the most comfortable boot possible, whether you\u2019re in the",
+          "Shaft measures approximately 8\" from arch",
+          "Synthetic sole",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Boots Mid-Calf leather Shaft measures approximately 8\" from arch SUPPORTIVE AND CUSHIONED: Featuring the 4LR technology for support and cushioning, these western boots make sure you have the most comfortable boot possible, whether you\u2019re in the Synthetic sole",
+    "sample_id": "public_0094",
+    "scenario_type": "buying",
+    "target_asin": "B01L99SW78"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Leggings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "75% Polyester, 25% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Leggings 75% Polyester, 25% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0095",
+    "scenario_type": "buying",
+    "target_asin": "B09N78FT2W"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Polyester, 5% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses T-Shirts 95% Polyester, 5% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0096",
+    "scenario_type": "intent_override",
+    "target_asin": "B074K2QX3M"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Leggings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "92% Polyester",
+          "Elastic closure",
+          "Machine Wash",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Leggings 92% Polyester Elastic closure Machine Wash polyester",
+    "sample_id": "public_0097",
+    "scenario_type": "buying",
+    "target_asin": "B0785RCKBT"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Running Road Running",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Rubber",
+          "Imported",
+          "Rubber sole",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Running Road Running 100% Rubber Imported polyester Rubber sole",
+    "sample_id": "public_0098",
+    "scenario_type": "browsing",
+    "target_asin": "B08CZ34D75"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Active Pants Sweatpants",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Cotton, 40% Polyester",
+          "Drawstring closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Active Pants Sweatpants 60% Cotton, 40% Polyester cotton Drawstring closure Imported",
+    "sample_id": "public_0099",
+    "scenario_type": "browsing",
+    "target_asin": "B0971YMPCR"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Loafers & Slip-Ons",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "Manmade sole",
+          "Platform measures approximately 0.5\"",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Loafers & Slip-Ons 100% Leather leather Manmade sole Platform measures approximately 0.5\"",
+    "sample_id": "public_0100",
+    "scenario_type": "browsing",
+    "target_asin": "B002OHE4D6"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Medical Scrub Bottoms",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "65% Polyester, 35% Cotton",
+          "Imported",
+          "color: white",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Medical Scrub Bottoms 65% Polyester, 35% Cotton color: white Imported polyester",
+    "sample_id": "public_0101",
+    "scenario_type": "buying",
+    "target_asin": "B07QMS8TX8"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Everyday Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Hand Wash Only",
+          "Lace Design",
+          "Push Up Bra, A/B/C cup 3 centimeters Thickness Pad inside. But noted that D cup is thin cup,lightly padded",
+          "Underwire"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Everyday Bras Hand Wash Only Lace Design Push Up Bra, A/B/C cup 3 centimeters Thickness Pad inside. But noted that D cup is thin cup,lightly padded Underwire",
+    "sample_id": "public_0102",
+    "scenario_type": "browsing",
+    "target_asin": "B07PWZXZVX"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Underwear Undershirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "color: white",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Underwear Undershirts 100% Cotton color: white cotton Imported",
+    "sample_id": "public_0103",
+    "scenario_type": "intent_override",
+    "target_asin": "B0BT8T2FQ3"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Hats & Caps Headbands",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Classy Leather-like Fabric",
+          "Durable Headband",
+          "color: black",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Hats & Caps Headbands Classy Leather-like Fabric color: black Durable Headband leather",
+    "sample_id": "public_0104",
+    "scenario_type": "boundary",
+    "target_asin": "B00QSAICLU"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Leggings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "77% Polyester, 23% Spandex",
+          "IUGA is a lifestyle brand that combines Style, Comfort and Performance. The High Quality Activewear is perfect for Fitness Enthusiasts and Everyday Athleisure as it is Affordable a",
+          "Imported",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Leggings 77% Polyester, 23% Spandex Imported IUGA is a lifestyle brand that combines Style, Comfort and Performance. The High Quality Activewear is perfect for Fitness Enthusiasts and Everyday Athleisure as it is Affordable a polyester",
+    "sample_id": "public_0105",
+    "scenario_type": "browsing",
+    "target_asin": "B07Q46M2J2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Socks Calf Socks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Machine Wash",
+          "Polyester,Cotton,Spandex",
+          "cotton",
+          "\u2764 \u3010Material\u3011\uff1aOur mens dress socks are are expertly fabricated with the perfect formulation, made with 76% cotton,2% spandex and 22% polyester to keep your feet a elasticity and sof"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Socks Calf Socks cotton Machine Wash Polyester,Cotton,Spandex \u2764 \u3010Material\u3011\uff1aOur mens dress socks are are expertly fabricated with the perfect formulation, made with 76% cotton,2% spandex and 22% polyester to keep your feet a elasticity and sof",
+    "sample_id": "public_0106",
+    "scenario_type": "buying",
+    "target_asin": "B0776SVXW9"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Rain & Anoraks Anoraks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Machine Wash",
+          "Shell 100% Cotton Lining 100% Polyester",
+          "Zipper closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Rain & Anoraks Anoraks cotton Machine Wash Shell 100% Cotton Lining 100% Polyester Zipper closure",
+    "sample_id": "public_0107",
+    "scenario_type": "buying",
+    "target_asin": "B01KPFK9ZA"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Pants & Shorts Shorts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "54% Cotton, 36% Polyester, 10% Spandex",
+          "Elastic closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Pants & Shorts Shorts 54% Cotton, 36% Polyester, 10% Spandex cotton Elastic closure Imported",
+    "sample_id": "public_0108",
+    "scenario_type": "buying",
+    "target_asin": "B01I21CI7G"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Other Fibers",
+          "Imported",
+          "No Closure closure",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts T-Shirts 100% Other Fibers fabric Imported No Closure closure",
+    "sample_id": "public_0109",
+    "scenario_type": "buying",
+    "target_asin": "B016OT9D3K"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Active Athletic Socks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "35% wool, 29% cotton, 36% polyester",
+          "Machine Wash,Hand Wash",
+          "Material: Womens winter warm socks made of 35% wool, 29% cotton, 36% polyester. These cabin socks are super soft, breathable and wearable. Elegant, classic wool socks hosiery, colo",
+          "wool"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Active Athletic Socks 35% wool, 29% cotton, 36% polyester Machine Wash,Hand Wash Material: Womens winter warm socks made of 35% wool, 29% cotton, 36% polyester. These cabin socks are super soft, breathable and wearable. Elegant, classic wool socks hosiery, colo wool",
+    "sample_id": "public_0110",
+    "scenario_type": "browsing",
+    "target_asin": "B0C277G9FW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sweaters Pullovers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Polyester, 35% Cotton, 5% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sweaters Pullovers 60% Polyester, 35% Cotton, 5% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0111",
+    "scenario_type": "buying",
+    "target_asin": "B07H7BWMQF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "A Lightweight Sneaker, Which Is Suitable For Running, Sports, Hiking, Walking, Tourism And Climbing",
+          "Leather sole",
+          "Slip-on For Easy On And Off",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking A Lightweight Sneaker, Which Is Suitable For Running, Sports, Hiking, Walking, Tourism And Climbing leather Leather sole Slip-on For Easy On And Off",
+    "sample_id": "public_0112",
+    "scenario_type": "boundary",
+    "target_asin": "B086ZNJY8K"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "CLOSED HEEL - These slippers hug your feet entirely so they won't fly off when walking, especially on stairs. Made of soft uppers, you can also step over the back and wear them as",
+          "Rubber sole",
+          "Sherpa Fleece",
+          "TOASTY WARM - Covered in plush sherpa fleece from inside to outside, this slipper will wrap your feet in a cocoon of warmth so they'll never feel cold"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers CLOSED HEEL - These slippers hug your feet entirely so they won't fly off when walking, especially on stairs. Made of soft uppers, you can also step over the back and wear them as Rubber sole Sherpa Fleece TOASTY WARM - Covered in plush sherpa fleece from inside to outside, this slipper will wrap your feet in a cocoon of warmth so they'll never feel cold",
+    "sample_id": "public_0113",
+    "scenario_type": "browsing",
+    "target_asin": "B08CTFPBN5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Fashion Sneakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Anti slip and durable rubber sole and cushioned insole keeps your balance at all time so you can enjoy any type of activity,walking,playing",
+          "Great go-to shoes with multicolor choice and steady design suitable for all age",
+          "Rubber sole",
+          "Take a natural step forward with a clean look, for sure go with your daily t-shirt and jeans, jackets,casual midi dress,any outfit you have"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Fashion Sneakers Anti slip and durable rubber sole and cushioned insole keeps your balance at all time so you can enjoy any type of activity,walking,playing Great go-to shoes with multicolor choice and steady design suitable for all age Rubber sole Take a natural step forward with a clean look, for sure go with your daily t-shirt and jeans, jackets,casual midi dress,any outfit you have",
+    "sample_id": "public_0114",
+    "scenario_type": "buying",
+    "target_asin": "B07H34Z5V6"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Nightgowns & Sleepshirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Rayon, 5% Spandex",
+          "Imported",
+          "Machine Wash",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Nightgowns & Sleepshirts 95% Rayon, 5% Spandex Imported Machine Wash rayon",
+    "sample_id": "public_0115",
+    "scenario_type": "browsing",
+    "target_asin": "B08VWZBYPY"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Fashion Sneakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Canvas",
+          "Canvas Upper",
+          "Cushioned Insole for added comfort",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Fashion Sneakers 100% Canvas Canvas Upper Cushioned Insole for added comfort Rubber sole",
+    "sample_id": "public_0116",
+    "scenario_type": "buying",
+    "target_asin": "B07S2Y3THP"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Mule-style slipper, adjustable strap with hook-and-loop closure, silvertone button detail",
+          "Podiatrist-designed, biomechanical orthotic footbed with Orthaheel technology and a deep heel cup helps stabilize, support, and realign feet back to their natural position while we",
+          "Synthetic Rubber sole",
+          "Terrycloth-covered EVA midsole absorbs shock, helping reduce stress on feet, ankles, and knees"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers Mule-style slipper, adjustable strap with hook-and-loop closure, silvertone button detail Podiatrist-designed, biomechanical orthotic footbed with Orthaheel technology and a deep heel cup helps stabilize, support, and realign feet back to their natural position while we Synthetic Rubber sole Terrycloth-covered EVA midsole absorbs shock, helping reduce stress on feet, ankles, and knees",
+    "sample_id": "public_0117",
+    "scenario_type": "buying",
+    "target_asin": "B07HJ18QRQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bikinis Sets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Nylon,Spandex",
+          "Straps closure",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bikinis Sets Imported nylon Nylon,Spandex Straps closure",
+    "sample_id": "public_0118",
+    "scenario_type": "buying",
+    "target_asin": "B09M72C8PG"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Handbags & Wallets Top-Handle Bags",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Material: High Quality PVC Material. Made from Natural resin, not plastic",
+          "Pvc,Resin",
+          "Size: <1>Big handbag:26*15*18cm/10.2\"*7\"*5.9\"(Length*Width*Height), handle height:4.3\" <2>Mini handbag :6.7\u2019\u2019(L) x 3.9\u2019\u2019(W) x4.7\u201d (H), handle height :3.15\u201d"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Handbags & Wallets Top-Handle Bags Imported Material: High Quality PVC Material. Made from Natural resin, not plastic Pvc,Resin Size: <1>Big handbag:26*15*18cm/10.2\"*7\"*5.9\"(Length*Width*Height), handle height:4.3\" <2>Mini handbag :6.7\u2019\u2019(L) x 3.9\u2019\u2019(W) x4.7\u201d (H), handle height :3.15\u201d",
+    "sample_id": "public_0119",
+    "scenario_type": "buying",
+    "target_asin": "B0BBLR3QB2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Card Cases & Money Organizers Wallets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Leather lining",
+          "Snap closure",
+          "color: red",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Card Cases & Money Organizers Wallets color: red leather Leather lining Snap closure",
+    "sample_id": "public_0120",
+    "scenario_type": "browsing",
+    "target_asin": "B08GPGX2QG"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Everyday Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "91.6%Nylon, 8.4%Spandex",
+          "Classic color: package include 5 pieces lace bralettes for women in 3 classic colors, black, beige and white bralettes are available, you can free to match with different color clo",
+          "color: black",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Everyday Bras 91.6%Nylon, 8.4%Spandex Classic color: package include 5 pieces lace bralettes for women in 3 classic colors, black, beige and white bralettes are available, you can free to match with different color clo color: black nylon",
+    "sample_id": "public_0121",
+    "scenario_type": "browsing",
+    "target_asin": "B08HS712ZB"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Leggings",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "75% Cotton, 17% Polyester, 8% Spandex",
+          "Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Leggings 75% Cotton, 17% Polyester, 8% Spandex cotton Imported Pull On closure",
+    "sample_id": "public_0122",
+    "scenario_type": "browsing",
+    "target_asin": "B074KJ49F2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Hats & Caps Fedoras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "65% Polyester, 35% Wool",
+          "Buckle closure",
+          "Imported",
+          "wool"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Hats & Caps Fedoras 65% Polyester, 35% Wool Buckle closure Imported wool",
+    "sample_id": "public_0123",
+    "scenario_type": "intent_override",
+    "target_asin": "B07CZ84YFJ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Hats & Caps Baseball Caps",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "52% Polyester, 32% Nylon, 10% EVA, 2% POM, 2% Cotton, 2% Metal",
+          "Buckle closure",
+          "Made in the USA",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Hats & Caps Baseball Caps 52% Polyester, 32% Nylon, 10% EVA, 2% POM, 2% Cotton, 2% Metal Buckle closure Made in the USA polyester",
+    "sample_id": "public_0124",
+    "scenario_type": "buying",
+    "target_asin": "B07TN1845M"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Hats & Caps Baseball Caps",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Acrylic",
+          "HOOK & LOOP CLOSURE: Our hats for women and men feature a strap closure in the back letting you easily adjust the size for a perfect fit",
+          "Hook and Loop closure",
+          "PREMIUM QUALITY: Take your outfit to the next level with our 100% acrylic 6 panels mid-profile structured baseball hat that provides maximum comfort. Fits men and women!"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Hats & Caps Baseball Caps 100% Acrylic HOOK & LOOP CLOSURE: Our hats for women and men feature a strap closure in the back letting you easily adjust the size for a perfect fit Hook and Loop closure PREMIUM QUALITY: Take your outfit to the next level with our 100% acrylic 6 panels mid-profile structured baseball hat that provides maximum comfort. Fits men and women!",
+    "sample_id": "public_0125",
+    "scenario_type": "intent_override",
+    "target_asin": "B07VCYFB5D"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Blouses & Button-Down Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Polyester, 5% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Blouses & Button-Down Shirts 95% Polyester, 5% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0126",
+    "scenario_type": "browsing",
+    "target_asin": "B09M84R91V"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Gloves & Mittens Cold Weather Gloves",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "color: black",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Gloves & Mittens Cold Weather Gloves 100% Polyester color: black Imported polyester",
+    "sample_id": "public_0127",
+    "scenario_type": "browsing",
+    "target_asin": "B0B8DX189T"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Earrings Hoop",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "PAVOI 4.5mm Thick 40mm Diameter Yellow Gold Earrings for Women",
+          "color: yellow",
+          "\u2726 60-DAY GUARANTEE \u2726 Your happiness is our number one priority. To ensure your complete satisfaction, we offer a hassle-free 60-Day money-back guarantee. To get in touch, email or",
+          "\u272618K GOLD VERMEIL\u2726 A premium offering of our best selling styles, our vermeil jewelry is made with a solid s925 sterling silver base and plated in 18K gold that is 10x thicker than"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Earrings Hoop color: yellow PAVOI 4.5mm Thick 40mm Diameter Yellow Gold Earrings for Women \u2726 60-DAY GUARANTEE \u2726 Your happiness is our number one priority. To ensure your complete satisfaction, we offer a hassle-free 60-Day money-back guarantee. To get in touch, email or \u272618K GOLD VERMEIL\u2726 A premium offering of our best selling styles, our vermeil jewelry is made with a solid s925 sterling silver base and plated in 18K gold that is 10x thicker than",
+    "sample_id": "public_0128",
+    "scenario_type": "browsing",
+    "target_asin": "B0BNP1RZ2W"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Bodysuits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Snap closure",
+          "Stretchy fabric: 95% gossypium, 5% spandex",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Bodysuits fabric Imported Snap closure Stretchy fabric: 95% gossypium, 5% spandex",
+    "sample_id": "public_0129",
+    "scenario_type": "buying",
+    "target_asin": "B0936ZJJ68"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Briefs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Cotton, 5% Spandex",
+          "Hand Wash or Machine Wash with laundry bag (30\u00b0C Max)",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Briefs 95% Cotton, 5% Spandex cotton Hand Wash or Machine Wash with laundry bag (30\u00b0C Max) Imported",
+    "sample_id": "public_0130",
+    "scenario_type": "intent_override",
+    "target_asin": "B07X9V6HZX"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Socks & Hosiery Leg Warmers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Hand Wash Only",
+          "Thigh high socks: 20% Stretchy Yarn, 80% cotton",
+          "cotton",
+          "\u25c6 Soft & Breathable: Being knitted by cotton and stretchy yarn, the mid thigh high socks for women are comfortable, soft, lightweight and breathable. ( 80% Cotton, 20% Stretchy Yar"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Socks & Hosiery Leg Warmers cotton Hand Wash Only Thigh high socks: 20% Stretchy Yarn, 80% cotton \u25c6 Soft & Breathable: Being knitted by cotton and stretchy yarn, the mid thigh high socks for women are comfortable, soft, lightweight and breathable. ( 80% Cotton, 20% Stretchy Yar",
+    "sample_id": "public_0131",
+    "scenario_type": "boundary",
+    "target_asin": "B07PQQQ8ZL"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "80% Cotton, 20% Polyester",
+          "Imported",
+          "Rubber sole",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers 80% Cotton, 20% Polyester cotton Imported Rubber sole",
+    "sample_id": "public_0132",
+    "scenario_type": "buying",
+    "target_asin": "B08X2X83DW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sunglasses & Eyewear Accessories Sunglasses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Polycarbonate frame",
+          "Polycarbonate lens",
+          "color: gray"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sunglasses & Eyewear Accessories Sunglasses color: gray Imported Polycarbonate frame Polycarbonate lens",
+    "sample_id": "public_0133",
+    "scenario_type": "buying",
+    "target_asin": "B01KILT64Q"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Piercing Jewelry Tunnels",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Gauge in Choice: 8g(3mm), 6g(4mm), 4g(5mm), 2g(6mm), 0g(8mm), 00g(10mm), 1/2\"(12mm), 9/16\"(14mm)",
+          "Material: Stainless Steel With Rhinestones, Look Nice, Light Weight, Smooth Polish Surface and Long Lasting Color",
+          "The screw-on method tunnels are pretty, you can twist on from one head, very easy to wear and take off. Fashion party and wedding body piercing jewelry",
+          "You will get 3 pairs fashion gem double flare screw-fit tunnels in same size, in same color"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Piercing Jewelry Tunnels Gauge in Choice: 8g(3mm), 6g(4mm), 4g(5mm), 2g(6mm), 0g(8mm), 00g(10mm), 1/2\"(12mm), 9/16\"(14mm) Material: Stainless Steel With Rhinestones, Look Nice, Light Weight, Smooth Polish Surface and Long Lasting Color The screw-on method tunnels are pretty, you can twist on from one head, very easy to wear and take off. Fashion party and wedding body piercing jewelry You will get 3 pairs fashion gem double flare screw-fit tunnels in same size, in same color",
+    "sample_id": "public_0134",
+    "scenario_type": "browsing",
+    "target_asin": "B081SF3QRL"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Slippers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "Thermoplastic Elastomers sole",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Slippers 100% Polyester Imported polyester Thermoplastic Elastomers sole",
+    "sample_id": "public_0135",
+    "scenario_type": "buying",
+    "target_asin": "B0C6BL4RNN"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Active Active Shorts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "92% Polyester, 8% Spandex",
+          "Elastic closure",
+          "Imported",
+          "spandex"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Active Active Shorts 92% Polyester, 8% Spandex Elastic closure Imported spandex",
+    "sample_id": "public_0136",
+    "scenario_type": "buying",
+    "target_asin": "B091F54MWM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Fashion Hoodies & Sweatshirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Cotton, 40% Polyester",
+          "Machine Wash",
+          "Zipper closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Fashion Hoodies & Sweatshirts 60% Cotton, 40% Polyester cotton Machine Wash Zipper closure",
+    "sample_id": "public_0137",
+    "scenario_type": "browsing",
+    "target_asin": "B01N67CJGX"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Rayon, 5% Spandex",
+          "Machine Wash",
+          "Standard US Size: S(US 4-6), M(US 8-10), L(US 12-14), XL(US 16-18), XXL(US 20-22), 3XL(US 24-26). This women's casual loose dress is available in a variety of solid colors and prin",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 95% Rayon, 5% Spandex Machine Wash rayon Standard US Size: S(US 4-6), M(US 8-10), L(US 12-14), XL(US 16-18), XXL(US 20-22), 3XL(US 24-26). This women's casual loose dress is available in a variety of solid colors and prin",
+    "sample_id": "public_0138",
+    "scenario_type": "browsing",
+    "target_asin": "B0B4BRW7JT"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Care: Machine or hand wash in cold water, no bleach, no dry clean, hang or line dry, low iron if need",
+          "Cute ruffle sleeve tops for spring summer and fall, pull on and down closure",
+          "Fabric: 35%Rayon,60% Polyester and 5% Spandex,very soft and comfortable for spring and summer",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses T-Shirts Care: Machine or hand wash in cold water, no bleach, no dry clean, hang or line dry, low iron if need Cute ruffle sleeve tops for spring summer and fall, pull on and down closure fabric Fabric: 35%Rayon,60% Polyester and 5% Spandex,very soft and comfortable for spring and summer",
+    "sample_id": "public_0139",
+    "scenario_type": "browsing",
+    "target_asin": "B09SGYPW3M"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Suiting & Blazers Blazers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Button closure",
+          "Polyester lining",
+          "Polyester,Spandex",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Suiting & Blazers Blazers Button closure polyester Polyester lining Polyester,Spandex",
+    "sample_id": "public_0140",
+    "scenario_type": "browsing",
+    "target_asin": "B09BT6LSJV"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Piercing Jewelry Screws",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "High quality 316L surgical stainless steel, hypoallergenic, nickel and lead free, never rust and tarnish resistance, lightweight. High-polished finishing and electroplating, super",
+          "Nose Rings Studs Size: 20 gauge (0.8mm), Pin Length: 7mm (9/32\"), Round Cubic Zirconia Size: 2mm. Easy to Put In and Take Off, absolutely make you feel beautiful, comfortable, happ",
+          "You will receive 6 Pcs silver nose studs, coming with one free gift velvet bag. Can be used as nose rings, nose piercings, nose rings studs, nose piercing jewelry, nostril piercing",
+          "color: red"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Piercing Jewelry Screws color: red High quality 316L surgical stainless steel, hypoallergenic, nickel and lead free, never rust and tarnish resistance, lightweight. High-polished finishing and electroplating, super Nose Rings Studs Size: 20 gauge (0.8mm), Pin Length: 7mm (9/32\"), Round Cubic Zirconia Size: 2mm. Easy to Put In and Take Off, absolutely make you feel beautiful, comfortable, happ You will receive 6 Pcs silver nose studs, coming with one free gift velvet bag. Can be used as nose rings, nose piercings, nose rings studs, nose piercing jewelry, nostril piercing",
+    "sample_id": "public_0141",
+    "scenario_type": "browsing",
+    "target_asin": "B0BLH7JHG8"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bracelets Link",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Bracelet Size: Length-8.34 inch, width-0.4 inch, weight: 54g. smooth chain, lightweight and comfortable to wear, perfect for bike enthusiasts etc",
+          "Stainless Steel Bike Bracelet: Handcrafted with high quality material, 100% HYPOALLERGENIC, Lead & Nickel Free, Stronger and very LOW MAINTENANCE Metal, long lasting IP vacuum Plat",
+          "Unique Design: Inspire from Royal Knight, high polished bright chain links, with strong fold-over clasp, personalized colors match can highlights the low-key but noble quality and",
+          "color: black"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bracelets Link Bracelet Size: Length-8.34 inch, width-0.4 inch, weight: 54g. smooth chain, lightweight and comfortable to wear, perfect for bike enthusiasts etc color: black Stainless Steel Bike Bracelet: Handcrafted with high quality material, 100% HYPOALLERGENIC, Lead & Nickel Free, Stronger and very LOW MAINTENANCE Metal, long lasting IP vacuum Plat Unique Design: Inspire from Royal Knight, high polished bright chain links, with strong fold-over clasp, personalized colors match can highlights the low-key but noble quality and",
+    "sample_id": "public_0142",
+    "scenario_type": "intent_override",
+    "target_asin": "B07YRGC1Q1"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Dresses Work",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "65% Rayon, 30% Cotton, 5% Spandex",
+          "Imported",
+          "Zipper closure",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Dresses Work 65% Rayon, 30% Cotton, 5% Spandex Imported rayon Zipper closure",
+    "sample_id": "public_0143",
+    "scenario_type": "buying",
+    "target_asin": "B01H54X6CM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Jackets & Vests Down Jackets & Parkas",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "Zipper closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Jackets & Vests Down Jackets & Parkas 100% Polyester Imported polyester Zipper closure",
+    "sample_id": "public_0144",
+    "scenario_type": "intent_override",
+    "target_asin": "B08LMMDYV7"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Active Athletic Socks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Cotton",
+          "Imported",
+          "color: black",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Active Athletic Socks color: black cotton Cotton Imported",
+    "sample_id": "public_0145",
+    "scenario_type": "buying",
+    "target_asin": "B00IJZZWGA"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Dresses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "50%Rayon+45%Polyester+5%Spandex",
+          "Imported",
+          "Zipper closure",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Dresses 50%Rayon+45%Polyester+5%Spandex Imported rayon Zipper closure",
+    "sample_id": "public_0146",
+    "scenario_type": "buying",
+    "target_asin": "B0BCQWYQLQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Lingerie",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Combed Cotton, 5% Spandex of Women's 4-PACK High Waisted Underwear. Machine Wash with laundry bag (30\u00b0C)",
+          "Hand Wash Only",
+          "STRETCHY COVERED WAISTBAND: Soft stretchy DOUBLE-LAYER fabric covered waistband sits right at the waist. No rolling or bunching, with no compression but perfectly snuggish. The hig",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Lingerie 95% Combed Cotton, 5% Spandex of Women's 4-PACK High Waisted Underwear. Machine Wash with laundry bag (30\u00b0C) cotton Hand Wash Only STRETCHY COVERED WAISTBAND: Soft stretchy DOUBLE-LAYER fabric covered waistband sits right at the waist. No rolling or bunching, with no compression but perfectly snuggish. The hig",
+    "sample_id": "public_0147",
+    "scenario_type": "browsing",
+    "target_asin": "B077276QGC"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Bikinis",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "50% Cotton, 50% Polyester",
+          "Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Bikinis 50% Cotton, 50% Polyester cotton Imported Pull On closure",
+    "sample_id": "public_0148",
+    "scenario_type": "buying",
+    "target_asin": "B0BQC2NRG2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Backpacks Casual Daypacks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "PU",
+          "color: black",
+          "leather",
+          "\u8fdb\u53e3"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Backpacks Casual Daypacks color: black leather PU \u8fdb\u53e3",
+    "sample_id": "public_0149",
+    "scenario_type": "buying",
+    "target_asin": "B07CBYYHTL"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Medical Scrub Jackets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "65% Polyester, 35% Cotton",
+          "CLOSURE: Zip Front closure",
+          "Hand Wash Only",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Medical Scrub Jackets 65% Polyester, 35% Cotton CLOSURE: Zip Front closure Hand Wash Only polyester",
+    "sample_id": "public_0150",
+    "scenario_type": "browsing",
+    "target_asin": "B07P6MPQY5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Outdoor & Work Work & Safety",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Rubber sole",
+          "Shaft measures approximately Ankle from arch",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Outdoor & Work Work & Safety Imported leather Rubber sole Shaft measures approximately Ankle from arch",
+    "sample_id": "public_0151",
+    "scenario_type": "browsing",
+    "target_asin": "B08CFNQNJK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watches Wrist Watches",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Gold-tone watch in stainless steel featuring black two-step dial with date window at 3 o'clock and croco-embossed leather band. Case diameter : 36 mm",
+          "Japanese quartz movement with analog display",
+          "color: brown",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watches Wrist Watches color: brown Gold-tone watch in stainless steel featuring black two-step dial with date window at 3 o'clock and croco-embossed leather band. Case diameter : 36 mm Japanese quartz movement with analog display leather",
+    "sample_id": "public_0152",
+    "scenario_type": "buying",
+    "target_asin": "B000EQU0NW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Boots Ankle & Bootie",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "PU Leather",
+          "Rubber sole",
+          "Shaft measures approximately Ankle from arch",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Boots Ankle & Bootie leather PU Leather Rubber sole Shaft measures approximately Ankle from arch",
+    "sample_id": "public_0153",
+    "scenario_type": "browsing",
+    "target_asin": "B07BMJ77FR"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Everyday Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Hand Wash Only",
+          "Item model number: 5006715",
+          "color: white",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Everyday Bras color: white cotton Hand Wash Only Item model number: 5006715",
+    "sample_id": "public_0154",
+    "scenario_type": "buying",
+    "target_asin": "B00CYNKSTE"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Hats & Caps Sun Hats",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Drawstring closure",
+          "Imported",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Hats & Caps Sun Hats 100% Polyester Drawstring closure Imported polyester",
+    "sample_id": "public_0155",
+    "scenario_type": "buying",
+    "target_asin": "B0C4VLWWYY"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Gym Bags Drawstring Bags",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Bold 3-stripe brand read",
+          "Easy cinch opening with durable cording",
+          "Zippered valuables pocket to hold your phone and small stuff",
+          "color: grey"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Gym Bags Drawstring Bags Bold 3-stripe brand read color: grey Easy cinch opening with durable cording Zippered valuables pocket to hold your phone and small stuff",
+    "sample_id": "public_0156",
+    "scenario_type": "buying",
+    "target_asin": "B0C3KZXV4B"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Outdoor & Work Snow & Cold Weather",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Nylon",
+          "Rubber sole",
+          "Seam-sealed waterproof snow boot featuring plush faux-fur collar, quick bungee lacing, and grippy PEAK snow and ice traction sole",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Outdoor & Work Snow & Cold Weather Nylon nylon Rubber sole Seam-sealed waterproof snow boot featuring plush faux-fur collar, quick bungee lacing, and grippy PEAK snow and ice traction sole",
+    "sample_id": "public_0157",
+    "scenario_type": "buying",
+    "target_asin": "B00BCHDM14"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Men Masks",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "CreepyParty is an amazon registered brand, more creepy and funny masks, please visit our store",
+          "Made from 100% natural latex, environmental friendly and non-toxic. We offer a range of quality choices with the best price",
+          "Perfect for a fun meme, Halloween, Christmas, Easter, Carnival, Costume parties, tag party or simply for going to a night club. It is perfect for so many occasions",
+          "Roomy enough to fit any adult.You can see through the nostrils or the mouth"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Men Masks CreepyParty is an amazon registered brand, more creepy and funny masks, please visit our store Made from 100% natural latex, environmental friendly and non-toxic. We offer a range of quality choices with the best price Perfect for a fun meme, Halloween, Christmas, Easter, Carnival, Costume parties, tag party or simply for going to a night club. It is perfect for so many occasions Roomy enough to fit any adult.You can see through the nostrils or the mouth",
+    "sample_id": "public_0158",
+    "scenario_type": "browsing",
+    "target_asin": "B012ZM6RGQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Sleep Bottoms",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "60% Cotton, 40% Polyester",
+          "Drawstring closure",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Sleep Bottoms 60% Cotton, 40% Polyester cotton Drawstring closure Imported",
+    "sample_id": "public_0159",
+    "scenario_type": "buying",
+    "target_asin": "B00UHLFR32"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Travel Accessories Packing Organizers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Double zipper pulls make opening/closing simple and fast",
+          "Mesh top panel for easy identification of contents, and ventilation",
+          "color: black",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Travel Accessories Packing Organizers color: black Double zipper pulls make opening/closing simple and fast fabric Mesh top panel for easy identification of contents, and ventilation",
+    "sample_id": "public_0160",
+    "scenario_type": "buying",
+    "target_asin": "B01AAANF2Y"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Pull On closure",
+          "cotton",
+          "cotton blend"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses T-Shirts cotton cotton blend Imported Pull On closure",
+    "sample_id": "public_0161",
+    "scenario_type": "buying",
+    "target_asin": "B0B6N6TJ6V"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Dresses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Satin",
+          "Zipper closure",
+          "silk"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Dresses Imported Satin silk Zipper closure",
+    "sample_id": "public_0162",
+    "scenario_type": "browsing",
+    "target_asin": "B0B71JNMQY"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Walking",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "1.Mesh Fabric + Air Cushion sole",
+          "2.Slip-on Design: Slip on design with Elastic Cuff is convenient for user to put on and take off",
+          "Rubber sole",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Walking 1.Mesh Fabric + Air Cushion sole 2.Slip-on Design: Slip on design with Elastic Cuff is convenient for user to put on and take off fabric Rubber sole",
+    "sample_id": "public_0163",
+    "scenario_type": "buying",
+    "target_asin": "B0834T68X3"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watches Watch Bands",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Buckle closure",
+          "SWAP IN SECONDS: Quick release spring bars allow you to swap bands in seconds to compliment your wardrobe or mix and match with BARTON's other Leather, Canvas and Silicone quick re",
+          "color: black",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watches Watch Bands Buckle closure color: black leather SWAP IN SECONDS: Quick release spring bars allow you to swap bands in seconds to compliment your wardrobe or mix and match with BARTON's other Leather, Canvas and Silicone quick re",
+    "sample_id": "public_0164",
+    "scenario_type": "browsing",
+    "target_asin": "B0C61FG7GL"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watches Watch Bands",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Available Size (Band Width): 14mm, 16mm, 18mm, 19mm, 20mm, 21mm, 22mm, 23mm, 24mm. Designed to fit most traditional watches and smart watches. In order to get a suitable strap, ple",
+          "Vintage Design: Equipped with classic buckle, neat stitching and proper padding, creating a simple yet charming look, adding a retro vibe to any occasion. Please avoid soaking the",
+          "Watch Band Material: Made of good quality crazy-horse leather, they are durable that they may take some breaking in when you first start get them. But once you start wearing them,",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watches Watch Bands Available Size (Band Width): 14mm, 16mm, 18mm, 19mm, 20mm, 21mm, 22mm, 23mm, 24mm. Designed to fit most traditional watches and smart watches. In order to get a suitable strap, ple leather Vintage Design: Equipped with classic buckle, neat stitching and proper padding, creating a simple yet charming look, adding a retro vibe to any occasion. Please avoid soaking the Watch Band Material: Made of good quality crazy-horse leather, they are durable that they may take some breaking in when you first start get them. But once you start wearing them,",
+    "sample_id": "public_0165",
+    "scenario_type": "buying",
+    "target_asin": "B09XHSLX4X"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Boots Rain",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% waterproof women's boots are suitable for any season and any outdoor activity",
+          "Lightweight and breathable mesh lining keeps feet well ventilated for long-wearing dryness; comfort rated from subfreezing to 65 \u00b0F/18 \u00b0C",
+          "Women's-specific last is designed to match the contours of women's feet",
+          "color: black"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Boots Rain 100% waterproof women's boots are suitable for any season and any outdoor activity color: black Lightweight and breathable mesh lining keeps feet well ventilated for long-wearing dryness; comfort rated from subfreezing to 65 \u00b0F/18 \u00b0C Women's-specific last is designed to match the contours of women's feet",
+    "sample_id": "public_0166",
+    "scenario_type": "intent_override",
+    "target_asin": "B00IHW88W0"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bras Sports Bras",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "Machine Wash",
+          "Pull-On closure",
+          "Wicking for moisture management"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bras Sports Bras Imported Machine Wash Pull-On closure Wicking for moisture management",
+    "sample_id": "public_0167",
+    "scenario_type": "browsing",
+    "target_asin": "B07357B79L"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Necklaces & Pendants Pendants",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Classical Design - Our product comes with a beautiful box, it is packed with 4 message cards and 4 bracelets, the bracelet uses a heart-to-heart design, it is meaningful & practica",
+          "Daughter Gifts from Mom - This mother bracelet suitable Christmas Day, Mothers Day, Birthday, Thanksgiving, as a gift for mom, daughter, stepdaughter,daughter in law or for yoursel",
+          "Mother Daughter Bracelets - Heart bracelet on card meaning \u201cNever Truly Part,Maybe in Distance,But Never in Heart\u201d. All daughters love their mom, but sometimes we just forget to sa",
+          "Size & High Quality -The heart Bracelets are adjustable, don\u2019t worried about size.The Bracelet is made of stainless steel, strong, corrosion-resistant, and will not change color af"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Necklaces & Pendants Pendants Classical Design - Our product comes with a beautiful box, it is packed with 4 message cards and 4 bracelets, the bracelet uses a heart-to-heart design, it is meaningful & practica Daughter Gifts from Mom - This mother bracelet suitable Christmas Day, Mothers Day, Birthday, Thanksgiving, as a gift for mom, daughter, stepdaughter,daughter in law or for yoursel Mother Daughter Bracelets - Heart bracelet on card meaning \u201cNever Truly Part,Maybe in Distance,But Never in Heart\u201d. All daughters love their mom, but sometimes we just forget to sa Size & High Quality -The heart Bracelets are adjustable, don\u2019t worried about size.The Bracelet is made of stainless steel, strong, corrosion-resistant, and will not change color af",
+    "sample_id": "public_0168",
+    "scenario_type": "buying",
+    "target_asin": "B08YYHDJD1"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Women Jeans",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "57% Cotton, 26% Polyester, 10% Other Fibers, 7% Elastane",
+          "Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Women Jeans 57% Cotton, 26% Polyester, 10% Other Fibers, 7% Elastane cotton Imported Pull On closure",
+    "sample_id": "public_0169",
+    "scenario_type": "boundary",
+    "target_asin": "B0829R9M5G"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Fashion Combat",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "Made in the USA or Imported",
+          "Rubber sole",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Fashion Combat 100% Leather leather Made in the USA or Imported Rubber sole",
+    "sample_id": "public_0170",
+    "scenario_type": "browsing",
+    "target_asin": "B08LRQX5RH"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Bikinis Sets",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Elastic",
+          "Imported",
+          "Nylon lining",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Bikinis Sets Elastic Imported nylon Nylon lining",
+    "sample_id": "public_0171",
+    "scenario_type": "buying",
+    "target_asin": "B0BFVFFHKS"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Fashion Sneakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "Synthetic sole",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Fashion Sneakers 100% Cotton cotton Imported Synthetic sole",
+    "sample_id": "public_0172",
+    "scenario_type": "browsing",
+    "target_asin": "B0829PZGBB"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Water Shoes",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Comfortable feeling: Super lightweight and flexible just like socks,breathable and smooth fabric provide great freedom and comfortable feeling. Let you enjoy your your beach trip o",
+          "Convenience: Quick-dry water shoes, ultra light weight smooth stretchy fabrics and easy slip-on design make it convenient to wear and take off. Lightweight and compressible, easy t",
+          "Rubber sole",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Water Shoes Comfortable feeling: Super lightweight and flexible just like socks,breathable and smooth fabric provide great freedom and comfortable feeling. Let you enjoy your your beach trip o Convenience: Quick-dry water shoes, ultra light weight smooth stretchy fabrics and easy slip-on design make it convenient to wear and take off. Lightweight and compressible, easy t fabric Rubber sole",
+    "sample_id": "public_0173",
+    "scenario_type": "browsing",
+    "target_asin": "B07THT4G8N"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sleep & Lounge Robes",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Imported",
+          "Tie closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sleep & Lounge Robes 100% Polyester Imported polyester Tie closure",
+    "sample_id": "public_0174",
+    "scenario_type": "buying",
+    "target_asin": "B0794VPVBH"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Men Jeans",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "Zipper closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Men Jeans 100% Cotton cotton Imported Zipper closure",
+    "sample_id": "public_0175",
+    "scenario_type": "browsing",
+    "target_asin": "B07D5M61T2"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Luggage & Travel Gear Waist Packs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "93% Polyester, 3% Natural Latex Rubber, 2% Spandex, 2% Nylon",
+          "Imported",
+          "Polyester lining",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Luggage & Travel Gear Waist Packs 93% Polyester, 3% Natural Latex Rubber, 2% Spandex, 2% Nylon Imported polyester Polyester lining",
+    "sample_id": "public_0176",
+    "scenario_type": "browsing",
+    "target_asin": "B0C3MKNZJN"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tops Tees & Blouses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Button closure",
+          "Cotton, Rayon",
+          "Imported",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tops Tees & Blouses Button closure cotton Cotton, Rayon Imported",
+    "sample_id": "public_0177",
+    "scenario_type": "intent_override",
+    "target_asin": "B07HV9WW6Q"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shirts T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Made in the USA",
+          "color: red",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shirts T-Shirts 100% Cotton color: red cotton Made in the USA",
+    "sample_id": "public_0178",
+    "scenario_type": "buying",
+    "target_asin": "B01FWQ8NH8"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Tunics",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "5% spandex",
+          "Made in the USA",
+          "Pull On closure",
+          "spandex"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Tunics 5% spandex Made in the USA Pull On closure spandex",
+    "sample_id": "public_0179",
+    "scenario_type": "buying",
+    "target_asin": "B08JK818ZD"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Fashion Sneakers",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Mesh",
+          "GRID, Injection EVA",
+          "Imported",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Fashion Sneakers 100% Mesh GRID, Injection EVA Imported Rubber sole",
+    "sample_id": "public_0180",
+    "scenario_type": "boundary",
+    "target_asin": "B01HSMYV8E"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sets Tracksuits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Casual 2 piece active sweatsuit pant set",
+          "Drawstring closure",
+          "Hand Wash Only",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sets Tracksuits Casual 2 piece active sweatsuit pant set Drawstring closure Hand Wash Only polyester",
+    "sample_id": "public_0181",
+    "scenario_type": "browsing",
+    "target_asin": "B08M3WKDFJ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Card & ID Cases Card Cases",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "MOST RELIABLE RFID BLOCKING PROTECTION. Most RFID blocking hard shell aluma wallets can NOT block 125KHz signals. But Elfish metal id cases are able to Block both 13.56 MHz and 125",
+          "PEACE OF MIND when Travelling: It is a Must Have a protector case ID slots when on vacations or traveling overseas. Using on public transportation and crowded places - keep the wor",
+          "UPDATED ALUMINUM WALLET with high quality aluminum materials and Environmentally friendly plastic(ABS) clasp closure",
+          "color: black"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Card & ID Cases Card Cases color: black MOST RELIABLE RFID BLOCKING PROTECTION. Most RFID blocking hard shell aluma wallets can NOT block 125KHz signals. But Elfish metal id cases are able to Block both 13.56 MHz and 125 PEACE OF MIND when Travelling: It is a Must Have a protector case ID slots when on vacations or traveling overseas. Using on public transportation and crowded places - keep the wor UPDATED ALUMINUM WALLET with high quality aluminum materials and Environmentally friendly plastic(ABS) clasp closure",
+    "sample_id": "public_0182",
+    "scenario_type": "browsing",
+    "target_asin": "B0C5XBLB2P"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Jackets & Vests Vests",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Polyester",
+          "Button closure",
+          "Hand Wash Only",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Jackets & Vests Vests 100% Polyester Button closure Hand Wash Only polyester",
+    "sample_id": "public_0183",
+    "scenario_type": "intent_override",
+    "target_asin": "B07Z2KSZR3"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Sunglasses & Eyewear Accessories Sunglasses",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Composite/Plastic Frame",
+          "Imported",
+          "color: black",
+          "nylon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Sunglasses & Eyewear Accessories Sunglasses color: black Composite/Plastic Frame Imported nylon",
+    "sample_id": "public_0184",
+    "scenario_type": "browsing",
+    "target_asin": "B0BWLFCTTF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Panties Boy Shorts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "92%Cotton/8%Spandex",
+          "Imported",
+          "Pull On closure",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Panties Boy Shorts 92%Cotton/8%Spandex cotton Imported Pull On closure",
+    "sample_id": "public_0185",
+    "scenario_type": "buying",
+    "target_asin": "B0BCW4QKV5"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Running Road Running",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Synthetic",
+          "AmpliFoam Midsole: Engineered to maintain durability at softer densities, providing better flexibility, comfort, and platform adaptability ideal for natural running",
+          "Ortholite Sockliner: Moisture management (Ortholite is a registered trademark of O2 Partners LLC)",
+          "Rubber sole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Running Road Running 100% Synthetic AmpliFoam Midsole: Engineered to maintain durability at softer densities, providing better flexibility, comfort, and platform adaptability ideal for natural running Ortholite Sockliner: Moisture management (Ortholite is a registered trademark of O2 Partners LLC) Rubber sole",
+    "sample_id": "public_0186",
+    "scenario_type": "intent_override",
+    "target_asin": "B07XPLHXC1"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Loafers & Slip-Ons",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Leather",
+          "Leather slip-on featuring dual gore panels at entry and padded collar",
+          "Leather sole",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Loafers & Slip-Ons 100% Leather leather Leather slip-on featuring dual gore panels at entry and padded collar Leather sole",
+    "sample_id": "public_0187",
+    "scenario_type": "boundary",
+    "target_asin": "B000GQ1F3O"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Handbags & Wallets Crossbody Bags",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Artificial Leather,Leather,Pu Leather",
+          "Imported",
+          "Zipper closure",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Handbags & Wallets Crossbody Bags Artificial Leather,Leather,Pu Leather Imported leather Zipper closure",
+    "sample_id": "public_0188",
+    "scenario_type": "buying",
+    "target_asin": "B0B5ZS2J2W"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shorts Denim",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton",
+          "Imported",
+          "color: black",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shorts Denim 100% Cotton color: black cotton Imported",
+    "sample_id": "public_0189",
+    "scenario_type": "buying",
+    "target_asin": "B0C614ZPK3"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Medical Scrub Bottoms",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "94% Polyester, 6% Spandex",
+          "Imported",
+          "Pull On closure",
+          "polyester"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Medical Scrub Bottoms 94% Polyester, 6% Spandex Imported polyester Pull On closure",
+    "sample_id": "public_0190",
+    "scenario_type": "buying",
+    "target_asin": "B01MQUDPPO"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Men Active",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Friction & Shock Protection: Our mens compression socks use the seamless toe design, these compression socks for men circulation have targeted cushioning on the footbed for shock a",
+          "Machine Wash",
+          "Moisture Wicking & Breathable: These compression socks for women are made of lightweight farbic and polyamide, Moisture-wicking yarn and breathable mesh pulls perspiration away fro",
+          "Polyamide,Mesh"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Men Active Friction & Shock Protection: Our mens compression socks use the seamless toe design, these compression socks for men circulation have targeted cushioning on the footbed for shock a Machine Wash Moisture Wicking & Breathable: These compression socks for women are made of lightweight farbic and polyamide, Moisture-wicking yarn and breathable mesh pulls perspiration away fro Polyamide,Mesh",
+    "sample_id": "public_0191",
+    "scenario_type": "browsing",
+    "target_asin": "B083TB1NDK"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Athletic Sport Sandals & Slides",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Textile Synthetics",
+          "Ethylene Vinyl Acetate sole",
+          "Imported",
+          "color: pink"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Athletic Sport Sandals & Slides 100% Textile Synthetics color: pink Ethylene Vinyl Acetate sole Imported",
+    "sample_id": "public_0192",
+    "scenario_type": "boundary",
+    "target_asin": "B0C62MF2HV"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Scarves & Wraps Fashion Scarves",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Chiffon",
+          "Hand Wash Only",
+          "color: red",
+          "fabric"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Scarves & Wraps Fashion Scarves Chiffon color: red fabric Hand Wash Only",
+    "sample_id": "public_0193",
+    "scenario_type": "buying",
+    "target_asin": "B07YM55NLW"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses T-Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "95% Rayon, 5% Spandex",
+          "Hand Wash Only",
+          "Pull On closure",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses T-Shirts 95% Rayon, 5% Spandex Hand Wash Only Pull On closure rayon",
+    "sample_id": "public_0194",
+    "scenario_type": "buying",
+    "target_asin": "B09WR1NZ48"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Tees & Blouses Blouses & Button-Down Shirts",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Rayon",
+          "100%Rayon",
+          "Pull On closure",
+          "rayon"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Tees & Blouses Blouses & Button-Down Shirts 100% Rayon 100%Rayon Pull On closure rayon",
+    "sample_id": "public_0195",
+    "scenario_type": "browsing",
+    "target_asin": "B072M4K5LF"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes Flats",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Design in USA",
+          "Heel height: 0.15\" (approx)",
+          "Rubber sole",
+          "Ultra Flexible Rubber Outsole"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes Flats Design in USA Heel height: 0.15\" (approx) Rubber sole Ultra Flexible Rubber Outsole",
+    "sample_id": "public_0196",
+    "scenario_type": "browsing",
+    "target_asin": "B073T364MM"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Watch Accessories Repair Tools & Kits",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Easy to use: Size your watch band yourself with this small, simple tool effectively without wiggling",
+          "Fit for different sizes,Fit bands up to 30mm wide ,6 replacement pins and an adjustable base allow for use with different band thicknesses",
+          "VALUE KIT FOR MONEY SAVING - This watch band link remover is great for removing and inserting spring bars straps, and widely used in up to 30mm wide watch band replace, watch repai",
+          "What is in the package?EFIXTK watch band tool kit comes with a watch band link pin remover with 6 extra tips, a plastic watch holder, a dual head hammer, 4 pin punches,20pcs cotter"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Watch Accessories Repair Tools & Kits Easy to use: Size your watch band yourself with this small, simple tool effectively without wiggling Fit for different sizes,Fit bands up to 30mm wide ,6 replacement pins and an adjustable base allow for use with different band thicknesses VALUE KIT FOR MONEY SAVING - This watch band link remover is great for removing and inserting spring bars straps, and widely used in up to 30mm wide watch band replace, watch repai What is in the package?EFIXTK watch band tool kit comes with a watch band link pin remover with 6 extra tips, a plastic watch holder, a dual head hammer, 4 pin punches,20pcs cotter",
+    "sample_id": "public_0197",
+    "scenario_type": "intent_override",
+    "target_asin": "B07FDNP55K"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Handbags & Wallets Crossbody Bags",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Imported",
+          "PU",
+          "color: black",
+          "leather"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Handbags & Wallets Crossbody Bags color: black Imported leather PU",
+    "sample_id": "public_0198",
+    "scenario_type": "intent_override",
+    "target_asin": "B08K1ZJZ4N"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Underwear Briefs",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "100% Cotton Size:3T (2-3), 4T (3-4), 5 (5-6), 6 (6-7), 8 (7-8), 10 (9-10), 12 (10-12)",
+          "Imported",
+          "Machine Wash",
+          "cotton"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Underwear Briefs 100% Cotton Size:3T (2-3), 4T (3-4), 5 (5-6), 6 (6-7), 8 (7-8), 10 (9-10), 12 (10-12) cotton Imported Machine Wash",
+    "sample_id": "public_0199",
+    "scenario_type": "buying",
+    "target_asin": "B089M57PSQ"
+  },
+  {
+    "canonical_state": {
+      "accumulated_terms": [],
+      "asked_attributes": [],
+      "category": "Shoes & Jewelry Men",
+      "debug_info": {},
+      "department": "",
+      "disclosed_slots": {
+        "feature": [
+          "Ethylene Vinyl Acetate sole",
+          "Heel measures approximately 2.3 centimeters",
+          "\u3010Concise Style\u3011Diamond pattern and raised design, pure color, casual style are quite suitable for home and any other casual occasion",
+          "\u3010Soft & Lightweight\u3011Which only weight about 200g, lightweight and durable EVA material can arbitrary bending, thick soles design with light rebound ability, give your feet ultimate"
+        ]
+      },
+      "history": [],
+      "negated_terms": [],
+      "price_max": 9999.0,
+      "seen_asins": [],
+      "stashed_terms": []
+    },
+    "query_text": "Shoes & Jewelry Men Ethylene Vinyl Acetate sole Heel measures approximately 2.3 centimeters \u3010Concise Style\u3011Diamond pattern and raised design, pure color, casual style are quite suitable for home and any other casual occasion \u3010Soft & Lightweight\u3011Which only weight about 200g, lightweight and durable EVA material can arbitrary bending, thick soles design with light rebound ability, give your feet ultimate",
+    "sample_id": "public_0200",
+    "scenario_type": "buying",
+    "target_asin": "B07VFZ2FC2"
+  }
+]
