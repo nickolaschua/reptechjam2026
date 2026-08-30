@@ -114,6 +114,7 @@ def run(products: list[dict], plan: list[dict], ix, samples_profile: dict, *, dr
 
     started = time.time()
     counts: dict[str, int] = {}
+    skipped = 0
     with out_path.open("a") as fh:
         for i, case in enumerate(todo, 1):
             product = ix.products[case["asin"]]
@@ -124,9 +125,15 @@ def run(products: list[dict], plan: list[dict], ix, samples_profile: dict, *, dr
             if dry_run:
                 text = _canned(case, product)
             else:
-                text = ollama_chat(case["generator"], system, USER_TURN)
-                if overlap(text, product) > OVERLAP_LIMIT:
-                    text = ollama_chat(case["generator"], system, USER_TURN)
+                # One slow Ollama moment (another consumer, a model swap) must not
+                # kill a multi-hour run: retry once, then skip the case and move on.
+                # The resumable loop picks skipped cases up on the next run.
+                try:
+                    text = _generate(case, product, system)
+                except Exception as exc:                # noqa: BLE001 - logged, not masked
+                    print(f"  {case['case_id']} SKIPPED {type(exc).__name__}: {exc}", flush=True)
+                    skipped += 1
+                    continue
             ov = overlap(text, product)
             row = {**case, "utterance": text, "overlap": ov, "overlap_flag": ov > OVERLAP_LIMIT}
             row.pop("code", None)
@@ -138,7 +145,21 @@ def run(products: list[dict], plan: list[dict], ix, samples_profile: dict, *, dr
             if i % 10 == 0 or i == len(todo):
                 el = time.time() - started
                 print(f"  {i}/{len(todo)}  {el / i:.1f}s/case  eta {(len(todo) - i) * el / i / 60:.0f} min", flush=True)
-    return {"generated_this_run": len(todo), "seconds": round(time.time() - started, 1), "by_style": counts}
+    return {"generated_this_run": len(todo) - skipped, "skipped": skipped,
+            "seconds": round(time.time() - started, 1), "by_style": counts}
+
+
+def _generate(case: dict, product: dict, system: str) -> str:
+    last: Exception | None = None
+    for _ in range(2):
+        try:
+            text = ollama_chat(case["generator"], system, USER_TURN)
+            if overlap(text, product) > OVERLAP_LIMIT:
+                text = ollama_chat(case["generator"], system, USER_TURN)
+            return text
+        except Exception as exc:                        # noqa: BLE001 - retried once
+            last = exc
+    raise RuntimeError(f"{case['generator']}: {last}")
 
 
 def main() -> None:
