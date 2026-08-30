@@ -26,6 +26,7 @@ __pycache__/
 .env.local
 .env.*.local
 *.secrets
+nickolas/shopping_agent/.env
 
 # Personal development directories
 yangxu/

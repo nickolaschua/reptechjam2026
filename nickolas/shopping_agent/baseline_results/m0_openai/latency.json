@@ -1,0 +1,52 @@
+{
+  "agent_respond_seconds": {
+    "count": 651,
+    "mean": 4.410997815821747,
+    "p50": 4.561127099994337,
+    "p95": 5.826876599996467
+  },
+  "baseline_name": "M0_OPENAI",
+  "dense_search_seconds": {
+    "count": 1,
+    "mean": 0.023950600007083267,
+    "p50": 0.023950600007083267,
+    "p95": 0.023950600007083267
+  },
+  "initialization": {
+    "cache_status": "built",
+    "catalog_embedding_generation_seconds": 301.0741024000017,
+    "catalog_loading_seconds": 4.839593500000774,
+    "embedding_cache_load_seconds": 0.0,
+    "product_text_build_seconds": 0.7104650999972364,
+    "total_seconds": 339.96893490001094
+  },
+  "openai_embeddings": {
+    "cache_hit": false,
+    "cache_miss": true,
+    "cache_status": "built",
+    "catalog_build_seconds": 301.0741024000017,
+    "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+    "input_tokens": 3623502,
+    "request_count": 51,
+    "request_latency_seconds": {
+      "count": 51,
+      "mean": 5.7892151411766,
+      "p50": 5.241641600005096,
+      "p95": 5.965671049998491
+    }
+  },
+  "query_embedding_seconds": {
+    "count": 1,
+    "mean": 0.6109049000078812,
+    "p50": 0.6109049000078812,
+    "p95": 0.6109049000078812
+  },
+  "routing": {
+    "baseline_fallback_count": 0,
+    "dense_retrieval_invocations": 1,
+    "fast_path_turns": 33,
+    "full_path_turns": 618
+  },
+  "total_evaluator_wall_seconds": 3825.387115000005,
+  "total_run_wall_seconds": 4165.356123899997
+}

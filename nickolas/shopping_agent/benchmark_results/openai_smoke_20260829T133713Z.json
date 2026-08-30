@@ -1,0 +1,13 @@
+{
+  "backend_id": "openai-text-embedding-3-large",
+  "dimension": 3072,
+  "generated_at": "2026-08-29T13:37:13Z",
+  "norm": 1.0,
+  "usage": {
+    "input_tokens": 5,
+    "request_count": 1,
+    "request_latencies_seconds": [
+      21.033833499997854
+    ]
+  }
+}
