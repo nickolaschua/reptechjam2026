@@ -27,7 +27,7 @@ REPO = WINSTON.parent
 KIT = REPO / "techjam-conversational-search"
 for p in (WINSTON, WINSTON / "experiments", LAB, LAB / "bench", KIT, REPO / "nickolas" / "experiments"):
     sys.path.insert(0, str(p))
-from bolt_on import clean_parse, contradictions  # noqa: E402
+from bolt_on import clean_parse, contradictions, n_hard  # noqa: E402
 from dense_rank import _TAG, QUERY_PREFIX, catalog_index, load_model  # noqa: E402
 from score import parsed_state  # noqa: E402
 
@@ -80,7 +80,18 @@ def main() -> None:
         members = [a for b in top for a in sorted(ix.buckets[b], key=lambda a: -ix.popularity.get(a, 0.0))]
         return members[:K], conf
 
-    systems = ("lex_raw", "lex_parsed", "dense_raw", "category", "fuse_raw", "fuse_parsed", "fuse3", "fuse3b", "fuse_filtered")
+    systems = ("lex_raw", "lex_parsed", "dense_raw", "category", "fuse_raw", "fuse_parsed", "fuse3", "fuse3b", "fuse_filtered", "fuse_w")
+
+    def route_weights(parse: dict, conf: float) -> tuple[float, float]:
+        """Specificity decides the mix (exp08: weights, never a switch). A vague,
+        unresolvable message is the embedder's case; a message with catalog-
+        filterable constraints is the lexical route's."""
+        hard = n_hard(parse)
+        if hard == 0 and conf < 0.2:
+            return 0.5, 1.5          # symptom / use_case regime
+        if hard >= 1:
+            return 1.5, 1.0          # buying regime
+        return 1.0, 1.0
 
     def sink_contradictions(ranked: list[str], parse: dict) -> list[str]:
         keep, sink = [], []
@@ -99,8 +110,10 @@ def main() -> None:
                  "fuse_raw": rrf(lr, dr), "fuse_parsed": rrf(lp, dr),
                  "fuse3": rrf(lp, dr, cat, weights=[1.0, 1.0, conf]),
                  "fuse3b": rrf(lp, dr, dense_in_cat, weights=[1.0, 1.0, conf])}
-        lists["fuse_filtered"] = sink_contradictions(lists["fuse3b"],
-                                                     clean_parse(parses[c["case_id"]], c["utterance"]))
+        cp = clean_parse(parses[c["case_id"]], c["utterance"])
+        lists["fuse_filtered"] = sink_contradictions(lists["fuse3b"], cp)
+        wl, wd = route_weights(cp, conf)
+        lists["fuse_w"] = sink_contradictions(rrf(lp, dr, dense_in_cat, weights=[wl, wd, conf]), cp)
         rows.append({"case_id": c["case_id"], "style": c["style"], "modifiers": c["modifiers"],
                      "resolver_confidence": round(conf, 3),
                      **{k: rank_of(v, c["asin"]) for k, v in lists.items()}})
@@ -126,7 +139,7 @@ def main() -> None:
         cov[f"for_other={'for_other' in r['modifiers']}"].append(r)
     table(dict(sorted(cov.items())), "by covariate")
     for a, b in (("fuse_raw", "fuse_parsed"), ("fuse_parsed", "fuse3"), ("fuse_parsed", "fuse3b"),
-                 ("fuse3b", "fuse_filtered")):
+                 ("fuse3b", "fuse_filtered"), ("fuse_filtered", "fuse_w")):
         better = sum(1 for r in rows if (r[b] or 999) < (r[a] or 999))
         worse = sum(1 for r in rows if (r[b] or 999) > (r[a] or 999))
         print(f"{b} vs {a} per case: better {better} / worse {worse} / same {len(rows) - better - worse}")

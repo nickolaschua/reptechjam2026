@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import inspect
 import json
+import os
 import random
 import sys
 from pathlib import Path
@@ -26,7 +27,7 @@ sys.path.insert(0, str(KIT)); sys.path.insert(0, str(LAB))
 from dense_rank import QUERY_PREFIX, catalog_text  # noqa: E402
 from evaluator.local_evaluator import catalog_index, coarse_category  # noqa: E402
 
-OUT = LAB / ".cache" / "bge_ft"
+OUT = LAB / ".cache" / os.environ.get("FT_OUT", "bge_ft")
 NEG_PER_ANCHOR = 2
 
 
@@ -55,12 +56,14 @@ def main() -> None:
     (LAB / ".cache").mkdir(exist_ok=True)
     (LAB / ".cache" / "bge_ft_heldout.json").write_text(json.dumps(sorted(eval_asins)))
 
-    model = SentenceTransformer("BAAI/bge-base-en-v1.5", device="cpu")
+    import os
+    device = os.environ.get("DENSE_DEVICE", "cpu")          # mps once the GPU is free
+    model = SentenceTransformer("BAAI/bge-base-en-v1.5", device=device)
     model.max_seq_length = 256
     params = set(inspect.signature(SentenceTransformerTrainingArguments).parameters)
     args = {k: v for k, v in dict(
         output_dir=str(LAB / ".cache" / "bge_ft_runs"), num_train_epochs=3, per_device_train_batch_size=16,
-        gradient_accumulation_steps=2, learning_rate=2e-5, warmup_steps=10, use_cpu=True,
+        gradient_accumulation_steps=2, learning_rate=2e-5, warmup_steps=10, use_cpu=(device == "cpu"),
         dataloader_num_workers=0, logging_steps=10, save_strategy="no", report_to="none", seed=0,
     ).items() if k in params}
     trainer = SentenceTransformerTrainer(
