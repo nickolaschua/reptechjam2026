@@ -1,902 +1,992 @@
 [
  {
   "i": 0,
+  "asin": "B09PYB7B6Z",
   "form": "browsing",
+  "msg": "I'm looking for Jewelry Necklaces, but I'm still exploring.",
+  "cat": "Jewelry Necklaces",
   "template": 25,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Jewelry Necklaces",
-  "cat": "Jewelry Necklaces",
-  "msg": "I'm looking for Jewelry Necklaces, but I'm still exploring."
+  "parsed": 25,
+  "phrase": "Jewelry Necklaces"
  },
  {
   "i": 0,
+  "asin": "B09PYB7B6Z",
   "form": "buying",
+  "msg": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+  "cat": "Jewelry Necklaces",
   "template": 1,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Jewelry Necklaces",
-  "cat": "Jewelry Necklaces",
-  "msg": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy."
+  "phrase": "Jewelry Necklaces"
  },
  {
   "i": 0,
+  "asin": "B09PYB7B6Z",
   "form": "paraphrase",
+  "msg": "hey, after Jewelry Necklaces - Material:alloy is a must for me",
+  "cat": "Jewelry Necklaces",
   "template": null,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Jewelry Necklaces",
-  "cat": "Jewelry Necklaces",
-  "msg": "hey, after Jewelry Necklaces - Material:alloy is a must for me"
+  "phrase": "Jewelry Necklaces"
  },
  {
   "i": 1,
+  "asin": "B071X54486",
   "form": "browsing",
+  "msg": "I'm looking for Accessories Belts, but I'm still exploring.",
+  "cat": "Accessories Belts",
   "template": 10,
   "lexical": null,
-  "parsed": 32,
-  "phrase": "Accessories Belts",
-  "cat": "Accessories Belts",
-  "msg": "I'm looking for Accessories Belts, but I'm still exploring."
+  "parsed": 10,
+  "phrase": "Accessories Belts"
  },
  {
   "i": 1,
+  "asin": "B071X54486",
   "form": "buying",
+  "msg": "I'm looking for Accessories Belts. A key requirement is: leather.",
+  "cat": "Accessories Belts",
   "template": 9,
   "lexical": null,
   "parsed": 9,
-  "phrase": "Accessories Belts",
-  "cat": "Accessories Belts",
-  "msg": "I'm looking for Accessories Belts. A key requirement is: leather."
+  "phrase": "Accessories Belts"
  },
  {
   "i": 1,
+  "asin": "B071X54486",
   "form": "paraphrase",
+  "msg": "hey, after Accessories Belts - leather is a must for me",
+  "cat": "Accessories Belts",
   "template": null,
   "lexical": 4,
   "parsed": 9,
-  "phrase": "Accessories Belts",
-  "cat": "Accessories Belts",
-  "msg": "hey, after Accessories Belts - leather is a must for me"
+  "phrase": "Accessories Belts"
  },
  {
   "i": 2,
+  "asin": "B09YMTWDXJ",
   "form": "browsing",
+  "msg": "I'm looking for Watches Wrist Watches, but I'm still exploring.",
+  "cat": "Watches Wrist Watches",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Watches Wrist Watches",
-  "cat": "Watches Wrist Watches",
-  "msg": "I'm looking for Watches Wrist Watches, but I'm still exploring."
+  "phrase": "Watches Wrist Watches"
  },
  {
   "i": 2,
+  "asin": "B09YMTWDXJ",
   "form": "buying",
+  "msg": "I'm looking for Watches Wrist Watches. A key requirement is: Water Resistant.",
+  "cat": "Watches Wrist Watches",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Watches Wrist Watches",
-  "cat": "Watches Wrist Watches",
-  "msg": "I'm looking for Watches Wrist Watches. A key requirement is: Water Resistant."
+  "phrase": "Watches Wrist Watches"
  },
  {
   "i": 2,
+  "asin": "B09YMTWDXJ",
   "form": "paraphrase",
+  "msg": "hey, after Watches Wrist Watches - Water Resistant is a must for me",
+  "cat": "Watches Wrist Watches",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Wrist Watches",
-  "cat": "Watches Wrist Watches",
-  "msg": "hey, after Watches Wrist Watches - Water Resistant is a must for me"
+  "phrase": "Wrist Watches"
  },
  {
   "i": 3,
+  "asin": "B07C2XPZ6D",
   "form": "browsing",
-  "template": 1,
-  "lexical": null,
-  "parsed": null,
-  "phrase": "Tops & Tees Tanks & Camis",
+  "msg": "I'm looking for Tops & Tees Tanks & Camis, but I'm still exploring.",
   "cat": "Tops & Tees Tanks & Camis",
-  "msg": "I'm looking for Tops & Tees Tanks & Camis, but I'm still exploring."
- },
- {
-  "i": 3,
-  "form": "buying",
   "template": 1,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Tops & Tees Tanks & Camis",
-  "cat": "Tops & Tees Tanks & Camis",
-  "msg": "I'm looking for Tops & Tees Tanks & Camis. A key requirement is: polyester."
+  "phrase": "Tops & Tees Tanks & Camis"
  },
  {
   "i": 3,
+  "asin": "B07C2XPZ6D",
+  "form": "buying",
+  "msg": "I'm looking for Tops & Tees Tanks & Camis. A key requirement is: polyester.",
+  "cat": "Tops & Tees Tanks & Camis",
+  "template": 1,
+  "lexical": null,
+  "parsed": 1,
+  "phrase": "Tops & Tees Tanks & Camis"
+ },
+ {
+  "i": 3,
+  "asin": "B07C2XPZ6D",
   "form": "paraphrase",
+  "msg": "hey, after Tops & Tees Tanks & Camis - polyester is a must for me",
+  "cat": "Tops & Tees Tanks & Camis",
   "template": null,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Tops & Tees Tanks & Camis",
-  "cat": "Tops & Tees Tanks & Camis",
-  "msg": "hey, after Tops & Tees Tanks & Camis - polyester is a must for me"
+  "phrase": "Tops & Tees Tanks & Camis"
  },
  {
   "i": 4,
+  "asin": "B074G1JP8Z",
   "form": "browsing",
+  "msg": "I'm looking for Outdoor & Work Snow & Cold Weather, but I'm still exploring.",
+  "cat": "Outdoor & Work Snow & Cold Weather",
   "template": 3,
   "lexical": null,
   "parsed": 3,
-  "phrase": "Outdoor & Work Snow & Cold Weather",
-  "cat": "Outdoor & Work Snow & Cold Weather",
-  "msg": "I'm looking for Outdoor & Work Snow & Cold Weather, but I'm still exploring."
+  "phrase": "Outdoor & Work Snow & Cold Weather"
  },
  {
   "i": 4,
+  "asin": "B074G1JP8Z",
   "form": "buying",
+  "msg": "I'm looking for Outdoor & Work Snow & Cold Weather. A key requirement is: leather.",
+  "cat": "Outdoor & Work Snow & Cold Weather",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Outdoor & Work Snow & Cold Weather",
-  "cat": "Outdoor & Work Snow & Cold Weather",
-  "msg": "I'm looking for Outdoor & Work Snow & Cold Weather. A key requirement is: leather."
+  "phrase": "Outdoor & Work Snow & Cold Weather"
  },
  {
   "i": 4,
+  "asin": "B074G1JP8Z",
   "form": "paraphrase",
+  "msg": "hey, after Outdoor & Work Snow & Cold Weather - leather is a must for me",
+  "cat": "Outdoor & Work Snow & Cold Weather",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Outdoor & Work Snow & Cold Weather",
-  "cat": "Outdoor & Work Snow & Cold Weather",
-  "msg": "hey, after Outdoor & Work Snow & Cold Weather - leather is a must for me"
+  "phrase": "Outdoor & Work Snow & Cold Weather"
  },
  {
   "i": 5,
+  "asin": "B071F2Z7JG",
   "form": "browsing",
+  "msg": "I'm looking for Basketball Men, but I'm still exploring.",
+  "cat": "Basketball Men",
   "template": 30,
   "lexical": 32,
-  "parsed": 36,
-  "phrase": "Basketball Men",
-  "cat": "Basketball Men",
-  "msg": "I'm looking for Basketball Men, but I'm still exploring."
+  "parsed": 30,
+  "phrase": "Basketball Men"
  },
  {
   "i": 5,
+  "asin": "B071F2Z7JG",
   "form": "buying",
+  "msg": "I'm looking for Basketball Men. A key requirement is: polyester.",
+  "cat": "Basketball Men",
   "template": 8,
   "lexical": 6,
   "parsed": 8,
-  "phrase": "Basketball Men",
-  "cat": "Basketball Men",
-  "msg": "I'm looking for Basketball Men. A key requirement is: polyester."
+  "phrase": "Basketball Men"
  },
  {
   "i": 5,
+  "asin": "B071F2Z7JG",
   "form": "paraphrase",
+  "msg": "hey, after Basketball Men - polyester is a must for me",
+  "cat": "Basketball Men",
   "template": null,
   "lexical": 8,
   "parsed": 8,
-  "phrase": "Basketball Men",
-  "cat": "Basketball Men",
-  "msg": "hey, after Basketball Men - polyester is a must for me"
+  "phrase": "Basketball Men"
  },
  {
   "i": 6,
+  "asin": "B08PF98BV4",
   "form": "browsing",
+  "msg": "I'm looking for Tees & Blouses Tunics, but I'm still exploring.",
+  "cat": "Tees & Blouses Tunics",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Tees & Blouses Tunics",
-  "cat": "Tees & Blouses Tunics",
-  "msg": "I'm looking for Tees & Blouses Tunics, but I'm still exploring."
+  "phrase": "Tees & Blouses Tunics"
  },
  {
   "i": 6,
+  "asin": "B08PF98BV4",
   "form": "buying",
+  "msg": "I'm looking for Tees & Blouses Tunics. A key requirement is: polyester.",
+  "cat": "Tees & Blouses Tunics",
   "template": null,
   "lexical": 32,
   "parsed": null,
-  "phrase": "Tees & Blouses Tunics",
-  "cat": "Tees & Blouses Tunics",
-  "msg": "I'm looking for Tees & Blouses Tunics. A key requirement is: polyester."
+  "phrase": "Tees & Blouses Tunics"
  },
  {
   "i": 6,
+  "asin": "B08PF98BV4",
   "form": "paraphrase",
+  "msg": "hey, after Tees & Blouses Tunics - polyester is a must for me",
+  "cat": "Tees & Blouses Tunics",
   "template": null,
   "lexical": 4,
   "parsed": null,
-  "phrase": "Tees & Blouses Tunics",
-  "cat": "Tees & Blouses Tunics",
-  "msg": "hey, after Tees & Blouses Tunics - polyester is a must for me"
+  "phrase": "Tees & Blouses Tunics"
  },
  {
   "i": 7,
+  "asin": "B0BPCC1KBT",
   "form": "browsing",
+  "msg": "I'm looking for Bras Everyday Bras, but I'm still exploring.",
+  "cat": "Bras Everyday Bras",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "I'm looking for Bras Everyday Bras, but I'm still exploring."
+  "phrase": "Everyday Bras"
  },
  {
   "i": 7,
+  "asin": "B0BPCC1KBT",
   "form": "buying",
+  "msg": "I'm looking for Bras Everyday Bras. A key requirement is: nylon.",
+  "cat": "Bras Everyday Bras",
   "template": 4,
   "lexical": null,
   "parsed": 4,
-  "phrase": "bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "I'm looking for Bras Everyday Bras. A key requirement is: nylon."
+  "phrase": "Everyday Bras"
  },
  {
   "i": 7,
+  "asin": "B0BPCC1KBT",
   "form": "paraphrase",
+  "msg": "hey, after Bras Everyday Bras - nylon is a must for me",
+  "cat": "Bras Everyday Bras",
   "template": null,
   "lexical": 2,
   "parsed": 4,
-  "phrase": "Everyday Bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "hey, after Bras Everyday Bras - nylon is a must for me"
+  "phrase": "Everyday Bras"
  },
  {
   "i": 8,
+  "asin": "B07GXHPWTJ",
   "form": "browsing",
+  "msg": "I'm looking for Handbags & Wallets Totes, but I'm still exploring.",
+  "cat": "Handbags & Wallets Totes",
   "template": 4,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Handbags & Wallets Totes",
-  "cat": "Handbags & Wallets Totes",
-  "msg": "I'm looking for Handbags & Wallets Totes, but I'm still exploring."
+  "parsed": 4,
+  "phrase": "Handbags & Wallets Totes"
  },
  {
   "i": 8,
+  "asin": "B07GXHPWTJ",
   "form": "buying",
+  "msg": "I'm looking for Handbags & Wallets Totes. A key requirement is: leather.",
+  "cat": "Handbags & Wallets Totes",
   "template": 3,
   "lexical": null,
   "parsed": 3,
-  "phrase": "Handbags & Wallets Totes",
-  "cat": "Handbags & Wallets Totes",
-  "msg": "I'm looking for Handbags & Wallets Totes. A key requirement is: leather."
+  "phrase": "Handbags & Wallets Totes"
  },
  {
   "i": 8,
+  "asin": "B07GXHPWTJ",
   "form": "paraphrase",
+  "msg": "hey, after Handbags & Wallets Totes - leather is a must for me",
+  "cat": "Handbags & Wallets Totes",
   "template": null,
   "lexical": 3,
   "parsed": 3,
-  "phrase": "Handbags & Wallets Totes",
-  "cat": "Handbags & Wallets Totes",
-  "msg": "hey, after Handbags & Wallets Totes - leather is a must for me"
+  "phrase": "Handbags & Wallets Totes"
  },
  {
   "i": 9,
+  "asin": "B0929KL5W7",
   "form": "browsing",
+  "msg": "I'm looking for Women Bodysuits, but I'm still exploring.",
+  "cat": "Women Bodysuits",
   "template": 1,
   "lexical": 5,
-  "parsed": null,
-  "phrase": "Women Bodysuits",
-  "cat": "Women Bodysuits",
-  "msg": "I'm looking for Women Bodysuits, but I'm still exploring."
+  "parsed": 1,
+  "phrase": "Women Bodysuits"
  },
  {
   "i": 9,
+  "asin": "B0929KL5W7",
   "form": "buying",
+  "msg": "I'm looking for Women Bodysuits. A key requirement is: fabric.",
+  "cat": "Women Bodysuits",
   "template": 1,
   "lexical": 1,
   "parsed": 1,
-  "phrase": "Women Bodysuits",
-  "cat": "Women Bodysuits",
-  "msg": "I'm looking for Women Bodysuits. A key requirement is: fabric."
+  "phrase": "Women Bodysuits"
  },
  {
   "i": 9,
+  "asin": "B0929KL5W7",
   "form": "paraphrase",
+  "msg": "hey, after Women Bodysuits - fabric is a must for me",
+  "cat": "Women Bodysuits",
   "template": null,
   "lexical": 1,
   "parsed": 1,
-  "phrase": "Women Bodysuits",
-  "cat": "Women Bodysuits",
-  "msg": "hey, after Women Bodysuits - fabric is a must for me"
+  "phrase": "Women Bodysuits"
  },
  {
   "i": 10,
+  "asin": "B0BXP6MG3X",
   "form": "browsing",
+  "msg": "I'm looking for Underwear Undershirts, but I'm still exploring.",
+  "cat": "Underwear Undershirts",
   "template": 4,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Underwear Undershirts",
-  "cat": "Underwear Undershirts",
-  "msg": "I'm looking for Underwear Undershirts, but I'm still exploring."
+  "parsed": 4,
+  "phrase": "Underwear Undershirts"
  },
  {
   "i": 10,
+  "asin": "B0BXP6MG3X",
   "form": "buying",
+  "msg": "I'm looking for Underwear Undershirts. A key requirement is: cotton.",
+  "cat": "Underwear Undershirts",
   "template": 3,
   "lexical": 4,
   "parsed": 3,
-  "phrase": "Underwear Undershirts",
-  "cat": "Underwear Undershirts",
-  "msg": "I'm looking for Underwear Undershirts. A key requirement is: cotton."
+  "phrase": "Underwear Undershirts"
  },
  {
   "i": 10,
+  "asin": "B0BXP6MG3X",
   "form": "paraphrase",
+  "msg": "hey, after Underwear Undershirts - cotton is a must for me",
+  "cat": "Underwear Undershirts",
   "template": null,
   "lexical": 3,
   "parsed": 3,
-  "phrase": "Underwear Undershirts",
-  "cat": "Underwear Undershirts",
-  "msg": "hey, after Underwear Undershirts - cotton is a must for me"
+  "phrase": "Underwear Undershirts"
  },
  {
   "i": 11,
+  "asin": "B08FFGQF72",
   "form": "browsing",
+  "msg": "I'm looking for Women Dresses, but I'm still exploring.",
+  "cat": "Women Dresses",
   "template": 16,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Women Dresses",
-  "cat": "Women Dresses",
-  "msg": "I'm looking for Women Dresses, but I'm still exploring."
+  "parsed": 16,
+  "phrase": "Women Dresses"
  },
  {
   "i": 11,
+  "asin": "B08FFGQF72",
   "form": "buying",
+  "msg": "I'm looking for Women Dresses. A key requirement is: polyester.",
+  "cat": "Women Dresses",
   "template": 9,
   "lexical": null,
   "parsed": 9,
-  "phrase": "Women Dresses",
-  "cat": "Women Dresses",
-  "msg": "I'm looking for Women Dresses. A key requirement is: polyester."
+  "phrase": "Women Dresses"
  },
  {
   "i": 11,
+  "asin": "B08FFGQF72",
   "form": "paraphrase",
+  "msg": "hey, after Women Dresses - polyester is a must for me",
+  "cat": "Women Dresses",
   "template": null,
   "lexical": null,
   "parsed": 9,
-  "phrase": "Women Dresses",
-  "cat": "Women Dresses",
-  "msg": "hey, after Women Dresses - polyester is a must for me"
+  "phrase": "Women Dresses"
  },
  {
   "i": 12,
+  "asin": "B0C65TFM9F",
   "form": "browsing",
+  "msg": "I'm looking for Shoes Slippers, but I'm still exploring.",
+  "cat": "Shoes Slippers",
   "template": 7,
   "lexical": null,
-  "parsed": 40,
-  "phrase": "Shoes Slippers",
-  "cat": "Shoes Slippers",
-  "msg": "I'm looking for Shoes Slippers, but I'm still exploring."
+  "parsed": 7,
+  "phrase": "Shoes Slippers"
  },
  {
   "i": 12,
+  "asin": "B0C65TFM9F",
   "form": "buying",
+  "msg": "I'm looking for Shoes Slippers. A key requirement is: Rubber sole.",
+  "cat": "Shoes Slippers",
   "template": 5,
   "lexical": null,
   "parsed": 5,
-  "phrase": "Shoes Slippers",
-  "cat": "Shoes Slippers",
-  "msg": "I'm looking for Shoes Slippers. A key requirement is: Rubber sole."
+  "phrase": "Shoes Slippers"
  },
  {
   "i": 12,
+  "asin": "B0C65TFM9F",
   "form": "paraphrase",
+  "msg": "hey, after Shoes Slippers - Rubber sole is a must for me",
+  "cat": "Shoes Slippers",
   "template": null,
   "lexical": null,
-  "parsed": 5,
-  "phrase": "Shoes Slippers",
-  "cat": "Shoes Slippers",
-  "msg": "hey, after Shoes Slippers - Rubber sole is a must for me"
+  "parsed": 7,
+  "phrase": "Shoes Slippers"
  },
  {
   "i": 13,
+  "asin": "B088QF5G58",
   "form": "browsing",
-  "template": 4,
-  "lexical": null,
-  "parsed": null,
-  "phrase": "Underwear Briefs",
+  "msg": "I'm looking for Underwear Briefs, but I'm still exploring.",
   "cat": "Underwear Briefs",
-  "msg": "I'm looking for Underwear Briefs, but I'm still exploring."
- },
- {
-  "i": 13,
-  "form": "buying",
   "template": 4,
   "lexical": null,
   "parsed": 4,
-  "phrase": "Underwear Briefs",
-  "cat": "Underwear Briefs",
-  "msg": "I'm looking for Underwear Briefs. A key requirement is: cotton."
+  "phrase": "Underwear Briefs"
  },
  {
   "i": 13,
+  "asin": "B088QF5G58",
+  "form": "buying",
+  "msg": "I'm looking for Underwear Briefs. A key requirement is: cotton.",
+  "cat": "Underwear Briefs",
+  "template": 4,
+  "lexical": null,
+  "parsed": 4,
+  "phrase": "Underwear Briefs"
+ },
+ {
+  "i": 13,
+  "asin": "B088QF5G58",
   "form": "paraphrase",
+  "msg": "hey, after Underwear Briefs - cotton is a must for me",
+  "cat": "Underwear Briefs",
   "template": 9,
   "lexical": 4,
   "parsed": 4,
-  "phrase": "Underwear Briefs",
-  "cat": "Underwear Briefs",
-  "msg": "hey, after Underwear Briefs - cotton is a must for me"
+  "phrase": "Underwear Briefs"
  },
  {
   "i": 14,
+  "asin": "B08513YB2T",
   "form": "browsing",
+  "msg": "I'm looking for Shoes Mules & Clogs, but I'm still exploring.",
+  "cat": "Shoes Mules & Clogs",
   "template": 1,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Shoes Mules & Clogs",
-  "cat": "Shoes Mules & Clogs",
-  "msg": "I'm looking for Shoes Mules & Clogs, but I'm still exploring."
+  "parsed": 1,
+  "phrase": "Shoes Mules & Clogs"
  },
  {
   "i": 14,
+  "asin": "B08513YB2T",
   "form": "buying",
+  "msg": "I'm looking for Shoes Mules & Clogs. A key requirement is: fabric.",
+  "cat": "Shoes Mules & Clogs",
   "template": 9,
   "lexical": null,
   "parsed": 9,
-  "phrase": "Shoes Mules & Clogs",
-  "cat": "Shoes Mules & Clogs",
-  "msg": "I'm looking for Shoes Mules & Clogs. A key requirement is: fabric."
+  "phrase": "Shoes Mules & Clogs"
  },
  {
   "i": 14,
+  "asin": "B08513YB2T",
   "form": "paraphrase",
+  "msg": "hey, after Shoes Mules & Clogs - fabric is a must for me",
+  "cat": "Shoes Mules & Clogs",
   "template": null,
   "lexical": null,
   "parsed": 9,
-  "phrase": "Shoes Mules & Clogs",
-  "cat": "Shoes Mules & Clogs",
-  "msg": "hey, after Shoes Mules & Clogs - fabric is a must for me"
+  "phrase": "Shoes Mules & Clogs"
  },
  {
   "i": 15,
+  "asin": "B07PH3X7QK",
   "form": "browsing",
+  "msg": "I'm looking for Boots Mid-Calf, but I'm still exploring.",
+  "cat": "Boots Mid-Calf",
   "template": 1,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Boots Mid-Calf",
-  "cat": "Boots Mid-Calf",
-  "msg": "I'm looking for Boots Mid-Calf, but I'm still exploring."
+  "phrase": "Boots Mid-Calf"
  },
  {
   "i": 15,
+  "asin": "B07PH3X7QK",
   "form": "buying",
+  "msg": "I'm looking for Boots Mid-Calf. A key requirement is: leather.",
+  "cat": "Boots Mid-Calf",
   "template": null,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Boots Mid-Calf",
-  "cat": "Boots Mid-Calf",
-  "msg": "I'm looking for Boots Mid-Calf. A key requirement is: leather."
+  "parsed": 1,
+  "phrase": "Boots Mid-Calf"
  },
  {
   "i": 15,
+  "asin": "B07PH3X7QK",
   "form": "paraphrase",
+  "msg": "hey, after Boots Mid-Calf - leather is a must for me",
+  "cat": "Boots Mid-Calf",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Boots Mid-Calf",
-  "cat": "Boots Mid-Calf",
-  "msg": "hey, after Boots Mid-Calf - leather is a must for me"
+  "phrase": "Boots Mid-Calf"
  },
  {
   "i": 16,
+  "asin": "B089RXP8K2",
   "form": "browsing",
+  "msg": "I'm looking for Card Cases & Money Organizers Wallets, but I'm still exploring.",
+  "cat": "Card Cases & Money Organizers Wallets",
   "template": 3,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Card Cases & Money Organizers Wallets",
-  "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "I'm looking for Card Cases & Money Organizers Wallets, but I'm still exploring."
+  "parsed": 3,
+  "phrase": "Card Cases & Money Organizers Wallets"
  },
  {
   "i": 16,
+  "asin": "B089RXP8K2",
   "form": "buying",
+  "msg": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather.",
+  "cat": "Card Cases & Money Organizers Wallets",
   "template": 2,
   "lexical": null,
   "parsed": 2,
-  "phrase": "Card Cases & Money Organizers Wallets",
-  "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather."
+  "phrase": "Card Cases & Money Organizers Wallets"
  },
  {
   "i": 16,
+  "asin": "B089RXP8K2",
   "form": "paraphrase",
+  "msg": "hey, after Card Cases & Money Organizers Wallets - leather is a must for me",
+  "cat": "Card Cases & Money Organizers Wallets",
   "template": null,
   "lexical": null,
   "parsed": 2,
-  "phrase": "Card Cases & Money Organizers Wallets",
-  "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "hey, after Card Cases & Money Organizers Wallets - leather is a must for me"
+  "phrase": "Card Cases & Money Organizers Wallets"
  },
  {
   "i": 17,
+  "asin": "B07H3T5YGH",
   "form": "browsing",
+  "msg": "I'm looking for Shirts Tanks Tops, but I'm still exploring.",
+  "cat": "Shirts Tanks Tops",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Shirts Tanks Tops",
-  "cat": "Shirts Tanks Tops",
-  "msg": "I'm looking for Shirts Tanks Tops, but I'm still exploring."
+  "phrase": "Shirts Tanks Tops"
  },
  {
   "i": 17,
+  "asin": "B07H3T5YGH",
   "form": "buying",
+  "msg": "I'm looking for Shirts Tanks Tops. A key requirement is: polyester.",
+  "cat": "Shirts Tanks Tops",
   "template": 27,
   "lexical": null,
   "parsed": 27,
-  "phrase": "Shirts Tanks Tops",
-  "cat": "Shirts Tanks Tops",
-  "msg": "I'm looking for Shirts Tanks Tops. A key requirement is: polyester."
+  "phrase": "Shirts Tanks Tops"
  },
  {
   "i": 17,
+  "asin": "B07H3T5YGH",
   "form": "paraphrase",
+  "msg": "hey, after Shirts Tanks Tops - polyester is a must for me",
+  "cat": "Shirts Tanks Tops",
   "template": null,
   "lexical": null,
   "parsed": 27,
-  "phrase": "Shirts Tanks Tops",
-  "cat": "Shirts Tanks Tops",
-  "msg": "hey, after Shirts Tanks Tops - polyester is a must for me"
+  "phrase": "Shirts Tanks Tops"
  },
  {
   "i": 18,
+  "asin": "B076VQQ962",
   "form": "browsing",
+  "msg": "I'm looking for Outdoor & Work Rain, but I'm still exploring.",
+  "cat": "Outdoor & Work Rain",
   "template": 1,
   "lexical": 28,
-  "parsed": 28,
-  "phrase": "Outdoor & Work Rain",
-  "cat": "Outdoor & Work Rain",
-  "msg": "I'm looking for Outdoor & Work Rain, but I'm still exploring."
+  "parsed": 1,
+  "phrase": "Outdoor & Work Rain"
  },
  {
   "i": 18,
+  "asin": "B076VQQ962",
   "form": "buying",
+  "msg": "I'm looking for Outdoor & Work Rain. A key requirement is: Rubber sole.",
+  "cat": "Outdoor & Work Rain",
   "template": 1,
   "lexical": 15,
   "parsed": 1,
-  "phrase": "Outdoor & Work Rain",
-  "cat": "Outdoor & Work Rain",
-  "msg": "I'm looking for Outdoor & Work Rain. A key requirement is: Rubber sole."
+  "phrase": "Outdoor & Work Rain"
  },
  {
   "i": 18,
+  "asin": "B076VQQ962",
   "form": "paraphrase",
+  "msg": "hey, after Outdoor & Work Rain - Rubber sole is a must for me",
+  "cat": "Outdoor & Work Rain",
   "template": null,
   "lexical": 24,
   "parsed": 1,
-  "phrase": "Outdoor & Work",
-  "cat": "Outdoor & Work Rain",
-  "msg": "hey, after Outdoor & Work Rain - Rubber sole is a must for me"
+  "phrase": "Outdoor & Work"
  },
  {
   "i": 19,
+  "asin": "B08P4SSFX4",
   "form": "browsing",
+  "msg": "I'm looking for Novelty Women, but I'm still exploring.",
+  "cat": "Novelty Women",
   "template": 19,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Novelty Women",
-  "cat": "Novelty Women",
-  "msg": "I'm looking for Novelty Women, but I'm still exploring."
+  "parsed": 19,
+  "phrase": "Novelty Women"
  },
  {
   "i": 19,
+  "asin": "B08P4SSFX4",
   "form": "buying",
+  "msg": "I'm looking for Novelty Women. A key requirement is: cotton.",
+  "cat": "Novelty Women",
   "template": 11,
   "lexical": null,
   "parsed": 11,
-  "phrase": "Novelty Women",
-  "cat": "Novelty Women",
-  "msg": "I'm looking for Novelty Women. A key requirement is: cotton."
+  "phrase": "Novelty Women"
  },
  {
   "i": 19,
+  "asin": "B08P4SSFX4",
   "form": "paraphrase",
+  "msg": "hey, after Novelty Women - cotton is a must for me",
+  "cat": "Novelty Women",
   "template": null,
   "lexical": null,
   "parsed": 11,
-  "phrase": "Novelty Women",
-  "cat": "Novelty Women",
-  "msg": "hey, after Novelty Women - cotton is a must for me"
+  "phrase": "Novelty Women"
  },
  {
   "i": 20,
+  "asin": "B07K4FX4WZ",
   "form": "browsing",
+  "msg": "I'm looking for Men Pants, but I'm still exploring.",
+  "cat": "Men Pants",
   "template": 4,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Men Pants",
-  "cat": "Men Pants",
-  "msg": "I'm looking for Men Pants, but I'm still exploring."
+  "parsed": 4,
+  "phrase": "Men Pants"
  },
  {
   "i": 20,
+  "asin": "B07K4FX4WZ",
   "form": "buying",
+  "msg": "I'm looking for Men Pants. A key requirement is: polyester.",
+  "cat": "Men Pants",
   "template": 3,
   "lexical": null,
   "parsed": 3,
-  "phrase": "Men Pants",
-  "cat": "Men Pants",
-  "msg": "I'm looking for Men Pants. A key requirement is: polyester."
+  "phrase": "Men Pants"
  },
  {
   "i": 20,
+  "asin": "B07K4FX4WZ",
   "form": "paraphrase",
+  "msg": "hey, after Men Pants - polyester is a must for me",
+  "cat": "Men Pants",
   "template": 23,
   "lexical": 15,
   "parsed": 3,
-  "phrase": "Men Pants",
-  "cat": "Men Pants",
-  "msg": "hey, after Men Pants - polyester is a must for me"
+  "phrase": "Men Pants"
  },
  {
   "i": 21,
+  "asin": "B08F5G843H",
   "form": "browsing",
+  "msg": "I'm looking for Dresses Casual, but I'm still exploring.",
+  "cat": "Dresses Casual",
   "template": 6,
   "lexical": null,
   "parsed": 6,
-  "phrase": "Dresses Casual",
-  "cat": "Dresses Casual",
-  "msg": "I'm looking for Dresses Casual, but I'm still exploring."
+  "phrase": "Dresses Casual"
  },
  {
   "i": 21,
+  "asin": "B08F5G843H",
   "form": "buying",
+  "msg": "I'm looking for Dresses Casual. A key requirement is: fabric.",
+  "cat": "Dresses Casual",
   "template": 2,
   "lexical": 26,
   "parsed": 2,
-  "phrase": "Dresses Casual",
-  "cat": "Dresses Casual",
-  "msg": "I'm looking for Dresses Casual. A key requirement is: fabric."
+  "phrase": "Dresses Casual"
  },
  {
   "i": 21,
+  "asin": "B08F5G843H",
   "form": "paraphrase",
+  "msg": "hey, after Dresses Casual - fabric is a must for me",
+  "cat": "Dresses Casual",
   "template": null,
   "lexical": 49,
   "parsed": 2,
-  "phrase": "Dresses Casual",
-  "cat": "Dresses Casual",
-  "msg": "hey, after Dresses Casual - fabric is a must for me"
+  "phrase": "Dresses Casual"
  },
  {
   "i": 22,
+  "asin": "B08ZKFD4GM",
   "form": "browsing",
+  "msg": "I'm looking for Bras Everyday Bras, but I'm still exploring.",
+  "cat": "Bras Everyday Bras",
   "template": 1,
   "lexical": 7,
   "parsed": 1,
-  "phrase": "bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "I'm looking for Bras Everyday Bras, but I'm still exploring."
+  "phrase": "Everyday Bras"
  },
  {
   "i": 22,
+  "asin": "B08ZKFD4GM",
   "form": "buying",
+  "msg": "I'm looking for Bras Everyday Bras. A key requirement is: Hand Wash Only.",
+  "cat": "Bras Everyday Bras",
   "template": 1,
   "lexical": 1,
   "parsed": 1,
-  "phrase": "bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "I'm looking for Bras Everyday Bras. A key requirement is: Hand Wash Only."
+  "phrase": "Everyday Bras"
  },
  {
   "i": 22,
+  "asin": "B08ZKFD4GM",
   "form": "paraphrase",
+  "msg": "hey, after Bras Everyday Bras - Hand Wash Only is a must for me",
+  "cat": "Bras Everyday Bras",
   "template": null,
   "lexical": 1,
   "parsed": 1,
-  "phrase": "Everyday Bras",
-  "cat": "Bras Everyday Bras",
-  "msg": "hey, after Bras Everyday Bras - Hand Wash Only is a must for me"
+  "phrase": "Everyday Bras"
  },
  {
   "i": 23,
+  "asin": "B076X3JXMW",
   "form": "browsing",
+  "msg": "I'm looking for Rompers & Overalls Jumpsuits, but I'm still exploring.",
+  "cat": "Rompers & Overalls Jumpsuits",
   "template": null,
   "lexical": null,
   "parsed": null,
-  "phrase": "Rompers & Overalls Jumpsuits",
-  "cat": "Rompers & Overalls Jumpsuits",
-  "msg": "I'm looking for Rompers & Overalls Jumpsuits, but I'm still exploring."
+  "phrase": "Rompers & Overalls Jumpsuits"
  },
  {
   "i": 23,
+  "asin": "B076X3JXMW",
   "form": "buying",
+  "msg": "I'm looking for Rompers & Overalls Jumpsuits. A key requirement is: rayon.",
+  "cat": "Rompers & Overalls Jumpsuits",
   "template": 2,
   "lexical": 20,
   "parsed": 2,
-  "phrase": "Rompers & Overalls Jumpsuits",
-  "cat": "Rompers & Overalls Jumpsuits",
-  "msg": "I'm looking for Rompers & Overalls Jumpsuits. A key requirement is: rayon."
+  "phrase": "Rompers & Overalls Jumpsuits"
  },
  {
   "i": 23,
+  "asin": "B076X3JXMW",
   "form": "paraphrase",
+  "msg": "hey, after Rompers & Overalls Jumpsuits - rayon is a must for me",
+  "cat": "Rompers & Overalls Jumpsuits",
   "template": null,
   "lexical": 22,
   "parsed": 2,
-  "phrase": "Rompers & Overalls Jumpsuits",
-  "cat": "Rompers & Overalls Jumpsuits",
-  "msg": "hey, after Rompers & Overalls Jumpsuits - rayon is a must for me"
+  "phrase": "Rompers & Overalls Jumpsuits"
  },
  {
   "i": 24,
+  "asin": "B0BRS1DHVQ",
   "form": "browsing",
+  "msg": "I'm looking for Rompers & Overalls Rompers, but I'm still exploring.",
+  "cat": "Rompers & Overalls Rompers",
   "template": 1,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Rompers & Overalls Rompers",
-  "cat": "Rompers & Overalls Rompers",
-  "msg": "I'm looking for Rompers & Overalls Rompers, but I'm still exploring."
+  "parsed": 1,
+  "phrase": "Rompers & Overalls Rompers"
  },
  {
   "i": 24,
+  "asin": "B0BRS1DHVQ",
   "form": "buying",
+  "msg": "I'm looking for Rompers & Overalls Rompers. A key requirement is: spandex.",
+  "cat": "Rompers & Overalls Rompers",
   "template": 1,
   "lexical": 49,
   "parsed": 1,
-  "phrase": "Rompers & Overalls Rompers",
-  "cat": "Rompers & Overalls Rompers",
-  "msg": "I'm looking for Rompers & Overalls Rompers. A key requirement is: spandex."
+  "phrase": "Rompers & Overalls Rompers"
  },
  {
   "i": 24,
+  "asin": "B0BRS1DHVQ",
   "form": "paraphrase",
+  "msg": "hey, after Rompers & Overalls Rompers - spandex is a must for me",
+  "cat": "Rompers & Overalls Rompers",
   "template": null,
   "lexical": 3,
   "parsed": 1,
-  "phrase": "Rompers & Overalls",
-  "cat": "Rompers & Overalls Rompers",
-  "msg": "hey, after Rompers & Overalls Rompers - spandex is a must for me"
+  "phrase": "Rompers & Overalls"
  },
  {
   "i": 25,
+  "asin": "B093R14VP1",
   "form": "browsing",
+  "msg": "I'm looking for Running Trail Running, but I'm still exploring.",
+  "cat": "Running Trail Running",
   "template": 1,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Running Trail Running",
-  "cat": "Running Trail Running",
-  "msg": "I'm looking for Running Trail Running, but I'm still exploring."
+  "parsed": 1,
+  "phrase": "Running Trail Running"
  },
  {
   "i": 25,
+  "asin": "B093R14VP1",
   "form": "buying",
+  "msg": "I'm looking for Running Trail Running. A key requirement is: 100% Synthetic.",
+  "cat": "Running Trail Running",
   "template": 1,
   "lexical": 12,
   "parsed": 1,
-  "phrase": "Running Trail Running",
-  "cat": "Running Trail Running",
-  "msg": "I'm looking for Running Trail Running. A key requirement is: 100% Synthetic."
+  "phrase": "Running Trail Running"
  },
  {
   "i": 25,
+  "asin": "B093R14VP1",
   "form": "paraphrase",
+  "msg": "hey, after Running Trail Running - 100% Synthetic is a must for me",
+  "cat": "Running Trail Running",
   "template": 14,
   "lexical": 13,
   "parsed": 1,
-  "phrase": "Running Trail Running",
-  "cat": "Running Trail Running",
-  "msg": "hey, after Running Trail Running - 100% Synthetic is a must for me"
+  "phrase": "Running Trail Running"
  },
  {
   "i": 26,
+  "asin": "B0858VDFDW",
   "form": "browsing",
+  "msg": "I'm looking for Women Jeans, but I'm still exploring.",
+  "cat": "Women Jeans",
   "template": 11,
   "lexical": null,
-  "parsed": null,
-  "phrase": "Women Jeans",
-  "cat": "Women Jeans",
-  "msg": "I'm looking for Women Jeans, but I'm still exploring."
+  "parsed": 11,
+  "phrase": "Women Jeans"
  },
  {
   "i": 26,
+  "asin": "B0858VDFDW",
   "form": "buying",
+  "msg": "I'm looking for Women Jeans. A key requirement is: cotton.",
+  "cat": "Women Jeans",
   "template": 8,
   "lexical": null,
   "parsed": 8,
-  "phrase": "Women Jeans",
-  "cat": "Women Jeans",
-  "msg": "I'm looking for Women Jeans. A key requirement is: cotton."
+  "phrase": "Women Jeans"
  },
  {
   "i": 26,
+  "asin": "B0858VDFDW",
   "form": "paraphrase",
+  "msg": "hey, after Women Jeans - cotton is a must for me",
+  "cat": "Women Jeans",
   "template": null,
   "lexical": null,
   "parsed": 8,
-  "phrase": "Women Jeans",
-  "cat": "Women Jeans",
-  "msg": "hey, after Women Jeans - cotton is a must for me"
+  "phrase": "Women Jeans"
  },
  {
   "i": 27,
+  "asin": "B0B9ZYDDZ1",
   "form": "browsing",
-  "template": 1,
-  "lexical": null,
-  "parsed": null,
-  "phrase": "Card Cases & Money Organizers Wallets",
+  "msg": "I'm looking for Card Cases & Money Organizers Wallets, but I'm still exploring.",
   "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "I'm looking for Card Cases & Money Organizers Wallets, but I'm still exploring."
- },
- {
-  "i": 27,
-  "form": "buying",
   "template": 1,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Card Cases & Money Organizers Wallets",
-  "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather."
+  "phrase": "Card Cases & Money Organizers Wallets"
  },
  {
   "i": 27,
+  "asin": "B0B9ZYDDZ1",
+  "form": "buying",
+  "msg": "I'm looking for Card Cases & Money Organizers Wallets. A key requirement is: leather.",
+  "cat": "Card Cases & Money Organizers Wallets",
+  "template": 1,
+  "lexical": null,
+  "parsed": 1,
+  "phrase": "Card Cases & Money Organizers Wallets"
+ },
+ {
+  "i": 27,
+  "asin": "B0B9ZYDDZ1",
   "form": "paraphrase",
+  "msg": "hey, after Card Cases & Money Organizers Wallets - leather is a must for me",
+  "cat": "Card Cases & Money Organizers Wallets",
   "template": null,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Card Cases & Money Organizers Wallets",
-  "cat": "Card Cases & Money Organizers Wallets",
-  "msg": "hey, after Card Cases & Money Organizers Wallets - leather is a must for me"
+  "phrase": "Card Cases & Money Organizers Wallets"
  },
  {
   "i": 28,
+  "asin": "B01IAKCZEK",
   "form": "browsing",
-  "template": 8,
-  "lexical": null,
-  "parsed": null,
-  "phrase": "Sandals Flats",
+  "msg": "I'm looking for Sandals Flats, but I'm still exploring.",
   "cat": "Sandals Flats",
-  "msg": "I'm looking for Sandals Flats, but I'm still exploring."
+  "template": 8,
+  "lexical": null,
+  "parsed": 8,
+  "phrase": "Sandals Flats"
  },
  {
   "i": 28,
+  "asin": "B01IAKCZEK",
   "form": "buying",
+  "msg": "I'm looking for Sandals Flats. A key requirement is: fabric.",
+  "cat": "Sandals Flats",
   "template": 13,
   "lexical": null,
   "parsed": 13,
-  "phrase": "Sandals Flats",
-  "cat": "Sandals Flats",
-  "msg": "I'm looking for Sandals Flats. A key requirement is: fabric."
+  "phrase": "Sandals Flats"
  },
  {
   "i": 28,
+  "asin": "B01IAKCZEK",
   "form": "paraphrase",
+  "msg": "hey, after Sandals Flats - fabric is a must for me",
+  "cat": "Sandals Flats",
   "template": null,
   "lexical": null,
   "parsed": 13,
-  "phrase": "Sandals Flats",
-  "cat": "Sandals Flats",
-  "msg": "hey, after Sandals Flats - fabric is a must for me"
+  "phrase": "Sandals Flats"
  },
  {
   "i": 29,
+  "asin": "B09V5RTXG9",
   "form": "browsing",
+  "msg": "I'm looking for Sleep & Lounge Sleep Bottoms, but I'm still exploring.",
+  "cat": "Sleep & Lounge Sleep Bottoms",
   "template": 1,
   "lexical": null,
   "parsed": 1,
-  "phrase": "Sleep & Lounge Sleep Bottoms",
-  "cat": "Sleep & Lounge Sleep Bottoms",
-  "msg": "I'm looking for Sleep & Lounge Sleep Bottoms, but I'm still exploring."
+  "phrase": "Sleep & Lounge Sleep Bottoms"
  },
  {
   "i": 29,
+  "asin": "B09V5RTXG9",
   "form": "buying",
+  "msg": "I'm looking for Sleep & Lounge Sleep Bottoms. A key requirement is: polyester.",
+  "cat": "Sleep & Lounge Sleep Bottoms",
   "template": 1,
   "lexical": 42,
   "parsed": 1,
-  "phrase": "Sleep & Lounge Sleep Bottoms",
-  "cat": "Sleep & Lounge Sleep Bottoms",
-  "msg": "I'm looking for Sleep & Lounge Sleep Bottoms. A key requirement is: polyester."
+  "phrase": "Sleep & Lounge Sleep Bottoms"
  },
  {
   "i": 29,
+  "asin": "B09V5RTXG9",
   "form": "paraphrase",
+  "msg": "hey, after Sleep & Lounge Sleep Bottoms - polyester is a must for me",
+  "cat": "Sleep & Lounge Sleep Bottoms",
   "template": null,
   "lexical": 44,
   "parsed": 1,
-  "phrase": "Sleep & Lounge Sleep Bottoms",
-  "cat": "Sleep & Lounge Sleep Bottoms",
-  "msg": "hey, after Sleep & Lounge Sleep Bottoms - polyester is a must for me"
+  "phrase": "Sleep & Lounge Sleep Bottoms"
  }
 ]
