@@ -1,0 +1,862 @@
+[
+  {
+    "case": 1,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "men's shoe",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "use_case",
+          "value": "playing tennis",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "does not matter",
+          "declined": true
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "not specified",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  },
+  {
+    "case": 2,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "shoe",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "use_case",
+          "value": "all purpose usage",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "sports",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "lifting weights",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "running",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "racket sports",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  },
+  {
+    "case": 3,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "women's shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "use_case",
+          "value": "running in the forests and mountains",
+          "declined": false
+        },
+        {
+          "attribute": "brand",
+          "value": "reputable",
+          "declined": false
+        },
+        {
+          "attribute": "other",
+          "value": "well-rated",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "reputable_brand",
+      "exploring": false
+    }
+  },
+  {
+    "case": 4,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "slides",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "waterproof",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 5,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "stretchy bathing suit",
+      "department": "baby-girls",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "sexy",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "stretchy",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "swimming",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "padding and support",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 6,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "raincoat",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "big sized female",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "good designs",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "prevent water from coming in",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "at the seams and zippers",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 7,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "slippers",
+      "department": "unisex-child",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "furry design on the inside of the shoe",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "good grip",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 8,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "earrings",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "artful, bold, shows taste, hoop earrings",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 9,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "a nightgown or like a dress",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "classy, bold, provocative, shows off my/",
+          "declined": true
+        },
+        {
+          "attribute": "color",
+          "value": "brighter",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  },
+  {
+    "case": 10,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "sunnies",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "classy",
+          "declined": false
+        },
+        {
+          "attribute": "style",
+          "value": "throwback",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 11,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "boots",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "high heels with the toe sticking out a\u4e00\u70b9",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 12,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "use_case",
+          "value": "sports, racket sports, lifting weights",
+          "declined": false
+        },
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false
+        },
+        {
+          "attribute": "size",
+          "value": "womens",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 13,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "high quality, probably like leather",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "sports, including racket sports and lift",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 14,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "good pair of jeans",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "slim fitting",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "not too out there",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "stretchy",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "easy to wash",
+          "declined": false
+        },
+        {
+          "attribute": "style",
+          "value": "standard pair of denim jeans",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 15,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "high heels",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "color",
+          "value": "black",
+          "declined": false
+        },
+        {
+          "attribute": "style",
+          "value": "skinny stem",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "office",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 16,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "strapless top",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "reputable/trusted",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "skin coloured",
+          "declined": false
+        },
+        {
+          "attribute": "style",
+          "value": "covers nipples, accentuates boobs",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 17,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "wool socks",
+      "department": "unisex-child",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "wool",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "children",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "none",
+          "declined": true
+        },
+        {
+          "attribute": "size",
+          "value": "none",
+          "declined": true
+        },
+        {
+          "attribute": "brand",
+          "value": "none",
+          "declined": true
+        },
+        {
+          "attribute": "style",
+          "value": "none",
+          "declined": true
+        },
+        {
+          "attribute": "material",
+          "value": "easy to wash",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 18,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "long sleeve shirts",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "quick drying",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "blocks the sun",
+          "declined": false
+        },
+        {
+          "attribute": "size",
+          "value": "long sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "brand",
+          "value": "UPF 50",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 19,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "golf shirt",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "long sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "sun protective",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "buttons at the collar",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "stretchy",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 20,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "gold hoop earrings",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "chunky, not thin dainty ones",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "plated, not real gold",
+          "declined": false
+        },
+        {
+          "attribute": "budget",
+          "value": "60 bucks max",
+          "declined": false
+        }
+      ],
+      "price_max": 60,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 21,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "matching outfit sets",
+      "department": "baby-girls",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "army print",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 22,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "plain fitted short sleeve top",
+      "department": "unisex-child",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "cropped",
+          "declined": false
+        },
+        {
+          "attribute": "style",
+          "value": "v neckline",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "ribbed",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  },
+  {
+    "case": 23,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "women's",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "wide feet and wide calves",
+          "declined": true
+        },
+        {
+          "attribute": "style",
+          "value": "ankle height",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 24,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "pink jacket thing with the scarf",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "budget",
+          "value": "<$25",
+          "declined": false
+        }
+      ],
+      "price_max": 25,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  },
+  {
+    "case": 25,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "plain tees",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "budget",
+          "value": "under 30 dollars each",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "not plastic",
+          "declined": false
+        }
+      ],
+      "price_max": 30,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 26,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "house slippers",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "fluffy open toe kind with memory foam in",
+          "declined": false
+        },
+        {
+          "attribute": "budget",
+          "value": "15",
+          "declined": false
+        }
+      ],
+      "price_max": 15,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 27,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "nice summery blouse",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "v neck, short sleeves, lace or crochet\u7ec6\u8282",
+          "declined": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "wear to brunch",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 28,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "big shoulder bag",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "soft leather-looking",
+          "declined": false
+        },
+        {
+          "attribute": "size",
+          "value": "roomy enough to fit a laptop",
+          "declined": false
+        },
+        {
+          "attribute": "brand",
+          "value": "reputable/trusted",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 29,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "baseball cap",
+      "department": "unisex-child",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "custom printed or embroidered text on it",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "adjustable strap at the back",
+          "declined": false
+        }
+      ],
+      "price_max": 20,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false
+    }
+  },
+  {
+    "case": 30,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "foam clog things with the holes in them",
+      "department": "unisex-child",
+      "slots": [
+        {
+          "attribute": "color",
+          "value": "don't really care",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true
+    }
+  }
+]

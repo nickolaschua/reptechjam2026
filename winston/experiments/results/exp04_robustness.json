@@ -1,0 +1,106 @@
+{
+  "reply_perturbation": {
+    "verbatim": {
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.946095,
+      "mttc": 2.15,
+      "technical_score": 0.960829
+    },
+    "word_order_shuffled": {
+      "hit_rate_at_10": 0.99,
+      "mrr": 0.909679,
+      "mttc": 2.335,
+      "technical_score": 0.941204
+    },
+    "40pct_words_dropped": {
+      "hit_rate_at_10": 0.98,
+      "mrr": 0.905226,
+      "mttc": 2.425,
+      "technical_score": 0.933068
+    },
+    "numbers_reworded": {
+      "hit_rate_at_10": 0.995,
+      "mrr": 0.90531,
+      "mttc": 2.315,
+      "technical_score": 0.942793
+    },
+    "all_three_combined": {
+      "hit_rate_at_10": 0.975,
+      "mrr": 0.866651,
+      "mttc": 2.565,
+      "technical_score": 0.916195
+    },
+    "synonyms_swapped": {
+      "hit_rate_at_10": 0.945,
+      "mrr": 0.858812,
+      "mttc": 2.725,
+      "technical_score": 0.895644
+    }
+  },
+  "category_perturbation": {
+    "exact": {
+      "exact_bucket_lookup": {
+        "hit_rate_at_10": 1.0,
+        "mrr": 0.946095,
+        "mttc": 2.15,
+        "technical_score": 0.960829
+      },
+      "fuzzy_bucket_lookup": {
+        "hit_rate_at_10": 0.99,
+        "mrr": 0.931298,
+        "mttc": 2.35,
+        "technical_score": 0.947389
+      }
+    },
+    "words_reversed": {
+      "exact_bucket_lookup": {
+        "hit_rate_at_10": 0.065,
+        "mrr": 0.065,
+        "mttc": 10.425,
+        "technical_score": 0.0635
+      },
+      "fuzzy_bucket_lookup": {
+        "hit_rate_at_10": 0.99,
+        "mrr": 0.931298,
+        "mttc": 2.35,
+        "technical_score": 0.947389
+      }
+    },
+    "lowercased_pluralised": {
+      "exact_bucket_lookup": {
+        "hit_rate_at_10": 0.0,
+        "mrr": 0.0,
+        "mttc": 11.0,
+        "technical_score": 0.0
+      },
+      "fuzzy_bucket_lookup": {
+        "hit_rate_at_10": 0.79,
+        "mrr": 0.743381,
+        "mttc": 4.175,
+        "technical_score": 0.754514
+      }
+    },
+    "loosely_reworded": {
+      "exact_bucket_lookup": {
+        "hit_rate_at_10": 0.0,
+        "mrr": 0.0,
+        "mttc": 11.0,
+        "technical_score": 0.0
+      },
+      "fuzzy_bucket_lookup": {
+        "hit_rate_at_10": 0.745,
+        "mrr": 0.713798,
+        "mttc": 4.565,
+        "technical_score": 0.715339
+      }
+    }
+  },
+  "category_index_shape": {
+    "flat_leaves": 1115,
+    "hierarchy_nodes": 1865,
+    "hierarchy_node_size_median": 9,
+    "hierarchy_node_size_max": 49990,
+    "verdict": "flat wins; internal hierarchy nodes are too broad to be useful pools",
+    "measured_technical_score_flat": 0.947389
+  }
+}

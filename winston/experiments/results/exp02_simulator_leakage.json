@@ -1,0 +1,51 @@
+{
+  "turns_to_full_card": {
+    "always_other": {
+      "median_turn": 3.0,
+      "max_turn": 4,
+      "never_extracted": 0,
+      "distribution": {
+        "3": 190,
+        "4": 10
+      }
+    },
+    "cycle_named_attributes": {
+      "median_turn": 3.0,
+      "max_turn": 7,
+      "never_extracted": 54,
+      "distribution": {
+        "3": 92,
+        "4": 32,
+        "5": 11,
+        "6": 8,
+        "7": 3,
+        "never": 54
+      }
+    }
+  },
+  "card_reconstruction": {
+    "target_inside_own_pool": "200/200",
+    "pool_size_median": 1.0,
+    "pool_size_p90": 26,
+    "pool_size_max": 442,
+    "uniquely_identified": 147,
+    "within_top_10": 173,
+    "note": "private set ships precomputed intent_card; this inversion may not transfer"
+  },
+  "constraint_document_frequency": {
+    "n_constraints": 800,
+    "median_df": 1266.0,
+    "unique_df_1": 177,
+    "near_unique_df_le_5": 208,
+    "boilerplate_df_gt_1000": 411,
+    "max_df": 25461
+  },
+  "constraint_attribute_routing": {
+    "feature": 404,
+    "material": 302,
+    "color": 60,
+    "style": 19,
+    "size": 11,
+    "use_case": 4
+  }
+}

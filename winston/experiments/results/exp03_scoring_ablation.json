@@ -1,0 +1,424 @@
+{
+  "published_baseline_weak_bm25": {
+    "hit_rate_at_10": 0.125,
+    "mrr": 0.068034,
+    "mttc": 9.81,
+    "technical_score": 0.10671
+  },
+  "ablations": {
+    "popularity_only_no_nlp": {
+      "hit_rate_at_10": 0.815,
+      "mrr": 0.498121,
+      "mttc": 3.18,
+      "efficiency": 0.782,
+      "technical_score": 0.713336,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 0.8,
+          "mrr": 0.401944,
+          "mttc": 3.0
+        },
+        "browsing": {
+          "hit_rate_at_10": 0.7875,
+          "mrr": 0.506215,
+          "mttc": 3.125
+        },
+        "buying": {
+          "hit_rate_at_10": 0.8375,
+          "mrr": 0.51006,
+          "mttc": 2.625
+        },
+        "intent_override": {
+          "hit_rate_at_10": 0.833333,
+          "mrr": 0.476759,
+          "mttc": 4.866667
+        }
+      },
+      "rank_histogram": {
+        "1": 70,
+        "2": 30,
+        "3": 23,
+        "4": 9,
+        "5": 9,
+        "6": 5,
+        "7": 4,
+        "8": 5,
+        "9": 7,
+        "10": 1
+      }
+    },
+    "lexical_only_no_prior": {
+      "hit_rate_at_10": 0.995,
+      "mrr": 0.646585,
+      "mttc": 2.015,
+      "efficiency": 0.8985,
+      "technical_score": 0.871175,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.705833,
+          "mttc": 2.5
+        },
+        "browsing": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.587168,
+          "mttc": 1.7375
+        },
+        "buying": {
+          "hit_rate_at_10": 0.9875,
+          "mrr": 0.611989,
+          "mttc": 1.6125
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.87754,
+          "mttc": 3.666667
+        }
+      },
+      "rank_histogram": {
+        "1": 101,
+        "2": 27,
+        "3": 19,
+        "4": 12,
+        "5": 6,
+        "6": 6,
+        "7": 5,
+        "8": 9,
+        "9": 4,
+        "10": 10
+      }
+    },
+    "lexical_plus_prior": {
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.704183,
+      "mttc": 1.575,
+      "efficiency": 0.9425,
+      "technical_score": 0.899755,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.601944,
+          "mttc": 1.5
+        },
+        "browsing": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.62307,
+          "mttc": 1.25
+        },
+        "buying": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.716607,
+          "mttc": 1.15
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.921429,
+          "mttc": 3.6
+        }
+      },
+      "rank_histogram": {
+        "1": 114,
+        "2": 28,
+        "3": 16,
+        "4": 11,
+        "5": 8,
+        "6": 8,
+        "7": 5,
+        "8": 2,
+        "9": 5,
+        "10": 3
+      }
+    },
+    "lexical_plus_prior_plus_patience": {
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.946095,
+      "mttc": 2.15,
+      "efficiency": 0.885,
+      "technical_score": 0.960829,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 1.0,
+          "mttc": 2.5
+        },
+        "browsing": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.94375,
+          "mttc": 1.975
+        },
+        "buying": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.938452,
+          "mttc": 1.6875
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.954762,
+          "mttc": 3.733333
+        }
+      },
+      "rank_histogram": {
+        "1": 183,
+        "2": 8,
+        "3": 4,
+        "4": 2,
+        "7": 2,
+        "10": 1
+      }
+    },
+    "prior_weight_3x": {
+      "hit_rate_at_10": 0.98,
+      "mrr": 0.65348,
+      "mttc": 1.775,
+      "efficiency": 0.9225,
+      "technical_score": 0.870544,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.551944,
+          "mttc": 1.5
+        },
+        "browsing": {
+          "hit_rate_at_10": 0.9875,
+          "mrr": 0.589092,
+          "mttc": 1.4
+        },
+        "buying": {
+          "hit_rate_at_10": 0.9625,
+          "mrr": 0.63374,
+          "mttc": 1.5
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.911667,
+          "mttc": 3.6
+        }
+      },
+      "rank_histogram": {
+        "1": 102,
+        "2": 29,
+        "3": 18,
+        "4": 14,
+        "5": 6,
+        "6": 5,
+        "7": 6,
+        "8": 6,
+        "9": 5,
+        "10": 5
+      }
+    },
+    "no_partial_credit": {
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.946095,
+      "mttc": 2.155,
+      "efficiency": 0.8845,
+      "technical_score": 0.960729,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 1.0,
+          "mttc": 2.5
+        },
+        "browsing": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.95,
+          "mttc": 1.9625
+        },
+        "buying": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.932202,
+          "mttc": 1.7125
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.954762,
+          "mttc": 3.733333
+        }
+      },
+      "rank_histogram": {
+        "1": 183,
+        "2": 8,
+        "3": 4,
+        "4": 2,
+        "7": 2,
+        "10": 1
+      }
+    }
+  },
+  "unused_signals": {
+    "preference_tags_w0.5": {
+      "hit_rate_at_10": 0.995,
+      "mrr": 0.934214,
+      "mttc": 2.24,
+      "efficiency": 0.876,
+      "technical_score": 0.952964,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 1.0,
+          "mttc": 2.3
+        },
+        "browsing": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.913542,
+          "mttc": 2.0875
+        },
+        "buying": {
+          "hit_rate_at_10": 0.9875,
+          "mrr": 0.944911,
+          "mttc": 1.8125
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.938889,
+          "mttc": 3.766667
+        }
+      },
+      "rank_histogram": {
+        "1": 180,
+        "2": 8,
+        "3": 5,
+        "4": 2,
+        "5": 1,
+        "6": 2,
+        "7": 1
+      }
+    },
+    "preference_tags_w1.0": {
+      "hit_rate_at_10": 0.985,
+      "mrr": 0.913673,
+      "mttc": 2.47,
+      "efficiency": 0.853,
+      "technical_score": 0.937202,
+      "by_scenario": {
+        "boundary": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 1.0,
+          "mttc": 2.7
+        },
+        "browsing": {
+          "hit_rate_at_10": 0.9875,
+          "mrr": 0.900729,
+          "mttc": 2.3625
+        },
+        "buying": {
+          "hit_rate_at_10": 0.975,
+          "mrr": 0.914286,
+          "mttc": 2.05
+        },
+        "intent_override": {
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.917778,
+          "mttc": 3.8
+        }
+      },
+      "rank_histogram": {
+        "1": 175,
+        "2": 10,
+        "3": 2,
+        "4": 4,
+        "5": 4,
+        "7": 1,
+        "8": 1
+      }
+    }
+  },
+  "preference_tag_lift": {
+    "fit": {
+      "n_sessions": 163,
+      "catalog_rate": 0.3386,
+      "target_rate": 0.5706,
+      "lift": 1.69
+    },
+    "material": {
+      "n_sessions": 154,
+      "catalog_rate": 0.2602,
+      "target_rate": 0.3182,
+      "lift": 1.22
+    },
+    "comfort": {
+      "n_sessions": 144,
+      "catalog_rate": 0.3175,
+      "target_rate": 0.6528,
+      "lift": 2.06
+    },
+    "style": {
+      "n_sessions": 101,
+      "catalog_rate": 0.2852,
+      "target_rate": 0.4455,
+      "lift": 1.56
+    },
+    "durability": {
+      "n_sessions": 47,
+      "catalog_rate": 0.0393,
+      "target_rate": 0.0851,
+      "lift": 2.17
+    },
+    "performance": {
+      "n_sessions": 26,
+      "catalog_rate": 0.0514,
+      "target_rate": 0.1923,
+      "lift": 3.74
+    },
+    "warmth": {
+      "n_sessions": 18,
+      "catalog_rate": 0.0175,
+      "target_rate": 0.1111,
+      "lift": 6.35
+    },
+    "weather": {
+      "n_sessions": 12,
+      "catalog_rate": 0.0329,
+      "target_rate": 0.0833,
+      "lift": 2.53
+    },
+    "general shopping": {
+      "n_sessions": 1,
+      "catalog_rate": 0.0073,
+      "target_rate": 0.0,
+      "lift": 0.0
+    }
+  },
+  "target_vs_catalog": {
+    "rating_number": {
+      "catalog_median": 12.0,
+      "target_median": 6846.0,
+      "target_percentile": 99,
+      "target_coverage": 200
+    },
+    "average_rating": {
+      "catalog_median": 4.2,
+      "target_median": 4.4,
+      "target_percentile": 60,
+      "target_coverage": 200
+    },
+    "price": {
+      "catalog_median": 22.88,
+      "target_median": 24.48,
+      "target_percentile": 54,
+      "target_coverage": 178
+    }
+  },
+  "field_weighting": {
+    "flat": {
+      "mrr_offline": 0.9461,
+      "rank1_rate": 0.915
+    },
+    "title_3x": {
+      "mrr_offline": 0.9105,
+      "rank1_rate": 0.87
+    },
+    "fts5_weights": {
+      "mrr_offline": 0.9179,
+      "rank1_rate": 0.875
+    },
+    "title3_feat2_det2": {
+      "mrr_offline": 0.9471,
+      "rank1_rate": 0.915
+    },
+    "drop_description": {
+      "mrr_offline": 0.9471,
+      "rank1_rate": 0.915
+    }
+  }
+}
