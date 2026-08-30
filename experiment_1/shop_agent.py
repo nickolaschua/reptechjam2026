@@ -129,6 +129,14 @@ STOPWORDS = {
     "make", "made", "done", "run", "doing"
 }
 
+# Gated profile ranking constants
+PROFILE_GATE_THRESHOLD = 0.25
+PROFILE_SCORE_SCALE = 10.0
+INTENT_PROFILE_WEIGHTS = {
+    "buying":   (0.85, 0.15),
+    "browsing": (0.40, 0.60),
+}
+
 def _text(value: object) -> str:
     if value is None:
         return ""
@@ -298,6 +306,8 @@ class Agent:
         self.catalog_avg_ratings = np.array(self.catalog_avg_ratings)
         self.catalog_rating_numbers = np.array(self.catalog_rating_numbers)
         self.catalog_brands = np.array(self.catalog_brands)
+        # O(1) ASIN → catalog index lookup used by profile-gated reranking
+        self.asin_to_index = {pid: idx for idx, pid in enumerate(self.catalog_ids)}
         print("[Hybrid Agent] Category metadata loaded.")
 
     def _build_vector_index(self) -> None:
@@ -831,10 +841,31 @@ class Agent:
             "min_avg_rating": 0.0,
             "min_rating_number": 0,
             "store": "",
+            # Intent detection (updated every turn by LLM Call 1)
+            "intent_mode": "browsing",
+            # Long-term profile embedding for gated ranking (set below)
+            "profile_emb": None,
         }
         # Reset baseline agent and initialize simulator tracking mode
         self.baseline_agent.reset(session_id, user_profile)
         self._simulator_sessions[session_id] = True
+
+        # Encode user profile once at session start for profile-gated ranking
+        if user_profile:
+            pref_tags = user_profile.get("preference_tags") or []
+            summary = user_profile.get("summary") or ""
+            freq = user_profile.get("purchase_frequency") or ""
+            profile_text = (
+                f"Shopping profile: {freq} shopper. "
+                f"Preferences: {', '.join(pref_tags)}. {summary}"
+            ).strip()
+            if profile_text:
+                try:
+                    p_emb = self.model.encode(profile_text, convert_to_numpy=True)
+                    p_norm = np.linalg.norm(p_emb)
+                    self._sessions[session_id]["profile_emb"] = p_emb / max(p_norm, 1e-12)
+                except Exception:
+                    pass
 
 
     def _parse_message_locally(self, session_id: str, message: str, turn: int = 0) -> None:
@@ -1007,6 +1038,10 @@ class Agent:
                     "stashed_terms": [],
                     "fts5_count": len(res.get("recommendations", [])),
                     "vector_fallback": False,
+                    "intent_mode": "browsing",
+                    "profile_gate_sim": 0.0,
+                    "profile_gate_open": False,
+                    "profile_reranked": False,
                 }
                 # Print Baseline Telemetry to terminal
                 print("\n" + "="*80)
@@ -1033,6 +1068,7 @@ class Agent:
         
         # Prepare past state representation for the LLM input
         past_state_data = {
+            "intent_mode": state.get("intent_mode", "browsing"),
             "category": state.get("category", "clothing"),
             "department": state.get("department", ""),
             "negated_terms": list(state.get("negated_terms", set())),
@@ -1054,6 +1090,16 @@ class Agent:
             "- color, material, size, brand, use_case, style, budget.\n"
             "Note: You are NOT confined to this list. If the user specifies requirements for other attributes (e.g. \"zipper closure\" -> closure, \"slim fit\" -> fit, \"striped\" -> pattern), extract them as custom keys inside \"disclosed_slots\".\n"
             "Note: The root \"department\" field must ONLY be one of \"clothing\", \"shoes\", \"jewelry\", \"watches\".\n\n"
+            "Rules for \"intent_mode\":\n"
+            "Classify the user's current shopping intent as one of two values:\n"
+            "- \"buying\": the user has a specific item in mind, expresses definite requirements, or states hard constraints. "
+            "Signals: 'I need', 'it must be', 'I want specifically', explicit budget/size/brand/material, or accumulated "
+            "slots that clearly narrow to a single purchase decision.\n"
+            "- \"browsing\": the user is exploring, open-ended, or uncertain. "
+            "Signals: 'just looking', 'show me options', 'I'm still exploring', 'anything', vague one-word category queries, "
+            "or no hard constraints stated yet.\n"
+            "Re-evaluate every turn. Upgrade from 'browsing' to 'buying' as soon as the user's language shifts to high intent. "
+            "Revert from 'buying' back to 'browsing' only if the user explicitly resets (e.g. 'actually, show me other styles').\n\n"
             "Rules for \"hard_conditions\":\n"
             "Extract optional hard constraint filters if explicitly or implicitly specified by the user:\n"
             "1. \"price_max\": maximum price limit (budget limit, float or null)\n"
@@ -1070,6 +1116,7 @@ class Agent:
             "6. Clean up: ensure \"category\" and root \"department\" are updated if mentioned.\n"
             "7. Return ONLY a valid JSON object matching this schema:\n"
             "{\n"
+            "  \"intent_mode\": \"buying\" | \"browsing\",\n"
             "  \"category\": \"string\",\n"
             "  \"department\": \"string\",\n"
             "  \"hard_conditions\": {\n"
@@ -1221,7 +1268,15 @@ class Agent:
                     attr_clean = str(attr).strip().lower()
                     if attr_clean in valid_asked_keys:
                         state["asked_attributes"].add(attr_clean)
-                
+
+            if "intent_mode" in new_state:
+                detected = str(new_state["intent_mode"]).strip().lower()
+                if detected in ("buying", "browsing"):
+                    prev = state.get("intent_mode", "browsing")
+                    state["intent_mode"] = detected
+                    if detected != prev:
+                        print(f"[IntentDetector] intent_mode changed: {prev} → {detected}")
+
         except Exception as parse_err:
             print(f"[Hybrid Agent] Failed to parse updated state JSON: {parse_err}. Content: {res_text}")
             # Fallback to local regex-based parsing if LLM Call 1 fails
@@ -1315,13 +1370,22 @@ class Agent:
                 
         return "other"
 
-    def _select_best_attributes_to_ask(self, candidate_ids: list[str], remaining_attrs: set[str], top_n: int = 2) -> list[str]:
+    def _select_best_attributes_to_ask(self, candidate_ids: list[str], remaining_attrs: set[str], top_n: int = 2, intent_mode: str = "browsing") -> list[str]:
+        # Intent-specific attribute priority order used as a tiebreaker when
+        # entropy scores are equal or near-zero (i.e. sparse candidate sets).
+        # Buying  → lock down hard constraints first (what material/brand/size/color).
+        # Browsing → discover preferences first (what occasion/style, then specifics).
+        BUYING_PRIORITY = ["material", "brand", "color", "size", "style", "use_case", "budget"]
+        BROWSING_PRIORITY = ["use_case", "style", "brand", "material", "color", "size", "budget"]
+        priority_order = BUYING_PRIORITY if intent_mode == "buying" else BROWSING_PRIORITY
+
         if not remaining_attrs:
             return ["other"] * top_n
-            
+
         subset = candidate_ids[:100]
         if not subset:
-            attrs = list(remaining_attrs)[:top_n]
+            # No candidates yet — return top-priority unasked attrs for this intent mode
+            attrs = [a for a in priority_order if a in remaining_attrs][:top_n]
             while len(attrs) < top_n:
                 attrs.append("other")
             return attrs
@@ -1536,7 +1600,13 @@ class Agent:
                 
             attr_scores.append((adjusted_gain, attr))
             
-        attr_scores.sort(key=lambda x: x[0], reverse=True)
+        # Sort by entropy gain first; use intent priority order as a tiebreaker
+        def _sort_key(item):
+            score, attr = item
+            priority_rank = priority_order.index(attr) if attr in priority_order else len(priority_order)
+            return (-score, priority_rank)
+
+        attr_scores.sort(key=_sort_key)
         best_attrs = [x[1] for x in attr_scores[:top_n]]
         while len(best_attrs) < top_n:
             best_attrs.append("other")
@@ -1546,6 +1616,15 @@ class Agent:
         state = self._sessions[session_id]
         state["history"].append({"role": "user", "content": user_message})
         state["debug_info"] = {"vector_fallback": False, "fts5_count": 0}
+
+        # Intent-based retrieval thresholds (set before state update so they apply this turn)
+        # These are read after _update_state_via_llm updates intent_mode for the current message.
+        # Buying  → precision-first: stick to strict AND matches, less diversity pressure.
+        # Browsing → recall-first: widen to OR sooner, trigger vector earlier, enforce more diversity.
+        def _intent_thresholds(mode: str) -> tuple[int, int]:
+            if mode == "buying":
+                return 15, 10   # and_min, vector_min
+            return 30, 15       # browsing defaults
         
         # 1. Apply explicit overrides deterministically; use the LLM for other state updates.
         override_value = self._extract_override_value(user_message)
@@ -1636,6 +1715,27 @@ class Agent:
         candidate_ids = []
         unique_terms = state["accumulated_terms"][:45]
         
+        # Resolve live intent thresholds now that LLM Call 1 has updated intent_mode
+        intent_mode = state.get("intent_mode", "browsing")
+        and_min, vector_min = _intent_thresholds(intent_mode)
+
+        # Compute query embedding unconditionally — needed for both vector fallback
+        # and profile-gated reranking.
+        _q_text = self._vector_query_text(state)
+        if "bge" in self.model_path.lower() or "model_finetuned" in self.model_path.lower():
+            _q_text = "Represent this sentence for searching relevant passages: " + _q_text
+        _q_raw = self.model.encode(_q_text, convert_to_numpy=True)
+        _q_norm = np.linalg.norm(_q_raw)
+        query_emb_normalized = _q_raw / max(_q_norm, 1e-12)
+
+        # Profile gate: measure query–profile alignment to decide whether long-term
+        # memory should influence ranking this turn.
+        profile_emb = state.get("profile_emb")
+        gate_sim = float(np.dot(query_emb_normalized, profile_emb)) if profile_emb is not None else 0.0
+        gate_open = profile_emb is not None and gate_sim >= PROFILE_GATE_THRESHOLD
+        state["debug_info"]["profile_gate_sim"] = round(gate_sim, 4)
+        state["debug_info"]["profile_gate_open"] = gate_open
+
         # Cascade Route 1: Keyword Route FTS-Matching
         if unique_terms:
             # Check FTS5 AND
@@ -1645,9 +1745,9 @@ class Agent:
                 (expression_and,)
             ).fetchall()
             candidate_ids = [str(r[0]) for r in rows]
-            
+
         # Check FTS5 OR if AND yielded low coverage
-        if len(candidate_ids) < 15 and unique_terms:
+        if len(candidate_ids) < and_min and unique_terms:
             expression_or = " OR ".join(f'"{term}"' for term in unique_terms)
             rows = self.connection.execute(
                 "SELECT parent_asin, bm25(products, 0.0, 6.0, 4.0, 2.5, 2.5, 1.5, 1.0) as score "
@@ -1658,25 +1758,16 @@ class Agent:
                 asin = str(r[0])
                 if asin not in candidate_ids:
                     candidate_ids.append(asin)
-                    
+
         # Apply price and hard category mask to FTS5 candidates safely
         candidate_ids = [pid for pid in candidate_ids if pid in hard_asin_set]
         state["debug_info"]["fts5_count"] = len(candidate_ids)
-                    
+
         # Cascade Route 2 & 3: Vector Fallback if Keyword Route fails
-        if len(candidate_ids) < 10:
+        if len(candidate_ids) < vector_min:
             state["debug_info"]["vector_fallback"] = True
-            # Vector Route MIPS (Top 150)
-            query_text = self._vector_query_text(state)
-            
-            # Prepend instruction prefix if BGE model is used (required for retrieval queries)
-            if "bge" in self.model_path.lower() or "model_finetuned" in self.model_path.lower():
-                query_text = "Represent this sentence for searching relevant passages: " + query_text
-                
-            query_emb = self.model.encode(query_text, convert_to_numpy=True)
-            q_norm = np.linalg.norm(query_emb)
-            query_emb_normalized = query_emb / max(q_norm, 1e-12)
-            
+            # query_emb_normalized already computed above for profile gating; reuse here.
+
             # Slice catalog embeddings matrix using mask indices to only score allowed candidates
             if len(hard_indices) > 0:
                 sliced_embeddings = self.catalog_embeddings[hard_indices]
@@ -1765,45 +1856,43 @@ class Agent:
             scored_candidates.append((score, pid))
             
         scored_candidates.sort(key=lambda x: x[0], reverse=True)
-        
-        # 5. Diversification
-        recommendations = []
-        chosen_brands = {}
-        chosen_titles = []
-        
-        def get_jaccard_similarity(t1, t2):
-            s1 = set(t1.lower().split())
-            s2 = set(t2.lower().split())
-            if not s1 or not s2:
-                return 0.0
-            return len(s1 & s2) / len(s1 | s2)
-            
-        for score, pid in scored_candidates:
-            meta = self.catalog_metadata[pid]
-            brand = meta["brand"]
-            title = meta["title"]
-            
-            is_too_similar = False
-            for chosen_title in chosen_titles:
-                if get_jaccard_similarity(title, chosen_title) > 0.8:
-                    is_too_similar = True
-                    break
-            if is_too_similar:
-                continue
-                
-            recommendations.append(pid)
-            chosen_titles.append(title)
-            
-            if len(recommendations) == top_k:
-                break
-                
-        # Fill rest if list is incomplete
-        if len(recommendations) < top_k:
-            for score, pid in scored_candidates:
-                if pid not in recommendations:
-                    recommendations.append(pid)
-                    if len(recommendations) == top_k:
-                        break
+
+        # 5a. Gated profile reranking
+        # When the current query is sufficiently aligned with the user's long-term profile
+        # (gate_sim >= PROFILE_GATE_THRESHOLD), blend the lexical state score with a
+        # product–profile semantic similarity.  Weights differ by intent:
+        #   buying   → 85% state / 15% profile  (user knows exactly what they want now)
+        #   browsing → 40% state / 60% profile  (open-ended: lean on taste history)
+        if gate_open and scored_candidates:
+            cand_pids = [pid for _, pid in scored_candidates]
+            cand_indices = [self.asin_to_index.get(pid, -1) for pid in cand_pids]
+            valid_flags = [i >= 0 for i in cand_indices]
+            valid_indices = [i for i in cand_indices if i >= 0]
+
+            # Vectorised cosine similarity: all candidates vs. profile in one matmul
+            profile_sims = np.zeros(len(cand_pids))
+            if valid_indices:
+                sims = np.dot(self.catalog_embeddings[valid_indices], profile_emb)
+                j = 0
+                for k, valid in enumerate(valid_flags):
+                    if valid:
+                        profile_sims[k] = float(sims[j])
+                        j += 1
+
+            # Normalise lexical scores to [0, 1] so both signals are on the same scale
+            state_scores = np.array([s for s, _ in scored_candidates])
+            s_range = max(float(state_scores.max() - state_scores.min()), 1e-9)
+            norm_state = (state_scores - state_scores.min()) / s_range
+
+            w_state, w_profile = INTENT_PROFILE_WEIGHTS[intent_mode]
+            blended = w_state * norm_state + w_profile * np.maximum(profile_sims, 0.0)
+
+            order = np.argsort(blended)[::-1]
+            scored_candidates = [(float(blended[i]), cand_pids[i]) for i in order]
+            state["debug_info"]["profile_reranked"] = True
+
+        # 5. Take top-k by score directly
+        recommendations = [pid for _, pid in scored_candidates[:top_k]]
                         
         state["seen_asins"].update(recommendations)
         
@@ -1833,7 +1922,7 @@ class Agent:
         remaining_attrs = all_attrs - avoid_attrs
         
         # Determine the top 2 mathematically optimal attributes using Shannon Entropy
-        best_attrs = self._select_best_attributes_to_ask(recommendations, remaining_attrs, top_n=2)
+        best_attrs = self._select_best_attributes_to_ask(recommendations, remaining_attrs, top_n=2, intent_mode=intent_mode)
         best_attrs_str = " or ".join(f"'{a}'" for a in best_attrs if a != "other")
         if not best_attrs_str:
             best_attrs_str = "'other'"
@@ -1853,7 +1942,7 @@ class Agent:
             "CRITICAL RULES:\n"
             "1. Do not ask the user about any attribute they have already specified or you have already asked about.\n"
             f"Avoid: {', '.join(sorted(list(avoid_attrs)))}\n"
-            f"2. You MUST formulate a natural question asking the customer about either (or both) of these two attributes: {best_attrs_str}. (If the list is just 'other', you can ask about any other relevant attribute or general style/use-case preference).\n"
+            f"2. You MUST ask the customer about BOTH of these two attributes in the same response: {best_attrs_str}. Weave them into one natural sentence or two short ones. (If the list is just 'other', ask about any two relevant attributes or general style/use-case preferences).\n"
             "3. Keep your response short, natural, and conversational (1-2 sentences). Do not include any JSON formatting, raw tags, or markers. Just reply normally to the shopper.\n\n"
             "Input Candidate Products:\n"
             f"{candidate_products_str}\n"
@@ -1903,6 +1992,10 @@ class Agent:
             "search_epoch": state.get("search_epoch", 0),
             "fts5_count": state["debug_info"].get("fts5_count", 0),
             "vector_fallback": state["debug_info"].get("vector_fallback", False),
+            "intent_mode": state.get("intent_mode", "browsing"),
+            "profile_gate_sim": state["debug_info"].get("profile_gate_sim", 0.0),
+            "profile_gate_open": state["debug_info"].get("profile_gate_open", False),
+            "profile_reranked": state["debug_info"].get("profile_reranked", False),
         }
         
         # Print Hybrid Telemetry to terminal
@@ -1910,7 +2003,8 @@ class Agent:
         print(f" [AGENT BRAIN TELEMETRY - CUSTOM HYBRID CASCADE ROUTE] Turn: {turn} | Session: {session_id}")
         print("="*80)
         print(f"Active LLM Model: {debug_data['model']}")
-        print(f"FTS5 Matches:     {debug_data['fts5_count']} products")
+        print(f"Intent Mode:      {intent_mode}")
+        print(f"FTS5 Matches:     {debug_data['fts5_count']} products (and_min={and_min}, vector_min={vector_min})")
         print(f"Vector Fallback:  {debug_data['vector_fallback']}")
         print(f"Category State:   {debug_data['category']}")
         print(f"Department:       {debug_data['department']}")

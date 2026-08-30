@@ -39,8 +39,112 @@ class VisualizerHTTPHandler(SimpleHTTPRequestHandler):
             self.handle_manual_start(url_parsed.query)
         elif url_parsed.path == "/manual_step":
             self.handle_manual_step(url_parsed.query)
+        elif url_parsed.path == "/conversation":
+            self.serve_file("conversation.html")
+        elif url_parsed.path == "/catalog_search":
+            self.handle_catalog_search(url_parsed.query)
         else:
             super().do_GET()
+
+    def serve_file(self, filename):
+        path = current_dir / filename
+        try:
+            data = path.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            self.wfile.write(data)
+        except Exception as e:
+            self.send_json_error(500, str(e))
+
+    def handle_catalog_search(self, query):
+        params = urllib.parse.parse_qs(query)
+        q = params.get("q", [""])[0].lower().strip()
+        dept = params.get("dept", ["all"])[0].lower()
+        max_price_str = params.get("max_price", [""])[0].strip()
+        min_rating_str = params.get("min_rating", ["0"])[0].strip()
+        page = max(1, int(params.get("page", ["1"])[0]))
+        per_page = 24
+
+        try:
+            max_price = float(max_price_str) if max_price_str else None
+        except ValueError:
+            max_price = None
+        try:
+            min_rating = float(min_rating_str)
+        except ValueError:
+            min_rating = 0.0
+
+        dept_keywords = {
+            "clothing": {"clothing", "shirt", "pant", "dress", "jacket", "hoodie", "sweater", "coat", "shorts", "top", "blouse", "skirt", "jeans"},
+            "shoes":    {"shoes", "shoe", "boot", "sneaker", "sandal", "loafer", "heel", "slipper", "clog", "slide", "oxford"},
+            "jewelry":  {"jewelry", "jewellery", "necklace", "ring", "bracelet", "earring", "pendant", "bangle", "brooch"},
+        }
+
+        results = []
+        for asin, prod in GLOBAL_PRODUCTS.items():
+            title      = (prod.get("title") or "").lower()
+            brand      = (prod.get("store") or prod.get("details", {}).get("Manufacturer") or "").lower()
+            cats       = [c.lower() for c in (prod.get("categories") or [])]
+            cats_str   = " ".join(cats)
+            combined   = title + " " + cats_str
+
+            if q and q not in title and q not in brand and q not in cats_str:
+                continue
+
+            if dept != "all":
+                if not any(kw in combined for kw in dept_keywords.get(dept, set())):
+                    continue
+
+            price = 0.0
+            try:
+                pv = prod.get("price")
+                price = float(str(pv).replace("$", "").replace(",", "")) if pv else 0.0
+            except (ValueError, TypeError):
+                pass
+            if max_price is not None and 0 < price > max_price:
+                continue
+
+            avg_rating = 0.0
+            try:
+                avg_rating = float(prod.get("average_rating") or 0)
+            except (ValueError, TypeError):
+                pass
+            if min_rating > 0 and 0 < avg_rating < min_rating:
+                continue
+
+            rating_number = 0
+            try:
+                rating_number = int(prod.get("rating_number") or 0)
+            except (ValueError, TypeError):
+                pass
+
+            results.append({
+                "asin":          asin,
+                "title":         prod.get("title") or "",
+                "brand":         prod.get("store") or prod.get("details", {}).get("Manufacturer") or "Unknown",
+                "price":         round(price, 2),
+                "avg_rating":    avg_rating,
+                "rating_number": rating_number,
+                "categories":    (prod.get("categories") or [])[:3],
+                "image_url":     GLOBAL_IMAGE_MAPPING.get(asin),
+            })
+
+            if len(results) >= 2000:
+                break
+
+        if not q:
+            results.sort(key=lambda x: x["rating_number"], reverse=True)
+
+        total = len(results)
+        start = (page - 1) * per_page
+        self.send_json_response({
+            "total":    total,
+            "page":     page,
+            "per_page": per_page,
+            "products": results[start: start + per_page],
+        })
 
     def send_json_response(self, data):
         self.send_response(200)
