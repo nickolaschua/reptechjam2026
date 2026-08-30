@@ -139,10 +139,21 @@ def hard_claim_holds(attribute: str, value: str) -> bool:
 
 
 # A 7B under a required-key schema fills slots it has nothing for: "not
-# specified", "n/a", "any". Those words then reach the retrieval query.
+# specified", "n/a", "any" - and, worse, with the schema's OWN vocabulary: on a
+# browsing template with no constraints it emitted six slots valued
+# "scenario_only" (the specificity enum) and brand "reputable/trusted" (from the
+# quality_prior description). Any literal that appears in SCHEMA or PROMPT is a
+# candidate padding value, so every one of them is filtered here.
 JUNK_VALUES = frozenset({"", "not specified", "unspecified", "none", "n/a", "na", "any",
                          "not mentioned", "does not matter", "doesn't matter", "no preference",
-                         "not applicable", "null", "unknown"})
+                         "not applicable", "null", "unknown",
+                         # schema literals
+                         "scenario_only", "type_with_wishes", "type_with_requirements",
+                         "well_rated", "reputable_brand", "reputable/trusted", "reputable",
+                         "trusted", "reputable or trusted",
+                         # shopping stance, not a constraint (the exploring flag carries it)
+                         "exploring", "still exploring", "browsing", "just browsing",
+                         "open to options", "not sure"})
 
 
 # Words that license a department at all. The 7B sets one with no such word in
@@ -274,6 +285,8 @@ Rules:
   answered themselves. If the user drops an idea mid-sentence, it is not a constraint.
 - quality_prior is "none" unless the user actually mentions ratings, reviews,
   popularity, or wanting a reputable/trusted brand. Default to "none".
+- slots may be an empty list. Never fill a slot with a placeholder, a label from
+  this schema, or the user's shopping stance (exploring, browsing, not sure).
 - declined is true only when the user says they do not care about something.
 - negated is true only when the user explicitly rejects that value. Still record
   the value; mark it negated. Never invent a rejected value the user did not say.
@@ -655,6 +668,11 @@ def self_check() -> None:
     assert clean_department({"department": "womens"}, "brown leather watch band")["department"] is None
     assert clean_department({"department": "girls"}, "a set for my daughter")["department"] == "girls"
     assert clean_slots({"slots": [slot("brand", "not specified"), slot("color", "red")]}) == [slot("color", "red")]
+    # the schema's own vocabulary never survives as a slot value
+    assert clean_slots({"slots": [slot("size", "scenario_only"), slot("brand", "reputable/trusted"),
+                                  slot("other", "exploring"), slot("material", "cotton")]}) == [slot("material", "cotton")]
+    for lit in SCHEMA["properties"]["specificity"]["enum"] + QUALITY_PRIORS:
+        assert lit in JUNK_VALUES, lit
     print("self-check: pass")
 
 
