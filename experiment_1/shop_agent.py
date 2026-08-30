@@ -56,6 +56,52 @@ def _normalize(value: object) -> str:
 
 builtins._normalize = _normalize
 
+def standardize_department(dept_val: Any) -> str:
+    if dept_val is None:
+        return "unspecified"
+    val = str(dept_val).strip()
+    if not val or val.lower() in ["unspecified", '""', "none", "nan", "null"]:
+        return "unspecified"
+    
+    val_lower = val.lower()
+    # 1. Multi-demographic combined listings
+    if any(sep in val_lower for sep in [",", ";", " and ", " & "]) and any(w in val_lower for w in ["men", "women", "girl", "boy"]):
+        return "multi-demographic"
+
+    # 2. Baby & Toddler
+    if any(k in val_lower for k in ["baby", "infant", "toddler", "男婴"]):
+        if "girl" in val_lower:
+            return "baby-girls"
+        elif "boy" in val_lower:
+            return "baby-boys"
+        return "baby"
+
+    # 3. Unisex (Adult vs. Kids)
+    if "unisex" in val_lower:
+        if any(k in val_lower for k in ["child", "kid", "youth", "baby"]):
+            return "unisex-kids"
+        return "unisex-adult"
+
+    # 4. Girls & Boys (Youth)
+    if any(k in val_lower for k in ["girl", "daughter"]):
+        return "girls"
+    if any(k in val_lower for k in ["boy", "son"]):
+        return "boys"
+
+    # 5. Adult Women & Men
+    if any(k in val_lower for k in ["women", "woman", "female", "lady", "ladies", "mom", "miss", "girlfriend", "女士"]):
+        return "women"
+    if any(k in val_lower for k in ["men", "man", "male", "husband", "dad", "bridegroom"]):
+        return "men"
+
+    # 6. General Cohorts Fallback
+    if any(k in val_lower for k in ["kid", "child"]):
+        return "unisex-kids"
+    if any(k in val_lower for k in ["adult", "teen"]):
+        return "unisex-adult"
+
+    return "unspecified"
+
 
 
 # Allowed attributes set by the evaluator
@@ -184,6 +230,9 @@ class Agent:
         self.catalog_departments = []
         self.catalog_categories_set = []
         self.catalog_popularity = []
+        self.catalog_avg_ratings = []
+        self.catalog_rating_numbers = []
+        self.catalog_brands = []
         self.catalog_metadata = {}
         
         with self.catalog_path.open(encoding="utf-8") as f:
@@ -202,24 +251,42 @@ class Agent:
                 cats = p.get("categories") or []
                 self.catalog_categories_set.append(set(c.lower() for c in cats))
                 
-                dept = ""
-                if len(cats) > 2:
-                    dept = cats[2].strip().lower()
-                elif cats:
-                    dept = cats[-1].strip().lower()
-                self.catalog_departments.append(dept)
+                # Standardize department column from details
+                raw_dept = p.get("details", {}).get("Department")
+                canonical_dept = standardize_department(raw_dept)
+                self.catalog_departments.append(canonical_dept)
                 
                 pop = float(p.get("rating_number") or 0)
                 self.catalog_popularity.append(pop)
                 
+                # Parse average rating (default to 0.0 for missing / benefit of the doubt)
+                avg_rating_val = p.get("average_rating")
+                try:
+                    avg_rating_float = float(avg_rating_val) if avg_rating_val is not None else 0.0
+                except ValueError:
+                    avg_rating_float = 0.0
+                self.catalog_avg_ratings.append(avg_rating_float)
+                
+                # Parse rating number count (default to 0 for missing / benefit of the doubt)
+                rating_num_val = p.get("rating_number")
+                try:
+                    rating_num_int = int(rating_num_val) if rating_num_val is not None else 0
+                except ValueError:
+                    rating_num_int = 0
+                self.catalog_rating_numbers.append(rating_num_int)
+                
+                # Parse store/brand
+                brand = p.get("store") or p.get("details", {}).get("Manufacturer") or ""
+                brand_lower = brand.strip().lower()
+                self.catalog_brands.append(brand_lower)
+                
                 # Metadata dictionary for fast post-retrieval scoring
                 title = p.get("title") or ""
-                brand = p.get("store") or p.get("details", {}).get("Manufacturer") or ""
                 search_bag = (title + " " + " ".join(cats) + " " + " ".join(p.get("features") or [])).lower()
                 
                 self.catalog_metadata[pid] = {
                     "title": title,
-                    "brand": brand.strip().lower(),
+                    "brand": brand_lower,
                     "rating_number": pop,
                     "searchable_bag": search_bag
                 }
@@ -228,6 +295,9 @@ class Agent:
         self.catalog_prices = np.array(self.catalog_prices)
         self.catalog_departments = np.array(self.catalog_departments)
         self.catalog_popularity = np.array(self.catalog_popularity)
+        self.catalog_avg_ratings = np.array(self.catalog_avg_ratings)
+        self.catalog_rating_numbers = np.array(self.catalog_rating_numbers)
+        self.catalog_brands = np.array(self.catalog_brands)
         print("[Hybrid Agent] Category metadata loaded.")
 
     def _build_vector_index(self) -> None:
@@ -293,7 +363,7 @@ class Agent:
                             {"role": "user", "content": prompt}
                         ],
                         temperature=0.4,
-                        max_tokens=150,
+                        max_tokens=512,
                         response_format={"type": "json_object"} if response_json else None
                     )
                     res_text = res.choices[0].message.content.strip()
@@ -316,7 +386,7 @@ class Agent:
                         {"role": "user", "content": prompt}
                     ],
                     "temperature": 0.4,
-                    "max_tokens": 150
+                    "max_tokens": 512
                 }
                 if response_json:
                     payload["response_format"] = {"type": "json_object"}
@@ -328,7 +398,7 @@ class Agent:
                         model_used = "DeepSeek-Chat (DeepSeek urllib)"
                 except Exception as urllib_err:
                     print(f"[Hybrid Agent] DeepSeek urllib call failed: {urllib_err}. Trying requests...")
-
+ 
             # Method C: requests
             if not res_text:
                 url = "https://api.deepseek.com/v1/chat/completions"
@@ -343,7 +413,7 @@ class Agent:
                         {"role": "user", "content": prompt}
                     ],
                     "temperature": 0.4,
-                    "max_tokens": 150
+                    "max_tokens": 512
                 }
                 if response_json:
                     payload["response_format"] = {"type": "json_object"}
@@ -355,7 +425,7 @@ class Agent:
                     model_used = "DeepSeek-Chat (DeepSeek requests)"
                 except Exception as e:
                     print(f"[Hybrid Agent] DeepSeek requests call failed: {e}")
-
+ 
         # ==========================================
         # 2. Attempt OpenAI if key is present
         # ==========================================
@@ -371,7 +441,7 @@ class Agent:
                             {"role": "user", "content": prompt}
                         ],
                         temperature=0.4,
-                        max_tokens=150,
+                        max_tokens=512,
                         response_format={"type": "json_object"} if response_json else None
                     )
                     res_text = res.choices[0].message.content.strip()
@@ -394,7 +464,7 @@ class Agent:
                         {"role": "user", "content": prompt}
                     ],
                     "temperature": 0.4,
-                    "max_tokens": 150
+                    "max_tokens": 512
                 }
                 if response_json:
                     payload["response_format"] = {"type": "json_object"}
@@ -406,7 +476,7 @@ class Agent:
                         model_used = "GPT-4o-Mini (OpenAI urllib)"
                 except Exception as urllib_err:
                     print(f"[Hybrid Agent] OpenAI urllib call failed: {urllib_err}. Trying requests...")
-
+ 
             # Method C: requests
             if not res_text:
                 url = "https://api.openai.com/v1/chat/completions"
@@ -421,7 +491,7 @@ class Agent:
                         {"role": "user", "content": prompt}
                     ],
                     "temperature": 0.4,
-                    "max_tokens": 150
+                    "max_tokens": 512
                 }
                 if response_json:
                     payload["response_format"] = {"type": "json_object"}
@@ -448,7 +518,7 @@ class Agent:
                         f"{system_prompt}\n\nUser request: {prompt}",
                         generation_config={
                             "temperature": 0.4, 
-                            "max_output_tokens": 150,
+                            "max_output_tokens": 512,
                             "response_mime_type": "application/json" if response_json else "text/plain"
                         }
                     )
@@ -456,7 +526,7 @@ class Agent:
                     model_used = "Gemini-1.5-Flash (Gemini SDK)"
                 except Exception as sdk_err:
                     print(f"[Hybrid Agent] Gemini SDK call failed: {sdk_err}. Trying urllib...")
-
+ 
             # Method B: urllib.request (System SSL native)
             if not res_text:
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
@@ -471,7 +541,7 @@ class Agent:
                     }],
                     "generationConfig": {
                         "temperature": 0.4,
-                        "maxOutputTokens": 150
+                        "maxOutputTokens": 512
                     }
                 }
                 if response_json:
@@ -484,7 +554,7 @@ class Agent:
                         model_used = "Gemini-1.5-Flash (Gemini urllib)"
                 except Exception as urllib_err:
                     print(f"[Hybrid Agent] Gemini urllib call failed: {urllib_err}. Trying requests...")
-
+ 
             # Method C: requests
             if not res_text:
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
@@ -496,7 +566,7 @@ class Agent:
                     }],
                     "generationConfig": {
                         "temperature": 0.4,
-                        "maxOutputTokens": 150
+                        "maxOutputTokens": 512
                     }
                 }
                 if response_json:
@@ -724,6 +794,19 @@ class Agent:
             if record["attribute"] == attr and record["status"] == "active":
                 self._revoke_constraint_record(state, record)
         state["disclosed_slots"].pop(attr, None)
+        
+        # Reset corresponding hard conditions
+        if attr == "gender":
+            state["target_department"] = ""
+        elif attr == "rating":
+            state["min_avg_rating"] = 0.0
+        elif attr == "reviews":
+            state["min_rating_number"] = 0
+        elif attr == "budget":
+            state["price_max"] = 9999.0
+        elif attr == "brand":
+            state["store"] = ""
+            
         self._rebuild_active_terms(state)
 
     def reset(self, session_id: str, user_profile: dict) -> None:
@@ -743,6 +826,11 @@ class Agent:
             "category": "clothing",
             "department": "",
             "price_max": 9999.0,
+            # Hard filter conditions (optional)
+            "target_department": "",
+            "min_avg_rating": 0.0,
+            "min_rating_number": 0,
+            "store": "",
         }
         # Reset baseline agent and initialize simulator tracking mode
         self.baseline_agent.reset(session_id, user_profile)
@@ -772,13 +860,12 @@ class Agent:
 
         # 3. Extract Negated Terms
         negated_terms = set()
-        negation_matches = re.finditer(r"\b(not|no|except|without|instead of)\b\s*([a-zA-Z0-9\s,]+)", msg_lower)
+        negation_matches = re.finditer(r"\b(not|no|except|without|instead of)\b\s*([^,;.]+)", msg_lower)
         for match in negation_matches:
             segment = match.group(2)
-            words = re.split(r"\b(or|and|,)\b", segment)
+            words = re.split(r"\s*(?:,|or|and|\s)\s*", segment)
             for w in words:
-                cleaned = w.strip()
-                cleaned = re.sub(r"[^a-z0-9]", "", cleaned)
+                cleaned = re.sub(r"[^a-z0-9]", "", w.strip())
                 if len(cleaned) > 2 and cleaned not in STOPWORDS:
                     negated_terms.add(cleaned)
                     
@@ -805,6 +892,22 @@ class Agent:
         budget_match = re.search(r"(?:under|below|max|budget of)\s*\$?(\d+(?:\.\d+)?)", msg_lower)
         if budget_match:
             state["price_max"] = float(budget_match.group(1))
+
+        # Extract target demographic department
+        for gender in ["women", "men", "boys", "girls", "kids", "toddler"]:
+            if gender in msg_lower:
+                state["target_department"] = gender
+                break
+
+        # Extract min average rating
+        rating_match = re.search(r"(\d+(?:\.\d+)?)\s*stars?(?:\s+and\s+above|\s+or\s+more)?", msg_lower)
+        if rating_match:
+            state["min_avg_rating"] = float(rating_match.group(1))
+
+        # Extract min rating count
+        rating_num_match = re.search(r"(?:at\s+least|minimum|more\s+than)\s*(\d+)\s*(?:ratings|reviews|feedback)", msg_lower)
+        if rating_num_match:
+            state["min_rating_number"] = int(rating_num_match.group(1))
 
         # 5. Extract standard attributes (matters is, key requirement is)
         if "a key requirement is:" in msg_lower:
@@ -835,6 +938,7 @@ class Agent:
         brand_match = re.search(r"brand(?:s)? like\s+([a-zA-Z0-9\s]+)", msg_lower)
         if brand_match:
             b_val = brand_match.group(1).strip().lower()
+            state["store"] = b_val
             self._set_constraint(state, "brand", b_val, turn, "initial_preference" if turn <= 1 else "clarification", message)
 
         # Extract material
@@ -931,10 +1035,16 @@ class Agent:
         past_state_data = {
             "category": state.get("category", "clothing"),
             "department": state.get("department", ""),
-            "price_max": state.get("price_max", 9999.0),
-            "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
             "negated_terms": list(state.get("negated_terms", set())),
-            "asked_attributes": list(state.get("asked_attributes", set()))
+            "asked_attributes": list(state.get("asked_attributes", set())),
+            "hard_conditions": {
+                "price_max": state.get("price_max", 9999.0),
+                "department": state.get("target_department", ""),
+                "min_avg_rating": state.get("min_avg_rating", 0.0),
+                "min_rating_number": state.get("min_rating_number", 0),
+                "store": state.get("store", "")
+            },
+            "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()}
         }
         
         sys_prompt = (
@@ -943,19 +1053,32 @@ class Agent:
             "Guideline attributes you can extract for constraints:\n"
             "- color, material, size, brand, use_case, style, budget.\n"
             "Note: You are NOT confined to this list. If the user specifies requirements for other attributes (e.g. \"zipper closure\" -> closure, \"slim fit\" -> fit, \"striped\" -> pattern), extract them as custom keys inside \"disclosed_slots\".\n"
-            "Note: The \"department\" field must ONLY be one of \"clothing\", \"shoes\", \"jewelry\", \"watches\". If the user specifies a target gender or age demographic (like men, women, boys, girls, kids, toddler), do NOT put it in \"department\"; instead, put it in \"disclosed_slots\" under \"use_case\".\n\n"
+            "Note: The root \"department\" field must ONLY be one of \"clothing\", \"shoes\", \"jewelry\", \"watches\".\n\n"
+            "Rules for \"hard_conditions\":\n"
+            "Extract optional hard constraint filters if explicitly or implicitly specified by the user:\n"
+            "1. \"price_max\": maximum price limit (budget limit, float or null)\n"
+            "2. \"department\": gender/demographic target. MUST be one of: \"women\", \"men\", \"girls\", \"boys\", \"kids\", \"toddler\", or null.\n"
+            "3. \"min_avg_rating\": minimum average star rating (float, e.g. 4.0, 4.5, or null)\n"
+            "4. \"min_rating_number\": minimum number of reviews (int, e.g. 100, or null)\n"
+            "5. \"store\": brand/manufacturer store name (string, e.g. \"Nike\", \"Casio\", or null)\n\n"
             "Rules:\n"
             "1. Extract any new constraints specified by the user and add/update them in \"disclosed_slots\". Values should be short strings or lists of strings.\n"
             "2. If the user overrides a constraint (e.g. \"Actually, I need polyester, not cotton\" or \"I changed my mind, make it red instead of black\"), erase the old preference and update it with the new one.\n"
-            "3. If the user overrides the product type (e.g., \"ignore slippers, I want sneakers\"), update the \"category\" field and clear all other attributes in \"disclosed_slots\" since they belonged to the old item type.\n"
+            "3. If the user overrides the product type (e.g., \"ignore slippers, I want sneakers\"), update the \"category\" field and clear all other attributes in \"disclosed_slots\" and \"hard_conditions\" since they belonged to the old item type.\n"
             "4. Extract negative preferences (e.g. \"no leather\", \"except dresses\") and add them to \"negated_terms\".\n"
-            "5. If the user explicitly states they don't have a preference for an attribute and tells the assistant to use its judgment (e.g., \"I don't have a preference for size\"), add that attribute to \"asked_attributes\" (to prevent asking again) and remove it from \"disclosed_slots\" if present.\n"
-            "6. Clean up: ensure \"category\" and \"department\" are updated if mentioned.\n"
+            "5. If the user explicitly states they don't have a preference for an attribute (e.g. \"any brand is fine\", \"I don't care about color\", \"use your judgment for budget\"), add that attribute to \"asked_attributes\" and remove it from \"disclosed_slots\" if present. Do NOT add any other attributes to \"asked_attributes\".\n"
+            "6. Clean up: ensure \"category\" and root \"department\" are updated if mentioned.\n"
             "7. Return ONLY a valid JSON object matching this schema:\n"
             "{\n"
             "  \"category\": \"string\",\n"
             "  \"department\": \"string\",\n"
-            "  \"price_max\": float,\n"
+            "  \"hard_conditions\": {\n"
+            "    \"price_max\": float or null,\n"
+            "    \"department\": \"women\" | \"men\" | \"girls\" | \"boys\" | \"kids\" | \"toddler\" | null,\n"
+            "    \"min_avg_rating\": float or null,\n"
+            "    \"min_rating_number\": int or null,\n"
+            "    \"store\": \"string\" or null\n"
+            "  },\n"
             "  \"disclosed_slots\": {\n"
             "    \"attribute_name\": [\"value1\", \"value2\"]\n"
             "  },\n"
@@ -989,10 +1112,16 @@ class Agent:
                 if new_cat != state.get("category"):
                     state["category"] = new_cat
                     state["seen_asins"].clear() # Clear recommendations if product category changed
+                    state["asked_attributes"].clear() # Clear asked attributes for new category epoch!
                     for record in state["constraint_provenance"]:
                         if record["status"] == "active":
                             self._revoke_constraint_record(state, record)
                     state["disclosed_slots"].clear() # Rule 3: Clear old constraints if category changed
+                    state["target_department"] = ""
+                    state["min_avg_rating"] = 0.0
+                    state["min_rating_number"] = 0
+                    state["store"] = ""
+                    state["price_max"] = 9999.0
                     
             if "department" in new_state:
                 dept_val = str(new_state["department"]).strip().lower()
@@ -1000,14 +1129,9 @@ class Agent:
                     use_case_values = self._slot_values(state["disclosed_slots"].get("use_case"))
                     use_case_values.add(dept_val)
                     source_type = "initial_preference" if turn <= 1 else "clarification"
-                    self._set_constraint(
-                        state,
-                        "use_case",
-                        use_case_values,
-                        turn,
-                        source_type,
-                        user_message,
-                    )
+                    self._set_constraint(state, "use_case", use_case_values, turn, source_type, user_message)
+                    state["target_department"] = dept_val
+                    
                     cat_val = state.get("category", "").lower()
                     if any(w in cat_val for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat"]):
                         state["department"] = "shoes"
@@ -1018,7 +1142,62 @@ class Agent:
                 else:
                     state["department"] = dept_val
                 
-            if "price_max" in new_state:
+            if "hard_conditions" in new_state and isinstance(new_state["hard_conditions"], dict):
+                hc = new_state["hard_conditions"]
+                
+                # 1. Price Max
+                if "price_max" in hc:
+                    try:
+                        p_max = hc["price_max"]
+                        state["price_max"] = float(p_max) if p_max is not None else 9999.0
+                    except Exception:
+                        state["price_max"] = 9999.0
+                        
+                # 2. Department (gender demographic)
+                if "department" in hc:
+                    d_val = hc["department"]
+                    if d_val:
+                        d_val_lower = str(d_val).strip().lower()
+                        if d_val_lower in ["men", "women", "boys", "girls", "kids", "toddler"]:
+                            state["target_department"] = d_val_lower
+                            use_case_values = self._slot_values(state["disclosed_slots"].get("use_case"))
+                            use_case_values.add(d_val_lower)
+                            source_type = "initial_preference" if turn <= 1 else "clarification"
+                            self._set_constraint(state, "use_case", use_case_values, turn, source_type, user_message)
+                        else:
+                            state["target_department"] = ""
+                    else:
+                        state["target_department"] = ""
+                        
+                # 3. Min average rating
+                if "min_avg_rating" in hc:
+                    try:
+                        m_avg = hc["min_avg_rating"]
+                        state["min_avg_rating"] = float(m_avg) if m_avg is not None else 0.0
+                    except Exception:
+                        state["min_avg_rating"] = 0.0
+                        
+                # 4. Min rating number
+                if "min_rating_number" in hc:
+                    try:
+                        m_num = hc["min_rating_number"]
+                        state["min_rating_number"] = int(m_num) if m_num is not None else 0
+                    except Exception:
+                        state["min_rating_number"] = 0
+                        
+                # 5. Store / brand
+                if "store" in hc:
+                    s_val = hc["store"]
+                    if s_val:
+                        s_val_lower = str(s_val).strip().lower()
+                        state["store"] = s_val_lower
+                        source_type = "initial_preference" if turn <= 1 else "clarification"
+                        self._set_constraint(state, "brand", s_val_lower, turn, source_type, user_message)
+                    else:
+                        state["store"] = ""
+                        
+            # Deprecated root compatibility
+            elif "price_max" in new_state:
                 try:
                     state["price_max"] = float(new_state["price_max"])
                 except Exception:
@@ -1034,7 +1213,14 @@ class Agent:
                 state["negated_terms"] = set(str(term).strip() for term in new_state["negated_terms"])
                 
             if "asked_attributes" in new_state and isinstance(new_state["asked_attributes"], list):
-                state["asked_attributes"] = set(str(attr).strip() for attr in new_state["asked_attributes"])
+                valid_asked_keys = {
+                    "material", "color", "size", "style", "brand", "budget", "use_case",
+                    "gender", "closure", "pattern", "waterproof", "rating", "reviews"
+                }
+                for attr in new_state["asked_attributes"]:
+                    attr_clean = str(attr).strip().lower()
+                    if attr_clean in valid_asked_keys:
+                        state["asked_attributes"].add(attr_clean)
                 
         except Exception as parse_err:
             print(f"[Hybrid Agent] Failed to parse updated state JSON: {parse_err}. Content: {res_text}")
@@ -1129,6 +1315,233 @@ class Agent:
                 
         return "other"
 
+    def _select_best_attributes_to_ask(self, candidate_ids: list[str], remaining_attrs: set[str], top_n: int = 2) -> list[str]:
+        if not remaining_attrs:
+            return ["other"] * top_n
+            
+        subset = candidate_ids[:100]
+        if not subset:
+            attrs = list(remaining_attrs)[:top_n]
+            while len(attrs) < top_n:
+                attrs.append("other")
+            return attrs
+            
+        color_vocab = {"black", "white", "blue", "red", "pink", "green", "brown", "gray", "grey", "purple", "yellow", "orange", "gold", "silver"}
+        material_vocab = {"cotton", "polyester", "nylon", "leather", "wool", "spandex", "silk", "canvas", "denim", "rubber", "synthetic"}
+        
+        attr_scores = []
+        for attr in remaining_attrs:
+            values = []
+            populated_count = 0
+            
+            for pid in subset:
+                meta = self.catalog_metadata.get(pid, {})
+                has_val = False
+                
+                if attr == "brand":
+                    val = meta.get("brand") or "unknown"
+                    val_str = val.lower().strip()
+                    if val_str not in ["unknown", "unspecified", ""]:
+                        values.append(val_str)
+                        has_val = True
+                        
+                elif attr == "use_case":
+                    idx = self.catalog_ids.index(pid) if pid in self.catalog_ids else -1
+                    val = self.catalog_departments[idx] if idx != -1 else "unspecified"
+                    if val not in ["unspecified", ""]:
+                        values.append(val)
+                        has_val = True
+                        
+                elif attr == "budget":
+                    idx = self.catalog_ids.index(pid) if pid in self.catalog_ids else -1
+                    price = self.catalog_prices[idx] if idx != -1 else 0.0
+                    if 0.0 < price <= 9000.0:
+                        if price < 20.0:
+                            val = "budget"
+                        elif price < 50.0:
+                            val = "mid"
+                        elif price < 100.0:
+                            val = "high"
+                        else:
+                            val = "luxury"
+                        values.append(val)
+                        has_val = True
+                        
+                elif attr == "color":
+                    bag = meta.get("searchable_bag", set())
+                    found = [c for c in color_vocab if c in bag]
+                    if found:
+                        values.append(found[0])
+                        has_val = True
+                        
+                elif attr == "material":
+                    bag = meta.get("searchable_bag", set())
+                    found = [m for m in material_vocab if m in bag]
+                    if found:
+                        values.append(found[0])
+                        has_val = True
+                        
+                elif attr == "size":
+                    details = meta.get("details", {})
+                    size_val = details.get("Size") or details.get("size")
+                    if not size_val:
+                        for feat in meta.get("features", []):
+                            m = re.search(r"\b(size\s+)?(s|m|l|xl|xxl|\d+(?:\.\d+)?)\b", feat.lower())
+                            if m:
+                                size_val = m.group(2)
+                                break
+                    if size_val and str(size_val).strip().lower() not in ["unknown", "unspecified", ""]:
+                        values.append(str(size_val).strip().lower())
+                        has_val = True
+                        
+                elif attr == "style":
+                    cats = meta.get("categories", [])
+                    if len(cats) > 3:
+                        val = cats[-1].lower()
+                        if val not in ["unknown", "unspecified", ""]:
+                            values.append(val)
+                            has_val = True
+                            
+                elif attr == "gender":
+                    idx = self.catalog_ids.index(pid) if pid in self.catalog_ids else -1
+                    dept = self.catalog_departments[idx] if idx != -1 else "unspecified"
+                    mapped = []
+                    if dept == "men":
+                        mapped = ["men"]
+                    elif dept == "women":
+                        mapped = ["women"]
+                    elif dept == "girls":
+                        mapped = ["girls"]
+                    elif dept == "boys":
+                        mapped = ["boys"]
+                    elif dept == "unisex-adult":
+                        mapped = ["men", "women"]
+                    elif dept == "unisex-kids":
+                        mapped = ["boys", "girls"]
+                    elif dept == "baby-boys":
+                        mapped = ["boys", "toddler"]
+                    elif dept == "baby-girls":
+                        mapped = ["girls", "toddler"]
+                    elif dept == "baby":
+                        mapped = ["toddler", "boys", "girls"]
+                    elif dept == "multi-demographic":
+                        mapped = ["men", "women"]
+                    if mapped:
+                        values.extend(mapped)
+                        has_val = True
+                        
+                elif attr == "closure":
+                    details = meta.get("details", {})
+                    val = details.get("Closure Type") or details.get("closure") or "unknown"
+                    if val == "unknown":
+                        feat_text = " ".join(meta.get("features", [])).lower()
+                        for term in ["drawstring", "zipper", "button", "elastic", "pull on", "lace up", "hook and eye"]:
+                            if term in feat_text:
+                                val = term
+                                break
+                    val_str = str(val).strip().lower()
+                    if val_str not in ["unknown", "unspecified", ""]:
+                        values.append(val_str)
+                        has_val = True
+                        
+                elif attr == "pattern":
+                    details = meta.get("details", {})
+                    val = details.get("Pattern") or details.get("pattern") or "unknown"
+                    if val == "unknown":
+                        feat_text = " ".join(meta.get("features", [])).lower()
+                        for term in ["striped", "solid", "floral", "graphic", "plaid", "printed", "leopard", "camo"]:
+                            if term in feat_text:
+                                val = term
+                                break
+                    val_str = str(val).strip().lower()
+                    if val_str not in ["unknown", "unspecified", ""]:
+                        values.append(val_str)
+                        has_val = True
+                        
+                elif attr == "waterproof":
+                    feat_text = " ".join(meta.get("features", [])).lower()
+                    if "waterproof" in feat_text or "water-resistant" in feat_text:
+                        values.append("waterproof")
+                        has_val = True
+                    else:
+                        values.append("regular")
+                        has_val = True
+                        
+                elif attr == "rating":
+                    idx = self.catalog_ids.index(pid) if pid in self.catalog_ids else -1
+                    rating = self.catalog_avg_ratings[idx] if idx != -1 else 0.0
+                    if rating > 0.0:
+                        if rating >= 4.5:
+                            val = "excellent"
+                        elif rating >= 4.0:
+                            val = "good"
+                        else:
+                            val = "average"
+                        values.append(val)
+                        has_val = True
+                        
+                elif attr == "reviews":
+                    idx = self.catalog_ids.index(pid) if pid in self.catalog_ids else -1
+                    reviews = self.catalog_rating_numbers[idx] if idx != -1 else 0
+                    if reviews > 0:
+                        if reviews >= 1000:
+                            val = "very popular"
+                        elif reviews >= 100:
+                            val = "popular"
+                        else:
+                            val = "niche"
+                        values.append(val)
+                        has_val = True
+                
+                if has_val:
+                    populated_count += 1
+            
+            if not values:
+                attr_scores.append((0.0, attr))
+                continue
+                
+            from collections import Counter
+            counts = Counter(values)
+            val_total = len(values)
+            subset_total = len(subset)
+            
+            # 1. Candidate Space Entropy: H(C) = log2(|C|)
+            entropy_C = np.log2(subset_total) if subset_total > 0 else 0.0
+            
+            # 2. Compute Expected Conditional Entropy H(C | A) and Split Information SplitInfo(A)
+            conditional_entropy = 0.0
+            split_info = 0.0
+            
+            for val, count in counts.items():
+                p = count / val_total
+                if p > 0:
+                    split_info -= p * np.log2(p)
+                if count > 0:
+                    # Expected conditional entropy: H(C | A) = sum( P(v) * H(C_v) ) where H(C_v) = log2(|C_v|)
+                    conditional_entropy += p * np.log2(count)
+            
+            # 3. Expected Information Gain: Gain(C, A) = H(C) - H(C | A)
+            gain = entropy_C - conditional_entropy
+            
+            # 4. C4.5 Gain Ratio: GainRatio(C, A) = Gain(C, A) / SplitInfo(A)
+            gain_ratio = gain / (split_info + 1e-9)
+            
+            # 5. Sparsity / Coverage-Adjusted Gain
+            coverage = populated_count / subset_total
+            adjusted_gain = gain_ratio * coverage
+            
+            # 6. Apply threshold safeguard: only ask if it provides meaningful variance/yield
+            if adjusted_gain <= 0.05:
+                adjusted_gain = 0.0
+                
+            attr_scores.append((adjusted_gain, attr))
+            
+        attr_scores.sort(key=lambda x: x[0], reverse=True)
+        best_attrs = [x[1] for x in attr_scores[:top_n]]
+        while len(best_attrs) < top_n:
+            best_attrs.append("other")
+        return best_attrs
+
     def _respond_custom(self, session_id: str, user_message: str, turn: int, top_k: int) -> dict:
         state = self._sessions[session_id]
         state["history"].append({"role": "user", "content": user_message})
@@ -1141,13 +1554,54 @@ class Agent:
         else:
             self._update_state_via_llm(session_id, user_message, turn)
         
-        # 2. Always compute Price Filtering Mask (Hard/Safe)
-        price_mask = np.ones(len(self.catalog_ids), dtype=bool)
+        # 2. Always compute Hard Categorical Filter Mask (Price, Dept, Ratings, Brands)
+        hard_mask = np.ones(len(self.catalog_ids), dtype=bool)
+        
+        # A. Price filter (benefit of doubt to missing prices / 0.0)
         if state["price_max"] < 9999.0:
-            price_mask &= (self.catalog_prices <= state["price_max"])
+            hard_mask &= (self.catalog_prices <= state["price_max"]) | (self.catalog_prices == 0.0)
             
-        price_indices = np.where(price_mask)[0]
-        price_asin_set = set(self.catalog_ids_arr[price_indices])
+        # B. Department filter (gender target demographic matching canonical MECE buckets)
+        if state.get("target_department"):
+            target_dept = state["target_department"].lower()
+            # Always allow 'unspecified' and 'multi-demographic' as safe defaults
+            allowed_depts = {target_dept, "unspecified", "multi-demographic"}
+            
+            if target_dept == "men":
+                allowed_depts.add("unisex-adult")
+            elif target_dept == "women":
+                allowed_depts.add("unisex-adult")
+            elif target_dept == "boys":
+                allowed_depts.update(["unisex-kids", "baby-boys", "baby"])
+            elif target_dept == "girls":
+                allowed_depts.update(["unisex-kids", "baby-girls", "baby"])
+            elif target_dept in ["baby", "toddler"]:
+                allowed_depts.update(["baby", "baby-girls", "baby-boys", "unisex-kids"])
+            elif target_dept == "kids":
+                allowed_depts.update(["unisex-kids", "girls", "boys", "baby", "baby-girls", "baby-boys"])
+                
+            dept_mask = np.isin(self.catalog_departments, list(allowed_depts))
+            hard_mask &= dept_mask
+            
+        # C. Average Rating filter (benefit of doubt to missing rating / 0.0)
+        if state.get("min_avg_rating", 0.0) > 0.0:
+            hard_mask &= (self.catalog_avg_ratings >= state["min_avg_rating"]) | (self.catalog_avg_ratings == 0.0)
+            
+        # D. Rating Number filter (benefit of doubt to missing rating counts / 0)
+        if state.get("min_rating_number", 0) > 0:
+            hard_mask &= (self.catalog_rating_numbers >= state["min_rating_number"]) | (self.catalog_rating_numbers == 0)
+            
+        # E. Brand/Store filter (exact lowercase brand match)
+        if state.get("store"):
+            target_store = state["store"].lower().strip()
+            brand_mask_list = []
+            for brand_name in self.catalog_brands:
+                brand_mask_list.append(target_store in brand_name)
+            hard_mask &= np.array(brand_mask_list)
+
+        # Get list of matching indices and matching ASINs set for fast O(1) checks
+        hard_indices = np.where(hard_mask)[0]
+        hard_asin_set = set(self.catalog_ids_arr[hard_indices])
         
         # 3. Compute Department & Category Sets for Soft Scoring Boosts
         dept_asin_set = set()
@@ -1205,8 +1659,8 @@ class Agent:
                 if asin not in candidate_ids:
                     candidate_ids.append(asin)
                     
-        # Apply Price mask to FTS5 candidates safely
-        candidate_ids = [pid for pid in candidate_ids if pid in price_asin_set]
+        # Apply price and hard category mask to FTS5 candidates safely
+        candidate_ids = [pid for pid in candidate_ids if pid in hard_asin_set]
         state["debug_info"]["fts5_count"] = len(candidate_ids)
                     
         # Cascade Route 2 & 3: Vector Fallback if Keyword Route fails
@@ -1223,16 +1677,20 @@ class Agent:
             q_norm = np.linalg.norm(query_emb)
             query_emb_normalized = query_emb / max(q_norm, 1e-12)
             
-            scores = np.dot(self.catalog_embeddings, query_emb_normalized)
-            sorted_vec_indices = np.argsort(scores)[::-1][:150]
-            vector_asins = [self.catalog_ids[idx] for idx in sorted_vec_indices]
+            # Slice catalog embeddings matrix using mask indices to only score allowed candidates
+            if len(hard_indices) > 0:
+                sliced_embeddings = self.catalog_embeddings[hard_indices]
+                scores = np.dot(sliced_embeddings, query_emb_normalized)
+                sorted_sliced_indices = np.argsort(scores)[::-1][:150]
+                vector_asins = [self.catalog_ids[hard_indices[idx]] for idx in sorted_sliced_indices]
+            else:
+                vector_asins = []
             
-            # Keep vector candidates that satisfy price criteria
-            candidate_ids = [pid for pid in vector_asins if pid in price_asin_set]
+            candidate_ids = vector_asins
             
-        # If still empty (extremely rare), fallback to complete catalog filtered by price
+        # If still empty (extremely rare), fallback to complete catalog filtered by hard mask
         if not candidate_ids:
-            candidate_ids = list(price_asin_set) if price_asin_set else self.catalog_ids
+            candidate_ids = [self.catalog_ids[idx] for idx in hard_indices] if len(hard_indices) > 0 else self.catalog_ids
             
         # 4. Post-Retrieval Scoring
         scored_candidates = []
@@ -1325,9 +1783,6 @@ class Agent:
             brand = meta["brand"]
             title = meta["title"]
             
-            if brand and chosen_brands.get(brand, 0) >= 2:
-                continue
-                
             is_too_similar = False
             for chosen_title in chosen_titles:
                 if get_jaccard_similarity(title, chosen_title) > 0.8:
@@ -1337,8 +1792,6 @@ class Agent:
                 continue
                 
             recommendations.append(pid)
-            if brand:
-                chosen_brands[brand] = chosen_brands.get(brand, 0) + 1
             chosen_titles.append(title)
             
             if len(recommendations) == top_k:
@@ -1361,9 +1814,29 @@ class Agent:
         if state["department"]:
             avoid_attrs.add("department")
             
-        all_attrs = {"material", "color", "size", "style", "brand", "budget", "use_case"}
+        # Tie hard filter conditions to their respective entropy attributes
+        if state.get("target_department"):
+            avoid_attrs.add("gender")
+        if state.get("min_avg_rating", 0.0) > 0.0:
+            avoid_attrs.add("rating")
+        if state.get("min_rating_number", 0) > 0:
+            avoid_attrs.add("reviews")
+        if state.get("price_max", 9999.0) < 9000.0:
+            avoid_attrs.add("budget")
+        if state.get("store"):
+            avoid_attrs.add("brand")
+            
+        all_attrs = {
+            "material", "color", "size", "style", "brand", "budget", "use_case",
+            "gender", "closure", "pattern", "waterproof", "rating", "reviews"
+        }
         remaining_attrs = all_attrs - avoid_attrs
-        remaining_str = ", ".join(sorted(list(remaining_attrs))) if remaining_attrs else "other"
+        
+        # Determine the top 2 mathematically optimal attributes using Shannon Entropy
+        best_attrs = self._select_best_attributes_to_ask(recommendations, remaining_attrs, top_n=2)
+        best_attrs_str = " or ".join(f"'{a}'" for a in best_attrs if a != "other")
+        if not best_attrs_str:
+            best_attrs_str = "'other'"
         
         # Format top matching products (ASIN + title) for generator context
         recs_meta = [self.catalog_metadata[rid] for rid in recommendations[:10]]
@@ -1380,7 +1853,7 @@ class Agent:
             "CRITICAL RULES:\n"
             "1. Do not ask the user about any attribute they have already specified or you have already asked about.\n"
             f"Avoid: {', '.join(sorted(list(avoid_attrs)))}\n"
-            f"2. Choose exactly one new attribute to ask about from this list: {remaining_str} (Choose 'other' if the remaining attributes are not logical or applicable for the current product category, or if no suitable attribute remains).\n"
+            f"2. You MUST formulate a natural question asking the customer about either (or both) of these two attributes: {best_attrs_str}. (If the list is just 'other', you can ask about any other relevant attribute or general style/use-case preference).\n"
             "3. Keep your response short, natural, and conversational (1-2 sentences). Do not include any JSON formatting, raw tags, or markers. Just reply normally to the shopper.\n\n"
             "Input Candidate Products:\n"
             f"{candidate_products_str}\n"
@@ -1403,8 +1876,10 @@ class Agent:
         if "asked_attributes" not in state:
             state["asked_attributes"] = set()
             
-        if asked_attr in all_attrs:
-            state["asked_attributes"].add(asked_attr)
+        # Record both of the top 2 entropy attributes we instructed the LLM to ask about
+        for attr in best_attrs:
+            if attr in all_attrs:
+                state["asked_attributes"].add(attr)
         
         # Populate debug data
         state["debug_info"]["model"] = "DeepSeek-Chat" if os.environ.get("DEEPSEEK_API_KEY") else "GPT-4o-Mini"
@@ -1420,6 +1895,7 @@ class Agent:
             "price_max": state["price_max"],
             "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
             "asked_attributes": list(state.get("asked_attributes", set())),
+            "best_entropy_attrs": best_attrs,
             "negated_terms": list(state.get("negated_terms", set())),
             "accumulated_terms": list(state.get("accumulated_terms", [])),
             "stashed_terms": list(state.get("stashed_terms", [])),
@@ -1439,9 +1915,11 @@ class Agent:
         print(f"Category State:   {debug_data['category']}")
         print(f"Department:       {debug_data['department']}")
         print(f"Price Max State:  {debug_data['price_max']}")
+        print(f"Hard Conditions:  Dept={state.get('target_department')}, MinRating={state.get('min_avg_rating')}, MinReviews={state.get('min_rating_number')}, Store={state.get('store')}")
         print(f"Disclosed Slots:  { {k: v for k, v in debug_data['disclosed_slots'].items() if v} }")
         print(f"Negated Terms:    {debug_data['negated_terms']}")
         print(f"Accumulated:      {debug_data['accumulated_terms']}")
+        print(f"Entropy Best:     {best_attrs}")
         print(f"Asked Attributes: {debug_data['asked_attributes']}")
         print("-"*80)
         
@@ -1737,10 +2215,6 @@ class BaselineAgent:
             brand = meta["brand"]
             title = meta["title"]
             
-            if brand:
-                if chosen_brands.get(brand, 0) >= 2:
-                    continue
-                    
             is_too_similar = False
             for chosen_title in chosen_titles:
                 if get_jaccard_similarity(title, chosen_title) > 0.8:
@@ -1750,8 +2224,6 @@ class BaselineAgent:
                 continue
                 
             recommendations.append(pid)
-            if brand:
-                chosen_brands[brand] = chosen_brands.get(brand, 0) + 1
             chosen_titles.append(title)
             
             if len(recommendations) == top_k:
