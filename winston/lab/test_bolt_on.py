@@ -6,7 +6,8 @@ from pathlib import Path
 
 LAB = Path(__file__).resolve().parent
 sys.path.insert(0, str(LAB))
-import bolt_on  # noqa: E402
+import bolt_on
+import nlp_parse  # noqa: E402
 
 KIT = bolt_on.KIT
 
@@ -76,6 +77,37 @@ class TestDerivedLabels(unittest.TestCase):
         self.assertEqual(bolt_on.intent_of(raw("boots", [slot("material", "leather")]),
                                            "leather boots maybe, just browsing"), "browsing")
         self.assertEqual(bolt_on.intent_of(raw("watch"), "the WA1200 watch"), "buying")
+
+    def test_intent_matches_problem_statement_examples(self):
+        """The spec's own worked examples. Candidate-pool size scored 3/8 here."""
+        buying = [
+            (raw("running shoes", [slot("color", "black"), slot("size", "7")], price_max=100, department="womens"),
+             "I need black women's running shoes in size 7, under $100."),
+            (raw("midi dress", [slot("color", "black"), slot("style", "midi")], price_max=120),
+             "A black midi dress, preferably under $120."),
+            (raw("t-shirt", [slot("size", "medium")]), "A plain white cotton t-shirt in size medium."),
+            (raw("watch", [slot("material", "stainless steel")]), "the Casio A168 stainless steel digital watch"),
+            (raw("band"), "i own a g-shock and need a band to go with my watch"),
+        ]
+        browsing = [
+            (raw("winter trip", [slot("style", "stylish")]),
+             "I'm going to Japan in winter and want something stylish that will keep me warm."),
+            (raw("shoes"), "I want shoes"),
+            (raw("formal dinner", [slot("use_case", "formal dinner")]), "I need something for a formal dinner."),
+            (raw("dry scalp"), "something to help with a dry itchy scalp"),
+            (raw("gift"), "gift for a teenage gamer, no idea what he'd like"),
+        ]
+        for parse, msg in buying:
+            self.assertEqual(bolt_on.intent_of(parse, msg), "buying", msg)
+        for parse, msg in browsing:
+            self.assertEqual(bolt_on.intent_of(parse, msg), "browsing", msg)
+
+    def test_colour_counts_for_intent_but_never_for_filtering(self):
+        """INTENT_EXTRA widens the intent count; HARD_ATTRIBUTES must stay put."""
+        p = raw("dress", [slot("color", "black")])
+        self.assertEqual(bolt_on.n_hard(p), 0)
+        self.assertEqual(bolt_on.n_intent(p), 1)
+        self.assertNotIn("color", nlp_parse.HARD_ATTRIBUTES)
 
     def test_message_type(self):
         self.assertEqual(bolt_on.message_type_of(raw("watch"), "the WA1200 please"), "exact")
@@ -147,7 +179,17 @@ class TestContradictions(unittest.TestCase):
     def test_each_kind_of_contradiction(self):
         product = {"price": 45.0, "store": "Nike", "details": {"Department": "womens"}}
         reasons = self.check(product, "polyester tee with a plastic feel")
-        self.assertEqual(len(reasons), 5, reasons)          # price, dept, brand, material, negated
+        self.assertEqual(len(reasons), 3, reasons)          # price, brand, negated - dept/material are evidence only
+
+    def test_brand_is_not_vetoed_for_an_owned_item(self):
+        p = raw("charms", [slot("brand", "crocs")])
+        product = {"price": None, "store": "Generic", "details": {}}
+        self.assertEqual(bolt_on.contradictions(p, product, "shoe charm", "cute charms for my crocs"), [])
+        self.assertEqual(len(bolt_on.contradictions(p, product, "shoe charm", "crocs charms please")), 1)
+
+    def test_junk_price_bound_is_dropped(self):
+        got = bolt_on.clean_parse(raw("socks", price_max=-1), "socks for my son")
+        self.assertIsNone(got["price_max"])
 
     def test_match_and_slack(self):
         product = {"price": 32.5, "store": "ASICS Store", "details": {"Department": "mens"}}

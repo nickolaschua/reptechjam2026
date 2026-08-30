@@ -93,10 +93,10 @@ def main() -> None:
             return 1.5, 1.0          # buying regime
         return 1.0, 1.0
 
-    def sink_contradictions(ranked: list[str], parse: dict) -> list[str]:
+    def sink_contradictions(ranked: list[str], parse: dict, message: str = "") -> list[str]:
         keep, sink = [], []
         for a in ranked:
-            (sink if contradictions(parse, ix.products[a], ix.text[a].lower()) else keep).append(a)
+            (sink if contradictions(parse, ix.products[a], ix.text[a].lower(), message) else keep).append(a)
         return keep + sink
     rows = []
     for c in todo:
@@ -111,9 +111,9 @@ def main() -> None:
                  "fuse3": rrf(lp, dr, cat, weights=[1.0, 1.0, conf]),
                  "fuse3b": rrf(lp, dr, dense_in_cat, weights=[1.0, 1.0, conf])}
         cp = clean_parse(parses[c["case_id"]], c["utterance"])
-        lists["fuse_filtered"] = sink_contradictions(lists["fuse3b"], cp)
+        lists["fuse_filtered"] = sink_contradictions(lists["fuse3b"], cp, c["utterance"])
         wl, wd = route_weights(cp, conf)
-        lists["fuse_w"] = sink_contradictions(rrf(lp, dr, dense_in_cat, weights=[wl, wd, conf]), cp)
+        lists["fuse_w"] = sink_contradictions(rrf(lp, dr, dense_in_cat, weights=[wl, wd, conf]), cp, c["utterance"])
         rows.append({"case_id": c["case_id"], "style": c["style"], "modifiers": c["modifiers"],
                      "resolver_confidence": round(conf, 3),
                      **{k: rank_of(v, c["asin"]) for k, v in lists.items()}})

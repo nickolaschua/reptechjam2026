@@ -91,6 +91,12 @@ def clean_parse(pred: dict, utterance: str = "") -> dict:
         slots.append({"attribute": s.get("attribute"), "value": value,
                       "declined": declined, "negated": negated})
     out = {**pred, "slots": slots}
+    for key in ("price_max", "price_min"):          # the 7B emits -1 / 0 for "no bound"
+        try:
+            if out.get(key) is not None and float(out[key]) <= 0:
+                out[key] = None
+        except (TypeError, ValueError):
+            out[key] = None
     if utterance and not _WEARER_RE.search(utterance):
         out["department"] = None
     return out
@@ -175,15 +181,41 @@ def n_hard(parse: dict) -> int:
             + bool(parse.get("price_max")) + bool(parse.get("price_min")))
 
 
-def intent_of(parse: dict, message: str) -> str:
-    """buying = the user fixed something the catalog can filter on; else browsing.
+# The problem statement's buying signals are "brand, model, size, colour, material
+# or price" plus required features and compatibility. HARD_ATTRIBUTES covers all but
+# colour and feature - and it stays that way, it drives FILTERING and the catalog
+# cannot verify a colour claim safely enough to sink a product on it. Intent counts
+# a wider set than the filter trusts.
+INTENT_EXTRA = frozenset({"color"})
 
-    ponytail: the LLM's own `exploring` bool was true on 6/30 probes and wrong
-    on half - specificity is a count, not a vibe. An explicit cue still wins.
+
+def n_intent(parse: dict) -> int:
+    """Buying signals the user actually stated, per the problem statement's list.
+
+    ponytail: `feature` is on that list ("waterproof", "wide fit") but stays out -
+    the schema cannot tell a REQUIRED feature from a nice-to-have, and 29 of 41
+    bench parses carry a feature slot, mostly "comfy". Add it when the parser can
+    mark a feature mandatory.
+    """
+    return n_hard(parse) + sum(1 for s in parse.get("slots", [])
+                               if s["attribute"] in INTENT_EXTRA and not s.get("declined")
+                               and str(s.get("value") or "").strip())
+
+
+def intent_of(parse: dict, message: str) -> str:
+    """buying = the user stated constraints a focused retrieval can act on.
+
+    ponytail: a count, not a vibe. The LLM's own `exploring` bool was true on 6/30
+    probes and wrong on half. Candidate-pool size was tested and REJECTED - 3/8 on
+    the problem statement's own examples, because it measures resolver luck and
+    bucket size rather than what the user said ("I want shoes" resolves to a junk
+    14-item bucket and scores as buying). An explicit cue still wins.
     """
     if _EXPLORING_RE.search(message):
         return "browsing"
-    return "buying" if n_hard(parse) or model_code(message) else "browsing"
+    if _COMPAT_RE.search(message) or model_code(message):
+        return "buying"                       # spec: replacement/compatibility is buying
+    return "buying" if n_intent(parse) else "browsing"
 
 
 def message_type_of(parse: dict, message: str) -> str:
@@ -313,7 +345,7 @@ def _mentions(text: str, value: str) -> bool:
     return bool(words) and all(re.search(rf"\b{re.escape(w)}s?\b", text) for w in words)
 
 
-def contradictions(parse: dict, product: dict, text: str) -> list[str]:
+def contradictions(parse: dict, product: dict, text: str, message: str = "") -> list[str]:
     """Which hard constraints / negatives does this product CONTRADICT? Empty = keep.
 
     `text` is the product's full lowercase text (title, features, details,
@@ -329,12 +361,17 @@ def contradictions(parse: dict, product: dict, text: str) -> list[str]:
             out.append(f"price {price} > max {parse['price_max']}")
         if parse.get("price_min") and price < float(parse["price_min"]) / _PRICE_SLACK:
             out.append(f"price {price} < min {parse['price_min']}")
-    dept = parse.get("department")
-    pdept = normalize_department((product.get("details") or {}).get("Department"))
-    if dept and pdept and dept != pdept and dept not in _UNISEX and pdept not in _UNISEX:
-        out.append(f"department {pdept} != {dept}")
+    # department and material were vetoes in v1 and cost top-10 hits on 549 cases
+    # ("for my daughter" -> womens vs the catalog's girls; "metal" vs "stainless").
+    # They stay positive evidence for the ranker; only price, brand and negation veto.
     store = str(product.get("store") or "").strip().lower()
-    product_materials = {m for m in _MATERIALS if re.search(rf"\b{m}\b", text)}
+    low_msg = (message or "").lower()
+
+    def owned(brand: str) -> bool:
+        # "a strap for my tag heuer", "charms for my crocs": the brand names the item
+        # the shopper already OWNS, not the one they want. 5 targets vetoed / 3 hits
+        # lost on 572 cases before this check.
+        return re.search(rf"\bmy\s+(?:[a-z0-9'-]+\s+){{0,2}}{re.escape(brand.lower())}\b", low_msg) is not None
     for s in parse.get("slots", []):
         value = str(s.get("value") or "").strip()
         if not value or s.get("declined"):
@@ -346,14 +383,10 @@ def contradictions(parse: dict, product: dict, text: str) -> list[str]:
             continue
         if tier_of(s) != "hard" or not hard_claim_holds(s["attribute"], value):
             continue
-        if s["attribute"] == "brand" and store and value.lower() not in store and store not in value.lower():
+        if (s["attribute"] == "brand" and store and not owned(value)
+                and value.lower() not in store and store not in value.lower()):
             out.append(f"store '{store}' != brand '{value}'")
-        elif s["attribute"] == "material":
-            wanted = {w for w in re.split(r"[^a-z]+", value.lower()) if w in _MATERIALS}
-            if product_materials and wanted and not (wanted & product_materials):
-                out.append(f"material {sorted(product_materials)} != {sorted(wanted)}")
-        # ponytail: size is not checked - the catalog's size text is too irregular to
-        # call a contradiction safely; it stays positive evidence only
+        # ponytail: size and material are not vetoed - catalog text is too irregular
     return out
 
 
