@@ -85,7 +85,8 @@ def main() -> None:
 
     cases = {r["case_id"]: r for r in map(json.loads, (l for l in args.cases.open() if l.strip()))}
     products = {r["asin"]: r for r in map(json.loads, (l for l in args.products.open() if l.strip()))}
-    results = [json.loads(l) for l in args.results.open() if l.strip()]
+    # last row per case wins: a resumed or duplicated pass may append a case twice
+    results = list({r["case_id"]: r for r in (json.loads(l) for l in args.results.open() if l.strip())}.values())
     rows = [{**cases[r["case_id"]], **products[r["asin"]], **r} for r in results if r["case_id"] in cases]
     if not rows:
         raise SystemExit("no scored rows")
