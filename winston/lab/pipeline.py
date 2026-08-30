@@ -46,7 +46,7 @@ def slot_terms(parse: dict, stances: tuple[str, ...] = ("soft",)) -> list[str]:
     from nlp_parse import tier_of
 
     return [s["value"] for s in parse.get("slots", [])
-            if not s.get("declined") and tier_of(s) in stances]
+            if not s.get("declined") and not s.get("negated") and tier_of(s) in stances]
 
 
 # -------------------------------------------------------------- stage 2: RESOLVE

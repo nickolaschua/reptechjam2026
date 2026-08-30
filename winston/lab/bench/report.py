@@ -90,7 +90,7 @@ def main() -> None:
     if not rows:
         raise SystemExit("no scored rows")
 
-    rank_fields = [f for f in ("template_rank", "lexical_rank", "bucket_rank") if any(f in r for r in rows)]
+    rank_fields = [f for f in ("template_rank", "lexical_rank", "parsed_rank", "bucket_rank") if any(f in r for r in rows)]
     md = [f"# Messy benchmark report", "", f"{len(rows)} scored cases. `*` = n < {MIN_N}.", ""]
     if any("question_hit" in r for r in rows):
         md += ["## First-question quality (`question_hit`)", "",

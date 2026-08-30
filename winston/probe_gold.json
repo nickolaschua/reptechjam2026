@@ -36,7 +36,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -78,7 +79,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -112,7 +114,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "reputable_brand",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -149,7 +152,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -191,7 +195,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -233,7 +238,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -282,7 +288,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -324,7 +331,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -371,7 +379,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -408,7 +417,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -450,7 +460,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -487,7 +498,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -529,7 +541,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -576,7 +589,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -613,7 +627,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -650,7 +665,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -692,7 +708,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -741,7 +758,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -790,7 +808,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -822,7 +841,8 @@
       "price_max": 60,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -861,7 +881,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -913,7 +934,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -967,7 +989,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1011,7 +1034,8 @@
       "price_max": 25,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1050,7 +1074,8 @@
       "price_max": 30,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1092,7 +1117,8 @@
       "price_max": 15,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1146,7 +1172,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1188,7 +1215,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "well_rated",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1227,7 +1255,8 @@
       "price_max": 20,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   },
   {
@@ -1266,7 +1295,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": null
     }
   }
 ]

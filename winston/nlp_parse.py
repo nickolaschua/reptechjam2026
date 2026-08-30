@@ -189,8 +189,15 @@ SCHEMA = {
                         "description": "true ONLY if the user said they do not care "
                                        "about this attribute. Otherwise false.",
                     },
+                    # The team's TypedConstraint has `negated`; without it "not
+                    # leather" becomes a positive leather filter. Top failure mode.
+                    "negated": {
+                        "type": "boolean",
+                        "description": "true ONLY if the user said they do NOT want "
+                                       "this value. Otherwise false.",
+                    },
                 },
-                "required": ["attribute", "value", "declined"],
+                "required": ["attribute", "value", "declined", "negated"],
             },
         },
         "price_max": {"type": ["number", "null"]},
@@ -208,9 +215,21 @@ SCHEMA = {
             "type": "boolean",
             "description": "true if browsing with no fixed target, false if buying.",
         },
+        # Same call as the parse, so it costs nothing. Tested against n_hard and
+        # card_hard_said on the benchmark; keep only if it beats them.
+        # A 0-1 number came back 1.0 on all 30 probes; a 7B cannot calibrate a
+        # rubric. Enum: constrained decoding picks a label instead.
+        "specificity": {
+            "type": "string",
+            "enum": ["scenario_only", "type_with_wishes", "type_with_requirements"],
+            "description": "scenario_only: a situation or feeling, no product type named. "
+                           "type_with_wishes: a product type plus soft preferences. "
+                           "type_with_requirements: a product type plus firm requirements "
+                           "such as size, brand, material or a price limit.",
+        },
     },
     "required": ["category_phrase", "department", "slots",
-                 "price_max", "price_min", "quality_prior", "exploring"],
+                 "price_max", "price_min", "quality_prior", "exploring", "specificity"],
 }
 
 PROMPT = """Extract shopping constraints from the message. Output only what the user said.
@@ -222,6 +241,11 @@ Rules:
 - quality_prior is "none" unless the user actually mentions ratings, reviews,
   popularity, or wanting a reputable/trusted brand. Default to "none".
 - declined is true only when the user says they do not care about something.
+- negated is true only when the user says they do NOT want that value ("no logos",
+  "not leather"). Still record the value; mark it negated.
+- specificity: scenario_only if no product type is named, type_with_wishes for a
+  product type plus soft preferences, type_with_requirements only when there are
+  firm requirements (size, brand, material, price limit).
 
 Message: {utterance}"""
 
@@ -340,6 +364,7 @@ def load_gold() -> tuple[list[dict], list[str]]:
                 "price_max": price_max, "price_min": price_min,
                 "quality_prior": prior,
                 "exploring": False,
+                "specificity": None,      # not graded; no gold for it
             },
         })
     return cases, warn

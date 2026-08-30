@@ -32,14 +32,16 @@ And one thing is newly measured, in `pipeline.py`, on the 30 probe cases:
 | resolver input | top1 | top3 | median rank of true bucket |
 |---|--:|--:|--:|
 | `category_phrase` only (today) | 0.167 | 0.333 | 20.0 |
-| **+ soft slots** | **0.267** | **0.433** | **8.5** |
-| + hard slots too | 0.267 | 0.400 | 12.5 |
-| slots only, no phrase | 0.133 | 0.167 | 23.5 |
+| **+ soft slots** | **0.267** | **0.433** | 10.0 |
+| + hard slots too | 0.233 | 0.433 | **7.5** |
+| slots only, no phrase | 0.100 | 0.167 | 25.0 |
 
-The parser was already extracting the evidence and discarding it. Feeding soft
-slots back in **more than halves the median rank** of the correct bucket. Hard slots
-(material/size/brand) make it worse — they are not category evidence. That is stage
-2, and it works today with no new dependencies.
+(Re-run 2026-08-30 after the soft→hard tier fix in `nlp_parse.py`; the earlier
+table predated it.) The parser was already extracting the evidence and discarding
+it. Feeding slots back in **halves the median rank** of the correct bucket. With
+corrected tiers, hard slots no longer hurt — B vs C is within n=30 noise; the
+benchmark's `bucket_rank` settles it. That is stage 2, and it works today with no
+new dependencies.
 
 ---
 

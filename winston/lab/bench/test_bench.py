@@ -258,6 +258,18 @@ class TestScore(unittest.TestCase):
         ]}
         self.assertEqual(resolver_query(parse), ["shoe", "running"])
 
+    def test_parsed_state_drops_negated_and_declined_and_maps_department(self):
+        from score import parsed_state, resolver_query
+        parse = {"category_phrase": "running shoes", "department": "womens", "slots": [
+            {"attribute": "color", "value": "black", "declined": False, "negated": False},
+            {"attribute": "material", "value": "leather", "declined": False, "negated": True},
+            {"attribute": "size", "value": "7", "declined": True, "negated": False},
+            {"attribute": "use_case", "value": "trail", "declined": False, "negated": False},
+        ]}
+        self.assertEqual(parsed_state(parse), ("women running shoes", ["black", "trail"]))
+        self.assertEqual(resolver_query(parse), ["running shoes", "black", "trail"])
+        self.assertEqual(parsed_state({"category_phrase": "", "slots": []}), ("clothing item", []))
+
     def test_specificity_counts_and_card_hard_said(self):
         from score import specificity_counts, card_hard_said
         parse = {"slots": [

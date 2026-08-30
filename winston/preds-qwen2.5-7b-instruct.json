@@ -9,48 +9,57 @@
         {
           "attribute": "use_case",
           "value": "playing tennis",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "does not matter",
-          "declined": true
+          "declined": true,
+          "negated": false
         },
         {
           "attribute": "color",
           "value": "not specified",
-          "declined": false
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "not specified",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "not specified",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "color",
           "value": "not specified",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "color",
           "value": "not specified",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "color",
           "value": "not specified",
-          "declined": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
-          "declined": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": true,
+      "specificity": 1
     }
   },
   {
@@ -63,33 +72,39 @@
         {
           "attribute": "use_case",
           "value": "all purpose usage",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "use_case",
           "value": "sports",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "use_case",
           "value": "lifting weights",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "use_case",
           "value": "running",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "use_case",
           "value": "racket sports",
-          "declined": true
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": true,
+      "specificity": 1
     }
   },
   {
@@ -102,23 +117,27 @@
         {
           "attribute": "use_case",
           "value": "running in the forests and mountains",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "brand",
           "value": "reputable",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "other",
           "value": "well-rated",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
-      "quality_prior": "reputable_brand",
-      "exploring": false
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -131,13 +150,15 @@
         {
           "attribute": "material",
           "value": "waterproof",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -148,35 +169,29 @@
       "department": "baby-girls",
       "slots": [
         {
-          "attribute": "style",
-          "value": "sexy",
-          "declined": false
-        },
-        {
           "attribute": "material",
           "value": "stretchy",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "use_case",
-          "value": "swimming",
-          "declined": false
+          "attribute": "style",
+          "value": "sexy",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
           "value": "padding and support",
-          "declined": false
-        },
-        {
-          "attribute": "feature",
-          "value": "comfortable",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -188,29 +203,40 @@
       "slots": [
         {
           "attribute": "size",
-          "value": "big sized female",
-          "declined": false
+          "value": "big",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "not leather",
+          "declined": false,
+          "negated": true
         },
         {
           "attribute": "feature",
           "value": "good designs",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
-          "value": "prevent water from coming in",
-          "declined": false
+          "value": "prevents water from coming in",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
           "value": "at the seams and zippers",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -218,28 +244,32 @@
     "stratum": "B",
     "pred": {
       "category_phrase": "slippers",
-      "department": "unisex-child",
+      "department": "mens",
       "slots": [
         {
           "attribute": "material",
-          "value": "furry design on the inside of the shoe",
-          "declined": false
+          "value": "furry",
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "feature",
-          "value": "comfortable",
-          "declined": false
-        },
-        {
-          "attribute": "feature",
+          "attribute": "material",
           "value": "good grip",
-          "declined": false
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfy",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -247,42 +277,59 @@
     "stratum": "B",
     "pred": {
       "category_phrase": "earrings",
-      "department": null,
+      "department": "unisex-adult",
       "slots": [
         {
           "attribute": "style",
-          "value": "artful, bold, shows taste, hoop earrings",
-          "declined": false
+          "value": "artful, bold, shows taste",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "hoop earrings",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": true,
+      "specificity": 1
     }
   },
   {
     "case": 9,
     "stratum": "B",
     "pred": {
-      "category_phrase": "a nightgown or like a dress",
+      "category_phrase": "nightgown or like a dress",
       "department": "womens",
       "slots": [
         {
-          "attribute": "style",
-          "value": "classy, bold, provocative, shows off my/",
-          "declined": true
-        },
-        {
           "attribute": "color",
           "value": "brighter",
-          "declined": true
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "classy bold and provocative",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "shows off figure",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": true,
+      "specificity": 1
     }
   },
   {
@@ -295,18 +342,21 @@
         {
           "attribute": "style",
           "value": "classy",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "style",
           "value": "throwback",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -318,14 +368,22 @@
       "slots": [
         {
           "attribute": "style",
-          "value": "high heels with the toe sticking out a\u4e00\u70b9",
-          "declined": false
+          "value": "high heels",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "toe sticking out",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -336,49 +394,62 @@
       "department": "womens",
       "slots": [
         {
-          "attribute": "use_case",
-          "value": "sports, racket sports, lifting weights",
-          "declined": false
-        },
-        {
           "attribute": "brand",
           "value": "asics",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "size",
-          "value": "womens",
-          "declined": false
+          "attribute": "use_case",
+          "value": "sports, including racket sports and lift",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
     "case": 13,
     "stratum": "C",
     "pred": {
-      "category_phrase": "high quality, probably like leather",
+      "category_phrase": "shoes",
       "department": "mens",
       "slots": [
         {
-          "attribute": "brand",
-          "value": "asics",
-          "declined": false
+          "attribute": "material",
+          "value": "leather",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "use_case",
-          "value": "sports, including racket sports and lift",
-          "declined": false
+          "value": "sports",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "not leather",
+          "declined": false,
+          "negated": true
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -391,33 +462,39 @@
         {
           "attribute": "feature",
           "value": "slim fitting",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
           "value": "not too out there",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "stretchy",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "easy to wash",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "style",
           "value": "standard pair of denim jeans",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -430,23 +507,21 @@
         {
           "attribute": "color",
           "value": "black",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "style",
           "value": "skinny stem",
-          "declined": false
-        },
-        {
-          "attribute": "use_case",
-          "value": "office",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -457,25 +532,29 @@
       "department": "womens",
       "slots": [
         {
-          "attribute": "brand",
-          "value": "reputable/trusted",
-          "declined": false
-        },
-        {
           "attribute": "color",
           "value": "skin coloured",
-          "declined": false
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "not leather",
+          "declined": false,
+          "negated": true
         },
         {
           "attribute": "style",
-          "value": "covers nipples, accentuates boobs",
-          "declined": false
+          "value": "can cover nipples, accentuate boobs",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -488,43 +567,45 @@
         {
           "attribute": "material",
           "value": "wool",
-          "declined": false
-        },
-        {
-          "attribute": "use_case",
-          "value": "children",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "color",
-          "value": "none",
-          "declined": true
+          "value": "not specified",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "size",
-          "value": "none",
-          "declined": true
-        },
-        {
-          "attribute": "brand",
-          "value": "none",
-          "declined": true
+          "value": "child",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "style",
-          "value": "none",
-          "declined": true
+          "value": "not specified",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "not specified",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "easy to wash",
-          "declined": false
+          "declined": false,
+          "negated": true
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -537,28 +618,27 @@
         {
           "attribute": "material",
           "value": "quick drying",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
-          "value": "blocks the sun",
-          "declined": false
+          "value": "sun protection",
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "size",
-          "value": "long sleeve",
-          "declined": false
-        },
-        {
-          "attribute": "brand",
+          "attribute": "feature",
           "value": "UPF 50",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -571,28 +651,33 @@
         {
           "attribute": "size",
           "value": "long sleeve",
-          "declined": false
-        },
-        {
-          "attribute": "feature",
-          "value": "sun protective",
-          "declined": false
-        },
-        {
-          "attribute": "feature",
-          "value": "buttons at the collar",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "stretchy",
-          "declined": false
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "sun protective",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "color",
+          "value": "buttons at the collar",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -604,24 +689,34 @@
       "slots": [
         {
           "attribute": "style",
-          "value": "chunky, not thin dainty ones",
-          "declined": false
+          "value": "chunky",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
-          "value": "plated, not real gold",
-          "declined": false
+          "value": "plated",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "not real gold",
+          "declined": false,
+          "negated": true
         },
         {
           "attribute": "budget",
           "value": "60 bucks max",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": 60,
       "price_min": 0,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -629,18 +724,20 @@
     "stratum": "E",
     "pred": {
       "category_phrase": "matching outfit sets",
-      "department": "baby-girls",
+      "department": "womens",
       "slots": [
         {
           "attribute": "style",
           "value": "army print",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -648,52 +745,77 @@
     "stratum": "E",
     "pred": {
       "category_phrase": "plain fitted short sleeve top",
-      "department": "unisex-child",
+      "department": "womens",
       "slots": [
+        {
+          "attribute": "style",
+          "value": "plain",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "fitted",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "short sleeve",
+          "declined": false,
+          "negated": false
+        },
         {
           "attribute": "size",
           "value": "cropped",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "style",
+          "attribute": "size",
           "value": "v neckline",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "ribbed",
-          "declined": true
+          "declined": false,
+          "negated": true
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
     "case": 23,
     "stratum": "E",
     "pred": {
-      "category_phrase": "women's",
+      "category_phrase": "normal rain boots",
       "department": "womens",
       "slots": [
         {
           "attribute": "size",
           "value": "wide feet and wide calves",
-          "declined": true
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "style",
           "value": "ankle height",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -705,14 +827,16 @@
       "slots": [
         {
           "attribute": "budget",
-          "value": "<$25",
-          "declined": false
+          "value": "25",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": 25,
       "price_min": 0,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -725,18 +849,21 @@
         {
           "attribute": "budget",
           "value": "under 30 dollars each",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "material",
           "value": "not plastic",
-          "declined": false
+          "declined": false,
+          "negated": true
         }
       ],
       "price_max": 30,
       "price_min": 0,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -747,20 +874,35 @@
       "department": "unisex-adult",
       "slots": [
         {
+          "attribute": "material",
+          "value": "fluffy",
+          "declined": false,
+          "negated": false
+        },
+        {
           "attribute": "style",
-          "value": "fluffy open toe kind with memory foam in",
-          "declined": false
+          "value": "open toe",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "memory foam",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "budget",
           "value": "15",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": 15,
       "price_min": 0,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -772,19 +914,28 @@
       "slots": [
         {
           "attribute": "style",
-          "value": "v neck, short sleeves, lace or crochet\u7ec6\u8282",
-          "declined": false
+          "value": "v neck",
+          "declined": false,
+          "negated": false
         },
         {
-          "attribute": "use_case",
-          "value": "wear to brunch",
-          "declined": false
+          "attribute": "size",
+          "value": "short sleeves",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "lace or crochet detail at the front",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -797,23 +948,27 @@
         {
           "attribute": "material",
           "value": "soft leather-looking",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "size",
           "value": "roomy enough to fit a laptop",
-          "declined": false
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "brand",
           "value": "reputable/trusted",
-          "declined": false
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -824,20 +979,41 @@
       "department": "unisex-child",
       "slots": [
         {
+          "attribute": "brand",
+          "value": "none",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "none",
+          "declined": false,
+          "negated": false
+        },
+        {
           "attribute": "feature",
-          "value": "custom printed or embroidered text on it",
-          "declined": false
+          "value": "custom printed or embroidered",
+          "declined": false,
+          "negated": false
         },
         {
           "attribute": "feature",
           "value": "adjustable strap at the back",
-          "declined": false
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "budget",
+          "value": "around 20 bucks",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": 20,
       "price_min": 0,
       "quality_prior": "none",
-      "exploring": false
+      "exploring": false,
+      "specificity": 1
     }
   },
   {
@@ -849,14 +1025,16 @@
       "slots": [
         {
           "attribute": "color",
-          "value": "don't really care",
-          "declined": true
+          "value": "unspecified",
+          "declined": true,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true
+      "exploring": false,
+      "specificity": 1
     }
   }
 ]

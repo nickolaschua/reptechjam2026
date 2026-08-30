@@ -47,8 +47,31 @@ def resolver_query(parse: dict) -> list[str]:
     """category_phrase + soft slots - the arm that won in pipeline.py (B)."""
     from nlp_parse import tier_of
     terms = [parse.get("category_phrase") or ""]
-    terms += [s["value"] for s in parse.get("slots", []) if tier_of(s) == "soft"]
+    terms += [s["value"] for s in parse.get("slots", []) if tier_of(s) == "soft" and not s.get("negated")]
     return [t for t in terms if t]
+
+
+# exp11 tokenises "women's" to "women"; the catalog's categories say Women/Men/Girls/Boys/Baby
+_DEPT_TERM = {"womens": "women", "mens": "men", "girls": "girls", "boys": "boys",
+              "baby-girls": "baby", "baby-boys": "baby"}
+
+
+def parsed_state(parse: dict) -> tuple[str, list[str]]:
+    """Map a parse onto exp11's own {category, constraints} state. The parse replaces
+    the template regex; retrieval is exp11's untouched _rank. Negated and declined
+    slots are dropped; price is not a term."""
+    from nlp_parse import tier_of
+    category = " ".join(t for t in (_DEPT_TERM.get(parse.get("department") or ""), parse.get("category_phrase")) if t)
+    constraints = [s["value"] for s in parse.get("slots", [])
+                   if tier_of(s) != "decline" and not s.get("negated")]
+    return category or "clothing item", constraints
+
+
+def parsed_rank(agent, sid: str, parse: dict, asin: str) -> int | None:
+    agent.reset(sid, {})
+    state = agent.sessions[sid]
+    state["category"], state["constraints"] = parsed_state(parse)
+    return rank_of(agent._rank(state, TOP_K), asin)
 
 
 def specificity_counts(parse: dict) -> tuple[int, int]:
@@ -151,7 +174,10 @@ def main() -> None:
                 row["resolver_confidence"] = round(conf, 3)
                 row["category_phrase"] = parse.get("category_phrase")
                 row["n_hard"], row["n_soft"] = specificity_counts(parse)
+                row["n_negated"] = sum(1 for s in parse.get("slots", []) if s.get("negated"))
                 row["price_stated"] = parse.get("price_max") is not None or parse.get("price_min") is not None
+                row["specificity"] = parse.get("specificity")
+                row["parsed_rank"] = parsed_rank(agent, sid + "p", parse, c["asin"])
             out.write(json.dumps(row) + "\n")
             out.flush()
             if i % 25 == 0 or i == len(todo):
