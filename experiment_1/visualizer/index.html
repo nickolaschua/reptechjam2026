@@ -426,6 +426,33 @@
             transition: all 0.25s ease;
         }
 
+        .rec-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .rec-img-container {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .rec-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .rec-card:hover .rec-img {
+            transform: scale(1.05);
+        }
+
         .rec-card.is-target {
             border-color: var(--accent-cyan);
             background: rgba(0, 206, 201, 0.04);
@@ -701,10 +728,18 @@
         </div>
 
         <!-- Right: Inspector -->
-        <div class="inspector" id="inspector-container">
-            <h2 class="inspector-title">Target Item Inspector</h2>
-            <div class="empty-state" style="padding: 0;">
-                <p>Select a session to view target constraints and attributes.</p>
+        <div class="inspector">
+            <div id="inspector-container" style="margin-bottom: 24px;">
+                <h2 class="inspector-title">Target Item Inspector</h2>
+                <div class="empty-state" style="padding: 0;">
+                    <p>Select a session to view target constraints and attributes.</p>
+                </div>
+            </div>
+            <div id="selected-product-inspector" style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+                <h2 class="inspector-title" style="color: var(--accent-magenta);">Inspected Product</h2>
+                <div class="empty-state" style="padding: 0; color: var(--text-muted);">
+                    <p>Click any recommended product card to inspect its full description and details here.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -789,22 +824,13 @@
                 </div>
             `;
             
-            // Render basic inspector
-            const inspector = document.getElementById('inspector-container');
-            inspector.innerHTML = `
-                <h2 class="inspector-title">Target Item Inspector</h2>
-                <div class="inspector-section">
-                    <div class="inspector-section-lbl">Target Details</div>
-                    <div class="inspector-card">
-                        <div class="meta-item">
-                            <div class="meta-key">Brand</div>
-                            <div class="meta-value">${session.target_brand}</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-key">Title</div>
-                            <div class="meta-value" style="font-size: 12.5px;">${session.target_title}</div>
-                        </div>
-                    </div>
+            // Render rich inspector details immediately
+            updateInspector(session);
+            
+            document.getElementById('selected-product-inspector').innerHTML = `
+                <h2 class="inspector-title" style="color: var(--accent-magenta);">Inspected Product</h2>
+                <div class="empty-state" style="padding: 0; color: var(--text-muted);">
+                    <p>Click any recommended product card to inspect its full description and details here.</p>
                 </div>
             `;
             
@@ -1005,13 +1031,72 @@
             const senderClass = msg.role === 'customer' ? 'shopper' : 'copilot';
             const senderName = msg.role === 'customer' ? 'Shopper (Llama 3.1)' : 'Copilot Assistant (Hybrid)';
             
+        function getProductImage(r) {
+            if (r.image_url) {
+                // Prioritize the exact metadata image URL extracted from the 17GB file
+                return r.image_url;
+            }
+            if (r.asin) {
+                // Fallback 1: Amazon's ASIN CDN
+                return `https://images.amazon.com/images/P/${r.asin}.01.LZZZZZZZ.jpg`;
+            }
+            return getCategoryFallback(r);
+        }
+
+        function getCategoryFallback(r) {
+            const categoryImages = {
+                'necklaces': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=300&q=80',
+                'rings': 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=300&q=80',
+                'earrings': 'https://images.unsplash.com/photo-1635767790028-3e9c719e7a9e?auto=format&fit=crop&w=300&q=80',
+                'bracelets': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=300&q=80',
+                'jewelry': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=300&q=80',
+                'shoes': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80',
+                'sneakers': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80',
+                'oxfords': 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=300&q=80',
+                'boots': 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=300&q=80',
+                'watches': 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80',
+                'clothing': 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=300&q=80',
+                'shirts': 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80',
+                't-shirts': 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80',
+                'jeans': 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=300&q=80',
+                'jackets': 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=300&q=80',
+                'sweaters': 'https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?auto=format&fit=crop&w=300&q=80',
+                'dresses': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=300&q=80',
+                'active': 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=300&q=80',
+                'belts': 'https://images.unsplash.com/photo-1624222247344-550fb8ec5519?auto=format&fit=crop&w=300&q=80',
+                'handbags': 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80'
+            };
+            
+            const cats = r.categories || [];
+            for (let cat of cats) {
+                const clean = cat.toLowerCase();
+                for (let key in categoryImages) {
+                    if (clean.includes(key)) {
+                        return categoryImages[key];
+                    }
+                }
+            }
+            
+            const title = (r.title || '').toLowerCase();
+            for (let key in categoryImages) {
+                if (title.includes(key)) {
+                    return categoryImages[key];
+                }
+            }
+            
+            return 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80';
+        }
+
             let recommendationsHtml = '';
             if (msg.recommendations && msg.recommendations.length > 0) {
                 recommendationsHtml = `
                     <div class="recs-row">
                         ${msg.recommendations.map(r => `
-                            <div class="rec-card ${r.is_target ? 'is-target' : ''}">
+                            <div class="rec-card ${r.is_target ? 'is-target' : ''}" data-product="${encodeURIComponent(JSON.stringify(r))}" onclick="inspectProduct(this)" style="cursor: pointer;">
                                 ${r.is_target ? `<span class="target-tag">Target Item</span>` : ''}
+                                <div class="rec-img-container">
+                                    <img src="${getProductImage(r)}" class="rec-img" alt="product image" onload="if(this.naturalWidth <= 1) { this.src='${getCategoryFallback(r)}'; }" onerror="this.src='${getCategoryFallback(r)}'">
+                                </div>
                                 <div>
                                     <div class="rec-rank">Rank #${r.rank}</div>
                                     <div class="rec-brand">${r.brand}</div>
@@ -1058,9 +1143,26 @@
         // Update inspector panel dynamically
         function updateInspector(target) {
             const container = document.getElementById('inspector-container');
+            
+            // Format details list
+            let detailsHtml = '<span style="color: var(--text-muted); font-size: 12px;">None</span>';
+            if (target.target_meta && target.target_meta.details) {
+                detailsHtml = Object.entries(target.target_meta.details)
+                    .map(([k, v]) => `<div style="margin-bottom: 2px;"><strong>${k}:</strong> ${v}</div>`)
+                    .join('');
+            }
+            
+            // Format features list
+            let featuresHtml = '<li style="color: var(--text-muted); font-size: 12px;">None</li>';
+            if (target.target_meta && target.target_meta.features && target.target_meta.features.length > 0) {
+                featuresHtml = target.target_meta.features
+                    .map(f => `<li style="margin-bottom: 4px;">${f}</li>`)
+                    .join('');
+            }
+
             container.innerHTML = `
                 <h2 class="inspector-title">Target Item Inspector</h2>
-                <div class="inspector-section">
+                <div class="inspector-section" style="max-height: 250px; overflow-y: auto;">
                     <div class="inspector-section-lbl">Target Details</div>
                     <div class="inspector-card">
                         <div class="meta-item">
@@ -1075,21 +1177,115 @@
                             <div class="meta-key">Target ASIN</div>
                             <div class="meta-value" style="font-family: monospace; color: var(--accent-cyan);">${target.target_asin}</div>
                         </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Price</div>
+                            <div class="meta-value" style="color: #2ecc71; font-weight: bold;">
+                                ${target.target_meta && target.target_meta.price > 0 ? '$' + target.target_meta.price.toFixed(2) : 'Benefit of Doubt (Free/0.0)'}
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Rating</div>
+                            <div class="meta-value">
+                                ${target.target_meta && target.target_meta.avg_rating > 0 ? target.target_meta.avg_rating.toFixed(1) + ' ★ (' + target.target_meta.rating_number + ' reviews)' : 'None'}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="inspector-section">
                     <div class="inspector-section-lbl">Hard Constraints (Must-Haves)</div>
                     <div>
-                        ${target.hard_constraints.map(tag => `<span class="tag-badge" style="border-color: var(--accent-cyan); color: var(--accent-cyan);">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
+                        ${(target.hard_constraints || []).map(tag => `<span class="tag-badge" style="border-color: var(--accent-cyan); color: var(--accent-cyan);">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
                     </div>
                 </div>
 
                 <div class="inspector-section">
                     <div class="inspector-section-lbl">Soft Preferences (Nice-to-Haves)</div>
                     <div>
-                        ${target.soft_preferences.map(tag => `<span class="tag-badge">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
+                        ${(target.soft_preferences || []).map(tag => `<span class="tag-badge">${tag}</span>`).join('') || '<span style="color: var(--text-muted); font-size: 12px;">None</span>'}
                     </div>
+                </div>
+
+                <div class="inspector-section" style="max-height: 200px; overflow-y: auto;">
+                    <div class="inspector-section-lbl">Specifications (Details)</div>
+                    <div class="inspector-card" style="font-size: 11.5px; line-height: 1.4; padding: 8px;">
+                        ${detailsHtml}
+                    </div>
+                </div>
+
+                <div class="inspector-section" style="max-height: 250px; overflow-y: auto;">
+                    <div class="inspector-section-lbl">Product Bullet Features</div>
+                    <ul style="font-size: 11.5px; margin: 0; padding-left: 15px; color: var(--text-secondary); line-height: 1.4;">
+                        ${featuresHtml}
+                    </ul>
+                </div>
+            `;
+        }
+
+        function inspectProduct(element) {
+            const prod = JSON.parse(decodeURIComponent(element.getAttribute('data-product')));
+            const container = document.getElementById('selected-product-inspector');
+            if (!container) return;
+            
+            // Format details list
+            let detailsHtml = '<span style="color: var(--text-muted); font-size: 12px;">None</span>';
+            if (prod.details) {
+                detailsHtml = Object.entries(prod.details)
+                    .map(([k, v]) => `<div style="margin-bottom: 2px;"><strong>${k}:</strong> ${v}</div>`)
+                    .join('');
+            }
+            
+            // Format features list
+            let featuresHtml = '<li style="color: var(--text-muted); font-size: 12px;">None</li>';
+            if (prod.features && prod.features.length > 0) {
+                featuresHtml = prod.features
+                    .map(f => `<li style="margin-bottom: 4px;">${f}</li>`)
+                    .join('');
+            }
+
+            container.innerHTML = `
+                <h2 class="inspector-title" style="color: var(--accent-magenta);">Inspected Product</h2>
+                <div class="inspector-section" style="max-height: 250px; overflow-y: auto;">
+                    <div class="inspector-card">
+                        <div class="meta-item">
+                            <div class="meta-key">Brand</div>
+                            <div class="meta-value">${prod.brand}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Title</div>
+                            <div class="meta-value" style="font-size: 12.5px;">${prod.title}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">ASIN</div>
+                            <div class="meta-value" style="font-family: monospace; color: var(--accent-magenta);">${prod.asin}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Price</div>
+                            <div class="meta-value" style="color: #2ecc71; font-weight: bold;">
+                                ${prod.price > 0 ? '$' + prod.price.toFixed(2) : 'Benefit of Doubt (Free/0.0)'}
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-key">Rating</div>
+                            <div class="meta-value">
+                                ${prod.avg_rating > 0 ? prod.avg_rating.toFixed(1) + ' ★ (' + prod.rating_number + ' reviews)' : 'None'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inspector-section" style="max-height: 200px; overflow-y: auto;">
+                    <div class="inspector-section-lbl">Specifications (Details)</div>
+                    <div class="inspector-card" style="font-size: 11.5px; line-height: 1.4; padding: 8px;">
+                        ${detailsHtml}
+                    </div>
+                </div>
+
+                <div class="inspector-section" style="max-height: 250px; overflow-y: auto;">
+                    <div class="inspector-section-lbl">Product Bullet Features</div>
+                    <ul style="font-size: 11.5px; margin: 0; padding-left: 15px; color: var(--text-secondary); line-height: 1.4;">
+                        ${featuresHtml}
+                    </ul>
                 </div>
             `;
         }
