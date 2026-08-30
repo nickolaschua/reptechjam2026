@@ -189,5 +189,41 @@ class TestSample(unittest.TestCase):
         self.assertEqual(a, b)
 
 
+class TestGenerate(unittest.TestCase):
+    def test_overlap_is_fraction_of_utterance_content_words_in_listing(self):
+        from generate import overlap
+        product = {"title": "Merrell Vapor Glove Trail Running Shoe", "features": ["Rubber sole"]}
+        self.assertAlmostEqual(overlap("i want trail running shoes from merrell", product), 3 / 4, places=3)
+        self.assertEqual(overlap("something for the mountains", product), 0.0)
+        self.assertEqual(overlap("", product), 0.0)
+
+    def test_plan_cases_gates_styles_labels_intent_and_is_deterministic(self):
+        from generate import plan_cases, GENERATORS
+        products = [{"asin": "A", "has_model_code": True, "model_code": "WA1200", "compat_eligible": False,
+                     "compat_anchor": None, "department": "mens"},
+                    {"asin": "B", "has_model_code": False, "model_code": None, "compat_eligible": True,
+                     "compat_anchor": "watch", "department": None}]
+        plan = plan_cases(products, seed=3)
+        self.assertEqual(plan, plan_cases(products, seed=3))
+        self.assertEqual([c["case_id"] for c in plan], [f"c{i:04d}" for i in range(1, len(plan) + 1)])
+        styles = [c["style"] for c in plan]
+        self.assertEqual(styles.count("exact"), 1)             # only A has a code
+        self.assertEqual(styles.count("compatibility"), 1)     # only B is eligible
+        for st in ("product_type", "feature", "use_case", "symptom", "plain", "lay"):
+            self.assertEqual(styles.count(st), 2)
+        self.assertTrue(all(c["generator"] in GENERATORS for c in plan))
+        exact = next(c for c in plan if c["style"] == "exact")
+        self.assertEqual(exact["code"], "WA1200")
+        self.assertEqual(exact["intent_label"], "buying")
+        compat = next(c for c in plan if c["style"] == "compatibility")
+        self.assertEqual(compat["anchor"], "watch")
+        self.assertEqual(compat["intent_label"], "browsing")
+        for c in plan:
+            if "for_other" in c["modifiers"]:
+                self.assertTrue(c["relation"])
+            if "format_noise" in c["modifiers"]:
+                self.assertEqual(c["style"], "exact")
+
+
 if __name__ == "__main__":
     unittest.main()
