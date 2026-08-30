@@ -1,0 +1,437 @@
+{
+  "version": "longitudinal_v1",
+  "schema_version": 2,
+  "budget_threshold_usd": 120,
+  "probe_replays": {
+    "u1_stable": {"sequence_index": 9, "history_sizes": [0, 9]},
+    "u2_override": {"sequence_index": 9, "history_sizes": [0, 9]},
+    "u3_distractor": {"sequence_index": 9, "history_sizes": [0, 1, 3, 5, 9]},
+    "u4_negative": {"sequence_index": 9, "history_sizes": [0, 9]}
+  },
+  "users": [
+    {
+      "user_id": "u1_stable",
+      "archetype": "stable learner",
+      "constant_profile": {"purchase_frequency": "occasional", "average_prior_rating": null, "rating_style": "selective", "preference_tags": [], "summary": "A practical shopper who compares options carefully."},
+      "shopper_private_persona": {"latent_preferences": [
+        {"id": "P1", "fact": "prefers breathable or natural materials", "leakage_terms": ["breathable", "cotton", "natural"]},
+        {"id": "P2", "fact": "generally prefers neutral colours", "leakage_terms": ["neutral", "black", "beige", "navy"]},
+        {"id": "P3", "fact": "usually stays under approximately $120", "leakage_terms": ["120", "budget"]}
+      ]},
+      "sessions": [
+        {
+          "sequence_index": 0, "source_sample_id": "public_0018", "target_asin": "B07H3T5YGH", "session_role": "cold_start",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "category", "value": "tank top", "source": "categories", "confidence": "high", "evidence": "Tanks Tops"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "none", "relevant_prior_sequence_indices": [], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "cold start; no deliberate longitudinal fact",
+          "selection_rationale": "A buying-row shirt task gives a category reference close to the later T-shirt probe without disclosing tested history."
+        },
+        {
+          "sequence_index": 1, "source_sample_id": "public_0199", "target_asin": "B089M57PSQ", "session_role": "establish_p1",
+          "longitudinal_directive": {"disclose": ["Across purchases, I generally prefer breathable or natural materials."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "100% cotton", "source": "features[2]", "confidence": "high", "evidence": "100% Cotton"},
+            {"kind": "comfort", "value": "breathable", "source": "features[3]", "confidence": "high", "evidence": "breathable"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable or natural materials"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 first disclosure", "relevant_prior_sequence_indices": [], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "persist P1 only after natural disclosure",
+          "selection_rationale": "The target explicitly states 100% cotton and breathable fabric, directly supporting P1."
+        },
+        {
+          "sequence_index": 2, "source_sample_id": "public_0024", "target_asin": "B076X3JXMW", "session_role": "reinforce_p1",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer breathable or natural materials."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "100% rayon", "source": "features[0]", "confidence": "high", "evidence": "100 rayon"},
+            {"kind": "comfort", "value": "keeps cool", "source": "features[3]", "confidence": "high", "evidence": "let body heat escape"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable or natural materials"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 reinforcement", "relevant_prior_sequence_indices": [1], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce P1 in a jumpsuit context",
+          "selection_rationale": "A different clothing context explicitly describes heat-escaping rayon fabric."
+        },
+        {
+          "sequence_index": 3, "source_sample_id": "public_0029", "target_asin": "B01IAKCZEK", "session_role": "establish_p2",
+          "longitudinal_directive": {"disclose": ["Across purchases, I generally prefer neutral colours."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "color", "value": "light natural", "source": "details.Color", "confidence": "high", "evidence": "Light Natural"}]},
+          "expected_memory": {"helpful": ["prefers neutral colours"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P2 first disclosure", "relevant_prior_sequence_indices": [1, 2], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "add P2 without restating P1",
+          "selection_rationale": "The catalogue's target-level Color field is Light Natural, a verified neutral."
+        },
+        {
+          "sequence_index": 4, "source_sample_id": "public_0156", "target_asin": "B0C3KZXV4B", "session_role": "reinforce_p2",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer neutral colours."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "color", "value": "shadow navy and dash grey", "source": "title", "confidence": "high", "evidence": "Shadow Navy/Snowglobe/Dash Grey"}]},
+          "expected_memory": {"helpful": ["prefers neutral colours"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P2 reinforcement", "relevant_prior_sequence_indices": [3], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce P2 in a bag context",
+          "selection_rationale": "The exact target title supplies navy and grey colour evidence in another product family."
+        },
+        {
+          "sequence_index": 5, "source_sample_id": "public_0026", "target_asin": "B093R14VP1", "session_role": "establish_p3",
+          "longitudinal_directive": {"disclose": ["Across purchases, I usually try to stay under approximately $120."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "price", "value": 63.95, "source": "price", "confidence": "high", "evidence": "63.95"}]},
+          "expected_memory": {"helpful": ["usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P3 first disclosure under approximately $120", "relevant_prior_sequence_indices": [1, 2, 3, 4], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "persist a portable price ceiling",
+          "selection_rationale": "The trail-running target has a reliable numeric price well below the fixed $120 threshold."
+        },
+        {
+          "sequence_index": 6, "source_sample_id": "public_0163", "target_asin": "B0834T68X3", "session_role": "combine_p1_p3",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer breathable materials."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "feature", "value": "breathable mesh", "source": "features[4]", "confidence": "high", "evidence": "ventilation and breathability"},
+            {"kind": "price", "value": 28.89, "source": "price", "confidence": "high", "evidence": "28.89"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable materials", "usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 light reinforcement with P3-compatible target", "relevant_prior_sequence_indices": [1, 2, 5], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "combine P1 with existing price tendency",
+          "selection_rationale": "Ventilation is explicit and the numeric price is below the benchmark threshold."
+        },
+        {
+          "sequence_index": 7, "source_sample_id": "public_0108", "target_asin": "B01I21CI7G", "session_role": "combine_p1_p2",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer breathable natural fabrics and neutral colours."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "cotton blend", "source": "features[0]", "confidence": "high", "evidence": "54% Cotton"},
+            {"kind": "color", "value": "neutral shades", "source": "features[7]", "confidence": "medium", "evidence": "assortment of neutral shades"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable natural fabrics", "prefers neutral colours"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 and P2 light reinforcement", "relevant_prior_sequence_indices": [1, 2, 3, 4], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "combine established material and colour tendencies",
+          "selection_rationale": "The product family explicitly uses cotton and is offered as an assortment of neutral shades."
+        },
+        {
+          "sequence_index": 8, "source_sample_id": "public_0088", "target_asin": "B07Z6J5N6Y", "session_role": "mature_history",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "95% cotton", "source": "features[0]", "confidence": "high", "evidence": "95% Cotton"},
+            {"kind": "price", "value": 12.72, "source": "price", "confidence": "high", "evidence": "12.72"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable or natural materials", "usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "none; mature compatible history", "relevant_prior_sequence_indices": [1, 2, 3, 4, 5, 6, 7], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "do not dump all known facts",
+          "selection_rationale": "A 95% cotton, inexpensive ordinary purchase is broadly compatible without another scheduled disclosure."
+        },
+        {
+          "sequence_index": 9, "source_sample_id": "public_0178", "target_asin": "B01FWQ8NH8", "session_role": "memory_probe",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "100% cotton", "source": "features[0]", "confidence": "high", "evidence": "100% Cotton"},
+            {"kind": "color", "value": "black", "source": "title", "confidence": "high", "evidence": "T-Shirt Black"},
+            {"kind": "price", "value": 17.99, "source": "price", "confidence": "high", "evidence": "17.99"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable or natural materials", "prefers neutral colours", "usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "same S10 used for no-history/full-history probe under approximately $120", "relevant_prior_sequence_indices": [1, 2, 3, 4, 5, 6, 7, 8], "intentionally_irrelevant_prior_indices": [0], "expected_memory_behavior": "history should help future methods without the shopper restating P1/P2/P3",
+          "selection_rationale": "A shirt task close to S1 has verified cotton, black colour, and numeric price while allowing an underspecified current request."
+        }
+      ]
+    },
+    {
+      "user_id": "u2_override",
+      "archetype": "query override",
+      "constant_profile": {"purchase_frequency": "regular", "average_prior_rating": null, "rating_style": "decisive", "preference_tags": [], "summary": "A deliberate shopper who states current requirements clearly."},
+      "shopper_private_persona": {"latent_preferences": [
+        {"id": "P1", "fact": "prefers dark or neutral colours", "leakage_terms": ["dark", "black", "neutral"]},
+        {"id": "P2", "fact": "prefers understated minimal styling", "leakage_terms": ["understated", "minimal", "minimalist"]},
+        {"id": "P3", "fact": "usually stays under approximately $120", "leakage_terms": ["120", "budget"]}
+      ]},
+      "sessions": [
+        {
+          "sequence_index": 0, "source_sample_id": "public_0149", "target_asin": "B07CBYYHTL", "session_role": "establish_p1",
+          "longitudinal_directive": {"disclose": ["Across purchases, I generally prefer dark or neutral colours."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "color", "value": "black", "source": "title", "confidence": "high", "evidence": "Small Black Sling"}]},
+          "expected_memory": {"helpful": ["prefers dark or neutral colours"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 first disclosure", "relevant_prior_sequence_indices": [], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "establish dark colour tendency",
+          "selection_rationale": "The exact public target title identifies a black backpack."
+        },
+        {
+          "sequence_index": 1, "source_sample_id": "public_0160", "target_asin": "B01AAANF2Y", "session_role": "reinforce_p1",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer dark or neutral colours."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "color", "value": "black", "source": "details.Color", "confidence": "high", "evidence": "Black"}]},
+          "expected_memory": {"helpful": ["prefers dark or neutral colours"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 reinforcement", "relevant_prior_sequence_indices": [0], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce P1 in travel storage",
+          "selection_rationale": "The catalogue gives target-level Color=Black."
+        },
+        {
+          "sequence_index": 2, "source_sample_id": "public_0028", "target_asin": "B0B9ZYDDZ1", "session_role": "establish_p2",
+          "longitudinal_directive": {"disclose": ["Across purchases, I generally prefer understated or minimal styling."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "style", "value": "minimalist", "source": "details.Style", "confidence": "high", "evidence": "Minimalist"},
+            {"kind": "color", "value": "lichee black", "source": "details.Color", "confidence": "high", "evidence": "Lichee Black"}
+          ]},
+          "expected_memory": {"helpful": ["prefers understated minimal styling"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P2 first disclosure", "relevant_prior_sequence_indices": [0, 1], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "add minimalist style tendency",
+          "selection_rationale": "Target-level Style=Minimalist and Color=Lichee Black are unusually strong catalogue evidence."
+        },
+        {
+          "sequence_index": 3, "source_sample_id": "public_0054", "target_asin": "B08PP1ZJQ5", "session_role": "reinforce_p2",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer understated or minimal styling."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "style", "value": "basic casual", "source": "title", "confidence": "high", "evidence": "Basic Casual"}]},
+          "expected_memory": {"helpful": ["prefers understated minimal styling"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P2 reinforcement", "relevant_prior_sequence_indices": [2], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce P2 in casual clothing",
+          "selection_rationale": "The target is explicitly described as basic casual styling."
+        },
+        {
+          "sequence_index": 4, "source_sample_id": "public_0042", "target_asin": "B01LWOGORL", "session_role": "establish_p3",
+          "longitudinal_directive": {"disclose": ["Across purchases, I usually try to stay under approximately $120."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "price", "value": 33.16, "source": "price", "confidence": "high", "evidence": "33.16"}]},
+          "expected_memory": {"helpful": ["usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P3 first disclosure under approximately $120", "relevant_prior_sequence_indices": [0, 1, 2, 3], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "persist portable price tendency",
+          "selection_rationale": "The classic watch has a reliable $33.16 catalogue price."
+        },
+        {
+          "sequence_index": 5, "source_sample_id": "public_0028", "target_asin": "B0B9ZYDDZ1", "session_role": "strong_dark_minimal",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I strongly prefer dark colours and understated minimal styling."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "style", "value": "minimalist", "source": "details.Style", "confidence": "high", "evidence": "Minimalist"},
+            {"kind": "price", "value": 15.99, "source": "price", "confidence": "high", "evidence": "15.99"}
+          ]},
+          "expected_memory": {"helpful": ["prefers dark colours", "prefers minimal styling", "usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong P1/P2 reinforcement with price-compatible target", "relevant_prior_sequence_indices": [0, 1, 2, 3, 4], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "strengthen historical bias",
+          "selection_rationale": "Reusing the exceptionally well-audited black minimalist wallet strengthens the controlled history."
+        },
+        {
+          "sequence_index": 6, "source_sample_id": "public_0152", "target_asin": "B000EQU0NW", "session_role": "reinforce_p1_p2",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer dark colours and classic understated styling."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "style_color", "value": "classic brown", "source": "title", "confidence": "high", "evidence": "Classic, Brown"}]},
+          "expected_memory": {"helpful": ["prefers dark colours", "prefers understated styling"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1/P2 reinforcement", "relevant_prior_sequence_indices": [0, 1, 2, 3, 5], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce bias in another category",
+          "selection_rationale": "The watch title directly specifies classic styling and brown colour."
+        },
+        {
+          "sequence_index": 7, "source_sample_id": "public_0156", "target_asin": "B0C3KZXV4B", "session_role": "reinforce_compatible_budget",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer dark neutral colours and understated styling."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "color", "value": "shadow navy and dash grey", "source": "title", "confidence": "high", "evidence": "Shadow Navy/Snowglobe/Dash Grey"},
+            {"kind": "price", "value": 20.0, "source": "price", "confidence": "high", "evidence": "20.0"}
+          ]},
+          "expected_memory": {"helpful": ["prefers dark neutral colours", "prefers understated styling", "usually stays under $120"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1/P2 reinforcement with target under approximately $120", "relevant_prior_sequence_indices": [0, 1, 2, 3, 4, 5, 6], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "keep price tendency portable",
+          "selection_rationale": "Navy/grey colours and the numeric $20 price jointly support the scheduled history."
+        },
+        {
+          "sequence_index": 8, "source_sample_id": "public_0160", "target_asin": "B01AAANF2Y", "session_role": "strong_recent_reinforcement",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I strongly prefer dark colours and simple understated styling."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "color", "value": "black", "source": "details.Color", "confidence": "high", "evidence": "Black"},
+            {"kind": "style", "value": "slim", "source": "details.Size", "confidence": "high", "evidence": "Slim"}
+          ]},
+          "expected_memory": {"helpful": ["prefers dark colours", "prefers understated styling"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong recent P1/P2 reinforcement", "relevant_prior_sequence_indices": [0, 1, 2, 3, 5, 6, 7], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "create strong recent incompatible bias before S10",
+          "selection_rationale": "The audited black slim organizer provides a strong, recent, controlled reinforcement."
+        },
+        {
+          "sequence_index": 9, "source_sample_id": "public_0145", "target_asin": "B00IJZZWGA", "session_role": "query_override_probe",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": ["I normally choose dark understated items, but today I specifically want something bright, colourful, and sporty while still staying under approximately $120."]},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "use_case", "value": "athletic running socks", "source": "title", "confidence": "high", "evidence": "Athletic Socks For Running"},
+            {"kind": "color_style", "value": "colourful designs", "source": "features[7]", "confidence": "high", "evidence": "colorful designs"},
+            {"kind": "price", "value": 23.99, "source": "price", "confidence": "high", "evidence": "23.99"}
+          ]},
+          "expected_memory": {"helpful": ["usually stays under $120"], "irrelevant": [], "should_suppress": ["prefers dark colours", "prefers understated styling"], "negative": []},
+          "intended_memory_signal": "explicit current override; portable price remains under approximately $120", "relevant_prior_sequence_indices": [4, 7], "intentionally_irrelevant_prior_indices": [0, 1, 2, 3, 5, 6, 8], "expected_memory_behavior": "future query-aware methods suppress P1/P2 and retain P3",
+          "selection_rationale": "A normal buying row explicitly supports colourful athletic socks and has a numeric price below $120."
+        }
+      ]
+    },
+    {
+      "user_id": "u3_distractor",
+      "archetype": "distractor history",
+      "constant_profile": {"purchase_frequency": "occasional", "average_prior_rating": null, "rating_style": "balanced", "preference_tags": [], "summary": "A context-sensitive shopper who plans purchases for varied activities."},
+      "shopper_private_persona": {"latent_preferences": [
+        {"id": "P1", "fact": "prefers breathable materials", "leakage_terms": ["breathable"]},
+        {"id": "P2", "fact": "usually stays under approximately $120", "leakage_terms": ["120", "budget"]}
+      ]},
+      "sessions": [
+        {
+          "sequence_index": 0, "source_sample_id": "public_0136", "target_asin": "B091F54MWM", "session_role": "useful_signal_p1",
+          "longitudinal_directive": {"disclose": ["Across purchases, I generally prefer breathable materials."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "comfort", "value": "air permeability", "source": "features[7]", "confidence": "high", "evidence": "air permeability"}]},
+          "expected_memory": {"helpful": ["prefers breathable materials"], "irrelevant": [], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 first disclosure", "relevant_prior_sequence_indices": [], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "establish small persistent signal",
+          "selection_rationale": "The active shorts explicitly promise air permeability."
+        },
+        {
+          "sequence_index": 1, "source_sample_id": "public_0083", "target_asin": "B0BPMCJ1RD", "session_role": "office_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For today's office event, I need a button-down collared layer."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "style", "value": "button-down collared", "source": "features[4]", "confidence": "high", "evidence": "turndown collar"}]},
+          "expected_memory": {"helpful": [], "irrelevant": ["button-down collared office layer"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong session-only office context", "relevant_prior_sequence_indices": [0], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "allow contextual fact to persist normally",
+          "selection_rationale": "Button-down, collar, and office use are explicit catalogue properties."
+        },
+        {
+          "sequence_index": 2, "source_sample_id": "public_0095", "target_asin": "B09N78FT2W", "session_role": "gym_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For today's gym session, I need compression leggings with secure pockets."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "feature", "value": "compression", "source": "features[4]", "confidence": "high", "evidence": "fit compression"}]},
+          "expected_memory": {"helpful": [], "irrelevant": ["gym compression", "secure pockets"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong session-only gym context", "relevant_prior_sequence_indices": [0], "intentionally_irrelevant_prior_indices": [1], "expected_memory_behavior": "accumulate plausible distractor",
+          "selection_rationale": "The target explicitly names compression and workout use."
+        },
+        {
+          "sequence_index": 3, "source_sample_id": "public_0093", "target_asin": "B07PYB8F1G", "session_role": "useful_signal_p2",
+          "longitudinal_directive": {"disclose": ["Across purchases, I usually try to stay under approximately $120."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "price", "value": 10.47, "source": "price", "confidence": "high", "evidence": "10.47"}]},
+          "expected_memory": {"helpful": ["usually stays under $120"], "irrelevant": ["office button-down", "gym compression"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P2 first disclosure under approximately $120", "relevant_prior_sequence_indices": [0], "intentionally_irrelevant_prior_indices": [1, 2], "expected_memory_behavior": "add portable price signal amid noise",
+          "selection_rationale": "The target has a reliable low numeric price."
+        },
+        {
+          "sequence_index": 4, "source_sample_id": "public_0058", "target_asin": "B08L83YQTZ", "session_role": "rain_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For today's rainy hike, I need a waterproof hooded jacket."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "feature", "value": "waterproof", "source": "features[5]", "confidence": "high", "evidence": "waterproof rain jacket"},
+            {"kind": "feature", "value": "hooded", "source": "features[6]", "confidence": "high", "evidence": "hooded hat design"}
+          ]},
+          "expected_memory": {"helpful": [], "irrelevant": ["waterproof hooded rainy-hike requirement"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong session-only rain context", "relevant_prior_sequence_indices": [0, 3], "intentionally_irrelevant_prior_indices": [1, 2], "expected_memory_behavior": "persist plausible context without evaluator filtering",
+          "selection_rationale": "Waterproofing and a hood are directly verified."
+        },
+        {
+          "sequence_index": 5, "source_sample_id": "public_0114", "target_asin": "B07H34Z5V6", "session_role": "reinforce_useful_p1",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I generally prefer breathable materials."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "comfort", "value": "breathable upper", "source": "features[4]", "confidence": "high", "evidence": "breathable soft upper"}]},
+          "expected_memory": {"helpful": ["prefers breathable materials"], "irrelevant": ["office button-down", "gym compression", "waterproof hood"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "P1 reinforcement", "relevant_prior_sequence_indices": [0, 3], "intentionally_irrelevant_prior_indices": [1, 2, 4], "expected_memory_behavior": "recover and reinforce useful signal",
+          "selection_rationale": "A shoe context explicitly verifies a breathable upper."
+        },
+        {
+          "sequence_index": 6, "source_sample_id": "public_0066", "target_asin": "B0BFLFSB2Y", "session_role": "formal_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For one formal dinner, I need a dressy evening gown."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "category", "value": "formal dress", "source": "categories", "confidence": "high", "evidence": "Formal"}]},
+          "expected_memory": {"helpful": [], "irrelevant": ["formal dinner gown"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong session-only formal context", "relevant_prior_sequence_indices": [0, 3, 5], "intentionally_irrelevant_prior_indices": [1, 2, 4], "expected_memory_behavior": "accumulate another plausible distractor",
+          "selection_rationale": "The official category is Formal and features describe an evening party gown."
+        },
+        {
+          "sequence_index": 7, "source_sample_id": "public_0101", "target_asin": "B07QMS8TX8", "session_role": "travel_storage_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For one trip, I need cargo pants with lots of storage pockets."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "feature", "value": "seven storage pockets", "source": "features[7]", "confidence": "high", "evidence": "SEVEN POCKETS FOR LOTS OF STORAGE"}]},
+          "expected_memory": {"helpful": [], "irrelevant": ["cargo storage pockets"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong session-only storage context", "relevant_prior_sequence_indices": [0, 3, 5], "intentionally_irrelevant_prior_indices": [1, 2, 4, 6], "expected_memory_behavior": "increase distractor density",
+          "selection_rationale": "The cargo target explicitly verifies seven pockets and storage use."
+        },
+        {
+          "sequence_index": 8, "source_sample_id": "public_0005", "target_asin": "B074G1JP8Z", "session_role": "strong_recent_distractor",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": ["For one snowy trip, I strongly need insulated waterproof winter boots."], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "feature", "value": "winter insulation", "source": "features[2]", "confidence": "high", "evidence": "Thermolite Insulation"},
+            {"kind": "feature", "value": "waterproof", "source": "features[4]", "confidence": "high", "evidence": "Waterproof Seam-Sealed Construction"}
+          ]},
+          "expected_memory": {"helpful": [], "irrelevant": ["insulated waterproof winter boots"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "strong recent session-only distractor", "relevant_prior_sequence_indices": [0, 3, 5], "intentionally_irrelevant_prior_indices": [1, 2, 4, 6, 7], "expected_memory_behavior": "create strong recent noise before probe",
+          "selection_rationale": "Insulation and waterproof construction are unambiguous and irrelevant to the later T-shirt probe."
+        },
+        {
+          "sequence_index": 9, "source_sample_id": "public_0194", "target_asin": "B09WR1NZ48", "session_role": "distractor_probe",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "comfort", "value": "breathable", "source": "features[3]", "confidence": "high", "evidence": "breathable"},
+            {"kind": "price", "value": 19.99, "source": "price", "confidence": "high", "evidence": "19.99"}
+          ]},
+          "expected_memory": {"helpful": ["prefers breathable materials", "usually stays under $120"], "irrelevant": ["office button-down", "gym compression", "waterproof hood", "formal gown", "cargo storage", "insulated snow boots"], "should_suppress": [], "negative": []},
+          "intended_memory_signal": "same S10 for H0/H1/H3/H5/H9 under approximately $120", "relevant_prior_sequence_indices": [0, 3, 5], "intentionally_irrelevant_prior_indices": [1, 2, 4, 6, 7, 8], "expected_memory_behavior": "future selectors recover P1/P2 and ignore contextual noise",
+          "selection_rationale": "An ordinary breathable, inexpensive T-shirt makes office, gym, rain, formal, cargo, and snow requirements unnecessary."
+        }
+      ]
+    },
+    {
+      "user_id": "u4_negative",
+      "archetype": "negative preference",
+      "constant_profile": {"purchase_frequency": "regular", "average_prior_rating": null, "rating_style": "critical", "preference_tags": [], "summary": "A careful shopper who checks product details before choosing."},
+      "shopper_private_persona": {"latent_preferences": [
+        {"id": "N1", "fact": "does not want wool", "leakage_terms": ["wool"]},
+        {"id": "N2", "fact": "avoids polyester-heavy products", "leakage_terms": ["polyester"]},
+        {"id": "N3", "fact": "avoids very bright or neon colours", "leakage_terms": ["neon", "bright"]}
+      ]},
+      "sessions": [
+        {
+          "sequence_index": 0, "source_sample_id": "public_0032", "target_asin": "B0834HZQZF", "session_role": "establish_n1",
+          "longitudinal_directive": {"disclose": ["Across purchases, I do not want wool."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "100% cotton", "source": "features[0]", "confidence": "high", "evidence": "100% Cotton"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool"]},
+          "intended_memory_signal": "N1 explicit negative", "relevant_prior_sequence_indices": [], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "commit negative wool preference",
+          "selection_rationale": "The 100% cotton target offers a text-verifiable non-wool alternative."
+        },
+        {
+          "sequence_index": 1, "source_sample_id": "public_0088", "target_asin": "B07Z6J5N6Y", "session_role": "reinforce_n1",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I do not want wool in products I buy."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "95% cotton and 5% spandex", "source": "features[0]", "confidence": "high", "evidence": "95% Cotton, 5% Spandex"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool"]},
+          "intended_memory_signal": "N1 reinforcement", "relevant_prior_sequence_indices": [0], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "reinforce explicit dislike in another context",
+          "selection_rationale": "The exact composition verifies a cotton/spandex alternative without wool."
+        },
+        {
+          "sequence_index": 2, "source_sample_id": "public_0132", "target_asin": "B08X2X83DW", "session_role": "neutral_task",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "category", "value": "slippers", "source": "categories", "confidence": "high", "evidence": "Slippers"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool"]},
+          "intended_memory_signal": "none", "relevant_prior_sequence_indices": [0, 1], "intentionally_irrelevant_prior_indices": [], "expected_memory_behavior": "ordinary task without forced repetition",
+          "selection_rationale": "A normal slipper task separates negative introductions."
+        },
+        {
+          "sequence_index": 3, "source_sample_id": "public_0199", "target_asin": "B089M57PSQ", "session_role": "establish_n2",
+          "longitudinal_directive": {"disclose": ["Across purchases, I avoid polyester-heavy clothing."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "100% cotton", "source": "features[2]", "confidence": "high", "evidence": "100% Cotton"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["avoids polyester-heavy products"]},
+          "intended_memory_signal": "N2 explicit negative", "relevant_prior_sequence_indices": [0, 1], "intentionally_irrelevant_prior_indices": [2], "expected_memory_behavior": "commit negative polyester preference",
+          "selection_rationale": "The 100% cotton composition provides strong positive evidence for a non-polyester-heavy target."
+        },
+        {
+          "sequence_index": 4, "source_sample_id": "public_0185", "target_asin": "B0BCW4QKV5", "session_role": "reinforce_n2",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I avoid polyester-heavy clothing."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "92% cotton and 8% spandex", "source": "features[0]", "confidence": "high", "evidence": "92%Cotton/8%Spandex"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["avoids polyester-heavy products"]},
+          "intended_memory_signal": "N2 reinforcement", "relevant_prior_sequence_indices": [3], "intentionally_irrelevant_prior_indices": [2], "expected_memory_behavior": "reinforce N2 with verified cotton target",
+          "selection_rationale": "The exact 92% cotton composition is not polyester-heavy."
+        },
+        {
+          "sequence_index": 5, "source_sample_id": "public_0118", "target_asin": "B09M72C8PG", "session_role": "neutral_task",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "82% nylon and 18% spandex", "source": "features[3]", "confidence": "high", "evidence": "82%Nylon+18%Spandex"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool", "avoids polyester-heavy products"]},
+          "intended_memory_signal": "none", "relevant_prior_sequence_indices": [0, 1, 3, 4], "intentionally_irrelevant_prior_indices": [2], "expected_memory_behavior": "ordinary task without dumping negatives",
+          "selection_rationale": "A nylon/spandex swimsuit is a neutral task with explicit material evidence."
+        },
+        {
+          "sequence_index": 6, "source_sample_id": "public_0028", "target_asin": "B0B9ZYDDZ1", "session_role": "establish_n3",
+          "longitudinal_directive": {"disclose": ["Across purchases, I avoid very bright or neon colours."], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "color", "value": "lichee black", "source": "details.Color", "confidence": "high", "evidence": "Lichee Black"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["avoids very bright or neon colours"]},
+          "intended_memory_signal": "N3 explicit negative", "relevant_prior_sequence_indices": [0, 1, 3, 4], "intentionally_irrelevant_prior_indices": [2, 5], "expected_memory_behavior": "commit negative bright/neon preference",
+          "selection_rationale": "Target-level Lichee Black colour provides a clear non-neon alternative."
+        },
+        {
+          "sequence_index": 7, "source_sample_id": "public_0188", "target_asin": "B0B5ZS2J2W", "session_role": "reinforce_n1",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I do not want wool."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material", "value": "PU leather", "source": "features[0]", "confidence": "high", "evidence": "Pu Leather"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool"]},
+          "intended_memory_signal": "N1 reinforcement", "relevant_prior_sequence_indices": [0, 1, 6], "intentionally_irrelevant_prior_indices": [2, 5], "expected_memory_behavior": "reinforce one established negative",
+          "selection_rationale": "The bag's artificial/PU leather material is directly stated and non-wool."
+        },
+        {
+          "sequence_index": 8, "source_sample_id": "public_0152", "target_asin": "B000EQU0NW", "session_role": "mature_negative_history",
+          "longitudinal_directive": {"disclose": [], "reinforce": ["I avoid polyester-heavy products.", "I avoid very bright or neon colours."], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [{"kind": "material_color", "value": "brown leather strap", "source": "title", "confidence": "high", "evidence": "Leather strap, Classic, Brown"}]},
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["avoids polyester-heavy products", "avoids very bright or neon colours"]},
+          "intended_memory_signal": "mature N2/N3 reinforcement", "relevant_prior_sequence_indices": [0, 1, 3, 4, 6, 7], "intentionally_irrelevant_prior_indices": [2, 5], "expected_memory_behavior": "reinforce two negatives without dumping all three",
+          "selection_rationale": "The classic brown leather target supplies direct non-polyester and non-neon evidence."
+        },
+        {
+          "sequence_index": 9, "source_sample_id": "public_0178", "target_asin": "B01FWQ8NH8", "session_role": "negative_memory_probe",
+          "longitudinal_directive": {"disclose": [], "reinforce": [], "session_only": [], "current_override": []},
+          "target_attribute_audit": {"verified_traits": [
+            {"kind": "material", "value": "100% cotton", "source": "features[0]", "confidence": "high", "evidence": "100% Cotton"},
+            {"kind": "color", "value": "black", "source": "title", "confidence": "high", "evidence": "T-Shirt Black"},
+            {"kind": "price", "value": 17.99, "source": "price", "confidence": "high", "evidence": "17.99"}
+          ]},
+          "negative_safe_trait_ids": ["N1", "N2", "N3"],
+          "expected_memory": {"helpful": [], "irrelevant": [], "should_suppress": [], "negative": ["does not want wool", "avoids polyester-heavy products", "avoids very bright or neon colours"]},
+          "intended_memory_signal": "same underspecified S10 for no-history/full-history negative-memory probe", "relevant_prior_sequence_indices": [0, 1, 3, 4, 6, 7, 8], "intentionally_irrelevant_prior_indices": [2, 5], "expected_memory_behavior": "future methods avoid violating negatives without shopper restatement",
+          "selection_rationale": "A 100% cotton black T-shirt violates none of N1/N2/N3 while same-category catalogue alternatives can contain wool, polyester, or bright colours."
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {"source_sample_id": "public_0065", "reason": "No reliable numeric price, so it cannot support the portable budget tendency."},
+    {"source_sample_id": "public_0106", "reason": "The catalogue row mixes bright/colorful and formal/cotton claims across a product family; target-variant colour is ambiguous."},
+    {"source_sample_id": "public_0053", "reason": "Search text mentions black while the exact title says rose gold flowers, making colour evidence contradictory."},
+    {"source_sample_id": "public_0119", "reason": "Candy-color wording is broad and exact variant colour is not target-level verified."},
+    {"source_sample_id": "public_0061", "reason": "The title lists many colour variants including black and rainbow; exact target colour cannot be isolated."},
+    {"source_sample_id": "public_0094", "reason": "No reliable numeric price and insufficient target-level material detail for a budget/material role."}
+  ]
+}

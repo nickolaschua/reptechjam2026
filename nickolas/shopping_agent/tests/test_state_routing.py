@@ -332,8 +332,50 @@ class StateRoutingTests(unittest.TestCase):
         self.agent.connection.execute.return_value.fetchall.return_value = [(pid,) for pid in ids]
         self.agent._update_state_via_llm = MagicMock()
         self.agent._call_llm = MagicMock(return_value="Here are matches.")
+        self.agent._dense_retrieve = MagicMock()
         result = agent_module.Agent._respond_custom(self.agent, "custom-rank", "show me options", 1, 1)
         self.assertEqual(result["recommendations"][0]["parent_asin"], "plain")
+        self.agent._dense_retrieve.assert_not_called()
+
+    def test_dense_fallback_threshold_remains_after_fts_price_filter(self) -> None:
+        self.agent.reset("price-filtered-threshold", {})
+        state = self.agent._sessions["price-filtered-threshold"]
+        state.update({
+            "category": "boots",
+            "department": "",
+            "price_max": 50.0,
+            "accumulated_terms": ["boots"],
+        })
+        ids = [f"product-{index}" for index in range(10)]
+        self.agent.catalog_ids = ids
+        self.agent.catalog_ids_arr = np.asarray(ids)
+        self.agent.catalog_prices = np.asarray([100.0] + [10.0] * 9)
+        self.agent.catalog_categories_set = [set() for _ in ids]
+        self.agent.catalog_metadata = {
+            pid: self._ranking_metadata("boots", pid) for pid in ids
+        }
+        self.agent.connection = MagicMock()
+        self.agent.connection.execute.return_value.fetchall.return_value = [
+            (pid,) for pid in ids
+        ]
+        self.agent._update_state_via_llm = MagicMock()
+        self.agent._call_llm = MagicMock(return_value="Here are matches.")
+        self.agent._dense_retrieve = MagicMock(
+            return_value=np.arange(len(ids), dtype=np.int64)
+        )
+
+        result = agent_module.Agent._respond_custom(
+            self.agent,
+            "price-filtered-threshold",
+            "show me boots",
+            1,
+            1,
+        )
+
+        self.agent._dense_retrieve.assert_called_once_with("boots", top_n=150)
+        self.assertEqual(result["debug"]["fts5_count"], 9)
+        self.assertTrue(result["debug"]["vector_fallback"])
+        self.assertNotEqual(result["recommendations"][0]["parent_asin"], "product-0")
 
     def test_baseline_ranking_does_not_boost_stashed_terms(self) -> None:
         baseline = self.agent.baseline_agent

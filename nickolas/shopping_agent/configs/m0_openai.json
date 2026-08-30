@@ -1,0 +1,43 @@
+{
+  "baseline_name": "M0_OPENAI",
+  "embedding": {
+    "backend": "openai",
+    "backend_id": "openai-text-embedding-3-large",
+    "model": "text-embedding-3-large",
+    "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+    "dimensions": 3072,
+    "normalized": true,
+    "fallback_enabled": false,
+    "product_text_version": "patch2-product-text-v1",
+    "cache_directory": "embedding_cache",
+    "cache_policy": "reuse_valid_or_build_only_on_explicit_m0_run"
+  },
+  "memory": {
+    "fast_memory_enabled": true,
+    "slow_memory_enabled": false
+  },
+  "routing": {
+    "mode": "per_turn_keyword_fast_else_full",
+    "keyword_fast_path_enabled": true,
+    "transactional_fast_path_fallback": true
+  },
+  "retrieval": {
+    "full_path_fts_and_limit": 1000,
+    "full_path_fts_or_trigger_below": 15,
+    "full_path_fts_or_limit": 1000,
+    "dense_candidate_threshold_below": 10,
+    "dense_top_n": 150,
+    "fast_path_fts_and_limit": 1000,
+    "fast_path_fts_or_trigger_below": 30,
+    "fast_path_fts_or_limit": 1000,
+    "ranking_policy": "existing_patch2_unchanged"
+  },
+  "evaluator": {
+    "module": "experiment_1.run_eval_v2",
+    "version": "v2",
+    "shopper_model": "llama3.1",
+    "max_samples": 200,
+    "max_turns": 10,
+    "top_k": 10
+  }
+}

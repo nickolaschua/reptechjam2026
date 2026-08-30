@@ -1,5 +1,6 @@
 from __future__ import annotations
 from copy import deepcopy
+from dataclasses import dataclass
 import os
 import re
 import sys
@@ -13,6 +14,41 @@ from sentence_transformers import SentenceTransformer
 from collections import OrderedDict, defaultdict
 from typing import Any, Sequence
 import builtins
+
+try:
+    from .embedding_backends import (
+        BGEEmbeddingBackend,
+        CacheExpectation,
+        CacheValidationError,
+        CatalogCacheMissError,
+        EmbeddingBackend,
+        OpenAIEmbeddingBackend,
+        PRODUCT_TEXT_VERSION,
+        cache_filename,
+        fingerprint_file,
+        fingerprint_texts,
+        load_embedding_cache,
+        save_embedding_cache,
+    )
+    from .memory_adapter import FastMemoryQLMPAdapter
+    from .memory_store import InMemoryUserMemoryStore
+except ImportError:
+    from embedding_backends import (
+        BGEEmbeddingBackend,
+        CacheExpectation,
+        CacheValidationError,
+        CatalogCacheMissError,
+        EmbeddingBackend,
+        OpenAIEmbeddingBackend,
+        PRODUCT_TEXT_VERSION,
+        cache_filename,
+        fingerprint_file,
+        fingerprint_texts,
+        load_embedding_cache,
+        save_embedding_cache,
+    )
+    from memory_adapter import FastMemoryQLMPAdapter
+    from memory_store import InMemoryUserMemoryStore
 
 try:
     from scipy import sparse
@@ -57,6 +93,95 @@ def _normalize(value: object) -> str:
     return re.sub(r"\s+", " ", str(value or "").lower()).strip()
 
 builtins._normalize = _normalize
+
+
+class DenseRetrievalError(ValueError):
+    """Raised when a precomputed query cannot be scored in the M0 space."""
+
+
+@dataclass(frozen=True)
+class DenseRetrievalResult:
+    """Aligned output from the canonical M0 catalogue dot-product scorer."""
+
+    query_embedding: np.ndarray
+    row_indices: np.ndarray
+    product_ids: tuple[str, ...]
+    scores: np.ndarray
+    product_embeddings: np.ndarray
+
+    def __post_init__(self) -> None:
+        count = len(self.row_indices)
+        if not (
+            len(self.product_ids)
+            == len(self.scores)
+            == len(self.product_embeddings)
+            == count
+        ):
+            raise DenseRetrievalError("Dense retrieval result fields are not aligned")
+
+
+@dataclass(frozen=True)
+class DenseQuerySnapshot:
+    """One replayable current-query input; target ID is evaluation metadata only."""
+
+    example_id: str
+    raw_user_message: str
+    effective_query_text: str
+    query_embedding: np.ndarray
+    target_product_id: str | None = None
+    current_scope: str | None = None
+    current_category: str | None = None
+    user_id: str | None = None
+    session_id: str | None = None
+    embedding_space_id: str | None = None
+
+    def __post_init__(self) -> None:
+        for name in ("example_id", "raw_user_message", "effective_query_text"):
+            value = getattr(self, name)
+            if not isinstance(value, str) or not value.strip():
+                raise DenseRetrievalError(f"{name} must be a non-empty string")
+        for name in (
+            "target_product_id",
+            "current_scope",
+            "current_category",
+            "user_id",
+            "session_id",
+            "embedding_space_id",
+        ):
+            value = getattr(self, name)
+            if value is not None and (not isinstance(value, str) or not value.strip()):
+                raise DenseRetrievalError(f"{name} must be None or a non-empty string")
+
+        query = np.array(self.query_embedding, dtype=np.float32, copy=True)
+        if query.ndim != 1 or query.size == 0:
+            raise DenseRetrievalError(
+                "query_embedding must be a non-empty one-dimensional vector"
+            )
+        if not np.all(np.isfinite(query)):
+            raise DenseRetrievalError("query_embedding must contain only finite values")
+        norm = float(np.linalg.norm(query))
+        if not np.isclose(norm, 1.0, rtol=1e-5, atol=1e-6):
+            raise DenseRetrievalError(
+                f"query_embedding must already be L2-normalized; got norm {norm:.8g}"
+            )
+        query.setflags(write=False)
+        object.__setattr__(self, "query_embedding", query)
+
+    @property
+    def fixture_id(self) -> str:
+        """Evaluator-facing name for the stable replay identifier."""
+
+        return self.example_id
+
+    @property
+    def q_m0(self) -> np.ndarray:
+        """The owned, read-only canonical float32 M0 query."""
+
+        return self.query_embedding
+
+    @property
+    def query_scope(self) -> str | None:
+        return self.current_scope
 
 
 
@@ -130,7 +255,30 @@ class Agent:
     2. Falls back to Category (NumPy bitmask) and Vector (MIPS semantic search) routes if FTS5 has low confidence.
     3. Uses local Llama 3.1 to generate conversational clarifying questions.
     """
-    def __init__(self, catalog_path: str | Path = None) -> None:
+    def __init__(
+        self,
+        catalog_path: str | Path = None,
+        embedding_backend: EmbeddingBackend | None = None,
+        *,
+        allow_catalog_embedding: bool = True,
+        embedding_cache_dir: str | Path | None = None,
+        memory_store: InMemoryUserMemoryStore | None = None,
+    ) -> None:
+        initialization_started = time.perf_counter()
+        self.instrumentation = {
+            "initialization": {
+                "catalog_loading_seconds": 0.0,
+                "product_text_build_seconds": 0.0,
+                "embedding_cache_load_seconds": 0.0,
+                "catalog_embedding_generation_seconds": 0.0,
+                "total_seconds": 0.0,
+                "cache_status": "not-attempted",
+            },
+            "semantic_queries": [],
+            "turns": [],
+            "agent_errors": [],
+            "baseline_fallback_count": 0,
+        }
         # Dynamically patch the calling evaluator's namespace to default limit=180
         for mod_name in ["__main__", "local_evaluator"]:
             mod = sys.modules.get(mod_name)
@@ -148,28 +296,44 @@ class Agent:
             catalog_path = repo_root / "data/catalog.jsonl"
         self.catalog_path = Path(catalog_path)
 
+        self.embedding_backend = embedding_backend or OpenAIEmbeddingBackend()
+        self.embedding_backend_id = self.embedding_backend.backend_id
+        self.embedding_model_id = self.embedding_backend.model_id
+        self.embedding_space_id = self.embedding_backend.embedding_space_id
+        self.model_path = self.embedding_model_id
+        self.model = getattr(self.embedding_backend, "_model", None)
+        self.allow_catalog_embedding = bool(allow_catalog_embedding)
+        self.embedding_cache_dir = Path(embedding_cache_dir or (current_dir / "embedding_cache"))
+        self.memory_store = memory_store or InMemoryUserMemoryStore()
+        self.memory_adapter = FastMemoryQLMPAdapter(
+            self.embedding_backend,
+            self.embedding_space_id,
+        )
+        self._active_lifecycle: dict[str, dict[str, Any]] = {}
+        self._ended_lifecycle: dict[str, dict[str, Any]] = {}
 
         self.connection = sqlite3.connect(":memory:")
         self._sessions = {}
 
         # Build indexes
+        catalog_started = time.perf_counter()
         self._build_fts5_index()
         self._build_category_index()
+        self.instrumentation["initialization"]["catalog_loading_seconds"] = (
+            time.perf_counter() - catalog_started
+        )
 
-        # Load SentenceTransformer model
-        finetuned_model_path = current_dir / "model_finetuned"
-        if finetuned_model_path.exists():
-            self.model_path = str(finetuned_model_path)
-            print(f"[Hybrid Agent] Loading fine-tuned model: {self.model_path}")
-        else:
-            self.model_path = "BAAI/bge-base-en-v1.5"
-            print(f"[Hybrid Agent] Loading base model: {self.model_path}")
-
-        self.model = SentenceTransformer(self.model_path)
+        print(
+            f"[Hybrid Agent] Embedding backend: {self.embedding_backend_id} "
+            f"({self.embedding_model_id})"
+        )
         self._build_vector_index()
 
         # Initialize the baseline route over the same canonical session mapping.
         self.baseline_agent = BaselineAgent(self.catalog_path, self._sessions)
+        self.instrumentation["initialization"]["total_seconds"] = (
+            time.perf_counter() - initialization_started
+        )
 
 
     def _build_fts5_index(self) -> None:
@@ -255,6 +419,7 @@ class Agent:
         print("[Hybrid Agent] Category metadata loaded.")
 
     def _build_vector_index(self) -> None:
+        product_text_started = time.perf_counter()
         self.catalog_texts = []
         with self.catalog_path.open(encoding="utf-8") as f:
             for line in f:
@@ -264,21 +429,63 @@ class Agent:
                 feats = "; ".join((p.get("features") or [])[:3])
                 text = f"Product: {title}. Categories: {cats}. Features: {feats}.".strip()
                 self.catalog_texts.append(text)
+        self.instrumentation["initialization"]["product_text_build_seconds"] = (
+            time.perf_counter() - product_text_started
+        )
 
-        model_name_clean = re.sub(r"[^a-zA-Z0-9_-]", "_", self.model_path)
-        cache_path = current_dir / f"catalog_cache_{model_name_clean}.npz"
+        self.catalog_fingerprint = fingerprint_file(self.catalog_path)
+        self.product_text_fingerprint = fingerprint_texts(self.catalog_texts)
+        expectation = CacheExpectation(
+            backend_id=self.embedding_backend_id,
+            model_id=self.embedding_model_id,
+            embedding_space_id=self.embedding_space_id,
+            catalog_ids=self.catalog_ids,
+            product_text_version=PRODUCT_TEXT_VERSION,
+            product_text_fingerprint=self.product_text_fingerprint,
+            catalog_fingerprint=self.catalog_fingerprint,
+            vector_dimension=getattr(self.embedding_backend, "vector_dimension", None),
+            normalized=True,
+        )
+        cache_path = self.embedding_cache_dir / cache_filename(self.embedding_backend_id)
+        self.embedding_cache_path = cache_path
 
         if cache_path.exists():
             print(f"[Hybrid Agent] Loading pre-computed embeddings: {cache_path.name}")
-            data = np.load(cache_path)
-            self.catalog_embeddings = data["embeddings"]
-            return
+            cache_started = time.perf_counter()
+            try:
+                self.catalog_embeddings = load_embedding_cache(cache_path, expectation)
+                self.instrumentation["initialization"]["cache_status"] = "hit"
+                self.instrumentation["initialization"]["embedding_cache_load_seconds"] = (
+                    time.perf_counter() - cache_started
+                )
+                return
+            except CacheValidationError as exc:
+                self.instrumentation["initialization"]["cache_status"] = "rejected"
+                self.instrumentation["initialization"]["embedding_cache_load_seconds"] = (
+                    time.perf_counter() - cache_started
+                )
+                print(f"[Hybrid Agent] Rejecting incompatible embedding cache: {exc}")
 
-        print(f"[Hybrid Agent] Encoding {len(self.catalog_texts)} products...")
-        embeddings = self.model.encode(self.catalog_texts, batch_size=256, show_progress_bar=False, convert_to_numpy=True)
-        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
-        self.catalog_embeddings = embeddings / np.maximum(norms, 1e-12)
-        np.savez_compressed(cache_path, embeddings=self.catalog_embeddings, ids=self.catalog_ids)
+        if not self.allow_catalog_embedding:
+            raise CatalogCacheMissError(
+                f"No valid {self.embedding_backend_id} catalog cache at {cache_path}. "
+                "Catalog generation is disabled; run the explicit benchmark cache-build command."
+            )
+
+        count = len(self.catalog_texts)
+        batch_size = int(getattr(self.embedding_backend, "batch_size", count or 1))
+        expected_batches = (count + batch_size - 1) // batch_size
+        print(
+            f"[Hybrid Agent] Encoding {count} products with {self.embedding_backend_id} "
+            f"in approximately {expected_batches} batch(es); cache={cache_path}"
+        )
+        generation_started = time.perf_counter()
+        self.catalog_embeddings = self.embedding_backend.embed_catalog(self.catalog_texts)
+        self.instrumentation["initialization"]["catalog_embedding_generation_seconds"] = (
+            time.perf_counter() - generation_started
+        )
+        self.instrumentation["initialization"]["cache_status"] = "built"
+        save_embedding_cache(cache_path, self.catalog_embeddings, expectation)
         print("[Hybrid Agent] Vector index built and cached.")
 
     def _call_llm(self, prompt: str, system_prompt: str = "", session_id: str = None, response_json: bool = False) -> str:
@@ -626,8 +833,170 @@ class Agent:
             "debug_info": {},
         }
 
-    def reset(self, session_id: str, user_profile: dict) -> None:
-        self._sessions[session_id] = self._new_session_state()
+    def reset(
+        self,
+        session_id: str,
+        user_profile: dict,
+        *,
+        user_id: str | None = None,
+        sequence_index: int | None = None,
+    ) -> None:
+        """Start a canonical Fast Memory session, optionally in shadow mode.
+
+        ``user_profile`` remains accepted for evaluator compatibility but is
+        never used to infer identity or longitudinal preference facts.
+        """
+
+        del user_profile
+        session = str(session_id)
+        if not session.strip():
+            raise ValueError("session_id must be non-empty")
+
+        resolved_user: str | None = None
+        resolved_sequence: int | None = None
+        visible_records = ()
+        if user_id is None:
+            if sequence_index is not None:
+                raise ValueError("sequence_index requires an explicit user_id")
+        else:
+            resolved_user = str(user_id)
+            if not resolved_user.strip():
+                raise ValueError("user_id must be non-empty when provided")
+            if (
+                isinstance(sequence_index, bool)
+                or not isinstance(sequence_index, int)
+                or sequence_index < 0
+            ):
+                raise ValueError(
+                    "sequence_index must be a non-negative integer in longitudinal mode"
+                )
+            resolved_sequence = sequence_index
+            if any(
+                metadata["user_id"] == resolved_user
+                for active_id, metadata in self._active_lifecycle.items()
+                if active_id != session and metadata["user_id"] is not None
+            ):
+                raise ValueError(
+                    f"user {resolved_user!r} already has an active session"
+                )
+            self.memory_store.validate_new_session(
+                resolved_user,
+                session,
+                resolved_sequence,
+            )
+            visible_records = self.memory_store.get_records(
+                resolved_user,
+                before_sequence_index=resolved_sequence,
+            )
+
+        # This remains the exact frozen canonical M0 state construction.
+        self._sessions[session] = self._new_session_state()
+        self._active_lifecycle[session] = {
+            "session_id": session,
+            "user_id": resolved_user,
+            "sequence_index": resolved_sequence,
+            "visible_records": tuple(visible_records),
+        }
+        self._ended_lifecycle.pop(session, None)
+
+    def end_session(
+        self,
+        session_id: str,
+        outcome: Any = None,
+        purchased_product: Any = None,
+        evidence: Any = None,
+    ) -> tuple[Any, ...] | None:
+        """Finalize and optionally commit user-disclosed shadow memories.
+
+        Lifecycle outcome values are deliberately ignored by extraction. They
+        cannot become preference text, embedding input, or Fast Memory state.
+        """
+
+        del outcome, purchased_product, evidence
+        session = str(session_id)
+        if session not in self._sessions or session not in self._active_lifecycle:
+            raise RuntimeError("reset must be called before end_session")
+        metadata = self._active_lifecycle[session]
+        final_fast_memory = deepcopy(self._sessions[session])
+        created_items: tuple[Any, ...] = ()
+        committed_records = ()
+
+        if metadata["user_id"] is not None:
+            created_items = self.memory_adapter.extract_and_embed(
+                final_fast_memory,
+                user_id=metadata["user_id"],
+                session_id=session,
+                sequence_index=metadata["sequence_index"],
+            )
+            committed_records = self.memory_store.add_memories(
+                user_id=metadata["user_id"],
+                session_id=session,
+                sequence_index=metadata["sequence_index"],
+                embedding_space_id=self.embedding_space_id,
+                memories=created_items,
+            )
+
+        self._ended_lifecycle[session] = {
+            "session_id": session,
+            "user_id": metadata["user_id"],
+            "sequence_index": metadata["sequence_index"],
+            "visible_records": metadata["visible_records"],
+            "final_fast_memory": final_fast_memory,
+            "created_items": created_items,
+            "committed_records": committed_records,
+        }
+        del self._active_lifecycle[session]
+        del self._sessions[session]
+        return created_items if metadata["user_id"] is not None else None
+
+    def get_visible_memories(self, session_id: str) -> tuple[Any, ...]:
+        """Return the reset-time shadow snapshot without applying it."""
+
+        session = str(session_id)
+        metadata = self._active_lifecycle.get(session) or self._ended_lifecycle.get(session)
+        if metadata is None:
+            raise RuntimeError(f"unknown session {session!r}")
+        return tuple(record.item for record in metadata["visible_records"])
+
+    def get_memory_debug(self, session_id: str) -> dict[str, Any]:
+        """Return vector-free Phase-5 lifecycle and memory observability."""
+
+        session = str(session_id)
+        metadata = self._active_lifecycle.get(session)
+        ended = False
+        if metadata is None:
+            metadata = self._ended_lifecycle.get(session)
+            ended = metadata is not None
+        if metadata is None:
+            raise RuntimeError(f"unknown session {session!r}")
+
+        visible = metadata["visible_records"]
+        created = metadata.get("created_items", ())
+
+        def describe(item: Any) -> dict[str, Any]:
+            return {
+                "id": item.id,
+                "scope": item.scope,
+                "polarity": item.polarity.value,
+            }
+
+        final_state = (
+            metadata["final_fast_memory"]
+            if ended
+            else deepcopy(self._sessions[session])
+        )
+        return {
+            "session_id": session,
+            "user_id": metadata["user_id"],
+            "sequence_index": metadata["sequence_index"],
+            "ended": ended,
+            "final_fast_memory": deepcopy(final_state),
+            "created_memories": [describe(item) for item in created],
+            "visible_prior_memory_count": len(visible),
+            "visible_prior_memories": [describe(record.item) for record in visible],
+            "embedding_space_id": self.embedding_space_id,
+            "historical_memory_applied": False,
+        }
 
 
     def _parse_message_locally(self, session_id: str, message: str) -> None:
@@ -785,42 +1154,229 @@ class Agent:
         )
 
     def respond(self, session_id: str, user_message: str, turn: int, top_k: int) -> dict:
-        if self._can_use_fast_path(user_message, turn):
-            state_before_turn = deepcopy(self._sessions[session_id])
-            try:
-                res = self.baseline_agent.respond(session_id, user_message, turn, top_k)
-                base_state = self.baseline_agent._sessions.get(session_id, {})
-                res["debug"] = {
-                    "model": "Exact Lexical Matcher (Agent 1)",
-                    "system_prompt": "Deterministic rule-based simulator mode (no active LLM instructions).",
-                    "user_prompt": user_message,
-                    "category": base_state.get("category", "clothing"),
-                    "department": "clothing",
-                    "price_max": 9999.0,
-                    "disclosed_slots": {"constraints": base_state.get("constraints", [])},
-                    "asked_attributes": [],
-                    "negated_terms": [],
-                    "accumulated_terms": base_state.get("constraints", []),
-                    "stashed_terms": [],
-                    "fts5_count": len(res.get("recommendations", [])),
-                    "vector_fallback": False,
-                }
-                # Print Baseline Telemetry to terminal
-                print("\n" + "="*80)
-                print(f" [AGENT BRAIN TELEMETRY - BASELINE LEXICAL ROUTE] Turn: {turn} | Session: {session_id}")
-                print("="*80)
-                print(f"Active Matcher:   Exact Lexical Matcher (Agent 1)")
-                print(f"Category State:   {base_state.get('category', 'clothing')}")
-                print(f"Constraints:      {base_state.get('constraints', [])}")
-                print(f"Recommendations:  {len(res.get('recommendations', []))} products matched")
-                print("="*80 + "\n")
-                return res
-            except Exception as e:
-                print(f"[Hybrid Agent] Baseline agent failed: {e}")
-                self._sessions[session_id] = state_before_turn
-                return self._respond_custom(session_id, user_message, turn, top_k)
+        respond_started = time.perf_counter()
+        route_used = "full"
+        dense_before = len(self.instrumentation["semantic_queries"])
+        failed = False
+        try:
+            if self._can_use_fast_path(user_message, turn):
+                state_before_turn = deepcopy(self._sessions[session_id])
+                try:
+                    res = self.baseline_agent.respond(session_id, user_message, turn, top_k)
+                    route_used = "fast"
+                    base_state = self.baseline_agent._sessions.get(session_id, {})
+                    res["debug"] = {
+                        "model": "Exact Lexical Matcher (Agent 1)",
+                        "system_prompt": "Deterministic rule-based simulator mode (no active LLM instructions).",
+                        "user_prompt": user_message,
+                        "category": base_state.get("category", "clothing"),
+                        "department": "clothing",
+                        "price_max": 9999.0,
+                        "disclosed_slots": {"constraints": base_state.get("constraints", [])},
+                        "asked_attributes": [],
+                        "negated_terms": [],
+                        "accumulated_terms": base_state.get("constraints", []),
+                        "stashed_terms": [],
+                        "fts5_count": len(res.get("recommendations", [])),
+                        "vector_fallback": False,
+                    }
+                    # Print Baseline Telemetry to terminal
+                    print("\n" + "="*80)
+                    print(f" [AGENT BRAIN TELEMETRY - BASELINE LEXICAL ROUTE] Turn: {turn} | Session: {session_id}")
+                    print("="*80)
+                    print(f"Active Matcher:   Exact Lexical Matcher (Agent 1)")
+                    print(f"Category State:   {base_state.get('category', 'clothing')}")
+                    print(f"Constraints:      {base_state.get('constraints', [])}")
+                    print(f"Recommendations:  {len(res.get('recommendations', []))} products matched")
+                    print("="*80 + "\n")
+                    return res
+                except Exception as e:
+                    print(f"[Hybrid Agent] Baseline agent failed: {e}")
+                    self.instrumentation["baseline_fallback_count"] += 1
+                    self._sessions[session_id] = state_before_turn
+                    return self._respond_custom(session_id, user_message, turn, top_k)
 
-        return self._respond_custom(session_id, user_message, turn, top_k)
+            return self._respond_custom(session_id, user_message, turn, top_k)
+        except Exception as exc:
+            failed = True
+            self.instrumentation["agent_errors"].append(
+                {
+                    "session_id": session_id,
+                    "turn": int(turn),
+                    "type": type(exc).__name__,
+                    "message": str(exc),
+                }
+            )
+            raise
+        finally:
+            self.instrumentation["turns"].append(
+                {
+                    "session_id": session_id,
+                    "turn": int(turn),
+                    "route": route_used,
+                    "dense_invoked": len(self.instrumentation["semantic_queries"]) > dense_before,
+                    "respond_seconds": time.perf_counter() - respond_started,
+                    "failed": failed,
+                }
+            )
+
+    def _validate_dense_query_embedding(
+        self,
+        query_embedding: np.ndarray,
+    ) -> np.ndarray:
+        """Return the float32 M0-boundary vector after contract validation.
+
+        Inputs must already be L2-normalized. Normalizing here would conceal an
+        upstream geometry error and could make a future q_star differ from the
+        vector the evaluator intended to score.
+        """
+
+        catalog_embeddings = np.asarray(self.catalog_embeddings)
+        if catalog_embeddings.ndim != 2 or catalog_embeddings.shape[1] == 0:
+            raise DenseRetrievalError(
+                "catalog_embeddings must be a non-empty two-dimensional matrix"
+            )
+
+        raw_query = np.asarray(query_embedding)
+        if raw_query.ndim != 1:
+            raise DenseRetrievalError(
+                f"query_embedding must be one-dimensional, got shape {raw_query.shape}"
+            )
+        expected_dimension = int(catalog_embeddings.shape[1])
+        if raw_query.shape[0] != expected_dimension:
+            raise DenseRetrievalError(
+                "query_embedding dimension does not match the catalogue: "
+                f"expected {expected_dimension}, got {raw_query.shape[0]}"
+            )
+        try:
+            query = np.asarray(raw_query, dtype=catalog_embeddings.dtype)
+        except (TypeError, ValueError) as exc:
+            raise DenseRetrievalError("query_embedding must be numeric") from exc
+        if not np.all(np.isfinite(query)):
+            raise DenseRetrievalError("query_embedding must contain only finite values")
+
+        norm = float(np.linalg.norm(query))
+        if not np.isclose(norm, 1.0, rtol=1e-5, atol=1e-6):
+            raise DenseRetrievalError(
+                f"query_embedding must already be L2-normalized; got norm {norm:.8g}"
+            )
+        return query
+
+    def embed_dense_query(self, query_text: str) -> np.ndarray:
+        """Embed current M0 query text once and expose the exact normalized q."""
+
+        query = self.embedding_backend.embed_query(str(query_text))
+        return self._validate_dense_query_embedding(query)
+
+    def dense_retrieve_vector(
+        self,
+        query_embedding: np.ndarray,
+        top_n: int = 150,
+    ) -> DenseRetrievalResult:
+        """Score a precomputed normalized q against the existing M0 matrix.
+
+        This method does not embed text, call OpenAI, apply filters, or consult
+        longitudinal memory. It intentionally retains M0's existing full-matrix
+        dot product and reversed NumPy argsort tie behaviour.
+        """
+
+        if isinstance(top_n, bool) or not isinstance(top_n, (int, np.integer)):
+            raise DenseRetrievalError("top_n must be a non-negative integer")
+        if int(top_n) < 0:
+            raise DenseRetrievalError("top_n must be a non-negative integer")
+
+        query = self._validate_dense_query_embedding(query_embedding)
+        catalog_embeddings = np.asarray(self.catalog_embeddings)
+
+        # Canonical M0 dense scoring implementation. Keep this expression and
+        # ordering equivalent to the pre-refactor text-driven implementation.
+        all_scores = np.dot(catalog_embeddings, query)
+        row_indices = np.argsort(all_scores)[::-1][: int(top_n)]
+        product_ids = tuple(self.catalog_ids[int(row)] for row in row_indices)
+
+        return DenseRetrievalResult(
+            query_embedding=query,
+            row_indices=row_indices,
+            product_ids=product_ids,
+            scores=all_scores[row_indices],
+            product_embeddings=catalog_embeddings[row_indices],
+        )
+
+    def dense_retrieve_text(
+        self,
+        query_text: str,
+        top_n: int = 150,
+    ) -> DenseRetrievalResult:
+        """Embed text once, then delegate to the canonical vector scorer."""
+
+        total_started = time.perf_counter()
+        embed_started = time.perf_counter()
+        query_embedding = self.embed_dense_query(query_text)
+        query_embedding_seconds = time.perf_counter() - embed_started
+
+        search_started = time.perf_counter()
+        result = self.dense_retrieve_vector(query_embedding, top_n=top_n)
+        dense_search_seconds = time.perf_counter() - search_started
+        self.instrumentation["semantic_queries"].append(
+            {
+                "query_text": query_text,
+                "query_embedding_seconds": query_embedding_seconds,
+                "dense_search_seconds": dense_search_seconds,
+                "total_dense_retrieval_seconds": time.perf_counter() - total_started,
+                "top_n": int(top_n),
+                "embedding_space_id": self.embedding_space_id,
+            }
+        )
+        return result
+
+    def _dense_retrieve(self, query_text: str, top_n: int = 150) -> np.ndarray:
+        """Compatibility wrapper returning row indices for the current M0 route."""
+
+        return self.dense_retrieve_text(query_text, top_n=top_n).row_indices
+
+    def freeze_dense_query(
+        self,
+        *,
+        example_id: str,
+        raw_user_message: str,
+        effective_query_text: str,
+        target_product_id: str | None = None,
+        current_scope: str | None = None,
+        current_category: str | None = None,
+        user_id: str | None = None,
+        session_id: str | None = None,
+    ) -> DenseQuerySnapshot:
+        """Create a replayable query snapshot with one embedding operation.
+
+        ``target_product_id`` is copied into evaluation metadata only. It never
+        contributes to effective query text or q.
+        """
+
+        query_embedding = self.embed_dense_query(effective_query_text)
+        return DenseQuerySnapshot(
+            example_id=str(example_id),
+            raw_user_message=str(raw_user_message),
+            effective_query_text=str(effective_query_text),
+            query_embedding=query_embedding,
+            target_product_id=(
+                None if target_product_id is None else str(target_product_id)
+            ),
+            current_scope=None if current_scope is None else str(current_scope),
+            current_category=(
+                None if current_category is None else str(current_category)
+            ),
+            user_id=None if user_id is None else str(user_id),
+            session_id=None if session_id is None else str(session_id),
+            embedding_space_id=self.embedding_space_id,
+        )
+
+    def get_instrumentation(self) -> dict:
+        snapshot = deepcopy(self.instrumentation)
+        snapshot["backend_id"] = self.embedding_backend_id
+        snapshot["model_id"] = self.embedding_model_id
+        snapshot["embedding_space_id"] = self.embedding_space_id
+        snapshot["embedding_api"] = self.embedding_backend.usage_snapshot()
+        return snapshot
 
     def _update_state_via_llm(self, session_id: str, user_message: str) -> None:
         import json
@@ -1120,17 +1676,7 @@ class Agent:
             state["debug_info"]["vector_fallback"] = True
             # Vector Route MIPS (Top 150)
             query_text = _state_to_retrieval_query(state)
-
-            # Prepend instruction prefix if BGE model is used (required for retrieval queries)
-            if "bge" in self.model_path.lower() or "model_finetuned" in self.model_path.lower():
-                query_text = "Represent this sentence for searching relevant passages: " + query_text
-
-            query_emb = self.model.encode(query_text, convert_to_numpy=True)
-            q_norm = np.linalg.norm(query_emb)
-            query_emb_normalized = query_emb / max(q_norm, 1e-12)
-
-            scores = np.dot(self.catalog_embeddings, query_emb_normalized)
-            sorted_vec_indices = np.argsort(scores)[::-1][:150]
+            sorted_vec_indices = self._dense_retrieve(query_text, top_n=150)
             vector_asins = [self.catalog_ids[idx] for idx in sorted_vec_indices]
 
             # Keep vector candidates that satisfy price criteria

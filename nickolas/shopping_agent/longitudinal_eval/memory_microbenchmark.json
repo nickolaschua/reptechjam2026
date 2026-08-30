@@ -1,0 +1,66 @@
+{
+  "version": "memory_microbenchmark_v1",
+  "cases": [
+    {
+      "case_id": "u1_stable_probe",
+      "current_fast_memory": {"category": "t-shirts", "disclosed_slots": {}, "price_max": 9999.0, "negated_terms": []},
+      "current_query": "comfortable everyday t-shirt",
+      "visible_prior_memories": [
+        {"id": "u1_m1", "text": "material: breathable cotton", "polarity": "positive", "scope": "clothing"},
+        {"id": "u1_m2", "text": "color: neutral black", "polarity": "positive", "scope": "clothing"},
+        {"id": "u1_m3", "text": "budget: at most 120", "polarity": "positive", "scope": null},
+        {"id": "u1_m4", "text": "category: trail running shoes", "polarity": "positive", "scope": "trail running shoes"}
+      ],
+      "relevant_memory_ids": ["u1_m1", "u1_m2", "u1_m3"],
+      "distractor_memory_ids": ["u1_m4"],
+      "should_suppress_memory_ids": [],
+      "negative_memory_ids": []
+    },
+    {
+      "case_id": "u2_override_probe",
+      "current_fast_memory": {"category": "athletic socks", "disclosed_slots": {"color": ["bright"], "style": ["sporty"]}, "price_max": 9999.0, "negated_terms": []},
+      "current_query": "bright colourful sporty running socks",
+      "visible_prior_memories": [
+        {"id": "u2_m1", "text": "color: dark black", "polarity": "positive", "scope": "clothing"},
+        {"id": "u2_m2", "text": "style: understated minimalist", "polarity": "positive", "scope": "clothing"},
+        {"id": "u2_m3", "text": "budget: at most 120", "polarity": "positive", "scope": null}
+      ],
+      "relevant_memory_ids": ["u2_m3"],
+      "distractor_memory_ids": [],
+      "should_suppress_memory_ids": ["u2_m1", "u2_m2"],
+      "negative_memory_ids": []
+    },
+    {
+      "case_id": "u3_distractor_probe",
+      "current_fast_memory": {"category": "t-shirts", "disclosed_slots": {}, "price_max": 9999.0, "negated_terms": []},
+      "current_query": "casual lightweight t-shirt",
+      "visible_prior_memories": [
+        {"id": "u3_m1", "text": "material: breathable", "polarity": "positive", "scope": "clothing"},
+        {"id": "u3_m2", "text": "budget: at most 120", "polarity": "positive", "scope": null},
+        {"id": "u3_m3", "text": "feature: waterproof hood", "polarity": "positive", "scope": "rain jacket"},
+        {"id": "u3_m4", "text": "feature: compression", "polarity": "positive", "scope": "leggings"},
+        {"id": "u3_m5", "text": "feature: cargo storage pockets", "polarity": "positive", "scope": "cargo pants"},
+        {"id": "u3_m6", "text": "style: formal evening gown", "polarity": "positive", "scope": "formal dress"}
+      ],
+      "relevant_memory_ids": ["u3_m1", "u3_m2"],
+      "distractor_memory_ids": ["u3_m3", "u3_m4", "u3_m5", "u3_m6"],
+      "should_suppress_memory_ids": [],
+      "negative_memory_ids": []
+    },
+    {
+      "case_id": "u4_negative_probe",
+      "current_fast_memory": {"category": "t-shirts", "disclosed_slots": {}, "price_max": 9999.0, "negated_terms": []},
+      "current_query": "everyday t-shirt",
+      "visible_prior_memories": [
+        {"id": "u4_m1", "text": "avoid: wool", "polarity": "negative", "scope": "clothing"},
+        {"id": "u4_m2", "text": "avoid: polyester-heavy", "polarity": "negative", "scope": "clothing"},
+        {"id": "u4_m3", "text": "avoid: neon colours", "polarity": "negative", "scope": "clothing"},
+        {"id": "u4_m4", "text": "category: slippers", "polarity": "positive", "scope": "slippers"}
+      ],
+      "relevant_memory_ids": ["u4_m1", "u4_m2", "u4_m3"],
+      "distractor_memory_ids": ["u4_m4"],
+      "should_suppress_memory_ids": [],
+      "negative_memory_ids": ["u4_m1", "u4_m2", "u4_m3"]
+    }
+  ]
+}
