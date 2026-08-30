@@ -14,43 +14,19 @@
         },
         {
           "attribute": "material",
-          "value": "does not matter",
-          "declined": true,
-          "negated": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
+          "value": "cushioning",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "brand",
-          "value": "not specified",
+          "attribute": "material",
+          "value": "grip",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "style",
-          "value": "not specified",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "color",
-          "value": "not specified",
+          "attribute": "material",
+          "value": "price",
           "declined": false,
           "negated": false
         }
@@ -58,8 +34,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true,
-      "specificity": 1
+      "exploring": false,
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -103,8 +79,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true,
-      "specificity": 1
+      "exploring": false,
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -122,12 +98,6 @@
         },
         {
           "attribute": "brand",
-          "value": "reputable",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "other",
           "value": "well-rated",
           "declined": false,
           "negated": false
@@ -137,7 +107,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -145,7 +115,7 @@
     "stratum": "A",
     "pred": {
       "category_phrase": "slides",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "material",
@@ -158,7 +128,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -166,17 +136,17 @@
     "stratum": "A",
     "pred": {
       "category_phrase": "stretchy bathing suit",
-      "department": "baby-girls",
+      "department": null,
       "slots": [
         {
-          "attribute": "material",
-          "value": "stretchy",
+          "attribute": "style",
+          "value": "sexy",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "style",
-          "value": "sexy",
+          "attribute": "material",
+          "value": "stretchy",
           "declined": false,
           "negated": false
         },
@@ -185,13 +155,19 @@
           "value": "padding and support",
           "declined": false,
           "negated": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "swimming",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -209,25 +185,13 @@
         },
         {
           "attribute": "material",
-          "value": "not leather",
-          "declined": false,
-          "negated": true
-        },
-        {
-          "attribute": "feature",
-          "value": "good designs",
+          "value": "good designs to prevent water fromcoming",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "feature",
-          "value": "prevents water from coming in",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "feature",
-          "value": "at the seams and zippers",
+          "attribute": "material",
+          "value": "seams and zippers",
           "declined": false,
           "negated": false
         }
@@ -236,7 +200,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -253,14 +217,8 @@
           "negated": false
         },
         {
-          "attribute": "material",
-          "value": "good grip",
-          "declined": false,
-          "negated": false
-        },
-        {
           "attribute": "feature",
-          "value": "comfy",
+          "value": "good grip",
           "declined": false,
           "negated": false
         }
@@ -269,7 +227,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -277,7 +235,7 @@
     "stratum": "B",
     "pred": {
       "category_phrase": "earrings",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "style",
@@ -286,17 +244,17 @@
           "negated": false
         },
         {
-          "attribute": "style",
-          "value": "hoop earrings",
+          "attribute": "material",
+          "value": "hoop",
           "declined": false,
           "negated": false
         }
       ],
-      "price_max": null,
-      "price_min": null,
+      "price_max": 0,
+      "price_min": 0,
       "quality_prior": "none",
-      "exploring": true,
-      "specificity": 1
+      "exploring": false,
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -307,20 +265,20 @@
       "department": "womens",
       "slots": [
         {
+          "attribute": "style",
+          "value": "classy, bold, and provocative",
+          "declined": false,
+          "negated": false
+        },
+        {
           "attribute": "color",
           "value": "brighter",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "style",
-          "value": "classy bold and provocative",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "style",
-          "value": "shows off figure",
+          "attribute": "feature",
+          "value": "show off figure",
           "declined": false,
           "negated": false
         }
@@ -328,8 +286,8 @@
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
-      "exploring": true,
-      "specificity": 1
+      "exploring": false,
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -337,7 +295,7 @@
     "stratum": "B",
     "pred": {
       "category_phrase": "sunnies",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "style",
@@ -356,7 +314,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -364,26 +322,13 @@
     "stratum": "B",
     "pred": {
       "category_phrase": "boots",
-      "department": "womens",
-      "slots": [
-        {
-          "attribute": "style",
-          "value": "high heels",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "feature",
-          "value": "toe sticking out",
-          "declined": false,
-          "negated": false
-        }
-      ],
+      "department": "boys",
+      "slots": [],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -410,28 +355,16 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
     "case": 13,
     "stratum": "C",
     "pred": {
-      "category_phrase": "shoes",
+      "category_phrase": "high quality, probably like leather",
       "department": "mens",
       "slots": [
-        {
-          "attribute": "material",
-          "value": "leather",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "use_case",
-          "value": "sports",
-          "declined": false,
-          "negated": false
-        },
         {
           "attribute": "brand",
           "value": "asics",
@@ -440,16 +373,22 @@
         },
         {
           "attribute": "material",
-          "value": "not leather",
+          "value": "leather",
           "declined": false,
-          "negated": true
+          "negated": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "racket sports and lifting weights",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -457,7 +396,7 @@
     "stratum": "C",
     "pred": {
       "category_phrase": "good pair of jeans",
-      "department": "mens",
+      "department": null,
       "slots": [
         {
           "attribute": "feature",
@@ -472,20 +411,26 @@
           "negated": false
         },
         {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false,
+          "negated": false
+        },
+        {
           "attribute": "material",
           "value": "stretchy",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "material",
+          "attribute": "feature",
           "value": "easy to wash",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "style",
-          "value": "standard pair of denim jeans",
+          "attribute": "material",
+          "value": "denim",
           "declined": false,
           "negated": false
         }
@@ -494,7 +439,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -502,7 +447,7 @@
     "stratum": "C",
     "pred": {
       "category_phrase": "high heels",
-      "department": "womens",
+      "department": null,
       "slots": [
         {
           "attribute": "color",
@@ -521,7 +466,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -529,7 +474,7 @@
     "stratum": "C",
     "pred": {
       "category_phrase": "strapless top",
-      "department": "womens",
+      "department": null,
       "slots": [
         {
           "attribute": "color",
@@ -538,14 +483,8 @@
           "negated": false
         },
         {
-          "attribute": "material",
-          "value": "not leather",
-          "declined": false,
-          "negated": true
-        },
-        {
           "attribute": "style",
-          "value": "can cover nipples, accentuate boobs",
+          "value": "cover nipples, accentuate boobs",
           "declined": false,
           "negated": false
         }
@@ -554,7 +493,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -571,41 +510,23 @@
           "negated": false
         },
         {
-          "attribute": "color",
-          "value": "not specified",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "size",
-          "value": "child",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "style",
-          "value": "not specified",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "brand",
-          "value": "not specified",
+          "attribute": "material",
+          "value": "easy to wash",
           "declined": false,
           "negated": false
         },
         {
           "attribute": "material",
-          "value": "easy to wash",
+          "value": "soft",
           "declined": false,
-          "negated": true
+          "negated": false
         }
       ],
-      "price_max": null,
-      "price_min": null,
+      "price_max": 0,
+      "price_min": 0,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -613,7 +534,7 @@
     "stratum": "D",
     "pred": {
       "category_phrase": "long sleeve shirts",
-      "department": "mens",
+      "department": null,
       "slots": [
         {
           "attribute": "material",
@@ -623,12 +544,12 @@
         },
         {
           "attribute": "feature",
-          "value": "sun protection",
+          "value": "blocks the sun",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "feature",
+          "attribute": "material",
           "value": "UPF 50",
           "declined": false,
           "negated": false
@@ -638,7 +559,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -648,6 +569,12 @@
       "category_phrase": "golf shirt",
       "department": "mens",
       "slots": [
+        {
+          "attribute": "size",
+          "value": "not slim",
+          "declined": false,
+          "negated": false
+        },
         {
           "attribute": "size",
           "value": "long sleeve",
@@ -661,13 +588,13 @@
           "negated": false
         },
         {
-          "attribute": "style",
+          "attribute": "feature",
           "value": "sun protective",
           "declined": false,
           "negated": false
         },
         {
-          "attribute": "color",
+          "attribute": "feature",
           "value": "buttons at the collar",
           "declined": false,
           "negated": false
@@ -677,7 +604,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -685,7 +612,7 @@
     "stratum": "D",
     "pred": {
       "category_phrase": "gold hoop earrings",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "style",
@@ -703,7 +630,7 @@
           "attribute": "material",
           "value": "not real gold",
           "declined": false,
-          "negated": true
+          "negated": false
         },
         {
           "attribute": "budget",
@@ -713,10 +640,10 @@
         }
       ],
       "price_max": 60,
-      "price_min": 0,
+      "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -737,7 +664,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -745,23 +672,17 @@
     "stratum": "E",
     "pred": {
       "category_phrase": "plain fitted short sleeve top",
-      "department": "womens",
+      "department": null,
       "slots": [
-        {
-          "attribute": "style",
-          "value": "plain",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "size",
-          "value": "fitted",
-          "declined": false,
-          "negated": false
-        },
         {
           "attribute": "size",
           "value": "short sleeve",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "fitted",
           "declined": false,
           "negated": false
         },
@@ -780,15 +701,15 @@
         {
           "attribute": "material",
           "value": "ribbed",
-          "declined": false,
-          "negated": true
+          "declined": true,
+          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -815,19 +736,19 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "scenario_only"
     }
   },
   {
     "case": 24,
     "stratum": "E",
     "pred": {
-      "category_phrase": "pink jacket thing with the scarf",
-      "department": "womens",
+      "category_phrase": "halloween's coming up and i'm going as",
+      "department": null,
       "slots": [
         {
-          "attribute": "budget",
-          "value": "25",
+          "attribute": "style",
+          "value": "pink jacket with the scarf",
           "declined": false,
           "negated": false
         }
@@ -836,7 +757,7 @@
       "price_min": 0,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -847,23 +768,23 @@
       "department": "mens",
       "slots": [
         {
-          "attribute": "budget",
-          "value": "under 30 dollars each",
-          "declined": false,
-          "negated": false
-        },
-        {
           "attribute": "material",
           "value": "not plastic",
           "declined": false,
           "negated": true
+        },
+        {
+          "attribute": "budget",
+          "value": "under 30 dollars each",
+          "declined": false,
+          "negated": false
         }
       ],
       "price_max": 30,
       "price_min": 0,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -871,7 +792,7 @@
     "stratum": "F",
     "pred": {
       "category_phrase": "house slippers",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "material",
@@ -902,15 +823,15 @@
       "price_min": 0,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
     "case": 27,
     "stratum": "F",
     "pred": {
-      "category_phrase": "nice summery blouse",
-      "department": "womens",
+      "category_phrase": "summery blouse",
+      "department": null,
       "slots": [
         {
           "attribute": "style",
@@ -926,7 +847,13 @@
         },
         {
           "attribute": "material",
-          "value": "lace or crochet detail at the front",
+          "value": "lace or crochet",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "brunch",
           "declined": false,
           "negated": false
         }
@@ -935,7 +862,7 @@
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   },
   {
@@ -943,7 +870,7 @@
     "stratum": "G",
     "pred": {
       "category_phrase": "big shoulder bag",
-      "department": "unisex-adult",
+      "department": null,
       "slots": [
         {
           "attribute": "material",
@@ -956,19 +883,13 @@
           "value": "roomy enough to fit a laptop",
           "declined": false,
           "negated": false
-        },
-        {
-          "attribute": "brand",
-          "value": "reputable/trusted",
-          "declined": false,
-          "negated": false
         }
       ],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -976,20 +897,8 @@
     "stratum": "G",
     "pred": {
       "category_phrase": "baseball cap",
-      "department": "unisex-child",
+      "department": null,
       "slots": [
-        {
-          "attribute": "brand",
-          "value": "none",
-          "declined": false,
-          "negated": false
-        },
-        {
-          "attribute": "material",
-          "value": "none",
-          "declined": false,
-          "negated": false
-        },
         {
           "attribute": "feature",
           "value": "custom printed or embroidered",
@@ -1004,7 +913,7 @@
         },
         {
           "attribute": "budget",
-          "value": "around 20 bucks",
+          "value": "20 bucks",
           "declined": false,
           "negated": false
         }
@@ -1013,7 +922,7 @@
       "price_min": 0,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_requirements"
     }
   },
   {
@@ -1022,19 +931,12 @@
     "pred": {
       "category_phrase": "foam clog things with the holes in them",
       "department": "unisex-child",
-      "slots": [
-        {
-          "attribute": "color",
-          "value": "unspecified",
-          "declined": true,
-          "negated": false
-        }
-      ],
+      "slots": [],
       "price_max": null,
       "price_min": null,
       "quality_prior": "none",
       "exploring": false,
-      "specificity": 1
+      "specificity": "type_with_wishes"
     }
   }
 ]
