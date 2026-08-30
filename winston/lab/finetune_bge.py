@@ -28,7 +28,9 @@ from dense_rank import QUERY_PREFIX, catalog_text  # noqa: E402
 from evaluator.local_evaluator import catalog_index, coarse_category  # noqa: E402
 
 OUT = LAB / ".cache" / os.environ.get("FT_OUT", "bge_ft")
-NEG_PER_ANCHOR = 2
+NEG_PER_ANCHOR = int(os.environ.get("FT_NEG", 2))
+EPOCHS = float(os.environ.get("FT_EPOCHS", 3))
+HOLDOUT = os.environ.get("FT_HOLDOUT", "parsed")     # parsed | random20
 
 
 def main() -> None:
@@ -39,8 +41,14 @@ def main() -> None:
         buckets.setdefault(coarse_category(c), []).append(a)
 
     cases = [json.loads(l) for l in (LAB / "bench" / "cases.jsonl").open() if l.strip()]
-    eval_ids = {json.loads(l)["case_id"] for l in (LAB / "bench" / "parses.jsonl").open() if l.strip()}
-    eval_asins = {c["asin"] for c in cases if c["case_id"] in eval_ids}
+    if HOLDOUT == "random20":
+        # a fixed fifth of the PRODUCTS is never trained on; evaluate on whichever of
+        # their cases have a parse, now or later - decoupled from the parse pass
+        asins = sorted({c["asin"] for c in cases})
+        eval_asins = set(rng.sample(asins, len(asins) // 5))
+    else:
+        eval_ids = {json.loads(l)["case_id"] for l in (LAB / "bench" / "parses.jsonl").open() if l.strip()}
+        eval_asins = {c["asin"] for c in cases if c["case_id"] in eval_ids}
     train = [c for c in cases if c["asin"] not in eval_asins]
 
     anchors, positives, negatives = [], [], []
@@ -54,7 +62,7 @@ def main() -> None:
             negatives.append(catalog_text(products[neg]))
     print(f"cases {len(cases)} | held-out products {len(eval_asins)} | train cases {len(train)} | triplets {len(anchors)}")
     (LAB / ".cache").mkdir(exist_ok=True)
-    (LAB / ".cache" / "bge_ft_heldout.json").write_text(json.dumps(sorted(eval_asins)))
+    (LAB / ".cache" / f"{OUT.name}_heldout.json").write_text(json.dumps(sorted(eval_asins)))
 
     import os
     device = os.environ.get("DENSE_DEVICE", "cpu")          # mps once the GPU is free
@@ -62,7 +70,7 @@ def main() -> None:
     model.max_seq_length = 256
     params = set(inspect.signature(SentenceTransformerTrainingArguments).parameters)
     args = {k: v for k, v in dict(
-        output_dir=str(LAB / ".cache" / "bge_ft_runs"), num_train_epochs=3, per_device_train_batch_size=16,
+        output_dir=str(LAB / ".cache" / "bge_ft_runs"), num_train_epochs=EPOCHS, per_device_train_batch_size=16,
         gradient_accumulation_steps=2, learning_rate=2e-5, warmup_steps=10, use_cpu=(device == "cpu"),
         dataloader_num_workers=0, logging_steps=10, save_strategy="no", report_to="none", seed=0,
     ).items() if k in params}
