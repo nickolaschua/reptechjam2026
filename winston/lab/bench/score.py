@@ -45,26 +45,23 @@ def rank_of(ranked: list[str], target: str) -> int | None:
 
 def resolver_query(parse: dict) -> list[str]:
     """category_phrase + soft slots - the arm that won in pipeline.py (B)."""
-    from nlp_parse import tier_of
+    from nlp_parse import clean_slots, tier_of
     terms = [parse.get("category_phrase") or ""]
-    terms += [s["value"] for s in parse.get("slots", []) if tier_of(s) == "soft" and not s.get("negated")]
+    terms += [s["value"] for s in clean_slots(parse) if tier_of(s) == "soft" and not s.get("negated")]
     return [t for t in terms if t]
-
-
-# exp11 tokenises "women's" to "women"; the catalog's categories say Women/Men/Girls/Boys/Baby
-_DEPT_TERM = {"womens": "women", "mens": "men", "girls": "girls", "boys": "boys",
-              "baby-girls": "baby", "baby-boys": "baby"}
 
 
 def parsed_state(parse: dict) -> tuple[str, list[str]]:
     """Map a parse onto exp11's own {category, constraints} state. The parse replaces
-    the template regex; retrieval is exp11's untouched _rank. Negated and declined
-    slots are dropped; price is not a term."""
-    from nlp_parse import tier_of
-    category = " ".join(t for t in (_DEPT_TERM.get(parse.get("department") or ""), parse.get("category_phrase")) if t)
-    constraints = [s["value"] for s in parse.get("slots", [])
+    the template regex; retrieval is exp11's untouched _rank. Negated, declined and
+    junk slots are dropped; price is not a term. The parsed department is NOT a
+    term: the 7B sets one with no gender word in the utterance in ~half of cases
+    (\"womens\" for \"brown leather watch band\"), and as an AND term that excludes
+    the target. When the user said it, category_phrase already carries it."""
+    from nlp_parse import clean_slots, tier_of
+    constraints = [s["value"] for s in clean_slots(parse)
                    if tier_of(s) != "decline" and not s.get("negated")]
-    return category or "clothing item", constraints
+    return parse.get("category_phrase") or "clothing item", constraints
 
 
 def parsed_rank(agent, sid: str, parse: dict, asin: str) -> int | None:
@@ -76,8 +73,8 @@ def parsed_rank(agent, sid: str, parse: dict, asin: str) -> int | None:
 
 def specificity_counts(parse: dict) -> tuple[int, int]:
     """(n_hard, n_soft): the parse-side specificity axis. Declined slots count as neither."""
-    from nlp_parse import tier_of
-    tiers = [tier_of(s) for s in parse.get("slots", [])]
+    from nlp_parse import clean_slots, tier_of
+    tiers = [tier_of(s) for s in clean_slots(parse)]
     return tiers.count("hard"), tiers.count("soft")
 
 

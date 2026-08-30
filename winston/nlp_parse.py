@@ -137,6 +137,20 @@ def hard_claim_holds(attribute: str, value: str) -> bool:
     return True
 
 
+# A 7B under a required-key schema fills slots it has nothing for: "not
+# specified", "n/a", "any". Those words then reach the retrieval query.
+JUNK_VALUES = frozenset({"", "not specified", "unspecified", "none", "n/a", "na", "any",
+                         "not mentioned", "does not matter", "doesn't matter", "no preference",
+                         "not applicable", "null", "unknown"})
+
+
+def clean_slots(parse: dict) -> list[dict]:
+    """Slots worth acting on: junk placeholder values dropped. Declined slots keep
+    their value (it names what the user waved off) unless the value itself is junk."""
+    return [s for s in parse.get("slots", [])
+            if str(s.get("value", "")).strip().lower().rstrip(".") not in JUNK_VALUES]
+
+
 def tier_of(slot: dict) -> str:
     """hard = filterable (three-valued). soft = scoreable. decline = user opted out.
 
@@ -512,7 +526,9 @@ def parse_with_ollama(utterance: str, model: str, host: str = "http://localhost:
             request = urllib.request.Request(f"{host}/api/generate", body,
                                              {"Content-Type": "application/json"})
             with urllib.request.urlopen(request, timeout=timeout) as response:
-                return json.loads(json.loads(response.read())["response"])
+                parsed = json.loads(json.loads(response.read())["response"])
+                parsed["slots"] = clean_slots(parsed)     # placeholder values never leave here
+                return parsed
         except Exception as exc:                       # noqa: BLE001 - retried, then raised
             last = exc
     raise RuntimeError(f"ollama call failed after {retries + 1} attempts: {last}")

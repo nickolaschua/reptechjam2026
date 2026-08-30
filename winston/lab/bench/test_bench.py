@@ -265,8 +265,10 @@ class TestScore(unittest.TestCase):
             {"attribute": "material", "value": "leather", "declined": False, "negated": True},
             {"attribute": "size", "value": "7", "declined": True, "negated": False},
             {"attribute": "use_case", "value": "trail", "declined": False, "negated": False},
+            {"attribute": "brand", "value": "not specified", "declined": False, "negated": False},
         ]}
-        self.assertEqual(parsed_state(parse), ("women running shoes", ["black", "trail"]))
+        # department is never a term; junk values never reach the query
+        self.assertEqual(parsed_state(parse), ("running shoes", ["black", "trail"]))
         self.assertEqual(resolver_query(parse), ["running shoes", "black", "trail"])
         self.assertEqual(parsed_state({"category_phrase": "", "slots": []}), ("clothing item", []))
 

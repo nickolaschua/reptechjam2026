@@ -43,9 +43,9 @@ def slot_terms(parse: dict, stances: tuple[str, ...] = ("soft",)) -> list[str]:
     conjunction. The evidence was captured correctly and then thrown away
     because only category_phrase reached the resolver.
     """
-    from nlp_parse import tier_of
+    from nlp_parse import clean_slots, tier_of
 
-    return [s["value"] for s in parse.get("slots", [])
+    return [s["value"] for s in clean_slots(parse)
             if not s.get("declined") and not s.get("negated") and tier_of(s) in stances]
 
 
