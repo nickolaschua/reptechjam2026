@@ -91,6 +91,19 @@ generation done
 
 Schema changes (step 1) must land **before** step 5, or the pass is re-run.
 
+## 5a. Two gates every parser change must pass (added 2026-08-31)
+
+| gate | command | pass condition | why |
+|---|---|---|---|
+| probe F1 | `python3 nlp_parse.py --model qwen2.5:7b-instruct` | slot F1 >= 0.441 (baseline 2026-08-30) | messy-input extraction did not regress |
+| template | `python3 lab/bench/template_check.py 30` | exact browsing/buying forms: parsed rank == regex rank case for case; paraphrase: parsed hit@10 == buying-template regex hit@10 | the bolt-on must be a no-op on the simulator's own text and a full recovery when the organizer paraphrases it |
+
+The template gate exists because of what it caught first time: on a browsing
+template with nothing to extract, the 7B padded slots with the schema's own
+literals (`scenario_only`, `reputable/trusted`) and dropped hit@10 from 0.67 to
+0.17. Any literal in SCHEMA or PROMPT is a candidate padding value; `JUNK_VALUES`
+must cover them all (the self-check asserts the enum lists do).
+
 ## 6. Out of scope
 
 Anything that touches the keyword layer's ranking on template input. Dense
