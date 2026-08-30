@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import sys
 import time
@@ -84,8 +85,13 @@ def plan_cases(products: list[dict], seed: int = SEED) -> list[dict]:
     return plan
 
 
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434").rstrip("/")
+if not OLLAMA_HOST.startswith("http"):
+    OLLAMA_HOST = "http://" + OLLAMA_HOST
+
+
 def ollama_chat(model: str, system: str, user: str, temperature: float = 0.7,
-                timeout: int = 180, host: str = "http://localhost:11434") -> str:
+                timeout: int = 180, host: str = OLLAMA_HOST) -> str:
     body = json.dumps({
         "model": model,
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],

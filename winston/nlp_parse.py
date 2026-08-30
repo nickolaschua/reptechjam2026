@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -516,7 +517,12 @@ def score(pred: dict, gold: dict, discard_spans: list[str] | None = None,
 
 # ------------------------------------------------------------------------- ollama
 
-def parse_with_ollama(utterance: str, model: str, host: str = "http://localhost:11434",
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434").rstrip("/")
+if not OLLAMA_HOST.startswith("http"):
+    OLLAMA_HOST = "http://" + OLLAMA_HOST          # ollama's own env style is host:port
+
+
+def parse_with_ollama(utterance: str, model: str, host: str = OLLAMA_HOST,
                       timeout: int = 300, retries: int = 1) -> dict:
     """One constrained-decode call, retried once on transport failure.
 
@@ -653,7 +659,7 @@ def self_check() -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", help="ollama model tag; omit to only convert + self-check")
-    ap.add_argument("--host", default="http://localhost:11434")
+    ap.add_argument("--host", default=OLLAMA_HOST)
     args = ap.parse_args()
 
     self_check()
