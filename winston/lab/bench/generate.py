@@ -29,7 +29,9 @@ from prompts import (STYLES, GATED, INTENT_LABEL, MODIFIERS, MODIFIER_ONLY_FOR, 
                      content_words, build_system_prompt, relation_for)
 
 SEED = 20260829
-GENERATORS = ("llama3.1:8b", "gemma2:9b", "mistral:7b")     # never the parser's qwen2.5
+# mistral:7b dropped: every output was "Hey there! I'm on the hunt for..." in 6-8 sentences,
+# a fixed template of its own. Never the parser's qwen2.5.
+GENERATORS = ("llama3.1:8b", "gemma2:9b")
 MODIFIER_P = {"negation": 0.2, "for_other": 0.2, "vague_budget": 0.2, "format_noise": 0.3}
 OVERLAP_LIMIT = 0.5
 USER_TURN = "Start the conversation by telling the assistant what you are looking for."

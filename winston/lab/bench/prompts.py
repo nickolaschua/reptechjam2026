@@ -25,6 +25,7 @@ STYLES = ("exact", "product_type", "feature", "use_case", "symptom",
           "compatibility", "plain", "lay")
 GATED = {"exact": "has_model_code", "compatibility": "compat_eligible"}   # style -> product flag it needs
 INTENT_LABEL = {st: ("buying" if st == "exact" else "browsing") for st in STYLES}
+NO_NAME_STYLES = ("use_case", "symptom")     # styles whose instruction forbids naming the item
 MODIFIERS = ("negation", "for_other", "vague_budget", "format_noise")
 MODIFIER_ONLY_FOR = {"format_noise": "exact"}                             # modifier -> the one style it applies to
 
@@ -128,6 +129,10 @@ def build_system_prompt(product: dict, card: dict, profile: dict, style: str,
     instr = STYLE_INSTRUCTIONS[style]
     if style == "lay":
         instr = instr.format(forbidden=", ".join(forbidden_list(product)))
+    elif style in NO_NAME_STYLES:
+        # "do not name the item" alone is ignored by every 7-9B generator (6/6 named it);
+        # the forbidden list is the only instruction they reliably obey
+        instr += f" You must not use any of these words, or their plurals: {', '.join(forbidden_list(product))}."
     elif style == "exact":
         if not code:
             raise ValueError("exact style needs a code")

@@ -45,6 +45,14 @@ class TestPrompts(unittest.TestCase):
         self.assertIn("You must not use any of these words", p)
         self.assertNotIn("Drop descriptive hints", p)
 
+    def test_use_case_and_symptom_prompts_carry_the_forbidden_list(self):
+        from prompts import build_system_prompt
+        for style in ("use_case", "symptom"):
+            p = build_system_prompt(self._product(), {}, {}, style, [])
+            self.assertIn("Do not name the item", p)
+            self.assertIn("croslite", p)
+        self.assertNotIn("croslite", build_system_prompt(self._product(), {}, {}, "plain", []))
+
     def test_exact_requires_code_and_uses_it(self):
         from prompts import build_system_prompt
         with self.assertRaises(ValueError):
