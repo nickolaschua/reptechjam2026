@@ -225,5 +225,68 @@ class TestGenerate(unittest.TestCase):
                 self.assertEqual(c["style"], "exact")
 
 
+class TestScore(unittest.TestCase):
+    def test_rank_of_helper(self):
+        from score import rank_of
+        self.assertEqual(rank_of(["a", "b", "c"], "b"), 2)
+        self.assertIsNone(rank_of(["a", "b"], "z"))
+        self.assertIsNone(rank_of([], "a"))
+
+    def test_question_hit_matches_evaluator_classification(self):
+        from score import question_hit
+        product = {"title": "Leather boots", "features": ["100% Leather", "Rubber sole"], "details": {},
+                   "description": "", "price": None}
+        # intent_card puts the material first -> "leather" -> classify_constraint -> "material"
+        self.assertTrue(question_hit("material", product))
+        self.assertFalse(question_hit("budget", product))
+        self.assertFalse(question_hit(None, product))
+
+    def test_resolver_rank_uses_phrase_and_soft_slots(self):
+        from score import resolver_query
+        parse = {"category_phrase": "shoe", "slots": [
+            {"attribute": "use_case", "value": "running", "declined": False},
+            {"attribute": "material", "value": "leather", "declined": False},   # hard -> excluded
+            {"attribute": "color", "value": "red", "declined": True},           # declined -> excluded
+        ]}
+        self.assertEqual(resolver_query(parse), ["shoe", "running"])
+
+    def test_specificity_counts_and_card_hard_said(self):
+        from score import specificity_counts, card_hard_said
+        parse = {"slots": [
+            {"attribute": "use_case", "value": "running", "declined": False},
+            {"attribute": "material", "value": "leather", "declined": False},
+            {"attribute": "color", "value": "red", "declined": True},
+        ]}
+        self.assertEqual(specificity_counts(parse), (1, 1))
+        product = {"title": "Leather boots", "features": ["100% Leather", "Rubber sole"], "details": {},
+                   "description": "", "price": None}
+        # the card holds ["leather", "100% leather"] - both voiced, both count
+        self.assertEqual(card_hard_said("want some leather boots", product), 2)
+        self.assertEqual(card_hard_said("something for the mountains", product), 0)
+
+
+class TestReport(unittest.TestCase):
+    def test_metrics(self):
+        from report import hit10, mrr
+        ranks = [1, 5, 11, None, 2]
+        self.assertAlmostEqual(hit10(ranks), 3 / 5)
+        self.assertAlmostEqual(mrr(ranks), (1 + 0.2 + 0 + 0 + 0.5) / 5)
+
+    def test_bootstrap_ci_brackets_the_point_estimate_and_is_seeded(self):
+        from report import bootstrap_ci, hit10
+        ranks = [1, 2, 3, 15, None, 4, 1, 30, 2, 9] * 5
+        lo, hi = bootstrap_ci(ranks, hit10, n_boot=500, seed=1)
+        self.assertLessEqual(lo, hit10(ranks))
+        self.assertGreaterEqual(hi, hit10(ranks))
+        self.assertEqual((lo, hi), bootstrap_ci(ranks, hit10, n_boot=500, seed=1))
+
+    def test_quartile_label(self):
+        from report import quartile_label
+        vals = list(range(100))
+        self.assertEqual(quartile_label(0, vals), "Q1")
+        self.assertEqual(quartile_label(99, vals), "Q4")
+        self.assertEqual(quartile_label(None, vals), "n/a")
+
+
 if __name__ == "__main__":
     unittest.main()
