@@ -18,7 +18,8 @@ from pathlib import Path
 
 BENCH = Path(__file__).resolve().parent
 REPO = BENCH.parent.parent.parent
-for p in (REPO / "experiment_1", REPO / "techjam-conversational-search"):
+for p in (REPO / "experiment_1", REPO / "docs" / "archive" / "legacy_hybrid_agent",
+          REPO / "techjam-conversational-search"):
     sys.path.insert(0, str(p))
 for k in ("OPENAI_API_KEY", "DEEPSEEK_API_KEY", "GEMINI_API_KEY"):
     os.environ.pop(k, None)                     # local-only, by construction

@@ -30,7 +30,8 @@ LAB = BENCH.parent
 WINSTON = LAB.parent
 REPO = WINSTON.parent
 KIT = REPO / "techjam-conversational-search"
-for p in (WINSTON, LAB, BENCH, WINSTON / "experiments", KIT, REPO / "nickolas" / "experiments"):
+for p in (WINSTON, LAB, BENCH, WINSTON / "experiments", KIT, REPO / "nickolas" / "experiments",
+          REPO / "docs" / "archive" / "research_evaluation" / "retrieval" / "experiments"):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 

@@ -15,7 +15,7 @@ from pathlib import Path
 BENCH = Path(__file__).resolve().parent
 REPO = BENCH.parent.parent.parent
 VIS = REPO / "experiment_1" / "visualizer"
-for p in (BENCH, VIS):
+for p in (BENCH, VIS, REPO / "docs" / "archive" / "legacy_hybrid_agent"):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
