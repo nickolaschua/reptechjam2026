@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import math
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -66,6 +67,7 @@ class RuntimeConfig:
     ollama_model: str
     ollama_timeout_seconds: float
     allow_catalog_embedding: bool
+    confidence_similarity_threshold: float = 0.40
 
 
 def _positive_float(name: str, default: str) -> float:
@@ -80,6 +82,16 @@ def _positive_int(name: str, default: int) -> int:
     try: value = int(raw)
     except ValueError as exc: raise ValueError(f"{name} must be an integer") from exc
     if value <= 0: raise ValueError(f"{name} must be greater than zero")
+    return value
+
+
+def _cosine_threshold(name: str, default: str) -> float:
+    try:
+        value = float(os.environ.get(name, default))
+    except ValueError as exc:
+        raise ValueError(f"{name} must be numeric") from exc
+    if not math.isfinite(value) or not -1.0 <= value <= 1.0:
+        raise ValueError(f"{name} must be a finite cosine value between -1 and 1")
     return value
 
 
@@ -112,12 +124,16 @@ def load_runtime_config() -> RuntimeConfig:
         ollama_model=os.environ.get("OLLAMA_MODEL", "llama3.1:8b").strip(),
         ollama_timeout_seconds=ollama_timeout,
         allow_catalog_embedding=_env_bool("ALLOW_CATALOG_EMBEDDING", False),
+        confidence_similarity_threshold=_cosine_threshold(
+            "CONFIDENCE_SIMILARITY_THRESHOLD", "0.40"
+        ),
     )
 
 
 RUNTIME_CONFIG = load_runtime_config()
 TEST_MODE = RUNTIME_CONFIG.test_mode
 ALLOW_CATALOG_EMBEDDING = _env_bool("ALLOW_CATALOG_EMBEDDING", False)
+CONFIDENCE_SIMILARITY_THRESHOLD = RUNTIME_CONFIG.confidence_similarity_threshold
 
 
 def memory_store_path(config: RuntimeConfig = RUNTIME_CONFIG) -> Path:
@@ -128,7 +144,7 @@ def memory_store_path(config: RuntimeConfig = RUNTIME_CONFIG) -> Path:
 
 ACTIVE_MEMORY_STORE_PATH = memory_store_path()
 
-RELEVANCE_THRESHOLD = 0.20
+RELEVANCE_THRESHOLD = 0.30
 BUYING_CURRENT_WEIGHT = 0.80
 BUYING_MEMORY_WEIGHT = 0.20
 BROWSING_CURRENT_WEIGHT = 0.20
@@ -140,6 +156,7 @@ EXPECTED_CATALOG_ROWS = 50_000
 
 __all__ = [
     "ALLOW_CATALOG_EMBEDDING",
+    "CONFIDENCE_SIMILARITY_THRESHOLD",
     "ACTIVE_MEMORY_STORE_PATH",
     "BROWSING_CURRENT_WEIGHT",
     "BROWSING_MEMORY_WEIGHT",

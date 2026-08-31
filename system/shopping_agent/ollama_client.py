@@ -97,12 +97,6 @@ def _configured_model(explicit_model: str | None) -> str:
     model = str(explicit_model or os.environ.get("OLLAMA_MODEL", DEFAULT_OLLAMA_MODEL)).strip()
     if not model:
         raise ValueError("OLLAMA_MODEL must be non-empty")
-    legacy = os.environ.get("WINSTON_PARSER_MODEL")
-    if legacy is not None and legacy.strip() and legacy.strip() != model:
-        raise ValueError(
-            "WINSTON_PARSER_MODEL is no longer supported and conflicts with OLLAMA_MODEL; "
-            "remove WINSTON_PARSER_MODEL and set OLLAMA_MODEL for every active LLM role"
-        )
     return model
 
 

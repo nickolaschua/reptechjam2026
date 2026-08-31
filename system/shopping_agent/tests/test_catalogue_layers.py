@@ -66,16 +66,13 @@ def test_hard_masks_and_unknown_rating_review_benefit_of_doubt(tmp_path):
     catalogue.rating_numbers[0] = 0
     catalogue.departments[1] = "women"
     state = {
-        "price_min": 10.0, "price_max": 15.0, "target_department": "men", "min_avg_rating": 4.8,
+        "price_max": 15.0, "target_department": "men", "min_avg_rating": 4.8,
         "min_rating_number": 500, "store": "example", "negated_terms": {"forbidden"},
     }
     eligible = catalogue.eligibility(state)
     assert eligible.mask[0]  # unknown rating/review metadata gets benefit of doubt
     assert not eligible.mask[1]  # incompatible demographic
     assert not eligible.mask[6]  # over budget
-    too_expensive = catalogue.eligibility({"price_min": 25.0})
-    assert not too_expensive.mask[0]
-    assert too_expensive.mask[-1]
     assert allowed_departments("men") >= {"men", "unisex-adult", "unspecified", "multi-demographic"}
     assert standardize_department("Unisex Adult") == "unisex-adult"
 

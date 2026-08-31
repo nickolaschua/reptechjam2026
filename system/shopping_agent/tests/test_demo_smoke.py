@@ -20,7 +20,6 @@ from system.shopping_agent.embedding_backends import (
     BGE_MODEL,
 )
 from system.shopping_agent.memory_store import JsonFileVectorMemoryStore
-from system.shopping_agent.turn_parser import ParsedTurn
 
 
 class OfflineBGEBackend:
@@ -32,11 +31,27 @@ class OfflineBGEBackend:
     def embed_catalog(self, texts):
         matrix = np.zeros((len(texts), self.vector_dimension), dtype=np.float32)
         for row, text in enumerate(texts):
+            normalized = text.lower()
+            if "dress" in normalized:
+                matrix[row, 0] = 1.0
+                continue
+            if "boot" in normalized:
+                matrix[row, 1] = 1.0
+                continue
             digest = hashlib.sha256(text.encode("utf-8")).digest()
             matrix[row, int.from_bytes(digest[:2], "big") % self.vector_dimension] = 1.0
         return matrix
 
     def embed_query(self, text: str) -> np.ndarray:
+        normalized = text.lower()
+        if "dress" in normalized:
+            vector = np.zeros(self.vector_dimension, dtype=np.float32)
+            vector[0] = 1.0
+            return vector
+        if "boot" in normalized:
+            vector = np.zeros(self.vector_dimension, dtype=np.float32)
+            vector[1] = 1.0
+            return vector
         digest = hashlib.sha256(text.encode("utf-8")).digest()
         vector = np.zeros(self.vector_dimension, dtype=np.float32)
         for offset, value in enumerate(digest):
@@ -47,30 +62,6 @@ class OfflineBGEBackend:
         return {"request_count": 0, "input_tokens": 0, "request_latencies_seconds": []}
 
 
-class OfflineTurnParser:
-    model = "offline-fixture"
-
-    def parse(self, message: str, turn: int) -> ParsedTurn:
-        del turn
-        category = "boots" if "boot" in message.lower() else "dresses"
-        return ParsedTurn(
-            category=category,
-            positive_slots=(),
-            negatives=(),
-            declined_attributes=(),
-            price_min=None,
-            price_max=None,
-            department=None,
-            specificity="type_with_wishes",
-            intent="browsing",
-            message_type="product_type",
-            model_code=None,
-            resolver_candidates=(category,),
-            resolver_confidence=0.5,
-            raw_parse={},
-        )
-
-
 def test_complete_demo_flow_uses_cache_persistence_isolation_and_reset(tmp_path):
     memory_path = tmp_path / "demo-memory.json"
     store = JsonFileVectorMemoryStore(memory_path)
@@ -79,7 +70,6 @@ def test_complete_demo_flow_uses_cache_persistence_isolation_and_reset(tmp_path)
         embedding_cache_dir=tmp_path / "cache",
         allow_catalog_embedding=True,
         memory_store=store,
-        turn_parser=OfflineTurnParser(),
     )
     agent._call_llm = lambda *args, **kwargs: "Here are the strongest catalogue matches."
     app = DemoApplication(agent=agent, store=store, top_k=3)

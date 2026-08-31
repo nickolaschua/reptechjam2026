@@ -355,6 +355,10 @@
             align-items: flex-start;
         }
 
+        .msg-wrapper.error-msg {
+            align-items: flex-start;
+        }
+
         @keyframes slideIn {
             to {
                 opacity: 1;
@@ -373,6 +377,7 @@
 
         .msg-sender.shopper { color: var(--accent-cyan); }
         .msg-sender.copilot { color: var(--accent-primary); }
+        .msg-sender.error { color: #ff7675; }
 
         .msg-bubble {
             padding: 16px 20px;
@@ -396,6 +401,13 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             color: var(--text-main);
+            border-top-left-radius: 4px;
+        }
+
+        .msg-wrapper.error-msg .msg-bubble {
+            background: rgba(255, 118, 117, 0.08);
+            border: 1px solid rgba(255, 118, 117, 0.55);
+            color: #ffb8b7;
             border-top-left-radius: 4px;
         }
 
@@ -959,6 +971,9 @@
             try {
                 const res = await fetch(`/manual_start?sample_id=${encodeURIComponent(selectedSessionId)}`);
                 const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.error || `Manual session failed (HTTP ${res.status})`);
+                }
 
                 updateInspector(data);
 
@@ -1013,6 +1028,12 @@
             try {
                 const res = await fetch(`/manual_step?sample_id=${encodeURIComponent(selectedSessionId)}&message=${encodeURIComponent(userMsg)}`);
                 const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.error || `Copilot request failed (HTTP ${res.status})`);
+                }
+                if (typeof data.message !== 'string' || !Number.isInteger(data.turn) || !Array.isArray(data.recommendations)) {
+                    throw new Error('Copilot returned an invalid response. Please retry this turn.');
+                }
 
                 appendChatMessage({
                     role: 'copilot',
@@ -1040,8 +1061,18 @@
                 }
             } catch(e) {
                 console.error("Failed to send shopper message:", e);
+                const failedTurn = manualTurn;
+                manualTurn = Math.max(0, manualTurn - 1);
+                appendChatMessage({
+                    role: 'error',
+                    content: `Request failed: ${e.message || 'Unknown error'}. Please retry.`,
+                    turn: failedTurn,
+                    recommendations: []
+                });
                 inputEl.disabled = false;
                 document.getElementById('btn-send').disabled = false;
+                inputEl.value = userMsg;
+                inputEl.focus();
             }
         }
 
@@ -1058,8 +1089,10 @@
             const msgWrapper = document.createElement('div');
             msgWrapper.className = `msg-wrapper ${msg.role}-msg`;
 
-            const senderClass = msg.role === 'customer' ? 'shopper' : 'copilot';
-            const senderName = msg.role === 'customer' ? 'Shopper (__MODEL_LABEL__)' : 'Copilot (__MODEL_LABEL__)';
+            const senderClass = msg.role === 'customer' ? 'shopper' : (msg.role === 'error' ? 'error' : 'copilot');
+            const senderName = msg.role === 'customer'
+                ? 'Shopper (__MODEL_LABEL__)'
+                : (msg.role === 'error' ? 'Request Error' : 'Copilot (__MODEL_LABEL__)');
 
         function getProductImage(r) {
             if (r.image_url && safeImageUrl(r.image_url)) {

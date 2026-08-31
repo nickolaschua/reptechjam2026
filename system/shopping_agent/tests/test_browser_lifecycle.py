@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from system.shopping_agent.visualizer.server import BrowserApplication, buyer_mode_for_scenario
 
 
@@ -16,11 +18,13 @@ class FakeAgent:
         self.store = store
         self.resets = []
         self.ends = []
+        self.respond_options = []
 
     def reset(self, session_id, profile, *, user_id, sequence_index):
         self.resets.append((session_id, user_id, sequence_index))
 
-    def respond(self, session_id, message, turn, top_k, *, buyer_mode, debug):
+    def respond(self, session_id, message, turn, top_k, *, buyer_mode, debug, emit_trace=None):
+        self.respond_options.append({"debug": debug, "emit_trace": emit_trace})
         user_id = next(item[1] for item in self.resets if item[0] == session_id)
         target = "target-a" if user_id == "a" else "target-b"
         return {
@@ -89,6 +93,7 @@ def test_target_hit_commits_and_returns_image_card_once():
     assert result["success"] is True
     assert result["recommendations"][0]["image_url"].endswith("a.jpg")
     assert result["debug"]["memory_trace"]["ltm_updated_after_session"] is True
+    assert agent.respond_options == [{"debug": True, "emit_trace": True}]
     assert agent.ends == [active.session_id]
     app.finish("a", reason="finally")
     assert agent.ends == [active.session_id]
@@ -146,3 +151,13 @@ def test_failed_browser_turn_does_not_advance_counter_and_can_be_discarded():
     assert active.turn == 0
     app.discard("a")
     assert "a" not in app.active
+
+
+def test_manual_ui_rejects_error_payloads_instead_of_rendering_undefined_turns():
+    html = (Path(__file__).parents[1] / "visualizer" / "conversation.html").read_text(
+        encoding="utf-8"
+    )
+    assert "if (!res.ok)" in html
+    assert "!Number.isInteger(data.turn)" in html
+    assert "manualTurn = Math.max(0, manualTurn - 1)" in html
+    assert "Request failed: ${e.message" in html

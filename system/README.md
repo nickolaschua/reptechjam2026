@@ -1,6 +1,6 @@
 # System shopping-agent demo
 
-`system.shopping_agent` is the active TechJam runtime. Its canonical browser demo combines Yangxu's ASTRA catalog and conversation dashboard, Winston's constrained free-text parser/category ambiguity gate, and the frozen gated-vector scorer.
+`system.shopping_agent` is the active TechJam runtime. Its canonical browser demo combines the ASTRA catalog and conversation dashboard, the pre-Winston state-editor preprocessing flow, and the frozen gated-vector scorer.
 
 ## Run
 
@@ -26,27 +26,30 @@ python -m system.shopping_agent.demo --reset-all
 
 ## Turn parsing, retrieval, and memory
 
-Exact evaluator messages use the frozen local template parser. All other free-text
-turns use an Ollama schema-constrained Llama 3.1 parser (`llama3.1:8b` by default),
-one retry, and deterministic post-validation. Parser or resolver failure is terminal
-for the turn and restores its entry snapshot; there is no free-form state-tracking or
-regex fallback on this route.
+Evaluator-template messages use the broad local regex parser. Other free-text turns
+send the complete prior state and current message to a selected-model state editor.
+The returned JSON is merged with deterministic handling for intent, overrides,
+category changes, demographics, negatives, and no-preference responses. Malformed
+JSON restores the prior state before the local regex fallback is applied.
 
-The completed lexical resolver ranks category buckets from the parsed category phrase
-plus soft slots. It is built once from the live `Catalogue` and stores its top three
-candidates and relative top-two margin in debug telemetry. A category-establishing
-turn below `0.20`, without another trusted hard condition, returns no cards and asks
-an open category question before any embedding or response-generation call. A usable
-answer to that pending question resumes retrieval even when its margin remains flat.
+The runtime loads the catalogue once, builds an in-memory FTS5 table over Yangxu's exact fields/tokenizer, and loads the compatible fixed BGE matrix. Live intent is re-evaluated every turn: Buying widens below 15 AND hits and accepts the keyword route at 10 eligible rows, while Browsing uses 30 and 15. Successful keyword pools use the root agent's stable handcrafted state score, while the 150-row fallback remains ordered by descending `s3` with ASIN tie-breaking. Previously returned products are removed before the post-ranking confidence gate evaluates ranks 1-10 of the unseen list. The gate retains products with inclusive current-query cosine `s1 >= 0.40`, never backfills from lower ranks, and passes survivors through rank-preserving brand/title diversity before applying `top_k`.
 
-The runtime loads the catalogue once, builds an in-memory FTS5 table over Yangxu's exact fields/tokenizer, and loads the compatible fixed BGE matrix. Live intent is re-evaluated every turn: Buying widens below 15 AND hits and accepts the keyword route at 10 eligible rows, while Browsing uses 30 and 15. Both keyword and 150-row fallback pools are ordered only by `s3`, with ASIN tie-breaking.
+```text
+Recommendation Ranking
+        ↓
+Confidence Gate: product s1 ≥ 0.40
+        ↓
+Surviving Recommendations / Entropy-Based Querying
+```
+
+When no product clears this gate, the response model receives no product context and is explicitly required to ask the entropy-selected clarification question; entropy is calculated from the rejected pre-gate top-10 pool. `CONFIDENCE_SIMILARITY_THRESHOLD` is a validated process-start override.
 
 Live intent is authoritative for routing, clarification priorities, and selection of the existing frozen memory weights. The public `buyer_mode` argument remains compatible but is used only when live detection cannot resolve a mode. Buying-to-Browsing transitions require an explicit reset.
 
-Every request embeds `v1` with the BGE search prefix, loads the BGE-space reset-time `v2`, evaluates the frozen relevance gate and Buying/Browsing weights, and computes `s1`, `s2`, and `s3` across all 50,000 rows. Popularity mixing, heuristic boosts, diversification, online embedding regeneration, and fine-tuning are not active.
+Every request embeds `v1` with the BGE search prefix, loads the BGE-space reset-time `v2`, evaluates the frozen relevance gate and Buying/Browsing weights, and computes `s1`, `s2`, and `s3` across all 50,000 rows. Those scores remain authoritative for fallback, forensic traces, and confidence filtering. Keyword ranking alone adds the root formula's department/category, brand, accumulated-term, constraint-phrase, category-phrase, FTS-position, and review-count evidence; online embedding regeneration and fine-tuning are not active.
 
-Hard filters are session-only. Minimum and maximum price, demographic department,
-ratings, review counts, and requested brands do not enter the EWMA update text.
+Hard filters are session-only. Maximum price, demographic department,
+ratings, review counts, and requested brands do not enter the adaptive update text.
 Material and size remain positive ranking evidence, not unsafe catalogue exclusions.
 Unknown rating and review metadata receives Yangxu's benefit of doubt. If no row is
 eligible, the agent returns no recommendations and asks which hard constraint to relax.
@@ -55,7 +58,7 @@ The catalogue, agent, CLI, and browser server own explicit idempotent shutdown p
 
 ## Environment and state
 
-The constrained parser, assistant response generator, and browser shopper simulator
+The state editor, assistant response generator, and browser shopper simulator
 share `OLLAMA_HOST` (default `http://localhost:11434`), `OLLAMA_MODEL` (default
 `llama3.1:8b`), and `OLLAMA_TIMEOUT_SECONDS` (default `30`). The client retries once
 for transport or invalid-response failures and records actual model, latency, retries,

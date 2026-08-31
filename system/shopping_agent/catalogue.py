@@ -231,26 +231,7 @@ class Catalogue:
                     batch.clear()
             if batch:
                 cursor.executemany("INSERT INTO products VALUES (?, ?, ?, ?, ?, ?, ?)", batch)
-            cursor.execute(
-                "CREATE VIRTUAL TABLE product_terms USING fts5vocab(products, 'row')"
-            )
             self.connection.commit()
-
-    def document_frequencies(self, tokens: Iterable[object]) -> dict[str, int]:
-        """Return FTS document counts for normalized ASCII resolver tokens."""
-
-        normalized = sorted({_normalize(token) for token in tokens if _normalize(token)})
-        if not normalized:
-            return {}
-        placeholders = ",".join("?" for _ in normalized)
-        with self._lock:
-            if self._closed:
-                raise RuntimeError("catalogue is closed")
-            rows = self.connection.execute(
-                f"SELECT term, doc FROM product_terms WHERE term IN ({placeholders})",
-                normalized,
-            ).fetchall()
-        return {str(term): int(count) for term, count in rows}
 
     @staticmethod
     def _quoted_terms(terms: Iterable[object]) -> list[str]:
@@ -302,9 +283,6 @@ class Catalogue:
 
     def eligibility(self, state: dict[str, Any]) -> Eligibility:
         hard = np.ones(len(self.ids), dtype=bool)
-        price_min = float(state.get("price_min", 0.0))
-        if price_min > 0.0:
-            hard &= np.isfinite(self.prices) & (self.prices >= price_min)
         price_max = float(state.get("price_max", 9999.0))
         if price_max < 9999.0:
             hard &= np.isfinite(self.prices) & (self.prices <= price_max)

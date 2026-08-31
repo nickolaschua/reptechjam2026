@@ -10,10 +10,6 @@ from system.shopping_agent.embedding_backends import BGEEmbeddingBackend, cache_
 from system.shopping_agent.visualizer.server import BrowserApplication, run_server
 
 
-class OfflineParser:
-    model = "offline-parser"
-
-
 def test_production_backend_is_lazy_bge():
     backend = BGEEmbeddingBackend()
 
@@ -27,12 +23,10 @@ def test_production_backend_is_lazy_bge():
 def test_agent_test_mode_is_a_deprecated_noop_selecting_bge(monkeypatch):
     monkeypatch.setattr(Agent, "_build_category_index", lambda self: None)
     monkeypatch.setattr(Agent, "_build_vector_index", lambda self: None)
-    monkeypatch.setattr("system.shopping_agent.agent.catalog_bucket_set", lambda _: frozenset())
     monkeypatch.setattr(Agent, "catalogue", object(), raising=False)
 
     with pytest.warns(DeprecationWarning, match="environment selection remains active"):
-        agent = Agent(test_mode=True, embedding_backend=BGEEmbeddingBackend(),
-                      turn_parser=OfflineParser())
+        agent = Agent(test_mode=True, embedding_backend=BGEEmbeddingBackend())
 
     assert isinstance(agent.embedding_backend, BGEEmbeddingBackend)
 

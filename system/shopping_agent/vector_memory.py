@@ -6,6 +6,11 @@ from typing import Mapping
 import numpy as np
 
 try:
+    from .memory_store import DEFAULT_MEMORY_UPDATE_POLICY, MemoryUpdatePolicy
+except ImportError:
+    from memory_store import DEFAULT_MEMORY_UPDATE_POLICY, MemoryUpdatePolicy
+
+try:
     from .config import (
         BROWSING_CURRENT_WEIGHT,
         BROWSING_MEMORY_WEIGHT,
@@ -35,7 +40,13 @@ class VectorMemoryConfig:
     buying_memory_weight: float = BUYING_MEMORY_WEIGHT
     browsing_current_weight: float = BROWSING_CURRENT_WEIGHT
     browsing_memory_weight: float = BROWSING_MEMORY_WEIGHT
-    ewma_alpha: float = EWMA_ALPHA
+    update_policy: MemoryUpdatePolicy = DEFAULT_MEMORY_UPDATE_POLICY
+
+    @property
+    def ewma_alpha(self) -> float:
+        """Compatibility view of the former fixed-EMA cap."""
+
+        return self.update_policy.alpha_max
 
 DEFAULT_VECTOR_MEMORY_CONFIG = VectorMemoryConfig()
 _POSITIVE_MARKERS = {"true", "yes", "affirmative", "required", "included"}

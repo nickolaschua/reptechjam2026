@@ -155,6 +155,7 @@ def _print_response(response: dict[str, Any], *, show_debug: bool) -> None:
                 "current_intent", "useful_slots",
                 "prior_ltm_exists", "memory_version", "memory_update_count",
                 "gate_cosine", "gate_threshold", "gate_passed", "a", "b",
+                "confidence_gate",
                 "catalog_rows_scored", "eligible_count", "fts_or_threshold",
                 "keyword_route_threshold",
                 "ltm_updated_after_turn", "memory_update_text",
