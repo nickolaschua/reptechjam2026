@@ -13,10 +13,13 @@ question policy are untouched. This strictly dominates the existing infra:
 |---|--:|--:|---|
 | evaluator sessions (templated, multi-turn, n=60) | TechnicalScore 0.872409 | **identical to the digit** | `plug_check.py --public 60`; an asserting parser proves the LLM is never invoked on template text |
 | human-typed messy input (n=1,685, turn 1) | hit@10 **0.043** / MRR 0.011 | **0.196** / 0.103 (4.6x) | `plug_check.py --bench`; paired 553 better / 50 worse / 1082 tie |
-| paraphrased template (regex misses, n=30) | hit@10 **0.03** | **0.77** = the un-paraphrased regex score, case for case 30/30 | `template_check.py 30` |
+| exp11 retrieval, fair per-track (n=1,685) | hit@10 **0.143** [.127,.160] | **0.233** [.211,.253] | `report.py`; 191 rescues / 40 regressions |
 
-The third row is the private-set hedge: the competition spec reserves the right to add
-natural-language paraphrasing, which zeroes the regex path.
+The baselines that matter are the ones the team built: exp11's FTS5 (above) and Yang Xu's
+hybrid agent (FTS5 + BGE fallback + LLM tracker) - the latter is being run on the same
+1,685 cases (`shop_agent_baseline.py`) and its row lands here. The paraphrase result
+(regex 0.03 -> parsed 0.77, = the un-paraphrased regex score 30/30) is kept as a gate
+in `template_check.py`, not a headline: the regex was never designed to see paraphrases.
 
 ## Where the gain comes from (fair per-track comparison, exp11 retrieval, n=1,685)
 
