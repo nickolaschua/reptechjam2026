@@ -3,29 +3,38 @@
 from __future__ import annotations
 
 import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
 
 import numpy as np
 
 from system.shopping_agent.agent import Agent
 from system.shopping_agent.config import (
-    EMBEDDING_CACHE_DIR,
     EXPECTED_CATALOG_ROWS,
-    OPENAI_EMBEDDING_DIMENSIONS,
-    OPENAI_EMBEDDING_MODEL,
 )
 from system.shopping_agent.demo import DemoApplication
-from system.shopping_agent.embedding_backends import OPENAI_EMBEDDING_SPACE_ID
+from system.shopping_agent.embedding_backends import (
+    BGE_EMBEDDING_SPACE_ID,
+    BGE_MODEL,
+)
 from system.shopping_agent.memory_store import JsonFileVectorMemoryStore
+from system.shopping_agent.turn_parser import ParsedTurn
 
 
-class OfflineOpenAIQueryBackend:
-    backend_id = "openai-text-embedding-3-large"
-    model_id = OPENAI_EMBEDDING_MODEL
-    embedding_space_id = OPENAI_EMBEDDING_SPACE_ID
-    vector_dimension = OPENAI_EMBEDDING_DIMENSIONS
+class OfflineBGEBackend:
+    backend_id = "bge-base-en-v1.5"
+    model_id = BGE_MODEL
+    embedding_space_id = BGE_EMBEDDING_SPACE_ID
+    vector_dimension = 768
 
     def embed_catalog(self, texts):
-        raise AssertionError("the smoke test must use the cached catalogue")
+        matrix = np.zeros((len(texts), self.vector_dimension), dtype=np.float32)
+        for row, text in enumerate(texts):
+            digest = hashlib.sha256(text.encode("utf-8")).digest()
+            matrix[row, int.from_bytes(digest[:2], "big") % self.vector_dimension] = 1.0
+        return matrix
 
     def embed_query(self, text: str) -> np.ndarray:
         digest = hashlib.sha256(text.encode("utf-8")).digest()
@@ -38,14 +47,39 @@ class OfflineOpenAIQueryBackend:
         return {"request_count": 0, "input_tokens": 0, "request_latencies_seconds": []}
 
 
+class OfflineTurnParser:
+    model = "offline-fixture"
+
+    def parse(self, message: str, turn: int) -> ParsedTurn:
+        del turn
+        category = "boots" if "boot" in message.lower() else "dresses"
+        return ParsedTurn(
+            category=category,
+            positive_slots=(),
+            negatives=(),
+            declined_attributes=(),
+            price_min=None,
+            price_max=None,
+            department=None,
+            specificity="type_with_wishes",
+            intent="browsing",
+            message_type="product_type",
+            model_code=None,
+            resolver_candidates=(category,),
+            resolver_confidence=0.5,
+            raw_parse={},
+        )
+
+
 def test_complete_demo_flow_uses_cache_persistence_isolation_and_reset(tmp_path):
     memory_path = tmp_path / "demo-memory.json"
     store = JsonFileVectorMemoryStore(memory_path)
     agent = Agent(
-        embedding_backend=OfflineOpenAIQueryBackend(),
-        embedding_cache_dir=EMBEDDING_CACHE_DIR,
-        allow_catalog_embedding=False,
+        embedding_backend=OfflineBGEBackend(),
+        embedding_cache_dir=tmp_path / "cache",
+        allow_catalog_embedding=True,
         memory_store=store,
+        turn_parser=OfflineTurnParser(),
     )
     agent._call_llm = lambda *args, **kwargs: "Here are the strongest catalogue matches."
     app = DemoApplication(agent=agent, store=store, top_k=3)
@@ -53,8 +87,34 @@ def test_complete_demo_flow_uses_cache_persistence_isolation_and_reset(tmp_path)
     assert len(agent.catalog_ids) == EXPECTED_CATALOG_ROWS
     assert agent.catalog_embeddings.shape == (
         EXPECTED_CATALOG_ROWS,
-        OPENAI_EMBEDDING_DIMENSIONS,
+        768,
     )
+    query = agent.embedding_backend.embed_query(agent.catalog_texts[0])
+    cosine = float(agent.catalog_embeddings[0] @ query)
+    assert np.isfinite(cosine) and -1.00001 <= cosine <= 1.00001
+
+    cache_digest = hashlib.sha256(agent.embedding_cache_path.read_bytes()).hexdigest()
+    manifest_path = tmp_path / "bge_artifact_manifest.json"
+    manifest_path.write_text(
+        json.dumps({"files": {agent.embedding_cache_path.name: cache_digest}}),
+        encoding="utf-8",
+    )
+    repository_root = Path(__file__).resolve().parents[3]
+    verified = subprocess.run(
+        [
+            sys.executable,
+            str(repository_root / "colab" / "verify_bge_artifact.py"),
+            str(agent.embedding_cache_path),
+            "--repo-root",
+            str(repository_root),
+            "--manifest",
+            str(manifest_path),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert json.loads(verified.stdout)["status"] == "valid"
 
     app.start_session("user-a", mode="browsing")
     cold = app.send("I'm looking for dresses.")

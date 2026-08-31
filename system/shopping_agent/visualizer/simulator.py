@@ -3,14 +3,13 @@
 from __future__ import annotations
 
 import json
-import os
 import random
 import re
 from pathlib import Path
 from typing import Any
-import urllib.request
 
-import requests
+from ..model_client import ModelClient
+from ..runtime import get_runtime_providers
 
 
 MATERIAL_RE = re.compile(r"\b(cotton|polyester|nylon|leather|wool|spandex|silk|rayon|fabric)\b", re.I)
@@ -97,30 +96,23 @@ def make_system_prompt(sample: dict[str, Any], product: dict[str, Any], target_c
     return prompt + "Do not reveal the exact title or ASIN. Keep each reply natural, lowercase, and one or two sentences."
 
 
-def call_shopper_llm(prompt: str, system_prompt: str, model_name: str = "llama3.1") -> str:
-    deepseek_key = os.environ.get("DEEPSEEK_API_KEY")
-    openai_key = os.environ.get("OPENAI_API_KEY")
-    if deepseek_key:
-        response = requests.post(
-            "https://api.deepseek.com/v1/chat/completions",
-            headers={"Authorization": f"Bearer {deepseek_key}"},
-            json={"model": "deepseek-chat", "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.4, "max_tokens": 150},
-            timeout=10,
-        )
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"].strip()
-    if openai_key:
-        payload = json.dumps({"model": "gpt-4o-mini", "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.4, "max_tokens": 150}).encode()
-        request = urllib.request.Request("https://api.openai.com/v1/chat/completions", data=payload, headers={"Content-Type": "application/json", "Authorization": f"Bearer {openai_key}"})
-        with urllib.request.urlopen(request, timeout=10) as response:
-            return json.loads(response.read())["choices"][0]["message"]["content"].strip()
-    response = requests.post(
-        "http://localhost:11434/api/chat",
-        json={"model": model_name, "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "stream": False, "options": {"temperature": 0.4}},
-        timeout=30,
+def call_shopper_llm(
+    prompt: str,
+    system_prompt: str,
+    *,
+    client: ModelClient | None = None,
+) -> str:
+    """Generate shopper text through the same local model used by the agent."""
+
+    llm = client or get_runtime_providers().llm_client
+    return llm.chat(
+        [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt},
+        ],
+        options={"temperature": 0.4, "num_predict": 150},
+        role="shopper",
     )
-    response.raise_for_status()
-    return response.json()["message"]["content"].strip()
 
 
 def load_samples(path: str | Path) -> list[dict[str, Any]]:

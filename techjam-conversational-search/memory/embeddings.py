@@ -128,7 +128,7 @@ def discover_local_model(catalog_path: Path, config: MemoryConfig) -> Path | Non
     if config.embedding_model_id != MINILM_MODEL_ID:
         return None
     relative = Path(
-        "docs/archive/research_evaluation/cache/models/"
+        "archive/research_evaluation/cache/models/"
         "models--sentence-transformers--all-MiniLM-L6-v2/snapshots"
     )
     for ancestor in catalog_path.resolve().parents:

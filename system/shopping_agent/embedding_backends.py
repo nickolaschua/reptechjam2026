@@ -1,7 +1,7 @@
-"""Minimal, swappable embedding backends for the Phase 3 bake-off.
+"""Production BGE embeddings plus deterministic backend injection contracts.
 
 This module is deliberately side-effect free: importing it never constructs a
-hosted client, downloads a model, or embeds catalog data.
+model, downloads weights, or embeds catalog data.
 """
 
 from __future__ import annotations
@@ -9,33 +9,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import time
-from typing import Any, Callable, Sequence
+from threading import Lock
+from typing import Any, Callable, Mapping, Sequence
+import urllib.request
 
 import numpy as np
 
-try:
-    from .config import (
-        OPENAI_EMBEDDING_DIMENSIONS,
-        OPENAI_EMBEDDING_MODEL,
-        OPENAI_SMALL_EMBEDDING_DIMENSIONS,
-        OPENAI_SMALL_EMBEDDING_MODEL,
-    )
-except ImportError:
-    from config import (
-        OPENAI_EMBEDDING_DIMENSIONS,
-        OPENAI_EMBEDDING_MODEL,
-        OPENAI_SMALL_EMBEDDING_DIMENSIONS,
-        OPENAI_SMALL_EMBEDDING_MODEL,
-    )
-
-
 BGE_MODEL = "BAAI/bge-base-en-v1.5"
-OPENAI_MODEL = OPENAI_EMBEDDING_MODEL
-OPENAI_SMALL_MODEL = OPENAI_SMALL_EMBEDDING_MODEL
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 PRODUCT_TEXT_VERSION = "patch2-product-text-v1"
 
@@ -48,10 +31,8 @@ def make_embedding_space_id(
     normalized: bool = True,
 ) -> str:
     """Return the stable identity of mutually compatible catalog/query vectors."""
-    if backend_id == "bge-base-en-v1.5":
+    if backend_id.startswith("bge-"):
         query_convention = "bge-search-prefix-v1"
-    elif backend_id == "openai-text-embedding-3-large":
-        query_convention = "symmetric-v1"
     else:
         query_convention = "backend-defined-v1"
     normalization = "l2" if normalized else "none"
@@ -64,16 +45,6 @@ def make_embedding_space_id(
 BGE_EMBEDDING_SPACE_ID = make_embedding_space_id(
     "bge-base-en-v1.5", BGE_MODEL, 768
 )
-OPENAI_EMBEDDING_SPACE_ID = make_embedding_space_id(
-    "openai-text-embedding-3-large", OPENAI_MODEL, OPENAI_EMBEDDING_DIMENSIONS
-)
-OPENAI_SMALL_EMBEDDING_SPACE_ID = make_embedding_space_id(
-    "openai-text-embedding-3-small",
-    OPENAI_SMALL_MODEL,
-    OPENAI_SMALL_EMBEDDING_DIMENSIONS,
-)
-
-
 class EmbeddingError(RuntimeError):
     """Base error for embedding failures."""
 
@@ -120,9 +91,31 @@ def fingerprint_file(path: str | Path) -> str:
     return digest.hexdigest()
 
 
-def cache_filename(backend_id: str) -> str:
-    safe = re.sub(r"[^a-zA-Z0-9_-]", "_", backend_id)
+def cache_filename(backend_id: str, model_id: str | None = None,
+                   vector_dimension: int | None = None) -> str:
+    if backend_id == "openai":
+        identity = f"openai-{model_id or 'unknown'}-d{int(vector_dimension or 0)}"
+        safe = re.sub(r"[^a-zA-Z0-9_.-]", "_", identity)
+        return f"catalog_cache_{safe}.npz"
+    safe = re.sub(r"[^a-zA-Z0-9_.-]", "_", backend_id)
     return f"catalog_cache_{safe}.npz"
+
+
+def production_product_text(product: dict[str, Any]) -> str:
+    """Build the exact product passage embedded by the production runtime."""
+
+    title = product.get("title") or ""
+    categories = ", ".join(product.get("categories") or [])
+    features = "; ".join((product.get("features") or [])[:3])
+    return (
+        f"Product: {title}. Categories: {categories}. Features: {features}."
+    ).strip()
+
+
+def production_product_texts(products: Sequence[dict[str, Any]]) -> list[str]:
+    """Build production passages in caller-supplied catalogue row order."""
+
+    return [production_product_text(product) for product in products]
 
 
 @dataclass(frozen=True)
@@ -304,124 +297,125 @@ class BGEEmbeddingBackend(EmbeddingBackend):
         return normalize_vector(vector)
 
 
+class OpenAIEmbeddingError(EmbeddingError):
+    """Typed failure from the OpenAI embeddings endpoint."""
+
+
+class OpenAIEmbeddingResponseError(OpenAIEmbeddingError):
+    """The endpoint returned malformed, reordered, or incompatible vectors."""
+
+
+OpenAIEmbeddingTransport = Callable[[str, bytes, float, Mapping[str, str]], object]
+
+
 class OpenAIEmbeddingBackend(EmbeddingBackend):
-    backend_id = "openai-text-embedding-3-large"
-    model_id = OPENAI_MODEL
-    vector_dimension = OPENAI_EMBEDDING_DIMENSIONS
-    embedding_space_id = OPENAI_EMBEDDING_SPACE_ID
+    """Batched, normalized OpenAI embeddings with strict row-order validation."""
 
-    def __init__(
-        self,
-        client: Any = None,
-        api_key: str | None = None,
-        batch_size: int = 1000,
-        *,
-        model_id: str = OPENAI_MODEL,
-        backend_id: str | None = None,
-        vector_dimension: int | None = 3072,
-    ) -> None:
-        self.model_id = str(model_id)
-        self.backend_id = str(backend_id or f"openai-{self.model_id}")
-        self.vector_dimension = (
-            None if vector_dimension is None else int(vector_dimension)
-        )
-        if self.vector_dimension is not None and self.vector_dimension <= 0:
-            raise ValueError("vector_dimension must be positive when supplied")
-        self.embedding_space_id = (
-            ""
-            if self.vector_dimension is None
-            else make_embedding_space_id(
-                self.backend_id, self.model_id, self.vector_dimension
-            )
-        )
-        self._client = client
-        self._api_key = api_key
+    backend_id = "openai"
+
+    def __init__(self, *, api_key: str, model: str = "text-embedding-3-small",
+                 vector_dimension: int = 1536, timeout_seconds: float = 30,
+                 batch_size: int = 256, transport: OpenAIEmbeddingTransport | None = None,
+                 base_url: str = "https://api.openai.com/v1") -> None:
+        self.api_key = str(api_key).strip()
+        self.model_id = str(model).strip()
+        self.vector_dimension = int(vector_dimension)
+        self.timeout_seconds = float(timeout_seconds)
         self.batch_size = int(batch_size)
-        if self.batch_size <= 0:
-            raise ValueError("batch_size must be positive")
-        self._request_count = 0
-        self._input_tokens = 0
-        self._request_latencies: list[float] = []
+        self.base_url = str(base_url).strip().rstrip("/")
+        if not self.api_key: raise OpenAIEmbeddingError("OPENAI_API_KEY is required")
+        if not self.model_id: raise OpenAIEmbeddingError("embedding model must be non-empty")
+        if self.vector_dimension != 1536:
+            raise OpenAIEmbeddingError("text-embedding-3-small output must be 1536 dimensions")
+        if self.timeout_seconds <= 0 or self.batch_size <= 0:
+            raise OpenAIEmbeddingError("timeout and batch size must be greater than zero")
+        self.embedding_space_id = make_embedding_space_id(
+            self.backend_id, self.model_id, self.vector_dimension)
+        self._transport = transport or self._urlopen_transport
+        self._usage = {"request_count": 0, "input_tokens": 0,
+                       "request_latencies_seconds": []}
+        self._lock = Lock()
 
-    @property
-    def client(self) -> Any:
-        if self._client is None:
-            key = self._api_key or os.environ.get("OPENAI_API_KEY")
-            if not key:
-                raise EmbeddingError("OPENAI_API_KEY is required for OpenAI embeddings")
-            from openai import OpenAI
-
-            self._client = OpenAI(api_key=key)
-        return self._client
+    @staticmethod
+    def _urlopen_transport(url: str, body: bytes, timeout: float,
+                           headers: Mapping[str, str]) -> bytes:
+        request = urllib.request.Request(url, data=body, headers=dict(headers), method="POST")
+        with urllib.request.urlopen(request, timeout=timeout) as response: return response.read()
 
     def _embed_batch(self, texts: Sequence[str]) -> np.ndarray:
+        payload = {"model": self.model_id, "input": list(texts),
+                   "dimensions": self.vector_dimension, "encoding_format": "float"}
         started = time.perf_counter()
         try:
-            response = self.client.embeddings.create(model=self.model_id, input=list(texts))
+            raw = self._transport(f"{self.base_url}/embeddings",
+                json.dumps(payload).encode("utf-8"), self.timeout_seconds,
+                {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"})
+            if isinstance(raw, bytes): raw = raw.decode("utf-8")
+            if isinstance(raw, str): raw = json.loads(raw)
+            if not isinstance(raw, Mapping) or not isinstance(raw.get("data"), list):
+                raise ValueError("OpenAI embedding response is missing data")
+            rows = raw["data"]
+            if len(rows) != len(texts): raise ValueError("embedding response row count changed")
+            vectors = []
+            for expected, item in enumerate(rows):
+                if not isinstance(item, Mapping) or item.get("index") != expected:
+                    raise ValueError("embedding response row order is invalid")
+                vector = item.get("embedding")
+                if not isinstance(vector, list) or len(vector) != self.vector_dimension:
+                    raise ValueError(f"embedding row must have {self.vector_dimension} dimensions")
+                vectors.append(vector)
+            matrix = normalize_rows(np.asarray(vectors, dtype=np.float32))
+            usage = raw.get("usage")
+            tokens = int(usage.get("total_tokens", usage.get("prompt_tokens", 0))) if isinstance(usage, Mapping) else 0
+        except OpenAIEmbeddingError: raise
         except Exception as exc:
-            raise EmbeddingError(f"OpenAI embedding request failed: {exc}") from exc
+            raise OpenAIEmbeddingResponseError(f"OpenAI embedding request failed: {exc}") from exc
         finally:
-            self._request_latencies.append(time.perf_counter() - started)
-            self._request_count += 1
-
-        usage = getattr(response, "usage", None)
-        input_tokens = getattr(usage, "prompt_tokens", None)
-        if input_tokens is None:
-            input_tokens = getattr(usage, "input_tokens", None)
-        if input_tokens is None:
-            input_tokens = getattr(usage, "total_tokens", 0)
-        self._input_tokens += int(input_tokens or 0)
-
-        data = list(response.data)
-        if data and all(getattr(item, "index", None) is not None for item in data):
-            data.sort(key=lambda item: int(item.index))
-        if len(data) != len(texts):
-            raise EmbeddingError(
-                f"OpenAI returned {len(data)} embeddings for {len(texts)} inputs"
-            )
-        matrix = np.asarray([item.embedding for item in data], dtype=np.float32)
-        actual_dimension = int(matrix.shape[1])
-        if self.vector_dimension is None:
-            # Used by explicit cache-freeze commands: derive the space from the
-            # provider response instead of assuming a model dimension.
-            self.vector_dimension = actual_dimension
-            self.embedding_space_id = make_embedding_space_id(
-                self.backend_id, self.model_id, actual_dimension
-            )
-        elif actual_dimension != self.vector_dimension:
-            raise EmbeddingError(
-                f"OpenAI returned dimension {actual_dimension}, expected {self.vector_dimension}"
-            )
+            latency = time.perf_counter() - started
+        with self._lock:
+            self._usage["request_count"] += 1
+            self._usage["input_tokens"] += tokens
+            self._usage["request_latencies_seconds"].append(latency)
         return matrix
 
     def embed_catalog(self, texts: Sequence[str]) -> np.ndarray:
-        ordered = list(texts)
-        batches = [
-            self._embed_batch(ordered[start : start + self.batch_size])
-            for start in range(0, len(ordered), self.batch_size)
-        ]
-        if not batches:
-            raise EmbeddingError("Cannot embed an empty catalog")
-        return normalize_rows(np.vstack(batches))
+        values = [str(text) for text in texts]
+        if not values: return np.empty((0, self.vector_dimension), dtype=np.float32)
+        return np.vstack([self._embed_batch(values[i:i+self.batch_size])
+                          for i in range(0, len(values), self.batch_size)])
 
     def embed_query(self, text: str) -> np.ndarray:
-        # No BGE retrieval instruction is added here.
-        return normalize_vector(self._embed_batch([str(text)])[0])
+        return self._embed_batch([str(text)])[0]
 
     def usage_snapshot(self) -> dict[str, Any]:
-        return {
-            "request_count": self._request_count,
-            "input_tokens": self._input_tokens,
-            "request_latencies_seconds": list(self._request_latencies),
-        }
+        with self._lock:
+            return {"request_count": self._usage["request_count"],
+                    "input_tokens": self._usage["input_tokens"],
+                    "request_latencies_seconds": list(self._usage["request_latencies_seconds"])}
 
 
-def embedding_backend_for_mode(test_mode: bool) -> EmbeddingBackend:
-    """Select the canonical embedder for the main workflow mode."""
-    if bool(test_mode):
-        return OpenAIEmbeddingBackend(
-            model_id=OPENAI_SMALL_MODEL,
-            backend_id="openai-text-embedding-3-small",
-            vector_dimension=OPENAI_SMALL_EMBEDDING_DIMENSIONS,
-        )
-    return BGEEmbeddingBackend()
+__all__ = [
+    "BGEEmbeddingBackend",
+    "BGE_EMBEDDING_SPACE_ID",
+    "BGE_MODEL",
+    "BGE_QUERY_PREFIX",
+    "CacheExpectation",
+    "CacheValidationError",
+    "CatalogCacheMissError",
+    "EmbeddingBackend",
+    "EmbeddingError",
+    "OpenAIEmbeddingBackend",
+    "OpenAIEmbeddingError",
+    "OpenAIEmbeddingResponseError",
+    "PRODUCT_TEXT_VERSION",
+    "cache_filename",
+    "fingerprint_file",
+    "fingerprint_texts",
+    "load_embedding_cache",
+    "make_embedding_space_id",
+    "normalize_rows",
+    "normalize_vector",
+    "production_product_text",
+    "production_product_texts",
+    "save_embedding_cache",
+]

@@ -11,6 +11,7 @@ import pytest
 from system.shopping_agent.agent import Agent
 from system.shopping_agent.catalogue import Catalogue, contains_phrase
 from system.shopping_agent.memory_store import InMemoryVectorMemoryStore, JsonFileVectorMemoryStore
+from system.shopping_agent.turn_parser import ParsedSlot, ParsedTurn
 from system.shopping_agent.visualizer.server import (
     BrowserApplication, _catalog_family, _safe_image_url,
 )
@@ -31,9 +32,27 @@ def bare_agent() -> Agent:
     return agent
 
 
-def structured(agent: Agent, payload: dict, message: str = "update", turn: int = 2) -> dict:
-    agent._call_llm = lambda *args, **kwargs: json.dumps(payload)
-    agent._update_state_via_llm("s", message, turn=turn)
+def parsed_turn(category=None, slots=(), declined=(), confidence=0.5):
+    return ParsedTurn(
+        category=category,
+        positive_slots=tuple(slots),
+        negatives=(),
+        declined_attributes=tuple(declined),
+        price_min=None,
+        price_max=None,
+        department=None,
+        specificity="type_with_wishes",
+        intent="browsing",
+        message_type="feature",
+        model_code=None,
+        resolver_candidates=(),
+        resolver_confidence=confidence,
+        raw_parse={},
+    )
+
+
+def structured(agent: Agent, parsed: ParsedTurn, message: str = "update", turn: int = 2) -> dict:
+    agent._apply_parsed_turn(agent._sessions["s"], parsed, message, turn)
     return agent._sessions["s"]
 
 
@@ -43,23 +62,34 @@ def test_structured_state_defensively_merges_slots_and_asked_attributes():
     state = agent._sessions["s"]
     state["disclosed_slots"] = {"color": {"black"}}
     state["asked_attributes"] = {"style"}
-    updated = structured(agent, {
-        "disclosed_slots": {"material": ["cotton"]},
-        "asked_attributes": ["budget", "not-a-real-attribute"],
-    })
+    updated = structured(
+        agent,
+        parsed_turn(
+            slots=(ParsedSlot("material", "cotton", "hard"),),
+            declined=("budget",),
+        ),
+    )
     assert updated["disclosed_slots"] == {"color": {"black"}, "material": {"cotton"}}
     assert updated["asked_attributes"] == {"style", "budget"}
 
 
-def test_category_change_clears_slots_and_asked_attributes():
+def test_explicit_category_change_clears_only_category_specific_state():
     agent = bare_agent()
     agent.reset("s", {})
     state = agent._sessions["s"]
     state["disclosed_slots"] = {"color": {"black"}}
     state["asked_attributes"] = {"style", "budget"}
-    updated = structured(agent, {"category": "boots", "disclosed_slots": {}})
+    state["category"] = "boots"
+    state["category_established"] = True
+    updated = structured(
+        agent,
+        parsed_turn(category="dresses"),
+        message="Actually, switch to dresses instead",
+    )
     assert updated["disclosed_slots"] == {}
-    assert updated["asked_attributes"] == set()
+    assert updated["asked_attributes"] == {"budget"}
+    assert updated["category"] == "dresses"
+    assert updated["search_epoch"] == 1
 
 
 @pytest.mark.parametrize("message", [

@@ -1,47 +1,46 @@
+from __future__ import annotations
+
+import inspect
+
 import pytest
 
-from system.shopping_agent.config import OPENAI_SMALL_EMBEDDING_DIMENSIONS, _env_bool
-from system.shopping_agent.demo import build_parser
-from system.shopping_agent.embedding_backends import (
-    BGEEmbeddingBackend,
-    OpenAIEmbeddingBackend,
-    embedding_backend_for_mode,
-)
+from system.shopping_agent.agent import Agent
+from system.shopping_agent.demo import DemoApplication, build_parser
+from system.shopping_agent.embedding_backends import BGEEmbeddingBackend, cache_filename
+from system.shopping_agent.visualizer.server import BrowserApplication, run_server
 
 
-def test_production_mode_selects_bge_without_loading_the_model():
-    backend = embedding_backend_for_mode(False)
+class OfflineParser:
+    model = "offline-parser"
 
-    assert isinstance(backend, BGEEmbeddingBackend)
+
+def test_production_backend_is_lazy_bge():
+    backend = BGEEmbeddingBackend()
+
     assert backend.backend_id == "bge-base-en-v1.5"
+    assert backend.model_id == "BAAI/bge-base-en-v1.5"
+    assert backend.vector_dimension == 768
     assert backend._model is None
+    assert cache_filename(backend.backend_id) == "catalog_cache_bge-base-en-v1.5.npz"
 
 
-def test_test_mode_selects_openai_small():
-    backend = embedding_backend_for_mode(True)
+def test_agent_test_mode_is_a_deprecated_noop_selecting_bge(monkeypatch):
+    monkeypatch.setattr(Agent, "_build_category_index", lambda self: None)
+    monkeypatch.setattr(Agent, "_build_vector_index", lambda self: None)
+    monkeypatch.setattr("system.shopping_agent.agent.catalog_bucket_set", lambda _: frozenset())
+    monkeypatch.setattr(Agent, "catalogue", object(), raising=False)
 
-    assert isinstance(backend, OpenAIEmbeddingBackend)
-    assert backend.backend_id == "openai-text-embedding-3-small"
-    assert backend.model_id == "text-embedding-3-small"
-    assert backend.vector_dimension == OPENAI_SMALL_EMBEDDING_DIMENSIONS
-    assert "query=backend-defined-v1" in backend.embedding_space_id
+    with pytest.warns(DeprecationWarning, match="environment selection remains active"):
+        agent = Agent(test_mode=True, embedding_backend=BGEEmbeddingBackend(),
+                      turn_parser=OfflineParser())
+
+    assert isinstance(agent.embedding_backend, BGEEmbeddingBackend)
 
 
-def test_demo_cli_has_no_embedding_mode_flags():
-    parser = build_parser()
-
-    args = parser.parse_args([])
+def test_cli_and_server_configuration_have_no_embedding_mode_switch():
+    args = build_parser().parse_args([])
     assert not hasattr(args, "test_mode")
     assert not hasattr(args, "build_embedding_cache")
-
-
-@pytest.mark.parametrize("value", ["true", "TRUE", "1", "yes", "on"])
-def test_env_bool_accepts_true_values(monkeypatch, value):
-    monkeypatch.setenv("TEST_MODE", value)
-    assert _env_bool("TEST_MODE") is True
-
-
-@pytest.mark.parametrize("value", ["false", "FALSE", "0", "no", "off"])
-def test_env_bool_accepts_false_values(monkeypatch, value):
-    monkeypatch.setenv("TEST_MODE", value)
-    assert _env_bool("TEST_MODE") is False
+    assert "test_mode" not in inspect.signature(DemoApplication).parameters
+    assert "test_mode" not in inspect.signature(BrowserApplication).parameters
+    assert "test_mode" not in inspect.signature(run_server).parameters

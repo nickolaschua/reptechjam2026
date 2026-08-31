@@ -10,4 +10,4 @@ The relevance cosine itself was highly discriminative: RELEVANT-vs-IRRELEVANT RO
 
 Memory representation refinement, parameter validation, and further evaluator research are deferred until after demo integration. The demo keeps the existing threshold, Buying/Browsing weights, EWMA alpha, representation, embeddings, and update mechanism unchanged.
 
-Trustworthy evidence, manifests, hashes, reports, vectors, and scripts are preserved under `docs/archive/research_evaluation/memory/`. Legacy QLMP/projector evidence remains under `docs/archive/legacy_qlmp/`.
+Trustworthy evidence, manifests, hashes, reports, vectors, and scripts are preserved under `archive/research_evaluation/memory/`. Legacy QLMP/projector evidence remains under `archive/legacy_qlmp/`.

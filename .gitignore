@@ -20,6 +20,7 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 .cache/
+graphify-out/cache/ast/
 
 # Local configuration and secret files
 .env
@@ -34,6 +35,14 @@ yangxu/
 
 # Evaluation outputs and caches
 *.npz
+colab/artifacts/
+colab/checkpoints/
+colab/models/
+colab/*.zip
+colab/**/*model*/
+colab/**/*checkpoint*/
+colab/**/*.safetensors
+colab/**/*.bin
 sessions/
 successful_*.txt
 failed_sessions.txt
@@ -42,13 +51,13 @@ failed_sessions.txt
 experiment_10_colab_input.zip
 experiment_10_colab_output.zip
 **/experiment_10_colab_output.zip
-docs/archive/research_evaluation/results/experiment_10*/warp_index/
-docs/archive/research_evaluation/results/experiment_10*/imported/warp_index/
-docs/archive/research_evaluation/retrieval/results/experiment_10_xtr_warp_retrieval/imported/warp_index/techjam26-products-xtr-warp.nbits=4/residuals.repacked.compacted.pt
+archive/research_evaluation/results/experiment_10*/warp_index/
+archive/research_evaluation/results/experiment_10*/imported/warp_index/
+archive/research_evaluation/retrieval/results/experiment_10_xtr_warp_retrieval/imported/warp_index/techjam26-products-xtr-warp.nbits=4/residuals.repacked.compacted.pt
 retrieval/experiment_10_build/
 retrieval/experiment_10_staging/
 retrieval/xtr-warp-inspect/
 
 # Archived Yangxu model weights and session logs
-docs/archive/legacy_hybrid_agent/model_finetuned/
-docs/archive/legacy_hybrid_agent/eval_sessions/
+archive/legacy_hybrid_agent/model_finetuned/
+archive/legacy_hybrid_agent/eval_sessions/

@@ -231,7 +231,26 @@ class Catalogue:
                     batch.clear()
             if batch:
                 cursor.executemany("INSERT INTO products VALUES (?, ?, ?, ?, ?, ?, ?)", batch)
+            cursor.execute(
+                "CREATE VIRTUAL TABLE product_terms USING fts5vocab(products, 'row')"
+            )
             self.connection.commit()
+
+    def document_frequencies(self, tokens: Iterable[object]) -> dict[str, int]:
+        """Return FTS document counts for normalized ASCII resolver tokens."""
+
+        normalized = sorted({_normalize(token) for token in tokens if _normalize(token)})
+        if not normalized:
+            return {}
+        placeholders = ",".join("?" for _ in normalized)
+        with self._lock:
+            if self._closed:
+                raise RuntimeError("catalogue is closed")
+            rows = self.connection.execute(
+                f"SELECT term, doc FROM product_terms WHERE term IN ({placeholders})",
+                normalized,
+            ).fetchall()
+        return {str(term): int(count) for term, count in rows}
 
     @staticmethod
     def _quoted_terms(terms: Iterable[object]) -> list[str]:
@@ -283,6 +302,9 @@ class Catalogue:
 
     def eligibility(self, state: dict[str, Any]) -> Eligibility:
         hard = np.ones(len(self.ids), dtype=bool)
+        price_min = float(state.get("price_min", 0.0))
+        if price_min > 0.0:
+            hard &= np.isfinite(self.prices) & (self.prices >= price_min)
         price_max = float(state.get("price_max", 9999.0))
         if price_max < 9999.0:
             hard &= np.isfinite(self.prices) & (self.prices <= price_max)
@@ -295,9 +317,14 @@ class Catalogue:
         min_reviews = int(state.get("min_rating_number", 0))
         if min_reviews > 0:
             hard &= (self.rating_numbers >= min_reviews) | (self.rating_numbers == 0)
-        target_store = _normalize(state.get("store"))
-        if target_store:
-            hard &= np.asarray([target_store in brand for brand in self.brands], dtype=bool)
+        raw_store = state.get("store")
+        store_values = raw_store if isinstance(raw_store, (set, list, tuple, frozenset)) else [raw_store]
+        target_stores = sorted({_normalize(value) for value in store_values if _normalize(value)})
+        if target_stores:
+            hard &= np.asarray(
+                [any(target_store in brand for target_store in target_stores) for brand in self.brands],
+                dtype=bool,
+            )
 
         negatives = sorted({
             term

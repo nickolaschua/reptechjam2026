@@ -19,9 +19,8 @@ from ..agent import Agent
 from ..config import (
     ALLOW_CATALOG_EMBEDDING,
     CATALOG_PATH,
-    MEMORY_STORE_PATH,
+    ACTIVE_MEMORY_STORE_PATH,
     PROJECT_ROOT,
-    TEST_MODE,
 )
 from ..memory_store import JsonFileVectorMemoryStore
 from ..vector_memory import BuyerMode
@@ -123,8 +122,7 @@ class BrowserApplication:
     def __init__(
         self,
         *,
-        memory_path: str | Path = MEMORY_STORE_PATH,
-        test_mode: bool = TEST_MODE,
+        memory_path: str | Path = ACTIVE_MEMORY_STORE_PATH,
         allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
         agent: Agent | None = None,
         store: JsonFileVectorMemoryStore | None = None,
@@ -132,9 +130,10 @@ class BrowserApplication:
         self.store = store or JsonFileVectorMemoryStore(memory_path)
         self.agent = agent or Agent(
             memory_store=self.store,
-            test_mode=test_mode,
             allow_catalog_embedding=allow_catalog_embedding,
         )
+        provider = getattr(self.agent.llm_client, "provider", "unknown")
+        self.model_label = f"{provider.title()} {self.agent.llm_client.model}"
         self.samples = {sample["sample_id"]: sample for sample in load_samples(PUBLIC_SET_PATH)}
         self.products = {product["parent_asin"]: product for product in self.agent.catalog_products}
         self.catalog_ids = set(self.products)
@@ -406,7 +405,8 @@ class VisualizerHTTPHandler(SimpleHTTPRequestHandler):
         self._json({"error": message}, code)
 
     def _serve_html(self, filename: str) -> None:
-        payload = (VISUALIZER_DIR / filename).read_bytes()
+        payload = (VISUALIZER_DIR / filename).read_text(encoding="utf-8")
+        payload = payload.replace("__MODEL_LABEL__", self.app.model_label).encode("utf-8")
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Cache-Control", "no-cache")
@@ -482,14 +482,22 @@ class VisualizerHTTPHandler(SimpleHTTPRequestHandler):
                     if not override_applied: prompt += f" Mention your initial preference for '{override.get('old_value', '')}'."
                     elif active.sample["scenario_type"] == "buying" and active.card.get("hard_constraints"):
                         prompt += f" Mention this key requirement: '{active.card['hard_constraints'][0]}'."
-                    message = call_shopper_llm(prompt, system_prompt)
+                    message = call_shopper_llm(
+                        prompt,
+                        system_prompt,
+                        client=self.app.agent.llm_client,
+                    )
                 elif not override_applied and turn == int(override.get("turn", 3)):
                     override_applied = True
                     message = override.get("message", "Actually, ignore my earlier preference.")
                 else:
                     listed = "\n".join(f"{i}. {item['title']} (ASIN: {item['asin']})" for i, item in enumerate(recs, 1))
                     prompt = f"Assistant response: {previous.get('message')}\nRecommendations:\n{listed}\nAsked about: {previous.get('ask_attribute')}\nReply briefly in character. If target ASIN {active.target_asin} appears, say you want it."
-                    message = call_shopper_llm(prompt, system_prompt)
+                    message = call_shopper_llm(
+                        prompt,
+                        system_prompt,
+                        client=self.app.agent.llm_client,
+                    )
                 self._send_sse("msg", {"role": "customer", "content": message, "turn": turn})
                 time.sleep(0.5)
                 previous = self.app.step(sample_id, message)
@@ -517,14 +525,14 @@ class VisualizerHTTPHandler(SimpleHTTPRequestHandler):
 def run_server(
     port: int = 8080,
     *,
-    test_mode: bool = TEST_MODE,
     allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
 ) -> None:
     global APPLICATION
-    mode = "OpenAI text-embedding-3-small" if test_mode else "local BGE"
-    print(f"[Server] Loading the 50,000-row catalogue and {mode} matrix...")
+    from ..runtime import get_runtime_providers
+    selected = get_runtime_providers()
+    print(f"[Server] Loading the 50,000-row catalogue with {selected.provider} "
+          f"chat={selected.llm_client.model} embeddings={selected.embedding_backend.model_id}...")
     APPLICATION = BrowserApplication(
-        test_mode=test_mode,
         allow_catalog_embedding=allow_catalog_embedding,
     )
     server = ThreadingHTTPServer(("0.0.0.0", int(port)), VisualizerHTTPHandler)
