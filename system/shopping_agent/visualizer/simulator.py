@@ -101,16 +101,21 @@ def call_shopper_llm(
     system_prompt: str,
     *,
     client: ModelClient | None = None,
+    temperature: float = 0.4,
+    seed: int | None = None,
 ) -> str:
     """Generate shopper text through the same local model used by the agent."""
 
     llm = client or get_runtime_providers().llm_client
+    options: dict[str, Any] = {"temperature": float(temperature), "num_predict": 150}
+    if seed is not None:
+        options["seed"] = int(seed)
     return llm.chat(
         [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt},
         ],
-        options={"temperature": 0.4, "num_predict": 150},
+        options=options,
         role="shopper",
     )
 

@@ -13,7 +13,6 @@ from system.shopping_agent.embedding_backends import (
 from system.shopping_agent.ollama_client import OllamaClient
 from system.shopping_agent.openai_client import OpenAIClient, OpenAIResponseError
 from system.shopping_agent.runtime import create_runtime_providers
-from system.shopping_agent.turn_parser import SCHEMA
 
 
 def config(test_mode: bool) -> RuntimeConfig:
@@ -41,12 +40,11 @@ def test_openai_response_payload_structured_output_retry_and_usage():
         return {"model": "gpt-4o-mini", "output_text": '{"ok":true}',
                 "usage": {"input_tokens": 2, "output_tokens": 3, "total_tokens": 5}}
     client = OpenAIClient(api_key="test-key", transport=transport)
-    call = client.chat_result([{"role": "user", "content": "hello"}], format=SCHEMA,
-                              options={"temperature": 0, "num_predict": 99}, role="parser")
+    call = client.chat_result([{"role": "user", "content": "hello"}], format="json",
+                              options={"temperature": 0, "num_predict": 99}, role="assistant")
     assert call.retry_count == 1 and call.usage["total_tokens"] == 5
     assert payloads[0]["max_output_tokens"] == 99
-    assert payloads[0]["text"]["format"]["type"] == "json_schema"
-    assert payloads[0]["text"]["format"]["schema"] == SCHEMA
+    assert payloads[0]["text"]["format"]["type"] == "json_object"
 
 
 def test_openai_invalid_output_is_typed():

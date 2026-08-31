@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/agent.py": {
-    "mtime": 1788198776.9491408,
-    "ast_hash": "ad4a698f8ebe86d95c30af6f54a172c1",
+    "mtime": 1788198536.9698966,
+    "ast_hash": "d2c10eb18d9758becb4e501101e0a7ef",
     "semantic_hash": ""
   },
   "system/shopping_agent/catalogue.py": {
@@ -3405,8 +3405,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/evaluate_confidence_gate.py": {
-    "mtime": 1788198776.9506454,
-    "ast_hash": "662e71978a1a15ff155860f0cb37c6ed",
+    "mtime": 1788188477.1280258,
+    "ast_hash": "00a41e570b0b382e39f3c5bcbb83dc5e",
     "semantic_hash": ""
   },
   "system/shopping_agent/CONFIDENCE_GATE_PUBLIC_200_RESULTS.md": {
@@ -3420,13 +3420,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/run_ablation_experiments.py": {
-    "mtime": 1788198776.9517956,
-    "ast_hash": "06624b1220f1e74a04995d12ae84f000",
-    "semantic_hash": ""
-  },
-  "system/shopping_agent/tests/test_ablation_experiment.py": {
-    "mtime": 1788198777.0877137,
-    "ast_hash": "4ae53f5cd8004d408df85d8d896f5f4b",
+    "mtime": 1788198536.9728894,
+    "ast_hash": "a5de07d5bda641c61ec5777ed3d0748c",
     "semantic_hash": ""
   }
 }

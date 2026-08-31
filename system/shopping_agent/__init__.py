@@ -1,6 +1,6 @@
 """Public shopping-agent lifecycle."""
 
-from .agent import Agent
+from .agent import Agent, ExperimentConfig
 
-__all__ = ["Agent"]
+__all__ = ["Agent", "ExperimentConfig"]
 

@@ -3,7 +3,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from copy import deepcopy
+from enum import Enum
 import json
+import math
 import os
 from pathlib import Path
 from threading import RLock
@@ -11,6 +13,7 @@ from typing import Any, Iterable, Mapping
 import numpy as np
 
 SNAPSHOT_VERSION = 2
+_MIXTURE_EPSILON = 1e-12
 
 def _nonempty(value: object, name: str) -> str:
     text = str(value)
@@ -32,6 +35,104 @@ def _unit_vector(value: object, name: str = "vector") -> np.ndarray:
     vector /= norm
     vector.setflags(write=False)
     return vector
+
+
+class MemoryUpdateMode(str, Enum):
+    """Supported one-vector long-term-memory update strategies."""
+
+    ADAPTIVE = "adaptive"
+    FIXED = "fixed"
+
+
+@dataclass(frozen=True)
+class MemoryUpdatePolicy:
+    """Configuration boundary for the current centroid update implementation."""
+
+    mode: MemoryUpdateMode = MemoryUpdateMode.ADAPTIVE
+    alpha_min: float = 0.0
+    alpha_max: float = 0.30
+    fixed_alpha: float = 0.30
+
+    def __post_init__(self) -> None:
+        try:
+            mode = MemoryUpdateMode(self.mode)
+        except ValueError as exc:
+            raise ValueError("mode must be 'adaptive' or 'fixed'") from exc
+        values = (float(self.alpha_min), float(self.alpha_max), float(self.fixed_alpha))
+        if not all(math.isfinite(value) for value in values):
+            raise ValueError("memory update alpha values must be finite")
+        alpha_min, alpha_max, fixed_alpha = values
+        if not 0.0 <= alpha_min <= alpha_max <= 1.0:
+            raise ValueError("adaptive alpha bounds must satisfy 0 <= alpha_min <= alpha_max <= 1")
+        if not 0.0 <= fixed_alpha <= 1.0:
+            raise ValueError("fixed_alpha must be between zero and one")
+        object.__setattr__(self, "mode", mode)
+        object.__setattr__(self, "alpha_min", alpha_min)
+        object.__setattr__(self, "alpha_max", alpha_max)
+        object.__setattr__(self, "fixed_alpha", fixed_alpha)
+
+    @classmethod
+    def adaptive(cls, *, alpha_min: float = 0.0, alpha_max: float = 0.30) -> "MemoryUpdatePolicy":
+        return cls(mode=MemoryUpdateMode.ADAPTIVE, alpha_min=alpha_min, alpha_max=alpha_max)
+
+    @classmethod
+    def fixed(cls, alpha: float = 0.30) -> "MemoryUpdatePolicy":
+        return cls(mode=MemoryUpdateMode.FIXED, fixed_alpha=alpha)
+
+
+DEFAULT_MEMORY_UPDATE_POLICY = MemoryUpdatePolicy()
+
+
+@dataclass(frozen=True)
+class MemoryUpdateResult:
+    """Vector result and vector-free diagnostics for one evidence observation."""
+
+    vector: np.ndarray
+    raw_similarity: float
+    bounded_similarity: float
+    effective_alpha: float
+    fallback_reason: str | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "vector", _unit_vector(self.vector))
+
+
+def update_memory_vector(
+    old_vector: np.ndarray,
+    new_vector: np.ndarray,
+    policy: MemoryUpdatePolicy = DEFAULT_MEMORY_UPDATE_POLICY,
+) -> MemoryUpdateResult:
+    """Pure normalized centroid update with bounded novelty adaptation."""
+
+    if not isinstance(policy, MemoryUpdatePolicy):
+        raise ValueError("update_policy must be a MemoryUpdatePolicy")
+    old = _unit_vector(old_vector, "old_vector")
+    new = _unit_vector(new_vector, "new_vector")
+    if old.shape != new.shape:
+        raise ValueError("old_vector and new_vector dimensions must match")
+    raw_similarity = float(old @ new)
+    bounded_similarity = float(np.clip(raw_similarity, 0.0, 1.0))
+    if policy.mode is MemoryUpdateMode.ADAPTIVE:
+        effective_alpha = policy.alpha_min + (
+            policy.alpha_max - policy.alpha_min
+        ) * (1.0 - bounded_similarity)
+    else:
+        effective_alpha = policy.fixed_alpha
+    mixture = (1.0 - effective_alpha) * old + effective_alpha * new
+    norm = float(np.linalg.norm(mixture))
+    fallback_reason = None
+    if not math.isfinite(norm) or norm <= _MIXTURE_EPSILON:
+        combined = old
+        fallback_reason = "near_zero_mixture"
+    else:
+        combined = mixture / norm
+    return MemoryUpdateResult(
+        vector=combined,
+        raw_similarity=raw_similarity,
+        bounded_similarity=bounded_similarity,
+        effective_alpha=float(effective_alpha),
+        fallback_reason=fallback_reason,
+    )
 
 @dataclass(frozen=True)
 class LongTermMemoryState:
@@ -61,6 +162,11 @@ class SessionCommit:
 class LongTermMemoryCommit:
     vector_changed: bool
     state: LongTermMemoryState | None
+    update_mode: MemoryUpdateMode
+    raw_update_similarity: float | None
+    bounded_update_similarity: float | None
+    effective_alpha: float | None
+    update_fallback_reason: str | None
 
 @dataclass(frozen=True)
 class MemoryStoreSnapshot:
@@ -146,10 +252,12 @@ class InMemoryVectorMemoryStore:
             return state
 
     def commit(self, *, user_id: str, session_id: str, sequence_index: int, embedding_space_id: str,
-               new_preferences: np.ndarray | None, alpha: float = 0.30) -> LongTermMemoryCommit:
+               new_preferences: np.ndarray | None,
+               update_policy: MemoryUpdatePolicy = DEFAULT_MEMORY_UPDATE_POLICY) -> LongTermMemoryCommit:
         user, session = _nonempty(user_id, "user_id"), _nonempty(session_id, "session_id")
         space, index = _nonempty(embedding_space_id, "embedding_space_id"), _sequence(sequence_index)
-        if not 0.0 <= float(alpha) <= 1.0: raise ValueError("alpha must be between zero and one")
+        if not isinstance(update_policy, MemoryUpdatePolicy):
+            raise ValueError("update_policy must be a MemoryUpdatePolicy")
         new_vector = None if new_preferences is None else _unit_vector(new_preferences, "new_preferences")
         with self._lock:
             self.validate_new_session(user, session, index)
@@ -162,13 +270,15 @@ class InMemoryVectorMemoryStore:
             prior = self._states.get(user)
             if prior is not None and prior.embedding_space_id != space:
                 raise ValueError("stored memory belongs to a different embedding space")
-            state, changed = prior, new_vector is not None
+            state, changed = prior, False
+            update_result = None
             if new_vector is not None:
-                if prior is None: combined, count = new_vector, 1
+                if prior is None:
+                    combined, count, changed = new_vector, 1, True
                 else:
-                    mixture = (1.0-float(alpha))*prior.vector + float(alpha)*new_vector
-                    norm = float(np.linalg.norm(mixture))
-                    combined, count = (new_vector if norm <= 1e-12 else mixture/norm), prior.update_count+1
+                    update_result = update_memory_vector(prior.vector, new_vector, update_policy)
+                    combined, count = update_result.vector, prior.update_count+1
+                    changed = not np.allclose(combined, prior.vector, rtol=1e-6, atol=1e-7)
                 state = LongTermMemoryState(user, combined, space, index, count)
                 self._states[user] = state
             elif prior is not None:
@@ -181,7 +291,15 @@ class InMemoryVectorMemoryStore:
             self._session_ids.add(session)
             self._active_users.pop(user, None)
             self._active_sessions.pop(session, None)
-            return LongTermMemoryCommit(changed, state)
+            return LongTermMemoryCommit(
+                vector_changed=changed,
+                state=state,
+                update_mode=update_policy.mode,
+                raw_update_similarity=None if update_result is None else update_result.raw_similarity,
+                bounded_update_similarity=None if update_result is None else update_result.bounded_similarity,
+                effective_alpha=None if update_result is None else update_result.effective_alpha,
+                update_fallback_reason=None if update_result is None else update_result.fallback_reason,
+            )
 
     def cancel_session(self, session_id: str) -> None:
         """Release an active session without recording a longitudinal commit."""
@@ -324,4 +442,6 @@ class JsonFileVectorMemoryStore(InMemoryVectorMemoryStore):
 
 InMemoryUserMemoryStore = InMemoryVectorMemoryStore
 __all__ = ["InMemoryUserMemoryStore", "InMemoryVectorMemoryStore", "JsonFileVectorMemoryStore",
-           "LongTermMemoryCommit", "LongTermMemoryState", "MemoryStoreSnapshot", "SessionCommit"]
+           "DEFAULT_MEMORY_UPDATE_POLICY", "LongTermMemoryCommit", "LongTermMemoryState",
+           "MemoryStoreSnapshot", "MemoryUpdateMode", "MemoryUpdatePolicy", "MemoryUpdateResult",
+           "SessionCommit", "update_memory_vector"]

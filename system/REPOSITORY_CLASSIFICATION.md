@@ -2,7 +2,7 @@
 
 ## A. Active demo
 
-`shopping_agent/agent.py`, `ollama_client.py`, `turn_parser.py`, `category_resolver.py`, `catalogue.py`, `clarification.py`, `config.py`, `demo.py`, `demo_scenarios.json`, `embedding_backends.py`, `memory_store.py`, `vector_memory.py`, `visualizer/server.py`, `visualizer/simulator.py`, both dashboard HTML pages and assets, and the validated BGE catalogue cache in `shopping_agent/embedding_cache/`. The reproducible artifact workflow is under top-level `colab/`.
+`shopping_agent/agent.py`, `ollama_client.py`, `catalogue.py`, `clarification.py`, `config.py`, `demo.py`, `demo_scenarios.json`, `embedding_backends.py`, `memory_store.py`, `vector_memory.py`, `visualizer/server.py`, `visualizer/simulator.py`, both dashboard HTML pages and assets, and the validated BGE catalogue cache in `shopping_agent/embedding_cache/`. The reproducible artifact workflow is under top-level `colab/`.
 
 The 50,000-row catalogue remains at `techjam-conversational-search/data/catalog.jsonl`; it is read-only competition data, not active system code.
 
@@ -36,10 +36,8 @@ Only generated `__pycache__/`, `.pytest_cache/`, and local `.demo_state/` files 
 python -m system.shopping_agent.demo
   -> demo.DemoApplication
   -> agent.Agent
-     -> short-term state + parser/generator
-     -> ollama_client.OllamaClient -> local llama3.1:8b for parser, assistant, shopper
-     -> turn_parser.WinstonTurnParser -> constrained local Llama 3.1
-     -> category_resolver.CategoryResolver (ambiguity telemetry only)
+     -> short-term state editor + response generator
+     -> ollama_client.OllamaClient -> local llama3.1:8b for state editing, assistant, shopper
      -> catalogue.Catalogue + clarification.select_best_attributes
      -> vector_memory.score_catalog
      -> memory_store.JsonFileVectorMemoryStore

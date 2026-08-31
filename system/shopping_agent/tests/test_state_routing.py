@@ -1,8 +1,10 @@
 from copy import deepcopy
+import json
+
+import pytest
 
 from system.shopping_agent.agent import Agent, _state_to_retrieval_query
 from system.shopping_agent.memory_store import InMemoryVectorMemoryStore
-from system.shopping_agent.turn_parser import PROMPT, SCHEMA, ParsedSlot, ParsedTurn
 
 
 def bare_agent():
@@ -40,40 +42,58 @@ def test_local_live_intent_upgrades_and_only_explicitly_resets():
     assert Agent._detect_intent_locally(state, "start over").value == "browsing"
 
 
-def _turn(*, category=None, department=None, slots=()):
-    return ParsedTurn(
-        category=category,
-        positive_slots=tuple(slots),
-        negatives=(),
-        declined_attributes=(),
-        price_min=None,
-        price_max=None,
-        department=department,
-        specificity="type_with_wishes",
-        intent="browsing",
-        message_type="feature",
-        model_code=None,
-        resolver_candidates=(),
-        resolver_confidence=0.5,
-        raw_parse={},
+def _run_structured_state(agent, payload, message="Find something for me"):
+    prompts = []
+    agent._call_llm = lambda prompt, system_prompt, **kwargs: (
+        prompts.append((prompt, system_prompt)) or json.dumps(payload)
     )
+    agent._update_state_via_llm("s", message, turn=1)
+    return prompts[0], agent._sessions["s"]
 
 
-def _run_structured_state(agent, parsed):
-    agent._apply_parsed_turn(agent._sessions["s"], parsed, "Find something for me", 1)
-    return agent._sessions["s"]
+def test_state_editor_prompt_includes_complete_prior_state_and_message():
+    agent = bare_agent()
+    agent.reset("s", {})
+    agent._sessions["s"]["disclosed_slots"] = {"color": {"blue"}}
+    (prompt, system_prompt), _ = _run_structured_state(agent, {})
+    assert '"color"' in prompt and '"blue"' in prompt
+    assert "Find something for me" in prompt
+    assert 'exclusively in "target_department"' in system_prompt
+    assert 'never put demographics in "department", "use_case", or any "disclosed_slots" key' in system_prompt
+    assert "NOT confined to this list" in system_prompt
 
 
-def test_constrained_schema_has_one_demographic_destination():
-    assert "department" in SCHEMA["properties"]
-    assert "target_department" not in SCHEMA["properties"]
-    assert "department: only if stated" in PROMPT
+def test_state_editor_provider_failure_propagates_without_local_fallback():
+    agent = bare_agent()
+    agent.reset("s", {})
+    before = deepcopy(agent._sessions["s"])
+    agent._call_llm = lambda *_args, **_kwargs: (_ for _ in ()).throw(
+        RuntimeError("provider down")
+    )
+    with pytest.raises(RuntimeError, match="provider down"):
+        agent._update_state_via_llm("s", "I'm looking for boots", turn=1)
+    assert agent._sessions["s"] == before
+
+
+def test_invalid_numeric_fields_keep_historical_field_local_tolerance():
+    agent = bare_agent()
+    agent.reset("s", {})
+    _, state = _run_structured_state(agent, {
+        "price_max": "invalid",
+        "min_avg_rating": "invalid",
+        "min_rating_number": "invalid",
+        "disclosed_slots": {"closure": ["zipper"]},
+    })
+    assert state["price_max"] == 9999.0
+    assert state["min_avg_rating"] == 0.0
+    assert state["min_rating_number"] == 0
+    assert state["disclosed_slots"]["closure"] == {"zipper"}
 
 
 def test_structured_target_department_activates_session_only_gender():
     agent = bare_agent()
     agent.reset("s", {})
-    state = _run_structured_state(agent, _turn(category="dress", department="womens"))
+    _, state = _run_structured_state(agent, {"category": "dress", "department": "women", "target_department": "women"})
     assert state["department"] == "clothing"
     assert state["target_department"] == "women"
     assert state["disclosed_slots"]["gender"] == {"women"}
@@ -82,19 +102,18 @@ def test_structured_target_department_activates_session_only_gender():
 def test_structured_mens_department_is_normalized():
     agent = bare_agent()
     agent.reset("s", {})
-    state = _run_structured_state(agent, _turn(category="boots", department="mens"))
+    _, state = _run_structured_state(agent, {"category": "boots", "department": "men"})
     assert state["department"] == "shoes"
     assert state["target_department"] == "men"
     assert state["disclosed_slots"]["gender"] == {"men"}
     assert "use_case" not in state["disclosed_slots"]
 
 
-def test_structured_unisex_adult_does_not_invent_a_binary_target():
+def test_structured_custom_slots_are_accepted():
     agent = bare_agent()
     agent.reset("s", {})
-    state = _run_structured_state(agent, _turn(category="shirt", department="unisex-adult"))
-    assert state["target_department"] == ""
-    assert "gender" not in state["disclosed_slots"]
+    _, state = _run_structured_state(agent, {"disclosed_slots": {"closure": ["zipper"]}})
+    assert state["disclosed_slots"]["closure"] == {"zipper"}
 
 
 def test_structured_demographic_is_absent_from_committed_ltm_text():
@@ -103,20 +122,47 @@ def test_structured_demographic_is_absent_from_committed_ltm_text():
     agent = bare_agent()
     agent.vector_memory_config = type("Config", (), {"ewma_alpha": 0.30})()
     agent.reset("s", {}, user_id="u", sequence_index=0)
-    _run_structured_state(
-        agent,
-        _turn(
-            category="dress",
-            department="womens",
-            slots=(ParsedSlot("color", "blue", "soft"),),
-        ),
-    )
+    _run_structured_state(agent, {
+        "category": "dress", "department": "women", "target_department": "women",
+        "disclosed_slots": {"color": ["blue"]},
+    })
     embedded = []
     agent.embed_dense_query = lambda text: embedded.append(text) or np.array([1.0, 0.0], dtype=np.float32)
     agent.end_session("s")
     trace = agent.get_memory_debug("s")
     assert embedded == ["color: blue"]
     assert trace["preference_text"] == "color: blue"
+
+
+def test_end_session_exposes_vector_free_adaptive_update_diagnostics():
+    import numpy as np
+
+    agent = bare_agent()
+    from system.shopping_agent.vector_memory import DEFAULT_VECTOR_MEMORY_CONFIG
+    agent.vector_memory_config = DEFAULT_VECTOR_MEMORY_CONFIG
+    embedded = []
+    agent.embed_dense_query = lambda text: embedded.append(text) or np.array([1.0, 0.0], dtype=np.float32)
+
+    agent.reset("first", {}, user_id="u", sequence_index=0)
+    agent._sessions["first"]["disclosed_slots"] = {"color": {"blue"}, "budget": {"under 50"}}
+    agent.end_session("first")
+
+    agent.reset("second", {}, user_id="u", sequence_index=1)
+    agent._sessions["second"]["disclosed_slots"] = {"color": {"blue"}, "brand": {"example"}}
+    agent.end_session("second")
+    trace = agent.get_memory_debug("second")
+
+    assert embedded == ["color: blue", "color: blue"]
+    assert trace["update_mode"] == "adaptive"
+    assert trace["raw_update_similarity"] == pytest.approx(1.0)
+    assert trace["bounded_update_similarity"] == pytest.approx(1.0)
+    assert trace["effective_alpha"] == pytest.approx(0.0)
+    assert trace["update_fallback_reason"] is None
+    assert trace["vector_changed"] is False
+    assert trace["post_update_memory"]["update_count"] == 2
+    assert not any(isinstance(value, np.ndarray) for value in trace.values())
+    assert "vector" not in trace
+    assert "vector" not in trace["post_update_memory"]
 
 
 def test_fast_parser_builds_canonical_active_query():
@@ -160,6 +206,40 @@ def test_query_serialization_is_deterministic_for_sets():
     first = _state_to_retrieval_query(state)
     second = _state_to_retrieval_query(deepcopy(state))
     assert first == second == "boots shoes black casual western"
+
+
+def test_session_state_has_exact_pre_winston_keys():
+    state = Agent._new_session_state()
+    assert set(state) == {
+        "disclosed_slots", "constraint_provenance", "accumulated_terms",
+        "stashed_terms", "search_epoch", "seen_asins", "seen_asins_by_epoch",
+        "history", "negated_terms", "asked_attributes", "intent_mode",
+        "intent_source", "category", "department", "price_max",
+        "target_department", "min_avg_rating", "min_rating_number", "store",
+        "debug_info",
+    }
+
+
+def test_malformed_state_json_rolls_back_then_uses_local_parser():
+    agent = bare_agent()
+    agent.reset("s", {})
+    before = deepcopy(agent._sessions["s"])
+    agent._call_llm = lambda *_args, **_kwargs: "not-json"
+    agent._update_state_via_llm("s", "I'm looking for waterproof boots.", turn=1)
+    state = agent._sessions["s"]
+    assert before["disclosed_slots"] == {}
+    assert state["category"] == "waterproof boots"
+    assert "price_min" not in state
+
+
+def test_llm_intent_is_applied_but_deterministic_buying_signal_wins():
+    agent = bare_agent()
+    agent.reset("s", {})
+    _run_structured_state(agent, {"intent_mode": "browsing"}, "I need waterproof boots")
+    assert agent._sessions["s"]["intent_mode"] == "browsing"
+    resolved = agent._resolve_live_intent(agent._sessions["s"], "I need waterproof boots", None)
+    assert resolved.value == "buying"
+    assert agent._sessions["s"]["intent_source"] == "deterministic_precedence"
 
 
 def test_longitudinal_identity_and_sequence_validation():

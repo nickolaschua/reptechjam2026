@@ -34,14 +34,18 @@ So, when considering both the user's current intent and their long-term memory, 
 
    This lets the system consider both the current shopping intent and the user's long-term preferences. Buying emphasizes the current request, while browsing gives long-term preferences more influence.
 
-5. We then apply hard constraints, such as the maximum price and explicitly negated terms. If enough eligible keyword matches exist, those products become the candidate set. Otherwise, we use the top 150 eligible products according to `s3` as a vector fallback. The candidates are then ranked by `s3`, and the top recommendations are returned.
+5. We then apply hard constraints, such as the maximum price and explicitly negated terms. If enough eligible keyword matches exist, those products are ranked with the root agent's handcrafted state-evidence score, without long-term-memory reranking. Otherwise, we use the top 150 eligible products ordered by descending `s3` and ASIN as a vector fallback. Seen removal, the fixed top-10 `s1 >= 0.40` confidence gate, rank-preserving diversity, and `top_k` then run in that order.
 
 6. At the end of the session, we extract only the positive, reusable preferences disclosed during the conversation. We do not store the transcript, negative preferences, budget, category, department, purchases, outcomes, or other session-specific information. These reusable preferences are embedded to produce a new vector, `v_new`.
 
-7. Finally, we update the long-term-memory vector. For a returning user, we calculate:
+7. Finally, we update the long-term-memory vector. For a returning user, we first measure how repetitive the evidence is:
 
    $$
-   v_3 = \operatorname{normalize}(0.70v_2 + 0.30v_{new})
+   c = \operatorname{clip}(v_2^T v_{new}, 0, 1), \qquad \alpha = 0.30(1-c)
    $$
 
-   For a new user, we store `v_new` directly as `v3`. If the session contains no positive reusable preferences, the existing vector remains unchanged. The resulting `v3` is persisted and becomes the user's long-term-memory vector `v2` in their next session.
+   $$
+   v_3 = \operatorname{normalize}((1-\alpha)v_2 + \alpha v_{new})
+   $$
+
+   For a new user, we store `v_new` directly as `v3`. If the session contains no positive reusable preferences, the existing vector remains unchanged. Repetitive evidence moves the centroid less; novel or negatively aligned evidence receives at most the `0.30` update cap. This slows directional drift, but one centroid is not a true multi-interest memory. A fixed `alpha=0.30` policy remains available as an experimental control. The resulting `v3` is persisted and becomes the user's long-term-memory vector `v2` in their next session.

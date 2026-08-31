@@ -290,7 +290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval",
-      "community": 256,
+      "community": 5,
       "norm_label": "run_eval.py"
     },
     {
@@ -300,7 +300,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_evaluate_custom",
-      "community": 256,
+      "community": 5,
       "norm_label": "evaluate_custom()"
     },
     {
@@ -310,7 +310,7 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_main",
-      "community": 256,
+      "community": 5,
       "norm_label": "main()"
     },
     {
@@ -320,7 +320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2",
-      "community": 201,
+      "community": 5,
       "norm_label": "run_eval_v2.py"
     },
     {
@@ -330,7 +330,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2_evaluate_v2",
-      "community": 201,
+      "community": 5,
       "norm_label": "evaluate_v2()"
     },
     {
@@ -340,7 +340,7 @@
       "source_location": "L199",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2_main",
-      "community": 201,
+      "community": 5,
       "norm_label": "main()"
     },
     {
@@ -350,7 +350,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent",
-      "community": 130,
+      "community": 69,
       "norm_label": "shop_agent.py"
     },
     {
@@ -360,7 +360,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_load_env_file",
-      "community": 130,
+      "community": 69,
       "norm_label": "_load_env_file()"
     },
     {
@@ -380,7 +380,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_standardize_department",
-      "community": 130,
+      "community": 69,
       "norm_label": "standardize_department()"
     },
     {
@@ -390,7 +390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_py_any",
-      "community": 130,
+      "community": 69,
       "norm_label": "any"
     },
     {
@@ -400,7 +400,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_text",
-      "community": 130,
+      "community": 69,
       "norm_label": "_text()"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_terms",
-      "community": 130,
+      "community": 69,
       "norm_label": "_terms()"
     },
     {
@@ -430,7 +430,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_init",
-      "community": 130,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_py_path",
-      "community": 130,
+      "community": 69,
       "norm_label": "path"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_fts5_index",
-      "community": 130,
+      "community": 69,
       "norm_label": "._build_fts5_index()"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L226",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_category_index",
-      "community": 130,
+      "community": 69,
       "norm_label": "._build_category_index()"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L303",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_vector_index",
-      "community": 130,
+      "community": 69,
       "norm_label": "._build_vector_index()"
     },
     {
@@ -600,7 +600,7 @@
       "source_location": "L812",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_reset",
-      "community": 130,
+      "community": 69,
       "norm_label": ".reset()"
     },
     {
@@ -680,7 +680,7 @@
       "source_location": "L1946",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent",
-      "community": 130,
+      "community": 69,
       "norm_label": "baselineagent"
     },
     {
@@ -700,7 +700,7 @@
       "source_location": "L1964",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_text",
-      "community": 130,
+      "community": 69,
       "norm_label": "._text()"
     },
     {
@@ -710,7 +710,7 @@
       "source_location": "L1973",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_init",
-      "community": 130,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -720,7 +720,7 @@
       "source_location": "L1979",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_build_index",
-      "community": 130,
+      "community": 69,
       "norm_label": "._build_index()"
     },
     {
@@ -730,7 +730,7 @@
       "source_location": "L2045",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_reset",
-      "community": 130,
+      "community": 69,
       "norm_label": ".reset()"
     },
     {
@@ -740,7 +740,7 @@
       "source_location": "L2058",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_classify_constraint_locally",
-      "community": 130,
+      "community": 69,
       "norm_label": "._classify_constraint_locally()"
     },
     {
@@ -750,7 +750,7 @@
       "source_location": "L2069",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_rebuild_accumulated_terms",
-      "community": 130,
+      "community": 69,
       "norm_label": "._rebuild_accumulated_terms()"
     },
     {
@@ -760,7 +760,7 @@
       "source_location": "L2090",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_erase_attribute_memory",
-      "community": 130,
+      "community": 69,
       "norm_label": "._erase_attribute_memory()"
     },
     {
@@ -770,7 +770,7 @@
       "source_location": "L2097",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_parse_message_locally",
-      "community": 130,
+      "community": 69,
       "norm_label": "._parse_message_locally()"
     },
     {
@@ -780,7 +780,7 @@
       "source_location": "L2145",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_respond",
-      "community": 130,
+      "community": 69,
       "norm_label": ".respond()"
     },
     {
@@ -820,7 +820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent",
-      "community": 201,
+      "community": 5,
       "norm_label": "shopper_agent.py"
     },
     {
@@ -830,7 +830,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_normalize_constraint",
-      "community": 201,
+      "community": 5,
       "norm_label": "_normalize_constraint()"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate",
-      "community": 201,
+      "community": 5,
       "norm_label": "shopperintentstate"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_init",
-      "community": 201,
+      "community": 5,
       "norm_label": ".__init__()"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_from_sample",
-      "community": 201,
+      "community": 5,
       "norm_label": ".from_sample()"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_record_constraint",
-      "community": 201,
+      "community": 5,
       "norm_label": ".record_constraint()"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_apply_override",
-      "community": 201,
+      "community": 5,
       "norm_label": ".apply_override()"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_active_values",
-      "community": 201,
+      "community": 5,
       "norm_label": ".active_values()"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_revoked_values",
-      "community": 201,
+      "community": 5,
       "norm_label": ".revoked_values()"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_materialize_hidden_fields",
-      "community": 213,
+      "community": 5,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_call_shopper_llm",
-      "community": 201,
+      "community": 5,
       "norm_label": "call_shopper_llm()"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L239",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_make_system_prompt",
-      "community": 201,
+      "community": 5,
       "norm_label": "make_system_prompt()"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L322",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_main",
-      "community": 201,
+      "community": 5,
       "norm_label": "main()"
     },
     {
@@ -950,7 +950,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_rationale_35",
-      "community": 201,
+      "community": 5,
       "norm_label": "tracks which simulated shopper preferences remain active after an override."
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_starter_agent",
-      "community": 256,
+      "community": 5,
       "norm_label": "agent.py"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server",
-      "community": 213,
+      "community": 5,
       "norm_label": "server.py"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler",
-      "community": 213,
+      "community": 5,
       "norm_label": "visualizerhttphandler"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "simplehttprequesthandler",
-      "community": 213,
+      "community": 5,
       "norm_label": "simplehttprequesthandler"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_init",
-      "community": 213,
+      "community": 5,
       "norm_label": ".__init__()"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_do_get",
-      "community": 213,
+      "community": 5,
       "norm_label": ".do_get()"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_json_response",
-      "community": 213,
+      "community": 5,
       "norm_label": ".send_json_response()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_json_error",
-      "community": 213,
+      "community": 5,
       "norm_label": ".send_json_error()"
     },
     {
@@ -1090,7 +1090,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_sessions_list",
-      "community": 213,
+      "community": 5,
       "norm_label": ".handle_sessions_list()"
     },
     {
@@ -1100,7 +1100,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_manual_start",
-      "community": 213,
+      "community": 5,
       "norm_label": ".handle_manual_start()"
     },
     {
@@ -1110,7 +1110,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_manual_step",
-      "community": 213,
+      "community": 5,
       "norm_label": ".handle_manual_step()"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_stream",
-      "community": 213,
+      "community": 5,
       "norm_label": ".handle_stream()"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_sse",
-      "community": 213,
+      "community": 5,
       "norm_label": ".send_sse()"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L367",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_run_server",
-      "community": 213,
+      "community": 5,
       "norm_label": "run_server()"
     },
     {
@@ -2110,7 +2110,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "protocol",
-      "community": 134,
+      "community": 145,
       "norm_label": "protocol"
     },
     {
@@ -2270,7 +2270,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_privateannotation",
-      "community": 38,
+      "community": 14,
       "norm_label": "privateannotation"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_portabilityjudgeerror",
-      "community": 98,
+      "community": 130,
       "norm_label": "portabilityjudgeerror"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "runtimeerror",
-      "community": 49,
+      "community": 130,
       "norm_label": "runtimeerror"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_portabilityjudgeerror_init",
-      "community": 98,
+      "community": 130,
       "norm_label": ".__init__()"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_location": "L290",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_load_portability_fixture",
-      "community": 38,
+      "community": 14,
       "norm_label": "load_portability_fixture()"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L445",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_openaiportabilityjudge",
-      "community": 98,
+      "community": 38,
       "norm_label": "openaiportabilityjudge"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L448",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_openaiportabilityjudge_init",
-      "community": 98,
+      "community": 38,
       "norm_label": ".__init__()"
     },
     {
@@ -2760,7 +2760,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_rationale_147",
-      "community": 98,
+      "community": 130,
       "norm_label": "hosted judge failed without provider or model fallback."
     },
     {
@@ -2790,7 +2790,7 @@
       "source_location": "L291",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_rationale_291",
-      "community": 38,
+      "community": 14,
       "norm_label": "reuse the exact phase 3a vectors while separating safe and private fields."
     },
     {
@@ -2820,7 +2820,7 @@
       "source_location": "L446",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_rationale_446",
-      "community": 98,
+      "community": 38,
       "norm_label": "one explicit openai model, strict structured output, and no fallback."
     },
     {
@@ -3210,7 +3210,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectormemoryannotation",
-      "community": 14,
+      "community": 64,
       "norm_label": "projectormemoryannotation"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectormemoryannotation_post_init",
-      "community": 14,
+      "community": 64,
       "norm_label": ".__post_init__()"
     },
     {
@@ -3230,7 +3230,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectorfixture",
-      "community": 14,
+      "community": 64,
       "norm_label": "projectorfixture"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectorfixture_post_init",
-      "community": 14,
+      "community": 64,
       "norm_label": ".__post_init__()"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectorfixtureset",
-      "community": 62,
+      "community": 64,
       "norm_label": "projectorfixtureset"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_projectorevaluation",
-      "community": 62,
+      "community": 64,
       "norm_label": "projectorevaluation"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_candidate_batch_from_records",
-      "community": 14,
+      "community": 62,
       "norm_label": "candidate_batch_from_records()"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "storedmemory",
-      "community": 14,
+      "community": 62,
       "norm_label": "storedmemory"
     },
     {
@@ -3320,7 +3320,7 @@
       "source_location": "L216",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_load_projector_fixture",
-      "community": 62,
+      "community": 64,
       "norm_label": "load_projector_fixture()"
     },
     {
@@ -3330,7 +3330,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_py_path",
-      "community": 62,
+      "community": 64,
       "norm_label": "path"
     },
     {
@@ -3340,7 +3340,7 @@
       "source_location": "L374",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_pair_records_after_projection",
-      "community": 62,
+      "community": 64,
       "norm_label": "_pair_records_after_projection()"
     },
     {
@@ -3350,7 +3350,7 @@
       "source_location": "L426",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_evaluate_projector_fixtures",
-      "community": 62,
+      "community": 64,
       "norm_label": "evaluate_projector_fixtures()"
     },
     {
@@ -3490,7 +3490,7 @@
       "source_location": "L1157",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_sha256_file",
-      "community": 62,
+      "community": 64,
       "norm_label": "_sha256_file()"
     },
     {
@@ -3510,7 +3510,7 @@
       "source_location": "L1207",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_build_run_manifest",
-      "community": 62,
+      "community": 64,
       "norm_label": "build_run_manifest()"
     },
     {
@@ -3520,7 +3520,7 @@
       "source_location": "L1269",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_write_projector_artifacts",
-      "community": 62,
+      "community": 64,
       "norm_label": "write_projector_artifacts()"
     },
     {
@@ -3540,7 +3540,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_83",
-      "community": 14,
+      "community": 64,
       "norm_label": "evaluator-private provenance and label; never passed into qlmp."
     },
     {
@@ -3550,7 +3550,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_112",
-      "community": 14,
+      "community": 64,
       "norm_label": "safe component input plus evaluator-private labels/metadata."
     },
     {
@@ -3560,7 +3560,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_189",
-      "community": 14,
+      "community": 62,
       "norm_label": "reuse chronologically ordered store envelopes without fetching history."
     },
     {
@@ -3570,7 +3570,7 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_217",
-      "community": 62,
+      "community": 64,
       "norm_label": "load an exact-q fixture; absent vectors are a hard error, never embedded."
     },
     {
@@ -3580,7 +3580,7 @@
       "source_location": "L378",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_378",
-      "community": 62,
+      "community": 64,
       "norm_label": "the only function that joins private labels to computed projections."
     },
     {
@@ -3590,7 +3590,7 @@
       "source_location": "L434",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_434",
-      "community": 62,
+      "community": 64,
       "norm_label": "compute label-free projections, then evaluator-owned records/metrics."
     },
     {
@@ -3610,7 +3610,7 @@
       "source_location": "L1275",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_qlmp_component_eval_rationale_1275",
-      "community": 62,
+      "community": 64,
       "norm_label": "write run-specific jsonl/csv/summary/manifest without overwriting."
     },
     {
@@ -4220,7 +4220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_projector_isolation",
-      "community": 62,
+      "community": 64,
       "norm_label": "run_projector_isolation.py"
     },
     {
@@ -4230,7 +4230,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_projector_isolation_main",
-      "community": 62,
+      "community": 64,
       "norm_label": "main()"
     },
     {
@@ -4240,7 +4240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_projector_isolation_rationale_1",
-      "community": 62,
+      "community": 64,
       "norm_label": "cache-only cli for the real-catalogue qlmp projector-isolation study."
     },
     {
@@ -4460,7 +4460,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_memorymode",
-      "community": 14,
+      "community": 64,
       "norm_label": "memorymode"
     },
     {
@@ -4470,7 +4470,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_candidateuniverse",
-      "community": 14,
+      "community": 64,
       "norm_label": "candidateuniverse"
     },
     {
@@ -4570,7 +4570,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_projectionsteeringdeferrederror",
-      "community": 49,
+      "community": 130,
       "norm_label": "projectionsteeringdeferrederror"
     },
     {
@@ -4580,7 +4580,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_candidatememorybatch",
-      "community": 14,
+      "community": 64,
       "norm_label": "candidatememorybatch"
     },
     {
@@ -4600,7 +4600,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_qlmpintegrationconfig",
-      "community": 49,
+      "community": 64,
       "norm_label": "qlmpintegrationconfig"
     },
     {
@@ -4610,7 +4610,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_qlmpintegrationconfig_post_init",
-      "community": 14,
+      "community": 64,
       "norm_label": ".__post_init__()"
     },
     {
@@ -4640,7 +4640,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_projectorisolationresult",
-      "community": 14,
+      "community": 64,
       "norm_label": "projectorisolationresult"
     },
     {
@@ -4780,7 +4780,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_rationale_90",
-      "community": 49,
+      "community": 130,
       "norm_label": "raised when a caller tries to use isolation-only projection as b3."
     },
     {
@@ -4790,7 +4790,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_rationale_95",
-      "community": 14,
+      "community": 64,
       "norm_label": "ordered memory tuple plus the embedding-space envelope qlmp lacks."
     },
     {
@@ -4800,7 +4800,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_rationale_114",
-      "community": 49,
+      "community": 64,
       "norm_label": "one explicit switch/configuration for the component boundary."
     },
     {
@@ -4830,7 +4830,7 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_rationale_186",
-      "community": 14,
+      "community": 64,
       "norm_label": "first-pass m0 neighbourhood and projections, intentionally no q_star."
     },
     {
@@ -7780,7 +7780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge",
-      "community": 222,
+      "community": 135,
       "norm_label": "agent_bge.py"
     },
     {
@@ -7790,7 +7790,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge_agent",
-      "community": 222,
+      "community": 135,
       "norm_label": "agent"
     },
     {
@@ -7800,7 +7800,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "canonicalagent",
-      "community": 222,
+      "community": 135,
       "norm_label": "canonicalagent"
     },
     {
@@ -7810,7 +7810,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge_agent_init",
-      "community": 222,
+      "community": 135,
       "norm_label": ".__init__()"
     },
     {
@@ -7820,7 +7820,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge_py_path",
-      "community": 222,
+      "community": 135,
       "norm_label": "path"
     },
     {
@@ -7830,7 +7830,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge_py_any",
-      "community": 222,
+      "community": 135,
       "norm_label": "any"
     },
     {
@@ -7840,7 +7840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge_rationale_1",
-      "community": 222,
+      "community": 135,
       "norm_label": "thin vanilla-bge configuration of the canonical patch-2 agent."
     },
     {
@@ -7850,7 +7850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai",
-      "community": 222,
+      "community": 135,
       "norm_label": "agent_openai.py"
     },
     {
@@ -7860,7 +7860,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai_agent",
-      "community": 222,
+      "community": 135,
       "norm_label": "agent"
     },
     {
@@ -7870,7 +7870,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai_agent_init",
-      "community": 222,
+      "community": 135,
       "norm_label": ".__init__()"
     },
     {
@@ -7880,7 +7880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai_py_path",
-      "community": 222,
+      "community": 135,
       "norm_label": "path"
     },
     {
@@ -7890,7 +7890,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai_py_any",
-      "community": 222,
+      "community": 135,
       "norm_label": "any"
     },
     {
@@ -7900,7 +7900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai_rationale_1",
-      "community": 222,
+      "community": 135,
       "norm_label": "thin openai-embedding configuration of the canonical patch-2 agent."
     },
     {
@@ -11680,7 +11680,7 @@
       "source_location": "L348",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_08_intent_routed_dense_browsing_outcomes",
-      "community": 162,
+      "community": 0,
       "norm_label": "_outcomes()"
     },
     {
@@ -11710,7 +11710,7 @@
       "source_location": "L390",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_08_intent_routed_dense_browsing_compare_sessions",
-      "community": 162,
+      "community": 0,
       "norm_label": "compare_sessions()"
     },
     {
@@ -11890,7 +11890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture",
-      "community": 162,
+      "community": 0,
       "norm_label": "experiment_09_adaptive_hybrid_architecture.py"
     },
     {
@@ -11900,7 +11900,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_classify_typed_constraint",
-      "community": 162,
+      "community": 0,
       "norm_label": "classify_typed_constraint()"
     },
     {
@@ -11910,7 +11910,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_typedconstraint",
-      "community": 162,
+      "community": 0,
       "norm_label": "typedconstraint"
     },
     {
@@ -11970,7 +11970,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_typedstateparser",
-      "community": 162,
+      "community": 0,
       "norm_label": "typedstateparser"
     },
     {
@@ -11990,7 +11990,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_typedstateparser_update",
-      "community": 162,
+      "community": 0,
       "norm_label": ".update()"
     },
     {
@@ -12000,7 +12000,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_typedstateparser_mark_asked",
-      "community": 162,
+      "community": 0,
       "norm_label": ".mark_asked()"
     },
     {
@@ -12180,7 +12180,7 @@
       "source_location": "L420",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_first_word_value",
-      "community": 162,
+      "community": 0,
       "norm_label": "_first_word_value()"
     },
     {
@@ -12190,7 +12190,7 @@
       "source_location": "L425",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_candidate_attribute_value",
-      "community": 162,
+      "community": 0,
       "norm_label": "candidate_attribute_value()"
     },
     {
@@ -12200,7 +12200,7 @@
       "source_location": "L460",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_meaningful_attribute_values",
-      "community": 162,
+      "community": 0,
       "norm_label": "meaningful_attribute_values()"
     },
     {
@@ -12210,7 +12210,7 @@
       "source_location": "L464",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_entropy_question",
-      "community": 162,
+      "community": 0,
       "norm_label": "entropy_question()"
     },
     {
@@ -12220,7 +12220,7 @@
       "source_location": "L482",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_rank_aware_question",
-      "community": 162,
+      "community": 0,
       "norm_label": "rank_aware_question()"
     },
     {
@@ -12230,7 +12230,7 @@
       "source_location": "L514",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_choose_question",
-      "community": 162,
+      "community": 0,
       "norm_label": "choose_question()"
     },
     {
@@ -12240,7 +12240,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_py_any",
-      "community": 162,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -12250,7 +12250,7 @@
       "source_location": "L525",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_simulate_policy",
-      "community": 162,
+      "community": 0,
       "norm_label": "simulate_policy()"
     },
     {
@@ -12260,7 +12260,7 @@
       "source_location": "L609",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_selection_key",
-      "community": 162,
+      "community": 0,
       "norm_label": "_selection_key()"
     },
     {
@@ -12270,7 +12270,7 @@
       "source_location": "L619",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_plot",
-      "community": 162,
+      "community": 0,
       "norm_label": "_plot()"
     },
     {
@@ -12280,7 +12280,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_py_path",
-      "community": 162,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -12290,7 +12290,7 @@
       "source_location": "L634",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_run_09",
-      "community": 162,
+      "community": 0,
       "norm_label": "run_09()"
     },
     {
@@ -12300,7 +12300,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_09_adaptive_hybrid_architecture_rationale_128",
-      "community": 162,
+      "community": 0,
       "norm_label": "typed observable identity layered over the frozen experiment 7 parser."
     },
     {
@@ -14240,7 +14240,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests",
-      "community": 162,
+      "community": 0,
       "norm_label": "experiment09tests"
     },
     {
@@ -14250,7 +14250,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_typed_slots_strength_and_specificity",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_typed_slots_strength_and_specificity()"
     },
     {
@@ -14260,7 +14260,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_typed_negation_and_replacement",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_typed_negation_and_replacement()"
     },
     {
@@ -14270,7 +14270,7 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_classifier_order_and_weighted_rrf",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_classifier_order_and_weighted_rrf()"
     },
     {
@@ -14280,7 +14280,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_budget_violation_evidence",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_budget_violation_evidence()"
     },
     {
@@ -14310,7 +14310,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_entropy_and_rank_aware_question_choice",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_entropy_and_rank_aware_question_choice()"
     },
     {
@@ -14320,7 +14320,7 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_tests_test_experiments_08_09_experiment09tests_test_question_fallback_without_meaningful_values",
-      "community": 162,
+      "community": 0,
       "norm_label": ".test_question_fallback_without_meaningful_values()"
     },
     {
@@ -18920,7 +18920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp02_simulator_leakage",
-      "community": 262,
+      "community": 63,
       "norm_label": "exp02_simulator_leakage.py"
     },
     {
@@ -18930,7 +18930,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp02_simulator_leakage_turns_to_full_card",
-      "community": 262,
+      "community": 63,
       "norm_label": "turns_to_full_card()"
     },
     {
@@ -18940,7 +18940,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp02_simulator_leakage_main",
-      "community": 262,
+      "community": 63,
       "norm_label": "main()"
     },
     {
@@ -18950,7 +18950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp02_simulator_leakage_rationale_1",
-      "community": 262,
+      "community": 63,
       "norm_label": "exp02 - how much does the public simulator leak?  answers: whether ask_attribu"
     },
     {
@@ -19090,7 +19090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution",
-      "community": 258,
+      "community": 139,
       "norm_label": "exp06_vocabulary_resolution.py"
     },
     {
@@ -19100,7 +19100,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_stem",
-      "community": 258,
+      "community": 139,
       "norm_label": "stem()"
     },
     {
@@ -19110,7 +19110,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_build_content_profiles",
-      "community": 258,
+      "community": 139,
       "norm_label": "build_content_profiles()"
     },
     {
@@ -19120,7 +19120,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_strategy_sweep",
-      "community": 258,
+      "community": 139,
       "norm_label": "strategy_sweep()"
     },
     {
@@ -19130,7 +19130,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_main",
-      "community": 258,
+      "community": 139,
       "norm_label": "main()"
     },
     {
@@ -19140,7 +19140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_rationale_1",
-      "community": 258,
+      "community": 139,
       "norm_label": "exp06 - when the parse is intent-correct but word-different, does it still land?"
     },
     {
@@ -19150,7 +19150,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_rationale_63",
-      "community": 258,
+      "community": 139,
       "norm_label": "a bucket's content profile: how often each title token appears inside it."
     },
     {
@@ -19160,7 +19160,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp06_vocabulary_resolution_rationale_84",
-      "community": 258,
+      "community": 139,
       "norm_label": "label vs content vs combined, at several pool widths."
     },
     {
@@ -20460,7 +20460,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_prompts",
-      "community": 261,
+      "community": 123,
       "norm_label": "prompts.py"
     },
     {
@@ -20490,7 +20490,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_prompts_relation_for",
-      "community": 261,
+      "community": 123,
       "norm_label": "relation_for()"
     },
     {
@@ -20500,7 +20500,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_prompts_py_random",
-      "community": 261,
+      "community": 123,
       "norm_label": "random"
     },
     {
@@ -20520,7 +20520,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_prompts_rationale_1",
-      "community": 261,
+      "community": 123,
       "norm_label": "utterance-axis text: styles, modifiers, the forbidden list, and the system promp"
     },
     {
@@ -20550,7 +20550,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_prompts_rationale_86",
-      "community": 261,
+      "community": 123,
       "norm_label": "a recipient consistent with the target's department - never a contradiction."
     },
     {
@@ -21080,7 +21080,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_test_bench_testprompts_test_relation_matches_department",
-      "community": 261,
+      "community": 123,
       "norm_label": ".test_relation_matches_department()"
     },
     {
@@ -21270,7 +21270,7 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_test_bench_testgenerate_test_overlap_is_fraction_of_utterance_content_words_in_listing",
-      "community": 154,
+      "community": 121,
       "norm_label": ".test_overlap_is_fraction_of_utterance_content_words_in_listing()"
     },
     {
@@ -21600,7 +21600,7 @@
       "source_location": "L343",
       "_origin": "ast",
       "id": "archive_winston_lab_bolt_on_mentions",
-      "community": 203,
+      "community": 76,
       "norm_label": "_mentions()"
     },
     {
@@ -21610,7 +21610,7 @@
       "source_location": "L348",
       "_origin": "ast",
       "id": "archive_winston_lab_bolt_on_contradictions",
-      "community": 203,
+      "community": 76,
       "norm_label": "contradictions()"
     },
     {
@@ -21720,7 +21720,7 @@
       "source_location": "L349",
       "_origin": "ast",
       "id": "archive_winston_lab_bolt_on_rationale_349",
-      "community": 203,
+      "community": 76,
       "norm_label": "which hard constraints / negatives does this product contradict? empty = keep."
     },
     {
@@ -21930,7 +21930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass",
-      "community": 203,
+      "community": 118,
       "norm_label": "evaluator_bypass.py"
     },
     {
@@ -21940,7 +21940,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_template_parse",
-      "community": 203,
+      "community": 118,
       "norm_label": "template_parse()"
     },
     {
@@ -21950,7 +21950,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_rrf",
-      "community": 203,
+      "community": 118,
       "norm_label": "rrf()"
     },
     {
@@ -21960,7 +21960,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_rank_of",
-      "community": 203,
+      "community": 118,
       "norm_label": "rank_of()"
     },
     {
@@ -21970,7 +21970,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_hit",
-      "community": 203,
+      "community": 118,
       "norm_label": "hit()"
     },
     {
@@ -21980,7 +21980,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_mrr",
-      "community": 203,
+      "community": 118,
       "norm_label": "mrr()"
     },
     {
@@ -21990,7 +21990,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_main",
-      "community": 203,
+      "community": 118,
       "norm_label": "main()"
     },
     {
@@ -22000,7 +22000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_rationale_1",
-      "community": 203,
+      "community": 118,
       "norm_label": "gate 2, forced: run the evaluator's own turn-1 messages through the fall-through"
     },
     {
@@ -22010,7 +22010,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "archive_winston_lab_evaluator_bypass_rationale_39",
-      "community": 203,
+      "community": 118,
       "norm_label": "what a regex would extract - the parse the keyword layer effectively has."
     },
     {
@@ -22170,7 +22170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_lora_eval_lora",
-      "community": 263,
+      "community": 116,
       "norm_label": "eval_lora.py"
     },
     {
@@ -22180,7 +22180,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "archive_winston_lab_lora_eval_lora_generate",
-      "community": 263,
+      "community": 116,
       "norm_label": "generate()"
     },
     {
@@ -22190,7 +22190,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "archive_winston_lab_lora_eval_lora_main",
-      "community": 263,
+      "community": 116,
       "norm_label": "main()"
     },
     {
@@ -22200,7 +22200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_lora_eval_lora_rationale_1",
-      "community": 263,
+      "community": 116,
       "norm_label": "score a base model (+ optional lora adapter) on the 30 hand-gold probes and the"
     },
     {
@@ -23078,7 +23078,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_catalog_stores",
-      "community": 203,
+      "community": 116,
       "norm_label": "catalog_stores()"
     },
     {
@@ -23088,7 +23088,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_hard_claim_holds",
-      "community": 203,
+      "community": 116,
       "norm_label": "hard_claim_holds()"
     },
     {
@@ -23108,7 +23108,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_clean_slots",
-      "community": 58,
+      "community": 116,
       "norm_label": "clean_slots()"
     },
     {
@@ -23218,7 +23218,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_rationale_98",
-      "community": 203,
+      "community": 116,
       "norm_label": "every brand the catalog actually sells - 19,749 of them, 99.4% coverage."
     },
     {
@@ -23228,7 +23228,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_rationale_122",
-      "community": 203,
+      "community": 116,
       "norm_label": "can the catalog actually filter on this? if not, the slot is soft."
     },
     {
@@ -23248,7 +23248,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "archive_winston_nlp_parse_rationale_178",
-      "community": 58,
+      "community": 116,
       "norm_label": "slots worth acting on: junk placeholder values dropped. declined slots keep"
     },
     {
@@ -23398,7 +23398,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shop_agent",
-      "community": 256,
+      "community": 5,
       "norm_label": "shop_agent.py"
     },
     {
@@ -23408,7 +23408,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "shop_agent_load_env_file",
-      "community": 256,
+      "community": 5,
       "norm_label": "_load_env_file()"
     },
     {
@@ -23428,7 +23428,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "shop_agent_standardize_department",
-      "community": 167,
+      "community": 5,
       "norm_label": "standardize_department()"
     },
     {
@@ -23438,7 +23438,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "shop_agent_py_any",
-      "community": 167,
+      "community": 5,
       "norm_label": "any"
     },
     {
@@ -23448,7 +23448,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "shop_agent_text",
-      "community": 256,
+      "community": 5,
       "norm_label": "_text()"
     },
     {
@@ -23458,7 +23458,7 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "shop_agent_terms",
-      "community": 256,
+      "community": 5,
       "norm_label": "_terms()"
     },
     {
@@ -23478,7 +23478,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "shop_agent_agent_init",
-      "community": 167,
+      "community": 5,
       "norm_label": ".__init__()"
     },
     {
@@ -23488,7 +23488,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "shop_agent_py_path",
-      "community": 167,
+      "community": 5,
       "norm_label": "path"
     },
     {
@@ -23498,7 +23498,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "shop_agent_agent_build_fts5_index",
-      "community": 167,
+      "community": 5,
       "norm_label": "._build_fts5_index()"
     },
     {
@@ -23508,7 +23508,7 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "shop_agent_agent_build_category_index",
-      "community": 167,
+      "community": 5,
       "norm_label": "._build_category_index()"
     },
     {
@@ -23518,7 +23518,7 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "shop_agent_agent_build_vector_index",
-      "community": 167,
+      "community": 5,
       "norm_label": "._build_vector_index()"
     },
     {
@@ -23648,7 +23648,7 @@
       "source_location": "L822",
       "_origin": "ast",
       "id": "shop_agent_agent_reset",
-      "community": 167,
+      "community": 5,
       "norm_label": ".reset()"
     },
     {
@@ -23728,7 +23728,7 @@
       "source_location": "L2040",
       "_origin": "ast",
       "id": "shop_agent_baselineagent",
-      "community": 167,
+      "community": 5,
       "norm_label": "baselineagent"
     },
     {
@@ -23748,7 +23748,7 @@
       "source_location": "L2058",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_text",
-      "community": 167,
+      "community": 5,
       "norm_label": "._text()"
     },
     {
@@ -23758,7 +23758,7 @@
       "source_location": "L2067",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_init",
-      "community": 167,
+      "community": 5,
       "norm_label": ".__init__()"
     },
     {
@@ -23768,7 +23768,7 @@
       "source_location": "L2073",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_build_index",
-      "community": 167,
+      "community": 5,
       "norm_label": "._build_index()"
     },
     {
@@ -23778,7 +23778,7 @@
       "source_location": "L2139",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_reset",
-      "community": 167,
+      "community": 5,
       "norm_label": ".reset()"
     },
     {
@@ -23788,7 +23788,7 @@
       "source_location": "L2152",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_classify_constraint_locally",
-      "community": 167,
+      "community": 5,
       "norm_label": "._classify_constraint_locally()"
     },
     {
@@ -23798,7 +23798,7 @@
       "source_location": "L2163",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_rebuild_accumulated_terms",
-      "community": 167,
+      "community": 5,
       "norm_label": "._rebuild_accumulated_terms()"
     },
     {
@@ -23808,7 +23808,7 @@
       "source_location": "L2184",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_erase_attribute_memory",
-      "community": 167,
+      "community": 5,
       "norm_label": "._erase_attribute_memory()"
     },
     {
@@ -23818,7 +23818,7 @@
       "source_location": "L2191",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_parse_message_locally",
-      "community": 167,
+      "community": 5,
       "norm_label": "._parse_message_locally()"
     },
     {
@@ -23828,7 +23828,7 @@
       "source_location": "L2239",
       "_origin": "ast",
       "id": "shop_agent_baselineagent_respond",
-      "community": 167,
+      "community": 5,
       "norm_label": ".respond()"
     },
     {
@@ -23888,7 +23888,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_init",
-      "community": 253,
+      "community": 128,
       "norm_label": "__init__.py"
     },
     {
@@ -23898,7 +23898,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_init_rationale_1",
-      "community": 253,
+      "community": 128,
       "norm_label": "public shopping-agent lifecycle."
     },
     {
@@ -23908,7 +23908,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_agent",
-      "community": 146,
+      "community": 67,
       "norm_label": "agent.py"
     },
     {
@@ -23928,7 +23928,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_experimentconfig",
-      "community": 253,
+      "community": 4,
       "norm_label": "experimentconfig"
     },
     {
@@ -23948,7 +23948,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_experimentconfig_condition_name",
-      "community": 253,
+      "community": 4,
       "norm_label": ".condition_name()"
     },
     {
@@ -23988,7 +23988,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_apply_confidence_gate",
-      "community": 179,
+      "community": 48,
       "norm_label": "_apply_confidence_gate()"
     },
     {
@@ -24128,7 +24128,7 @@
       "source_location": "L544",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_text",
-      "community": 146,
+      "community": 67,
       "norm_label": "_text()"
     },
     {
@@ -24148,7 +24148,7 @@
       "source_location": "L560",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_state_to_retrieval_query",
-      "community": 64,
+      "community": 28,
       "norm_label": "_state_to_retrieval_query()"
     },
     {
@@ -24538,7 +24538,7 @@
       "source_location": "L1567",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_respond",
-      "community": 48,
+      "community": 49,
       "norm_label": ".respond()"
     },
     {
@@ -24608,7 +24608,7 @@
       "source_location": "L1802",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_get_instrumentation",
-      "community": 48,
+      "community": 253,
       "norm_label": ".get_instrumentation()"
     },
     {
@@ -24658,7 +24658,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_99",
-      "community": 253,
+      "community": 4,
       "norm_label": "the two ablation factors plus deterministic generation controls."
     },
     {
@@ -24688,7 +24688,7 @@
       "source_location": "L228",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_228",
-      "community": 179,
+      "community": 48,
       "norm_label": "filter the fixed post-ranking pool by inclusive current-query similarity."
     },
     {
@@ -24778,7 +24778,7 @@
       "source_location": "L561",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_561",
-      "community": 64,
+      "community": 28,
       "norm_label": "build a deterministic query from only the currently active state."
     },
     {
@@ -25348,7 +25348,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "system_shopping_agent_clarification_select_fixed_priority_attributes",
-      "community": 253,
+      "community": 67,
       "norm_label": "select_fixed_priority_attributes()"
     },
     {
@@ -25378,7 +25378,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "system_shopping_agent_clarification_rationale_188",
-      "community": 253,
+      "community": 67,
       "norm_label": "select the first still-unasked attributes in the established intent order."
     },
     {
@@ -25778,7 +25778,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends",
-      "community": 146,
+      "community": 135,
       "norm_label": "embedding_backends.py"
     },
     {
@@ -25788,7 +25788,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_make_embedding_space_id",
-      "community": 24,
+      "community": 135,
       "norm_label": "make_embedding_space_id()"
     },
     {
@@ -25798,7 +25798,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_embeddingerror",
-      "community": 146,
+      "community": 135,
       "norm_label": "embeddingerror"
     },
     {
@@ -25808,7 +25808,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_catalogcachemisserror",
-      "community": 146,
+      "community": 135,
       "norm_label": "catalogcachemisserror"
     },
     {
@@ -25858,7 +25858,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_fingerprint_texts",
-      "community": 146,
+      "community": 24,
       "norm_label": "fingerprint_texts()"
     },
     {
@@ -25868,7 +25868,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_fingerprint_file",
-      "community": 146,
+      "community": 24,
       "norm_label": "fingerprint_file()"
     },
     {
@@ -25888,7 +25888,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_cache_filename",
-      "community": 146,
+      "community": 135,
       "norm_label": "cache_filename()"
     },
     {
@@ -25898,7 +25898,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_production_product_text",
-      "community": 146,
+      "community": 135,
       "norm_label": "production_product_text()"
     },
     {
@@ -26048,7 +26048,7 @@
       "source_location": "L300",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_openaiembeddingerror",
-      "community": 146,
+      "community": 135,
       "norm_label": "openaiembeddingerror"
     },
     {
@@ -26148,7 +26148,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_1",
-      "community": 146,
+      "community": 135,
       "norm_label": "production bge embeddings plus deterministic backend injection contracts.  this"
     },
     {
@@ -26158,7 +26158,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_33",
-      "community": 24,
+      "community": 135,
       "norm_label": "return the stable identity of mutually compatible catalog/query vectors."
     },
     {
@@ -26168,7 +26168,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_49",
-      "community": 146,
+      "community": 135,
       "norm_label": "base error for embedding failures."
     },
     {
@@ -26178,7 +26178,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_53",
-      "community": 146,
+      "community": 135,
       "norm_label": "raised when explicit catalog generation is required but not allowed."
     },
     {
@@ -26198,7 +26198,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_105",
-      "community": 146,
+      "community": 135,
       "norm_label": "build the exact product passage embedded by the production runtime."
     },
     {
@@ -26218,7 +26218,7 @@
       "source_location": "L301",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_301",
-      "community": 146,
+      "community": 135,
       "norm_label": "typed failure from the openai embeddings endpoint."
     },
     {
@@ -26388,7 +26388,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store",
-      "community": 158,
+      "community": 103,
       "norm_label": "memory_store.py"
     },
     {
@@ -26398,7 +26398,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_nonempty",
-      "community": 192,
+      "community": 103,
       "norm_label": "_nonempty()"
     },
     {
@@ -26408,7 +26408,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_sequence",
-      "community": 192,
+      "community": 103,
       "norm_label": "_sequence()"
     },
     {
@@ -26418,7 +26418,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_unit_vector",
-      "community": 158,
+      "community": 103,
       "norm_label": "_unit_vector()"
     },
     {
@@ -26428,7 +26428,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_py_ndarray",
-      "community": 158,
+      "community": 103,
       "norm_label": "ndarray"
     },
     {
@@ -26438,7 +26438,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdatemode",
-      "community": 158,
+      "community": 103,
       "norm_label": "memoryupdatemode"
     },
     {
@@ -26448,7 +26448,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdatepolicy",
-      "community": 158,
+      "community": 103,
       "norm_label": "memoryupdatepolicy"
     },
     {
@@ -26458,7 +26458,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdatepolicy_post_init",
-      "community": 158,
+      "community": 103,
       "norm_label": ".__post_init__()"
     },
     {
@@ -26488,7 +26488,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdateresult",
-      "community": 158,
+      "community": 103,
       "norm_label": "memoryupdateresult"
     },
     {
@@ -26498,7 +26498,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdateresult_post_init",
-      "community": 158,
+      "community": 103,
       "norm_label": ".__post_init__()"
     },
     {
@@ -26508,7 +26508,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_update_memory_vector",
-      "community": 158,
+      "community": 103,
       "norm_label": "update_memory_vector()"
     },
     {
@@ -26518,7 +26518,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorystate",
-      "community": 158,
+      "community": 103,
       "norm_label": "longtermmemorystate"
     },
     {
@@ -26528,7 +26528,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorystate_post_init",
-      "community": 158,
+      "community": 103,
       "norm_label": ".__post_init__()"
     },
     {
@@ -26538,7 +26538,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_sessioncommit",
-      "community": 158,
+      "community": 103,
       "norm_label": "sessioncommit"
     },
     {
@@ -26548,7 +26548,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorycommit",
-      "community": 158,
+      "community": 103,
       "norm_label": "longtermmemorycommit"
     },
     {
@@ -26558,7 +26558,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot",
-      "community": 137,
+      "community": 103,
       "norm_label": "memorystoresnapshot"
     },
     {
@@ -26568,7 +26568,7 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot_filtered",
-      "community": 192,
+      "community": 103,
       "norm_label": ".filtered()"
     },
     {
@@ -26598,7 +26598,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot_from_payload",
-      "community": 137,
+      "community": 103,
       "norm_label": ".from_payload()"
     },
     {
@@ -26608,7 +26608,7 @@
       "source_location": "L216",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore",
-      "community": 192,
+      "community": 103,
       "norm_label": "inmemoryvectormemorystore"
     },
     {
@@ -26618,7 +26618,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_init",
-      "community": 192,
+      "community": 103,
       "norm_label": ".__init__()"
     },
     {
@@ -26628,7 +26628,7 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_validate_new_session",
-      "community": 192,
+      "community": 103,
       "norm_label": ".validate_new_session()"
     },
     {
@@ -26638,7 +26638,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_begin_session",
-      "community": 192,
+      "community": 103,
       "norm_label": ".begin_session()"
     },
     {
@@ -26648,7 +26648,7 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_get_state",
-      "community": 192,
+      "community": 103,
       "norm_label": ".get_state()"
     },
     {
@@ -26658,7 +26658,7 @@
       "source_location": "L254",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_commit",
-      "community": 158,
+      "community": 103,
       "norm_label": ".commit()"
     },
     {
@@ -26668,7 +26668,7 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_cancel_session",
-      "community": 192,
+      "community": 103,
       "norm_label": ".cancel_session()"
     },
     {
@@ -26678,7 +26678,7 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_commits_for_user",
-      "community": 192,
+      "community": 103,
       "norm_label": ".commits_for_user()"
     },
     {
@@ -26688,7 +26688,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_next_sequence_index",
-      "community": 192,
+      "community": 103,
       "norm_label": ".next_sequence_index()"
     },
     {
@@ -26698,7 +26698,7 @@
       "source_location": "L322",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_describe_user",
-      "community": 192,
+      "community": 137,
       "norm_label": ".describe_user()"
     },
     {
@@ -26708,7 +26708,7 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_export_snapshot",
-      "community": 137,
+      "community": 103,
       "norm_label": ".export_snapshot()"
     },
     {
@@ -26718,7 +26718,7 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_import_snapshot",
-      "community": 137,
+      "community": 103,
       "norm_label": ".import_snapshot()"
     },
     {
@@ -26738,7 +26738,7 @@
       "source_location": "L383",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_clear_user",
-      "community": 192,
+      "community": 103,
       "norm_label": ".clear_user()"
     },
     {
@@ -26758,7 +26758,7 @@
       "source_location": "L399",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_init",
-      "community": 137,
+      "community": 103,
       "norm_label": ".__init__()"
     },
     {
@@ -26768,7 +26768,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_py_path",
-      "community": 137,
+      "community": 103,
       "norm_label": "path"
     },
     {
@@ -26828,7 +26828,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_1",
-      "community": 158,
+      "community": 103,
       "norm_label": "versioned user-isolated storage for one normalized vector per user."
     },
     {
@@ -26838,7 +26838,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_41",
-      "community": 158,
+      "community": 103,
       "norm_label": "supported one-vector long-term-memory update strategies."
     },
     {
@@ -26848,7 +26848,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_49",
-      "community": 158,
+      "community": 103,
       "norm_label": "configuration boundary for the current centroid update implementation."
     },
     {
@@ -26858,7 +26858,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_88",
-      "community": 158,
+      "community": 103,
       "norm_label": "vector result and vector-free diagnostics for one evidence observation."
     },
     {
@@ -26868,7 +26868,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_105",
-      "community": 158,
+      "community": 103,
       "norm_label": "pure normalized centroid update with bounded novelty adaptation."
     },
     {
@@ -26878,7 +26878,7 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_217",
-      "community": 192,
+      "community": 103,
       "norm_label": "user-isolated vector states with strict monotonic session chronology."
     },
     {
@@ -26888,7 +26888,7 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_305",
-      "community": 192,
+      "community": 103,
       "norm_label": "release an active session without recording a longitudinal commit."
     },
     {
@@ -26898,7 +26898,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_317",
-      "community": 192,
+      "community": 103,
       "norm_label": "return the next valid longitudinal sequence for ``user_id``."
     },
     {
@@ -26908,7 +26908,7 @@
       "source_location": "L323",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_323",
-      "community": 192,
+      "community": 137,
       "norm_label": "return vector-free state suitable for a demo/debug display."
     },
     {
@@ -26918,7 +26918,7 @@
       "source_location": "L384",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_384",
-      "community": 192,
+      "community": 103,
       "norm_label": "reset exactly one user without touching any other user's memory."
     },
     {
@@ -27745,7 +27745,7 @@
       "label": "summarize_sessions()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L381",
+      "source_location": "L380",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_summarize_sessions",
       "community": 20,
@@ -27755,7 +27755,7 @@
       "label": "_metric_observation()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L435",
+      "source_location": "L420",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_metric_observation",
       "community": 20,
@@ -27765,7 +27765,7 @@
       "label": "paired_comparisons()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L446",
+      "source_location": "L431",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
       "community": 20,
@@ -27775,7 +27775,7 @@
       "label": "_run_condition()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L532",
+      "source_location": "L508",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_run_condition",
       "community": 20,
@@ -27785,7 +27785,7 @@
       "label": "_determinism_signature()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L558",
+      "source_location": "L534",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_determinism_signature",
       "community": 20,
@@ -27795,7 +27795,7 @@
       "label": "_report()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L577",
+      "source_location": "L553",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_report",
       "community": 20,
@@ -27805,7 +27805,7 @@
       "label": "run()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L617",
+      "source_location": "L575",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_run",
       "community": 20,
@@ -27825,7 +27825,7 @@
       "label": "build_parser()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L681",
+      "source_location": "L639",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_build_parser",
       "community": 20,
@@ -27845,7 +27845,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L695",
+      "source_location": "L653",
       "_origin": "ast",
       "id": "system_shopping_agent_run_ablation_experiments_main",
       "community": 20,
@@ -27875,9 +27875,9 @@
       "label": "Compute paired factorial deltas and user-cluster exploratory CIs.",
       "file_type": "rationale",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L449",
+      "source_location": "L434",
       "_origin": "ast",
-      "id": "system_shopping_agent_run_ablation_experiments_rationale_449",
+      "id": "system_shopping_agent_run_ablation_experiments_rationale_434",
       "community": 20,
       "norm_label": "compute paired factorial deltas and user-cluster exploratory cis."
     },
@@ -27908,7 +27908,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "system_shopping_agent_runtime_runtimeproviders_provider",
-      "community": 48,
+      "community": 253,
       "norm_label": ".provider()"
     },
     {
@@ -27950,136 +27950,6 @@
       "id": "system_shopping_agent_runtime_rationale_33",
       "community": 135,
       "norm_label": "construct clients without making a model-provider network request."
-    },
-    {
-      "label": "test_ablation_experiment.py",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment",
-      "community": 253,
-      "norm_label": "test_ablation_experiment.py"
-    },
-    {
-      "label": "RecordingClient",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "community": 253,
-      "norm_label": "recordingclient"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_init",
-      "community": 253,
-      "norm_label": ".__init__()"
-    },
-    {
-      "label": ".chat_result()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat_result",
-      "community": 253,
-      "norm_label": ".chat_result()"
-    },
-    {
-      "label": ".chat()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat",
-      "community": 253,
-      "norm_label": ".chat()"
-    },
-    {
-      "label": ".instrumentation()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_instrumentation",
-      "community": 253,
-      "norm_label": ".instrumentation()"
-    },
-    {
-      "label": "test_production_experiment_defaults_are_unchanged()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_production_experiment_defaults_are_unchanged",
-      "community": 253,
-      "norm_label": "test_production_experiment_defaults_are_unchanged()"
-    },
-    {
-      "label": "test_four_conditions_vary_only_the_two_registered_factors()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_four_conditions_vary_only_the_two_registered_factors",
-      "community": 253,
-      "norm_label": "test_four_conditions_vary_only_the_two_registered_factors()"
-    },
-    {
-      "label": "test_fixed_priority_is_deterministic_and_intent_specific()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_fixed_priority_is_deterministic_and_intent_specific",
-      "community": 253,
-      "norm_label": "test_fixed_priority_is_deterministic_and_intent_specific()"
-    },
-    {
-      "label": "test_shadow_memory_is_loaded_but_never_passed_to_score_catalog()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "community": 253,
-      "norm_label": "test_shadow_memory_is_loaded_but_never_passed_to_score_catalog()"
-    },
-    {
-      "label": "test_temperature_and_seed_reach_agent_and_shopper_calls()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L91",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "community": 253,
-      "norm_label": "test_temperature_and_seed_reach_agent_and_shopper_calls()"
-    },
-    {
-      "label": "_row()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L106",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_row",
-      "community": 253,
-      "norm_label": "_row()"
-    },
-    {
-      "label": "test_paired_deltas_and_factorial_interaction_on_known_results()",
-      "file_type": "code",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L123",
-      "_origin": "ast",
-      "id": "system_shopping_agent_tests_test_ablation_experiment_test_paired_deltas_and_factorial_interaction_on_known_results",
-      "community": 253,
-      "norm_label": "test_paired_deltas_and_factorial_interaction_on_known_results()"
     },
     {
       "label": "test_agent_vector_ranking.py",
@@ -28258,7 +28128,7 @@
       "source_location": "L303",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_agent_vector_ranking_test_confidence_gate_boundary_order_pool_limit_and_no_backfill",
-      "community": 179,
+      "community": 48,
       "norm_label": "test_confidence_gate_boundary_order_pool_limit_and_no_backfill()"
     },
     {
@@ -28268,7 +28138,7 @@
       "source_location": "L321",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_agent_vector_ranking_test_top_k_is_applied_after_confidence_filtering",
-      "community": 179,
+      "community": 48,
       "norm_label": "test_top_k_is_applied_after_confidence_filtering()"
     },
     {
@@ -28678,7 +28548,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke",
-      "community": 146,
+      "community": 137,
       "norm_label": "test_demo_smoke.py"
     },
     {
@@ -28688,7 +28558,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend",
-      "community": 95,
+      "community": 137,
       "norm_label": "offlinebgebackend"
     },
     {
@@ -28698,7 +28568,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_embed_catalog",
-      "community": 95,
+      "community": 137,
       "norm_label": ".embed_catalog()"
     },
     {
@@ -28708,7 +28578,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_embed_query",
-      "community": 95,
+      "community": 137,
       "norm_label": ".embed_query()"
     },
     {
@@ -28718,7 +28588,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_py_ndarray",
-      "community": 95,
+      "community": 137,
       "norm_label": "ndarray"
     },
     {
@@ -28728,7 +28598,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_usage_snapshot",
-      "community": 95,
+      "community": 137,
       "norm_label": ".usage_snapshot()"
     },
     {
@@ -28738,7 +28608,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_test_complete_demo_flow_uses_cache_persistence_isolation_and_reset",
-      "community": 95,
+      "community": 137,
       "norm_label": "test_complete_demo_flow_uses_cache_persistence_isolation_and_reset()"
     },
     {
@@ -28748,7 +28618,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_rationale_1",
-      "community": 146,
+      "community": 137,
       "norm_label": "fast offline end-to-end check of the real 50,000-row demo path."
     },
     {
@@ -28978,7 +28848,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_embedding_mode",
-      "community": 95,
+      "community": 135,
       "norm_label": "test_embedding_mode.py"
     },
     {
@@ -28988,7 +28858,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_embedding_mode_test_production_backend_is_lazy_bge",
-      "community": 95,
+      "community": 135,
       "norm_label": "test_production_backend_is_lazy_bge()"
     },
     {
@@ -28998,7 +28868,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_embedding_mode_test_agent_test_mode_is_a_deprecated_noop_selecting_bge",
-      "community": 95,
+      "community": 135,
       "norm_label": "test_agent_test_mode_is_a_deprecated_noop_selecting_bge()"
     },
     {
@@ -29398,7 +29268,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_stability_regressions_test_safe_defaults_phrase_boundaries_and_catalog_families",
-      "community": 257,
+      "community": 175,
       "norm_label": "test_safe_defaults_phrase_boundaries_and_catalog_families()"
     },
     {
@@ -29428,7 +29298,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_state_routing.py"
     },
     {
@@ -29438,7 +29308,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_bare_agent",
-      "community": 64,
+      "community": 28,
       "norm_label": "bare_agent()"
     },
     {
@@ -29448,7 +29318,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_new_session_state_is_not_shared",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_new_session_state_is_not_shared()"
     },
     {
@@ -29458,7 +29328,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_local_live_intent_upgrades_and_only_explicitly_resets",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_local_live_intent_upgrades_and_only_explicitly_resets()"
     },
     {
@@ -29468,7 +29338,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_run_structured_state",
-      "community": 64,
+      "community": 28,
       "norm_label": "_run_structured_state()"
     },
     {
@@ -29478,7 +29348,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_state_editor_prompt_includes_complete_prior_state_and_message",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_state_editor_prompt_includes_complete_prior_state_and_message()"
     },
     {
@@ -29488,7 +29358,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_state_editor_provider_failure_propagates_without_local_fallback",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_state_editor_provider_failure_propagates_without_local_fallback()"
     },
     {
@@ -29498,7 +29368,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_invalid_numeric_fields_keep_historical_field_local_tolerance",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_invalid_numeric_fields_keep_historical_field_local_tolerance()"
     },
     {
@@ -29508,7 +29378,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_structured_target_department_activates_session_only_gender",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_structured_target_department_activates_session_only_gender()"
     },
     {
@@ -29518,7 +29388,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_structured_mens_department_is_normalized",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_structured_mens_department_is_normalized()"
     },
     {
@@ -29528,7 +29398,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_structured_custom_slots_are_accepted",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_structured_custom_slots_are_accepted()"
     },
     {
@@ -29538,7 +29408,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_structured_demographic_is_absent_from_committed_ltm_text",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_structured_demographic_is_absent_from_committed_ltm_text()"
     },
     {
@@ -29548,7 +29418,7 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_end_session_exposes_vector_free_adaptive_update_diagnostics",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_end_session_exposes_vector_free_adaptive_update_diagnostics()"
     },
     {
@@ -29558,7 +29428,7 @@
       "source_location": "L168",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_fast_parser_builds_canonical_active_query",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_fast_parser_builds_canonical_active_query()"
     },
     {
@@ -29568,7 +29438,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_override_replaces_stale_preferences_and_stashes_terms",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_override_replaces_stale_preferences_and_stashes_terms()"
     },
     {
@@ -29578,7 +29448,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_no_preference_erases_slot_without_leaking_stash_into_query",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_no_preference_erases_slot_without_leaking_stash_into_query()"
     },
     {
@@ -29588,7 +29458,7 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_query_serialization_is_deterministic_for_sets",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_query_serialization_is_deterministic_for_sets()"
     },
     {
@@ -29598,7 +29468,7 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_session_state_has_exact_pre_winston_keys",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_session_state_has_exact_pre_winston_keys()"
     },
     {
@@ -29608,7 +29478,7 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_malformed_state_json_rolls_back_then_uses_local_parser",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_malformed_state_json_rolls_back_then_uses_local_parser()"
     },
     {
@@ -29618,7 +29488,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_llm_intent_is_applied_but_deterministic_buying_signal_wins",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_llm_intent_is_applied_but_deterministic_buying_signal_wins()"
     },
     {
@@ -29628,7 +29498,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_longitudinal_identity_and_sequence_validation",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_longitudinal_identity_and_sequence_validation()"
     },
     {
@@ -29638,7 +29508,7 @@
       "source_location": "L256",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_anonymous_reset_keeps_four_argument_api_eligible",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_anonymous_reset_keeps_four_argument_api_eligible()"
     },
     {
@@ -29648,7 +29518,7 @@
       "source_location": "L262",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_end_session_embedding_failure_is_retryable",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_end_session_embedding_failure_is_retryable()"
     },
     {
@@ -29658,7 +29528,7 @@
       "source_location": "L286",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_state_routing_test_session_only_hard_conditions_are_excluded_from_ltm_text",
-      "community": 64,
+      "community": 28,
       "norm_label": "test_session_only_hard_conditions_are_excluded_from_ltm_text()"
     },
     {
@@ -29808,7 +29678,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_store_chronology_space_and_snapshot_contracts",
-      "community": 137,
+      "community": 103,
       "norm_label": "test_store_chronology_space_and_snapshot_contracts()"
     },
     {
@@ -29838,7 +29708,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_failed_snapshot_import_leaves_store_empty",
-      "community": 137,
+      "community": 103,
       "norm_label": "test_failed_snapshot_import_leaves_store_empty()"
     },
     {
@@ -29868,7 +29738,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_vector_memory",
-      "community": 158,
+      "community": 103,
       "norm_label": "vector_memory.py"
     },
     {
@@ -29938,7 +29808,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_vector_memory_rationale_1",
-      "community": 158,
+      "community": 103,
       "norm_label": "gated vector-memory scoring and deterministic evidence serialization."
     },
     {
@@ -29978,7 +29848,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server",
-      "community": 257,
+      "community": 73,
       "norm_label": "server.py"
     },
     {
@@ -29988,7 +29858,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_synchronized",
-      "community": 257,
+      "community": 73,
       "norm_label": "_synchronized()"
     },
     {
@@ -29998,7 +29868,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_whole_keyword",
-      "community": 257,
+      "community": 175,
       "norm_label": "_whole_keyword()"
     },
     {
@@ -30008,7 +29878,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_catalog_family",
-      "community": 257,
+      "community": 175,
       "norm_label": "_catalog_family()"
     },
     {
@@ -30038,7 +29908,7 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_browsersession",
-      "community": 257,
+      "community": 73,
       "norm_label": "browsersession"
     },
     {
@@ -30058,7 +29928,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_browserapplication_init",
-      "community": 73,
+      "community": 253,
       "norm_label": ".__init__()"
     },
     {
@@ -30068,7 +29938,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_py_path",
-      "community": 73,
+      "community": 253,
       "norm_label": "path"
     },
     {
@@ -30078,7 +29948,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_py_agent",
-      "community": 73,
+      "community": 253,
       "norm_label": "agent"
     },
     {
@@ -30228,7 +30098,7 @@
       "source_location": "L367",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler",
-      "community": 254,
+      "community": 73,
       "norm_label": "visualizerhttphandler"
     },
     {
@@ -30248,7 +30118,7 @@
       "source_location": "L372",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_app",
-      "community": 254,
+      "community": 73,
       "norm_label": ".app()"
     },
     {
@@ -30258,7 +30128,7 @@
       "source_location": "L376",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_do_get",
-      "community": 254,
+      "community": 73,
       "norm_label": ".do_get()"
     },
     {
@@ -30268,7 +30138,7 @@
       "source_location": "L397",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_json",
-      "community": 254,
+      "community": 73,
       "norm_label": "._json()"
     },
     {
@@ -30278,7 +30148,7 @@
       "source_location": "L406",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_error",
-      "community": 254,
+      "community": 73,
       "norm_label": "._error()"
     },
     {
@@ -30288,7 +30158,7 @@
       "source_location": "L409",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_serve_html",
-      "community": 254,
+      "community": 73,
       "norm_label": "._serve_html()"
     },
     {
@@ -30298,7 +30168,7 @@
       "source_location": "L419",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_catalog_search",
-      "community": 254,
+      "community": 73,
       "norm_label": "._catalog_search()"
     },
     {
@@ -30308,7 +30178,7 @@
       "source_location": "L443",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_sample_id",
-      "community": 254,
+      "community": 73,
       "norm_label": "._sample_id()"
     },
     {
@@ -30318,7 +30188,7 @@
       "source_location": "L446",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_manual_start",
-      "community": 254,
+      "community": 73,
       "norm_label": "._manual_start()"
     },
     {
@@ -30328,7 +30198,7 @@
       "source_location": "L450",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_manual_step",
-      "community": 254,
+      "community": 73,
       "norm_label": "._manual_step()"
     },
     {
@@ -30338,7 +30208,7 @@
       "source_location": "L457",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_visualizerhttphandler_send_sse",
-      "community": 254,
+      "community": 73,
       "norm_label": "._send_sse()"
     },
     {
@@ -30358,7 +30228,7 @@
       "source_location": "L527",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_run_server",
-      "community": 257,
+      "community": 73,
       "norm_label": "run_server()"
     },
     {
@@ -30368,7 +30238,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_rationale_1",
-      "community": 257,
+      "community": 73,
       "norm_label": "dashboard adapter for the canonical longitudinal shopping agent."
     },
     {
@@ -30378,7 +30248,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_rationale_72",
-      "community": 257,
+      "community": 175,
       "norm_label": "assign exactly one dashboard family from leaf-to-root category components."
     },
     {
@@ -30398,7 +30268,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator",
-      "community": 232,
+      "community": 20,
       "norm_label": "simulator.py"
     },
     {
@@ -30408,7 +30278,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_flatten",
-      "community": 232,
+      "community": 20,
       "norm_label": "_flatten()"
     },
     {
@@ -30418,7 +30288,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_clean",
-      "community": 232,
+      "community": 20,
       "norm_label": "_clean()"
     },
     {
@@ -30428,7 +30298,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_searchable_text",
-      "community": 232,
+      "community": 20,
       "norm_label": "searchable_text()"
     },
     {
@@ -30438,7 +30308,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_any",
-      "community": 232,
+      "community": 20,
       "norm_label": "any"
     },
     {
@@ -30448,7 +30318,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_intent_card",
-      "community": 232,
+      "community": 20,
       "norm_label": "intent_card()"
     },
     {
@@ -30458,7 +30328,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_behavior_for",
-      "community": 232,
+      "community": 20,
       "norm_label": "behavior_for()"
     },
     {
@@ -30468,7 +30338,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_random",
-      "community": 232,
+      "community": 20,
       "norm_label": "random"
     },
     {
@@ -30478,7 +30348,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_materialize_hidden_fields",
-      "community": 232,
+      "community": 20,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -30518,7 +30388,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_load_samples",
-      "community": 232,
+      "community": 20,
       "norm_label": "load_samples()"
     },
     {
@@ -30528,7 +30398,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_path",
-      "community": 232,
+      "community": 20,
       "norm_label": "path"
     },
     {
@@ -30538,7 +30408,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_rationale_1",
-      "community": 232,
+      "community": 20,
       "norm_label": "self-contained public-sample and shopper-simulation helpers for the dashboard."
     },
     {
@@ -30618,7 +30488,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_reset_request_properties",
-      "community": 260,
+      "community": 43,
       "norm_label": "properties"
     },
     {
@@ -30628,7 +30498,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_session_id",
-      "community": 260,
+      "community": 43,
       "norm_label": "session_id"
     },
     {
@@ -30638,7 +30508,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_session_id_type",
-      "community": 260,
+      "community": 43,
       "norm_label": "type"
     },
     {
@@ -30648,7 +30518,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_session_id_minlength",
-      "community": 260,
+      "community": 43,
       "norm_label": "minlength"
     },
     {
@@ -30658,7 +30528,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_user_profile",
-      "community": 260,
+      "community": 42,
       "norm_label": "user_profile"
     },
     {
@@ -30668,7 +30538,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_user_profile_type",
-      "community": 260,
+      "community": 42,
       "norm_label": "type"
     },
     {
@@ -30678,7 +30548,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_user_profile_required",
-      "community": 260,
+      "community": 42,
       "norm_label": "required"
     },
     {
@@ -30758,7 +30628,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_preference_tags",
-      "community": 42,
+      "community": 31,
       "norm_label": "preference_tags"
     },
     {
@@ -30768,7 +30638,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_preference_tags_type",
-      "community": 42,
+      "community": 31,
       "norm_label": "type"
     },
     {
@@ -30778,7 +30648,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_preference_tags_items",
-      "community": 42,
+      "community": 31,
       "norm_label": "items"
     },
     {
@@ -30788,7 +30658,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_items_type",
-      "community": 42,
+      "community": 31,
       "norm_label": "type"
     },
     {
@@ -30818,7 +30688,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_user_profile_additionalproperties",
-      "community": 260,
+      "community": 42,
       "norm_label": "additionalproperties"
     },
     {
@@ -30838,7 +30708,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request",
-      "community": 54,
+      "community": 167,
       "norm_label": "turn_request"
     },
     {
@@ -30848,7 +30718,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_type",
-      "community": 54,
+      "community": 167,
       "norm_label": "type"
     },
     {
@@ -30858,7 +30728,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_required",
-      "community": 54,
+      "community": 167,
       "norm_label": "required"
     },
     {
@@ -30958,7 +30828,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_additionalproperties",
-      "community": 54,
+      "community": 167,
       "norm_label": "additionalproperties"
     },
     {
@@ -30968,7 +30838,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response",
-      "community": 61,
+      "community": 54,
       "norm_label": "turn_response"
     },
     {
@@ -30978,7 +30848,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_type",
-      "community": 61,
+      "community": 54,
       "norm_label": "type"
     },
     {
@@ -30988,7 +30858,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_required",
-      "community": 61,
+      "community": 54,
       "norm_label": "required"
     },
     {
@@ -31108,7 +30978,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_items_properties",
-      "community": 31,
+      "community": 254,
       "norm_label": "properties"
     },
     {
@@ -31118,7 +30988,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_parent_asin",
-      "community": 31,
+      "community": 254,
       "norm_label": "parent_asin"
     },
     {
@@ -31128,7 +30998,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_parent_asin_type",
-      "community": 31,
+      "community": 254,
       "norm_label": "type"
     },
     {
@@ -31138,7 +31008,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_parent_asin_minlength",
-      "community": 31,
+      "community": 254,
       "norm_label": "minlength"
     },
     {
@@ -31148,7 +31018,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_score",
-      "community": 31,
+      "community": 254,
       "norm_label": "score"
     },
     {
@@ -31158,7 +31028,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_score_type",
-      "community": 31,
+      "community": 254,
       "norm_label": "type"
     },
     {
@@ -31178,7 +31048,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_usage",
-      "community": 55,
+      "community": 61,
       "norm_label": "usage"
     },
     {
@@ -31188,7 +31058,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_type",
-      "community": 55,
+      "community": 61,
       "norm_label": "type"
     },
     {
@@ -31198,7 +31068,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_required",
-      "community": 55,
+      "community": 61,
       "norm_label": "required"
     },
     {
@@ -31278,7 +31148,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_additionalproperties",
-      "community": 55,
+      "community": 61,
       "norm_label": "additionalproperties"
     },
     {
@@ -31288,7 +31158,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_additionalproperties",
-      "community": 61,
+      "community": 54,
       "norm_label": "additionalproperties"
     },
     {
@@ -31538,7 +31408,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent",
-      "community": 255,
+      "community": 66,
       "norm_label": "agent.py"
     },
     {
@@ -31548,7 +31418,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_text",
-      "community": 255,
+      "community": 66,
       "norm_label": "_text()"
     },
     {
@@ -31558,7 +31428,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_terms",
-      "community": 255,
+      "community": 66,
       "norm_label": "_terms()"
     },
     {
@@ -31568,7 +31438,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent",
-      "community": 255,
+      "community": 66,
       "norm_label": "agent"
     },
     {
@@ -31578,7 +31448,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_init",
-      "community": 255,
+      "community": 66,
       "norm_label": ".__init__()"
     },
     {
@@ -31588,7 +31458,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_py_path",
-      "community": 255,
+      "community": 66,
       "norm_label": "path"
     },
     {
@@ -31598,7 +31468,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_build_index",
-      "community": 255,
+      "community": 66,
       "norm_label": "._build_index()"
     },
     {
@@ -31608,7 +31478,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_reset",
-      "community": 255,
+      "community": 66,
       "norm_label": ".reset()"
     },
     {
@@ -31618,7 +31488,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_respond",
-      "community": 255,
+      "community": 66,
       "norm_label": ".respond()"
     },
     {
@@ -31628,7 +31498,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_rationale_36",
-      "community": 255,
+      "community": 66,
       "norm_label": "editable weak baseline: stateless bm25 retrieval with no llm dependency."
     },
     {
@@ -31788,7 +31658,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_reset_request_properties",
-      "community": 259,
+      "community": 65,
       "norm_label": "properties"
     },
     {
@@ -31798,7 +31668,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_session_id",
-      "community": 259,
+      "community": 65,
       "norm_label": "session_id"
     },
     {
@@ -31808,7 +31678,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_session_id_type",
-      "community": 259,
+      "community": 65,
       "norm_label": "type"
     },
     {
@@ -31818,7 +31688,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_session_id_minlength",
-      "community": 259,
+      "community": 65,
       "norm_label": "minlength"
     },
     {
@@ -31828,7 +31698,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_user_profile",
-      "community": 259,
+      "community": 41,
       "norm_label": "user_profile"
     },
     {
@@ -31838,7 +31708,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_type",
-      "community": 259,
+      "community": 41,
       "norm_label": "type"
     },
     {
@@ -31848,7 +31718,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_required",
-      "community": 259,
+      "community": 41,
       "norm_label": "required"
     },
     {
@@ -31928,7 +31798,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_preference_tags",
-      "community": 41,
+      "community": 45,
       "norm_label": "preference_tags"
     },
     {
@@ -31938,7 +31808,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_preference_tags_type",
-      "community": 41,
+      "community": 45,
       "norm_label": "type"
     },
     {
@@ -31948,7 +31818,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_preference_tags_items",
-      "community": 41,
+      "community": 45,
       "norm_label": "items"
     },
     {
@@ -31958,7 +31828,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_items_type",
-      "community": 41,
+      "community": 45,
       "norm_label": "type"
     },
     {
@@ -31988,7 +31858,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_additionalproperties",
-      "community": 259,
+      "community": 41,
       "norm_label": "additionalproperties"
     },
     {
@@ -32278,7 +32148,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_items_properties",
-      "community": 45,
+      "community": 158,
       "norm_label": "properties"
     },
     {
@@ -32288,7 +32158,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_parent_asin",
-      "community": 45,
+      "community": 158,
       "norm_label": "parent_asin"
     },
     {
@@ -32298,7 +32168,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_parent_asin_type",
-      "community": 45,
+      "community": 158,
       "norm_label": "type"
     },
     {
@@ -32308,7 +32178,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_parent_asin_minlength",
-      "community": 45,
+      "community": 158,
       "norm_label": "minlength"
     },
     {
@@ -32318,7 +32188,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_score",
-      "community": 45,
+      "community": 158,
       "norm_label": "score"
     },
     {
@@ -32328,7 +32198,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_score_type",
-      "community": 45,
+      "community": 158,
       "norm_label": "type"
     },
     {
@@ -33138,7 +33008,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_semanticparser",
-      "community": 134,
+      "community": 145,
       "norm_label": "semanticparser"
     },
     {
@@ -33368,7 +33238,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_init",
-      "community": 204,
+      "community": 7,
       "norm_label": ".__init__()"
     },
     {
@@ -33378,7 +33248,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_path",
-      "community": 204,
+      "community": 7,
       "norm_label": "path"
     },
     {
@@ -33398,7 +33268,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_ndarray",
-      "community": 204,
+      "community": 7,
       "norm_label": "ndarray"
     },
     {
@@ -33418,7 +33288,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_update_session",
-      "community": 204,
+      "community": 145,
       "norm_label": ".update_session()"
     },
     {
@@ -33448,7 +33318,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_end_session",
-      "community": 105,
+      "community": 204,
       "norm_label": ".end_session()"
     },
     {
@@ -33508,7 +33378,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_rationale_173",
-      "community": 105,
+      "community": 204,
       "norm_label": "distill, embed once, and commit; lifecycle outcomes are ignored."
     },
     {
@@ -34118,7 +33988,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_integration",
-      "community": 256,
+      "community": 138,
       "norm_label": "test_integration.py"
     },
     {
@@ -34338,7 +34208,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_summary_has_fixed_group_order_and_typed_facts",
-      "community": 134,
+      "community": 105,
       "norm_label": ".test_summary_has_fixed_group_order_and_typed_facts()"
     },
     {
@@ -49337,50 +49207,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "archive/winston/lab/bench/plug_check.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "archive_winston_lab_bench_plug_check",
-      "target": "archive_legacy_hybrid_agent_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_evaluator_local_evaluator",
-      "target": "archive_legacy_hybrid_agent_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_memory_tests_test_integration",
-      "target": "archive_legacy_hybrid_agent_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
-      "target": "archive_legacy_hybrid_agent_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "archive/legacy_hybrid_agent/visualizer/export_sessions.py",
@@ -57166,7 +56992,7 @@
       "source_location": "L39",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_experiments_qlmp_component_eval",
-      "target": "techjam_conversational_search_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -59481,7 +59307,7 @@
       "source_location": "L19",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_experiments_run_b0_shadow_validation",
-      "target": "techjam_conversational_search_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -74111,7 +73937,7 @@
       "source_location": "L43",
       "weight": 1.0,
       "source": "archive_research_evaluation_memory_scripts_run_longitudinal_eval",
-      "target": "techjam_conversational_search_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -100435,6 +100261,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "archive/winston/lab/bench/plug_check.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "archive_winston_lab_bench_plug_check",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "archive/winston/lab/bench/plug_check.py",
@@ -107499,10 +107336,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L75",
+      "source_location": "L40",
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
-      "target": "techjam_conversational_search_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -107854,17 +107691,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_memory_store",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -107993,17 +107819,6 @@
       "source_location": "L20",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
-      "target": "system_shopping_agent_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "submodule_import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
       "target": "system_shopping_agent_agent",
       "confidence_score": 1.0
     },
@@ -108351,7 +108166,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L623",
+      "source_location": "L581",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_agent_experimentconfig",
@@ -108362,63 +108177,9 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L532",
+      "source_location": "L508",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
-      "target": "system_shopping_agent_agent_experimentconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_agent_experimentconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L8",
-      "weight": 0.8,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_agent_experimentconfig",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_production_experiment_defaults_are_unchanged",
-      "target": "system_shopping_agent_agent_experimentconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L68",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "target": "system_shopping_agent_agent_experimentconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L95",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
       "target": "system_shopping_agent_agent_experimentconfig",
       "confidence_score": 1.0
     },
@@ -108841,7 +108602,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2318",
+      "source_location": "L2317",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_agent_print_agent_telemetry",
@@ -110278,43 +110039,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L538",
+      "source_location": "L514",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_agent_agent",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_agent_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L8",
-      "weight": 0.8,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_agent_agent",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L93",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "target": "system_shopping_agent_agent_agent"
     },
     {
       "relation": "imports",
@@ -110800,7 +110529,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2388",
+      "source_location": "L2387",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_agent_agent_call_llm",
@@ -111704,7 +111433,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2391",
+      "source_location": "L2390",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_agent_agent_extract_asked_attributes",
@@ -111727,7 +111456,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2341",
+      "source_location": "L2340",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_clarification_select_best_attributes"
@@ -111738,7 +111467,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2405",
+      "source_location": "L2404",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_embedding_backends_bgeembeddingbackend_model"
@@ -111749,7 +111478,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2301",
+      "source_location": "L2300",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_runtime_runtimeproviders_provider"
@@ -112521,17 +112250,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_clarification",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/tests/test_catalogue_layers.py",
       "source_location": "L14",
       "weight": 1.0,
@@ -112624,39 +112342,6 @@
       "source": "system_shopping_agent_clarification_rationale_188",
       "target": "system_shopping_agent_clarification_select_fixed_priority_attributes",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_clarification_select_fixed_priority_attributes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_fixed_priority_is_deterministic_and_intent_specific",
-      "target": "system_shopping_agent_clarification_select_fixed_priority_attributes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "assignment",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L69",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "target": "system_shopping_agent_clarification_select_fixed_priority_attributes"
     },
     {
       "relation": "contains",
@@ -114830,7 +114515,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L539",
+      "source_location": "L515",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_embedding_backends_bgeembeddingbackend",
@@ -117183,17 +116868,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_model_client",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/visualizer/simulator.py",
       "source_location": "L11",
       "weight": 1.0,
@@ -117611,38 +117285,6 @@
       "source": "system_shopping_agent_openai_client_openaitimeouterror",
       "target": "system_shopping_agent_model_client_modelcall",
       "confidence_score": 0.5
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_model_client_modelcall",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L10",
-      "weight": 0.8,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_model_client_modelcall",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat_result",
-      "target": "system_shopping_agent_model_client_modelcall"
     },
     {
       "relation": "method",
@@ -118328,7 +117970,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L537",
+      "source_location": "L513",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_ollama_client_ollamaclient",
@@ -119012,7 +118654,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L681",
+      "source_location": "L639",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_build_parser",
@@ -119022,7 +118664,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L558",
+      "source_location": "L534",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_determinism_signature",
@@ -119052,7 +118694,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L695",
+      "source_location": "L653",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_main",
@@ -119062,7 +118704,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L435",
+      "source_location": "L420",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_metric_observation",
@@ -119072,7 +118714,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L446",
+      "source_location": "L431",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
@@ -119112,7 +118754,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L577",
+      "source_location": "L553",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_report",
@@ -119122,7 +118764,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L617",
+      "source_location": "L575",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_run",
@@ -119132,7 +118774,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L532",
+      "source_location": "L508",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_run_condition",
@@ -119172,7 +118814,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L381",
+      "source_location": "L380",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments",
       "target": "system_shopping_agent_run_ablation_experiments_summarize_sessions",
@@ -119274,17 +118916,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_run_ablation_experiments",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -119333,7 +118964,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L532",
+      "source_location": "L508",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_run_ablation_experiments_py_path",
@@ -119366,7 +118997,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L558",
+      "source_location": "L534",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_determinism_signature",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119399,7 +119030,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L435",
+      "source_location": "L420",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_metric_observation",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119410,7 +119041,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L446",
+      "source_location": "L431",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119443,7 +119074,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L577",
+      "source_location": "L553",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_report",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119454,7 +119085,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L617",
+      "source_location": "L575",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119465,7 +119096,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L532",
+      "source_location": "L508",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119498,7 +119129,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L381",
+      "source_location": "L380",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_summarize_sessions",
       "target": "system_shopping_agent_run_ablation_experiments_py_any",
@@ -119531,7 +119162,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L697",
+      "source_location": "L655",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_main",
       "target": "system_shopping_agent_run_ablation_experiments_json_default",
@@ -119542,7 +119173,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L659",
+      "source_location": "L617",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_json_default",
@@ -119564,7 +119195,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L654",
+      "source_location": "L612",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_write_json",
@@ -119575,7 +119206,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L668",
+      "source_location": "L626",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_sha256",
@@ -119629,7 +119260,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L618",
+      "source_location": "L576",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_preflight",
@@ -119684,7 +119315,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L538",
+      "source_location": "L514",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_run_ablation_experiments_py_agent",
@@ -119717,7 +119348,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L548",
+      "source_location": "L524",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run_condition",
       "target": "system_shopping_agent_run_ablation_experiments_run_session",
@@ -119761,7 +119392,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L635",
+      "source_location": "L593",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_summarize_sessions",
@@ -119772,7 +119403,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L487",
+      "source_location": "L472",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
       "target": "system_shopping_agent_run_ablation_experiments_metric_observation",
@@ -119782,9 +119413,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L449",
+      "source_location": "L434",
       "weight": 1.0,
-      "source": "system_shopping_agent_run_ablation_experiments_rationale_449",
+      "source": "system_shopping_agent_run_ablation_experiments_rationale_434",
       "target": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
       "confidence_score": 1.0
     },
@@ -119793,40 +119424,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L636",
+      "source_location": "L594",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L131",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_paired_deltas_and_factorial_interaction_on_known_results",
-      "target": "system_shopping_agent_run_ablation_experiments_paired_comparisons",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L629",
+      "source_location": "L587",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_run_condition",
@@ -119837,7 +119446,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L637",
+      "source_location": "L595",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_determinism_signature",
@@ -119848,7 +119457,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L675",
+      "source_location": "L633",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_report",
@@ -119859,7 +119468,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L697",
+      "source_location": "L655",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_main",
       "target": "system_shopping_agent_run_ablation_experiments_run",
@@ -119870,7 +119479,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L617",
+      "source_location": "L575",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_run",
       "target": "system_shopping_agent_run_ablation_experiments_py_namespace",
@@ -119881,7 +119490,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L681",
+      "source_location": "L639",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_build_parser",
       "target": "system_shopping_agent_run_ablation_experiments_py_argumentparser",
@@ -119892,7 +119501,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/run_ablation_experiments.py",
-      "source_location": "L696",
+      "source_location": "L654",
       "weight": 1.0,
       "source": "system_shopping_agent_run_ablation_experiments_main",
       "target": "system_shopping_agent_run_ablation_experiments_build_parser",
@@ -120088,236 +119697,6 @@
       "weight": 1.0,
       "source": "system_shopping_agent_visualizer_simulator_call_shopper_llm",
       "target": "system_shopping_agent_runtime_get_runtime_providers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L106",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_row",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_fixed_priority_is_deterministic_and_intent_specific",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_four_conditions_vary_only_the_two_registered_factors",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L123",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_paired_deltas_and_factorial_interaction_on_known_results",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_production_experiment_defaults_are_unchanged",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_agent_vector_ranking",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_tests_test_agent_vector_ranking_ranking_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_visualizer_simulator",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "system_shopping_agent_visualizer_simulator_call_shopper_llm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment",
-      "target": "techjam_conversational_search_memory_types",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat_result",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_init",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_instrumentation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat_result",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "target": "system_shopping_agent_tests_test_agent_vector_ranking_ranking_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L99",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "target": "system_shopping_agent_visualizer_simulator_call_shopper_llm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/tests/test_ablation_experiment.py",
-      "source_location": "L126",
-      "weight": 1.0,
-      "source": "system_shopping_agent_tests_test_ablation_experiment_test_paired_deltas_and_factorial_interaction_on_known_results",
-      "target": "system_shopping_agent_tests_test_ablation_experiment_row",
       "confidence_score": 1.0
     },
     {
@@ -123524,17 +122903,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/vector_memory.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "system_shopping_agent_vector_memory",
-      "target": "techjam_conversational_search_memory_store",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/vector_memory.py",
@@ -125865,6 +125233,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
@@ -126329,6 +125708,28 @@
       "weight": 1.0,
       "source": "techjam_conversational_search_participant_kit_starter_init_rationale_1",
       "target": "techjam_conversational_search_participant_kit_starter_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_evaluator_local_evaluator",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_memory_tests_test_integration",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
       "confidence_score": 1.0
     },
     {

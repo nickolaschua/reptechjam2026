@@ -1,4 +1,4 @@
-"""Yangxu dashboard adapter for the canonical longitudinal shopping agent."""
+"""Dashboard adapter for the canonical longitudinal shopping agent."""
 
 from __future__ import annotations
 
@@ -332,7 +332,9 @@ class BrowserApplication:
         next_turn = active.turn + 1
         response = self.agent.respond(
             active.session_id, message, next_turn, TOP_K,
-            buyer_mode=buyer_mode_for_scenario(active.sample["scenario_type"]), debug=True,
+            buyer_mode=buyer_mode_for_scenario(active.sample["scenario_type"]),
+            debug=True,
+            emit_trace=True,
         )
         active.turn = next_turn
         ranked = [str(item.get("parent_asin", "")) for item in response.get("recommendations", []) if str(item.get("parent_asin", "")) in self.catalog_ids][:TOP_K]
@@ -536,7 +538,7 @@ def run_server(
         allow_catalog_embedding=allow_catalog_embedding,
     )
     server = ThreadingHTTPServer(("0.0.0.0", int(port)), VisualizerHTTPHandler)
-    print(f"[Server] Yangxu dashboard: http://localhost:{port}")
+    print(f"[Server] Dashboard: http://localhost:{port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
