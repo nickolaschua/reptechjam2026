@@ -107,6 +107,7 @@ Behaviour, measured:
 |---|--:|--:|---|
 | 60 full evaluator sessions | TechnicalScore 0.872409 | identical on every metric | a parser stub that raises proves the LLM is never called on template text |
 | 1,685 human-style messages, turn 1 | hit@10 0.043, MRR 0.011 | hit@10 0.196, MRR 0.103 | paired: 553 better, 50 worse, 1,082 tie |
+| Yang Xu's hybrid agent (FTS5 + BGE fallback + LLM tracker), same 400 cases | hit@10 0.050, MRR 0.030 | hit@10 0.182, MRR 0.088 | paired 116 better, 18 worse, 266 tie; his router sent 271/400 to its no-LLM matcher (0.000 there); where his LLM ran (129) he scores 0.155 vs the bolt-on's 0.225 on the same cases |
 
 Same message trace as section 1: the parse returns category_phrase
 "long sleeve shirts" and slots use_case "fishing", feature "blocks the sun",

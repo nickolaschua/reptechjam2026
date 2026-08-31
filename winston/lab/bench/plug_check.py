@@ -68,9 +68,13 @@ def run_bench() -> None:
             ranks[name].append(rank_of(agent.respond(sid, c["utterance"], 1, 50), c["asin"]))
         if (i + 1) % 400 == 0:
             print(f"  {i + 1}/{len(cases)}", flush=True)
+    out = BENCH / "results_plug.jsonl"
+    with out.open("w") as fh:
+        for c, s_, p_ in zip(cases, ranks["stock"], ranks["plugged"]):
+            fh.write(json.dumps({"case_id": c["case_id"], "asin": c["asin"], "stock_rank": s_, "plugged_rank": p_}) + "\n")
     def hit(rs): return sum(1 for r in rs if r and r <= 10) / len(rs)
     def mrr(rs): return sum(1 / r for r in rs if r and r <= 10) / len(rs)
-    print(f"\nDEPLOYED agent on {len(cases)} messy cases (turn 1):")
+    print(f"\nDEPLOYED agent on {len(cases)} messy cases (turn 1)  -> {out.name}:")
     for name in ("stock", "plugged"):
         print(f"  {name:8} hit@10 {hit(ranks[name]):.3f}  mrr {mrr(ranks[name]):.3f}")
     both = list(zip(ranks["stock"], ranks["plugged"]))

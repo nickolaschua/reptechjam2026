@@ -15,11 +15,25 @@ question policy are untouched. This strictly dominates the existing infra:
 | human-typed messy input (n=1,685, turn 1) | hit@10 **0.043** / MRR 0.011 | **0.196** / 0.103 (4.6x) | `plug_check.py --bench`; paired 553 better / 50 worse / 1082 tie |
 | exp11 retrieval, fair per-track (n=1,685) | hit@10 **0.143** [.127,.160] | **0.233** [.211,.253] | `report.py`; 191 rescues / 40 regressions |
 
-The baselines that matter are the ones the team built: exp11's FTS5 (above) and Yang Xu's
-hybrid agent (FTS5 + BGE fallback + LLM tracker) - the latter is being run on the same
-1,685 cases (`shop_agent_baseline.py`) and its row lands here. The paraphrase result
-(regex 0.03 -> parsed 0.77, = the un-paraphrased regex score 30/30) is kept as a gate
-in `template_check.py`, not a headline: the regex was never designed to see paraphrases.
+| Yang Xu's hybrid agent as shipped (FTS5 + BGE fallback + LLM tracker), same 400 cases | hit@10 **0.050** / MRR 0.030 | starter+bolt-on on those 400: **0.182** / 0.088 | `shop_agent_baseline.py 400`; paired 116 better / 18 worse / 266 tie |
+
+### Yang Xu's agent on the same 400 cases, by the route his own code chose
+
+| his route | n | Yang Xu legacy | starter regex | starter + bolt-on |
+|---|--:|--:|--:|--:|
+| "i'm looking for ..." -> his no-LLM exact lexical matcher | 271 | **0.000** | 0.107 | 0.162 |
+| everything else -> his LLM state tracker + BGE fallback | 129 | 0.155 | 0.000 | **0.225** |
+
+His `respond()` treats any turn-1 message that starts with "i'm looking for " as a
+simulator message and switches its LLM off; 68% of the generated utterances open that way.
+Where his LLM does run, the bolt-on still wins on the same cases (0.225 vs 0.155). Run was
+local-only: Ollama llama3.1 state tracker (his hard-coded 3 s timeout lifted in memory, else
+every call fell to a static string), API keys stripped after import, 0 Ollama failures,
+0 JSON-parse failures. The `model_used` label on his LLM-route rows is his static telemetry
+string ("GPT-4o-Mini"), not the model that answered.
+
+The paraphrase result (regex 0.03 -> parsed 0.77, = the un-paraphrased regex score 30/30)
+is kept as a gate in `template_check.py`, not a headline.
 
 ## Where the gain comes from (fair per-track comparison, exp11 retrieval, n=1,685)
 
