@@ -1,0 +1,134 @@
+Target Product Title: Kamik Women's Momentum Snow Boot
+Target ASIN: B00BCHDM14
+Scenario: buying
+Constraints: ['nylon', 'Nylon']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some snow boots and they need to be made of nylon.
+Copilot: Great choice with nylon! What color are you looking for in your snow boots?
+Copilot Attribute Query: color
+Recommendations:
+  1. Kamik Fleet Snow Boot (Toddler/Little Kid/Big Kid) (ASIN: B00SK4E2SY)
+  2. Sorel Girl's Children's Yoot Pac Nylon Snow Boot, Quarry, sail red, 11 M US Little Kid (ASIN: B0779RDW39)
+  3. Kamik Unisex-Child Parker2 Snow Boot (ASIN: B077ZLWBCM)
+  4. GLOBALWIN Women's Adeline Winter Snow Boots (ASIN: B0728NXLCJ)
+  5. Toddler Snow Boots Boys & Girls Lightweight Waterproof Cold Weather Winter Outdoor Boots (Toddler/Little Kid) (ASIN: B07RX4JHCY)
+  6. Feionusin Women Fleece Lined Tights Sheer Winter Warm Pantyhose High Waist Translucent Tights Thick Thermal Leggings (ASIN: B0BKGM24TM)
+  7. Happy Bull Black Men's Water Resistant Lace-up Comfort Cold Winter Snow Boots (Y05) 10 M US (ASIN: B00GIOBNZI)
+  8. Sorel Women's Whitney II Short Lace Boots (ASIN: B098C95Z3T)
+  9. GLOBALWIN Women's Fur Trek Winter Boots (ASIN: B074X9PMTT)
+  10. FREE SOLDIER Women's Outdoor Snow Ski Insulated Pants Windproof Waterproof Breathable Pants for Snowboarding (ASIN: B07W94KWZX)
+
+--- TURN 2 ---
+Shopper: i'm not too picky about color, but i'm really looking for something with a faux fur collar and good grip for snow. do you have any options like that?
+Copilot: I have some options that fit your criteria! Just to narrow it down a bit more, what size are you looking for in your snow boots?
+Copilot Attribute Query: size
+Recommendations:
+  1. Dr. Martens Women's 2976 Leonore Chelsea Boot (ASIN: B079MSN9X3)
+  2. IceUnicorn Boys Girls Snow Boots Waterproof Winter Boots Outdoor Warm Shoes with Faux Fur Lined for Cold Weather (Toddler/Little Kid/Big Kid) (ASIN: B07WTQDHKN)
+  3. BTDREAM Girl's Snow Boots Outdoor Walking Warm Winter Flat Fur Shoes (ASIN: B075QB9G7C)
+  4. Enzo Romeo Chateau Womens Twin Button Fully Fur Lined Winter Snow Boots (ASIN: B07YGKXP7W)
+  5. totes Kids Vana Waterproof Snow Boots for Boys and Girls (ASIN: B01HQKXUDA)
+  6. Boots for Women, Arch Support Boots for Women Premium Orthopedic Ankle Boots Leather Comfortable Side Zip Wedge Booties (ASIN: B09HHGMS9F)
+  7. DailyShoes Women's Sneaker Boots Knee-high Mid Calf Tall Fashion Sneakerss Lace Up Knee High Cool Riding Lace-up Super Top Athletic Shoes for Women Purple,11, Shoelace Style Lavender (ASIN: B00QHCWZS0)
+  8. totes Girls Karen Snow Boot (ASIN: B013F9W1OU)
+  9. Women's Faux Fur Lined Thick Sole Winter Snow Suede Boots Shoes (ASIN: B00OYZNJHI)
+  10. Everybody Women's Polaris Snow Boot (ASIN: B00K8PIQ1C)
+
+--- TURN 3 ---
+Shopper: i'm looking for a women's size 8. also, i'm really hoping to find something with a nice faux-fur collar and good traction for snow and ice.
+Copilot: It sounds like you're set on some great features! To help find the perfect pair, do you have a preferred brand in mind for your snow boots?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Journee Collection Womens Faux Fur Trim Tall Wedge Boots (ASIN: B005CKH75E)
+  2. kensie Women's Holliston Fashion Boot (ASIN: B07XS8GB7T)
+  3. GLOBALWIN Women's Waterproof Winter Boots Snow Boots For Women (ASIN: B074G1JP8Z)
+  4. JASAMBAC Womens Casual Fuzzy Fleece Hooded Cardigan Pocket Faux Fur Outerwear Coat (ASIN: B099Z7PFJS)
+  5. ZAFUL Men' s Fuzzy Hoodie Unisex Color Block Sherpa Pullover Loose Fluffy Drawstring Hooded Sweatshirt Outwear (ASIN: B0814TB2DM)
+  6. VATI Cat Ears Headband Cosplay, 2 Pcs Kawaii Furry Neko Ears with Ribbon Bell Accessory for Women Girls Halloween Cosplay Party (ASIN: B093R6W692)
+  7. babaka Winter Boots for Women Waterproof Snow Classic Warm Rain Shoes (ASIN: B07ZV99Q2T)
+  8. Boots for Women Lace Up Thick Low Heels Shoes Fashion Women Casual Riding Vintage Retro Mid-Calf Boots Winter Warm Snow Boots (ASIN: B09FSX9NMW)
+  9. NOLDARES Boots for Women Platform Boots Round Toe Square Heel Ankle Motorcycles Booties Wedges Cowgirl Boots Women (ASIN: B0992F13GP)
+  10. DREAM PAIRS Minx Women's Winter Fully Fur Lined Triple Buckle Ruched Snow Knee High Boots Grey Pu Size 8.5 Wide Calf (ASIN: B07F6XVCMR)
+
+--- TURN 4 ---
+Shopper: i don't have a specific brand in mind, but i'm really looking for something with nylon material and a nice faux fur collar. any options that fit that?
+Copilot: I have some options that match your preferences! Just to refine the search a bit more, do you have a particular style in mind for your snow boots?
+Copilot Attribute Query: style
+Recommendations:
+  1. Journee Collection Womens Faux Fur Trim Tall Wedge Boots (ASIN: B005IFCZ6O)
+  2. UGG Women's Isla Heathered Grey 1008840-HGRY (ASIN: B00RKJ2N8G)
+  3. Bedroom Athletics Marilyn Faux Fur Slipper Boots (ASIN: B00JJZQKD8)
+  4. Reneeze Womens Coco-3 Faux Fur Mid Calf Boots (ASIN: B0098BNL58)
+  5. Cambridge Select Women's Faux Fur Pom-Pom Crisscross Tie Flat Mid-Calf Boot,7 B(M) US,Brown (ASIN: B07GH7V8MM)
+  6. Lauren by Ralph Lauren Women's Quinlyn Snow Boot (ASIN: B01GFJOV7W)
+  7. Madden Girl Women's Shoes Svet Faux Fur Closed Toe Ankle, Sand Fab, Size 7.5 (ASIN: B08KB42ZL1)
+  8. Acorn Women's Mt.kineo Boot (ASIN: B00STQ8TGE)
+  9. Coutgo Womens Winter Mid Calf Slouchy Low Block Heel Faux Leather Riding Booties with Buckle (ASIN: B08S6SXF31)
+  10. MUK LUKS Women's Janet Rib Cuff Boot-Java Fashion (ASIN: B0897WX4Y3)
+
+--- TURN 5 ---
+Shopper: i'm looking for something that has a nice faux fur collar and is really warm. ideally, it should be made of nylon and have a good grip for snow and ice. do you have anything like that?
+Copilot: It sounds like you're looking for the perfect combination! Just to narrow it down further, what’s your budget for these snow boots?
+Copilot Attribute Query: budget
+Recommendations:
+  1. andy & natalie Women's Button Sweater V Neck Sweater Ribbed Pullover Sweater Long Sleeve Sweater with Pockets (ASIN: B07Y2LKNGM)
+  2. Huxlay Bros HB Sapna Ladies Modest Jumpsuit One Piece Swimsuit Surfing Suit UPF 50+, 7610 (ASIN: B071DN7Z23)
+  3. antcreptson Happy Uterus in Black, Small Repeat Athletic Hiking Crew Socks Womens Mens Socks Soft Thick Cozy Warm Casual Compression Socks (ASIN: B08HD178S2)
+  4. Fantiny Women's Down Jacket Packable Ultra Lightweight Outwear Coats with Travel Bag (ASIN: B07GB6H1ZW)
+  5. SEFFORANO Womens Down Jacket Packable Outerwear Water Resistant Lightweight Winter Coat with Hood (ASIN: B09BNGGPLB)
+  6. ScarvesMe Exclusive Women's Tie Dye Soft Knit Winter Warm Beanie Hat with Rubber Patch (ASIN: B08JNQ5HR2)
+  7. Koinshha Women's Long Sleeve V-Neck Sweater Dress Autumn Winter Drawstring Casual Fitted Knit Sweater Dress (ASIN: B0B612NMPC)
+  8. Trapper Bluetooth Hat Ushanka Russian Hat with Mask for Men Women Winter Hunting Hat Windproof Ski Mask Aviator Bomber Hat with Build-in Wireless Earphones Mic Black (ASIN: B0BC7RYD2M)
+  9. Masbird Booties for Women,Low Heel Slip On Ankle V Cut Boots Winter Warm Stacked Chunky Heel Short Booties (ASIN: B09HKM9RLD)
+  10. MUSIDORA Women's Gold Plated Chain Furry Open Toe Fashion Slip On Fluffy Slipper Shoes (ASIN: B098K1XR9R)
+
+--- TURN 6 ---
+Shopper: i'm not really looking for anything too pricey, just something reasonable. none of these seem to be what i need though. i'm really after a nylon snow boot with a comfy fit and maybe some faux fur. do you have anything like that?
+Copilot: I understand you're looking for a cozy nylon snow boot with a faux fur collar. To help find the best options, could you let me know if you have a preference for the boot height, like ankle or knee-high?
+Copilot Attribute Query: other
+Recommendations:
+  1. Holzkary Boots for Women Side Zipper Comfortable Chunky Low Heel Ankle Booties (ASIN: B09P5B5PT8)
+  2. MUK LUKS Women's Short Speckled Melana (ASIN: B00TRCRLJU)
+  3. MACKIN J 126-3 Women's Wide Calf Ankle Boots Cone Heel Western Cowboy Cowgirl Booties (ASIN: B07KW31YGZ)
+  4. Sorel Women's Timberwolf 09 Boot (ASIN: B001OTYQWE)
+  5. Naughty Monkey Women's Chillin Wedge Boot (ASIN: B000JN7MRC)
+  6. Aerosoles Women's Nonchalant Boot (ASIN: B00VAZXZ06)
+  7. Bucco Suvega Womens Fashion Faux Shearling Buckle Boots, Stone, Size 7.5, US (ASIN: B01COJILKK)
+  8. Premier Standard - Women's Fashion Comfy Vegan Suede Side Zipper Over Knee High Boots (ASIN: B07J6JR38C)
+  9. MeetLover 2019 Archs Support Boots Women's Autumn and Winter New Casual Short Flat Boots Comfy Classic Side Zipper PU Width Brie Ankle (ASIN: B07XY3G6J1)
+  10. SOVIKER 2019 New Arch Support Boots Women's Side Zipper Ankle Booties Comfy Leather Flat Heel Boots-199Womens Boot-Brown-41 (ASIN: B07ZRBFQWL)
+
+--- TURN 7 ---
+Shopper: i'm really looking for a snow boot, ideally with a rubber sole and some nice traction for icy conditions. none of these seem to fit what i need. do you have anything else that matches those features?
+Copilot: I appreciate your patience! It sounds like you're looking for a nylon snow boot with a rubber sole and good traction. Could you let me know if you have a preference for the material of the boot, like waterproof or something else?
+Copilot Attribute Query: material
+Recommendations:
+  1. ANN CREEK Women's 'Tonale' Two-Tone Slouch Shaft Fur Trim Winter Knee-high Boots (ASIN: B07KBWSYLB)
+  2. Bogan Boots Classic Short Sheepskin Boots (ASIN: B006P5THSA)
+  3. DREAM PAIRS Women’s White Black Platform Boots Low Wedge Heel Ankle Booties Lace-up Combat Boots (ASIN: B097XSNQQN)
+  4. BTDREAM Girl's Snow Boots Outdoor Walking Warm Winter Flat Fur Shoes (ASIN: B075QBMYNQ)
+  5. Oberm Mens Womens Winter Snow Boots Slip on Water Resistant Boots Fully Fur Lined Ankle Booties Outdoor Shoes Camel (ASIN: B075WS6YF1)
+  6. LIGHTEN Waterproof Snow Sneakers Boots Fur Lined Ankle High-Top Outdoor Slip-on Booties Anti-Slip Winter Shoes for Womens Mens (ASIN: B07HSYYG89)
+  7. Almusen Snow Boots for Women Winter Shoes with Warm Fur Lined Non Slip Black Ankle Boots Hook Loop Outdoor Womens Booties Comfortable Platform Shoes (ASIN: B0BGQBLKY8)
+  8. SNIDEL Women's Warm Snow Boots Winter Cotton Suede Round Toe Shoes for Girls Chunky Low Heel Short Ankle Booties (ASIN: B07K7KJ7MT)
+  9. JOYBI Womens Winter Round Toe Snow Boots Hidden Wedge Heel Zip Fur Lined Fringe Comfort Slip-On Ankle Shoes (ASIN: B07ZX36FVH)
+  10. Drecage Women's Winter Snow Boots with Warm Fur Lining Waterproof Ankle Boots Outdoor Anti Slip Shoes A Black (ASIN: B08DHTJ3DR)
+
+--- TURN 8 ---
+Shopper: i'm really looking for something that's nylon and ideally has a rubber sole. waterproof would be great too, especially with a nice faux-fur collar. do you have any options that fit that?
+Copilot: I found some great options that fit your criteria! You might want to check out the Kamik Women's Momentum Snow Boot and the Sorel Women's Cumberland Boot, both of which are nylon, have a rubber sole, and are waterproof with a faux fur collar. Would you like more details on either of these?
+Copilot Attribute Query: other
+Recommendations:
+  1. bebe girls Winter Boots (ASIN: B096W8RZQ1)
+  2. Lucky Top Pure8 Kids Faux Fur Lined Cuff Lace Up Wedge Heel Winter Boots (ASIN: B00O84F8EM)
+  3. Laurentian Chief Women's Nuka Rabbit Fur Suede Ankle Moccasin Boots (ASIN: B0B7B573SX)
+  4. Premier Standard - Women's Round Toe Faux Suede Stacked Heel Western Ankle Bootie (ASIN: B076L28RDL)
+  5. KEEN Women's Howser Mid Fashion Boot (ASIN: B077KGQZQW)
+  6. KARKEIN Military Tactical Boots Army Combat Jungle Boots Lace up Desert Martin Boots for Women and Men (ASIN: B075WT2N8G)
+  7. YDN Women Peep Toe Thigh High Heel Boots Stiletto Lace-up Suede Winter Shoes with Zipper (ASIN: B086ZWFQ3K)
+  8. Kamik Women's Momentum Snow Boot (ASIN: B00BCHDM14)
+  9. Sorel Women's Cumberland Boot (ASIN: B000W8WMOM)
+  10. Columbia Women's Minx Shorty Omni-Heat(TM) Boot (ASIN: B00Q7R0YXS)
+
+=== RESULT: SUCCESS (Turn 8) ===

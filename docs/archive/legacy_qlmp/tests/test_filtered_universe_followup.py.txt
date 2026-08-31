@@ -1,0 +1,120 @@
+import inspect
+import unittest
+
+import numpy as np
+
+from nickolas.shopping_agent.longitudinal_eval.filtered_universe_followup import (
+    CANDIDATE_UNIVERSE,
+    HARD_MASK_SEMANTICS_VERSION,
+    LOCAL_K,
+    RANK,
+    ZERO_EXTERNAL_CALLS,
+    _sample_gate,
+    assert_q_m0_reused,
+    assert_raw_cosine_unchanged,
+    assert_same_memory_order,
+    assert_same_memory_vectors,
+    current_m0_hard_conditions,
+    determine_eligibility,
+)
+
+
+class FilteredUniverseFollowupTests(unittest.TestCase):
+    def test_hard_mask_reconstruction_uses_current_m0_missing_semantics(self):
+        products = [{"price": 20.0}, {"price": "$130.00"}, {"price": None}]
+        before = [dict(value) for value in products]
+        result = determine_eligibility("fixture", "session", {"price_max": 120.0}, products)
+        self.assertTrue(result.qualifies)
+        self.assertEqual(result.eligible_catalogue_count, 1)
+        self.assertEqual(products, before)
+
+    def test_soft_conditions_are_not_promoted_to_hard(self):
+        state = {
+            "price_max": 9999.0,
+            "category": "socks",
+            "department": "clothing",
+            "disclosed_slots": {
+                "brand": ["X"], "style": ["minimal"], "color": ["black"]
+            },
+            "negated_terms": ["neon"],
+        }
+        self.assertEqual(current_m0_hard_conditions(state), {})
+        result = determine_eligibility("fixture", "session", state, [{"price": 10.0}])
+        self.assertFalse(result.qualifies)
+
+    def test_eligible_row_alignment_and_candidate_universe_are_frozen(self):
+        products = [{"price": 10.0}, {"price": None}, {"price": 30.0}]
+        result = determine_eligibility("f", "s", {"price_max": 20.0}, products)
+        self.assertEqual((result.eligible_catalogue_count, result.catalogue_count), (1, 3))
+        self.assertEqual(CANDIDATE_UNIVERSE, "post_current_m0_hard_filter")
+        self.assertEqual((LOCAL_K, RANK), (500, 16))
+        self.assertEqual(
+            HARD_MASK_SEMANTICS_VERSION, "current-m0-price-max-missing-as-9999-v1"
+        )
+
+    def test_eligibility_is_target_and_label_blind(self):
+        parameters = inspect.signature(determine_eligibility).parameters
+        self.assertNotIn("target_product_id", parameters)
+        self.assertNotIn("labels", parameters)
+        self.assertNotIn("memories", parameters)
+
+    def test_raw_cosine_and_pair_alignment_invariants(self):
+        full = [
+            {"fixture_id": "f", "memory_id": "m1", "raw_cosine": 0.25},
+            {"fixture_id": "f", "memory_id": "m2", "raw_cosine": -0.10},
+        ]
+        filtered = [dict(row) for row in full]
+        assert_same_memory_order(full, filtered)
+        assert_raw_cosine_unchanged(full, filtered)
+        filtered[1]["raw_cosine"] = -0.09
+        with self.assertRaisesRegex(ValueError, "raw cosine changed"):
+            assert_raw_cosine_unchanged(full, filtered)
+
+    def test_exact_q_m0_and_memory_vectors_are_reused(self):
+        q = np.asarray([0.6, 0.8], dtype=np.float32)
+        assert_q_m0_reused(q, q.copy())
+        with self.assertRaisesRegex(ValueError, "canonical float32"):
+            assert_q_m0_reused(q, q.astype(np.float64))
+        memories = [np.asarray([1.0, 0.0], dtype=np.float64)]
+        assert_same_memory_vectors(memories, [memories[0].copy()])
+        with self.assertRaisesRegex(ValueError, "memory vector changed"):
+            assert_same_memory_vectors(
+                memories, [np.asarray([0.0, 1.0], dtype=np.float64)]
+            )
+
+    def test_same_memory_order_is_enforced(self):
+        full = [
+            {"fixture_id": "f", "memory_id": "m1"},
+            {"fixture_id": "f", "memory_id": "m2"},
+        ]
+        with self.assertRaisesRegex(ValueError, "ordered candidate memories changed"):
+            assert_same_memory_order(full, list(reversed(full)))
+
+    def test_sample_gate_stops_underpowered_arm(self):
+        fixtures = [
+            {"fixture_id": f"f{index}", "user_id": f"u{index % 3}"}
+            for index in range(8)
+        ]
+        counts = {
+            "positive_count": 4,
+            "negative_count": 37,
+            "positive_user_count": 2,
+            "hard_negative_type_counts": {
+                "same_category": 3,
+                "contextual_requirement": 12,
+                "override_conflict": 6,
+            },
+        }
+        result = _sample_gate(fixtures, counts)
+        self.assertFalse(result["passed"])
+        self.assertEqual(
+            result["failed_fields"],
+            ["query_count", "positive_count", "same_category_hard_negative_type_count"],
+        )
+
+    def test_zero_call_contract_is_explicit(self):
+        self.assertEqual(ZERO_EXTERNAL_CALLS, {"llm": 0, "openai": 0})
+
+
+if __name__ == "__main__":
+    unittest.main()

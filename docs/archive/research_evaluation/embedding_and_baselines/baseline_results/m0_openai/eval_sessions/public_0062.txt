@@ -1,0 +1,38 @@
+Target Product Title: chouyatou Women's Casual Stretch Waist Washed Denim A-line Maxi Skirt
+Target ASIN: B015K51VPM
+Scenario: browsing
+Constraints: ['fabric', 'color: black']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual maxi skirt in black. it should have a stretchy waist and be made of denim.
+Copilot: It sounds like you're looking for a specific style! Could you let me know what size you need for the maxi skirt?
+Copilot Attribute Query: style
+Recommendations:
+  1. Plus Size Tops for Womens Deep V Off Shoulder Blouse Asymmetric Hem T Shirts Solid Color Sexy Casual Loose Fit Tunic (ASIN: B08ZT28D93)
+  2. Feionusin Women Fleece Lined Tights Sheer Winter Warm Pantyhose High Waist Translucent Tights Thick Thermal Leggings (ASIN: B0BKGM24TM)
+  3. StyleDome Off The Shoulder Pullover Sweater Sexy Long Sleeves Tops for Women (ASIN: B07W4QYS1Q)
+  4. BTFBM Women Summer Short Sleeve Shirts Crew Neck Color Block Irregular Striped Print Loose Soft Casual Tee Tops Pullover (ASIN: B082YN2GYP)
+  5. Newshows Womens Summer Lace Tops Short Sleeve Crewneck Casual Shirts Loose Plain Tunic Blouse(Black, X-Large) (ASIN: B09J1BXM7M)
+  6. Womens It's Fine I'm Fine Everything is Fine Funny Cat Sweatshirt T Shirt Casual Tie Dye Black Cat Tunic Blouse Tops (ASIN: B0BG88SYFC)
+  7. Pants for Women Women's Fashion Summer Sweet Loose Casual Print Retro Strappy Jumpsuit (ASIN: B0B6VK1XNY)
+  8. BTFBM Womens T Shirt Dress Simple Plain Short Sleeve High Waist Hollow Out Fashion Bodycon Short Dresses (Black, Large) (ASIN: B07QLLTJWS)
+  9. Padaleks Women's Dresses V Neck Mesh Long Sleeve Glitter Bodycon Sequin Cocktail Party Club Evening Mini Dress (ASIN: B082S7S6WR)
+  10. FONTSIME Skorts Skirts for Women with Pockets Tennis Skirts Inner Shorts High Waisted Athletic Golf Elastic Sports Skorts Skirts, A-black (ASIN: B0B6C5JCR7)
+
+--- TURN 2 ---
+Shopper: i'm actually looking for a black denim maxi skirt with a bit of stretch. ideally, something with a good cotton blend. do you have anything like that?
+Copilot: I found a great option for you! The chouyatou Women's Casual Stretch Waist Washed Denim A-line Maxi Skirt fits your criteria perfectly. What size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. NIDIE Black Mens Hiking Shorts Stretch Waist Casual Outdoor Stretchy Lightweight Short with Multi Pockets (ASIN: B0B2WPYG12)
+  2. Digood Women's Coat, Women Camouflage Jacket Coat Autumn Winter Street Jacket Women Casual Jackets (ASIN: B091NQBS12)
+  3. HIRIRI Women Fashion Lace Floral Splicing O-Neck T-Shirt Tops Long Sleeve Tunic Shirt (ASIN: B07XL8LC3G)
+  4. BCBGeneration Women's Denim Pant with Paperbag Waist and Tight Ankle (ASIN: B097NZFP3L)
+  5. Curvify Pull on Skinny Jeans | High Waist Jeggings | Butt Lift Denim Leggings (ASIN: B07B5N27VT)
+  6. chouyatou Women's Casual Stretch Waist Washed Denim A-line Maxi Skirt (ASIN: B015K51VPM)
+  7. Lyrur Maxi Dress for Women Ruffle Sleeve Belted Aline Beach Long Sundress Boho Summer Casual Floral Dress with Pockets (ASIN: B09Y5KSS8X)
+  8. Fronage Womens Spaghetti Strap Maxi Dress Beach Sundress Casual Summer Sleeveless Tie Dye Long Dresses (ASIN: B09R1LLRFL)
+  9. Womens Casual Plus Size Maxi Dress V Neck Sleeveless Tie Dye Long Summer Dresses with Pockets (ASIN: B091748KWJ)
+  10. Berydress Women's Vintage V-Neck Sheath Casual Party Work Faux Black Wrap Dress (ASIN: B07D27WMB6)
+
+=== RESULT: SUCCESS (Turn 2) ===

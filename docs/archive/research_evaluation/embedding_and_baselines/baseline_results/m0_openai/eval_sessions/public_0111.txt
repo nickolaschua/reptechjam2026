@@ -1,0 +1,22 @@
+Target Product Title: Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops
+Target ASIN: B07H7BWMQF
+Scenario: buying
+Constraints: ['polyester', '60% Polyester, 35% Cotton, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a sweater that's made of polyester. it should also have a nice blend with cotton and a bit of spandex for some stretch.
+Copilot: Great choice! What color are you thinking for the sweater?
+Copilot Attribute Query: color
+Recommendations:
+  1. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  2. Hanes Women's Value, Crew Soft Moisture-Wicking Socks, Available in 10 and 14-Packs (ASIN: B0C5RLJDSF)
+  3. Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops (ASIN: B07H7BWMQF)
+  4. 5 Pack Womens Wool Socks Winter Warm Socks Thick Knit Cabin Cozy Crew Soft Socks Gifts for Women (ASIN: B0C246QRQS)
+  5. Lee Men's Performance Series Extreme Comfort Relaxed Pant (ASIN: B0BM7477G1)
+  6. Lildy Women's Denim Jeggings, Stretchable Cotton Blend (ASIN: B07VXRB6NG)
+  7. Democracy Women's Ab Solution Jegging (ASIN: B0BVFNRYFP)
+  8. Emmalise Women's Basic Casual Long Camisole Adjustable Strap Cami Layering Top (ASIN: B07C2XPZ6D)
+  9. Langwyqu Womens' Cap Sleeve Casual Loose Fit Basic Shirts Tank Tops (ASIN: B096FXGVF5)
+  10. Leggings Depot Premium Quality Women's Cotton Blend Stretch Pull-on Jeggings with Pockets (ASIN: B074KJ49F2)
+
+=== RESULT: SUCCESS (Turn 1) ===

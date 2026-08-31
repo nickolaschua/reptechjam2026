@@ -1,0 +1,22 @@
+Target Product Title: Ariat Fatbaby Western Boot – Women’s Leather Western Boots
+Target ASIN: B01L99SW78
+Scenario: buying
+Constraints: ['leather', 'Synthetic sole']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some mid-calf boots, and they need to be leather. any suggestions?
+Copilot: Sure! Do you have a preferred color for the mid-calf boots you're looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. DailyShoes Women's Slouch Mid Calf Ankle Strap Buckle Western-01 Style Cowboy Boots (ASIN: B00NI6BALQ)
+  2. Boots for Women Lace Up Thick Low Heels Shoes Fashion Women Casual Riding Vintage Retro Mid-Calf Boots Winter Warm Snow Boots (ASIN: B09FSX9NMW)
+  3. Women'Wide Shaft Slouch Boots Round Toe Mid Calf Dress Boots Trendy Buckle Straps Kitten Heel Knee High Boots (ASIN: B07L4P2J8V)
+  4. Amazon Essentials Women's Lace-Up Combat Boot (ASIN: B07PH3X7QK)
+  5. Dr. Martens Women's 2976 Leonore Chelsea Boot (ASIN: B079MSN9X3)
+  6. Ariat Fatbaby Western Boot – Women’s Leather Western Boots (ASIN: B01L99SW78)
+  7. Franco Sarto Harmond (ASIN: B098YWJWK5)
+  8. Cougar Women's Torrent Snow Boot (ASIN: B002C74IEI)
+  9. Clarks Women's Orinocco Kick Bootie (ASIN: B0074O30F2)
+  10. ZAYNSIA Wide Mid Calf Chelsea Boots For Women Leather Lug Sole Platform Combat Booties Chunky Heel Flat Non-slip Boots (ASIN: B0BCJVQ7RT)
+
+=== RESULT: SUCCESS (Turn 1) ===

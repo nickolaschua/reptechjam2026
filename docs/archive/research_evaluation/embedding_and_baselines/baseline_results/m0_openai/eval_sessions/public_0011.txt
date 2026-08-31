@@ -1,0 +1,22 @@
+Target Product Title: Hanes Men's Tagless Cotton V-Neck Undershirt – Multiple Packs and Colors
+Target ASIN: B0BXP6MG3X
+Scenario: browsing
+Constraints: ['cotton', '100% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some men's undershirts, specifically v-necks made of 100% cotton.
+Copilot: Great choice! Do you have a preferred color for the undershirts?
+Copilot Attribute Query: color
+Recommendations:
+  1. Fruit of the Loom Men's Eversoft Cotton Stay Tucked V-Neck T-Shirt (ASIN: B0BSS36XCS)
+  2. Hanes Men's Tagless Cotton V-Neck Undershirt – Multiple Packs and Colors (ASIN: B0BXP6MG3X)
+  3. Jockey 3-pk. Classics V-Neck T-Shirts + Bonus Tee, White (ASIN: B07JZHGCD6)
+  4. 4-rth Men's Ribbed Thermal V-Neck Long Sleeve Yoga & Gym Henley Modal Fabric Made in America Stretch European Style Fit (ASIN: B07C1SL9CS)
+  5. Embroidery Men's Sweater Cardigan Custom Casual Cotton, Monogrammed Your Text Here (ASIN: B085NLCL16)
+  6. MOCOTONO Men's V-Neck Cotton Vest Casual Sleeveless Sweater (ASIN: B07Q5D64XH)
+  7. C-IN2 Men's Core V-Neck T-Shirt (ASIN: B004GOJW0K)
+  8. Amazon Essentials Men's Slim-Fit Short-Sleeve V-Neck T-Shirt, Pack of 2 (ASIN: B07YDZZDGQ)
+  9. Goodthreads Men's Heritage Wash Short-Sleeve V-Neck T-Shirt (ASIN: B07Y2NXTHB)
+  10. Cherokee Tooniforms Men's V-Neck Dc Comics Print Scrub Top X-Large Print (ASIN: B07G4FMZML)
+
+=== RESULT: SUCCESS (Turn 1) ===

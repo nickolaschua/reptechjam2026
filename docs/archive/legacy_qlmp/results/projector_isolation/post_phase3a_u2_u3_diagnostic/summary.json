@@ -1,0 +1,5063 @@
+{
+  "authoritative_run": {
+    "candidate_universe": "m0_full_catalogue",
+    "catalogue_fingerprint": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+    "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+    "fixture_sha256": "8b782aee8ed7e23504f5c3420388e6b2003c16918fa0108f28dfdd7c630aa2bf",
+    "fixture_vector_snapshot_sha256": "4763a536c9a16c25a7aa99eb062aec95778299ab5d2ea6d92decb337423b975a",
+    "local_k": 500,
+    "phase3_primary_scores": {
+      "projected_norm": {
+        "auprc": 0.10290837541329846,
+        "auroc": 0.24758454106280192
+      },
+      "raw_cosine": {
+        "auprc": 0.12039364125856876,
+        "auroc": 0.35144927536231885
+      },
+      "rho": {
+        "auprc": 0.10244490187767596,
+        "auroc": 0.24396135265700483
+      }
+    },
+    "phase3_verdict": "PROJECTOR STOP",
+    "product_text_fingerprint": "f219fbfbc2a99b87e638241c2206c421eb69760037f9aa3a2e8da87c36a01da0",
+    "rank": 16,
+    "run_id": "preregistered_full_k500_r16_definitive",
+    "run_manifest_sha256": "1504db2b0ee5b5d98ca1bda2a92e7ad80cc5210cb4da77ebc7f29d6fb274a151",
+    "source_freeze_validation": {
+      "component_harness": {
+        "nickolas/shopping_agent/longitudinal_eval/build_projector_fixture.py": true,
+        "nickolas/shopping_agent/longitudinal_eval/qlmp_component_eval.py": true,
+        "nickolas/shopping_agent/run_projector_isolation.py": true,
+        "nickolas/shopping_agent/tests/test_m0_qlmp_contract.py": true
+      },
+      "m0": {
+        "nickolas/shopping_agent/agent.py": true,
+        "nickolas/shopping_agent/agent_openai.py": true,
+        "nickolas/shopping_agent/configs/m0_openai.json": true,
+        "nickolas/shopping_agent/embedding_backends.py": true,
+        "nickolas/shopping_agent/run_m0.py": true,
+        "nickolas/shopping_agent/tests/test_dense_vector_interface.py": true,
+        "nickolas/shopping_agent/tests/test_state_routing.py": true
+      },
+      "qlmp_phase_1_2": {
+        "nickolas/memory/qlmp/README.md": true,
+        "nickolas/memory/qlmp/__init__.py": true,
+        "nickolas/memory/qlmp/aggregation.py": true,
+        "nickolas/memory/qlmp/baselines.py": true,
+        "nickolas/memory/qlmp/config.py": true,
+        "nickolas/memory/qlmp/diagnostics.py": true,
+        "nickolas/memory/qlmp/geometry.py": true,
+        "nickolas/memory/qlmp/models.py": true,
+        "nickolas/memory/qlmp/projection.py": true,
+        "nickolas/memory/qlmp/steering.py": true,
+        "nickolas/memory/qlmp/synthetic.py": true,
+        "nickolas/memory/qlmp/tests/test_aggregation.py": true,
+        "nickolas/memory/qlmp/tests/test_baselines.py": true,
+        "nickolas/memory/qlmp/tests/test_diagnostics.py": true,
+        "nickolas/memory/qlmp/tests/test_geometry.py": true,
+        "nickolas/memory/qlmp/tests/test_projection.py": true,
+        "nickolas/memory/qlmp/tests/test_steering.py": true,
+        "nickolas/memory/qlmp/tests/test_synthetic.py": true
+      }
+    }
+  },
+  "cases": {
+    "u2_override_s9_final": {
+      "attribute_coverage": {
+        "bright_colourful": {
+          "catalogue_only_count": 43,
+          "distinct_embedded_forms": [
+            "bright",
+            "colorful",
+            "multicolor",
+            "multicolour",
+            "neon",
+            "rainbow",
+            "vibrant"
+          ],
+          "distinct_raw_forms": [
+            "bright",
+            "colorful",
+            "colourful",
+            "multicolor",
+            "multicolour",
+            "neon",
+            "rainbow",
+            "vibrant"
+          ],
+          "embedded_text_count": 64,
+          "embedded_text_percent": 12.8,
+          "raw_catalogue_count": 107,
+          "raw_catalogue_percent": 21.4
+        },
+        "colour": {
+          "catalogue_only_count": 117,
+          "distinct_embedded_forms": [
+            "beige",
+            "black",
+            "blue",
+            "brown",
+            "color",
+            "colour",
+            "gray",
+            "green",
+            "grey",
+            "multicolor",
+            "multicolour",
+            "navy",
+            "orange",
+            "pink",
+            "purple",
+            "red",
+            "teal",
+            "white",
+            "yellow"
+          ],
+          "distinct_raw_forms": [
+            "beige",
+            "black",
+            "blue",
+            "brown",
+            "color",
+            "colour",
+            "gray",
+            "green",
+            "grey",
+            "multicolor",
+            "multicolour",
+            "navy",
+            "orange",
+            "pink",
+            "purple",
+            "red",
+            "teal",
+            "white",
+            "yellow"
+          ],
+          "embedded_text_count": 217,
+          "embedded_text_percent": 43.4,
+          "raw_catalogue_count": 334,
+          "raw_catalogue_percent": 66.8
+        },
+        "dark_black": {
+          "catalogue_only_count": 61,
+          "distinct_embedded_forms": [
+            "black",
+            "charcoal",
+            "dark",
+            "navy"
+          ],
+          "distinct_raw_forms": [
+            "black",
+            "charcoal",
+            "dark",
+            "navy"
+          ],
+          "embedded_text_count": 24,
+          "embedded_text_percent": 4.8,
+          "raw_catalogue_count": 85,
+          "raw_catalogue_percent": 17.0
+        },
+        "minimal_understated": {
+          "catalogue_only_count": 91,
+          "distinct_embedded_forms": [
+            "basic",
+            "classic",
+            "plain",
+            "simple"
+          ],
+          "distinct_raw_forms": [
+            "basic",
+            "classic",
+            "minimalist",
+            "plain",
+            "simple"
+          ],
+          "embedded_text_count": 29,
+          "embedded_text_percent": 5.800000000000001,
+          "raw_catalogue_count": 120,
+          "raw_catalogue_percent": 24.0
+        },
+        "price": {
+          "catalogue_only_count": 73,
+          "distinct_embedded_forms": [
+            "$",
+            "cheap",
+            "premium",
+            "price"
+          ],
+          "distinct_raw_values": 57,
+          "embedded_text_count": 12,
+          "embedded_text_percent": 2.4,
+          "note": "The structured price field is not interpolated into the embedded product template; embedded hits are only lexical proxies.",
+          "raw_catalogue_count": 74,
+          "raw_catalogue_percent": 14.799999999999999
+        },
+        "sporty_athletic": {
+          "catalogue_only_count": 57,
+          "distinct_embedded_forms": [
+            "athletic",
+            "performance",
+            "running",
+            "sport",
+            "workout"
+          ],
+          "distinct_raw_forms": [
+            "athletic",
+            "gym",
+            "performance",
+            "running",
+            "sport",
+            "sporty",
+            "training",
+            "workout"
+          ],
+          "embedded_text_count": 15,
+          "embedded_text_percent": 3.0,
+          "raw_catalogue_count": 72,
+          "raw_catalogue_percent": 14.399999999999999
+        }
+      },
+      "category_composition": {
+        "distinct_category_paths": 89,
+        "distinct_leaf_categories": 75,
+        "top_category_paths": [
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > T-Shirts",
+            65
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Dresses > Casual",
+            59
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Westlake",
+            48
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Blouses & Button-Down Shirts",
+            40
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tunics",
+            35
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Dresses",
+            30
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tanks & Camis",
+            21
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge > Sleep & Lounge > Nightgowns & Sleepshirts",
+            13
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups > Cover-Ups",
+            12
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Fashion Hoodies & Sweatshirts",
+            12
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing",
+            10
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses",
+            8
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty > Women > Dresses",
+            7
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge > Sleep & Lounge > Sets",
+            6
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Sweaters > Cardigans",
+            6
+          ]
+        ],
+        "top_departments": [
+          [
+            "Women",
+            398
+          ],
+          [
+            "Westlake",
+            48
+          ],
+          [
+            "Novelty & More",
+            27
+          ],
+          [
+            "Men",
+            6
+          ],
+          [
+            "Girls",
+            4
+          ],
+          [
+            "Women's Festive Wear",
+            2
+          ],
+          [
+            "Plus-Size Fashion",
+            2
+          ],
+          [
+            "Fashion-forward finds",
+            2
+          ],
+          [
+            "Women's Plus-Size Apparel",
+            2
+          ],
+          [
+            "Off to College Fashion",
+            1
+          ],
+          [
+            "Under $30",
+            1
+          ],
+          [
+            "Everyday Apparel Essentials",
+            1
+          ],
+          [
+            "Graduation Cohort 4 - Daily",
+            1
+          ],
+          [
+            "Business Pricing & Quantity Discounts",
+            1
+          ],
+          [
+            "Women's Sweaters Under $30",
+            1
+          ]
+        ],
+        "top_leaf_categories": [
+          [
+            "T-Shirts",
+            70
+          ],
+          [
+            "Casual",
+            62
+          ],
+          [
+            "Westlake",
+            48
+          ],
+          [
+            "Blouses & Button-Down Shirts",
+            41
+          ],
+          [
+            "Dresses",
+            38
+          ],
+          [
+            "Tunics",
+            35
+          ],
+          [
+            "Tanks & Camis",
+            22
+          ],
+          [
+            "Nightgowns & Sleepshirts",
+            13
+          ],
+          [
+            "Cover-Ups",
+            12
+          ],
+          [
+            "Fashion Hoodies & Sweatshirts",
+            12
+          ],
+          [
+            "Clothing",
+            10
+          ],
+          [
+            "Women",
+            8
+          ],
+          [
+            "Tops, Tees & Blouses",
+            8
+          ],
+          [
+            "Socks",
+            8
+          ],
+          [
+            "Sets",
+            7
+          ]
+        ]
+      },
+      "component_associations": [
+        {
+          "component": 1,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.3374709379194202,
+              "attribute": "price",
+              "correlation": 0.3374709379194202
+            },
+            {
+              "absolute_correlation": 0.33324058436030435,
+              "attribute": "bright_colourful",
+              "correlation": 0.33324058436030435
+            },
+            {
+              "absolute_correlation": 0.07779291634777424,
+              "attribute": "sporty_athletic",
+              "correlation": 0.07779291634777424
+            },
+            {
+              "absolute_correlation": 0.05141552610441767,
+              "attribute": "dark_black",
+              "correlation": -0.05141552610441767
+            },
+            {
+              "absolute_correlation": 0.046681171427488344,
+              "attribute": "colour",
+              "correlation": -0.046681171427488344
+            }
+          ]
+        },
+        {
+          "component": 2,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.2220675196983693,
+              "attribute": "price",
+              "correlation": 0.2220675196983693
+            },
+            {
+              "absolute_correlation": 0.09954889456236736,
+              "attribute": "minimal_understated",
+              "correlation": -0.09954889456236736
+            },
+            {
+              "absolute_correlation": 0.09110008198300114,
+              "attribute": "sporty_athletic",
+              "correlation": -0.09110008198300114
+            },
+            {
+              "absolute_correlation": 0.05713211577698329,
+              "attribute": "colour",
+              "correlation": -0.05713211577698329
+            },
+            {
+              "absolute_correlation": 0.02911235428635824,
+              "attribute": "dark_black",
+              "correlation": -0.02911235428635824
+            }
+          ]
+        },
+        {
+          "component": 3,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.3466694391022302,
+              "attribute": "price",
+              "correlation": -0.3466694391022302
+            },
+            {
+              "absolute_correlation": 0.18169493308115509,
+              "attribute": "bright_colourful",
+              "correlation": -0.18169493308115509
+            },
+            {
+              "absolute_correlation": 0.10959991111762298,
+              "attribute": "sporty_athletic",
+              "correlation": -0.10959991111762298
+            },
+            {
+              "absolute_correlation": 0.05355823989099541,
+              "attribute": "colour",
+              "correlation": 0.05355823989099541
+            },
+            {
+              "absolute_correlation": 0.045562813534738504,
+              "attribute": "minimal_understated",
+              "correlation": -0.045562813534738504
+            }
+          ]
+        },
+        {
+          "component": 4,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.3540617683995756,
+              "attribute": "bright_colourful",
+              "correlation": -0.3540617683995756
+            },
+            {
+              "absolute_correlation": 0.11734384278618473,
+              "attribute": "price",
+              "correlation": 0.11734384278618473
+            },
+            {
+              "absolute_correlation": 0.08680459676553867,
+              "attribute": "minimal_understated",
+              "correlation": 0.08680459676553867
+            },
+            {
+              "absolute_correlation": 0.06900498099817978,
+              "attribute": "sporty_athletic",
+              "correlation": -0.06900498099817978
+            },
+            {
+              "absolute_correlation": 0.04090134721745194,
+              "attribute": "colour",
+              "correlation": 0.04090134721745194
+            }
+          ]
+        },
+        {
+          "component": 5,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.18217937906992787,
+              "attribute": "colour",
+              "correlation": -0.18217937906992787
+            },
+            {
+              "absolute_correlation": 0.1617001922253909,
+              "attribute": "bright_colourful",
+              "correlation": -0.1617001922253909
+            },
+            {
+              "absolute_correlation": 0.16110709461716483,
+              "attribute": "minimal_understated",
+              "correlation": 0.16110709461716483
+            },
+            {
+              "absolute_correlation": 0.13507428709507932,
+              "attribute": "price",
+              "correlation": -0.13507428709507932
+            },
+            {
+              "absolute_correlation": 0.09707743854451097,
+              "attribute": "dark_black",
+              "correlation": -0.09707743854451097
+            }
+          ]
+        },
+        {
+          "component": 6,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.08256432462638143,
+              "attribute": "price",
+              "correlation": -0.08256432462638143
+            },
+            {
+              "absolute_correlation": 0.062141515301950674,
+              "attribute": "minimal_understated",
+              "correlation": -0.062141515301950674
+            },
+            {
+              "absolute_correlation": 0.05250501146619945,
+              "attribute": "bright_colourful",
+              "correlation": -0.05250501146619945
+            },
+            {
+              "absolute_correlation": 0.03792078732908594,
+              "attribute": "sporty_athletic",
+              "correlation": 0.03792078732908594
+            },
+            {
+              "absolute_correlation": 0.017335047878639202,
+              "attribute": "colour",
+              "correlation": 0.017335047878639202
+            }
+          ]
+        },
+        {
+          "component": 7,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.12661647796941713,
+              "attribute": "sporty_athletic",
+              "correlation": -0.12661647796941713
+            },
+            {
+              "absolute_correlation": 0.09774013077635924,
+              "attribute": "minimal_understated",
+              "correlation": -0.09774013077635924
+            },
+            {
+              "absolute_correlation": 0.09399756182885173,
+              "attribute": "colour",
+              "correlation": -0.09399756182885173
+            },
+            {
+              "absolute_correlation": 0.054524449040134565,
+              "attribute": "price",
+              "correlation": 0.054524449040134565
+            },
+            {
+              "absolute_correlation": 0.04195929810083165,
+              "attribute": "bright_colourful",
+              "correlation": 0.04195929810083165
+            }
+          ]
+        },
+        {
+          "component": 8,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.17490746592756065,
+              "attribute": "colour",
+              "correlation": 0.17490746592756065
+            },
+            {
+              "absolute_correlation": 0.14591643362816017,
+              "attribute": "bright_colourful",
+              "correlation": 0.14591643362816017
+            },
+            {
+              "absolute_correlation": 0.1064122906558888,
+              "attribute": "price",
+              "correlation": 0.1064122906558888
+            },
+            {
+              "absolute_correlation": 0.0656340115600197,
+              "attribute": "sporty_athletic",
+              "correlation": 0.0656340115600197
+            },
+            {
+              "absolute_correlation": 0.020623548867321085,
+              "attribute": "minimal_understated",
+              "correlation": 0.020623548867321085
+            }
+          ]
+        },
+        {
+          "component": 9,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.23168076811647506,
+              "attribute": "price",
+              "correlation": -0.23168076811647506
+            },
+            {
+              "absolute_correlation": 0.10666572115920026,
+              "attribute": "bright_colourful",
+              "correlation": 0.10666572115920026
+            },
+            {
+              "absolute_correlation": 0.0687052829194927,
+              "attribute": "dark_black",
+              "correlation": -0.0687052829194927
+            },
+            {
+              "absolute_correlation": 0.06827996259090044,
+              "attribute": "sporty_athletic",
+              "correlation": 0.06827996259090044
+            },
+            {
+              "absolute_correlation": 0.04514310076492712,
+              "attribute": "colour",
+              "correlation": -0.04514310076492712
+            }
+          ]
+        },
+        {
+          "component": 10,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.19320604195893434,
+              "attribute": "colour",
+              "correlation": -0.19320604195893434
+            },
+            {
+              "absolute_correlation": 0.1552089428215698,
+              "attribute": "dark_black",
+              "correlation": -0.1552089428215698
+            },
+            {
+              "absolute_correlation": 0.12554991308453697,
+              "attribute": "price",
+              "correlation": 0.12554991308453697
+            },
+            {
+              "absolute_correlation": 0.10686721086191495,
+              "attribute": "minimal_understated",
+              "correlation": -0.10686721086191495
+            },
+            {
+              "absolute_correlation": 0.06117950863665081,
+              "attribute": "bright_colourful",
+              "correlation": 0.06117950863665081
+            }
+          ]
+        },
+        {
+          "component": 11,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.2098176638558832,
+              "attribute": "price",
+              "correlation": 0.2098176638558832
+            },
+            {
+              "absolute_correlation": 0.1672485705537837,
+              "attribute": "colour",
+              "correlation": -0.1672485705537837
+            },
+            {
+              "absolute_correlation": 0.15552742887115265,
+              "attribute": "bright_colourful",
+              "correlation": -0.15552742887115265
+            },
+            {
+              "absolute_correlation": 0.027523670516926113,
+              "attribute": "sporty_athletic",
+              "correlation": 0.027523670516926113
+            },
+            {
+              "absolute_correlation": 0.018669720885297756,
+              "attribute": "minimal_understated",
+              "correlation": 0.018669720885297756
+            }
+          ]
+        },
+        {
+          "component": 12,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.4451126578799357,
+              "attribute": "price",
+              "correlation": -0.4451126578799357
+            },
+            {
+              "absolute_correlation": 0.15586053778068915,
+              "attribute": "bright_colourful",
+              "correlation": 0.15586053778068915
+            },
+            {
+              "absolute_correlation": 0.09615670614445057,
+              "attribute": "minimal_understated",
+              "correlation": 0.09615670614445057
+            },
+            {
+              "absolute_correlation": 0.0723080844013506,
+              "attribute": "colour",
+              "correlation": -0.0723080844013506
+            },
+            {
+              "absolute_correlation": 0.07065866615887151,
+              "attribute": "sporty_athletic",
+              "correlation": 0.07065866615887151
+            }
+          ]
+        },
+        {
+          "component": 13,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.10629079542508205,
+              "attribute": "colour",
+              "correlation": 0.10629079542508205
+            },
+            {
+              "absolute_correlation": 0.0927462363660333,
+              "attribute": "minimal_understated",
+              "correlation": -0.0927462363660333
+            },
+            {
+              "absolute_correlation": 0.06578648927568298,
+              "attribute": "dark_black",
+              "correlation": -0.06578648927568298
+            },
+            {
+              "absolute_correlation": 0.021594853117443802,
+              "attribute": "bright_colourful",
+              "correlation": 0.021594853117443802
+            },
+            {
+              "absolute_correlation": 0.012783544495044978,
+              "attribute": "sporty_athletic",
+              "correlation": -0.012783544495044978
+            }
+          ]
+        },
+        {
+          "component": 14,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.0892087875412977,
+              "attribute": "minimal_understated",
+              "correlation": 0.0892087875412977
+            },
+            {
+              "absolute_correlation": 0.046109441885672946,
+              "attribute": "dark_black",
+              "correlation": 0.046109441885672946
+            },
+            {
+              "absolute_correlation": 0.038384896532240254,
+              "attribute": "sporty_athletic",
+              "correlation": 0.038384896532240254
+            },
+            {
+              "absolute_correlation": 0.03692731634258502,
+              "attribute": "price",
+              "correlation": -0.03692731634258502
+            },
+            {
+              "absolute_correlation": 0.027611290375153398,
+              "attribute": "colour",
+              "correlation": 0.027611290375153398
+            }
+          ]
+        },
+        {
+          "component": 15,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.15398972350481904,
+              "attribute": "price",
+              "correlation": -0.15398972350481904
+            },
+            {
+              "absolute_correlation": 0.025674044241945162,
+              "attribute": "sporty_athletic",
+              "correlation": 0.025674044241945162
+            },
+            {
+              "absolute_correlation": 0.02333150450275556,
+              "attribute": "minimal_understated",
+              "correlation": -0.02333150450275556
+            },
+            {
+              "absolute_correlation": 0.008894466800369354,
+              "attribute": "colour",
+              "correlation": 0.008894466800369354
+            },
+            {
+              "absolute_correlation": 0.0028071946667143927,
+              "attribute": "bright_colourful",
+              "correlation": 0.0028071946667143927
+            }
+          ]
+        },
+        {
+          "component": 16,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.1336671089753258,
+              "attribute": "price",
+              "correlation": 0.1336671089753258
+            },
+            {
+              "absolute_correlation": 0.06732799776251681,
+              "attribute": "sporty_athletic",
+              "correlation": -0.06732799776251681
+            },
+            {
+              "absolute_correlation": 0.036153849650199625,
+              "attribute": "colour",
+              "correlation": -0.036153849650199625
+            },
+            {
+              "absolute_correlation": 0.030260408804893103,
+              "attribute": "minimal_understated",
+              "correlation": 0.030260408804893103
+            },
+            {
+              "absolute_correlation": 0.02252097872762953,
+              "attribute": "bright_colourful",
+              "correlation": -0.02252097872762953
+            }
+          ]
+        }
+      ],
+      "diagnostic_post_hard_filter": {
+        "attribute_coverage": {
+          "bright_colourful": {
+            "catalogue_only_count": 56,
+            "distinct_embedded_forms": [
+              "bright",
+              "colorful",
+              "multicolor",
+              "rainbow",
+              "vibrant"
+            ],
+            "distinct_raw_forms": [
+              "bold color",
+              "bright",
+              "colorful",
+              "colourful",
+              "multicolor",
+              "neon",
+              "rainbow",
+              "vibrant"
+            ],
+            "embedded_text_count": 20,
+            "embedded_text_percent": 4.0,
+            "raw_catalogue_count": 76,
+            "raw_catalogue_percent": 15.2
+          },
+          "colour": {
+            "catalogue_only_count": 153,
+            "distinct_embedded_forms": [
+              "beige",
+              "black",
+              "blue",
+              "color",
+              "gray",
+              "green",
+              "grey",
+              "multicolor",
+              "navy",
+              "orange",
+              "pink",
+              "purple",
+              "red",
+              "white",
+              "yellow"
+            ],
+            "distinct_raw_forms": [
+              "beige",
+              "black",
+              "blue",
+              "brown",
+              "color",
+              "colour",
+              "gray",
+              "green",
+              "grey",
+              "multicolor",
+              "navy",
+              "orange",
+              "pink",
+              "purple",
+              "red",
+              "teal",
+              "white",
+              "yellow"
+            ],
+            "embedded_text_count": 136,
+            "embedded_text_percent": 27.200000000000003,
+            "raw_catalogue_count": 289,
+            "raw_catalogue_percent": 57.8
+          },
+          "dark_black": {
+            "catalogue_only_count": 84,
+            "distinct_embedded_forms": [
+              "black",
+              "dark",
+              "navy"
+            ],
+            "distinct_raw_forms": [
+              "black",
+              "charcoal",
+              "dark",
+              "navy"
+            ],
+            "embedded_text_count": 17,
+            "embedded_text_percent": 3.4000000000000004,
+            "raw_catalogue_count": 101,
+            "raw_catalogue_percent": 20.200000000000003
+          },
+          "minimal_understated": {
+            "catalogue_only_count": 162,
+            "distinct_embedded_forms": [
+              "basic",
+              "classic",
+              "plain",
+              "simple"
+            ],
+            "distinct_raw_forms": [
+              "basic",
+              "classic",
+              "minimal",
+              "minimalist",
+              "plain",
+              "simple",
+              "subtle"
+            ],
+            "embedded_text_count": 31,
+            "embedded_text_percent": 6.2,
+            "raw_catalogue_count": 193,
+            "raw_catalogue_percent": 38.6
+          },
+          "price": {
+            "catalogue_only_count": 490,
+            "distinct_embedded_forms": [
+              "cheap",
+              "luxury",
+              "premium"
+            ],
+            "distinct_raw_values": 232,
+            "embedded_text_count": 10,
+            "embedded_text_percent": 2.0,
+            "note": "The structured price field is not interpolated into the embedded product template; embedded hits are only lexical proxies.",
+            "raw_catalogue_count": 500,
+            "raw_catalogue_percent": 100.0
+          },
+          "sporty_athletic": {
+            "catalogue_only_count": 78,
+            "distinct_embedded_forms": [
+              "athletic",
+              "gym",
+              "running",
+              "sport",
+              "workout"
+            ],
+            "distinct_raw_forms": [
+              "athletic",
+              "gym",
+              "performance",
+              "running",
+              "sport",
+              "sporty",
+              "training",
+              "workout"
+            ],
+            "embedded_text_count": 25,
+            "embedded_text_percent": 5.0,
+            "raw_catalogue_count": 103,
+            "raw_catalogue_percent": 20.599999999999998
+          }
+        },
+        "category_composition": {
+          "distinct_category_paths": 108,
+          "distinct_leaf_categories": 80,
+          "top_category_paths": [
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Blouses & Button-Down Shirts",
+              49
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > T-Shirts",
+              46
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Dresses > Casual",
+              41
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Dresses",
+              39
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tunics",
+              38
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty > Women > Tops & Tees > T-Shirts",
+              25
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tanks & Camis",
+              16
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Fashion Hoodies & Sweatshirts",
+              14
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Sweaters > Cardigans",
+              12
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups > Cover-Ups",
+              12
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Westlake",
+              9
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge > Sleep & Lounge > Nightgowns & Sleepshirts",
+              8
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Sweaters > Pullovers",
+              7
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses",
+              7
+            ],
+            [
+              "Clothing, Shoes & Jewelry > Women > Clothing",
+              7
+            ]
+          ],
+          "top_departments": [
+            [
+              "Women",
+              394
+            ],
+            [
+              "Novelty & More",
+              62
+            ],
+            [
+              "Men",
+              14
+            ],
+            [
+              "Girls",
+              10
+            ],
+            [
+              "Westlake",
+              9
+            ],
+            [
+              "Sport Specific Clothing",
+              6
+            ],
+            [
+              "Baby",
+              3
+            ],
+            [
+              "Fashion-forward finds",
+              1
+            ],
+            [
+              "Costumes & Accessories",
+              1
+            ]
+          ],
+          "top_leaf_categories": [
+            [
+              "T-Shirts",
+              78
+            ],
+            [
+              "Blouses & Button-Down Shirts",
+              49
+            ],
+            [
+              "Dresses",
+              48
+            ],
+            [
+              "Casual",
+              46
+            ],
+            [
+              "Tunics",
+              38
+            ],
+            [
+              "Tanks & Camis",
+              22
+            ],
+            [
+              "Fashion Hoodies & Sweatshirts",
+              14
+            ],
+            [
+              "Cardigans",
+              12
+            ],
+            [
+              "Socks",
+              12
+            ],
+            [
+              "Cover-Ups",
+              12
+            ],
+            [
+              "Nightgowns & Sleepshirts",
+              9
+            ],
+            [
+              "Westlake",
+              9
+            ],
+            [
+              "Clothing",
+              9
+            ],
+            [
+              "Skirts",
+              8
+            ],
+            [
+              "Pullovers",
+              7
+            ]
+          ]
+        },
+        "constructed": true,
+        "eligible_catalogue_rows": 9794,
+        "name": "diagnostic_post_hard_filter",
+        "rank16_subspace_comparison": {
+          "grassmann_chordal_distance": 2.492919372391106,
+          "maximum_possible_chordal_distance": 4.0,
+          "mean_squared_cosine": 0.6115845626723209,
+          "principal_angles_degrees": [
+            5.655279434222136,
+            13.001738605861094,
+            15.859819081306707,
+            23.182067509731564,
+            25.12095742808207,
+            27.97415655940754,
+            29.220751080886615,
+            30.99948750405361,
+            34.25634586369884,
+            36.773263829448894,
+            38.407741521728454,
+            44.84552108863865,
+            52.48926808760684,
+            70.92627017006225,
+            79.29587037089127,
+            80.79452344817966
+          ],
+          "principal_cosines": [
+            0.9951327880147987,
+            0.9743632383326204,
+            0.9619331977143399,
+            0.9192585905674259,
+            0.9054135764154537,
+            0.88315925965146,
+            0.8727453296045748,
+            0.857171907550351,
+            0.8265274099136375,
+            0.801010808660935,
+            0.7836095237632987,
+            0.709010685788301,
+            0.6089100191267377,
+            0.3267846046140242,
+            0.18573743733453696,
+            0.159975541256803
+          ]
+        },
+        "spectrum": {
+          "cumulative_energy": {
+            "1": 0.3700857143854085,
+            "16": 0.5704276345414794,
+            "2": 0.40815187035190853,
+            "4": 0.4517854164687486,
+            "8": 0.5031760699015095
+          },
+          "energy_denominator_includes_all_local_singular_values": true,
+          "sigma_1_over_sigma_16": 7.344645053432578,
+          "sigma_1_to_sigma_16": [
+            12.384011956308584,
+            3.971729963760254,
+            3.263599561068869,
+            2.725928608715356,
+            2.487900302702068,
+            2.3674665302385076,
+            2.191096805591552,
+            2.1681485446835342,
+            2.103285681392279,
+            2.016970491860972,
+            1.93327981656764,
+            1.9054934855428332,
+            1.7816998765991547,
+            1.749487659500262,
+            1.7118540780465001,
+            1.686128038348268
+          ]
+        },
+        "top_500_overlap_count": 73,
+        "top_500_overlap_percent": 14.6,
+        "top_k_count": 500
+      },
+      "hard_condition_contamination": {
+        "hard_compliant": 73,
+        "hard_incompatible": 427,
+        "hard_incompatible_percent": 85.39999999999999,
+        "incompatible_in_top_100": 90,
+        "incompatible_in_top_50": 46,
+        "incompatible_rank_summary": {
+          "count": 427,
+          "max": 500.0,
+          "mean": 246.88992974238874,
+          "median": 239.0,
+          "min": 1.0,
+          "p25": 119.5,
+          "p75": 376.5
+        },
+        "m0_hard_conditions": {
+          "price_max": 120.0
+        },
+        "top_500_total": 500
+      },
+      "memory_scores_and_components": [
+        {
+          "coefficients": [
+            -0.19948485404907512,
+            0.028803249162798056,
+            -0.08503029173566751,
+            0.08143569705280583,
+            -0.10706730398025216,
+            -0.04917718398748265,
+            -0.09700300960370438,
+            0.02976649921198718,
+            -0.003368003598256916,
+            0.1002748551088969,
+            0.03906416612841689,
+            -0.04959221124199817,
+            0.045523709752813626,
+            -0.0878423117781715,
+            0.006988892665287032,
+            -0.029404120794909665
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.19948485404907512,
+              "component": 1,
+              "projected_energy": 0.039794206994980805,
+              "projected_energy_share": 0.3847932902940845
+            },
+            {
+              "coefficient": -0.10706730398025216,
+              "component": 5,
+              "projected_energy": 0.01146340758159972,
+              "projected_energy_share": 0.11084634308361188
+            },
+            {
+              "coefficient": 0.1002748551088969,
+              "component": 10,
+              "projected_energy": 0.010055046567110267,
+              "projected_energy_share": 0.09722808279875021
+            },
+            {
+              "coefficient": -0.09700300960370438,
+              "component": 7,
+              "projected_energy": 0.009409583872176363,
+              "projected_energy_share": 0.09098672927266964
+            },
+            {
+              "coefficient": -0.0878423117781715,
+              "component": 14,
+              "projected_energy": 0.007716271738533488,
+              "projected_energy_share": 0.07461311118595866
+            }
+          ],
+          "energy_shares": [
+            0.3847932902940845,
+            0.008022146679595762,
+            0.06991252283117512,
+            0.064126460894157,
+            0.11084634308361188,
+            0.023384869383418144,
+            0.09098672927266964,
+            0.008567678432564636,
+            0.00010968638654570398,
+            0.09722808279875021,
+            0.01475586768648699,
+            0.02378124474198516,
+            0.02003931755292723,
+            0.07461311118595866,
+            0.000472306994574624,
+            0.00836034178149472
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.4990262604393629,
+            "largest_components": [
+              {
+                "coefficient": -0.19948485404907465,
+                "component": 1,
+                "energy_share": 0.08574959184442965,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.10706730398025219,
+                "component": 5,
+                "energy_share": 0.02470164869455757,
+                "selected_by_rank16": true,
+                "singular_value": 2.4778411496866655
+              },
+              {
+                "coefficient": 0.10226999811064202,
+                "component": 60,
+                "energy_share": 0.02253765376424614,
+                "selected_by_rank16": false,
+                "singular_value": 0.9900013178952004
+              },
+              {
+                "coefficient": 0.10027485510889689,
+                "component": 10,
+                "energy_share": 0.021666875764484842,
+                "selected_by_rank16": true,
+                "singular_value": 1.972886611887033
+              },
+              {
+                "coefficient": -0.0970030096037043,
+                "component": 7,
+                "energy_share": 0.020276015968023253,
+                "selected_by_rank16": true,
+                "singular_value": 2.1567379916363167
+              },
+              {
+                "coefficient": 0.09148294873145052,
+                "component": 150,
+                "energy_share": 0.018034018716495133,
+                "selected_by_rank16": false,
+                "singular_value": 0.5854668311555598
+              },
+              {
+                "coefficient": -0.08784231177817162,
+                "component": 14,
+                "energy_share": 0.01662722295793994,
+                "selected_by_rank16": true,
+                "singular_value": 1.7675964460991511
+              },
+              {
+                "coefficient": -0.08503029173566756,
+                "component": 3,
+                "energy_share": 0.015579716301721162,
+                "selected_by_rank16": true,
+                "singular_value": 3.1280198647634143
+              },
+              {
+                "coefficient": 0.08238270386290518,
+                "component": 64,
+                "energy_share": 0.014624609896611726,
+                "selected_by_rank16": false,
+                "singular_value": 0.9568226975355556
+              },
+              {
+                "coefficient": 0.08143569705280587,
+                "component": 4,
+                "energy_share": 0.014290316351148464,
+                "selected_by_rank16": true,
+                "singular_value": 2.5144314416851867
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.6812302060963596,
+            "rank16_share_of_local_span_energy": 0.22284586038102275
+          },
+          "label": "CROSS_DOMAIN_DISTRACTOR",
+          "memory_id": "memory_901b14eb5ae14fcd579696a128d992b263c17ccdd0bebfdaa69ee2be5fa839a7",
+          "memory_text": "material: leather",
+          "projected_norm": 0.3215852952384861,
+          "raw_cosine": 0.26465023030966434,
+          "rho": 0.11120593636033425,
+          "tangent_norm": 0.9643444693661296
+        },
+        {
+          "coefficients": [
+            -0.1785451188367465,
+            0.026115082557232046,
+            0.0003781729257525052,
+            0.05201481684015386,
+            -0.044472787392380114,
+            -0.012836175363819969,
+            -0.09543715166012898,
+            0.027797804161823817,
+            -0.0355535338439699,
+            0.06788595223475387,
+            -0.06030060771246112,
+            -0.010888841027331765,
+            -0.0177685654685805,
+            -0.0027549451881070594,
+            0.055589022859372894,
+            -0.032485309686309034
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.1785451188367465,
+              "component": 1,
+              "projected_energy": 0.031878359460427934,
+              "projected_energy_share": 0.5193129930908318
+            },
+            {
+              "coefficient": -0.09543715166012898,
+              "component": 7,
+              "projected_energy": 0.009108249916998459,
+              "projected_energy_share": 0.14837753906650672
+            },
+            {
+              "coefficient": 0.06788595223475387,
+              "component": 10,
+              "projected_energy": 0.004608502510819284,
+              "projected_energy_share": 0.07507460462421327
+            },
+            {
+              "coefficient": -0.06030060771246112,
+              "component": 11,
+              "projected_energy": 0.003636163290492125,
+              "projected_energy_share": 0.059234755919498144
+            },
+            {
+              "coefficient": 0.055589022859372894,
+              "component": 15,
+              "projected_energy": 0.003090139462459882,
+              "projected_energy_share": 0.050339779100307354
+            }
+          ],
+          "energy_shares": [
+            0.5193129930908318,
+            0.011110050460553232,
+            2.3297755985308024e-06,
+            0.04407449778406362,
+            0.03221973216044742,
+            0.0026841359484069236,
+            0.14837753906650672,
+            0.012587926752779942,
+            0.020592011546741902,
+            0.07507460462421327,
+            0.059234755919498144,
+            0.0019315081274110168,
+            0.005143253837945154,
+            0.000123640043876375,
+            0.050339779100307354,
+            0.017191241760818633
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.4907714627197454,
+            "largest_components": [
+              {
+                "coefficient": -0.1785451188367464,
+                "component": 1,
+                "energy_share": 0.06923138633806353,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.13822796086421205,
+                "component": 65,
+                "energy_share": 0.04149529606852434,
+                "selected_by_rank16": false,
+                "singular_value": 0.9451277104567135
+              },
+              {
+                "coefficient": 0.10183731110112514,
+                "component": 28,
+                "energy_share": 0.022522723869535553,
+                "selected_by_rank16": false,
+                "singular_value": 1.3567383516767828
+              },
+              {
+                "coefficient": -0.0999280532149389,
+                "component": 87,
+                "energy_share": 0.021686123072597815,
+                "selected_by_rank16": false,
+                "singular_value": 0.8160382678871633
+              },
+              {
+                "coefficient": -0.09543715166012912,
+                "component": 7,
+                "energy_share": 0.019780715806599833,
+                "selected_by_rank16": true,
+                "singular_value": 2.1567379916363167
+              },
+              {
+                "coefficient": -0.08280625168972751,
+                "component": 38,
+                "energy_share": 0.014891324155628292,
+                "selected_by_rank16": false,
+                "singular_value": 1.1952679521384737
+              },
+              {
+                "coefficient": 0.08072770759201557,
+                "component": 53,
+                "energy_share": 0.01415312378457555,
+                "selected_by_rank16": false,
+                "singular_value": 1.0398973790839223
+              },
+              {
+                "coefficient": -0.07495258025698456,
+                "component": 69,
+                "energy_share": 0.012200573374172827,
+                "selected_by_rank16": false,
+                "singular_value": 0.9188551283669565
+              },
+              {
+                "coefficient": -0.07418697206062394,
+                "component": 134,
+                "energy_share": 0.011952599187665287,
+                "selected_by_rank16": false,
+                "singular_value": 0.6280972072702485
+              },
+              {
+                "coefficient": 0.07330344504848944,
+                "component": 20,
+                "energy_share": 0.011669596408471667,
+                "selected_by_rank16": false,
+                "singular_value": 1.5057929653781807
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.6785728315818548,
+            "rank16_share_of_local_span_energy": 0.13331341071598124
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_5ad99c853e33fa532a49025c1e843322d2ecd1d017525a3ea376bdd37e65da37",
+          "memory_text": "style: understated",
+          "projected_norm": 0.24776125223975576,
+          "raw_cosine": 0.24851696366904463,
+          "rho": 0.06542641757724028,
+          "tangent_norm": 0.9686275438829512
+        },
+        {
+          "coefficients": [
+            -0.07314075170069262,
+            0.0648961115699175,
+            -0.00630568705065288,
+            0.02199782788694471,
+            0.0009020456048812858,
+            0.013467364668922394,
+            -0.0441290259487042,
+            0.0251838136800231,
+            0.013122518637808453,
+            0.01011153685127668,
+            0.0499840409480137,
+            -0.003859194708131195,
+            0.018268337266914545,
+            -0.008246549931451653,
+            -0.0007622497183543339,
+            0.01647750113694929
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.07314075170069262,
+              "component": 1,
+              "projected_energy": 0.00534956955934237,
+              "projected_energy_share": 0.3279914552874734
+            },
+            {
+              "coefficient": 0.0648961115699175,
+              "component": 2,
+              "projected_energy": 0.004211505296895179,
+              "projected_energy_share": 0.25821474717853043
+            },
+            {
+              "coefficient": 0.0499840409480137,
+              "component": 11,
+              "projected_energy": 0.0024984043494927105,
+              "projected_energy_share": 0.1531815353359765
+            },
+            {
+              "coefficient": -0.0441290259487042,
+              "component": 7,
+              "projected_energy": 0.0019473709311814086,
+              "projected_energy_share": 0.1193967138135935
+            },
+            {
+              "coefficient": 0.0251838136800231,
+              "component": 8,
+              "projected_energy": 0.0006342244714701187,
+              "projected_energy_share": 0.03888541032486081
+            }
+          ],
+          "energy_shares": [
+            0.3279914552874734,
+            0.25821474717853043,
+            0.0024378586266467044,
+            0.029669026082757646,
+            4.988852691079086e-05,
+            0.011120106101172714,
+            0.1193967138135935,
+            0.03888541032486081,
+            0.010557913204196525,
+            0.0062687078292394845,
+            0.1531815353359765,
+            0.0009131393789681416,
+            0.020461700925982883,
+            0.0041695412682423135,
+            3.5623635297120975e-05,
+            0.01664663248015103
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.36975843786605495,
+            "largest_components": [
+              {
+                "coefficient": -0.08804628668489158,
+                "component": 29,
+                "energy_share": 0.021671891593502725,
+                "selected_by_rank16": false,
+                "singular_value": 1.3397731600402079
+              },
+              {
+                "coefficient": -0.07998395165434877,
+                "component": 65,
+                "energy_share": 0.017884649955854183,
+                "selected_by_rank16": false,
+                "singular_value": 0.9451277104567135
+              },
+              {
+                "coefficient": -0.0759877882522204,
+                "component": 107,
+                "energy_share": 0.016142185669357365,
+                "selected_by_rank16": false,
+                "singular_value": 0.7254350242596531
+              },
+              {
+                "coefficient": 0.0746809832264029,
+                "component": 204,
+                "energy_share": 0.015591747205965279,
+                "selected_by_rank16": false,
+                "singular_value": 0.4681368708112818
+              },
+              {
+                "coefficient": -0.07314075170069267,
+                "component": 1,
+                "energy_share": 0.014955246288358507,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": 0.06744756042735817,
+                "component": 83,
+                "energy_share": 0.01271766035836057,
+                "selected_by_rank16": false,
+                "singular_value": 0.8452917761204345
+              },
+              {
+                "coefficient": 0.06650719448576026,
+                "component": 161,
+                "energy_share": 0.012365508685277788,
+                "selected_by_rank16": false,
+                "singular_value": 0.5568159609988655
+              },
+              {
+                "coefficient": 0.06648865800476879,
+                "component": 195,
+                "energy_share": 0.012358616767011287,
+                "selected_by_rank16": false,
+                "singular_value": 0.4865167245676289
+              },
+              {
+                "coefficient": 0.06489611156991748,
+                "component": 2,
+                "energy_share": 0.01177367604273874,
+                "selected_by_rank16": true,
+                "singular_value": 4.026444558892786
+              },
+              {
+                "coefficient": -0.0631662603795714,
+                "component": 134,
+                "energy_share": 0.011154370428808423,
+                "selected_by_rank16": false,
+                "singular_value": 0.6280972072702485
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.5980846202837037,
+            "rank16_share_of_local_span_energy": 0.0455964509052552
+          },
+          "label": "RELEVANT_BUT_REDUNDANT",
+          "memory_id": "memory_759da3bac7289fb59ef4c962b14f2a875bf8fa4812aee1de3c54825750d6b9e5",
+          "memory_text": "budget: at most 120",
+          "projected_norm": 0.1277109556146841,
+          "raw_cosine": 0.18054798631136618,
+          "rho": 0.016859672458963415,
+          "tangent_norm": 0.9835661770510975
+        },
+        {
+          "coefficients": [
+            -0.1706260502439227,
+            0.0633072122058106,
+            0.012983685232865484,
+            -0.014978338937858651,
+            -0.07256453304796566,
+            -0.022777956580337422,
+            -0.10031559988863982,
+            0.032539471809950545,
+            -0.010266817507450803,
+            0.04666518491049761,
+            -0.019016692053952372,
+            -0.025178173265399284,
+            -0.007316504976430366,
+            0.0005294000205015876,
+            0.023310724368818384,
+            0.005976037482680678
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.1706260502439227,
+              "component": 1,
+              "projected_energy": 0.02911324902184163,
+              "projected_energy_share": 0.5358398299778707
+            },
+            {
+              "coefficient": -0.10031559988863982,
+              "component": 7,
+              "projected_energy": 0.010063219581017673,
+              "projected_energy_share": 0.1852171794799352
+            },
+            {
+              "coefficient": -0.07256453304796566,
+              "component": 5,
+              "projected_energy": 0.005265611456469301,
+              "projected_energy_share": 0.0969154746502957
+            },
+            {
+              "coefficient": 0.0633072122058106,
+              "component": 2,
+              "projected_energy": 0.004007803117271535,
+              "projected_energy_share": 0.07376505931482985
+            },
+            {
+              "coefficient": 0.04666518491049761,
+              "component": 10,
+              "projected_energy": 0.002177639482730934,
+              "projected_energy_share": 0.04008023870177541
+            }
+          ],
+          "energy_shares": [
+            0.5358398299778707,
+            0.07376505931482985,
+            0.003102703486327361,
+            0.004129254253831135,
+            0.0969154746502957,
+            0.009549350604323895,
+            0.1852171794799352,
+            0.019487912247626818,
+            0.0019400637557597934,
+            0.04008023870177541,
+            0.006656014584088348,
+            0.011667901466800258,
+            0.0009852618385314065,
+            5.158366849749693e-06,
+            0.01000128620666946,
+            0.0006573110644847828
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.4579074396161526,
+            "largest_components": [
+              {
+                "coefficient": -0.1706260502439227,
+                "component": 1,
+                "energy_share": 0.06759296881985344,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.15380892408283986,
+                "component": 65,
+                "energy_share": 0.05492548686305508,
+                "selected_by_rank16": false,
+                "singular_value": 0.9451277104567135
+              },
+              {
+                "coefficient": -0.10031559988863978,
+                "component": 7,
+                "energy_share": 0.023364032192241993,
+                "selected_by_rank16": true,
+                "singular_value": 2.1567379916363167
+              },
+              {
+                "coefficient": -0.09706876863167092,
+                "component": 87,
+                "energy_share": 0.021876099378093296,
+                "selected_by_rank16": false,
+                "singular_value": 0.8160382678871633
+              },
+              {
+                "coefficient": 0.08592156200381755,
+                "component": 41,
+                "energy_share": 0.01714017193598368,
+                "selected_by_rank16": false,
+                "singular_value": 1.153211779918049
+              },
+              {
+                "coefficient": 0.08473639971353081,
+                "component": 28,
+                "energy_share": 0.016670585844051778,
+                "selected_by_rank16": false,
+                "singular_value": 1.3567383516767828
+              },
+              {
+                "coefficient": 0.07608161902721802,
+                "component": 63,
+                "energy_share": 0.013439104735122448,
+                "selected_by_rank16": false,
+                "singular_value": 0.9653993872375639
+              },
+              {
+                "coefficient": -0.07533837895592649,
+                "component": 498,
+                "energy_share": 0.013177814488271218,
+                "selected_by_rank16": false,
+                "singular_value": 0.0066646010147633
+              },
+              {
+                "coefficient": -0.0725645330479656,
+                "component": 5,
+                "energy_share": 0.012225303700303987,
+                "selected_by_rank16": true,
+                "singular_value": 2.4778411496866655
+              },
+              {
+                "coefficient": 0.07154515021716505,
+                "component": 85,
+                "energy_share": 0.011884235425027543,
+                "selected_by_rank16": false,
+                "singular_value": 0.8311933962707525
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.6562881710591317,
+            "rank16_share_of_local_span_energy": 0.12614398004464297
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_f08980487e12d03ff4a9576ca128ae308c8f7255cfe83b0e338c08ebcf914d23",
+          "memory_text": "style: minimal",
+          "projected_norm": 0.23309225392958635,
+          "raw_cosine": 0.24369238211373656,
+          "rho": 0.05776226692523347,
+          "tangent_norm": 0.9698525779208574
+        },
+        {
+          "coefficients": [
+            -0.18273617023714728,
+            0.052907228272054366,
+            0.0018934266540211195,
+            0.06892206914246927,
+            -0.10110263545663763,
+            -0.0428389674397464,
+            -0.08638855203147018,
+            0.0064405952182534955,
+            -0.024934752362973753,
+            0.05809331757120523,
+            -0.03611457901189731,
+            -0.017580951834146322,
+            -0.017807642317421955,
+            0.007670250345602312,
+            -0.017524355290216984,
+            0.05436167132089604
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.18273617023714728,
+              "component": 1,
+              "projected_energy": 0.03339250791293967,
+              "projected_energy_share": 0.4787108370867546
+            },
+            {
+              "coefficient": -0.10110263545663763,
+              "component": 5,
+              "projected_energy": 0.01022174289627776,
+              "projected_energy_share": 0.1465376338644683
+            },
+            {
+              "coefficient": -0.08638855203147018,
+              "component": 7,
+              "projected_energy": 0.007462981922094031,
+              "projected_energy_share": 0.1069883799205317
+            },
+            {
+              "coefficient": 0.06892206914246927,
+              "component": 4,
+              "projected_energy": 0.0047502516148793155,
+              "projected_energy_share": 0.06809901588884272
+            },
+            {
+              "coefficient": 0.05809331757120523,
+              "component": 10,
+              "projected_energy": 0.003374833546428902,
+              "projected_energy_share": 0.048381193657317474
+            }
+          ],
+          "energy_shares": [
+            0.4787108370867546,
+            0.04012862156973491,
+            5.139503835658771e-05,
+            0.06809901588884272,
+            0.1465376338644683,
+            0.02630887093054823,
+            0.1069883799205317,
+            0.0005946702771906474,
+            0.0089132141377929,
+            0.048381193657317474,
+            0.018697749406361448,
+            0.004431073866666761,
+            0.004546079951812209,
+            0.0008434188429718466,
+            0.004402590789249358,
+            0.042365254771400344
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.49524018316933804,
+            "largest_components": [
+              {
+                "coefficient": -0.18273617023714747,
+                "component": 1,
+                "energy_share": 0.07249758117688287,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.10638429792684016,
+                "component": 87,
+                "energy_share": 0.024571379697255192,
+                "selected_by_rank16": false,
+                "singular_value": 0.8160382678871633
+              },
+              {
+                "coefficient": -0.10110263545663734,
+                "component": 5,
+                "energy_share": 0.022192152722526056,
+                "selected_by_rank16": true,
+                "singular_value": 2.4778411496866655
+              },
+              {
+                "coefficient": -0.09801612739183953,
+                "component": 86,
+                "energy_share": 0.020857850895386023,
+                "selected_by_rank16": false,
+                "singular_value": 0.8192613174186293
+              },
+              {
+                "coefficient": -0.09055603457467545,
+                "component": 65,
+                "energy_share": 0.01780365920975582,
+                "selected_by_rank16": false,
+                "singular_value": 0.9451277104567135
+              },
+              {
+                "coefficient": 0.08776134174622867,
+                "component": 41,
+                "energy_share": 0.016721721581120147,
+                "selected_by_rank16": false,
+                "singular_value": 1.153211779918049
+              },
+              {
+                "coefficient": -0.08638855203147014,
+                "component": 7,
+                "energy_share": 0.016202680527297633,
+                "selected_by_rank16": true,
+                "singular_value": 2.1567379916363167
+              },
+              {
+                "coefficient": 0.0858729159192341,
+                "component": 212,
+                "energy_share": 0.016009836608407595,
+                "selected_by_rank16": false,
+                "singular_value": 0.4548181669685661
+              },
+              {
+                "coefficient": -0.08105350897425523,
+                "component": 69,
+                "energy_share": 0.01426323775543556,
+                "selected_by_rank16": false,
+                "singular_value": 0.9188551283669565
+              },
+              {
+                "coefficient": -0.07880358657198604,
+                "component": 45,
+                "energy_share": 0.013482376387350814,
+                "selected_by_rank16": false,
+                "singular_value": 1.1187873655240441
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.678676420048751,
+            "rank16_share_of_local_span_energy": 0.15144336739496947
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_e48712816bd9bcac6e74f4d785b385a30fb778360b06c36296612036f283462c",
+          "memory_text": "style: classic",
+          "projected_norm": 0.26411185115595714,
+          "raw_cosine": 0.2644670871753802,
+          "rho": 0.07500084100846595,
+          "tangent_norm": 0.9643947116201801
+        },
+        {
+          "coefficients": [
+            -0.1863890968378349,
+            0.052199728261155105,
+            -0.10309251633739756,
+            0.07104532426979975,
+            -0.1142457891691983,
+            -0.03199813634734667,
+            -0.06698642623113708,
+            0.06252387675833324,
+            0.04400067755194828,
+            -0.003391077293712596,
+            0.0785562080023601,
+            -0.0660536282949846,
+            0.03132015960739109,
+            -0.03372566686804085,
+            -0.045286961323532264,
+            0.009051129383674568
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.1863890968378349,
+              "component": 1,
+              "projected_energy": 0.034740895420023794,
+              "projected_energy_share": 0.37620140421664516
+            },
+            {
+              "coefficient": -0.1142457891691983,
+              "component": 5,
+              "projected_energy": 0.013052100342892906,
+              "projected_energy_share": 0.14133828209110402
+            },
+            {
+              "coefficient": -0.10309251633739756,
+              "component": 3,
+              "projected_energy": 0.010628066924776584,
+              "projected_energy_share": 0.11508896511933064
+            },
+            {
+              "coefficient": 0.0785562080023601,
+              "component": 11,
+              "projected_energy": 0.006171077815710065,
+              "projected_energy_share": 0.06682522461589228
+            },
+            {
+              "coefficient": 0.07104532426979975,
+              "component": 4,
+              "projected_energy": 0.005047438100600997,
+              "projected_energy_share": 0.0546575808765205
+            }
+          ],
+          "energy_shares": [
+            0.37620140421664516,
+            0.029506377116681227,
+            0.11508896511933064,
+            0.0546575808765205,
+            0.14133828209110402,
+            0.011087375947217714,
+            0.04859068499334368,
+            0.04233223527098619,
+            0.020965157655776286,
+            0.00012452449299542244,
+            0.06682522461589228,
+            0.04724683932696382,
+            0.010622514620666646,
+            0.01231687392836815,
+            0.022208834457226746,
+            0.000887125270281525
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.5562669588873085,
+            "largest_components": [
+              {
+                "coefficient": -0.18638909683783486,
+                "component": 1,
+                "energy_share": 0.0675266648446306,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.13623634240938132,
+                "component": 70,
+                "energy_share": 0.03607615493179858,
+                "selected_by_rank16": false,
+                "singular_value": 0.911073752028669
+              },
+              {
+                "coefficient": -0.11424578916919836,
+                "component": 5,
+                "energy_share": 0.0253696628920227,
+                "selected_by_rank16": true,
+                "singular_value": 2.4778411496866655
+              },
+              {
+                "coefficient": 0.1075837906409864,
+                "component": 58,
+                "energy_share": 0.02249717450576959,
+                "selected_by_rank16": false,
+                "singular_value": 1.0000889520870937
+              },
+              {
+                "coefficient": 0.10585094924924374,
+                "component": 54,
+                "energy_share": 0.021778291503671922,
+                "selected_by_rank16": false,
+                "singular_value": 1.0361905396157811
+              },
+              {
+                "coefficient": -0.10309251633739759,
+                "component": 3,
+                "energy_share": 0.02065801426528693,
+                "selected_by_rank16": true,
+                "singular_value": 3.1280198647634143
+              },
+              {
+                "coefficient": 0.09632383537847296,
+                "component": 29,
+                "energy_share": 0.018034405317989215,
+                "selected_by_rank16": false,
+                "singular_value": 1.3397731600402079
+              },
+              {
+                "coefficient": 0.09369996300074449,
+                "component": 23,
+                "energy_share": 0.017065268718467416,
+                "selected_by_rank16": false,
+                "singular_value": 1.4498105758679278
+              },
+              {
+                "coefficient": 0.08974902014288866,
+                "component": 41,
+                "energy_share": 0.01565646545217514,
+                "selected_by_rank16": false,
+                "singular_value": 1.153211779918049
+              },
+              {
+                "coefficient": -0.08665685895685865,
+                "component": 66,
+                "energy_share": 0.014596212545486324,
+                "selected_by_rank16": false,
+                "singular_value": 0.9422356357029325
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.717270308867655,
+            "rank16_share_of_local_span_energy": 0.17949604676580022
+          },
+          "label": "CROSS_DOMAIN_DISTRACTOR",
+          "memory_id": "memory_5604f48f7cbc7eef9bfab5bbb86771b86737603e740600eb877870812bd67b1e",
+          "memory_text": "closure: double zippers",
+          "projected_norm": 0.3038857237220878,
+          "raw_cosine": 0.2740917402679282,
+          "rho": 0.09984772006670573,
+          "tangent_norm": 0.9617035499138487
+        },
+        {
+          "coefficients": [
+            -0.19768074899859633,
+            -0.010908211117772694,
+            -0.09748934912299412,
+            -0.02059957308390856,
+            -0.1785413925290814,
+            -0.037240989260165544,
+            -0.07316747548954992,
+            0.09426745525622214,
+            -0.0418629149272967,
+            0.014237413618663002,
+            -0.014783874357578256,
+            0.003910947923361034,
+            -0.009475183167729462,
+            0.02385088937568235,
+            0.024541192072911867,
+            -0.029605532155062297
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.19768074899859633,
+              "component": 1,
+              "projected_energy": 0.039077678524646046,
+              "projected_energy_share": 0.38707862205796434
+            },
+            {
+              "coefficient": -0.1785413925290814,
+              "component": 5,
+              "projected_energy": 0.03187702884622353,
+              "projected_energy_share": 0.3157535674314969
+            },
+            {
+              "coefficient": -0.09748934912299412,
+              "component": 3,
+              "projected_energy": 0.009504173192425034,
+              "projected_energy_share": 0.09414229304342862
+            },
+            {
+              "coefficient": 0.09426745525622214,
+              "component": 8,
+              "projected_energy": 0.008886353120483843,
+              "projected_energy_share": 0.08802256047088286
+            },
+            {
+              "coefficient": -0.07316747548954992,
+              "component": 7,
+              "projected_energy": 0.005353479469513889,
+              "projected_energy_share": 0.053028161715596885
+            }
+          ],
+          "energy_shares": [
+            0.38707862205796434,
+            0.0011786300239197882,
+            0.09414229304342862,
+            0.004203265957051787,
+            0.3157535674314969,
+            0.013737662683427652,
+            0.053028161715596885,
+            0.08802256047088286,
+            0.01735918616810159,
+            0.0020078563332867933,
+            0.0021649454429555175,
+            0.0001515076272290355,
+            0.000889294607697337,
+            0.005634814022650423,
+            0.005965704526267734,
+            0.008681927888042682
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.52239410949549,
+            "largest_components": [
+              {
+                "coefficient": -0.1976807489985963,
+                "component": 1,
+                "energy_share": 0.08180645518273558,
+                "selected_by_rank16": true,
+                "singular_value": 12.671610879379267
+              },
+              {
+                "coefficient": -0.17854139252908163,
+                "component": 5,
+                "energy_share": 0.06673238611200182,
+                "selected_by_rank16": true,
+                "singular_value": 2.4778411496866655
+              },
+              {
+                "coefficient": -0.09748934912299416,
+                "component": 3,
+                "energy_share": 0.01989633846403415,
+                "selected_by_rank16": true,
+                "singular_value": 3.1280198647634143
+              },
+              {
+                "coefficient": 0.09426745525622222,
+                "component": 8,
+                "energy_share": 0.018602974274184062,
+                "selected_by_rank16": true,
+                "singular_value": 2.073114878268577
+              },
+              {
+                "coefficient": -0.09181556981039897,
+                "component": 82,
+                "energy_share": 0.01764783709220657,
+                "selected_by_rank16": false,
+                "singular_value": 0.8480465096952636
+              },
+              {
+                "coefficient": 0.0873356286609676,
+                "component": 54,
+                "energy_share": 0.015967676302456414,
+                "selected_by_rank16": false,
+                "singular_value": 1.0361905396157811
+              },
+              {
+                "coefficient": -0.08640405072529725,
+                "component": 87,
+                "energy_share": 0.015628850068986195,
+                "selected_by_rank16": false,
+                "singular_value": 0.8160382678871633
+              },
+              {
+                "coefficient": -0.08476248543107545,
+                "component": 199,
+                "energy_share": 0.01504063541150781,
+                "selected_by_rank16": false,
+                "singular_value": 0.47848824351452623
+              },
+              {
+                "coefficient": 0.0808744187616872,
+                "component": 146,
+                "energy_share": 0.013692449990198995,
+                "selected_by_rank16": false,
+                "singular_value": 0.5940711408590319
+              },
+              {
+                "coefficient": 0.08030298438435193,
+                "component": 125,
+                "energy_share": 0.013499640086988444,
+                "selected_by_rank16": false,
+                "singular_value": 0.6569135026853513
+              }
+            ],
+            "numerical_rank": 499,
+            "projected_norm": 0.6911472601789174,
+            "rank16_share_of_local_span_energy": 0.21134325307814417
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_128cec5118039f800554a96aa6db7cedba6ffb9c4da09b1ce795bb30f6bcbe55",
+          "memory_text": "color: black",
+          "projected_norm": 0.3177348007780281,
+          "raw_cosine": 0.2925507102900309,
+          "rho": 0.11040447048963684,
+          "tangent_norm": 0.9562500101483915
+        }
+      ],
+      "missing_price_count": 426,
+      "price_distribution": {
+        "count": 74,
+        "max": 139.68,
+        "mean": 24.479864864864872,
+        "median": 16.99,
+        "min": 4.41,
+        "p25": 12.592500000000001,
+        "p75": 26.3725
+      },
+      "price_proxy_diagnostic": {
+        "affordable_proxy_count": 2,
+        "interpretation_guardrail": "Query similarity is not a price representation; it is included only to test accidental textual correlation.",
+        "lexical_proxy_vs_log_price_pearson": 0.14430187018922802,
+        "premium_proxy_count": 6,
+        "price_when_affordable_proxy": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "p25": null,
+          "p75": null
+        },
+        "price_when_premium_proxy": {
+          "count": 1,
+          "max": 7.99,
+          "mean": 7.99,
+          "median": 7.99,
+          "min": 7.99,
+          "p25": 7.99,
+          "p75": 7.99
+        },
+        "price_without_proxy": {
+          "count": 73,
+          "max": 139.68,
+          "mean": 24.705753424657537,
+          "median": 16.99,
+          "min": 4.41,
+          "p25": 12.9,
+          "p75": 26.5
+        },
+        "query_score_vs_price_spearman": 0.024692272901359495,
+        "valid_price_count": 74
+      },
+      "query": {
+        "effective_query_text": "clothing cotton bright colorful women",
+        "no_target_leakage": true,
+        "raw_current_message": "hey, i'm looking for a pair of sporty ankle socks for women, ideally made of cotton. usually i go for dark and simple styles, but today i want something bright and colorful, and i want to stay under about $120."
+      },
+      "spectrum": {
+        "cumulative_energy": {
+          "1": 0.4014974563234786,
+          "16": 0.6001542775862202,
+          "2": 0.44203548159323264,
+          "4": 0.48231000376280225,
+          "8": 0.5335534014848562
+        },
+        "energy_denominator_includes_all_local_singular_values": true,
+        "sigma_1_over_sigma_16": 7.700449893830751,
+        "sigma_1_to_sigma_16": [
+          12.671610879379267,
+          4.026444558892786,
+          3.1280198647634143,
+          2.5144314416851867,
+          2.4778411496866655,
+          2.324780367395414,
+          2.1567379916363167,
+          2.073114878268577,
+          2.000555966543691,
+          1.972886611887033,
+          1.9024449694764296,
+          1.8346006463468276,
+          1.7703826738598012,
+          1.7675964460991511,
+          1.6701466452338927,
+          1.6455676037228921
+        ]
+      },
+      "top_k_replay": {
+        "count": 500,
+        "ids_exact": true,
+        "scores_match": true,
+        "singular_values_match": true
+      }
+    },
+    "u3_distractor_s9_final": {
+      "attribute_coverage": {
+        "breathability": {
+          "catalogue_only_count": 80,
+          "distinct_embedded_forms": [
+            "breathability",
+            "breathable",
+            "mesh",
+            "quick dry"
+          ],
+          "distinct_raw_forms": [
+            "breathability",
+            "breathable",
+            "mesh",
+            "moisture wicking",
+            "moisture-wicking",
+            "quick dry"
+          ],
+          "embedded_text_count": 23,
+          "embedded_text_percent": 4.6,
+          "raw_catalogue_count": 103,
+          "raw_catalogue_percent": 20.599999999999998
+        },
+        "cargo_storage": {
+          "catalogue_only_count": 26,
+          "distinct_embedded_forms": [
+            "pocket",
+            "pockets"
+          ],
+          "distinct_raw_forms": [
+            "cargo",
+            "pocket",
+            "pockets"
+          ],
+          "embedded_text_count": 33,
+          "embedded_text_percent": 6.6000000000000005,
+          "raw_catalogue_count": 59,
+          "raw_catalogue_percent": 11.799999999999999
+        },
+        "casual": {
+          "catalogue_only_count": 86,
+          "distinct_embedded_forms": [
+            "casual",
+            "everyday",
+            "lounge",
+            "t shirt",
+            "t-shirt",
+            "tee"
+          ],
+          "distinct_raw_forms": [
+            "casual",
+            "everyday",
+            "lounge",
+            "t shirt",
+            "t-shirt",
+            "tee"
+          ],
+          "embedded_text_count": 293,
+          "embedded_text_percent": 58.599999999999994,
+          "raw_catalogue_count": 379,
+          "raw_catalogue_percent": 75.8
+        },
+        "compression": {
+          "catalogue_only_count": 0,
+          "distinct_embedded_forms": [],
+          "distinct_raw_forms": [],
+          "embedded_text_count": 0,
+          "embedded_text_percent": 0.0,
+          "raw_catalogue_count": 0,
+          "raw_catalogue_percent": 0.0
+        },
+        "formal_dressy": {
+          "catalogue_only_count": 137,
+          "distinct_embedded_forms": [
+            "business",
+            "cocktail",
+            "dressy",
+            "formal",
+            "office"
+          ],
+          "distinct_raw_forms": [
+            "blazer",
+            "business",
+            "cocktail",
+            "dress shirt",
+            "dressy",
+            "evening",
+            "formal",
+            "gown",
+            "office",
+            "suit"
+          ],
+          "embedded_text_count": 21,
+          "embedded_text_percent": 4.2,
+          "raw_catalogue_count": 158,
+          "raw_catalogue_percent": 31.6
+        },
+        "hooded": {
+          "catalogue_only_count": 1,
+          "distinct_embedded_forms": [
+            "hoodie"
+          ],
+          "distinct_raw_forms": [
+            "hooded",
+            "hoodie"
+          ],
+          "embedded_text_count": 1,
+          "embedded_text_percent": 0.2,
+          "raw_catalogue_count": 2,
+          "raw_catalogue_percent": 0.4
+        },
+        "materials": {
+          "catalogue_only_count": 6,
+          "distinct_embedded_forms": [
+            "acrylic",
+            "cotton",
+            "denim",
+            "elastane",
+            "linen",
+            "mesh",
+            "modal",
+            "nylon",
+            "polyester",
+            "rayon",
+            "spandex",
+            "viscose",
+            "wool"
+          ],
+          "distinct_raw_forms": [
+            "acrylic",
+            "cotton",
+            "denim",
+            "elastane",
+            "fleece",
+            "leather",
+            "linen",
+            "mesh",
+            "modal",
+            "nylon",
+            "polyester",
+            "rayon",
+            "satin",
+            "silk",
+            "spandex",
+            "viscose",
+            "wool"
+          ],
+          "embedded_text_count": 432,
+          "embedded_text_percent": 86.4,
+          "raw_catalogue_count": 438,
+          "raw_catalogue_percent": 87.6
+        },
+        "price": {
+          "catalogue_only_count": 88,
+          "distinct_embedded_forms": [
+            "$",
+            "cheap",
+            "premium"
+          ],
+          "distinct_raw_values": 56,
+          "embedded_text_count": 9,
+          "embedded_text_percent": 1.7999999999999998,
+          "note": "The structured price field is not interpolated into the embedded product template; embedded hits are only lexical proxies.",
+          "raw_catalogue_count": 88,
+          "raw_catalogue_percent": 17.599999999999998
+        },
+        "rain_waterproof": {
+          "catalogue_only_count": 0,
+          "distinct_embedded_forms": [],
+          "distinct_raw_forms": [],
+          "embedded_text_count": 0,
+          "embedded_text_percent": 0.0,
+          "raw_catalogue_count": 0,
+          "raw_catalogue_percent": 0.0
+        },
+        "winter_insulation": {
+          "catalogue_only_count": 66,
+          "distinct_embedded_forms": [
+            "warmth",
+            "winter"
+          ],
+          "distinct_raw_forms": [
+            "cold weather",
+            "warmth",
+            "winter"
+          ],
+          "embedded_text_count": 1,
+          "embedded_text_percent": 0.2,
+          "raw_catalogue_count": 67,
+          "raw_catalogue_percent": 13.4
+        }
+      },
+      "category_composition": {
+        "distinct_category_paths": 53,
+        "distinct_leaf_categories": 45,
+        "top_category_paths": [
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > T-Shirts",
+            113
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tunics",
+            100
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Blouses & Button-Down Shirts",
+            48
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Dresses > Casual",
+            44
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Westlake",
+            32
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Dresses",
+            26
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Tanks & Camis",
+            25
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses",
+            19
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women",
+            7
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge > Sleep & Lounge > Sets",
+            7
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing",
+            7
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses > Polos",
+            5
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Sweaters > Pullovers",
+            5
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Dresses > Club & Night Out",
+            5
+          ],
+          [
+            "Clothing, Shoes & Jewelry > Women > Clothing > Active > Active Shirts & Tees",
+            4
+          ]
+        ],
+        "top_departments": [
+          [
+            "Women",
+            453
+          ],
+          [
+            "Westlake",
+            32
+          ],
+          [
+            "Novelty & More",
+            4
+          ],
+          [
+            "Under $30",
+            2
+          ],
+          [
+            "Women's Apparel",
+            2
+          ],
+          [
+            "Plus-Size Fashion",
+            2
+          ],
+          [
+            "Men",
+            1
+          ],
+          [
+            "Everyday Apparel Essentials",
+            1
+          ],
+          [
+            "Under $50",
+            1
+          ],
+          [
+            "Women's Plus-Size Apparel",
+            1
+          ],
+          [
+            "Girls",
+            1
+          ]
+        ],
+        "top_leaf_categories": [
+          [
+            "T-Shirts",
+            115
+          ],
+          [
+            "Tunics",
+            100
+          ],
+          [
+            "Blouses & Button-Down Shirts",
+            48
+          ],
+          [
+            "Casual",
+            44
+          ],
+          [
+            "Westlake",
+            32
+          ],
+          [
+            "Dresses",
+            28
+          ],
+          [
+            "Tanks & Camis",
+            26
+          ],
+          [
+            "Tops, Tees & Blouses",
+            19
+          ],
+          [
+            "Women",
+            8
+          ],
+          [
+            "Sets",
+            8
+          ],
+          [
+            "Clothing",
+            7
+          ],
+          [
+            "Polos",
+            5
+          ],
+          [
+            "Pullovers",
+            5
+          ],
+          [
+            "Club & Night Out",
+            5
+          ],
+          [
+            "Active Shirts & Tees",
+            4
+          ]
+        ]
+      },
+      "component_associations": [
+        {
+          "component": 1,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.17994154032957133,
+              "attribute": "casual",
+              "correlation": -0.17994154032957133
+            },
+            {
+              "absolute_correlation": 0.08914912489370357,
+              "attribute": "breathability",
+              "correlation": 0.08914912489370357
+            },
+            {
+              "absolute_correlation": 0.08850971103820261,
+              "attribute": "materials",
+              "correlation": 0.08850971103820261
+            },
+            {
+              "absolute_correlation": 0.07945458324922197,
+              "attribute": "cargo_storage",
+              "correlation": 0.07945458324922197
+            },
+            {
+              "absolute_correlation": 0.040030418167781724,
+              "attribute": "winter_insulation",
+              "correlation": -0.040030418167781724
+            }
+          ]
+        },
+        {
+          "component": 2,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.2611119132161485,
+              "attribute": "cargo_storage",
+              "correlation": 0.2611119132161485
+            },
+            {
+              "absolute_correlation": 0.0950469976082316,
+              "attribute": "formal_dressy",
+              "correlation": 0.0950469976082316
+            },
+            {
+              "absolute_correlation": 0.06895615880385536,
+              "attribute": "materials",
+              "correlation": -0.06895615880385536
+            },
+            {
+              "absolute_correlation": 0.06078366400361253,
+              "attribute": "breathability",
+              "correlation": 0.06078366400361253
+            },
+            {
+              "absolute_correlation": 0.05204187216254609,
+              "attribute": "casual",
+              "correlation": 0.05204187216254609
+            }
+          ]
+        },
+        {
+          "component": 3,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.44338336112712,
+              "attribute": "materials",
+              "correlation": -0.44338336112712
+            },
+            {
+              "absolute_correlation": 0.33430942491280247,
+              "attribute": "casual",
+              "correlation": 0.33430942491280247
+            },
+            {
+              "absolute_correlation": 0.05823842145327054,
+              "attribute": "winter_insulation",
+              "correlation": -0.05823842145327054
+            },
+            {
+              "absolute_correlation": 0.03504995010271781,
+              "attribute": "formal_dressy",
+              "correlation": 0.03504995010271781
+            },
+            {
+              "absolute_correlation": 0.023425116368272627,
+              "attribute": "hooded",
+              "correlation": 0.023425116368272627
+            }
+          ]
+        },
+        {
+          "component": 4,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.1811511044617122,
+              "attribute": "price",
+              "correlation": 0.1811511044617122
+            },
+            {
+              "absolute_correlation": 0.0870456054323458,
+              "attribute": "materials",
+              "correlation": -0.0870456054323458
+            },
+            {
+              "absolute_correlation": 0.0838771957837905,
+              "attribute": "cargo_storage",
+              "correlation": 0.0838771957837905
+            },
+            {
+              "absolute_correlation": 0.052743319930768716,
+              "attribute": "breathability",
+              "correlation": -0.052743319930768716
+            },
+            {
+              "absolute_correlation": 0.03761422052514826,
+              "attribute": "formal_dressy",
+              "correlation": 0.03761422052514826
+            }
+          ]
+        },
+        {
+          "component": 5,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.3296352450823266,
+              "attribute": "materials",
+              "correlation": 0.3296352450823266
+            },
+            {
+              "absolute_correlation": 0.1471634182719365,
+              "attribute": "breathability",
+              "correlation": 0.1471634182719365
+            },
+            {
+              "absolute_correlation": 0.08543868892330686,
+              "attribute": "casual",
+              "correlation": 0.08543868892330686
+            },
+            {
+              "absolute_correlation": 0.06360854393358421,
+              "attribute": "cargo_storage",
+              "correlation": -0.06360854393358421
+            },
+            {
+              "absolute_correlation": 0.06276989663924794,
+              "attribute": "winter_insulation",
+              "correlation": -0.06276989663924794
+            }
+          ]
+        },
+        {
+          "component": 6,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.17109987852362557,
+              "attribute": "price",
+              "correlation": 0.17109987852362557
+            },
+            {
+              "absolute_correlation": 0.14172881469269724,
+              "attribute": "formal_dressy",
+              "correlation": 0.14172881469269724
+            },
+            {
+              "absolute_correlation": 0.09719454624013646,
+              "attribute": "cargo_storage",
+              "correlation": -0.09719454624013646
+            },
+            {
+              "absolute_correlation": 0.0743579077193184,
+              "attribute": "casual",
+              "correlation": -0.0743579077193184
+            },
+            {
+              "absolute_correlation": 0.046604207871300554,
+              "attribute": "hooded",
+              "correlation": 0.046604207871300554
+            }
+          ]
+        },
+        {
+          "component": 7,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.15875827682401175,
+              "attribute": "price",
+              "correlation": -0.15875827682401175
+            },
+            {
+              "absolute_correlation": 0.0662959400337841,
+              "attribute": "formal_dressy",
+              "correlation": 0.0662959400337841
+            },
+            {
+              "absolute_correlation": 0.06202649226712226,
+              "attribute": "casual",
+              "correlation": -0.06202649226712226
+            },
+            {
+              "absolute_correlation": 0.059101183043413455,
+              "attribute": "cargo_storage",
+              "correlation": -0.059101183043413455
+            },
+            {
+              "absolute_correlation": 0.05165209044142179,
+              "attribute": "hooded",
+              "correlation": -0.05165209044142179
+            }
+          ]
+        },
+        {
+          "component": 8,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.12223313430678409,
+              "attribute": "breathability",
+              "correlation": -0.12223313430678409
+            },
+            {
+              "absolute_correlation": 0.0687913725291326,
+              "attribute": "casual",
+              "correlation": 0.0687913725291326
+            },
+            {
+              "absolute_correlation": 0.05180450185403175,
+              "attribute": "cargo_storage",
+              "correlation": -0.05180450185403175
+            },
+            {
+              "absolute_correlation": 0.039112570696848974,
+              "attribute": "price",
+              "correlation": -0.039112570696848974
+            },
+            {
+              "absolute_correlation": 0.031356747567515775,
+              "attribute": "formal_dressy",
+              "correlation": 0.031356747567515775
+            }
+          ]
+        },
+        {
+          "component": 9,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.38044045006412697,
+              "attribute": "casual",
+              "correlation": 0.38044045006412697
+            },
+            {
+              "absolute_correlation": 0.37903136669974746,
+              "attribute": "cargo_storage",
+              "correlation": 0.37903136669974746
+            },
+            {
+              "absolute_correlation": 0.2229365196303433,
+              "attribute": "breathability",
+              "correlation": 0.2229365196303433
+            },
+            {
+              "absolute_correlation": 0.21983964794488267,
+              "attribute": "materials",
+              "correlation": 0.21983964794488267
+            },
+            {
+              "absolute_correlation": 0.11348016739195572,
+              "attribute": "winter_insulation",
+              "correlation": 0.11348016739195572
+            }
+          ]
+        },
+        {
+          "component": 10,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.11084218257788957,
+              "attribute": "materials",
+              "correlation": 0.11084218257788957
+            },
+            {
+              "absolute_correlation": 0.079907686664666,
+              "attribute": "price",
+              "correlation": 0.079907686664666
+            },
+            {
+              "absolute_correlation": 0.07554932226832202,
+              "attribute": "formal_dressy",
+              "correlation": 0.07554932226832202
+            },
+            {
+              "absolute_correlation": 0.052939657100858455,
+              "attribute": "cargo_storage",
+              "correlation": 0.052939657100858455
+            },
+            {
+              "absolute_correlation": 0.049011324382212285,
+              "attribute": "winter_insulation",
+              "correlation": 0.049011324382212285
+            }
+          ]
+        },
+        {
+          "component": 11,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.23742477286811195,
+              "attribute": "cargo_storage",
+              "correlation": -0.23742477286811195
+            },
+            {
+              "absolute_correlation": 0.17260904708087366,
+              "attribute": "materials",
+              "correlation": 0.17260904708087366
+            },
+            {
+              "absolute_correlation": 0.10317963550950232,
+              "attribute": "casual",
+              "correlation": -0.10317963550950232
+            },
+            {
+              "absolute_correlation": 0.08735140788962938,
+              "attribute": "price",
+              "correlation": 0.08735140788962938
+            },
+            {
+              "absolute_correlation": 0.06515332023926909,
+              "attribute": "formal_dressy",
+              "correlation": 0.06515332023926909
+            }
+          ]
+        },
+        {
+          "component": 12,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.10328846210305419,
+              "attribute": "cargo_storage",
+              "correlation": 0.10328846210305419
+            },
+            {
+              "absolute_correlation": 0.08791335621360984,
+              "attribute": "formal_dressy",
+              "correlation": 0.08791335621360984
+            },
+            {
+              "absolute_correlation": 0.08591926795940073,
+              "attribute": "hooded",
+              "correlation": -0.08591926795940073
+            },
+            {
+              "absolute_correlation": 0.06529462522803153,
+              "attribute": "breathability",
+              "correlation": -0.06529462522803153
+            },
+            {
+              "absolute_correlation": 0.06353476810499006,
+              "attribute": "casual",
+              "correlation": -0.06353476810499006
+            }
+          ]
+        },
+        {
+          "component": 13,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.11317099003207627,
+              "attribute": "price",
+              "correlation": 0.11317099003207627
+            },
+            {
+              "absolute_correlation": 0.08350731714313084,
+              "attribute": "casual",
+              "correlation": -0.08350731714313084
+            },
+            {
+              "absolute_correlation": 0.06220143288679081,
+              "attribute": "formal_dressy",
+              "correlation": 0.06220143288679081
+            },
+            {
+              "absolute_correlation": 0.04321292671671686,
+              "attribute": "materials",
+              "correlation": -0.04321292671671686
+            },
+            {
+              "absolute_correlation": 0.04255615274642489,
+              "attribute": "cargo_storage",
+              "correlation": -0.04255615274642489
+            }
+          ]
+        },
+        {
+          "component": 14,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.15399118134741394,
+              "attribute": "cargo_storage",
+              "correlation": -0.15399118134741394
+            },
+            {
+              "absolute_correlation": 0.12391676703380784,
+              "attribute": "materials",
+              "correlation": -0.12391676703380784
+            },
+            {
+              "absolute_correlation": 0.07895560330879887,
+              "attribute": "casual",
+              "correlation": 0.07895560330879887
+            },
+            {
+              "absolute_correlation": 0.07718566316346637,
+              "attribute": "price",
+              "correlation": -0.07718566316346637
+            },
+            {
+              "absolute_correlation": 0.06995465767148464,
+              "attribute": "formal_dressy",
+              "correlation": -0.06995465767148464
+            }
+          ]
+        },
+        {
+          "component": 15,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.09541055060784072,
+              "attribute": "materials",
+              "correlation": -0.09541055060784072
+            },
+            {
+              "absolute_correlation": 0.07197065373721985,
+              "attribute": "price",
+              "correlation": 0.07197065373721985
+            },
+            {
+              "absolute_correlation": 0.052583896827610825,
+              "attribute": "cargo_storage",
+              "correlation": 0.052583896827610825
+            },
+            {
+              "absolute_correlation": 0.026382789138885147,
+              "attribute": "winter_insulation",
+              "correlation": 0.026382789138885147
+            },
+            {
+              "absolute_correlation": 0.014040974318308029,
+              "attribute": "hooded",
+              "correlation": -0.014040974318308029
+            }
+          ]
+        },
+        {
+          "component": 16,
+          "strongest_attribute_associations": [
+            {
+              "absolute_correlation": 0.11626299731013799,
+              "attribute": "price",
+              "correlation": 0.11626299731013799
+            },
+            {
+              "absolute_correlation": 0.09720613685997279,
+              "attribute": "materials",
+              "correlation": -0.09720613685997279
+            },
+            {
+              "absolute_correlation": 0.08496399494516893,
+              "attribute": "casual",
+              "correlation": -0.08496399494516893
+            },
+            {
+              "absolute_correlation": 0.04897506659321208,
+              "attribute": "breathability",
+              "correlation": -0.04897506659321208
+            },
+            {
+              "absolute_correlation": 0.03805374779469671,
+              "attribute": "cargo_storage",
+              "correlation": -0.03805374779469671
+            }
+          ]
+        }
+      ],
+      "diagnostic_post_hard_filter": {
+        "constructed": false,
+        "reason": "The persisted current U3 state has no genuine deterministic M0 hard condition; filtering would be an identity operation."
+      },
+      "hard_condition_contamination": {
+        "hard_compliant": 500,
+        "hard_incompatible": 0,
+        "hard_incompatible_percent": 0.0,
+        "incompatible_in_top_100": 0,
+        "incompatible_in_top_50": 0,
+        "incompatible_rank_summary": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "p25": null,
+          "p75": null
+        },
+        "m0_hard_conditions": {},
+        "top_500_total": 500
+      },
+      "memory_scores_and_components": [
+        {
+          "coefficients": [
+            -0.1892773349167986,
+            -0.020139616539884126,
+            -0.0008753503897548789,
+            0.04698675820336607,
+            -0.0460698366780743,
+            0.11159714797295699,
+            -0.1451847750038471,
+            0.013649306373728444,
+            -0.002982037000523517,
+            -0.061005995523104484,
+            -0.005947319906032041,
+            -0.03054871641610545,
+            0.03929318790897593,
+            -0.0075510135083470395,
+            -0.16006623018562355,
+            -0.0830529721498598
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.1892773349167986,
+              "component": 1,
+              "projected_energy": 0.035825909513205946,
+              "projected_energy_share": 0.3167617351946394
+            },
+            {
+              "coefficient": -0.16006623018562355,
+              "component": 15,
+              "projected_energy": 0.025621198045837023,
+              "projected_energy_share": 0.2265347973307763
+            },
+            {
+              "coefficient": -0.1451847750038471,
+              "component": 7,
+              "projected_energy": 0.02107861889291771,
+              "projected_energy_share": 0.18637070172819817
+            },
+            {
+              "coefficient": 0.11159714797295699,
+              "component": 6,
+              "projected_energy": 0.012453923435698058,
+              "projected_energy_share": 0.11011378220610828
+            },
+            {
+              "coefficient": -0.0830529721498598,
+              "component": 16,
+              "projected_energy": 0.006897796182925387,
+              "projected_energy_share": 0.06098820428039654
+            }
+          ],
+          "energy_shares": [
+            0.3167617351946394,
+            0.0035862278861104207,
+            6.77484475099012e-06,
+            0.01952029845463671,
+            0.018765875639704183,
+            0.11011378220610828,
+            0.18637070172819817,
+            0.0016472391395147819,
+            7.862516036657405e-05,
+            0.03290641160671568,
+            0.0003127361520828815,
+            0.008251281858159983,
+            0.013651174523888187,
+            0.0005041339939508907,
+            0.2265347973307763,
+            0.06098820428039654
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.5507143380415754,
+            "largest_components": [
+              {
+                "coefficient": -0.18927733491679832,
+                "component": 1,
+                "energy_share": 0.07628931238152357,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": -0.16006623018562377,
+                "component": 15,
+                "energy_share": 0.05455893815025829,
+                "selected_by_rank16": true,
+                "singular_value": 1.6143004998512709
+              },
+              {
+                "coefficient": -0.14518477500384702,
+                "component": 7,
+                "energy_share": 0.0448857646084359,
+                "selected_by_rank16": true,
+                "singular_value": 2.0860987271596505
+              },
+              {
+                "coefficient": -0.11225867785551859,
+                "component": 103,
+                "energy_share": 0.02683529177906444,
+                "selected_by_rank16": false,
+                "singular_value": 0.6919297768821248
+              },
+              {
+                "coefficient": 0.11159714797295707,
+                "component": 6,
+                "energy_share": 0.02651994794469432,
+                "selected_by_rank16": true,
+                "singular_value": 2.201384095039653
+              },
+              {
+                "coefficient": -0.09001648636997817,
+                "component": 26,
+                "energy_share": 0.01725482622813012,
+                "selected_by_rank16": false,
+                "singular_value": 1.3103960724514532
+              },
+              {
+                "coefficient": -0.08632251171218516,
+                "component": 53,
+                "energy_share": 0.01586772308315386,
+                "selected_by_rank16": false,
+                "singular_value": 0.9879416313877859
+              },
+              {
+                "coefficient": -0.08532683547417369,
+                "component": 48,
+                "energy_share": 0.015503785610654668,
+                "selected_by_rank16": false,
+                "singular_value": 1.038335842202877
+              },
+              {
+                "coefficient": -0.08305297214985985,
+                "component": 16,
+                "energy_share": 0.01468847922895866,
+                "selected_by_rank16": true,
+                "singular_value": 1.5662885996694742
+              },
+              {
+                "coefficient": 0.08214583035909344,
+                "component": 102,
+                "energy_share": 0.014369363254049241,
+                "selected_by_rank16": false,
+                "singular_value": 0.6955406183980333
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.6852779566514474,
+            "rank16_share_of_local_span_energy": 0.24084131353380347
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_b09c3cec58a94c2a3c9806fef48fd2193851d85ad59c75925850ed69f3f7df30",
+          "memory_text": "style: flannel",
+          "projected_norm": 0.33630417254321965,
+          "raw_cosine": 0.38376900943635583,
+          "rho": 0.13263476455583204,
+          "tangent_norm": 0.9234291241867122
+        },
+        {
+          "coefficients": [
+            -0.11691397227453837,
+            0.05790616123103475,
+            0.007297438182565329,
+            -0.044331614778723764,
+            -0.12496828702116408,
+            0.05046301300393538,
+            -0.01097610964610962,
+            -0.07965779238761886,
+            0.06313117237466027,
+            0.013688704862779205,
+            -0.031701891519964845,
+            0.031226399073218905,
+            0.052390222940513716,
+            -0.04583043291036284,
+            -0.025642771052642472,
+            -0.021099589338945842
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.12496828702116408,
+              "component": 5,
+              "projected_energy": 0.015617072761004047,
+              "projected_energy_share": 0.28002186717615385
+            },
+            {
+              "coefficient": -0.11691397227453837,
+              "component": 1,
+              "projected_energy": 0.013668876913011526,
+              "projected_energy_share": 0.24508974850523957
+            },
+            {
+              "coefficient": -0.07965779238761886,
+              "component": 8,
+              "projected_energy": 0.006345363888068989,
+              "projected_energy_share": 0.11377552445590203
+            },
+            {
+              "coefficient": 0.06313117237466027,
+              "component": 9,
+              "projected_energy": 0.003985544925399069,
+              "projected_energy_share": 0.07146279900234902
+            },
+            {
+              "coefficient": 0.05790616123103475,
+              "component": 2,
+              "projected_energy": 0.003353123508514592,
+              "projected_energy_share": 0.06012316905323463
+            }
+          ],
+          "energy_shares": [
+            0.24508974850523957,
+            0.06012316905323463,
+            0.000954845625695586,
+            0.03523866239843576,
+            0.28002186717615385,
+            0.045660290300333965,
+            0.0021601762502938774,
+            0.11377552445590203,
+            0.07146279900234902,
+            0.0033598279087344294,
+            0.018020326875598614,
+            0.01748381187319679,
+            0.049214469325189004,
+            0.03766172714010683,
+            0.011790228530604716,
+            0.007982525578931372
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.4967279209720927,
+            "largest_components": [
+              {
+                "coefficient": -0.1249682870211643,
+                "component": 5,
+                "energy_share": 0.03318978049571561,
+                "selected_by_rank16": true,
+                "singular_value": 2.2728099347332584
+              },
+              {
+                "coefficient": 0.11993560892635526,
+                "component": 17,
+                "energy_share": 0.03057039394720629,
+                "selected_by_rank16": false,
+                "singular_value": 1.502872577637839
+              },
+              {
+                "coefficient": -0.1169139722745385,
+                "component": 1,
+                "energy_share": 0.02904942759174541,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": 0.11210292086503985,
+                "component": 49,
+                "energy_share": 0.026707829999688997,
+                "selected_by_rank16": false,
+                "singular_value": 1.0280353795990034
+              },
+              {
+                "coefficient": 0.10292402754061258,
+                "component": 28,
+                "energy_share": 0.022513255033079455,
+                "selected_by_rank16": false,
+                "singular_value": 1.2719417015433772
+              },
+              {
+                "coefficient": -0.09966354291841728,
+                "component": 29,
+                "energy_share": 0.021109472937750146,
+                "selected_by_rank16": false,
+                "singular_value": 1.252851113434731
+              },
+              {
+                "coefficient": -0.09820839888630356,
+                "component": 48,
+                "energy_share": 0.02049755251962106,
+                "selected_by_rank16": false,
+                "singular_value": 1.038335842202877
+              },
+              {
+                "coefficient": -0.09280356453833334,
+                "component": 27,
+                "energy_share": 0.0183034965450591,
+                "selected_by_rank16": false,
+                "singular_value": 1.293855006828254
+              },
+              {
+                "coefficient": -0.08832067069211208,
+                "component": 103,
+                "energy_share": 0.016577897998885083,
+                "selected_by_rank16": false,
+                "singular_value": 0.6919297768821248
+              },
+              {
+                "coefficient": -0.08609040628588617,
+                "component": 32,
+                "energy_share": 0.015751222314421845,
+                "selected_by_rank16": false,
+                "singular_value": 1.2191819039065839
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.6859581600621836,
+            "rank16_share_of_local_span_energy": 0.11852567383545363
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_568314a9bdc9198abf7f81f36709b569a00155c27514a8d5cdb475adadcbc6af",
+          "memory_text": "feature: secure pockets",
+          "projected_norm": 0.2361586422665847,
+          "raw_cosine": 0.22961639602425649,
+          "rho": 0.05887501154610114,
+          "tangent_norm": 0.9732812084268514
+        },
+        {
+          "coefficients": [
+            -0.10406254645627193,
+            -0.006119962934456857,
+            -0.04110542350630062,
+            -0.11103217663751741,
+            -0.1211264815884562,
+            -0.03342180706976043,
+            0.052373191265811754,
+            -0.10298452013382427,
+            0.011617567250070964,
+            0.03879293180178535,
+            0.07232961360115328,
+            -0.01557587954166266,
+            0.040214654181881804,
+            -0.02704358570307946,
+            -0.024842481780159405,
+            -0.10116657065263485
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.1211264815884562,
+              "component": 5,
+              "projected_energy": 0.014671624541998617,
+              "projected_energy_share": 0.19736874181197595
+            },
+            {
+              "coefficient": -0.11103217663751741,
+              "component": 4,
+              "projected_energy": 0.012328144248864867,
+              "projected_energy_share": 0.16584327879368896
+            },
+            {
+              "coefficient": -0.10406254645627193,
+              "component": 1,
+              "projected_energy": 0.010829013574963754,
+              "projected_energy_share": 0.14567635494196285
+            },
+            {
+              "coefficient": -0.10298452013382427,
+              "component": 8,
+              "projected_energy": 0.010605811387194056,
+              "projected_energy_share": 0.14267374709552563
+            },
+            {
+              "coefficient": -0.10116657065263485,
+              "component": 16,
+              "projected_energy": 0.010234675017614558,
+              "projected_energy_share": 0.13768106764855068
+            }
+          ],
+          "energy_shares": [
+            0.14567635494196285,
+            0.0005038459265187922,
+            0.02272994695329084,
+            0.16584327879368896,
+            0.19736874181197595,
+            0.01502657570802593,
+            0.036899309849116234,
+            0.14267374709552563,
+            0.0018156434126162043,
+            0.020244421636599584,
+            0.07037727679579509,
+            0.003263663148815085,
+            0.021755488773195126,
+            0.00983849606444013,
+            0.008302141439882959,
+            0.13768106764855068
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.46436709935850934,
+            "largest_components": [
+              {
+                "coefficient": -0.12112648158845617,
+                "component": 5,
+                "energy_share": 0.036288517611615424,
+                "selected_by_rank16": true,
+                "singular_value": 2.2728099347332584
+              },
+              {
+                "coefficient": -0.11103217663751747,
+                "component": 4,
+                "energy_share": 0.030492197943918116,
+                "selected_by_rank16": true,
+                "singular_value": 2.659247246999994
+              },
+              {
+                "coefficient": -0.10406254645627196,
+                "component": 1,
+                "energy_share": 0.026784276595041845,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": -0.102984520133824,
+                "component": 8,
+                "energy_share": 0.02623221254115006,
+                "selected_by_rank16": true,
+                "singular_value": 2.0216764807145435
+              },
+              {
+                "coefficient": -0.10116657065263487,
+                "component": 16,
+                "energy_share": 0.025314250890397523,
+                "selected_by_rank16": true,
+                "singular_value": 1.5662885996694742
+              },
+              {
+                "coefficient": -0.0957985601280601,
+                "component": 71,
+                "energy_share": 0.022699118195002376,
+                "selected_by_rank16": false,
+                "singular_value": 0.8509809288958426
+              },
+              {
+                "coefficient": -0.09462439458815075,
+                "component": 68,
+                "energy_share": 0.022146099703777494,
+                "selected_by_rank16": false,
+                "singular_value": 0.8750935406590332
+              },
+              {
+                "coefficient": -0.08486876649892316,
+                "component": 26,
+                "energy_share": 0.017815040059021167,
+                "selected_by_rank16": false,
+                "singular_value": 1.3103960724514532
+              },
+              {
+                "coefficient": -0.07513289646314834,
+                "component": 123,
+                "energy_share": 0.013962117435191405,
+                "selected_by_rank16": false,
+                "singular_value": 0.6126291999743587
+              },
+              {
+                "coefficient": 0.07305470162951891,
+                "component": 30,
+                "energy_share": 0.013200408337578575,
+                "selected_by_rank16": false,
+                "singular_value": 1.2418264231108758
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.6358497259873904,
+            "rank16_share_of_local_span_energy": 0.18386152375732226
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_7805ecfa0caf62337567e0a902e0816f8bac49099e51c8dbfb134bc2ef942e38",
+          "memory_text": "fit: compression",
+          "projected_norm": 0.27264649310633543,
+          "raw_cosine": 0.35964166957880306,
+          "rho": 0.08537924247082346,
+          "tangent_norm": 0.933090493737114
+        },
+        {
+          "coefficients": [
+            -0.17703511154610055,
+            -0.026092703619392744,
+            -0.011719128301636565,
+            -0.009641727671821513,
+            -0.14043691668799127,
+            0.04489547750633213,
+            -0.04001538756294599,
+            0.02284372630489133,
+            -0.031150947750388115,
+            0.018450766958006466,
+            -0.06629497404000063,
+            -0.04616543864310004,
+            -0.04822913521421828,
+            0.045677902775087674,
+            -0.03017837446860914,
+            0.03629385116792281
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.17703511154610055,
+              "component": 1,
+              "projected_energy": 0.03134143072014026,
+              "projected_energy_share": 0.4439840665199573
+            },
+            {
+              "coefficient": -0.14043691668799127,
+              "component": 5,
+              "projected_energy": 0.0197225275688298,
+              "projected_energy_share": 0.27939018069248606
+            },
+            {
+              "coefficient": -0.06629497404000063,
+              "component": 11,
+              "projected_energy": 0.004395023582964358,
+              "projected_energy_share": 0.062260094640851665
+            },
+            {
+              "coefficient": -0.04822913521421828,
+              "component": 13,
+              "projected_energy": 0.00232604948351135,
+              "projected_energy_share": 0.032950917838998825
+            },
+            {
+              "coefficient": -0.04616543864310004,
+              "component": 12,
+              "projected_energy": 0.0021312477251098348,
+              "projected_energy_share": 0.03019134768304023
+            }
+          ],
+          "energy_shares": [
+            0.4439840665199573,
+            0.009644655714801583,
+            0.001945535611676434,
+            0.0013169166492353669,
+            0.27939018069248606,
+            0.02855313224970258,
+            0.022683111199578776,
+            0.007392349015295769,
+            0.01374646705199708,
+            0.004822557492560792,
+            0.062260094640851665,
+            0.03019134768304023,
+            0.032950917838998825,
+            0.02955703584778956,
+            0.012901501378034138,
+            0.0186601304139939
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.49666546378903814,
+            "largest_components": [
+              {
+                "coefficient": -0.17703511154610058,
+                "component": 1,
+                "energy_share": 0.07315906473339197,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": -0.14043691668799135,
+                "component": 5,
+                "energy_share": 0.04603751768699317,
+                "selected_by_rank16": true,
+                "singular_value": 2.2728099347332584
+              },
+              {
+                "coefficient": -0.12088558657887555,
+                "component": 47,
+                "energy_share": 0.03411130788195706,
+                "selected_by_rank16": false,
+                "singular_value": 1.054748943674659
+              },
+              {
+                "coefficient": 0.09690704562516282,
+                "component": 55,
+                "energy_share": 0.02192098344357356,
+                "selected_by_rank16": false,
+                "singular_value": 0.9710031129960348
+              },
+              {
+                "coefficient": 0.09566145910216536,
+                "component": 97,
+                "energy_share": 0.021361085998555438,
+                "selected_by_rank16": false,
+                "singular_value": 0.706530952739335
+              },
+              {
+                "coefficient": -0.08927510252956833,
+                "component": 62,
+                "energy_share": 0.018604158984674563,
+                "selected_by_rank16": false,
+                "singular_value": 0.9144098156865287
+              },
+              {
+                "coefficient": -0.07914495188853095,
+                "component": 180,
+                "energy_share": 0.014621629187514772,
+                "selected_by_rank16": false,
+                "singular_value": 0.46819559855661347
+              },
+              {
+                "coefficient": -0.07783152222875885,
+                "component": 112,
+                "energy_share": 0.014140357053729749,
+                "selected_by_rank16": false,
+                "singular_value": 0.6503668195048865
+              },
+              {
+                "coefficient": -0.07557058843064943,
+                "component": 140,
+                "energy_share": 0.013330760766077913,
+                "selected_by_rank16": false,
+                "singular_value": 0.5613980908419238
+              },
+              {
+                "coefficient": -0.07344157434929498,
+                "component": 103,
+                "energy_share": 0.012590218963379748,
+                "selected_by_rank16": false,
+                "singular_value": 0.6919297768821248
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.654523639372927,
+            "rank16_share_of_local_span_energy": 0.16477858159827333
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_b21cacfd6515e3243c20eae2eccb4090f3aa6c942be8083328d0d75857e2d3d9",
+          "memory_text": "style: hooded",
+          "projected_norm": 0.2656903106708699,
+          "raw_cosine": 0.37073599822165126,
+          "rho": 0.08183983065200615,
+          "tangent_norm": 0.9287382944740655
+        },
+        {
+          "coefficients": [
+            -0.09424068689632528,
+            0.06371463386387376,
+            0.055668348181498704,
+            0.0028131138408570276,
+            -0.07634322916044686,
+            0.0200145696660164,
+            0.018225676531858553,
+            -0.10724009977752322,
+            0.00027857739321472945,
+            -0.0764105256499201,
+            -0.03708074495401441,
+            -0.05651358112107649,
+            0.02156853432016711,
+            0.04853641493307233,
+            0.016718408938051408,
+            0.028406520605657584
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.10724009977752322,
+              "component": 8,
+              "projected_energy": 0.011500439000293135,
+              "projected_energy_share": 0.23749431806855265
+            },
+            {
+              "coefficient": -0.09424068689632528,
+              "component": 1,
+              "projected_energy": 0.008881307066691217,
+              "projected_energy_share": 0.18340690866735482
+            },
+            {
+              "coefficient": -0.0764105256499201,
+              "component": 10,
+              "projected_energy": 0.005838568430097097,
+              "projected_energy_share": 0.12057164320137227
+            },
+            {
+              "coefficient": -0.07634322916044686,
+              "component": 5,
+              "projected_energy": 0.0058282886386445045,
+              "projected_energy_share": 0.12035935634337856
+            },
+            {
+              "coefficient": 0.06371463386387376,
+              "component": 2,
+              "projected_energy": 0.0040595545684074886,
+              "projected_energy_share": 0.08383342095562088
+            }
+          ],
+          "energy_shares": [
+            0.18340690866735482,
+            0.08383342095562088,
+            0.06399638977460331,
+            0.00016342309082728032,
+            0.12035935634337856,
+            0.008272396049832919,
+            0.006859715772478486,
+            0.23749431806855265,
+            1.6026199524749912e-06,
+            0.12057164320137227,
+            0.028394596801659365,
+            0.06595450445475184,
+            0.009606829271841196,
+            0.04864903101019565,
+            0.005772031507333541,
+            0.016663832410244765
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.40258452410670753,
+            "largest_components": [
+              {
+                "coefficient": -0.10724009977752329,
+                "component": 8,
+                "energy_share": 0.029068386317814814,
+                "selected_by_rank16": true,
+                "singular_value": 2.0216764807145435
+              },
+              {
+                "coefficient": 0.1012519443152921,
+                "component": 55,
+                "energy_share": 0.02591273464694635,
+                "selected_by_rank16": false,
+                "singular_value": 0.9710031129960348
+              },
+              {
+                "coefficient": -0.09424068689632534,
+                "component": 1,
+                "energy_share": 0.022448296522866524,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": 0.08761208913664327,
+                "component": 85,
+                "energy_share": 0.01940146734934154,
+                "selected_by_rank16": false,
+                "singular_value": 0.7713377866003702
+              },
+              {
+                "coefficient": -0.08396913476312703,
+                "component": 29,
+                "energy_share": 0.017821565898827045,
+                "selected_by_rank16": false,
+                "singular_value": 1.252851113434731
+              },
+              {
+                "coefficient": -0.07846005339457578,
+                "component": 47,
+                "energy_share": 0.01555978899417953,
+                "selected_by_rank16": false,
+                "singular_value": 1.054748943674659
+              },
+              {
+                "coefficient": -0.07641052564992024,
+                "component": 10,
+                "energy_share": 0.014757502967037555,
+                "selected_by_rank16": true,
+                "singular_value": 1.8874597974748821
+              },
+              {
+                "coefficient": -0.07634322916044685,
+                "component": 5,
+                "energy_share": 0.014731519876374355,
+                "selected_by_rank16": true,
+                "singular_value": 2.2728099347332584
+              },
+              {
+                "coefficient": 0.07304074526580788,
+                "component": 184,
+                "energy_share": 0.01348456360795442,
+                "selected_by_rank16": false,
+                "singular_value": 0.46039996108734504
+              },
+              {
+                "coefficient": 0.07265745241991108,
+                "component": 176,
+                "energy_share": 0.013343410190481561,
+                "selected_by_rank16": false,
+                "singular_value": 0.47695296164615913
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.628994354855872,
+            "rank16_share_of_local_span_energy": 0.12239613374423641
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_b3f9906f63b20797ce908b10a12a987f81a62b5296129d55353cbd1ba7358899",
+          "memory_text": "use_case: hiking",
+          "projected_norm": 0.22005467399554077,
+          "raw_cosine": 0.1313964214950945,
+          "rho": 0.0492747892559243,
+          "tangent_norm": 0.9913299049349231
+        },
+        {
+          "coefficients": [
+            -0.06735051691727595,
+            0.07026056869779547,
+            0.016438341173259145,
+            0.01734835772546467,
+            0.008542260467626062,
+            0.040971973494320225,
+            0.006126656130533297,
+            -0.047464026875703676,
+            -0.00865720610453332,
+            0.02417901094046878,
+            -0.01903548991304675,
+            0.004574736850598443,
+            -0.0028653835430019806,
+            -0.005791722593985703,
+            0.015971147470375934,
+            -0.02671599125960723
+          ],
+          "dominant": [
+            {
+              "coefficient": 0.07026056869779547,
+              "component": 2,
+              "projected_energy": 0.004936547513737637,
+              "projected_energy_share": 0.3058713627372522
+            },
+            {
+              "coefficient": -0.06735051691727595,
+              "component": 1,
+              "projected_energy": 0.004536092129024274,
+              "projected_energy_share": 0.2810589135717408
+            },
+            {
+              "coefficient": -0.047464026875703676,
+              "component": 8,
+              "projected_energy": 0.0022528338472575207,
+              "projected_energy_share": 0.1395868989336516
+            },
+            {
+              "coefficient": 0.040971973494320225,
+              "component": 6,
+              "projected_energy": 0.001678702612019279,
+              "projected_energy_share": 0.10401339278919597
+            },
+            {
+              "coefficient": -0.02671599125960723,
+              "component": 16,
+              "projected_energy": 0.0007137441889834099,
+              "projected_energy_share": 0.04422400617488581
+            }
+          ],
+          "energy_shares": [
+            0.2810589135717408,
+            0.3058713627372522,
+            0.016742930570690123,
+            0.018647998867532697,
+            0.004521277006191321,
+            0.10401339278919597,
+            0.002325747203938908,
+            0.1395868989336516,
+            0.004643773304606102,
+            0.03622367928923873,
+            0.022451409638340372,
+            0.0012967245454003832,
+            0.0005087225876653946,
+            0.0020784089370021524,
+            0.015804753842667506,
+            0.04422400617488581
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.35503536473411756,
+            "largest_components": [
+              {
+                "coefficient": 0.08461395217684049,
+                "component": 106,
+                "energy_share": 0.020592846405111033,
+                "selected_by_rank16": false,
+                "singular_value": 0.6816485484395369
+              },
+              {
+                "coefficient": 0.0702605686977954,
+                "component": 2,
+                "energy_share": 0.014198933992853187,
+                "selected_by_rank16": true,
+                "singular_value": 3.602913359955086
+              },
+              {
+                "coefficient": 0.06840864231270738,
+                "component": 136,
+                "energy_share": 0.013460288277965391,
+                "selected_by_rank16": false,
+                "singular_value": 0.5715833911746743
+              },
+              {
+                "coefficient": -0.06735051691727593,
+                "component": 1,
+                "energy_share": 0.013047108844041347,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": 0.06592444926972692,
+                "component": 118,
+                "energy_share": 0.01250044402278344,
+                "selected_by_rank16": false,
+                "singular_value": 0.6324850775434699
+              },
+              {
+                "coefficient": 0.06588010356605126,
+                "component": 296,
+                "energy_share": 0.012483632216328271,
+                "selected_by_rank16": false,
+                "singular_value": 0.2970905065754842
+              },
+              {
+                "coefficient": 0.06440437786429103,
+                "component": 28,
+                "energy_share": 0.011930625063451529,
+                "selected_by_rank16": false,
+                "singular_value": 1.2719417015433772
+              },
+              {
+                "coefficient": 0.06091317683118105,
+                "component": 111,
+                "energy_share": 0.010672223676573533,
+                "selected_by_rank16": false,
+                "singular_value": 0.6591271337480845
+              },
+              {
+                "coefficient": -0.060074917623919005,
+                "component": 261,
+                "energy_share": 0.01038051228575261,
+                "selected_by_rank16": false,
+                "singular_value": 0.3415656297927658
+              },
+              {
+                "coefficient": 0.05824658760507635,
+                "component": 480,
+                "energy_share": 0.009758282646175483,
+                "selected_by_rank16": false,
+                "singular_value": 0.11430354743603974
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.5896357274105056,
+            "rank16_share_of_local_span_energy": 0.046421259792961675
+          },
+          "label": "USEFUL_ADDITIONAL_STEERING",
+          "memory_id": "memory_15efd52c6253dddd3462efc0c31635c7dbf46b6691aa6dd12f4cd8691f887452",
+          "memory_text": "budget: at most 120",
+          "projected_norm": 0.1270405167756025,
+          "raw_cosine": 0.1440299618402416,
+          "rho": 0.016481188902011376,
+          "tangent_norm": 0.9895733272942933
+        },
+        {
+          "coefficients": [
+            -0.19807272256997635,
+            -0.029921173550789354,
+            0.012582961444808922,
+            -0.09186739375615832,
+            0.016868489158877575,
+            0.1026835516048599,
+            0.004761398760259658,
+            -0.11130050736975461,
+            0.01168697642849239,
+            -0.028715674049316048,
+            0.03381178253044184,
+            -0.026154202108277527,
+            0.027839450111980735,
+            -0.04099238778664823,
+            -0.048689968695645534,
+            -0.04918067586041918
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.19807272256997635,
+              "component": 1,
+              "projected_energy": 0.03923280342628282,
+              "projected_energy_share": 0.478458872175298
+            },
+            {
+              "coefficient": -0.11130050736975461,
+              "component": 8,
+              "projected_energy": 0.0123878029407648,
+              "projected_energy_share": 0.15107394083894388
+            },
+            {
+              "coefficient": 0.1026835516048599,
+              "component": 6,
+              "projected_energy": 0.010543911770187925,
+              "projected_energy_share": 0.12858699081647415
+            },
+            {
+              "coefficient": -0.09186739375615832,
+              "component": 4,
+              "projected_energy": 0.008439618035549037,
+              "projected_energy_share": 0.10292433306394706
+            },
+            {
+              "coefficient": -0.04918067586041918,
+              "component": 16,
+              "projected_energy": 0.002418738878087618,
+              "projected_energy_share": 0.02949743517235048
+            }
+          ],
+          "energy_shares": [
+            0.478458872175298,
+            0.01091823697686593,
+            0.0019309054206215841,
+            0.10292433306394706,
+            0.00347014516392109,
+            0.12858699081647415,
+            0.00027648041903555106,
+            0.15107394083894388,
+            0.0016657108175781254,
+            0.01005618605812763,
+            0.013942203070452085,
+            0.008342154345754938,
+            0.00945184466203238,
+            0.020492818939609896,
+            0.02891174205898708,
+            0.02949743517235048
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.5119051466219414,
+            "largest_components": [
+              {
+                "coefficient": -0.19807272256997646,
+                "component": 1,
+                "energy_share": 0.08424448082131956,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": -0.11499527226300849,
+                "component": 120,
+                "energy_share": 0.02839566785269571,
+                "selected_by_rank16": false,
+                "singular_value": 0.6272361669829896
+              },
+              {
+                "coefficient": -0.1113005073697544,
+                "component": 8,
+                "energy_share": 0.026600292003665756,
+                "selected_by_rank16": true,
+                "singular_value": 2.0216764807145435
+              },
+              {
+                "coefficient": 0.10268355160485987,
+                "component": 6,
+                "energy_share": 0.02264091003780306,
+                "selected_by_rank16": true,
+                "singular_value": 2.201384095039653
+              },
+              {
+                "coefficient": -0.09186739375615839,
+                "component": 4,
+                "energy_share": 0.018122366429179693,
+                "selected_by_rank16": true,
+                "singular_value": 2.659247246999994
+              },
+              {
+                "coefficient": 0.0880543460872843,
+                "component": 55,
+                "energy_share": 0.016649212960661,
+                "selected_by_rank16": false,
+                "singular_value": 0.9710031129960348
+              },
+              {
+                "coefficient": -0.08066893828693449,
+                "component": 68,
+                "energy_share": 0.013973487091336159,
+                "selected_by_rank16": false,
+                "singular_value": 0.8750935406590332
+              },
+              {
+                "coefficient": 0.07703016979210528,
+                "component": 74,
+                "energy_share": 0.01274130248515912,
+                "selected_by_rank16": false,
+                "singular_value": 0.8291817476240838
+              },
+              {
+                "coefficient": 0.07469175533283416,
+                "component": 198,
+                "energy_share": 0.01197946568311622,
+                "selected_by_rank16": false,
+                "singular_value": 0.43444287599963294
+              },
+              {
+                "coefficient": 0.07464091641042767,
+                "component": 216,
+                "energy_share": 0.011963163593068614,
+                "selected_by_rank16": false,
+                "singular_value": 0.4041970392962517
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.6824234500611146,
+            "rank16_share_of_local_span_energy": 0.1760746549401511
+          },
+          "label": "USEFUL_ADDITIONAL_STEERING",
+          "memory_id": "memory_c967c109733561ea2882f5d74bc12dd5f16dfa6ecb36b827ee5bf92872afae18",
+          "memory_text": "material: breathable",
+          "projected_norm": 0.2863534138288422,
+          "raw_cosine": 0.3004292105303357,
+          "rho": 0.09013352205354576,
+          "tangent_norm": 0.9538041148265819
+        },
+        {
+          "coefficients": [
+            -0.18702433855748113,
+            0.22806903933662556,
+            0.044731466462728374,
+            0.056606329545707865,
+            -0.06469306876215856,
+            0.13909565796178508,
+            0.02580386899798444,
+            0.062245967619280994,
+            -0.031220308375893544,
+            0.029310241005762825,
+            0.02460372517032493,
+            0.019221682062943623,
+            0.02099379053289184,
+            0.01791466842202963,
+            -0.021499748708198315,
+            -0.04739993533637249
+          ],
+          "dominant": [
+            {
+              "coefficient": 0.22806903933662556,
+              "component": 2,
+              "projected_energy": 0.05201548670393126,
+              "projected_energy_share": 0.41102310417663507
+            },
+            {
+              "coefficient": -0.18702433855748113,
+              "component": 1,
+              "projected_energy": 0.03497810321286332,
+              "projected_energy_share": 0.2763947714763041
+            },
+            {
+              "coefficient": 0.13909565796178508,
+              "component": 6,
+              "projected_energy": 0.019347602063821905,
+              "projected_energy_share": 0.1528835345502078
+            },
+            {
+              "coefficient": -0.06469306876215856,
+              "component": 5,
+              "projected_energy": 0.0041851931458653764,
+              "projected_energy_share": 0.03307113299128954
+            },
+            {
+              "coefficient": 0.062245967619280994,
+              "component": 8,
+              "projected_energy": 0.003874560484860578,
+              "projected_energy_share": 0.030616533242726757
+            }
+          ],
+          "energy_shares": [
+            0.2763947714763041,
+            0.41102310417663507,
+            0.015811018278001757,
+            0.02531999170773225,
+            0.03307113299128954,
+            0.1528835345502078,
+            0.005261423074799287,
+            0.030616533242726757,
+            0.007702078581682328,
+            0.006788476943694863,
+            0.004783384619510295,
+            0.002919552890880987,
+            0.0034826937595392187,
+            0.002536010906859633,
+            0.003652585040362238,
+            0.017753707759773852
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.5400171737928784,
+            "largest_components": [
+              {
+                "coefficient": 0.22806903933662562,
+                "component": 2,
+                "energy_share": 0.11601957004482533,
+                "selected_by_rank16": true,
+                "singular_value": 3.602913359955086
+              },
+              {
+                "coefficient": -0.1870243385574812,
+                "component": 1,
+                "energy_share": 0.07801800488455718,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": 0.13909565796178516,
+                "component": 6,
+                "energy_share": 0.04315446446977767,
+                "selected_by_rank16": true,
+                "singular_value": 2.201384095039653
+              },
+              {
+                "coefficient": 0.12053087962022141,
+                "component": 32,
+                "energy_share": 0.03240374733914611,
+                "selected_by_rank16": false,
+                "singular_value": 1.2191819039065839
+              },
+              {
+                "coefficient": -0.09913260663637899,
+                "component": 47,
+                "energy_share": 0.0219195501467699,
+                "selected_by_rank16": false,
+                "singular_value": 1.054748943674659
+              },
+              {
+                "coefficient": 0.08751521458652119,
+                "component": 55,
+                "energy_share": 0.017083061690506548,
+                "selected_by_rank16": false,
+                "singular_value": 0.9710031129960348
+              },
+              {
+                "coefficient": -0.07851120972250095,
+                "component": 20,
+                "energy_share": 0.013748709111693735,
+                "selected_by_rank16": false,
+                "singular_value": 1.4334354073213318
+              },
+              {
+                "coefficient": -0.0770389050087204,
+                "component": 70,
+                "energy_share": 0.013237890604570684,
+                "selected_by_rank16": false,
+                "singular_value": 0.8619528334055379
+              },
+              {
+                "coefficient": -0.07583925978742459,
+                "component": 38,
+                "energy_share": 0.012828821317188115,
+                "selected_by_rank16": false,
+                "singular_value": 1.1491309328402874
+              },
+              {
+                "coefficient": 0.0740079182829901,
+                "component": 64,
+                "energy_share": 0.012216729615035891,
+                "selected_by_rank16": false,
+                "singular_value": 0.8995581326255884
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.6695772778191622,
+            "rank16_share_of_local_span_energy": 0.28227019081381505
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_e720f6f085766c182bf0013e35b20eb1a6518e875716d87d2094656e86b2e7a5",
+          "memory_text": "style: dressy",
+          "projected_norm": 0.3557404219225822,
+          "raw_cosine": 0.4120421869717398,
+          "rho": 0.15243075068925263,
+          "tangent_norm": 0.9111647689389366
+        },
+        {
+          "coefficients": [
+            -0.10740507604918118,
+            0.06330880722521963,
+            0.018609510390469285,
+            0.03865975695859446,
+            -0.06251958105383529,
+            0.053855947953676625,
+            -0.05764496226157157,
+            -0.04053018251111714,
+            0.07872612636086287,
+            0.03269225874119071,
+            -0.06328776460952214,
+            0.09408094818050222,
+            0.003942398634208349,
+            -0.05584938732932808,
+            -0.008321148474055358,
+            -0.008691108880886656
+          ],
+          "dominant": [
+            {
+              "coefficient": -0.10740507604918118,
+              "component": 1,
+              "projected_energy": 0.011535850361130391,
+              "projected_energy_share": 0.21947058473646955
+            },
+            {
+              "coefficient": 0.09408094818050222,
+              "component": 12,
+              "projected_energy": 0.008851224810542345,
+              "projected_energy_share": 0.16839534355864536
+            },
+            {
+              "coefficient": 0.07872612636086287,
+              "component": 9,
+              "projected_energy": 0.0061978029717865485,
+              "projected_energy_share": 0.11791375578888263
+            },
+            {
+              "coefficient": 0.06330880722521963,
+              "component": 2,
+              "projected_energy": 0.004008005072280021,
+              "projected_energy_share": 0.0762526549238141
+            },
+            {
+              "coefficient": -0.06328776460952214,
+              "component": 11,
+              "projected_energy": 0.004005341149270283,
+              "projected_energy_share": 0.07620197355032732
+            }
+          ],
+          "energy_shares": [
+            0.21947058473646955,
+            0.0762526549238141,
+            0.006588652479206298,
+            0.028434457429508717,
+            0.07436332928113223,
+            0.055181570427627086,
+            0.0632192625110291,
+            0.03125243248693736,
+            0.11791375578888263,
+            0.020333707023036735,
+            0.07620197355032732,
+            0.16839534355864536,
+            0.00029569758542298785,
+            0.0593421850242397,
+            0.0013173259564739118,
+            0.0014370672372470033
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.5370185871706971,
+            "largest_components": [
+              {
+                "coefficient": 0.12236810654770583,
+                "component": 28,
+                "energy_share": 0.029903267350463416,
+                "selected_by_rank16": false,
+                "singular_value": 1.2719417015433772
+              },
+              {
+                "coefficient": 0.12116394490492458,
+                "component": 41,
+                "energy_share": 0.029317637669179306,
+                "selected_by_rank16": false,
+                "singular_value": 1.107736500856717
+              },
+              {
+                "coefficient": 0.12111807074065126,
+                "component": 23,
+                "energy_share": 0.02929544183318961,
+                "selected_by_rank16": false,
+                "singular_value": 1.365770382956654
+              },
+              {
+                "coefficient": 0.11327128912950485,
+                "component": 17,
+                "energy_share": 0.02562252053875166,
+                "selected_by_rank16": false,
+                "singular_value": 1.502872577637839
+              },
+              {
+                "coefficient": -0.10740507604918118,
+                "component": 1,
+                "energy_share": 0.023037310584822748,
+                "selected_by_rank16": true,
+                "singular_value": 12.049118278340448
+              },
+              {
+                "coefficient": -0.10696202590447304,
+                "component": 48,
+                "energy_share": 0.02284764296988681,
+                "selected_by_rank16": false,
+                "singular_value": 1.038335842202877
+              },
+              {
+                "coefficient": 0.10645114623320742,
+                "component": 20,
+                "energy_share": 0.02262991109795424,
+                "selected_by_rank16": false,
+                "singular_value": 1.4334354073213318
+              },
+              {
+                "coefficient": 0.09408094818050204,
+                "component": 12,
+                "energy_share": 0.01767606276374854,
+                "selected_by_rank16": true,
+                "singular_value": 1.7121006227591051
+              },
+              {
+                "coefficient": 0.09378449433207528,
+                "component": 44,
+                "energy_share": 0.017564841927568357,
+                "selected_by_rank16": false,
+                "singular_value": 1.082424677009358
+              },
+              {
+                "coefficient": -0.08960291254054777,
+                "component": 29,
+                "energy_share": 0.016033429140500984,
+                "selected_by_rank16": false,
+                "singular_value": 1.252851113434731
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.7076343694821732,
+            "rank16_share_of_local_span_energy": 0.10496764572111064
+          },
+          "label": "SAME_CATEGORY_HARD_NEGATIVE",
+          "memory_id": "memory_14a5f960e539d759c2ad1507c497d7abc25169da178c9a6c1f20215b1cb094b6",
+          "memory_text": "pockets: lots",
+          "projected_norm": 0.22926441242133247,
+          "raw_cosine": 0.25989159831321995,
+          "rho": 0.056369576803785126,
+          "tangent_norm": 0.9656377981035126
+        },
+        {
+          "coefficients": [
+            -0.025348468916187486,
+            -0.030481996049959426,
+            0.013537677251909012,
+            -0.050819768017945584,
+            -0.06847474298366067,
+            0.048950069417411875,
+            -0.010160089911484496,
+            -0.05100948781935018,
+            -0.014819904789662773,
+            0.01551560098749774,
+            0.009096872410219028,
+            -0.025890952960459446,
+            0.016748689341744543,
+            -0.02034790178402137,
+            -0.019500091629804213,
+            0.07795418335540578
+          ],
+          "dominant": [
+            {
+              "coefficient": 0.07795418335540578,
+              "component": 16,
+              "projected_energy": 0.006076854702608225,
+              "projected_energy_share": 0.2701685075584277
+            },
+            {
+              "coefficient": -0.06847474298366067,
+              "component": 5,
+              "projected_energy": 0.004688790426678386,
+              "projected_energy_share": 0.20845710055997227
+            },
+            {
+              "coefficient": -0.05100948781935018,
+              "component": 8,
+              "projected_energy": 0.002601967847592434,
+              "projected_energy_share": 0.11567987133168467
+            },
+            {
+              "coefficient": -0.050819768017945584,
+              "component": 4,
+              "projected_energy": 0.0025826488213978047,
+              "projected_energy_share": 0.1148209742986118
+            },
+            {
+              "coefficient": 0.048950069417411875,
+              "component": 6,
+              "projected_energy": 0.0023961092959694412,
+              "projected_energy_share": 0.10652768646271742
+            }
+          ],
+          "energy_shares": [
+            0.02856665146534153,
+            0.041308809226989415,
+            0.008147871725907575,
+            0.1148209742986118,
+            0.20845710055997227,
+            0.10652768646271742,
+            0.004589347822035193,
+            0.11567987133168467,
+            0.009764425545938427,
+            0.010702693192631237,
+            0.0036790871725241544,
+            0.029802448251182907,
+            0.012471466535285853,
+            0.0184075138784014,
+            0.016905544972348547,
+            0.2701685075584277
+          ],
+          "full_local_span": {
+            "fraction_of_tangent_energy": 0.3650594518082651,
+            "largest_components": [
+              {
+                "coefficient": -0.09750838450212068,
+                "component": 327,
+                "energy_share": 0.02693243553922715,
+                "selected_by_rank16": false,
+                "singular_value": 0.26515149175620706
+              },
+              {
+                "coefficient": 0.07795418335540583,
+                "component": 16,
+                "energy_share": 0.017213554510737288,
+                "selected_by_rank16": true,
+                "singular_value": 1.5662885996694742
+              },
+              {
+                "coefficient": -0.0764811570162386,
+                "component": 135,
+                "energy_share": 0.016569164337704886,
+                "selected_by_rank16": false,
+                "singular_value": 0.5733112393288704
+              },
+              {
+                "coefficient": -0.07631260157576113,
+                "component": 104,
+                "energy_share": 0.01649621185172617,
+                "selected_by_rank16": false,
+                "singular_value": 0.6891149148380985
+              },
+              {
+                "coefficient": 0.07583530366836255,
+                "component": 67,
+                "energy_share": 0.016290505730907054,
+                "selected_by_rank16": false,
+                "singular_value": 0.8834728042482323
+              },
+              {
+                "coefficient": -0.07435260887814416,
+                "component": 68,
+                "energy_share": 0.0156597249545283,
+                "selected_by_rank16": false,
+                "singular_value": 0.8750935406590332
+              },
+              {
+                "coefficient": -0.07086484923162373,
+                "component": 195,
+                "energy_share": 0.014225038209787013,
+                "selected_by_rank16": false,
+                "singular_value": 0.44034590069349905
+              },
+              {
+                "coefficient": -0.06849949463009937,
+                "component": 34,
+                "energy_share": 0.013291268808952615,
+                "selected_by_rank16": false,
+                "singular_value": 1.1965497382936907
+              },
+              {
+                "coefficient": -0.06847474298366052,
+                "component": 5,
+                "energy_share": 0.013281665195057163,
+                "selected_by_rank16": true,
+                "singular_value": 2.2728099347332584
+              },
+              {
+                "coefficient": -0.06624966160487536,
+                "component": 282,
+                "energy_share": 0.01243251624135257,
+                "selected_by_rank16": false,
+                "singular_value": 0.3142733497301249
+              }
+            ],
+            "numerical_rank": 497,
+            "projected_norm": 0.5941610065959131,
+            "rank16_share_of_local_span_energy": 0.06371414146785631
+          },
+          "label": "CROSS_DOMAIN_DISTRACTOR",
+          "memory_id": "memory_cbf0b3a88f8a66317a98692e948dacc8ffedefe382aa7027f8ea11cf17ec2d12",
+          "memory_text": "insulation: insulated",
+          "projected_norm": 0.14997610291740782,
+          "raw_cosine": 0.18154733864497197,
+          "rho": 0.023259449556689873,
+          "tangent_norm": 0.9833822063831174
+        }
+      ],
+      "missing_price_count": 412,
+      "price_distribution": {
+        "count": 88,
+        "max": 69.59,
+        "mean": 22.02715909090909,
+        "median": 21.99,
+        "min": 5.99,
+        "p25": 16.99,
+        "p75": 25.99
+      },
+      "price_proxy_diagnostic": {
+        "affordable_proxy_count": 3,
+        "interpretation_guardrail": "Query similarity is not a price representation; it is included only to test accidental textual correlation.",
+        "lexical_proxy_vs_log_price_pearson": null,
+        "premium_proxy_count": 4,
+        "price_when_affordable_proxy": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "p25": null,
+          "p75": null
+        },
+        "price_when_premium_proxy": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "p25": null,
+          "p75": null
+        },
+        "price_without_proxy": {
+          "count": 88,
+          "max": 69.59,
+          "mean": 22.02715909090909,
+          "median": 21.99,
+          "min": 5.99,
+          "p25": 16.99,
+          "p75": 25.99
+        },
+        "query_score_vs_price_spearman": -0.20084833601084606,
+        "valid_price_count": 88
+      },
+      "query": {
+        "effective_query_text": "clothing short sleeve rayon spandex pull-on women",
+        "no_target_leakage": true,
+        "raw_current_message": "hey, i'm looking for a women's short sleeve tee made of rayon, like 95% rayon and a bit of spandex, ideally with a pull-on style."
+      },
+      "spectrum": {
+        "cumulative_energy": {
+          "1": 0.41010641816216326,
+          "16": 0.6112384056644273,
+          "2": 0.4467749623710613,
+          "4": 0.49010176503784664,
+          "8": 0.5422212162985635
+        },
+        "energy_denominator_includes_all_local_singular_values": true,
+        "sigma_1_over_sigma_16": 7.692782978107043,
+        "sigma_1_to_sigma_16": [
+          12.049118278340448,
+          3.602913359955086,
+          2.87514701599017,
+          2.659247246999994,
+          2.2728099347332584,
+          2.201384095039653,
+          2.0860987271596505,
+          2.0216764807145435,
+          2.011276795385694,
+          1.8874597974748821,
+          1.8042978033636172,
+          1.7121006227591051,
+          1.6744893652040866,
+          1.6658417499751161,
+          1.6143004998512709,
+          1.5662885996694742
+        ]
+      },
+      "top_k_replay": {
+        "count": 500,
+        "ids_exact": true,
+        "scores_match": true,
+        "singular_values_match": true
+      }
+    }
+  },
+  "decisions": {
+    "candidate_universe": "FILTERED-UNIVERSE FOLLOW-UP JUSTIFIED",
+    "original_scientific_verdict": "PROJECTOR STOP",
+    "portability": "PORTABILITY FAILURE SUPPORTED",
+    "representation": "REPRESENTATION BOTTLENECK PARTIAL",
+    "variance": "VARIANCE BOTTLENECK SUPPORTED"
+  },
+  "diagnostic_type": "post_phase_3a_projector_failure_diagnostic",
+  "external_calls": {
+    "llm": 0,
+    "openai": 0
+  },
+  "generated_from_existing_artifacts_only": true,
+  "product_representation": {
+    "current_recomputed_fingerprint": "f219fbfbc2a99b87e638241c2206c421eb69760037f9aa3a2e8da87c36a01da0",
+    "exact_template": "Product: {title}. Categories: {categories}. Features: {first_three_features}.",
+    "excluded_fields": [
+      "price",
+      "details",
+      "description",
+      "store",
+      "ratings",
+      "features after index 2"
+    ],
+    "features_rule": "Only features[0:3] are joined with '; '.",
+    "unused_json_diagnostic_hash": "c0dd89773b1930c7a4486cfdcaee97380b09d9e6cd2272f323805421fe42783d"
+  },
+  "scope_audit": {
+    "commit_created": false,
+    "dense_scorer_changed": false,
+    "embedding_model_changed": false,
+    "experiment_1_changed": false,
+    "graphify_run": false,
+    "m0_ranking_changed": false,
+    "m0_routing_changed": false,
+    "official_evaluator_changed": false,
+    "product_embedding_text_changed": false,
+    "qlmp_b1_b2_changed": false,
+    "qlmp_geometry_changed": false
+  },
+  "semantics": {
+    "experiment_1_current": {
+      "hard_mask": [
+        "price_max (missing price allowed)",
+        "target demographic",
+        "minimum average rating (missing allowed)",
+        "minimum rating count (missing allowed)",
+        "store/brand substring"
+      ],
+      "note": "This implementation is not imported or applied to M0/QLMP by this diagnostic.",
+      "soft": [
+        "department",
+        "category",
+        "brand and lexical reranking"
+      ]
+    },
+    "m0_current": {
+      "dense_projector_neighbourhood": "No filters: full 50,000-row catalogue.",
+      "hard": [
+        "price_max only"
+      ],
+      "post_filter": [
+        "negated-term exclusion",
+        "seen-product exclusion",
+        "brand/title diversity"
+      ],
+      "soft": [
+        "department +20",
+        "category +15",
+        "brand mismatch -10",
+        "keyword/constraint/category/popularity boosts"
+      ]
+    }
+  }
+}

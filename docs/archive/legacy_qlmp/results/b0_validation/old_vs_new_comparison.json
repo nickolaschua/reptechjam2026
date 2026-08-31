@@ -1,0 +1,36 @@
+{
+  "b0_longitudinal_40": {
+    "hit_rate_at_10": 0.9,
+    "mean_turns": 3.825,
+    "mrr": 0.620377,
+    "no_hit_count": 4,
+    "no_hit_rate": 0.1,
+    "session_count": 40,
+    "shopper_model": "gpt-4.1-nano",
+    "shopper_provider": "openai"
+  },
+  "comparison_status": "external calibration only",
+  "confounds": [
+    "curated longitudinal dataset differs from the 200-session public dataset",
+    "frozen M0 records shopper model llama3.1 but not the actual fallthrough provider"
+  ],
+  "interpretation": "Old-vs-new differences are benchmark calibration, not a memory effect. Future memory effects require B0/B1/B2/B3 comparisons on this same fixture.",
+  "m0_public_200": {
+    "hit_rate_at_10": 0.92,
+    "mean_turns": 3.335,
+    "mrr": 0.611359,
+    "no_hit_count": 16,
+    "no_hit_rate": 0.08,
+    "session_count": 200,
+    "shopper_model": "llama3.1",
+    "shopper_provider": "not recorded; credential fallthrough made it indeterminate"
+  },
+  "m0_public_buying_80": {
+    "hit_rate_at_10": 0.8875,
+    "mean_turns": 3.6375,
+    "mrr": 0.568834,
+    "no_hit_count": 9,
+    "no_hit_rate": 0.11250000000000004,
+    "session_count": 80
+  }
+}

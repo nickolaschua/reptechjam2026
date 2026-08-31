@@ -1,0 +1,86 @@
+Target Product Title: Grlasen Women's Zipper Summer Pleated Button Short Sleeve T-Shirt Summer V-Neck Solid Color Casual top
+Target ASIN: B09G2ZNZY4
+Scenario: intent_override
+Constraints: ['polyester', '60% polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual summer top, something with a v-neck and maybe some buttons. ideally, it should be hand wash only, too.
+Copilot: That sounds great! What color are you looking for in your casual summer top?
+Copilot Attribute Query: color
+Recommendations:
+  1. EKIMI Tops Womens Off Shoulder Loose Pullover Sweater Batwing Sleeve Knit Jumper Top Blouse (ASIN: B07KDN7F5C)
+  2. FORUU Women Short Sleeve High Low Peplum Dress Bodycon Casual Party Club Dress (ASIN: B07B3XJV3M)
+  3. Digood Women's Coat, Women Camouflage Jacket Coat Autumn Winter Street Jacket Women Casual Jackets (ASIN: B091NQBS12)
+  4. GOOTUCH Women's V Neck Dress Tie Knot Front Spaghetti Strap Floral Casual Beach Party Swing Summer Sundress with Pockets(Dark red,M) (ASIN: B09HKDBQHQ)
+  5. Luckymore Women's Casual Long Sleeve Tunic Tops Loose Fit Pleated Fall Shirts Blouse M-3XL (ASIN: B0B8NB7BF2)
+  6. Escalier Women's Floral Button Up Dress V Neck Split Flowy Boho Summer Party Midi Dress (ASIN: B07PLC79KP)
+  7. MCTY Women's Summer Button Casual Loose Swing Sleeveless Plain Weave Pleated T-Shirt Dresses with Pockets Knee Length (ASIN: B07RQGVCP4)
+  8. F_Gotal Womens Dresses Summer Plus Size Deep V Short Sleeve Sequined Evening Party Mesh Dress Sundress Party Cocktail (ASIN: B07RD5CVF8)
+  9. Womens Plus Size Buttons Down Tops Summer Short Sleeve Crewneck Tshirts Loose Casual Tee Shirts (ASIN: B07Y9YLBYL)
+  10. Women's Linen Blouse High Low Shirt Roll-Up Sleeve Tops Plus Size Button Down Oversized Tunic Shirt with Pockets(M-5XL) (ASIN: B092ZJB6BJ)
+
+--- TURN 2 ---
+Shopper: i'm looking for something in a solid color, maybe like a classic black or white. do you have any options like that?
+Copilot: I found some options that match your preferences! Would you like to specify a size for the top?
+Copilot Attribute Query: size
+Recommendations:
+  1. Summer Casual Cross Cold Shoulder Long Sleeve Tops for Women Fashion Round Neck Print Loose Blouses Shirts Pullover (ASIN: B098K9TSBC)
+  2. GEMLON Women Dresses Tie Front V-Neck Spaghetti Strap Sundress Summer Button Down Backless Swing Midi Dress (XXL, Black, xx_l) (ASIN: B08Y68ZQFM)
+  3. FABIURT Halloween Womens Summer Tops,Womens Tops and Blouses Summer Casual Tees Long Sleeve Loose Fit Tshirts Workout Exercise Orange (ASIN: B09B93J25N)
+  4. Harrms Womens Dress Shirts, Basic Long/Half Sleeve Slim Fit Casual Button Up Shirt Stretch Formal Shirts (ASIN: B07L92G3DL)
+  5. Women's Business Slim Style Leather Work Pencil Dress Bodycon Peplum Knee Length Party Dress Black (ASIN: B07PL9BPLL)
+  6. 977 Plus Size Shirts for Women V-Neck Cold Shoulder Short Sleeve Tops Floral Print Flowy T Shirts Summer Comfy Blouses A10~purple, 5X-Large (ASIN: B095CM4F2J)
+  7. Women's Short Sleeve V Neck Lace T-Shirt Office Tunic Plus Size Tops Rockabilly Sweatshirt Tropical Tops Basic Tees E. (ASIN: B0B31LR7G4)
+  8. Womens Summer Tops Fashion Tank Tops Trendy Loose Fit Womens Tops with Cute Printing C-Purple (ASIN: B09NQRPVCF)
+  9. WEUIE Long Sleeve Henley Shirts for Men Casual V Neck Button Up Tee Shirt Collarless T-Shirt for Work Lounge Golf Beach (ASIN: B09SHQLF98)
+  10. Smile Fish Women's T-Shirts Summer V Neck T Shirt Business Casual Top Tees (ASIN: B0BNMZ9LLQ)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: polyester.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Dokotoo Women Summer Boho Dress Cute Leopard Printed Ruffle V Neck Long Sleeve Tunic Dress Casual Flowy Babydoll Mini Dress Plus Size Short Beach Sun Dresses Maternity Ddress White X-Large US(16-18) (ASIN: B097MQTB3G)
+  2. Smile Fish Women's T-Shirts Summer V Neck T Shirt Business Casual Top Tees (ASIN: B0BNMZ9LLQ)
+  3. Unifizz Women's V Neck Buttons Pleated Flared Tunic Tops Short Sleeve Casual Summer Swing Blouse Shirts (ASIN: B07VDX9PP8)
+  4. Womens Plus Size Buttons Down Tops Summer Short Sleeve Crewneck Tshirts Loose Casual Tee Shirts (ASIN: B07Y9YLBYL)
+  5. StyleDome Women's Halter Neck Mini Dress Floral Print Summer Sleeveless Lace Patchwork Casual Short Sundress (ASIN: B073RDL563)
+  6. KUULEE Men's Casual Linen and Cotton V Neck Long Sleeve Henley T-Shirts (M, White) (ASIN: B076V7Z85W)
+  7. Teurkia Women's Summer Deep V Neck Dresses A Line Pleated Short Sleeve Backless Beach Dress White (ASIN: B0C1YZXFSK)
+  8. Summer Tops Off The Shoulder Tops for Women Cold Shoulder T-Shirt Boat Neck Casual Loose Tunic Tops (ASIN: B07PWPL63G)
+  9. elescat Yellow White Tunic Dress Flower Summer Casual Sleeveless Pockets Women T-Shirt Dresses (Yellow,L) (ASIN: B08ZMXR9W1)
+  10. Womens Summer Tank Tops Waffle Knit V Neck T Shirts Sleeveless Solid Color Tees Plus Size Clothing White (ASIN: B07Q44NK5S)
+
+--- TURN 4 ---
+Shopper: none of these really match what i'm looking for. i'm hoping to find something that has a v-neck and maybe some buttons, and ideally, it should be hand wash only. do you have anything like that?
+Copilot: I understand you're looking for a v-neck top with buttons that's hand wash only. Could you let me know what material you prefer for the top?
+Copilot Attribute Query: material
+Recommendations:
+  1. EKIMI Tops Womens Off Shoulder Loose Pullover Sweater Batwing Sleeve Knit Jumper Top Blouse (ASIN: B07KDN7F5C)
+  2. FORUU Women Short Sleeve High Low Peplum Dress Bodycon Casual Party Club Dress (ASIN: B07B3XJV3M)
+  3. Digood Women's Coat, Women Camouflage Jacket Coat Autumn Winter Street Jacket Women Casual Jackets (ASIN: B091NQBS12)
+  4. GOOTUCH Women's V Neck Dress Tie Knot Front Spaghetti Strap Floral Casual Beach Party Swing Summer Sundress with Pockets(Dark red,M) (ASIN: B09HKDBQHQ)
+  5. Luckymore Women's Casual Long Sleeve Tunic Tops Loose Fit Pleated Fall Shirts Blouse M-3XL (ASIN: B0B8NB7BF2)
+  6. Escalier Women's Floral Button Up Dress V Neck Split Flowy Boho Summer Party Midi Dress (ASIN: B07PLC79KP)
+  7. MCTY Women's Summer Button Casual Loose Swing Sleeveless Plain Weave Pleated T-Shirt Dresses with Pockets Knee Length (ASIN: B07RQGVCP4)
+  8. F_Gotal Womens Dresses Summer Plus Size Deep V Short Sleeve Sequined Evening Party Mesh Dress Sundress Party Cocktail (ASIN: B07RD5CVF8)
+  9. Women's Linen Blouse High Low Shirt Roll-Up Sleeve Tops Plus Size Button Down Oversized Tunic Shirt with Pockets(M-5XL) (ASIN: B092ZJB6BJ)
+  10. GOORY Women's Casual Tunic Dresses V Neck Lantern Sleeve Button Down Short Shift Dress (ASIN: B09JYYMR2B)
+
+--- TURN 5 ---
+Shopper: i'm really looking for something with at least 60% polyester. ideally, it would also be hand wash only and have a button closure.
+Copilot: Got it! How about we narrow it down further? What color are you interested in for the top?
+Copilot Attribute Query: color
+Recommendations:
+  1. ONLYSHE Womens Casual Short Sleeve Shirts Tops Button Up Tunic Floral Ruffle Blouse (ASIN: B0932JQ47J)
+  2. Siddhe Women Summer Dresses Casual Sleeveless Henley Pleated Swing Sun Dress (ASIN: B07S8W1KF4)
+  3. KMBANGI Women Casual Two Piece Shorts Set Loose Button Cardigan Shirt Elastic Waist Lounge Shorts Tracksuit Sumer Outfits (ASIN: B09YVC37YJ)
+  4. BELAROI Women Plus Size Tunic Tops Short Sleeve Henley V Neck Button Floral Casual Loose Swing T Shirts for Leggings (ASIN: B09NLVTC6Y)
+  5. JULYCLO Women V Neck Flowy Floral Dresses Summer Casual Loose Ruffle Pleated Sleeve Mini Dress Wine Red XX-Large (ASIN: B09QM5P4MX)
+  6. Grlasen Women's Zipper Summer Pleated Button Short Sleeve T-Shirt Summer V-Neck Solid Color Casual top (ASIN: B09G2ZNZY4)
+  7. Azalosie Womens Long Sleeve Tunic Dress V Neck Summer Chiffon Short Cocktail Casual Evening Loose Swing Solid Dress (ASIN: B07JZ8LPMC)
+  8. Yacooh Womens V Neck Sleeveless Flowy Tank Top Casual Loose Crochet Knitted Sweater Vest Cami Summer Tee Shirts (ASIN: B088FRY4ZT)
+  9. andy & natalie Women's Button Sweater V Neck Sweater Ribbed Pullover Sweater Long Sleeve Sweater with Pockets (ASIN: B07Y2LKNGM)
+  10. KIRUNDO Women's Summer V Neck Tunic Dress Casual Loose Flowy Mini Dress Tie Back Shift Dresses (ASIN: B095PGP2VM)
+
+=== RESULT: SUCCESS (Turn 5) ===

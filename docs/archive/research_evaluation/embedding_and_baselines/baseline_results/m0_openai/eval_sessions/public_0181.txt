@@ -1,0 +1,22 @@
+Target Product Title: Fixmatti Women's 2 Piece Outfits Long Sleeve Pullover Sweatshirt Jogger Pants Sweatsuit
+Target ASIN: B08M3WKDFJ
+Scenario: browsing
+Constraints: ['polyester', 'Drawstring closure']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a comfy two-piece outfit, something with a pullover sweatshirt and jogger pants. it should be made of polyester and have a drawstring closure.
+Copilot: That sounds great! What color are you looking for in your two-piece outfit?
+Copilot Attribute Query: color
+Recommendations:
+  1. Plusfeel Women's Velour Hoodie and Pants Pullover Tracksuits Sports Sweat Suit Sets, S-3XL (ASIN: B088FHB31Q)
+  2. Womens Ribbed Short Sets 2 Piece Outfits Knit Lounge Pajama Set Long Sleeve Pullover Top and Shorts D (ASIN: B08QRQGWWV)
+  3. TECREW Women's Casual Batwing Sleeve Lounge Sets Oversized 2 Piece Jogger Outfits Sweatsuit (ASIN: B09DT7PMN2)
+  4. FAVALIVE Two Piece Outfits for Women Lounge Sets Shorts with Pockets (ASIN: B094D15B1V)
+  5. Bofell Sweatpants for Women with Pockets Drawstring Elastic Waist Joggers Casual Sweat Pants S-2XL (ASIN: B09C5XK9G9)
+  6. Akk Womens Sexy Tracksuit 2 Piece Outfit Crop Top and Ruched Skinny Long Pant Set Loungewear Sport Jumpsuit Rompe (ASIN: B0892BRSSH)
+  7. Letnewf Womens Summer Sleeveless Two Piece Outfits Scoop Neck Tank Top Lounge Sets with Shorts Pocket Tracksuits (ASIN: B09PXX5PZP)
+  8. Fixmatti Women's 2 Piece Outfits Long Sleeve Pullover Sweatshirt Jogger Pants Sweatsuit (ASIN: B08M3WKDFJ)
+  9. AKEWEI Womens Tie Dye Printed Pajamas Set Long Sleeve Shirt & Shorts Two Piece Outfit Sleepwear Lounge Wear Sets (Purple, X-Large) (ASIN: B08GKN3D9B)
+  10. Plus Size Women Shorts Set - Tie Dye Round Neck Short Sleeve Floral Print Top + Shorts Pants 2 Piece Outfits (ASIN: B08C6ZBJ4B)
+
+=== RESULT: SUCCESS (Turn 1) ===

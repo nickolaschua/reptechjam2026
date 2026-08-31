@@ -1,0 +1,22 @@
+Target Product Title: Amazon Essentials Women's Lace-Up Combat Boot
+Target ASIN: B07PH3X7QK
+Scenario: browsing
+Constraints: ['leather', 'Imported']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some mid-calf boots, preferably made of leather and imported.
+Copilot: Great choice! Do you have a specific color in mind for the boots?
+Copilot Attribute Query: color
+Recommendations:
+  1. Timberland Women's 6" Premium Waterproof Boots (ASIN: B01HJA0W24)
+  2. Amazon Essentials Women's Lace-Up Combat Boot (ASIN: B07PH3X7QK)
+  3. Dr. Martens Women's 2976 Leonore Chelsea Boot (ASIN: B079MSN9X3)
+  4. Skechers Men's Oak Canyon Sneaker (ASIN: B0C6YL7XCZ)
+  5. TOMS Women's Chelsea Boots (ASIN: B094YRF22D)
+  6. Columbia womens Newton Ridge Plus hiking boots, Deep Wave/Dusty Green, 6.5 US (ASIN: B0C1582KYJ)
+  7. Timberland Women's Brookton Six-Inch Boot (ASIN: B009OL2L94)
+  8. Ariat Rambler Recon Western Boots - Men’s Square Toe Work Boot (ASIN: B07TNFL6TH)
+  9. KELSI DAGGER BROOKLYN Women's Kadeeja Ankle Boot (ASIN: B074XQ41ST)
+  10. LOEFFLER RANDALL Women's Angie Boot (ASIN: B00F5NNTI2)
+
+=== RESULT: SUCCESS (Turn 1) ===

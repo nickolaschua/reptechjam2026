@@ -1,0 +1,574 @@
+{
+  "by_buyer_mode": {
+    "Browsing": {
+      "count": 10,
+      "exact_target": {
+        "count": 10,
+        "exact_target_harm_rate": 0.4,
+        "exact_target_help_rate": 0.6,
+        "exact_target_mean_rank_delta": 3761.1,
+        "exact_target_mean_reciprocal_rank_delta": -0.0009010034722149599,
+        "exact_target_unchanged_rate": 0.0,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 5752.8,
+          "exact_target_median_penalized_rank": 1802.5,
+          "exact_target_mrr": 0.0021629365336520807
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 1991.7,
+          "exact_target_median_penalized_rank": 1623.0,
+          "exact_target_mrr": 0.0012619330614371204
+        }
+      },
+      "gate_activation_rate": 1.0,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 619.1,
+        "relevant_set_median_penalized_rank": 434.5,
+        "relevant_set_mrr": 0.003614678522044266
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 785.7,
+        "relevant_set_median_penalized_rank": 609.0,
+        "relevant_set_mrr": 0.0022712792593905864
+      },
+      "relevant_set": {
+        "count": 10,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 619.1,
+          "relevant_set_median_penalized_rank": 434.5,
+          "relevant_set_mrr": 0.003614678522044266
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 785.7,
+          "relevant_set_median_penalized_rank": 609.0,
+          "relevant_set_mrr": 0.0022712792593905864
+        },
+        "relevant_set_harm_rate": 0.6,
+        "relevant_set_help_rate": 0.4,
+        "relevant_set_mean_rank_delta": -166.6,
+        "relevant_set_mean_reciprocal_rank_delta": -0.001343399262653679,
+        "relevant_set_unchanged_rate": 0.0
+      },
+      "relevant_set_harm_rate": 0.6,
+      "relevant_set_help_rate": 0.4,
+      "relevant_set_mean_rank_delta": -166.6,
+      "relevant_set_mean_reciprocal_rank_delta": -0.001343399262653679,
+      "relevant_set_unchanged_rate": 0.0
+    },
+    "Buying": {
+      "count": 30,
+      "exact_target": {
+        "count": 30,
+        "exact_target_harm_rate": 0.4666666666666667,
+        "exact_target_help_rate": 0.4,
+        "exact_target_mean_rank_delta": 282.46666666666664,
+        "exact_target_mean_reciprocal_rank_delta": 0.0005908597292747191,
+        "exact_target_unchanged_rate": 0.13333333333333333,
+        "gate_activation_rate": 0.9,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.03333333333333333,
+          "exact_target_hit_at_5": 0.03333333333333333,
+          "exact_target_mean_penalized_rank": 3817.6666666666665,
+          "exact_target_median_penalized_rank": 1500.5,
+          "exact_target_mrr": 0.00990687774686402
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.03333333333333333,
+          "exact_target_hit_at_5": 0.03333333333333333,
+          "exact_target_mean_penalized_rank": 3535.2,
+          "exact_target_median_penalized_rank": 1280.5,
+          "exact_target_mrr": 0.01049773747613874
+        }
+      },
+      "gate_activation_rate": 0.9,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.06666666666666667,
+        "relevant_set_hit_at_5": 0.06666666666666667,
+        "relevant_set_mean_penalized_rank": 436.93333333333334,
+        "relevant_set_median_penalized_rank": 248.0,
+        "relevant_set_mrr": 0.027397160542197426
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.06666666666666667,
+        "relevant_set_hit_at_5": 0.03333333333333333,
+        "relevant_set_mean_penalized_rank": 411.7,
+        "relevant_set_median_penalized_rank": 219.0,
+        "relevant_set_mrr": 0.025011827932146843
+      },
+      "relevant_set": {
+        "count": 30,
+        "gate_activation_rate": 0.9,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.06666666666666667,
+          "relevant_set_hit_at_5": 0.06666666666666667,
+          "relevant_set_mean_penalized_rank": 436.93333333333334,
+          "relevant_set_median_penalized_rank": 248.0,
+          "relevant_set_mrr": 0.027397160542197426
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.06666666666666667,
+          "relevant_set_hit_at_5": 0.03333333333333333,
+          "relevant_set_mean_penalized_rank": 411.7,
+          "relevant_set_median_penalized_rank": 219.0,
+          "relevant_set_mrr": 0.025011827932146843
+        },
+        "relevant_set_harm_rate": 0.36666666666666664,
+        "relevant_set_help_rate": 0.5,
+        "relevant_set_mean_rank_delta": 25.233333333333334,
+        "relevant_set_mean_reciprocal_rank_delta": -0.0023853326100505812,
+        "relevant_set_unchanged_rate": 0.13333333333333333
+      },
+      "relevant_set_harm_rate": 0.36666666666666664,
+      "relevant_set_help_rate": 0.5,
+      "relevant_set_mean_rank_delta": 25.233333333333334,
+      "relevant_set_mean_reciprocal_rank_delta": -0.0023853326100505812,
+      "relevant_set_unchanged_rate": 0.13333333333333333
+    }
+  },
+  "by_scenario_class": {
+    "BROWSING_PERSONALIZATION": {
+      "count": 10,
+      "exact_target": {
+        "count": 10,
+        "exact_target_harm_rate": 0.4,
+        "exact_target_help_rate": 0.6,
+        "exact_target_mean_rank_delta": 3761.1,
+        "exact_target_mean_reciprocal_rank_delta": -0.0009010034722149599,
+        "exact_target_unchanged_rate": 0.0,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 5752.8,
+          "exact_target_median_penalized_rank": 1802.5,
+          "exact_target_mrr": 0.0021629365336520807
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 1991.7,
+          "exact_target_median_penalized_rank": 1623.0,
+          "exact_target_mrr": 0.0012619330614371204
+        }
+      },
+      "gate_activation_rate": 1.0,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 619.1,
+        "relevant_set_median_penalized_rank": 434.5,
+        "relevant_set_mrr": 0.003614678522044266
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 785.7,
+        "relevant_set_median_penalized_rank": 609.0,
+        "relevant_set_mrr": 0.0022712792593905864
+      },
+      "relevant_set": {
+        "count": 10,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 619.1,
+          "relevant_set_median_penalized_rank": 434.5,
+          "relevant_set_mrr": 0.003614678522044266
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 785.7,
+          "relevant_set_median_penalized_rank": 609.0,
+          "relevant_set_mrr": 0.0022712792593905864
+        },
+        "relevant_set_harm_rate": 0.6,
+        "relevant_set_help_rate": 0.4,
+        "relevant_set_mean_rank_delta": -166.6,
+        "relevant_set_mean_reciprocal_rank_delta": -0.001343399262653679,
+        "relevant_set_unchanged_rate": 0.0
+      },
+      "relevant_set_harm_rate": 0.6,
+      "relevant_set_help_rate": 0.4,
+      "relevant_set_mean_rank_delta": -166.6,
+      "relevant_set_mean_reciprocal_rank_delta": -0.001343399262653679,
+      "relevant_set_unchanged_rate": 0.0
+    },
+    "CURRENT_OVERRIDE": {
+      "count": 10,
+      "exact_target": {
+        "count": 10,
+        "exact_target_harm_rate": 0.8,
+        "exact_target_help_rate": 0.1,
+        "exact_target_mean_rank_delta": -575.3,
+        "exact_target_mean_reciprocal_rank_delta": -3.8602719712645215e-05,
+        "exact_target_unchanged_rate": 0.1,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.1,
+          "exact_target_hit_at_5": 0.1,
+          "exact_target_mean_penalized_rank": 2512.4,
+          "exact_target_median_penalized_rank": 1278.5,
+          "exact_target_mrr": 0.02571054198114938
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.1,
+          "exact_target_hit_at_5": 0.1,
+          "exact_target_mean_penalized_rank": 3087.7,
+          "exact_target_median_penalized_rank": 1162.5,
+          "exact_target_mrr": 0.02567193926143673
+        }
+      },
+      "gate_activation_rate": 1.0,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.1,
+        "relevant_set_hit_at_5": 0.1,
+        "relevant_set_mean_penalized_rank": 182.3,
+        "relevant_set_median_penalized_rank": 58.0,
+        "relevant_set_mrr": 0.04584080866269964
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.2,
+        "relevant_set_hit_at_5": 0.1,
+        "relevant_set_mean_penalized_rank": 176.1,
+        "relevant_set_median_penalized_rank": 83.0,
+        "relevant_set_mrr": 0.05328724839678693
+      },
+      "relevant_set": {
+        "count": 10,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.1,
+          "relevant_set_hit_at_5": 0.1,
+          "relevant_set_mean_penalized_rank": 182.3,
+          "relevant_set_median_penalized_rank": 58.0,
+          "relevant_set_mrr": 0.04584080866269964
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.2,
+          "relevant_set_hit_at_5": 0.1,
+          "relevant_set_mean_penalized_rank": 176.1,
+          "relevant_set_median_penalized_rank": 83.0,
+          "relevant_set_mrr": 0.05328724839678693
+        },
+        "relevant_set_harm_rate": 0.5,
+        "relevant_set_help_rate": 0.4,
+        "relevant_set_mean_rank_delta": 6.2,
+        "relevant_set_mean_reciprocal_rank_delta": 0.007446439734087293,
+        "relevant_set_unchanged_rate": 0.1
+      },
+      "relevant_set_harm_rate": 0.5,
+      "relevant_set_help_rate": 0.4,
+      "relevant_set_mean_rank_delta": 6.2,
+      "relevant_set_mean_reciprocal_rank_delta": 0.007446439734087293,
+      "relevant_set_unchanged_rate": 0.1
+    },
+    "LONGITUDINAL_POSITIVE": {
+      "count": 10,
+      "exact_target": {
+        "count": 10,
+        "exact_target_harm_rate": 0.2,
+        "exact_target_help_rate": 0.8,
+        "exact_target_mean_rank_delta": 1568.3,
+        "exact_target_mean_reciprocal_rank_delta": 0.0016177995949391692,
+        "exact_target_unchanged_rate": 0.0,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 5752.8,
+          "exact_target_median_penalized_rank": 1802.5,
+          "exact_target_mrr": 0.0021629365336520807
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 4184.5,
+          "exact_target_median_penalized_rank": 1461.5,
+          "exact_target_mrr": 0.0037807361285912494
+        }
+      },
+      "gate_activation_rate": 1.0,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 619.1,
+        "relevant_set_median_penalized_rank": 434.5,
+        "relevant_set_mrr": 0.003614678522044266
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 514.1,
+        "relevant_set_median_penalized_rank": 280.5,
+        "relevant_set_mrr": 0.005686093462615761
+      },
+      "relevant_set": {
+        "count": 10,
+        "gate_activation_rate": 1.0,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 619.1,
+          "relevant_set_median_penalized_rank": 434.5,
+          "relevant_set_mrr": 0.003614678522044266
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 514.1,
+          "relevant_set_median_penalized_rank": 280.5,
+          "relevant_set_mrr": 0.005686093462615761
+        },
+        "relevant_set_harm_rate": 0.2,
+        "relevant_set_help_rate": 0.8,
+        "relevant_set_mean_rank_delta": 105.0,
+        "relevant_set_mean_reciprocal_rank_delta": 0.002071414940571496,
+        "relevant_set_unchanged_rate": 0.0
+      },
+      "relevant_set_harm_rate": 0.2,
+      "relevant_set_help_rate": 0.8,
+      "relevant_set_mean_rank_delta": 105.0,
+      "relevant_set_mean_reciprocal_rank_delta": 0.002071414940571496,
+      "relevant_set_unchanged_rate": 0.0
+    },
+    "MEMORY_IRRELEVANT": {
+      "count": 10,
+      "exact_target": {
+        "count": 10,
+        "exact_target_harm_rate": 0.4,
+        "exact_target_help_rate": 0.3,
+        "exact_target_mean_rank_delta": -145.6,
+        "exact_target_mean_reciprocal_rank_delta": 0.00019338231259763314,
+        "exact_target_unchanged_rate": 0.3,
+        "gate_activation_rate": 0.7,
+        "m0": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 3187.8,
+          "exact_target_median_penalized_rank": 1238.0,
+          "exact_target_mrr": 0.0018471547257906007
+        },
+        "m3": {
+          "exact_target_hit_at_1": 0.0,
+          "exact_target_hit_at_10": 0.0,
+          "exact_target_hit_at_5": 0.0,
+          "exact_target_mean_penalized_rank": 3333.4,
+          "exact_target_median_penalized_rank": 1356.5,
+          "exact_target_mrr": 0.002040537038388234
+        }
+      },
+      "gate_activation_rate": 0.7,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.1,
+        "relevant_set_hit_at_5": 0.1,
+        "relevant_set_mean_penalized_rank": 509.4,
+        "relevant_set_median_penalized_rank": 189.5,
+        "relevant_set_mrr": 0.03273599444184837
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.0,
+        "relevant_set_hit_at_5": 0.0,
+        "relevant_set_mean_penalized_rank": 544.9,
+        "relevant_set_median_penalized_rank": 177.5,
+        "relevant_set_mrr": 0.01606214193703783
+      },
+      "relevant_set": {
+        "count": 10,
+        "gate_activation_rate": 0.7,
+        "m0": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.1,
+          "relevant_set_hit_at_5": 0.1,
+          "relevant_set_mean_penalized_rank": 509.4,
+          "relevant_set_median_penalized_rank": 189.5,
+          "relevant_set_mrr": 0.03273599444184837
+        },
+        "m3": {
+          "relevant_set_hit_at_1": 0.0,
+          "relevant_set_hit_at_10": 0.0,
+          "relevant_set_hit_at_5": 0.0,
+          "relevant_set_mean_penalized_rank": 544.9,
+          "relevant_set_median_penalized_rank": 177.5,
+          "relevant_set_mrr": 0.01606214193703783
+        },
+        "relevant_set_harm_rate": 0.4,
+        "relevant_set_help_rate": 0.3,
+        "relevant_set_mean_rank_delta": -35.5,
+        "relevant_set_mean_reciprocal_rank_delta": -0.016673852504810533,
+        "relevant_set_unchanged_rate": 0.3
+      },
+      "relevant_set_harm_rate": 0.4,
+      "relevant_set_help_rate": 0.3,
+      "relevant_set_mean_rank_delta": -35.5,
+      "relevant_set_mean_reciprocal_rank_delta": -0.016673852504810533,
+      "relevant_set_unchanged_rate": 0.3
+    }
+  },
+  "gate": {
+    "by_relation": {
+      "CONFLICTING": {
+        "count": 10,
+        "max": 0.3675302565097809,
+        "mean": 0.3149312615394592,
+        "median": 0.3246941417455673,
+        "min": 0.2657652497291565,
+        "p10": 0.2751294314861298,
+        "p25": 0.2848144620656967,
+        "p75": 0.3374486118555069,
+        "p90": 0.34615972936153416,
+        "sample_stddev": 0.034078708149691
+      },
+      "IRRELEVANT": {
+        "count": 10,
+        "max": 0.2871791124343872,
+        "mean": 0.21864512711763381,
+        "median": 0.21859536319971085,
+        "min": 0.1566571593284607,
+        "p10": 0.17501678615808489,
+        "p25": 0.1944076158106327,
+        "p75": 0.23564592003822327,
+        "p90": 0.2630998492240906,
+        "sample_stddev": 0.03878192780885618
+      },
+      "RELEVANT": {
+        "count": 20,
+        "max": 0.43772298097610474,
+        "mean": 0.32494142949581145,
+        "median": 0.3107381910085678,
+        "min": 0.25391489267349243,
+        "p10": 0.26307029128074644,
+        "p25": 0.2907645106315613,
+        "p75": 0.34845829010009766,
+        "p90": 0.39605419337749487,
+        "sample_stddev": 0.05513697806320116
+      }
+    },
+    "conflicting_reported_separately": true,
+    "relevant_vs_irrelevant_auc": 0.97
+  },
+  "mechanism_classification": "HARMFUL",
+  "overall": {
+    "count": 40,
+    "exact_target": {
+      "count": 40,
+      "exact_target_harm_rate": 0.45,
+      "exact_target_help_rate": 0.45,
+      "exact_target_mean_rank_delta": 1152.125,
+      "exact_target_mean_reciprocal_rank_delta": 0.00021789392890229925,
+      "exact_target_unchanged_rate": 0.1,
+      "gate_activation_rate": 0.925,
+      "m0": {
+        "exact_target_hit_at_1": 0.0,
+        "exact_target_hit_at_10": 0.025,
+        "exact_target_hit_at_5": 0.025,
+        "exact_target_mean_penalized_rank": 4301.45,
+        "exact_target_median_penalized_rank": 1553.0,
+        "exact_target_mrr": 0.007970892443561035
+      },
+      "m3": {
+        "exact_target_hit_at_1": 0.0,
+        "exact_target_hit_at_10": 0.025,
+        "exact_target_hit_at_5": 0.025,
+        "exact_target_mean_penalized_rank": 3149.325,
+        "exact_target_median_penalized_rank": 1397.0,
+        "exact_target_mrr": 0.008188786372463334
+      }
+    },
+    "gate_activation_rate": 0.925,
+    "m0": {
+      "relevant_set_hit_at_1": 0.0,
+      "relevant_set_hit_at_10": 0.05,
+      "relevant_set_hit_at_5": 0.05,
+      "relevant_set_mean_penalized_rank": 482.475,
+      "relevant_set_median_penalized_rank": 251.0,
+      "relevant_set_mrr": 0.021451540037159135
+    },
+    "m3": {
+      "relevant_set_hit_at_1": 0.0,
+      "relevant_set_hit_at_10": 0.05,
+      "relevant_set_hit_at_5": 0.025,
+      "relevant_set_mean_penalized_rank": 505.2,
+      "relevant_set_median_penalized_rank": 246.5,
+      "relevant_set_mrr": 0.01932669076395778
+    },
+    "relevant_set": {
+      "count": 40,
+      "gate_activation_rate": 0.925,
+      "m0": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.05,
+        "relevant_set_hit_at_5": 0.05,
+        "relevant_set_mean_penalized_rank": 482.475,
+        "relevant_set_median_penalized_rank": 251.0,
+        "relevant_set_mrr": 0.021451540037159135
+      },
+      "m3": {
+        "relevant_set_hit_at_1": 0.0,
+        "relevant_set_hit_at_10": 0.05,
+        "relevant_set_hit_at_5": 0.025,
+        "relevant_set_mean_penalized_rank": 505.2,
+        "relevant_set_median_penalized_rank": 246.5,
+        "relevant_set_mrr": 0.01932669076395778
+      },
+      "relevant_set_harm_rate": 0.425,
+      "relevant_set_help_rate": 0.475,
+      "relevant_set_mean_rank_delta": -22.725,
+      "relevant_set_mean_reciprocal_rank_delta": -0.002124849273201356,
+      "relevant_set_unchanged_rate": 0.1
+    },
+    "relevant_set_harm_rate": 0.425,
+    "relevant_set_help_rate": 0.475,
+    "relevant_set_mean_rank_delta": -22.725,
+    "relevant_set_mean_reciprocal_rank_delta": -0.002124849273201356,
+    "relevant_set_unchanged_rate": 0.1
+  }
+}

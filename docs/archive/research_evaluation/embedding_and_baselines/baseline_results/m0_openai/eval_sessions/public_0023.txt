@@ -1,0 +1,70 @@
+Target Product Title: Hanes Women's Wireless Bra with Cooling, Seamless Smooth Comfort Wirefree T-Shirt Bra
+Target ASIN: B08ZKFD4GM
+Scenario: intent_override
+Constraints: ['Hand Wash Only', 'Item model number: G796']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a wireless bra that's really comfortable and seamless. ideally, it would be available from march 19, 2021.
+Copilot: Great! To help narrow down your options, could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. PP PLUIE POURPRE Bralettes for Women, Triangle Bra Wireless Padded Bralette Wire Free V Neck Sleep Bra for Women Girls (ASIN: B09XTV4VY4)
+  2. Felina Women's Wire-Free Seamless Bra with Removable Pads - Comfortable Bras for Women, Wireless Bras (ASIN: B07T8CF4GW)
+  3. Adjustable Women Camisole with Built in Shelf Bra, Tank Top Seamless Comfortable Padded Wireless Bra cami (ASIN: B074SK7TCP)
+  4. BLAKE & CO. Wireless Front Clasp Bras for Women, Wireless Bra and Padded Bra, Bras for Women No Underwire, Seamless Bra (ASIN: B09T782383)
+  5. Haullps Seamless Bra for Women Comfortable Ultra Thin Wireless Low Cut Bra Invisible Bralette for Women (ASIN: B0C851SF91)
+  6. Womens Bra, Full Figure Magic Lift Plus Size Seamless Wirefree Front Close Sports Bra, Padded Comfort Bra for Women (ASIN: B098NRHGMZ)
+  7. Vinfact Bras for Women No Underwire Bralettes Seamless V Neck Women's Everyday Bra Criss-Cross Wear with Extra Bra Extender - L, Nude (ASIN: B09Z2VTGG2)
+  8. Febriajuce Sports Bras for Women Wireless Support Bra Low Back Sexy Seamless Everyday Underwaear (ASIN: B09726G8B2)
+  9. Womens Sports Bra Top Workout Tank Tops Longline Sports Bra with Removable Padded Medium Support Yoga Bras Gym Running Top (ASIN: B095LJX1MM)
+  10. Teniux Sports Bras for Women Wireless Pad Seamless High Impact Bra for Workout Yoga Gym (ASIN: B07MDVKT91)
+
+--- TURN 2 ---
+Shopper: i'm looking for a size medium. also, ideally, i’d like something that was first available around march 2021.
+Copilot: Thanks for the details! Do you have a preferred color in mind for the wireless bra?
+Copilot Attribute Query: color
+Recommendations:
+  1. Womens Sports Bra Top Workout Tank Tops Longline Sports Bra with Removable Padded Medium Support Yoga Bras Gym Running Top (ASIN: B095LJ53TW)
+  2. Hanno Women's Racerback Sports Bras Medium Support Wirefree Bra Seamless Padded Fitness Workout Running Yoga Tank Top (ASIN: B08PZ3DQJK)
+  3. QINSEN Women's Yoga Leggings 2 Piece Outfit Ribbed Seamless High Waisted Workout Yoga Bra Sets Blue M (ASIN: B08ZL5565V)
+  4. Belugue Women's Seamless Lace Overlay Bralette Wire-Free Sports Bra (ASIN: B071992SMQ)
+  5. Litgo Sports Bras for Women Racerback Seamless Comfortable Yoga Gym Bra (ASIN: B07ZS8BHR3)
+  6. Women's Longline Sports Bra Wirefree Padded Medium Support Yoga Bras Gym Running Workout Crop Tank Tops Bra (ASIN: B08HDGRVQN)
+  7. Beauty Wear Sports Bras for Women with Removable Pads for Yoga Fitness (ASIN: B08G18K2BG)
+  8. Seamless Workout Sets for Women 2 Piece Ribbed Zipper Crop Tank High Waist Gym Shorts Yoga Outfit Tracksuit JOTEUS (ASIN: B0B2CQM9XP)
+  9. RANDY SUN Waterproof Breathable Socks, Unisex Coolmax High Quality Cycling Running Trekking Knee Length Socks, 1 Pair-Green-Knee High socks,Medium (ASIN: B07F7Q5861)
+  10. QGGQDD 5” Casual Shorts for Women – Workout Yoga Lounge Summer Pajama Bottoms Athletic Shorts (ASIN: B0919FZC4G)
+
+--- TURN 3 ---
+Shopper: i'm not really focused on color right now, just looking for something comfy and seamless. ideally, i want something that was available around march 2021.
+Copilot: Got it! To help find the best options for you, do you have a preferred brand in mind for the wireless bra?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Girl Shark Women's Seamless Sports Bra Yoga Fitness Running Workout Crop Tank Top (ASIN: B08XX2Q72X)
+  2. Pretty Seamless 3-Pack Women's Seamless Wireless Strappy Cage Front Bustier Crop Top Comfort Bra with Removable Pads (ASIN: B075V115P6)
+  3. Qheng Women's Bra, 5D Wireless Contour Bra, Lace Breathable Underwear Seamless for Sports Yoga Running Gray (ASIN: B08BLSKD2R)
+  4. Vinfact V Neck Bras for Women Seamless Ultra Comfort Bralette Wireless Women's Everyday Bra Sleeping Bra with Bras Extenders - M, Nude (ASIN: B09ZPK9XB6)
+  5. HeartFor Racerback Sports Bras for Women - Padded High Impact Workout,Pack of 2 (ASIN: B07F7485QV)
+  6. Hanes Women's Wireless Bra with Cooling, Seamless Smooth Comfort Wirefree T-Shirt Bra (ASIN: B08ZKFD4GM)
+  7. Hanes Womens Wireless Bra, Full-Coverage Pullover Stretch-Knit Bra, Smoothing T-Shirt Bra (ASIN: B0BPCC1KBT)
+  8. Danskin Girls' Training Bra - 6 Pack Seamless Racerback Sports Bralette with Removable Pads (ASIN: B09K9SF8HT)
+  9. N NAANSI Everyday Bras - Comfort Breathable Soft Cup Wireless Front Close Bras of Women(36-44B/C) (ASIN: B07JX5114N)
+  10. Kaikailand Plus Size Super Soft Lightly Lined Comfort Support Wireless T-Shirt Bra for Women (ASIN: B09V2GXLBJ)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: Hand Wash Only.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Hanes Women's Wireless Bra with Cooling, Seamless Smooth Comfort Wirefree T-Shirt Bra (ASIN: B08ZKFD4GM)
+  2. FITATH Women's Light Support Seamless Sport Bra - Wireless Yoga Sleelveless Crop Tops (ASIN: B08SQQ2QTH)
+  3. Febriajuce Sports Bras for Women Wireless Support Bra Low Back Sexy Seamless Everyday Underwaear (ASIN: B09726G8B2)
+  4. Wingslove Women’s Sports Bra Seamless Full Support Coverage Wireless Sport Bras for Yoga Gym Workout Fitness (ASIN: B0762GHFTC)
+  5. GYMONLY Longline Sports Bra, Seamless Strappy Sports Bras for Women, Crisscross Back Yoga Bra, Workout Fitness (ASIN: B07RT47BQX)
+  6. Women's Comfortable Fit Bra Support Push Up Plus Size Underwire Bra (ASIN: B01LF7UCV8)
+  7. REYEOGO Women Seamless Shapewear Bodysuit Tummy Control Full Body Shaper Waist Trainer Slimming Leotard Jumpsuits Tank Top (ASIN: B09NFNHCXS)
+  8. Hanes Womens Wireless Bra, Full-Coverage Pullover Stretch-Knit Bra, Smoothing T-Shirt Bra (ASIN: B0BPCC1KBT)
+  9. Teniux Sports Bras for Women Wireless Pad Seamless High Impact Bra for Workout Yoga Gym (ASIN: B07MDVKT91)
+  10. Generics Women's Sexy Floral Lace Front-Close Padded Bralette Comfy Racerback Halter Plunge Wireless Bra (ASIN: B08B3CHZX3)
+
+=== RESULT: SUCCESS (Turn 4) ===

@@ -1,0 +1,22 @@
+Target Product Title: SENDEFN Wallets for Women Genuine Leather Credit Card Holder with RFID Blocking Large Capacity Wristlet
+Target ASIN: B08GPGX2QG
+Scenario: browsing
+Constraints: ['leather', 'color: red']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a red leather wallet for women that can hold credit cards and has some kind of rfid blocking feature.
+Copilot: Great choice! To help narrow it down further, do you have a preferred brand in mind for your wallet?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Travelambo Womens Wallet RFID Blocking Bifold Multi Card Case Wallet with Zipper Pocket (ASIN: B089RXP8K2)
+  2. SENDEFN Wallets for Women Genuine Leather Credit Card Holder with RFID Blocking Large Capacity Wristlet (ASIN: B08GPGX2QG)
+  3. JEEBURYEE Women's RFID Blocking Leather Wallet Credit Card Holder Zipper Clutch Purse (ASIN: B07F1WY89W)
+  4. Gostwo Womens Large Capacity Wallet Genuine Leather RFID Blocking Purse Credit Card Zip Around Clutch Wristlet(Lemon Yellow) (ASIN: B09BQGTH74)
+  5. Mageloly Mens Cotton Short Sleeve Tee Casual T Shirts for Adults (1, M) (ASIN: B01HECM82Y)
+  6. SHUIBIAN Women's RFID Blocking Genuine Leather Clutch Wallet Multi Card Holder Organizer Ladies Purse with Zipper Pocket (Red Wine3) (ASIN: B07XB1LWHG)
+  7. Womens RFID Blocking Wallet Accordion Credit Card Holder Genuine Leather Trifold for Mother's Day (ASIN: B07KY7TQBP)
+  8. Leviro Men's Fashion RFID Blocking Wallets Genuine Leather Wax Cowhide Leather Zipper Purse (3002-Crazy Horse Brown) (ASIN: B07QQBDTK5)
+  9. Buffway Slim Minimalist Front Pocket RFID Blocking Leather Wallets for Men Women (ASIN: B0B9ZYDDZ1)
+  10. Cynure Women 36 Slots RFID Blocking Card Holder Large Long Leather Zipper Organizer Accordion Wallet (ASIN: B085X84YJD)
+
+=== RESULT: SUCCESS (Turn 1) ===

@@ -1,0 +1,65 @@
+from __future__ import annotations
+
+from pathlib import Path
+import sys
+import unittest
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
+
+from nickolas.memory.qlmp import MemoryItem, MemoryPolarity, MemorySource
+from nickolas.shopping_agent.longitudinal_eval.masked_memory_evaluation import (
+    EmbeddingSpace,
+    FrozenBundle,
+    FrozenSession,
+    assert_identical_samples,
+    validate_same_space,
+)
+
+
+def unit(values):
+    vector = np.asarray(values, dtype=np.float64)
+    return vector / np.linalg.norm(vector)
+
+
+def space(name: str, dimension: int) -> EmbeddingSpace:
+    return EmbeddingSpace(name, name, f"{name}:dimensions={dimension}", dimension)
+
+
+def bundle(model_space: EmbeddingSpace, memory_id: str = "m", target: str = "p") -> FrozenBundle:
+    memory = MemoryItem(
+        memory_id, "same text", unit([1, 0]), MemorySource.USER, MemoryPolarity.POSITIVE
+    )
+    session = FrozenSession(
+        fixture_id="f", user_id="u", session_id="s", sequence_index=1,
+        scenario_type="buying", split="held_out", target_asin=target,
+        query_text="query", query=unit([1, 0]), memories=(memory,),
+        memory_origin_indices=(0,), space=model_space,
+    )
+    return FrozenBundle(model_space, (session,), "fixture", "vectors", "logical")
+
+
+class MaskedMemoryEvaluationTests(unittest.TestCase):
+    def test_small_query_plus_large_catalogue_fails_even_at_same_dimension(self) -> None:
+        large, small = space("large", 2), space("small", 2)
+        with self.assertRaisesRegex(ValueError, "query embedding space mismatch"):
+            validate_same_space((unit([1, 0]), small), None, large)
+
+    def test_large_query_plus_small_memory_fails(self) -> None:
+        large, small = space("large", 2), space("small", 2)
+        with self.assertRaisesRegex(ValueError, "memory embedding space mismatch"):
+            validate_same_space((unit([1, 0]), large), (unit([0, 1]), small), large)
+
+    def test_corresponding_runs_require_identical_memory_ids(self) -> None:
+        with self.assertRaisesRegex(ValueError, "memory IDs differ"):
+            assert_identical_samples(bundle(space("large", 2), "a"), bundle(space("small", 2), "b"))
+
+    def test_corresponding_runs_require_identical_targets(self) -> None:
+        with self.assertRaisesRegex(ValueError, "large_target_asins"):
+            assert_identical_samples(bundle(space("large", 2), target="a"), bundle(space("small", 2), target="b"))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,22 @@
+Target Product Title: Women's Walking Shoes Sock Sneakers - Mesh Slip On Air Cushion Lady Girls Modern Jazz Dance Easy Shoes Platform Loafers
+Target ASIN: B08134XNNB
+Scenario: browsing
+Constraints: ['fabric', 'Mesh Fabric']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's walking shoes that are easy to slip on. i want them to be made of fabric, preferably mesh, and something comfortable for everyday wear.
+Copilot: Great choice! What color are you looking for in your walking shoes?
+Copilot Attribute Query: color
+Recommendations:
+  1. Women's Walking Shoes Sock Sneakers - Mesh Slip On Air Cushion Lady Girls Modern Jazz Dance Easy Shoes Platform Loafers (ASIN: B08134XNNB)
+  2. Phefee Women's Casual Walking Shoes Comfortable Breathable Mesh Slip On Work Sneakers Fashion Sock Shoes（Red,42） (ASIN: B08GKNFBYS)
+  3. Nature Breeze Woman's Lace Platform Flats Comfortable, Chic Slip On Mesh Flat Sneaker Shoes (ASIN: B00ZYIEY0U)
+  4. AGTCARE Mens Casual Shoes Fashion Walking Sneakers for Men Lightweight Breathable Mesh Running Sneakers Comfortable Sports Shoes Blue (ASIN: B08GC13LC7)
+  5. GEMAX Womens Walking Tennis Shoes - Slip on Mesh Memory Foam Lightweight Athletic Running Sneakers (ASIN: B08GHT579S)
+  6. USYFAKGH Womens Walking Shoes Sneakers Leisure Breathable Mesh Outdoor Fitness Running Sport Sneakers Shoes (ASIN: B09N72WTDH)
+  7. MLAGJSS Women's Canvas Shoes Vulcanize Soft Ladies Autumn Loafers Flat Shoes Sneakers (ASIN: B09HXZ22LF)
+  8. MAFEKE Womens Reflective Memory Foam Walking Tennis Shoes Slip on Athletic Running Sneakers (ASIN: B07WMNW459)
+  9. Muleug Women's Walking Shoes Sock Sneakers -Mesh Slip on Breathable Mesh Platform Air Cushion Sneakers Sock Shoes (ASIN: B08K7531QM)
+  10. Mishansha Women's Walking Shoes Mesh Slip On Sock Sneakers Arch Support Air Cushion Casual Sport Shoes US5.5-11.5 (ASIN: B09X4GG71T)
+
+=== RESULT: SUCCESS (Turn 1) ===

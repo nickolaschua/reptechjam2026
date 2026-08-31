@@ -1,0 +1,22 @@
+Target Product Title: CS CELERSPORT 3 Pairs Compression Socks for Men and Women 20-30 mmHg Running Support Socks
+Target ASIN: B083TB1NDK
+Scenario: browsing
+Constraints: ['Polyamide,Mesh', 'Machine Wash']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some compression socks that are good for running. they should be made of polyamide and have a mesh design. also, i need them to be machine washable.
+Copilot: I found a great option for you! The CS CELERSPORT 3 Pairs Compression Socks are designed for running and meet all your specified criteria. What color are you looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. CS CELERSPORT 3 Pairs Compression Socks for Men and Women 20-30 mmHg Running Support Socks (ASIN: B083TB1NDK)
+  2. 3 Pack Unisex Ultra Thin Breathable Dry Fit Low Cut Running Ankle Socks black white grey color (ASIN: B07L7M66MQ)
+  3. SYROKAN Women's Long Sleeve Workout Tshirts, Running Tops for Women, Yoga Shirts (ASIN: B07JVBSS5C)
+  4. 2PAIRS Novelty Fans Gift Socks If You Can Read This SHHH The Football Game Is On Football Fans Gift (ASIN: B088R9HSF9)
+  5. Billabong Men's Performance Mesh Boxer Brief (ASIN: B09PWZG9CJ)
+  6. Halina Athletics High Impact High Crewneck Mesh Net Inset Sports Bra for Women (ASIN: B07D4C3VXQ)
+  7. DRSKIN Men's 3 Pack Dry Fit Y-Back Muscle Tank Tops Mesh Sleeveless Gym Bodybuilding Training Athletic Workout Cool Shirts (BTF-ME-TA-(DG,R,Y), M) (ASIN: B08K8QKW7W)
+  8. COOFANDY Men's 3 Pack Workout Tank Tops Quick Dry Y Back Gym Muscle Tee Bodybuilding Fitness Sleeveless T Shirts (ASIN: B086VP6WZN)
+  9. Hiverlay Workout Shirts for Women Running Hiking Quick Dry Golf Shirts UPF 50+ SPF Lightweight Pullover with Pocket (ASIN: B0BWMPP34M)
+  10. Zuiqe Men Swimming Trunks Drawstring Waistband with Mesh Lining and Pockets Board Short (ASIN: B09HGMBPPQ)
+
+=== RESULT: SUCCESS (Turn 1) ===

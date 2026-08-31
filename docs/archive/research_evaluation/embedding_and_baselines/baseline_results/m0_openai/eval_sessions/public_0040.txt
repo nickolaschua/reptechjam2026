@@ -1,0 +1,22 @@
+Target Product Title: Champion Men's Joggers, Everyday Joggers, Lightweight, Comfortable Joggers for Men, 31"
+Target ASIN: B08ZJWTCDR
+Scenario: browsing
+Constraints: ['cotton', 'color: black']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfortable joggers for men, ideally in black and made of cotton.
+Copilot: Great choice! What size are you looking for in those joggers?
+Copilot Attribute Query: size
+Recommendations:
+  1. Champion Men's Joggers, Everyday Joggers, Lightweight, Comfortable Joggers for Men, 31" (ASIN: B08ZJWTCDR)
+  2. Levi's Men's 505 Regular Fit Shorts (Also Available in Big & Tall) (ASIN: B0C614ZPK3)
+  3. Ripple Junction Men’s Naruto Shippuden Cosplay Military-Style Hoodie (ASIN: B01789QZB8)
+  4. Jmr Usa Inc. Men's Cotton Lounge Fleece Shorts with Side Pockets, Elastic Waist Bands, and Drawstring Closure (ASIN: B0721R3422)
+  5. 3 Pack Unisex Ultra Thin Breathable Dry Fit Low Cut Running Ankle Socks black white grey color (ASIN: B07L7M66MQ)
+  6. GIOVANNI UOMO Men's Traditional Fit Solid Color Dress Shirt-More Colors (ASIN: B0128NSMQU)
+  7. 6TN Mens Weasley's Wizard Wheezes T Shirt (XL) Black (ASIN: B01KTOS6DY)
+  8. NIFEIPIDUO Crewmate Among Us Shirt | Amoung Us Game Merch T Shirts Kids Tshirt Adult Tee (Youth Black, Large) (ASIN: B08LQYH12T)
+  9. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  10. Creedence Clearwater Revival 1960s American Rock Band Willy & Poor Boys T-Shirt (ASIN: B07NQRKBHJ)
+
+=== RESULT: SUCCESS (Turn 1) ===

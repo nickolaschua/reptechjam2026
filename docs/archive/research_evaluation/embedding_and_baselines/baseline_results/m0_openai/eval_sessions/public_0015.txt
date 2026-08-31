@@ -1,0 +1,54 @@
+Target Product Title: Crocs Unisex-Adult Classic Clog
+Target ASIN: B08513YB2T
+Scenario: browsing
+Constraints: ['fabric', 'Made in the USA or Imported']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfy clogs, something lightweight and made of fabric. i’d prefer if they were made in the usa or imported too.
+Copilot: I found some options that fit your criteria! Could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. GyeBea Womens Walking Shoes with Arch Support Comfy Orthotic Tennis Running Sneakers for Fasciitis Knee Pain Relief US 5.5-10.5 (ASIN: B09Y994VCL)
+  2. Remonte Women's, D8696 Boot (ASIN: B0BD5GVHLR)
+  3. Ryka Women's Balance Oxford (ASIN: B0BGM1R72N)
+  4. Hey Dude Men's Wally Funk-Multiple Colors and Size | Men’s Shoes | Comfortable & Light-Weight (ASIN: B09GF1RWH5)
+  5. Plus Size Tops for Womens Deep V Off Shoulder Blouse Asymmetric Hem T Shirts Solid Color Sexy Casual Loose Fit Tunic (ASIN: B08ZT28D93)
+  6. Tough Cookie Clothing Tank Top – Women’s Muscle Girl Print Workout Yoga Racerback Sleeveless Active Casual T Shirt Tee (ASIN: B07NJMP7P2)
+  7. Tough Cookie Clothing Tank Top – Women’s Sore Today Strong Tomorrow Print Burnout Workout Yoga Racerback Sleeveless T Shirt (ASIN: B06W5Y4C25)
+  8. NUFIWI Women Summer 2 Piece Pants Set Sleeveless Off Shoulder Tube Top High Waist Wide Leg Pants Outfits Y2k Streetwear (ASIN: B0C24PB7HR)
+  9. Padded Sports Bra for Women Model Comfy Camisole Spaghetti Strap Tank Tops with Built in Bras for Fitness Workout (ASIN: B0B2P1QV35)
+  10. Aggie kid Girls Shoes Lightweight Breathable Sports Shoes Running Shoes Fashion Sneakers for Little Kids/Big Kids (ASIN: B091N42HF3)
+
+--- TURN 2 ---
+Shopper: i'm actually looking for something more like those classic clogs that are super comfy and lightweight. do you have any options like that?
+Copilot: I understand you're looking for classic, comfy, and lightweight clogs. What color are you interested in?
+Copilot Attribute Query: color
+Recommendations:
+  1. Crocs Unisex-Adult Men's and Women's Baya Graphic Clog (ASIN: B0BKNQ4L1P)
+  2. SAGUARO Women's Mens Mesh Garden Clog Shoes Sandals Summer Indoor Outdoor Unisex Walking Slipper (ASIN: B01IQVAMRA)
+  3. Crocs Unisex-Adult Baya Clogs, Neo Mint, 7 Women/5 Men (ASIN: B0C1TDJ9HZ)
+  4. Men's Women's Lined Clogs Waterproof Winter House Slippers Warm Fuzzy Anti-slip Garden Shoes Indoor Outdoor Mules (ASIN: B09F3G65R1)
+  5. LongBay Women's Breathable Memory Foam Slippers Summer Open Toe Terrycloth Slide House Slippers Cozy Cute Home Shoes (ASIN: B07JJ82JWV)
+  6. LongBay Men's Comfy Cotton Knit Slippers Breathable Memory Foam Slip On Clogs (ASIN: B08BS13RKM)
+  7. CERYTHRINA Men's Women's Memory Foam Velvet Lined House Slippers Classic Fuzzy Lined Clog Slip On Winter Garden Shoes (ASIN: B07YBXPHF2)
+  8. Hawkwell Women's Backless Slip on Slides Loafer Shoes Flats Comfortable Pointed Toe Mules (ASIN: B0BRFPWVF6)
+  9. Men's Women's Fur Lined Clogs Warm Fuzzy House Shoes Waterproof Winter Home Slippers Indoor Outdoor Slip On Garden Shoes Lined Clogs Mules (ASIN: B09JYVQ1MV)
+  10. clapzovr Men Garden Clogs Beach Water Sandal Lightweight Shoes Slippers (ASIN: B07C446QZD)
+
+--- TURN 3 ---
+Shopper: i'm actually looking for something classic and comfy, ideally made from fabric. do you have any options that fit that?
+Copilot: Great! I found some classic fabric clogs that should be perfect for you. Just to narrow it down a bit more, do you have a specific brand in mind?
+Copilot Attribute Query: brand
+Recommendations:
+  1. VOKLIN MISTU Women's Platform High Heel Sandals Peep Toe Ankle Strap Wedding Party Evening Pump Dress Heeled Sandal (ASIN: B0993RL2V5)
+  2. Crocs Unisex-Adult Classic Clog (ASIN: B08513YB2T)
+  3. Crocs Unisex-Adult Classic Tie Dye Clogs (ASIN: B0BKL2R1WX)
+  4. SAGUARO Women's Mens Mesh Garden Clog Shoes Sandals Summer Indoor Outdoor Unisex Walking Slipper (ASIN: B01IQVAVDK)
+  5. BENHERO Toddler Kids Boys Girls Classic Clogs- Slip On Garden Water Sandals | Summer Slippers Pool Beach Slides Sandals | Lightweight and Comfort(Toddler/Little Kids) (ASIN: B06XL1BB29)
+  6. Womens Closed Toe Espadrilles Mules Shoes Wedge Sandals Slip On Backless Slides Loafers (ASIN: B08PF9VJHX)
+  7. Shoes for Crews SFC Froggz Classic II - Black - Non-Leather/EVA (Men 6 / Women 8, Black) (ASIN: B00P1ZIKDS)
+  8. Nihaoya Boys and Girls Fleece Lined Clogs Garden Clogs House Slippers Slip on Shoes Unisex Kid's Winter Slippers Black 10.5-11 (ASIN: B09BZLSN6J)
+  9. Sperry Women's Crest Vibe Mule Washed Plaid Sneaker (ASIN: B07VK28K3H)
+  10. MQELONG Toddler Kids Boys Girls Water Pool Beach Sandals Children Outdoor Slip On Summer Slippers Comfort Clogs Lightweight Garden Shoes (ASIN: B07R8P8WCB)
+
+=== RESULT: SUCCESS (Turn 3) ===

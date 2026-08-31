@@ -1,0 +1,250 @@
+from __future__ import annotations
+
+from dataclasses import replace
+import json
+from pathlib import Path
+from types import SimpleNamespace
+import tempfile
+import unittest
+
+from nickolas.shopping_agent.longitudinal_eval.portability_eval import (
+    OpenAIPortabilityJudge,
+    PortabilityJudgeError,
+    PortabilityLabel,
+    PortabilityQuery,
+    build_messages,
+    build_user_payload,
+    candidate_recall,
+    load_portability_fixture,
+    output_schema_for_count,
+    parse_model_output,
+    select_cosine_top_k,
+    summarize_predictions,
+)
+
+
+ROOT = Path(__file__).resolve().parents[3]
+FIXTURE = ROOT / "nickolas" / "shopping_agent" / "longitudinal_eval" / "projector_fixture_v1.json"
+
+
+def valid_payload(memory_ids: list[str]) -> str:
+    return json.dumps(
+        {
+            "results": [
+                {
+                    "memory_id": memory_id,
+                    "classification": "CONTEXTUAL",
+                    "portable_score": 0.1,
+                    "confidence": 0.8,
+                    "reason_code": "insufficient_context",
+                }
+                for memory_id in memory_ids
+            ]
+        }
+    )
+
+
+class FakeCompletions:
+    def __init__(self, outputs: list[str | Exception]) -> None:
+        self.outputs = list(outputs)
+        self.calls: list[dict] = []
+
+    def create(self, **kwargs):
+        self.calls.append(kwargs)
+        output = self.outputs.pop(0)
+        if isinstance(output, Exception):
+            raise output
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content=output))],
+            usage=SimpleNamespace(prompt_tokens=17, completion_tokens=9),
+        )
+
+
+class FakeClient:
+    def __init__(self, outputs: list[str | Exception]) -> None:
+        self.completions = FakeCompletions(outputs)
+        self.chat = SimpleNamespace(completions=self.completions)
+
+
+class PortabilityIsolationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.fixture = load_portability_fixture(FIXTURE)
+
+    def test_prompt_uses_only_deployable_fields_and_preserves_order(self) -> None:
+        query = self.fixture.queries[0]
+        ids = [query.memories[2].memory_id, query.memories[0].memory_id]
+        payload = build_user_payload(query, ids)
+        self.assertEqual(
+            [value["memory_id"] for value in payload["historical_candidate_memories"]],
+            ids,
+        )
+        self.assertEqual(
+            set(payload),
+            {"current_request", "current_active_shopping_state", "historical_candidate_memories"},
+        )
+        messages = build_messages(query, ids)
+        rendered = json.dumps(messages)
+        deployable_rendered = messages[1]["content"]
+        raw = json.loads(FIXTURE.read_text(encoding="utf-8"))["fixtures"][0]
+        self.assertNotIn(raw["target_product_id"], rendered)
+        for memory in raw["memories"]:
+            self.assertNotIn(memory["label_reason"], rendered)
+        self.assertNotIn("shopper_private_persona", rendered)
+        self.assertNotIn("target_product_id", rendered)
+        self.assertNotIn("origin_sequence_index", deployable_rendered)
+        self.assertNotIn("confidence", deployable_rendered)
+        self.assertNotIn("timestamp", deployable_rendered)
+
+    def test_private_labels_cannot_change_prompt(self) -> None:
+        query = self.fixture.queries[0]
+        ids = [memory.memory_id for memory in query.memories]
+        before = build_messages(query, ids)
+        changed = dict(query.annotations_by_memory_id)
+        first = ids[0]
+        changed[first] = replace(changed[first], expected_label=PortabilityLabel.PORTABLE)
+        after = build_messages(replace(query, annotations_by_memory_id=changed), ids)
+        self.assertEqual(before, after)
+
+    def test_target_asin_is_not_part_of_safe_query_or_prompt(self) -> None:
+        query = self.fixture.queries[0]
+        self.assertFalse(hasattr(query, "target_product_id"))
+        ids = [query.memories[0].memory_id]
+        prompt = build_messages(query, ids)
+        self.assertNotIn("B093R14VP1", json.dumps(prompt))
+        raw = json.loads(FIXTURE.read_text(encoding="utf-8"))
+        raw["fixtures"][0]["target_product_id"] = "TARGET-MUTATED-FOR-ISOLATION"
+        temporary: Path | None = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", suffix=".json", dir=FIXTURE.parent, delete=False
+            ) as handle:
+                json.dump(raw, handle)
+                temporary = Path(handle.name)
+            changed = load_portability_fixture(temporary).queries[0]
+            self.assertEqual(prompt, build_messages(changed, ids))
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+
+    def test_hidden_profile_field_is_rejected(self) -> None:
+        raw = json.loads(FIXTURE.read_text(encoding="utf-8"))
+        raw["fixtures"][0]["shopper_private_persona"] = {"latent": "must not leak"}
+        temporary: Path | None = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", suffix=".json", dir=FIXTURE.parent, delete=False
+            ) as handle:
+                json.dump(raw, handle)
+                temporary = Path(handle.name)
+            with self.assertRaisesRegex(ValueError, "private profile"):
+                load_portability_fixture(temporary)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+
+    def test_future_session_annotation_is_rejected(self) -> None:
+        query = self.fixture.queries[0]
+        changed = dict(query.annotations_by_memory_id)
+        first = query.memories[0].memory_id
+        changed[first] = replace(changed[first], origin_sequence_index=query.sequence_index)
+        with self.assertRaisesRegex(ValueError, "future/current-session"):
+            replace(query, annotations_by_memory_id=changed)
+
+    def test_parser_preserves_expected_order(self) -> None:
+        ids = ["M1", "M2"]
+        payload = json.loads(valid_payload(ids))
+        payload["results"].reverse()
+        parsed = parse_model_output(payload, ids)
+        self.assertEqual([value.memory_id for value in parsed], ids)
+
+    def test_runtime_schema_requires_exact_candidate_count(self) -> None:
+        results = output_schema_for_count(7)["schema"]["properties"]["results"]
+        self.assertEqual(results["minItems"], 7)
+        self.assertEqual(results["maxItems"], 7)
+
+    def test_parser_rejects_missing_unknown_duplicate_and_invalid_output(self) -> None:
+        with self.assertRaisesRegex(ValueError, "missing"):
+            parse_model_output(valid_payload(["M1"]), ["M1", "M2"])
+        with self.assertRaisesRegex(ValueError, "unknown"):
+            parse_model_output(valid_payload(["M1", "M3"]), ["M1", "M2"])
+        duplicate = json.loads(valid_payload(["M1", "M1"]))
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            parse_model_output(duplicate, ["M1", "M2"])
+        with self.assertRaisesRegex(ValueError, "invalid JSON"):
+            parse_model_output("not json", ["M1"])
+        invalid_score = json.loads(valid_payload(["M1"]))
+        invalid_score["results"][0]["portable_score"] = 2
+        with self.assertRaisesRegex(ValueError, "portable_score"):
+            parse_model_output(invalid_score, ["M1"])
+
+    def test_judge_retries_same_model_once_after_invalid_output(self) -> None:
+        query = self.fixture.queries[0]
+        ids = [query.memories[0].memory_id]
+        client = FakeClient(["bad json", valid_payload(ids)])
+        judge = OpenAIPortabilityJudge(api_key="test", client=client, max_retries=1)
+        result = judge.classify(query, ids)
+        self.assertEqual(result.attempts, 2)
+        self.assertEqual(result.request_count, 2)
+        self.assertEqual(len(client.completions.calls), 2)
+        self.assertTrue(all(value["model"] == "gpt-4.1-nano" for value in client.completions.calls))
+        self.assertTrue(all(value["temperature"] == 0.0 for value in client.completions.calls))
+
+    def test_judge_fails_closed_after_retry(self) -> None:
+        query = self.fixture.queries[0]
+        ids = [query.memories[0].memory_id]
+        judge = OpenAIPortabilityJudge(
+            api_key="test", client=FakeClient(["bad", "still bad"]), max_retries=1
+        )
+        with self.assertRaises(PortabilityJudgeError):
+            judge.classify(query, ids)
+
+    def test_top_k_selection_is_deterministic_and_matches_current_b2(self) -> None:
+        query = self.fixture.queries[0]
+        first = select_cosine_top_k(query, 3)
+        second = select_cosine_top_k(query, 3)
+        self.assertEqual(first, second)
+        self.assertLessEqual(len(first), 3)
+        self.assertTrue(set(first).issubset({memory.memory_id for memory in query.memories}))
+
+    def test_candidate_recall_is_exact_and_monotonic(self) -> None:
+        recall = candidate_recall(self.fixture)
+        self.assertEqual(recall["portable_count"], 12)
+        values = [recall["by_k"][str(k)]["recall"] for k in (3, 5, 10)]
+        self.assertEqual(values, sorted(values))
+        self.assertEqual(recall["by_k"]["3"]["hits"], 4)
+        self.assertEqual(recall["by_k"]["10"]["hits"], 4)
+
+    def test_duplicate_requested_ids_and_unknown_ids_fail_before_prompting(self) -> None:
+        query = self.fixture.queries[0]
+        memory_id = query.memories[0].memory_id
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            build_user_payload(query, [memory_id, memory_id])
+        with self.assertRaisesRegex(ValueError, "unknown"):
+            build_user_payload(query, ["not-a-memory"])
+
+    def test_negative_polarity_is_separate_from_primary_error_audit(self) -> None:
+        base = {
+            "fixture_id": "Q1",
+            "user_id": "U1",
+            "expected_label": "IRRELEVANT",
+            "predicted_class": "IRRELEVANT",
+            "portable_score": 0.0,
+            "raw_cosine": 0.0,
+            "hard_negative_type": "easy_distractor",
+            "representation_sufficiency": "ENOUGH_CONTEXT",
+        }
+        positive = {**base, "memory_polarity": "positive"}
+        negative = {
+            **base,
+            "memory_polarity": "negative",
+            "predicted_class": "PORTABLE",
+        }
+        summary = summarize_predictions([positive, negative], bootstrap_samples=0)
+        self.assertEqual(summary["classification_error_count"], 0)
+        self.assertEqual(summary["negative_polarity_diagnostic"]["pair_count"], 1)
+        self.assertEqual(summary["negative_polarity_diagnostic"]["accuracy"], 0.0)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,22 @@
+Target Product Title: Travel Neck Wallet with RFID Blocking – Passport Holder Neck Pouch to Keep Your Cash And Documents Safe – Get Peace Of Mind When Traveling
+Target ASIN: B010LVBVKA
+Scenario: browsing
+Constraints: ['nylon', '✅ PERFECT FOR TRAVEL - COMFORTABLE, LIGHTWEIGHT, AND WATER RESISTANT PASSPORT AND VACCINE CARD HOLDER designed to offer you a safe and secure location to store valuables , passport']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a neck pouch or wallet that i can use while traveling. it should be lightweight, water-resistant, and made of nylon. i need something to keep my passport and cash safe.
+Copilot: I found a great option for you! Check out the Travel Neck Wallet with RFID Blocking – it’s designed to keep your cash and documents safe while traveling. What color are you looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. 32 Degrees Women's Down Alternative Lightweight Water-Resistant Short Puffer Packable Jacket (ASIN: B08R6J137C)
+  2. Premium Wear Packable Down Puffer Jacket for Men & Women With Zipper Pockets (ASIN: B09LRF4N6N)
+  3. 32 Degrees Women's Lightweight Hooded Short Puffer Water Resistant Packable Down Jacket (ASIN: B08R5RW66T)
+  4. SEFFORANO Womens Down Jacket Packable Outerwear Water Resistant Lightweight Winter Coat with Hood (ASIN: B09BNGGPLB)
+  5. TAPULCO Men's Quick Dry Hiking Pants Elastic Waist Athletic Durable Casual Outdoor Daily Pants with Zipper Pockets (ASIN: B0BDDXMB8G)
+  6. Free Knight Packable Handy Lightweight Travel Hiking Backpack Daypack (ASIN: B00GWWSOH6)
+  7. Foldable Travel Duffel Bag, Large Capacity Water Resistant Nylon Luggage Bag, Lightweight Travel Luggage Bag for Sports, Gym, Vacation (ASIN: B085NHFS8Z)
+  8. TRAILSIDE SUPPLY CO. Mens Convertible Cargo Hiking Pants Lightweight, Water-Resistant, Ripstop (ASIN: B01NBQ175T)
+  9. Travel Neck Wallet with RFID Blocking – Passport Holder Neck Pouch to Keep Your Cash And Documents Safe – Get Peace Of Mind When Traveling (ASIN: B010LVBVKA)
+  10. Etercycle Compression Packing Cubes 5 Set Travel Organizer Bags for Luggage with Shoe Bag, Expandable and Premium Storage - Essential for Suitcases Travel (ASIN: B0C6M8MB37)
+
+=== RESULT: SUCCESS (Turn 1) ===

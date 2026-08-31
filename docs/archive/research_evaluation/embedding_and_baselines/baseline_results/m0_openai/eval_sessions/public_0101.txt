@@ -1,0 +1,22 @@
+Target Product Title: Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000
+Target ASIN: B07QMS8TX8
+Scenario: buying
+Constraints: ['polyester', 'color: white']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some medical cargo pants for men, and they need to be made of polyester.
+Copilot: I found a great option for you: the Medical Cargo Pants for Men Workwear Originals, which feature a zipper fly and are made from polyester. What size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  2. Tyhengta Men's Board Shorts Quick Dry Swim Trunks with Mesh Lining (ASIN: B07QPWX8FR)
+  3. Gerry Stretch Cargo 5 Pocket Venture Flat Front Woven Hiking Shorts for Men (ASIN: B07P9XJ76B)
+  4. SCHONTAN Women's Outerwear Winter Long Fleece Camouflage Print Lined Thickened Parka Puffer Coats with Faux Fur Hood… (ASIN: B07X4W3383)
+  5. Bimini Bay OUTFITTERS Men's Grand Cayman Nylon Short (ASIN: B0019S2V4A)
+  6. Natalie Dancewear Adult Unisex Cargo Pants with Drawstring Waist BP104 (ASIN: B07CLL4FN5)
+  7. LINKIOM Hidden Pocket Yoga Pants, Women's High Waist and Tight Fitness Nude Yoga Pants (ASIN: B08311BJQ2)
+  8. Dickies Lr542 Premium 11" Industrial Cargo Short (ASIN: B0036GL0EK)
+  9. 2(X)IST Men's Cargo Short Shorts, Cloud Grey, Medium (ASIN: B07BFS1VHS)
+  10. Jon Lauren Apparel Big Men's Hibiscus Flower Printed Swim Shorts (ASIN: B074BD633X)
+
+=== RESULT: SUCCESS (Turn 1) ===

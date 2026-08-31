@@ -1,0 +1,22 @@
+Target Product Title: PRETTYGARDEN Women's Loose Solid Off Shoulder Elastic Waist Stretchy Long Romper Jumpsuit
+Target ASIN: B0BRS1DHVQ
+Scenario: browsing
+Constraints: ['spandex', '65%Polyester30%Viscose5%Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a comfy jumpsuit that's loose and has an off-shoulder design. it should have some stretch to it, and i really want it to be made of a specific blend of polyester and spandex.
+Copilot: I found a great option for you! Check out the PRETTYGARDEN Women's Loose Solid Off Shoulder Elastic Waist Stretchy Long Romper Jumpsuit. What color are you interested in?
+Copilot Attribute Query: color
+Recommendations:
+  1. PRETTYGARDEN Women's Loose Solid Off Shoulder Elastic Waist Stretchy Long Romper Jumpsuit (ASIN: B0BRS1DHVQ)
+  2. Women's Plus Size Shirts Lace Trim Cold Shoulder Blouse Long Sleeve Loose Tunic Tops (ASIN: B07LG1H65T)
+  3. Womes Off Shoulder Loose Mom Life Print Shirt Casual Short Sleeve Tops (ASIN: B087PH5B4Q)
+  4. Men's UPF 50+ Long Sleeve Fishing Shirts Lightweight Quick Dry Sun Shirts, Hoodie With ThumbHoles Adjustable Neck Gaiter (ASIN: B09YT3MSR7)
+  5. Locachy Women's Casual Long Sleeve Cold Shoulder Tops Shirt Tunic Sweatshirt Blouse (ASIN: B09PYHYL7F)
+  6. AlvaQ Women Leopard Print Quarter Zip Sweatshirt Color Block Pullover Tops Shirts with Pockets (ASIN: B09BZP3XYN)
+  7. Newshows Womens Summer Lace Tops Short Sleeve Crewneck Casual Shirts Loose Plain Tunic Blouse(Black, X-Large) (ASIN: B09J1BXM7M)
+  8. Miusey Women Drawstring 3/4 Sleeve Henley V Neck Tops Blouse Shirts Tunic (ASIN: B097DBQTL5)
+  9. Ruffle Halter Tank Top for Women Flowy Casual Loose Sleeveless Shirt Comfy Adjustable Cami Tops Blouse Cute Summer Tops (ASIN: B09Z7DBCKQ)
+  10. Alinemyer Womens Casual Long Sleeve V Neck Loose Fit Mini T Shirt Dress (ASIN: B08VRM47ZT)
+
+=== RESULT: SUCCESS (Turn 1) ===

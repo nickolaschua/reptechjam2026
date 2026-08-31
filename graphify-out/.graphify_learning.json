@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-31T01:42:10.918868+00:00",
+  "nodes": {
+    "docs_archive_legacy_qlmp_library_models_memoryitem": {
+      "code_fingerprint": "b2399a43a90ab792ec1616545520eebf9c9333e2556239e0890129c7e4647a0d",
+      "label": "MemoryItem",
+      "last": "2026-08-29T17:46:25.876153+00:00",
+      "provenance": [
+        {
+          "date": "2026-08-29T17:46:25.876153+00:00",
+          "outcome": "useful",
+          "q": "Audit the Nickolas Agent, QLMP memory contracts, and evaluator lifecycle for Phase 5 longitudinal shadow memory"
+        }
+      ],
+      "score": 0.969729259,
+      "source_file": "docs/archive/legacy_qlmp/library/models.py",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}

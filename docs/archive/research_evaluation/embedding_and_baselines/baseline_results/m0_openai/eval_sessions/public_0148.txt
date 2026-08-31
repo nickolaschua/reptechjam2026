@@ -1,0 +1,22 @@
+Target Product Title: Fruit of the Loom Women's Eversoft Cotton Bikini Underwear, Tag Free & Breathable
+Target ASIN: B0BQC2NRG2
+Scenario: buying
+Constraints: ['cotton', '50% Cotton, 50% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some bikini underwear made of cotton. it's really important to me that they have a good mix of cotton and polyester.
+Copilot: Great choice! Do you have a specific color in mind for the bikini underwear?
+Copilot Attribute Query: color
+Recommendations:
+  1. Fruit of the Loom Women's Eversoft Cotton Bikini Underwear, Tag Free & Breathable (ASIN: B0BQC2NRG2)
+  2. Beach Cover Up Summer,Women's Solid Tied Cover Up Swimsuit Net Perspective Skirt Two Piece Beach Dress Bikini Set (ASIN: B09NM78ZC2)
+  3. Toimothcn Women Sleeveless Sunflowe Print T Shirt Casual Loose Vest Tank Top Soft Comfortable (ASIN: B07P6H2X9F)
+  4. BHSJ Women's Fashion Long Sleeve Tops Cute Frog Printed Pullover Hoodie Sweatshirt Ladies Casual Loose Pocket Hoodie (ASIN: B09BJMYCQ8)
+  5. Women's Cute Color Block Long Sleeve Plaid Button Down Blouse Chest Pockets Boyfriend Long Sleeve Oversized Shacket Tops (ASIN: B09GG6ZZXM)
+  6. Cotton Underwear For Women Seamless Bikini Panties Calzones De Mujer 6-pack (ASIN: B0897FWZG1)
+  7. Mae Women's Airy Bikini Underwear, 3-Pack (ASIN: B075MDRV1W)
+  8. Amazon Essentials Women's Breathable Lightweight Bikini Underwear, Pack of 4 (ASIN: B07NQW252V)
+  9. ALLBASE Womens Seamless Underwear Invisibles Bikini Panties No Show Low Rise Breathable Hipster Underpants Pack of 6 (ASIN: B0B7HYJ6B3)
+  10. SOCIALA Women's 4 Pack Nylon Cotton Hipster Panties Briefs Boyshort Underwear (ASIN: B06ZYBLW3L)
+
+=== RESULT: SUCCESS (Turn 1) ===

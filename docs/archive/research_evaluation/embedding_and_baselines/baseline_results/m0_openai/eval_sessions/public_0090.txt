@@ -1,0 +1,22 @@
+Target Product Title: Mardi Gras Costume Accessory Mardi Gras Mesh Shimmering Scarf Purple Green Gold Scarf Masquerade Costume Mardi Gras Party Favor (Style 2)
+Target ASIN: B07MGR6D5M
+Scenario: buying
+Constraints: ['Decorative lightweight scarf: 2 wearing ways of this mardi gras scarf, wrap the scarf around your neck, or wearing it as a shawl, just change the orientation of the scarf, you can', 'color: purple']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a decorative lightweight scarf that can be worn in two ways, like wrapping it around my neck or using it as a shawl.
+Copilot: That sounds lovely! Do you have a specific color in mind for the scarf?
+Copilot Attribute Query: color
+Recommendations:
+  1. Cindy & Wendy scarfs for women lightweight Leaf Lace Trim Shawl Vintage Fashion Scarf (ASIN: B00TXQ7UQY)
+  2. Ninedaily Women's Blouses Zipper Tunic Tops Long Sleeve Shawl Collar Sweatshirts (ASIN: B08K2GR5GY)
+  3. Ninedaily Womens Business Tops Lapel V Neck Slimming Long Sleeve Office Blouse (ASIN: B06ZZW2ZT1)
+  4. Women's Winter Down Coat with Faux Fur Hood Cold Weather Quilted Parka Jackets Zip Up Fitted Dressy Long Outwear (ASIN: B09H7MY7S4)
+  5. marysgift Boho Leopard Long Skirt for Women Beach Wrap Cover Up Maxi Skirt (Leopard) (ASIN: B085XFSZTF)
+  6. LA LEELA Women's Beach Sarong Maxi Tie Waist Pareo Wrap Skirt (ASIN: B09NC9J4BN)
+  7. LA LEELA Women's Bathing Suit Sarong Wrap Slit Skirt One Size Red-F564 (ASIN: B0191JT38K)
+  8. Mardi Gras Costume Accessory Mardi Gras Mesh Shimmering Scarf Purple Green Gold Scarf Masquerade Costume Mardi Gras Party Favor (Style 2) (ASIN: B07MGR6D5M)
+  9. Wool Shawl Wrap, Gray Ruana, Long Scarf, Open Front Cardigan, Cover Up For Women (ASIN: B07559KR3H)
+  10. CCFW Various Pattern Long Scarf Vest with Uneven Open Asymmetrical Hem Vest Cardigan (ASIN: B07NP8LQM1)
+
+=== RESULT: SUCCESS (Turn 1) ===

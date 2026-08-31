@@ -1,0 +1,22 @@
+Target Product Title: adidas unisex adult Adilette Clog Slide Sandal, Pink Tint/White/Pink Tint, 12 Women Men US
+Target ASIN: B0C62MF2HV
+Scenario: boundary
+Constraints: ['100% Textile Synthetics', 'color: pink']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfy pink sandals, specifically those adidas clogs with the covered toes. they need to be made of 100% textile synthetics.
+Copilot: I found the adidas unisex adult Adilette Clog Slide Sandal in Pink Tint, which fits your criteria perfectly! What size do you need?
+Copilot Attribute Query: size
+Recommendations:
+  1. adidas unisex adult Adilette Clog Slide Sandal, Pink Tint/White/Pink Tint, 12 Women Men US (ASIN: B0C62MF2HV)
+  2. adidas Men's Kaptir Super Running Shoes (ASIN: B087CSYVVP)
+  3. adidas Originals Men's Samoa Retro Sneaker Running Shoe, Grey/Black/White, 9.5 M US (ASIN: B00O2KYXE8)
+  4. adidas Originals Men's Adi-Ease Premiere Fashion Sneaker (ASIN: B01D282JUK)
+  5. Women¡¯s Memory Foam Slippers Faux Fur Lining Slip-on Clog Scuff House Shoes Indoor & Outdoor (ASIN: B07L632VQJ)
+  6. Womens Comfy Slippers Faux Fur House Shoes Indoor Outdoor Bedroom Warm Lady Memory Foam Fuzzy Slippers Winter (ASIN: B08GS2F8CY)
+  7. WateLves Girls Boys Water Shoes Quick Dry Slip Aqua Socks for Beach Swim Pool Sandals Outdoor (Toddler/Little Kid)(Fishscale Pink,21) (ASIN: B092ZP7H4Q)
+  8. Ekouaer Women Slippers Soft Memory Foam House Slippers Bedroom Shoes with Anti Slip Sole/Arch Support for Outdoor Indoor (ASIN: B09B9PS72Z)
+  9. FACAXEDRE Woman Cross Band Soft Fuzzy Slippers, Furry Fluffy Slippers Women, Fur Slides, Slippers for Women Indoor and Outdoor, Criss Band Comfy (Size 9-10, Pink ) (ASIN: B09BMW3DQR)
+  10. Master Komfy Women's Comfy House Slippers Scuff Faux Fur House Shoes W/Indoor Outdoor Anti-skid Rubber Sole(Pink,Large) (ASIN: B08JYN5TNR)
+
+=== RESULT: SUCCESS (Turn 1) ===

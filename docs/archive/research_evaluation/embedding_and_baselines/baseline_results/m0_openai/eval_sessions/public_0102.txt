@@ -1,0 +1,22 @@
+Target Product Title: FallSweet Padded Push Up Lace Bras for 34A to 44C Underwire
+Target ASIN: B07PWZXZVX
+Scenario: browsing
+Constraints: ['Hand Wash Only', 'Push Up Bra, A/B/C cup 3 centimeters Thickness Pad inside. But noted that D cup is thin cup,lightly padded']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a padded push-up bra that has underwire and is hand wash only. i need it to have a thickness of about 3 centimeters for the padding, especially for sizes a, b, and c. if it has a lace design, that would be great too!
+Copilot: That sounds like a great combination! Do you have a preferred color for the bra?
+Copilot Attribute Query: color
+Recommendations:
+  1. FallSweet Padded Push Up Lace Bras for 34A to 44C Underwire (ASIN: B07PWZXZVX)
+  2. DELIMIRA Women's Sheer Lace Balconette Unlined Underwire Plus Size Bra (ASIN: B07YZ5J59Y)
+  3. Dreamgirl Women's Scalloped Lace Open-Cup Underwire Shelf Bra (ASIN: B00RSRZDSM)
+  4. DOBREVA Women's Push Up Front Closure Racerback Molded Underwire Tshirt Plunge Lace Bra (ASIN: B07S484SXD)
+  5. Gnowann Women's Full-Coverage Underwire Bra Comfort Soft Wide Strap Contour Bra (ASIN: B07MYZ5R9M)
+  6. Waluntha Women's Smoothing Lace DD-H Underwire Bra Non-Padded Plus Size Full Figure Bra Full Coverage Bra (ASIN: B07TTZ979Z)
+  7. Hularka Womens Floral Lace Mesh Push Up Underwire Shelf Bra Tops Crisscross Unlined Bralettes (ASIN: B08H255XQP)
+  8. Triumph Women's Amourette Charm Lace Padded Bra (ASIN: B08989M6GK)
+  9. MxG - a Mae and Glamorise Collaboration - Women's Front Close Full Figure Plus Size Lace Underwire Bra (ASIN: B07T2K83PW)
+  10. Vanity Fair Women's Flattering Lift Full Figure Underwire Bra (ASIN: B076HLSZND)
+
+=== RESULT: SUCCESS (Turn 1) ===

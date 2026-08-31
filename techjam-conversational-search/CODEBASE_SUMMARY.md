@@ -1,5 +1,7 @@
 # Live codebase summary
 
+> **Implementation scope:** “Live” in this document means the competition/reference implementation in `techjam-conversational-search`. It does not describe the active longitudinal research agent in `system/shopping_agent`.
+
 Status: 2026-08-29
 
 The live project is a deterministic conversational product-search agent over a
@@ -54,7 +56,7 @@ but does not read history, making it the ranking control for M1.
 | `memory/tests/` | Focused Fast, Slow, embedding, and integration regressions |
 
 The catalog, evaluator, participant kit, research experiments, and public data
-are not modified by memory. Documents with the same names under `nickolas/`
+are not modified by memory. Documents with the same names under `system/`
 describe the earlier research/A0-A7 prototype and are historical research
 artifacts, not the live architecture.
 

@@ -1,0 +1,70 @@
+Target Product Title: Fruit of the Loom Men's Eversoft Cotton Stay Tucked Crew T-Shirt
+Target ASIN: B0BT8T2FQ3
+Scenario: intent_override
+Constraints: ['cotton', 'color: white']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a men's crew t-shirt that's made of cotton, preferably in white. ideally, it would be imported too.
+Copilot: I found a few options for you! Would you like to specify a size for the men's crew t-shirt?
+Copilot Attribute Query: size
+Recommendations:
+  1. Rich Cotton Raglan T-Shirts (M, White/Royal) (ASIN: B0741WJCGV)
+  2. Bella Canvas 3/4-Sleeve Baseball Tee White/True Royal (ASIN: B00I2ZB59U)
+  3. JINX The Witcher 3 Supernatural Men's Gamer Graphic T-Shirt (ASIN: B08KBW2MM6)
+  4. Fruit of the Loom Men's Eversoft Cotton Stay Tucked Crew T-Shirt (ASIN: B0BT8T2FQ3)
+  5. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  6. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  7. 3 Pack Unisex Ultra Thin Breathable Dry Fit Low Cut Running Ankle Socks black white grey color (ASIN: B07L7M66MQ)
+  8. Jockey 3-pk. Classics V-Neck T-Shirts + Bonus Tee, White (ASIN: B07JZHGCD6)
+  9. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  10. Mens Cotton Linen Henley Shirt Long Sleeve Hippie Casual Band Collar Beach T Shirts (ASIN: B0BZYRWQ3Y)
+
+--- TURN 2 ---
+Shopper: i'm looking for a size medium. also, i noticed that fruit of the loom men's eversoft cotton stay tucked crew t-shirt is in the list. i want to buy that one!
+Copilot: Great choice! The Fruit of the Loom Men's Eversoft Cotton Stay Tucked Crew T-Shirt is a fantastic option. Just to confirm, do you have a specific budget in mind for this purchase?
+Copilot Attribute Query: budget
+Recommendations:
+  1. Fruit of the Loom Boys' Crew Tee (Pack of 4) (ASIN: B004X0PSV4)
+  2. Fruit of the Loom Mens Cotton Jersey Crew T-Shirt (SF45R) Athletic Heather m (ASIN: B00TBTCRP2)
+  3. Women Cardigan Clearance,Sunyastor Long Sleeve Zip Up Down Hooded Fluffy Coat Outwear Hooded Draped Pockets Jacket Parka (ASIN: B07JVQWCCH)
+  4. Core 10 by Reebok Women's Asymmetrical Tee, White, Medium (ASIN: B08ZFLFNWT)
+  5. Tiki Dude Men's White Tee - 100% Airlume Combed and Ring-Spun Cotton Tees | Surf T-Shirts for Men S-2XL (ASIN: B0958R4CNB)
+  6. Germinate Cropped Half Quarter Zip Up Hoodie Women Pullover Lightweight Cotton Zipper White Crop Sweatshirt Sweater Jacket (ASIN: B0BVFSTPH4)
+  7. Bendy and the Ink Machine Hoodie - Official Bendy Sweatshirt - Black and White Bendy Boys Hoody (ASIN: B087T2RZGZ)
+  8. Nike Sportswear Men's Futura Swoosh Tee (Medium, Coral/White/White) (ASIN: B07RZDYYDB)
+  9. Pop Threads Wicked Pissah Womens Tee Shirt (ASIN: B072W9N176)
+  10. American Icon Patriotic USA Eagle in Front of American Flag T-Shirt USA Red White Blue Patriot Majestic (ASIN: B07P7HZ7P4)
+
+--- TURN 3 ---
+Shopper: i'm not really looking for anything specific in terms of budget, but i want to focus on finding a comfy cotton t-shirt. ideally, something that's imported would be great too.
+Copilot: It sounds like you're set on the Fruit of the Loom Men's Eversoft Cotton Stay Tucked Crew T-Shirt in medium, which is a comfy choice! Just to finalize, do you have a preferred color for it?
+Copilot Attribute Query: color
+Recommendations:
+  1. INTO THE AM Mens T Shirt - Short Sleeve Crew Neck Soft Fitted Tees S - 4XL Fresh Classic Tshirts (ASIN: B09MVF4SDH)
+  2. CafePress Trek The Halls T Shirt Graphic Shirt (ASIN: B08CTHFFDZ)
+  3. CafePress Bujinkan Crest Organic Cotton Tee T Cotton T-Shirt (ASIN: B08CTJ1XWG)
+  4. Marvel Men's Iron Man Big Face Men's T-Shirt (ASIN: B01EB2BFJW)
+  5. Sesame Street Men's Big and Tall Street Life Chose Me Tee (ASIN: B01G99L29S)
+  6. COMFORTABLE CLUB Men's Modal Slimfit T-Shirt/Undershirt Crew Neck (ASIN: B01HC7CQWS)
+  7. Amazon Essentials Men's Slim-Fit Slub Raglan Crew T-Shirt Shirt (ASIN: B07HJGF6Z6)
+  8. California Republic Big Diamond Men's Muscle Tees Tank Top (ASIN: B075CWTDLK)
+  9. Hanes Men’s Short Sleeve Graphic T-shirt Collection (ASIN: B016OT9D3K)
+  10. Amazon Essentials Men's Short-Sleeve Crewneck T-Shirt, Pack of 2 (ASIN: B0B2RF64YD)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Fruit of the Loom Men's Eversoft Cotton Stay Tucked Crew T-Shirt (ASIN: B0BT8T2FQ3)
+  2. Amazon Essentials Men's Short-Sleeve Crewneck T-Shirt, Pack of 2 (ASIN: B0B2RF64YD)
+  3. Columbia Men's Thistletown Park Crew (ASIN: B07KCFS4VC)
+  4. INTO THE AM Mens T Shirt - Short Sleeve Crew Neck Soft Fitted Tees S - 4XL Fresh Classic Tshirts (ASIN: B09MVF4SDH)
+  5. Amazon Essentials Men's Big & Tall 2-pack Short-sleeve Crewneck T-shirt Fit By Dxl (ASIN: B07YF3D5Z7)
+  6. BILLIONHATS 24 Pack Mens Cotton Short Sleeve Lightweight T-Shirts, Bulk Crew Tees for Guys, Mixed Bright Colors Bulk Pack (ASIN: B09JVB9G5P)
+  7. RVCA Men's Bad Palms Short Sleeve Crew Neck Pocket T-Shirt (ASIN: B07GZMBX44)
+  8. GotPrint Mens Christmas T Shirt, Christmas Graphic Tees, Holiday Shirts, Christmas Shirts, Printed Casual Crewneck Xmas Gifts (ASIN: B09M8Y6R4R)
+  9. Calvin Klein Jeans Men's Short Sleeve Oversized Calvin Logo Crew Neck T-Shirt (ASIN: B01MSUR26E)
+  10. RVCA Men's Tomb Seal Short Sleeve Crew Neck T-Shirt (ASIN: B07T7WQ9JD)
+
+=== RESULT: SUCCESS (Turn 4) ===

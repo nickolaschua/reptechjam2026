@@ -1,0 +1,86 @@
+Target Product Title: Supplim Women's Body Shaper Waist Cincher Underbust Corset Bodysuit Shapewear
+Target ASIN: B01H6DGA16
+Scenario: browsing
+Constraints: ['nylon', '62.4% Nylon 37.6% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a women's bodysuit that really helps shape the waist. it should be made of nylon and spandex, ideally with a pull-on closure.
+Copilot: Great choice! To narrow it down further, what size are you looking for in the bodysuit?
+Copilot Attribute Query: size
+Recommendations:
+  1. Hanes Womens Wireless Bra, Full-Coverage Pullover Stretch-Knit Bra, Smoothing T-Shirt Bra (ASIN: B0BPCC1KBT)
+  2. Bali womens Comfort Revolution Wireless T-shirt Bra, Full-coverage Pullover Bra, Df3491 (ASIN: B07Q2MLX5N)
+  3. Ouno 5 Pack Womens Seamless Wirefree Sleep Bra (ASIN: B07CPRQPYH)
+  4. Mlxgoie Womens Butt Lift Shapewear Tummy Control Shorts High Waist Butt Lift Slimming Body Shaper Panties (ASIN: B07TJY773D)
+  5. Hanes Women's Seamless (ASIN: B0C2BJDYFK)
+  6. Suprenx Tummy Control Shapewear Shorts for Women High Waisted Thigh Slimmer Butt Lifter Panties Underwear (ASIN: B0BGS5QK3D)
+  7. Workout Set for Women 2 Piece Outfits Padded Sports Bra Crop Tank Top High Waist Yoga Pants Leggings w/ Pockets (Black, L, l) (ASIN: B08Q473BW5)
+  8. Tapata Women's Bootcut Dress Pants 28"/30"/32"/34" Slacks Business Casual Office Pants Petite/Regular/Long/Tall Length (ASIN: B09K41YGNC)
+  9. Shapewear Bodysuit Thong for Women Tummy Control Open Bust Body Shaper Waist Slimmer Cincher (ASIN: B0BMG8YQ37)
+  10. V-May Five Women's Square V Neck Cheeky Bathing Suit Wide Straps High Cut One Piece Swimsuit (ASIN: B08R6YXXHC)
+
+--- TURN 2 ---
+Shopper: i'm looking for a medium size. also, i really want something made of nylon and spandex for that comfy fit.
+Copilot: Got it! What color are you interested in for the bodysuit?
+Copilot Attribute Query: color
+Recommendations:
+  1. Haute Contour SPANX Vintage Rise Thong Panties Underwear 494, Blush, Medium (ASIN: B01MFDPX02)
+  2. Yilisha Women's Bikini Set Crossover 2 Piece Bathing Suits Bikini Top and Bottoms Swimsuits (ASIN: B09JS72K73)
+  3. Maidenform Women's Sport Secure Zip Front Underwire Racerback DM7991 (ASIN: B06VV8PL4W)
+  4. Bali Women's Shapewear Cool Comfort Hi-Waist Brief (ASIN: B00HXJUO6Q)
+  5. Wingslove Women’s Sports Bra Seamless Full Support Coverage Wireless Sport Bras for Yoga Gym Workout Fitness (ASIN: B0762GHFTC)
+  6. SOCIALA Women's V Neck One Piece Plunge Swimsuit Tummy Control Bathing Suit Slimming (ASIN: B08W2T5LX6)
+  7. HENGJIA Women's Shaping Body Swimwear Two Piece Swimdress Elegant Skirted Swimsuit (ASIN: B010MAWX2U)
+  8. HUE Women's Shaping Sheer Tights With Control Top (ASIN: B08K7SCR59)
+  9. Assets by Sara Blakely Shaping Seamless Denim Legging, Dark Indigo, Medium (ASIN: B00NAUV5QU)
+  10. Warner's Women's Lace Escape Wireless Lightly Lined T-Shirt Bra Ro3361a (ASIN: B09VRS7ZDV)
+
+--- TURN 3 ---
+Shopper: i'm looking for something in a neutral color, but honestly, i'm more focused on finding that specific bodysuit with the nylon and spandex blend. do you have anything like that?
+Copilot: I found a great option for you! The Wonder-Beauty Women Shapewear Body Shaper is made from a nylon and spandex blend and offers a comfortable fit. Do you have a preferred brand in mind?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Bali Women's Flower Underwire Bra #0180 (ASIN: B000MXB6NA)
+  2. Sahabowi Women's Sheer Tights, High Waist Pantyhose, Vintage Control Top Stockings,Shaping Pantyhose Slimming Butt Lifting (ASIN: B09MJ6SKBT)
+  3. Lily of France Women's Sensational Lace Underwire Bra 2177140 (ASIN: B00I3H5OYE)
+  4. B2prity Women's Plus Size Tankini Swimsuits Floral Two Piece Swimdress Ruched Tummy Control Bathing Suit with Bottoms (ASIN: B0C6F6FZRC)
+  5. Spyder Women's Slash Capri Tight (ASIN: B01DL74M0W)
+  6. ELLEN TRACY Women's 2 Pack Matte and Shine T-Shirt Bra with Bow Detail (ASIN: B0812LXC15)
+  7. Women's Pow Wow Action Tankini (ASIN: B01M4RCURW)
+  8. Women's Plus Size Deluge Peasant Tankini (ASIN: B01IDT3HMW)
+  9. Wonder-Beauty Women Shapewear Body Shaper Waist Shaping Bodysuit Waist Shaping Cincher Waist Trainer Compression Garments (ASIN: B07XBXZ83S)
+  10. Tapata Women's Bootcut Dress Pants 28"/30"/32"/34" Slacks Business Casual Office Pants Petite/Regular/Long/Tall Length (ASIN: B09K43LY6R)
+
+--- TURN 4 ---
+Shopper: i'm not really set on a brand, just looking for something that fits well and is comfy. the wonder-beauty option sounds good, but i'm hoping for something with a bit more nylon in it. do you have anything else?
+Copilot: I understand you're looking for something with a higher nylon content. How about I check for styles that might suit your preferences? Do you have a specific style in mind, like casual or formal?
+Copilot Attribute Query: style
+Recommendations:
+  1. Vanity Fair Women's Flattering Lift Full Figure Underwire Bra (ASIN: B076HLSZND)
+  2. XUNYU High Waisted Bikini Set for Women Swimsuits Push Up Tie Knot Swimwear Two Piece Bathing Suits (ASIN: B087N9QRFS)
+  3. Athletican Women's Hypoallergenic Latex-Free Halter Tankini Top (ASIN: B073VJBM9N)
+  4. Mycoco Women's Halter Tankini Swim Top High Neck Swimsuit Ruffle Bathing Suit Tops (ASIN: B078SLWBCZ)
+  5. Frola Seamless Silk Stockings for Women 15 Dernier Run Resistant Control Top Sheer Tights (ASIN: B095233S9C)
+  6. Vanity Fair Women's Flattering Lift Full Coverage Underwire Bra 75260 (ASIN: B012DAWMAK)
+  7. Premium Women's Stretch Dress Pants - Wear to Work - Ponte Treggings - Straight Leg - White - XXL (ASIN: B089C5755M)
+  8. Feionusin Women Fleece Lined Tights Sheer Winter Warm Pantyhose High Waist Translucent Tights Thick Thermal Leggings (ASIN: B0BKGM24TM)
+  9. Aitangee High Waisted Leggings with Pockets for Women Tummy Control 4 Way Stretch Pants for Athletic Workout Yoga (ASIN: B08VGQ5WVJ)
+  10. BAISHENGGT Women One Piece Swimsuit High Neck Floral Printed Monokini Swimwear (ASIN: B07Z33D69T)
+
+--- TURN 5 ---
+Shopper: none of these really fit what i'm looking for. i'm after something more like a bodysuit that has a good amount of nylon in it, ideally with an underbust design. do you have anything like that?
+Copilot: I found a great option for you! The Supplim Women's Body Shaper Waist Cincher Underbust Corset Bodysuit is made from nylon and has the underbust design you're looking for. What color do you prefer for this type of bodysuit?
+Copilot Attribute Query: color
+Recommendations:
+  1. Supplim Women's Body Shaper Waist Cincher Underbust Corset Bodysuit Shapewear (ASIN: B01H6DGA16)
+  2. COMFY BRA Women's Light Support Seamless Sport Bra Wireless Yoga Bralette Top (ASIN: B081V3HSDG)
+  3. FITATH Women's Light Support Seamless Sport Bra - Wireless Yoga Sleelveless Crop Tops (ASIN: B08SQQ2QTH)
+  4. Vinfact Yoga Sports Bras Padded Workout Tank Tops Gym Crop Tops Fitness Camisole Running Shirts for Girls Women (ASIN: B09J4W8K58)
+  5. QINSEN Womens Sexy Scoop Neck Cutout Straps High Waist Monokini One Piece Swimsuit (ASIN: B082W8394C)
+  6. ODODOS Women's Y Racer Back Padded Sports Bra Fitness Workout Longline Yoga Bra Tops (ASIN: B08P46TVJW)
+  7. Girl Shark Women's Seamless Sports Bra Yoga Fitness Running Workout Crop Tank Top (ASIN: B08XX2Q72X)
+  8. ATTRACO Womens Tank Top with Shelf Bra Racerback Workout Yoga Tank Activewear Purple XL (ASIN: B08BNNM8WH)
+  9. Amoena Womens Elba Tankini Top Mastectomy Pocketed Swimwear (ASIN: B0BYVNVPSG)
+  10. YIANNA Waist Trainer for Women Latex Underbust Waist Corsets Cincher Hourglass Body Shaper 4 Hooks (ASIN: B094W6VZGC)
+
+=== RESULT: SUCCESS (Turn 5) ===

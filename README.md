@@ -1,81 +1,75 @@
-# TechJam Conversational E-Commerce Search Challenge 2026
+# TechJam 2026 shopping system
 
-Welcome to the development workspace for the TechJam Conversational E-Commerce Search Challenge. This workspace is organized as follows:
+The canonical presentation is Yangxu's browser dashboard backed by the active `system` package:
 
-## Repository Layout
-
-```text
-reptechjam2026/
-├── README.md (Root workspace guide)
-├── problem_statement.md (Challenge guidelines)
-├── SHA256SUMS (Data checksums)
-│
-├── techjam-conversational-search/              (Active development directory)
-│   ├── DATA_ATTRIBUTION.md
-│   ├── README.md
-│   ├── data/
-│   │   ├── README.md
-│   │   ├── catalog.jsonl                       (50,000 product frozen catalog)
-│   │   └── public_set.jsonl                    (200 labeled public sessions)
-│   ├── docs/
-│   │   ├── agent_api_contract.json             (JSON validation schemas)
-│   │   ├── baseline_results.json               (Weak starter metrics)
-│   │   ├── competition_specification.md        (Core rules & metrics)
-│   │   ├── evaluation_config.json              (Scoring configurations)
-│   │   └── submission_rules.md                 (Submission criteria)
-│   ├── evaluator/
-│   │   ├── __init__.py
-│   │   └── local_evaluator.py                  (Session simulator and scorer)
-│   └── starter/
-│       ├── __init__.py
-│       └── agent.py                            (Editable weak agent baseline)
-│
-└── techjam-conversational-search-participant-kit/  (Participant kit template)
-    ├── DATA_ATTRIBUTION.md
-    ├── README.md
-    ├── data/
-    │   ├── README.md
-    │   └── public_set.jsonl
-    ├── docs/ (Same as main folder)
-    ├── evaluator/ (Same as main folder)
-    ├── starter/ (Same as main folder)
-    └── tests/
-        ├── __init__.py
-        └── test_evaluator.py                   (Evaluator unit tests)
+```powershell
+python -m system.shopping_agent.visualizer.server
 ```
 
----
+Open <http://localhost:8080> for Yangxu's ASTRA product catalog, or <http://localhost:8080/conversation> for the conversational simulator. In the simulator, the public `sample_id` is the persistent `user_id`: rerunning a sample loads its prior vector, while different samples remain isolated.
 
-## Technical Overview
+## Active architecture
 
-### 1. Core API Contract
-Any custom agent must export the `Agent` class containing:
+```text
+catalog landing page or conversation dashboard -> live Buying/Browsing state
+          -> intent-aware FTS5 AND/weighted-OR routing -> hard eligibility
+          -> mode-selected BGE/OpenAI v1/v2 gate and full 50,000-row s1/s2/s3 scoring
+          -> keyword pool or 150-row vector fallback -> entropy clarification
+          -> response/cards -> end-session EWMA memory commit
+```
 
-* **`Agent.reset`**: Starts a new session and loads the anonymized `user_profile`.
-* **`Agent.respond`**: Receives a turn's `user_message` and outputs a response dictionary containing:
-  * `"message"`: A natural-language response or clarifying question.
-  * `"ask_attribute"`: The attribute being queried (one of `category`, `material`, `color`, `size`, `style`, `brand`, `budget`, `feature`, `use_case`, `other`, or `null`).
-  * `"recommendations"`: An ordered list of up to 10 product identifiers (`parent_asin`).
+FTS5 controls candidate routing only. `s3` is the authoritative rank score. Price, demographic, rating, review-count, brand/store, and negative filters are session-local and are never silently relaxed. Each embedding mode uses its own fixed, validated 50,000-product matrix; embedding caches are never shared across models.
 
-### 2. Metrics and Scoring
-The deterministic simulator evaluates the Agent through:
-* **Hit Rate @ 10**: Fraction of sessions finding the target within 10 turns.
-* **MRR (Mean Reciprocal Rank)**: Position-based ranking quality.
-* **MTTC (Mean Turn To Conversion)**: Turn counts to hit target (misses count as 11).
-* **Technical Score**: `0.50 * HitRate@10 + 0.30 * MRR + 0.20 * (11 - MTTC) / 10`.
+Set the embedding mode in `system/shopping_agent/.env`:
 
-### 3. How the Local Evaluator Works
-The local evaluator is a deterministic, rule-based simulator. It does *not* use an LLM to generate customer replies dynamically, nor does it look at the natural language `"message"` returned by the agent. 
+```dotenv
+# false = local BAAI/bge-base-en-v1.5; true = OpenAI text-embedding-3-small
+TEST_MODE=false
 
-Instead, the evaluator simulates customer replies deterministically using the agent's `"ask_attribute"` output and the target product's metadata constraints:
+# Set true once if the selected 50,000-product catalogue cache is missing.
+ALLOW_CATALOG_EMBEDDING=false
+```
 
-* **Initial Step**: The customer sends an initial prompt revealing either the product category or the first constraint depending on the scenario type (`buying`, `browsing`, etc.).
-* **Turn Loop**: Your agent processes the prompt and returns a response containing `"ask_attribute"` and `"recommendations"`.
-* **Hit Evaluation**: The evaluator checks if the target product's `parent_asin` is in your recommendations. If so, the session ends in success (a Hit). If not, the evaluator determines the next user reply:
-  * **No Valid Attribute**: If `"ask_attribute"` is null, empty, or not a string, the customer replies: *"Those options are not quite right yet. Ask me about one specific attribute."*
-  * **Valid Attribute**: The evaluator looks for up to two undisclosed constraints matching that attribute type (e.g., mapping `"cotton"` to `"material"`). 
-    * If matches exist: *"For that, what matters is: <constraint1>; <constraint2>."*
-    * If no matches exist: *"I don't have an additional preference for <ask_attribute>."*
-* **Scenario Exceptions**:
-  * **Intent Override**: On turn 3 or 4, the customer ignores your query and injects: *"Actually, ignore my earlier preference. What I need is: <new_constraint>."*
-  * **Boundary**: If the customer has no preferences for a requested attribute, they reply: *"I don't have a preference for <ask_attribute>; please use your judgment."*
+OpenAI test mode also requires `OPENAI_API_KEY`. Each mode has an isolated catalogue cache in `system/shopping_agent/embedding_cache/`; caches are never reused across embedding spaces.
+
+Live intent is re-evaluated each turn. Buying uses Yangxu's `15/10` lexical thresholds; Browsing uses `30/15`. The existing `buyer_mode` argument remains a failure fallback, while live intent selects the frozen OpenAI Buying/Browsing weights and clarification priority.
+
+## Main files to use
+
+Work in `system/shopping_agent/` for the active application:
+
+| File | Use it for |
+| --- | --- |
+| `visualizer/server.py` | Canonical browser entry point, HTTP routes, and browser-session lifecycle |
+| `agent.py` | Main shopping-agent API and turn orchestration |
+| `catalogue.py` | Catalogue loading, FTS5 candidate routing, and hard eligibility filters |
+| `clarification.py` | Entropy-based clarification selection |
+| `vector_memory.py` | Frozen relevance gate and `s1`/`s2`/`s3` scoring equations |
+| `memory_store.py` | Per-user longitudinal memory, commits, snapshots, and JSON persistence |
+| `embedding_backends.py` | Query embeddings and validation/loading of the fixed catalogue embedding cache |
+| `config.py` | Canonical data, cache, and model paths |
+| `demo.py` | CLI entry point and demo application wiring |
+| `visualizer/simulator.py` | Scripted and generated shopper behavior used by the browser demo |
+| `tests/` | Active unit, integration, lifecycle, and regression tests |
+
+The runtime reads `techjam-conversational-search/data/catalog.jsonl` and `public_set.jsonl` as competition data; do not add active application logic there. `techjam-conversational-search/` is the submission-style reference implementation, `techjam-conversational-search-participant-kit/` is the untouched starter kit, and `docs/archive/` contains historical research and legacy implementations.
+
+The supporting CLI is:
+
+```powershell
+python -m system.shopping_agent.demo --user alice
+python -m system.shopping_agent.demo --scripted
+python -m system.shopping_agent.demo --inspect alice
+python -m system.shopping_agent.demo --reset-user alice
+python -m system.shopping_agent.demo --reset-all
+```
+
+Set `OPENAI_API_KEY` for query embeddings and OpenAI response/shopper generation. `DEEPSEEK_API_KEY` may be used for chat generation; without either shopper key, streamed mode uses local Ollama. Keys may also be placed in `system/shopping_agent/.env`.
+
+Run active tests with:
+
+```powershell
+python -m pytest system/shopping_agent/tests -q
+```
+
+See [`system/README.md`](system/README.md) for lifecycle and trace details. Historical Yangxu code is preserved intact under [`docs/archive/legacy_hybrid_agent/`](docs/archive/legacy_hybrid_agent/); frozen memory/retrieval evidence remains under `docs/archive/research_evaluation/` and `docs/archive/legacy_qlmp/`.

@@ -1,0 +1,54 @@
+Target Product Title: GUBERRY Womens Wrap V Neck Long Sleeve Velvet Bodycon Ruched Cocktail Party Dress
+Target ASIN: B08FFGQF72
+Scenario: browsing
+Constraints: ['polyester', '95% Polyester, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a dress that's got a nice wrap design and is made from a soft material. ideally, it should have some stretch to it too.
+Copilot: Great choice! What color are you thinking for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. Hocuos Women's Dresses Sexy One Shoulder Cutout Asymmetrical Sleeveless Wrap Split Ruched Bodycon Midi Party Dress (ASIN: B0B4NWJL7H)
+  2. Resinta 4 Pack Toddler Girls Bike Shorts Girls Basic Cartwheel Shorts Leggings Breathable and Safety Multi-Color (ASIN: B0BXWVC49S)
+  3. TrainingGirl Women Seamless Smooth T-Shirt Bra Invisible Comfy Molded Cup Wirefree Sleeping Lingerie Bra (ASIN: B08FHSVQKR)
+  4. BodiLove Women's Surplice Front V Neck Top with Roll Up Sleeve Casual Blouse (ASIN: B07B43THRL)
+  5. NE PEOPLE Women's Casual 3/4 Sleeve Slim Fitted Ribbed Wrap Knit Top (ASIN: B07CT52HY2)
+  6. Dagacci Medical Uniform Women's Scrubs Set Stretch Ultra Soft Y-Neck Wrap Top and Pants (ASIN: B096DMZRSB)
+  7. SheIn Women's Ruffle Trim Surplice V Neck Peplum Blouse Sleeveless Wrap Tank Top (ASIN: B092VHRZZ3)
+  8. kathy ireland Womens Chemise Nightgown and Robe Two-Piece Sleepwear and Loungewear Set - Pajama Set for Women (ASIN: B07P5JHV8L)
+  9. Fuma Women's Tight T-Shirt Dress Mid-Length Stretch Sleeveless Vest Deep V Dress (ASIN: B08C5JXYT6)
+  10. QIUYEJUO Women's Cold Shoulder Tunic Tops Loose Swing T-Shirt Beach Cover up Dress (ASIN: B07P66LWXR)
+
+--- TURN 2 ---
+Shopper: i'm looking for something in a nice deep color, maybe like emerald or burgundy. do you have any options that fit that vibe?
+Copilot: I have some lovely options that fit your criteria! Could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Built in Bra Yoga Tops Workout Fitted Loose Tank Women Racerback Shirt Light Blue&Gray Bra XXL (ASIN: B07RYG7KS1)
+  2. PINKMARCO Women Casual V Neck Collar Button Down Rolled Cuff Short Sleeve Work Blouses Shirt Tops Burgundy (ASIN: B0935ZL61W)
+  3. SheIn Women's Plus Size V Neck Tie Front Blouse Short Sleeve Peplum Tee Top Burgundy Large Plus (ASIN: B094J98K9J)
+  4. Milumia Women's Criss Cross Wrap Off Shoulder Long Sleeve Knit Crop Top Sweater (ASIN: B099RYLVYT)
+  5. Belle Poque Women's Sleeveless V Neck Wrap Ruched Bodycon Cocktail Party Dress (ASIN: B09DSTBLB4)
+  6. SweatyRocks Women's High Waist Sparkle Ruched Bodycon Mini Skirt Cross Wrap Asymmetrical Hem Party Skirts (ASIN: B09V27STMR)
+  7. MixMatchy Women's 3/4 Sleeve High Low Casual Long Maxi Tunic Tops Dark Burgundy M (ASIN: B07X576P6L)
+  8. HAPPIShare Long Cardigan Sweaters for Women, Women's Waterfall Asymmetric Long Open Front Drape (ASIN: B07YS9RRMG)
+  9. TAHARI Womens Lace Trim Pajama Lounge Chemise Nightgown & Belted Wrap Robe Sleepwear Set (ASIN: B07V4TVM9Y)
+  10. Verdusa Women's Twist Front Tie Back Cutout Sleeveless Ribbed Wrap Crop Cami Top (ASIN: B09R43PV97)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. also, i'm really hoping to find something in velvet with a nice wrap design. do you have any options like that?
+Copilot: I found some beautiful velvet wrap dresses in emerald and burgundy that would be perfect for you! Do you have a specific occasion in mind for wearing the dress?
+Copilot Attribute Query: use_case
+Recommendations:
+  1. Sunmoot Clearance: Plus Size Cat Ear Hooded T-Shirt for Women - Casual Summer Cartoon Print, Side Pockets, Short Sleeve, Gray (ASIN: B07Q45QGFJ)
+  2. GUBERRY Womens Wrap V Neck Long Sleeve Velvet Bodycon Ruched Cocktail Party Dress (ASIN: B08FFGQF72)
+  3. Loemes Elegant Long Sleeve V Neck Ruched Velvet Date Night Cocktail Dress for Women (ASIN: B09K7G8QL9)
+  4. Women's Business Slim Style Leather Work Pencil Dress Bodycon Peplum Knee Length Party Dress Black (ASIN: B07PL9BPLL)
+  5. Women's 50s Classic Vintage Formal Cocktail Dress Cap Sleeve Retro Pencil Dress Polka Dot Slim Fit Evening Party Dress (ASIN: B09V5KYNY4)
+  6. Amazon Brand - Lark & Ro Women's Classic Cap Sleeve V-Neck Compact Matte Jersey Wrap Dress, Emerald, Small (ASIN: B0743DBYFJ)
+  7. SCARLET DARKNESS Women's Steampunk Gothic Wrap Velvet Skirt Victorian Ruffle Pirate Skirt Black S (ASIN: B07RMTSX1V)
+  8. GRACE KARIN Women's Velvet Pencil Dress Wrap V Neck Short Sleeve Bodycon Ruched Cocktail Party Dress (ASIN: B0B3DVL9K2)
+  9. Floerns Women's Lantern Long Sleeve V Neck Mesh Cocktail Party Short Dress Without Belt Burgundy M (ASIN: B0B7HCMNKQ)
+  10. Verdusa Women's Lace Trim Letter Embroidery Velvet Crop Cami Top (ASIN: B08CMHPT1P)
+
+=== RESULT: SUCCESS (Turn 3) ===

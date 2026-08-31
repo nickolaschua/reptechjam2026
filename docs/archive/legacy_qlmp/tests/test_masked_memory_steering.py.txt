@@ -1,0 +1,163 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+import sys
+import unittest
+
+import numpy as np
+
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
+
+from nickolas.memory.qlmp import MemoryItem, MemoryPolarity, MemorySource
+from nickolas.shopping_agent.longitudinal_eval.masked_memory_steering import (
+    SteeringConfig,
+    aggregate_user_memory,
+    interaction_mask_memory,
+    prior_memory_items,
+    score_snapshot_variants,
+    steer_query,
+    steer_query_with_diagnostics,
+)
+from nickolas.shopping_agent.memory_store import InMemoryUserMemoryStore
+
+
+def unit(values: list[float], dtype=np.float64) -> np.ndarray:
+    vector = np.asarray(values, dtype=dtype)
+    return vector / np.linalg.norm(vector)
+
+
+def item(identifier: str, values: list[float], polarity=MemoryPolarity.POSITIVE) -> MemoryItem:
+    return MemoryItem(identifier, identifier, unit(values), MemorySource.USER, polarity)
+
+
+class FakeScorer:
+    def __init__(self) -> None:
+        self.catalog = np.asarray([[1.0, 0.0], [0.0, 1.0]], dtype=np.float64)
+
+    def dense_retrieve_vector(self, query_embedding, top_n=150):
+        scores = self.catalog @ query_embedding
+        rows = np.argsort(scores)[::-1][:top_n]
+        ids = tuple(("p0", "p1")[index] for index in rows)
+        return type("Result", (), {"product_ids": ids, "scores": scores[rows]})()
+
+
+@dataclass
+class Snapshot:
+    query_embedding: np.ndarray
+    target_product_id: str = "p0"
+
+
+class MaskedMemorySteeringTests(unittest.TestCase):
+    def test_identity_without_memory(self) -> None:
+        q = unit([2.0, 1.0], np.float32)
+        np.testing.assert_allclose(steer_query(q, None, "M3"), q)
+
+    def test_lambda_zero_is_identity(self) -> None:
+        q, m = unit([1.0, 2.0]), unit([2.0, 1.0])
+        np.testing.assert_allclose(steer_query(q, m, "M3", lambda_memory=0.0), q)
+
+    def test_keep_ratio_uses_ceiling(self) -> None:
+        q, m = unit([1, 2, 3, 4, 5]), unit([5, 4, 3, 2, 1])
+        cleaned = interaction_mask_memory(q, m, 0.21)
+        self.assertEqual(np.count_nonzero(cleaned), 2)
+
+    def test_interaction_selection(self) -> None:
+        q = np.asarray([0.8, 0.02, 0.6, 0.1])
+        m = np.asarray([0.7, 0.9, 0.05, 0.8])
+        np.testing.assert_array_equal(interaction_mask_memory(q, m, 0.5), [0.7, 0.0, 0.0, 0.8])
+
+    def test_query_mask_ablation_uses_query_only(self) -> None:
+        q, m = unit([0.9, 0.8, 0.1, 0.0]), unit([0.01, 0.02, 1.0, 0.0])
+        steered = steer_query(q, m, "M2", keep_ratio=0.5, lambda_memory=0.2)
+        expected_memory = np.asarray([m[0], m[1], 0.0, 0.0])
+        np.testing.assert_allclose(steered, unit((q + 0.2 * expected_memory).tolist()))
+
+    def test_raw_memory_baseline_exact_formula(self) -> None:
+        q, m = unit([1.0, 2.0]), unit([2.0, 1.0])
+        np.testing.assert_allclose(steer_query(q, m, "M1", lambda_memory=0.2), unit((q + 0.2 * m).tolist()))
+
+    def test_output_is_normalized_and_inputs_are_unchanged(self) -> None:
+        q, m = unit([1, 2, 3], np.float32), unit([3, 2, 1], np.float32)
+        q_before, m_before = q.copy(), m.copy()
+        output = steer_query(q, m, "M3")
+        self.assertAlmostEqual(float(np.linalg.norm(output)), 1.0, places=6)
+        np.testing.assert_array_equal(q, q_before)
+        np.testing.assert_array_equal(m, m_before)
+        self.assertEqual(output.dtype, np.dtype(np.float32))
+
+    def test_stable_tie_selection_prefers_lower_index(self) -> None:
+        cleaned = interaction_mask_memory(np.ones(4), np.ones(4), 0.5)
+        np.testing.assert_array_equal(cleaned, [1.0, 1.0, 0.0, 0.0])
+
+    def test_aggregate_equal_weights_and_existing_negative_policy(self) -> None:
+        aggregate = aggregate_user_memory([
+            item("a", [1, 0]), item("b", [0, 1]),
+            item("avoid", [-1, 0], MemoryPolarity.NEGATIVE),
+        ])
+        np.testing.assert_allclose(aggregate, unit([1, 1]))
+
+    def test_temporal_isolation(self) -> None:
+        store = InMemoryUserMemoryStore()
+        store.add_memories(user_id="u", session_id="s0", sequence_index=0,
+                           embedding_space_id="space", memories=[item("m0", [1, 0])])
+        store.add_memories(user_id="u", session_id="s1", sequence_index=1,
+                           embedding_space_id="space", memories=[item("m1", [0, 1])])
+        self.assertEqual([record.item.id for record in store.get_records("u", before_sequence_index=1)], ["m0"])
+        self.assertEqual(store.get_records("u", before_sequence_index=0), ())
+        visible = prior_memory_items(
+            store.snapshot(),
+            user_id="u",
+            before_sequence_index=1,
+            embedding_space_id="space",
+        )
+        self.assertEqual([value.id for value in visible], ["m0"])
+
+    def test_m0_scorer_parity_and_non_buyer_control(self) -> None:
+        scorer = FakeScorer()
+        snapshot = Snapshot(unit([1, 0]))
+        result = score_snapshot_variants(scorer, snapshot, [item("m", [0, 1])], is_buyer=False, top_n=2)
+        baseline = scorer.dense_retrieve_vector(snapshot.query_embedding, top_n=2)
+        for method in ("M0", "M1", "M2", "M3"):
+            self.assertEqual(result[method]["product_ids"], list(baseline.product_ids))
+            np.testing.assert_array_equal(result[method]["scores"], baseline.scores)
+
+    def test_m0_is_unaffected_by_stored_memory(self) -> None:
+        scorer = FakeScorer()
+        snapshot = Snapshot(unit([1, 0]))
+        without = score_snapshot_variants(scorer, snapshot, [], is_buyer=True, top_n=2)
+        with_memory = score_snapshot_variants(
+            scorer, snapshot, [item("m", [0, 1])], is_buyer=True, top_n=2
+        )
+        self.assertEqual(without["M0"]["product_ids"], with_memory["M0"]["product_ids"])
+        np.testing.assert_array_equal(without["M0"]["scores"], with_memory["M0"]["scores"])
+
+    def test_all_variants_leave_the_shared_base_query_unchanged(self) -> None:
+        query = unit([1, 2, 3], np.float32)
+        memory = unit([3, 2, 1], np.float32)
+        before = query.copy()
+        for method in ("M0", "M1", "M2", "M3"):
+            steer_query(query, memory, method)
+            np.testing.assert_array_equal(query, before)
+
+    def test_diagnostics_report_mask_change(self) -> None:
+        q, m = unit([1, 2, 3, 4]), unit([4, 3, 2, 1])
+        output, diagnostic = steer_query_with_diagnostics(q, m, SteeringConfig("M3", 0.5, 0.2))
+        self.assertEqual(diagnostic.kept_dimensions, 2)
+        self.assertEqual(diagnostic.retained_fraction, 0.5)
+        self.assertTrue(diagnostic.applied)
+        self.assertAlmostEqual(float(np.linalg.norm(output)), 1.0)
+
+    def test_invalid_vectors_and_config_are_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            steer_query(np.zeros(2), None, "M0")
+        with self.assertRaises(ValueError):
+            steer_query(unit([1, 0]), unit([1, 0, 0]), "M3")
+        with self.assertRaises(ValueError):
+            SteeringConfig("M3", keep_ratio=0.0)
+
+
+if __name__ == "__main__":
+    unittest.main()

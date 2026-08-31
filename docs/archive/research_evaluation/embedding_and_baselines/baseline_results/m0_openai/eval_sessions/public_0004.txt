@@ -1,0 +1,54 @@
+Target Product Title: Emmalise Women's Basic Casual Long Camisole Adjustable Strap Cami Layering Top
+Target ASIN: B07C2XPZ6D
+Scenario: intent_override
+Constraints: ['polyester', 'Polyester,Cotton,Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a camisole, something with a long torso for extra coverage and spaghetti adjustable straps for a perfect fit. ideally, it should be made of a soft cotton blend too.
+Copilot: That sounds great! What color are you looking for in your camisole?
+Copilot Attribute Query: color
+Recommendations:
+  1. Emmalise Women's Basic Casual Long Camisole Adjustable Strap Cami Layering Top (ASIN: B07C2XPZ6D)
+  2. ALove Women Extra Long Tank Tops Racerback Basic Long Camisole with Shelf Bra XL (ASIN: B08BC78Y59)
+  3. AClocod Womens Tank Top with Shelf Bra Long Cotton Cami Racerback Undershirts (ASIN: B087CPHX1Y)
+  4. Padded Sports Bra for Women Model Comfy Camisole Spaghetti Strap Tank Tops with Built in Bras for Fitness Workout (ASIN: B0B2P1QV35)
+  5. Toddler Baby Girls Camisole Buttons Shirt Top + Floral Ruffled Long Skirts Tutu Dress Outfit Set Summer Clothes (ASIN: B07KY5W76Z)
+  6. Neonysweets Womens Junior Camisole Built-in Shelf Bra Active Cami Tanks Top Pack (ASIN: B01HUNO8SE)
+  7. Unisex Adult Adjustable Straps Overalls Women Men Vintage American Flag Printed Denim Short Jumpsuit with Pocket Streetwear (ASIN: B092HS4XZW)
+  8. AMVELOP Adjustable Camisole for Women Spaghetti Strap Tank Top Camisoles (ASIN: B09H227YL1)
+  9. Zaoqee Women's Spaghetti Straps V Neck Tank Tops Loose Satin Camisole Casual Ruffle Cami Top (ASIN: B087PTBXFM)
+  10. Bluetime Women Adjustable Spaghetti Strap Tank Tops Basic Solid Stretchy Scoop Neck Camis Undershirts 2-3 Pack (S-XXL) (ASIN: B09P7W9WJR)
+
+--- TURN 2 ---
+Shopper: i'm looking for something in a bright color, maybe neon. also, i see one that looks perfect for me! i want to buy that one with the adjustable straps for layering.
+Copilot: Awesome choice! Just to narrow it down a bit more, what size are you looking for in your camisole?
+Copilot Attribute Query: size
+Recommendations:
+  1. Women Rave Festival Feather Crop Tops Faux Fur Spaghetti Straps Tube Top for Concert Club Party (ASIN: B08P28LYGX)
+  2. Realdo Womens Striped Shirt, Casual Loose Button Down Top Ladies Long Sleeve Blouse (ASIN: B07GH1PPVN)
+  3. Women Shiny Rhinestones Backless Crop Tops Tank Top Sexy Halter See Through Camisole for Night Out Party Clubwear (ASIN: B085G2V8HH)
+  4. Tipsy Elves The Tall Martini Hawaiian Shirt: Large (ASIN: B07BFKY5DX)
+  5. Womens Summer Tops Fashion Tank Tops Trendy Loose Fit Womens Tops with Cute Printing C-Purple (ASIN: B09NQRPVCF)
+  6. The No Drama Llama Hawaiian Shirt: X-Large (ASIN: B07BFL9K3C)
+  7. F-Tempt One Piece Swimsuits for Women Flamingo Swimwear One Shoulder Ruffled Flounce Monokini Bathing Suit (ASIN: B07MVK2N8T)
+  8. CB Sports Little and Big Boys' Fleece Zip Hoodie Sweatshirt (ASIN: B015Y8UFMK)
+  9. 12 Pairs Neon Fingerless Fishnet Gloves for Women and Girls Punk Wrist Glove 80s Fishnet Gloves Short Net Mesh Fingerless Gloves for 80's Theme Party Supplies, Blue, Pink, Green and Purple (ASIN: B07FVWK5CR)
+  10. BabyPrice Women's 30 Styles Skirts Printing Maxi Skirt Glamorous Skirt Skirt Beach (ASIN: B073PWM5WL)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: polyester.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Emmalise Women's Basic Casual Long Camisole Adjustable Strap Cami Layering Top (ASIN: B07C2XPZ6D)
+  2. Women Rave Festival Feather Crop Tops Faux Fur Spaghetti Straps Tube Top for Concert Club Party (ASIN: B08P28LYGX)
+  3. Active Basic Plain Basic Camisole Cami with Adjustable Spaghetti Straps - Various Colors (Small, Heather Gray) (ASIN: B00BJALRE8)
+  4. Franato Sexy Tank Long Dress Basic Lingerie for Women Spaghetti Strap Cami Under Sleep Dress Full Slip Slim Long Camisole (ASIN: B07WQXC1HL)
+  5. Tank Tops, Forthery Women's Cami Sports Basic Criss Cross Solid Strappy Vest (M, Black) (ASIN: B079DKVXMW)
+  6. Bleum Camisole Girls Undershirt Tank Top - Ultra-Soft Cami Top - Tank Top with Built-in Shelf Bra & Adjustable Straps (ASIN: B084142BNZ)
+  7. Keatvoic Women’s Adjustable Spaghetti Straps Cami Dress Side Slit Cowl Neck Bodycon Dress Solid Slip Satin Mini Dress (ASIN: B09C42HWF6)
+  8. La Nikar Yoga Gym Sports Bras for Women - Mini Camisole, Breathable, Soft Top Corp for Workout Fitness with Removable Padded (ASIN: B07QDWN6WK)
+  9. Ever-Pretty Women's Long Side Slit Glitter Off Shoulder V-Neck Spaghetti Straps Evening Gowns 50088 (ASIN: B09X36FBL8)
+  10. Fastkoala Womens Casual Spaghetti Straps Leopard Print Loose Beach Long Maxi Dresses Sundresses with Pocket (ASIN: B09XDWQRH5)
+
+=== RESULT: SUCCESS (Turn 3) ===

@@ -1,0 +1,9 @@
+{
+  "affected_sessions": [],
+  "any_target_leakage_count": 0,
+  "exact_normalized_target_title_leakage_count": 0,
+  "exact_normalized_target_title_leakage_sessions": [],
+  "exact_target_asin_leakage_count": 0,
+  "exact_target_asin_leakage_sessions": [],
+  "excluded_from_metrics": false
+}

@@ -1,0 +1,162 @@
+{
+  "actual_usage": {
+    "failures": 0,
+    "hosted_calls": 37,
+    "input_tokens": 32371,
+    "mean_latency_seconds": 2.833261408331358,
+    "median_latency_seconds": 2.694019600006868,
+    "output_tokens": 12573,
+    "retries": 1,
+    "successful_query_calls": 36
+  },
+  "annotation_version": "portability-label-map-v1-frozen-2026-08-30",
+  "coverage": {
+    "independent_queries": 18,
+    "label_counts": {
+      "CONFLICTING": 13,
+      "CONTEXTUAL": 33,
+      "IRRELEVANT": 23,
+      "PORTABLE": 12,
+      "REDUNDANT": 18
+    },
+    "memory_pairs": 109,
+    "no_useful_history_states": 10,
+    "positive_polarity_pairs": 99,
+    "u4_negative_polarity_diagnostic": 10,
+    "users": 4
+  },
+  "created_at_utc": "2026-08-30T10:04:56.763386+00:00",
+  "deployable_candidate_k": 10,
+  "evaluation_modes": [
+    "judge_capability_all",
+    "deployable_cosine_top10"
+  ],
+  "experiment": "query-conditioned-memory-portability-isolation-p1",
+  "failure_records": [],
+  "few_shot_examples": [],
+  "frozen_invariants": {
+    "b3_implemented": false,
+    "embeddings_reused": true,
+    "graphify_run": false,
+    "m0_modified": false,
+    "projector_modified": false,
+    "q_m0_reused": true,
+    "q_star_constructed": false
+  },
+  "git_dirty": true,
+  "git_head": "956f0599accc2c40038632e94392770ff0466f03",
+  "implementation_sha256": "9d2320a8db2b5723345f62ba19480f9532fe477dec8887e43f6a17fd0fd9c6f6",
+  "max_retries_same_provider_model": 1,
+  "metrics_postprocess": {
+    "additional_hosted_calls": 0,
+    "hosted_predictions_unchanged": true,
+    "implementation_sha256": "f9902d3b8069c7eb313b79bfdc94ab2543ff9d37681ad5b00e79400841f3ec31",
+    "reason": "separate U4 negative-polarity diagnostic from primary classification-error audit"
+  },
+  "model": "gpt-4.1-nano",
+  "model_fallback": false,
+  "one_call_per_query_per_evaluation_mode": true,
+  "output_schema": {
+    "name": "portability_classifications",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "results": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "classification": {
+                "enum": [
+                  "PORTABLE",
+                  "REDUNDANT",
+                  "CONTEXTUAL",
+                  "CONFLICTING",
+                  "IRRELEVANT"
+                ],
+                "type": "string"
+              },
+              "confidence": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "memory_id": {
+                "type": "string"
+              },
+              "portable_score": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "reason_code": {
+                "enum": [
+                  "persistent_preference",
+                  "already_explicit",
+                  "episode_specific",
+                  "current_override_conflict",
+                  "scope_mismatch",
+                  "insufficient_context",
+                  "other"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "memory_id",
+              "classification",
+              "portable_score",
+              "confidence",
+              "reason_code"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "results"
+      ],
+      "type": "object"
+    },
+    "strict": true
+  },
+  "preflight": {
+    "candidate_memory_presentations": 173,
+    "estimated_prompt_tokens_chars_div_4": 27848,
+    "estimation_method": "UTF-8 prompt characters / 4; actual provider usage is authoritative",
+    "expected_llm_calls": 36,
+    "query_count": 18
+  },
+  "prompt_sha256": "5f863a40dae730f61bc1d1ef82ef9381424b358f18a5c78413c9cc8be823f734",
+  "prompt_version": "portability-controller-v2-frozen-2026-08-30",
+  "provider": "openai",
+  "provider_fallback": false,
+  "query_ids": [
+    "u1_stable_s5_final",
+    "u1_stable_s6_final",
+    "u1_stable_s8_final",
+    "u1_stable_s9_final",
+    "u2_override_s2_final",
+    "u2_override_s4_final",
+    "u2_override_s7_final",
+    "u2_override_s9_final",
+    "u3_distractor_s3_final",
+    "u3_distractor_s5_final",
+    "u3_distractor_s6_final",
+    "u3_distractor_s7_final",
+    "u3_distractor_s8_final",
+    "u3_distractor_s9_final",
+    "u4_negative_s2_final",
+    "u4_negative_s5_final",
+    "u4_negative_s8_final",
+    "u4_negative_s9_final"
+  ],
+  "run_mode": "full",
+  "runner_sha256": "5e495a0ac6960e32927ff7ae5e82c25bbd86c7040c4809a6ebabe3789a62ed9c",
+  "runtime_output_cardinality": "results.minItems = results.maxItems = candidate_count",
+  "scientific_interpretation": true,
+  "source_fixture": "C:\\Users\\nicko\\Desktop\\techjam26\\nickolas\\shopping_agent\\longitudinal_eval\\projector_fixture_v1.json",
+  "source_fixture_sha256": "8b782aee8ed7e23504f5c3420388e6b2003c16918fa0108f28dfdd7c630aa2bf",
+  "source_vector_sha256": "4763a536c9a16c25a7aa99eb062aec95778299ab5d2ea6d92decb337423b975a",
+  "temperature": 0.0
+}

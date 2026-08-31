@@ -1,0 +1,22 @@
+Target Product Title: Champion Women's Absolute Sports Bra with SmoothTec Band, Graphic
+Target ASIN: B07357B79L
+Scenario: browsing
+Constraints: ['Imported', 'Pull-On closure']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a women's sports bra that has a smooth band for comfort and is easy to put on. it should be imported and have a pull-on closure.
+Copilot: Great choice! What color are you interested in for the sports bra?
+Copilot Attribute Query: color
+Recommendations:
+  1. Crop Tops for Women Workout Sleeveless Shirt Longline Summer Padded Sport Bra for Teen Girls Yoga Fitness Running Tank Tops (ASIN: B08DJZPK9Q)
+  2. Girl Shark Women's Seamless Sports Bra Yoga Fitness Running Workout Crop Tank Top (ASIN: B08XX2Q72X)
+  3. Champion Women's Absolute Sports Bra with SmoothTec Band, Graphic (ASIN: B07357B79L)
+  4. Lee Women's Natural Fit Bordon Pull On Bootcut Jean (ASIN: B00Z5SEZXU)
+  5. Mae Women's Modal Everyday Bralette (ASIN: B076BSL2M3)
+  6. Belugue Women's Seamless Lace Overlay Bralette Wire-Free Sports Bra (ASIN: B071992SMQ)
+  7. M Made in Italy Women's Maxi Skirt with Soft Elastic Waistband (ASIN: B092FKVTW8)
+  8. Boston Proper – Beyond Travel Leggings for Women Wrinkle-Resistant Knit Solid Color (ASIN: B08S7NZ6D1)
+  9. Amazon Brand - Mae Women's High Neck Crossback Mesh Modal Shine Logo Elastic Bralette (ASIN: B076BSFXD5)
+  10. GUESS Women's Star Logo Triangle Bra (ASIN: B089CK4JLW)
+
+=== RESULT: SUCCESS (Turn 1) ===

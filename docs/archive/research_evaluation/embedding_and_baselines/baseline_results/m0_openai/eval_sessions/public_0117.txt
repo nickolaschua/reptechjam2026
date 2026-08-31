@@ -1,0 +1,22 @@
+Target Product Title: Vionic Sadie Women's Adjustable Strap Orthotic Slippers
+Target ASIN: B07HJ18QRQ
+Scenario: buying
+Constraints: ['Synthetic Rubber sole', 'Mule-style slipper, adjustable strap with hook-and-loop closure, silvertone button detail']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some cozy slippers with a synthetic rubber sole. they should be mule-style and have an adjustable strap with a hook-and-loop closure.
+Copilot: I found a great option for you: the Vionic Sadie Women's Adjustable Strap Orthotic Slippers. Would you like to specify a color or size for your search?
+Copilot Attribute Query: color
+Recommendations:
+  1. Vionic Sadie Women's Adjustable Strap Orthotic Slippers (ASIN: B07HJ18QRQ)
+  2. Eberjey Pima Cotton Women's Everyday T-Shirt Bra (ASIN: B07F79CVQK)
+  3. Boho Smocked Dress Tiered Cowl Neck Backless Flowy Cami Babydoll Dresses with Adjustable Strap Drawstring Plus (ASIN: B091KX3PWR)
+  4. Brooks Women's Fiona Bra,Black,38C (ASIN: B001AP1QG6)
+  5. Yandy White Front Hook Closure Push Up Bra Providing a Multi Straped Racerback (ASIN: B0713WH89T)
+  6. Garden Girl USA Full Trousers, 14-Inch, Roses Tan (ASIN: B00B1JMI4U)
+  7. Brosloth High Waisted Bikini Swimsuit for Women Tummy Control Two Piece Bathing Suits 2 Piece Push Up Bikini Set (ASIN: B093L9ZZ7T)
+  8. Copper Fit Women's Cozy Slide Slipper (ASIN: B079YGDJ2F)
+  9. Apakowa Toddler Girls Double Adjustable Strap Closed-Toe Sandals (ASIN: B0797RSY6Q)
+  10. Teva Men's Toachi 2 Sandal (ASIN: B0084FN6IG)
+
+=== RESULT: SUCCESS (Turn 1) ===

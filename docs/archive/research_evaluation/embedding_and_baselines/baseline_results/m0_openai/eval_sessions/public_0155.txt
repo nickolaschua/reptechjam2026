@@ -1,0 +1,22 @@
+Target Product Title: GearTOP Net Hat UV Protection Sun Hat Head Net Hat Fishing Hat for Men & Women Wide Brim Hat w/Removable Net
+Target ASIN: B0C4VLWWYY
+Scenario: buying
+Constraints: ['polyester', '100% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a sun hat made of polyester. it should have a wide brim and maybe a removable net for added protection.
+Copilot: That sounds great! Do you have a specific color in mind for the sun hat?
+Copilot Attribute Query: color
+Recommendations:
+  1. BEEN THERE BRAND Sunset Foldable Hat & Carry Pouch| Travel, Beach, Event & Parade Hat (ASIN: B07DY6V1YV)
+  2. GearTOP Net Hat UV Protection Sun Hat Head Net Hat Fishing Hat for Men & Women Wide Brim Hat w/Removable Net (ASIN: B0C4VLWWYY)
+  3. Women's Casual Summer Maxi Dress - Tropical Floral Print Boho Flowy Long One Piece Beach Party Sundress (ASIN: B084GG69PT)
+  4. EXLURA Women's Dresses Summer Floral Sundress Swing Beach Dress with Pockets (ASIN: B07CY2NGV1)
+  5. GOOTUCH Women's V Neck Dress Tie Knot Front Spaghetti Strap Floral Casual Beach Party Swing Summer Sundress with Pockets(Dark red,M) (ASIN: B09HKDBQHQ)
+  6. Sports Visors for Women Men UV Protection Sun Visior Hats with Face Cover UPF50+ (ASIN: B092LNPXMY)
+  7. dansenvmei Thinking Cap Hat Baseball Cap Adjustable Costume Hats Cosplay Trucker Hat Mesh Blue (ASIN: B0B4MS9QNH)
+  8. Beer Hat for Men Baseball Cap Embroidered Adjustable Vintage Mesh Snapback Sun Hat Trucker Hats (ASIN: B08R3HGMHX)
+  9. Lapetus Waterproof Hooded Lightweight Rain Poncho for Adults Women Men with Pockets Unisex Fashion Zipper Jacket Coat (ASIN: B09YGKJ49Q)
+  10. Cutecc Women Gothic Punk Pentagram Strappy Mini Swing Party Dress Black (ASIN: B07D56VSCW)
+
+=== RESULT: SUCCESS (Turn 1) ===

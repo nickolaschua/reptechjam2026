@@ -1,0 +1,22 @@
+Target Product Title: Riders by Lee Indigo Women's Ultra Soft Denim Capri
+Target ASIN: B0858VDFDW
+Scenario: buying
+Constraints: ['cotton', '73% Cotton, 25% Polyester, 2% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's capri jeans, and they really need to be made of cotton.
+Copilot: Great choice! Do you have a specific color in mind for the capri jeans?
+Copilot Attribute Query: color
+Recommendations:
+  1. VIRGIN ONLY Women's Slim Fit Skinny Denim Capri Jeans (ASIN: B00XYYVUFI)
+  2. NYDJ Women's Misses Skinny Capri Jeans in Cool Embrace Denim (ASIN: B07GB9X93Y)
+  3. Pants for Women Women's Fashion Summer Sweet Loose Casual Print Retro Strappy Jumpsuit (ASIN: B0B6VK1XNY)
+  4. Riders by Lee Indigo Women's Ultra Soft Denim Capri (ASIN: B0858VDFDW)
+  5. Capri Pants for Women Summer Casual Plus Size Cotton Linen Pants Drawstring Knee Length Trousers with Pockets (ASIN: B0C1BT5862)
+  6. Levi's Misses Levi 515 Cuffed Capri (ASIN: B004G09R6S)
+  7. BENNY & LOUIE Women's Cotton Blend Stretch 3/4 Capri Skinny Jeggings Jean Work Casual Pants (ASIN: B07NXYXXPB)
+  8. LINKIOM Hidden Pocket Yoga Pants, Women's High Waist and Tight Fitness Nude Yoga Pants (ASIN: B08311BJQ2)
+  9. Lee Women's Petite Sculpting Pull on Capri Jean (ASIN: B07Y5VJJ39)
+  10. YMI Juniors Wannabettabutt Wide Waist Flood Capri Jean (ASIN: B00K3GGFN2)
+
+=== RESULT: SUCCESS (Turn 1) ===

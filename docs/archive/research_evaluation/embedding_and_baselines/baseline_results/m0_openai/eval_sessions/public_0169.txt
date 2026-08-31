@@ -1,0 +1,22 @@
+Target Product Title: Amazon Essentials Women's Pull-On Knit Jegging (Available in Plus Size)
+Target ASIN: B0829R9M5G
+Scenario: boundary
+Constraints: ['cotton', '57% Cotton, 26% Polyester, 10% Other Fibers, 7% Elastane']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfy women's jeggings. they should have a good amount of cotton in them, like at least 57%, and ideally be pull-on style.
+Copilot: I found some great options for you! Do you have a preferred color for your jeggings?
+Copilot Attribute Query: color
+Recommendations:
+  1. Lildy Women's Denim Jeggings, Stretchable Cotton Blend (ASIN: B07VXRB6NG)
+  2. Amazon Essentials Women's Pull-On Knit Jegging (Available in Plus Size) (ASIN: B0829R9M5G)
+  3. Leggings Depot Premium Quality Women's Cotton Blend Stretch Pull-on Jeggings with Pockets (ASIN: B074KJ49F2)
+  4. Lee Women's Natural Fit Bordon Pull On Bootcut Jean (ASIN: B00Z5SEZXU)
+  5. SpiritUp Women's Sexy Long Sleeve Solid T-Shirts Tops (ASIN: B01BWBOX26)
+  6. IWEAGER Women Ripped Skinny Jeans Stretchy High Waist Pull-on Ankled Destroyed Distressed Denim Pants (ASIN: B07YJBHRHP)
+  7. ARIAT Women's Rebar Durastretch Pull-on Slim Leg Pant (ASIN: B0B5NX2H2S)
+  8. Women Fake Collars Detachable Dickey Collar Blouse Half Shirts False Collar for Women Favors 01 Pointed White One Size (ASIN: B09DYCT3V5)
+  9. Eicolorte Women's Swimsuit Cover ups Bathing Suit Tassel Kaftan Beach Dress for Swimwear (ASIN: B0833WT91H)
+  10. Xiovio Customize® Large Print Area | Custom Personalized T-Shirts Adult Tee Add Your Text Image Photo Front·Back (ASIN: B0BGZWZY6M)
+
+=== RESULT: SUCCESS (Turn 1) ===

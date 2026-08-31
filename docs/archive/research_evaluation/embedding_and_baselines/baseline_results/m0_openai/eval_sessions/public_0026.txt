@@ -1,0 +1,22 @@
+Target Product Title: ASICS Men's Gel-Venture 6 MX Running Shoes
+Target ASIN: B093R14VP1
+Scenario: buying
+Constraints: ['100% Synthetic', 'Imported']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some running shoes, and they need to be 100% synthetic.
+Copilot: Got it! What color are you looking for in your running shoes?
+Copilot Attribute Query: color
+Recommendations:
+  1. adidas Men's Adilette Shower Slide (ASIN: B07FDB7GMZ)
+  2. Skechers for Work Men's Felton Shoe (ASIN: B00MH331BI)
+  3. ASICS Men's Gel-Venture 6 MX Running Shoes (ASIN: B093R14VP1)
+  4. ASICS Women's Gel-Kayano 27 Running Shoes (ASIN: B08VPRCD79)
+  5. Blowfish Malibu Women's Fruit Sneaker (ASIN: B07B5RGY2N)
+  6. Nike Men's Court Lite 2 Tennis Shoe (ASIN: B07LBFCFB4)
+  7. Timberland Women's 6" Premium Waterproof Boots (ASIN: B01HJA0W24)
+  8. DREAM PAIRS Boys Girls Outdoor Soccer Cleats Football Shoes (ASIN: B091F4M4W1)
+  9. L LOUBIT Women Wedge Shoes Breathable Mesh Sneakers Slip On Comfort Walking Shoes (ASIN: B0BZJG18G6)
+  10. Clarks Women's Sharon Dolly Loafer (ASIN: B087S13L3Q)
+
+=== RESULT: SUCCESS (Turn 1) ===

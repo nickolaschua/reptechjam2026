@@ -1,5 +1,7 @@
 # Fast/Slow memory architecture
 
+> **Reference implementation scope:** This document describes `techjam-conversational-search/starter` and `techjam-conversational-search/memory`, not the Nickolas QLMP/longitudinal evaluation stack.
+
 ## Contract
 
 Longitudinal memory exists only for an explicit stable user identity. It is
@@ -103,6 +105,6 @@ separate topics or represent a negated phrase close to the phrase it rejects.
 This baseline keeps those facts auditable in summary text but does not add a
 second structured filter or retrieval path to compensate.
 
-The `nickolas/CODEBASE_SUMMARY.md` and `nickolas/MEMORY_ARCHITECTURE.md` files
+The `system/README.md` and `system/MEMORY_ARCHITECTURE.md` files
 describe prior research and are intentionally left untouched as historical
 documents.

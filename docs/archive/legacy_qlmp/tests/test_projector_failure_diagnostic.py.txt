@@ -1,0 +1,81 @@
+import unittest
+
+import numpy as np
+
+from nickolas.shopping_agent.longitudinal_eval.projector_failure_diagnostic import (
+    AUTHORITATIVE_RUN_ID,
+    TARGET_FIXTURES,
+    attribute_coverage,
+    build_product_text,
+    component_coordinates,
+    current_m0_price_mask,
+    memory_component_diagnostic,
+    select_top_k,
+    validate_top_k_alignment,
+)
+
+
+class ProjectorFailureDiagnosticTests(unittest.TestCase):
+    def test_authoritative_run_and_fixture_identity_are_frozen(self):
+        self.assertEqual(AUTHORITATIVE_RUN_ID, "preregistered_full_k500_r16_definitive")
+        self.assertEqual(TARGET_FIXTURES, ("u2_override_s9_final", "u3_distractor_s9_final"))
+
+    def test_exact_product_text_uses_only_first_three_features(self):
+        product = {
+            "title": "Tee", "categories": ["Clothing", "Women"],
+            "features": ["Rayon", "Spandex", "Pull On", "Breathable fourth feature"],
+            "price": 19.99,
+        }
+        text = build_product_text(product)
+        self.assertEqual(text, "Product: Tee. Categories: Clothing, Women. Features: Rayon; Spandex; Pull On.")
+        self.assertNotIn("19.99", text)
+        self.assertNotIn("Breathable", text)
+
+    def test_attribute_coverage_separates_embedded_and_catalogue_only(self):
+        products = [{
+            "parent_asin": "A", "title": "Plain tee", "categories": ["Clothing"],
+            "features": ["Cotton", "Pull On", "Machine Wash", "Breathable"],
+            "description": ["Moisture-wicking"], "details": {}, "store": "X", "price": 20.0,
+        }]
+        coverage, _ = attribute_coverage(products, ("price", "breathability"))
+        self.assertEqual(coverage["price"]["raw_catalogue_count"], 1)
+        self.assertEqual(coverage["price"]["embedded_text_count"], 0)
+        self.assertEqual(coverage["breathability"]["raw_catalogue_count"], 1)
+        self.assertEqual(coverage["breathability"]["embedded_text_count"], 0)
+        self.assertEqual(coverage["breathability"]["catalogue_only_count"], 1)
+
+    def test_hard_mask_is_pure_and_matches_current_m0_missing_price_semantics(self):
+        products = [{"price": 20.0}, {"price": 130.0}, {"price": None}]
+        before = [dict(product) for product in products]
+        mask = current_m0_price_mask(products, 120.0)
+        np.testing.assert_array_equal(mask, [True, False, False])
+        self.assertEqual(products, before)
+
+    def test_top_k_selection_and_row_id_alignment(self):
+        scores = np.asarray([0.2, 0.8, 0.5, 0.9])
+        mask = np.asarray([True, False, True, True])
+        rows = select_top_k(scores, mask, 2)
+        np.testing.assert_array_equal(rows, [3, 2])
+        validate_top_k_alignment(["D", "C"], np.asarray(["A", "B", "C", "D"]), rows)
+        with self.assertRaisesRegex(ValueError, "mismatch"):
+            validate_top_k_alignment(["C", "D"], np.asarray(["A", "B", "C", "D"]), rows)
+
+    def test_component_and_memory_coefficient_calculations(self):
+        tangent = np.asarray([[1.0, 2.0, 0.0], [3.0, 4.0, 0.0]])
+        basis = np.asarray([[1.0, 0.0], [0.0, 1.0], [0.0, 0.0]])
+        np.testing.assert_allclose(component_coordinates(tangent, basis), [[1.0, 2.0], [3.0, 4.0]])
+        q = np.asarray([0.0, 0.0, 1.0])
+        memory = np.asarray([0.6, 0.8, 0.0])
+        result = memory_component_diagnostic(q, memory, basis)
+        np.testing.assert_allclose(result["coefficients"], [0.6, 0.8])
+        self.assertAlmostEqual(result["projected_norm"], 1.0)
+        self.assertAlmostEqual(sum(result["energy_shares"]), 1.0)
+
+    def test_module_declares_zero_external_calls_by_construction(self):
+        import nickolas.shopping_agent.longitudinal_eval.projector_failure_diagnostic as diagnostic
+        self.assertEqual(diagnostic.ZERO_EXTERNAL_CALLS, {"llm": 0, "openai": 0})
+        self.assertNotIn("openai", diagnostic.__dict__)
+
+
+if __name__ == "__main__":
+    unittest.main()
