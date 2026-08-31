@@ -117,6 +117,12 @@ Cost of the new box: 0 ms on a template turn (the parser is not called);
 one local model call (~10 s on the M4 laptop, ~2-4 s on an RTX 4090) on a
 human turn. No network, no API key.
 
+Parser model choice, measured on the 30 hand-written probes (same gold, same
+scorer): qwen2.5:7b slot F1 0.461 (recall 0.532) vs llama3.1:8b 0.260 (recall
+0.288) vs qwen2.5:3b 0.267. Recall is what matters here - a missed slot is a
+lost query term. llama3.1 also could never be scored on the benchmark itself,
+since it generates half of its utterances.
+
 Fair per-track version of the same comparison (both arms on exp11's retrieval,
 so the parse is the only variable): raw utterance 0.143 [0.127, 0.160] ->
 parsed 0.233 [0.211, 0.253], 191 rescues, 40 regressions. Per style:

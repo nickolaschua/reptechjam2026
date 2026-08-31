@@ -1,0 +1,776 @@
+[
+  {
+    "case": 1,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "men's shoe",
+      "department": "mens",
+      "slots": [],
+      "price_max": 0,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 2,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "women's shoes",
+      "department": "womens",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 3,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "women's shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "well-rated",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "reputable_brand",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 4,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "waterproof slides",
+      "department": null,
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 5,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "bathing suit",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "stretchy",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "sexy",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "padding",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "support",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 6,
+    "stratum": "A",
+    "pred": {
+      "category_phrase": "raincoat",
+      "department": "womens",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 7,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "slippers",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "furry",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "good grip",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 8,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "earrings",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "style",
+          "value": "artful",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "bold",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "taste",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "hoop",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 9,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "women's",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "color",
+          "value": "brighter",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "classy",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "bold",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "provocative",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "figure-showing",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 10,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "sunnies",
+      "department": null,
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 11,
+    "stratum": "B",
+    "pred": {
+      "category_phrase": "women's",
+      "department": "womens",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 12,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "women's",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 13,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "shoes",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "leather",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "use_case",
+          "value": "racket sports, lifting weights",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "leather",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "reputable_brand",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 14,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "jeans",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "stretchy",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "slim fitting",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "not too out there",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "easy to wash",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 15,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "high heels",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "color",
+          "value": "black",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "skinny stem",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 16,
+    "stratum": "C",
+    "pred": {
+      "category_phrase": "something",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "skin coloured",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "accentuate my boobs",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "cover my nipples",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 17,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "wool socks",
+      "department": "mens",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 18,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "long sleeve shirts",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "quick drying",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "50",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "upf",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "sun blocking",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": 50,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 19,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "golf shirt",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "long sleeve",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "material",
+          "value": "sun protective",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "buttons at the collar",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "stretchy",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "fit for larger men",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 20,
+    "stratum": "D",
+    "pred": {
+      "category_phrase": "gold hoop earrings",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "plated",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "budget",
+          "value": "$60",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": 60,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 21,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "matching outfit sets",
+      "department": "womens",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 22,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "top",
+      "department": null,
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 23,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "women's",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "wide",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "ankle height",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 24,
+    "stratum": "E",
+    "pred": {
+      "category_phrase": "pink jacket thing with the scarf",
+      "department": null,
+      "slots": [],
+      "price_max": 25,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 25,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "plain tees",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "no plastic",
+          "declined": false,
+          "negated": true
+        },
+        {
+          "attribute": "budget",
+          "value": "30",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": 30,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 26,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "house slippers",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "memory foam",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "style",
+          "value": "fluffy open toe",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "budget",
+          "value": "fifteen",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": 15,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 27,
+    "stratum": "F",
+    "pred": {
+      "category_phrase": "women's",
+      "department": null,
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  },
+  {
+    "case": 28,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "big shoulder bag",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "soft leather-looking",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "size",
+          "value": "roomy enough to fit a laptop",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "loads of good reviews",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "brand",
+          "value": "obscure",
+          "declined": true,
+          "negated": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "reputable_brand",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 29,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "baseball cap",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "custom printed or embroidered",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "feature",
+          "value": "adjustable strap at the back",
+          "declined": false,
+          "negated": false
+        },
+        {
+          "attribute": "budget",
+          "value": "around 20 bucks",
+          "declined": false,
+          "negated": false
+        }
+      ],
+      "price_max": 20,
+      "price_min": 0,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_requirements"
+    }
+  },
+  {
+    "case": 30,
+    "stratum": "G",
+    "pred": {
+      "category_phrase": "foam clog things with the holes in them",
+      "department": "unisex-adult",
+      "slots": [],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": true,
+      "specificity": "type_with_wishes"
+    }
+  }
+]
