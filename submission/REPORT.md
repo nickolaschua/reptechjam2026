@@ -132,10 +132,10 @@ Demo recording/link: **TODO**
 
 ## Team contributions
 
-Replace the placeholders with named, concrete ownership before submission.
-
 | Team member | Contributions |
 | --- | --- |
-| **TODO** | Agent architecture, retrieval, or integration work |
-| **TODO** | Evaluation, experiments, or memory work |
-| **TODO** | Demo, documentation, or release engineering |
+| Nickolas | Long-term memory: vector memory store, session lifecycle (load at start / commit at end), relevance gating, memory update policy |
+| Yang Xu | Entropy-based querying: attribute selector (entropy, gain ratio, coverage), clarification strategy and question-value estimation |
+| Winston | Intent detection and state routing: Buying/Browsing detection, deterministic template fast path, DeepSeek-to-Ollama state-update plumbing |
+| Judith | Short-term session state: constraint state management, provenance tracking, intent-override and boundary handling |
+| Harshith | Retrieval and filtering layers: FTS5 keyword matching, categorical eligibility masks, BGE vector similarity, confidence gate |

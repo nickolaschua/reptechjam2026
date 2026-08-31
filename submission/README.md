@@ -165,6 +165,10 @@ The launcher does not edit or copy the evaluator. It puts this bundle first on
 `data/catalog.jsonl` and `data/public_set.jsonl`. Output is written to
 `results/results.json`.
 
+Reference metrics for this release are committed at
+`results/eval_v1_results.json`; a rerun of the command above reproduces the
+reported evaluation on the public set.
+
 Every path is overridable:
 
 ```bash
@@ -231,3 +235,37 @@ longitudinal memory is not committed across evaluator sessions.
    secret is staged, then record the full submission commit SHA.
 6. After the final package is released, check out that SHA and do not modify the
    Agent, prompts, indexes, cache, model configuration, or other solution files.
+
+## 10. Limitations and future work
+
+- Ranking, not retrieval, is the bottleneck: the hidden target lands in the
+  top 10 almost every session but often mid-list. A learned reranker over the
+  confidence-gate survivors is the clearest next win.
+- `ask_attribute` is recovered by parsing the agent's own generated reply, so a
+  paraphrased question degrades it to `other`. Emitting it directly from the
+  entropy selector would make clarification deterministic and remove the main
+  per-turn LLM latency.
+- Reply generation is the latency floor: one local `llama3.1:8b` call per turn.
+  State parsing is already deterministic on template inputs and sub-second via
+  DeepSeek on free text.
+- Long-term memory ships with a full lifecycle (load at session start, commit at
+  end, relevance-gated recall) but official sessions never pass `user_id`, so
+  the evaluation cannot exercise it; its one-centroid representation also cannot
+  hold distinct user interests at once.
+- The embedder is stock `BAAI/bge-base-en-v1.5`. Continual finetuning with a
+  cosine-distance loss over the user-prompt database is designed but not part
+  of this release.
+- `respond()` does not yet report per-turn token usage, so the evaluator's token
+  accounting reads zero.
+- Heuristics are tuned to the official evaluator's fixed English templates;
+  robustness to free-form paraphrase rests on the LLM fallback path.
+
+## 11. Team contributions
+
+| Team member | Owned |
+| --- | --- |
+| Nickolas | Long-term memory cache: vector store, session lifecycle, relevance gating |
+| Yang Xu | Entropy-based querying: attribute selection, clarification strategy |
+| Winston | Intent detection and state routing, DeepSeek/Ollama parsing plumbing |
+| Judith | Short-term session state: constraints, provenance, override and boundary handling |
+| Harshith | Retrieval and filtering: FTS5 keyword layer, categorical masks, vector similarity, confidence gate |
