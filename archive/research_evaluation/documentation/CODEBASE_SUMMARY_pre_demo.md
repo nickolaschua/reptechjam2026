@@ -68,5 +68,5 @@ The experiment harness and eleven retrieval experiments are reproducible researc
 - Update this file when implementation ownership or entrypoints change.
 - Update `MEMORY_ARCHITECTURE.md` when memory behavior changes.
 - Update the longitudinal README when fixtures, commands, validation, or result schemas change.
-- Put obsolete proposals and milestone reports in `docs/archive/` with explicit historical scope.
+- Put obsolete proposals and milestone reports in `archive/` with explicit historical scope.
 - Do not create new root-level “current architecture” audits.

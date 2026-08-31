@@ -22,7 +22,7 @@ import numpy as np
 
 LAB = Path(__file__).resolve().parent
 WINSTON = LAB.parent
-REPO = WINSTON.parent
+REPO = WINSTON.parents[2]
 KIT = REPO / "techjam-conversational-search"
 for p in (WINSTON, WINSTON / "experiments", LAB, LAB / "bench", KIT, REPO / "nickolas" / "experiments"):
     sys.path.insert(0, str(p))

@@ -28,7 +28,7 @@ from pathlib import Path
 BENCH = Path(__file__).resolve().parent
 LAB = BENCH.parent
 WINSTON = LAB.parent
-REPO = WINSTON.parent
+REPO = WINSTON.parents[2]
 KIT = REPO / "techjam-conversational-search"
 for p in (WINSTON, LAB, BENCH, WINSTON / "experiments", KIT, REPO / "nickolas" / "experiments",
           REPO / "docs" / "archive" / "research_evaluation" / "retrieval" / "experiments"):

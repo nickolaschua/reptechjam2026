@@ -20,7 +20,7 @@ from pathlib import Path
 
 LAB = Path(__file__).resolve().parent
 WINSTON = LAB.parent
-KIT = WINSTON.parent / "techjam-conversational-search"
+KIT = WINSTON.parents[2] / "techjam-conversational-search"
 for p in (WINSTON, WINSTON / "experiments", LAB, KIT):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))

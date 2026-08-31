@@ -24,7 +24,7 @@ import numpy as np
 
 LAB = Path(__file__).resolve().parent
 WINSTON = LAB.parent
-KIT = WINSTON.parent / "techjam-conversational-search"
+KIT = WINSTON.parents[2] / "techjam-conversational-search"
 for p in (WINSTON, LAB, LAB / "bench", KIT):
     sys.path.insert(0, str(p))
 from bolt_on import clean_parse  # noqa: E402

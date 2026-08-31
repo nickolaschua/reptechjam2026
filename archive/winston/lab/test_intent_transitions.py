@@ -17,7 +17,7 @@ from pathlib import Path
 
 LAB = Path(__file__).resolve().parent
 WINSTON = LAB.parent
-REPO = WINSTON.parent
+REPO = WINSTON.parents[2]
 KIT = REPO / "techjam-conversational-search"
 for p in (WINSTON / "experiments", WINSTON, LAB, KIT):
     if str(p) not in sys.path:

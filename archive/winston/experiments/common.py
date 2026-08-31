@@ -13,7 +13,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]          # reptechjam2026/
+ROOT = Path(__file__).resolve().parents[4]          # repository root after archival
 KIT = ROOT / "techjam-conversational-search"
 CATALOG = KIT / "data" / "catalog.jsonl"
 PUBLIC_SET = KIT / "data" / "public_set.jsonl"

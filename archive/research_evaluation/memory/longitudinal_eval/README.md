@@ -10,7 +10,7 @@ The runner supplies explicit user identity and chronology, chooses `buying` or `
 
 The current fixture's source rows are buying scenarios. Snapshot replay uses versioned `gated-vector-memory` payloads containing one normalized state per user plus chronology commits. Normal logs contain vector-free descriptions and per-turn memory traces.
 
-Legacy QLMP, projector, portability, masked-memory, relevance experiments, documentation, fixtures, results, and tests are archived under `docs/archive/legacy_qlmp/` and excluded from active imports and test discovery.
+Legacy QLMP, projector, portability, masked-memory, relevance experiments, documentation, fixtures, results, and tests are archived under `archive/legacy_qlmp/` and excluded from active imports and test discovery.
 
 Offline fixture validation:
 

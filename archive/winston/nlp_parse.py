@@ -39,7 +39,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PROBE_SET = HERE / "probe_set.md"
-CATALOG = HERE.parent / "techjam-conversational-search" / "data" / "catalog.jsonl"
+REPOSITORY_ROOT = HERE.parents[2]
+CATALOG = REPOSITORY_ROOT / "techjam-conversational-search" / "data" / "catalog.jsonl"
 CACHE = HERE / ".cache"
 
 # The evaluator's enum, verbatim - a slot's `attribute` IS a legal ask_attribute.

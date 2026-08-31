@@ -22,7 +22,7 @@ from sentence_transformers import (SentenceTransformer, SentenceTransformerTrain
 from sentence_transformers.losses import MultipleNegativesRankingLoss
 
 LAB = Path(__file__).resolve().parent
-KIT = LAB.parent.parent / "techjam-conversational-search"
+KIT = LAB.parent.parents[2] / "techjam-conversational-search"
 sys.path.insert(0, str(KIT)); sys.path.insert(0, str(LAB))
 from dense_rank import QUERY_PREFIX, catalog_text  # noqa: E402
 from evaluator.local_evaluator import catalog_index, coarse_category  # noqa: E402
