@@ -100,12 +100,14 @@ Install a published asset atomically:
 
 ```bash
 python scripts/install_artifact.py \
-  --url "REPLACE_WITH_RELEASE_ASSET_URL" \
+  --url "https://github.com/nickolaschua/reptechjam2026/releases/download/bge-cache-v1/catalog_cache_bge-base-en-v1.5.npz" \
   --sha256 "a05b1dcee3c40bb254ccf73ab437e8d08fc33d28d444a32c812158842526191f"
 ```
 
-Replace the URL placeholder with the real release asset before freezing the
-submission. Then verify the installed cache against the organizer catalogue:
+While the repository is private, that URL requires repository access; anyone
+with access can instead run `gh release download bge-cache-v1 -D artifacts/`.
+The URL serves anonymously once the repository is public. Then verify the
+installed cache against the organizer catalogue:
 
 ```bash
 python scripts/verify_artifact.py --catalog data/catalog.jsonl
