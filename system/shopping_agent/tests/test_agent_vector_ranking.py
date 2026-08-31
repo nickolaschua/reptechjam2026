@@ -256,19 +256,36 @@ def test_live_intent_is_authoritative_and_exposes_mode_thresholds():
     assert (buying_trace["fts_or_threshold"], buying_trace["keyword_route_threshold"]) == (15, 10)
 
 
-def test_concrete_live_evidence_overrides_browsing_llm_and_caller_fallback():
-    agent = ranking_agent()
+def _browsing_parser(agent):
     def detect_browsing(session_id, message):
         state = agent._sessions[session_id]
         state["intent_mode"] = "browsing"
         state["intent_source"] = "llm"
         state["_intent_detection_succeeded"] = True
     agent._update_state_via_llm = detect_browsing
+
+
+def test_parser_intent_stands_and_no_second_detector_overrides_it():
+    """One detector decides per turn: the parser when it ran, the local read when it did not."""
+
+    agent = ranking_agent()
+    _browsing_parser(agent)
     result = agent._respond_custom("s", "I need a specific boot", 1, 2, buyer_mode=BuyerMode.BUYING)
     trace = result["debug"]["memory_trace"]
-    assert trace["intent_mode"] == "buying"
-    assert trace["intent_source"] == "deterministic_precedence"
+    assert trace["intent_mode"] == "browsing"
+    assert trace["intent_source"] == "winston_parser"
     assert trace["caller_buyer_mode"] == "buying"
+
+
+def test_session_reset_outranks_the_parser():
+    agent = ranking_agent()
+    _browsing_parser(agent)
+    agent._sessions["s"] = Agent._new_session_state()
+    agent._sessions["s"]["intent_mode"] = "buying"
+    result = agent._respond_custom("s", "start over", 1, 2, buyer_mode=BuyerMode.BUYING)
+    trace = result["debug"]["memory_trace"]
+    assert trace["intent_mode"] == "browsing"
+    assert trace["intent_source"] == "session_reset"
 
 
 def test_reset_freezes_prior_vector_snapshot_and_blocks_overlap():

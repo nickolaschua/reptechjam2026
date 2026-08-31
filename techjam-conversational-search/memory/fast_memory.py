@@ -259,7 +259,14 @@ class _StateUpdater:
             category, separator, remainder = body.partition(".")
             if not separator:
                 remainder = ""
-            intent = "browsing" if any(cue in normalized for cue in EXPLORATORY_CUES) else "buying"
+            # The evaluator emits "A key requirement is:" for buying scenarios and
+            # only those (local_evaluator.initial_message). An intent_override
+            # opener discloses a SOFT preference, which the problem statement calls
+            # browsing - "has not yet specified enough information to narrow the
+            # search". Keying on the exploratory cue alone made all 30/200 override
+            # sessions buying from turn 1, before the user stated any requirement.
+            intent = ("buying" if normalize(remainder.strip()).startswith(BUYING_PREFIX)
+                      else "browsing")
         if later:
             self.topic_shift(category, turn)
         else:
@@ -305,6 +312,10 @@ class _StateUpdater:
                 message.split(":", 1)[1], turn=turn, epoch=state.intent_epoch,
                 hard=True, source="explicit_replacement",
             ))
+            # "What I need is: X" states a hard constraint, so the session moves to
+            # buying. Intent is a spectrum, not a turn-1 label.
+            state.intent = "buying"
+            state.intent_source_turn = turn
             state.confidence = 1.0
             return
         if turn > 1 and normalized.startswith(INITIAL_PREFIX):

@@ -28,16 +28,22 @@ def test_new_session_state_is_not_shared():
     assert agent._sessions["a"]["intent_mode"] == "browsing"
 
 
-def test_local_live_intent_upgrades_and_only_explicitly_resets():
+def test_local_live_intent_reads_each_message_and_never_latches():
+    """The fast-path fallback reads this message only; the parser covers general turns."""
+
     state = Agent._new_session_state()
     assert Agent._detect_intent_locally(state, "show me options").value == "browsing"
     assert Agent._detect_intent_locally(state, "I need waterproof boots, show me options").value == "buying"
-    state["disclosed_slots"]["material"] = {"cotton"}
-    assert Agent._detect_intent_locally(state, "cotton please").value == "buying"
+    assert Agent._detect_intent_locally(state, "anything under $40").value == "buying"
+    assert Agent._detect_intent_locally(state, "not just looking, I want one today").value == "buying"
+
+    # Session state must not colour the read.  Intent drives retrieval thresholds, the
+    # memory blend, and clarification order -- all soft -- so a latch quietly mis-steers
+    # every later turn, while a wrong read costs one turn and self-corrects on the next.
     state["intent_mode"] = "buying"
-    state["disclosed_slots"].clear()
-    assert Agent._detect_intent_locally(state, "maybe shoes").value == "buying"
-    assert Agent._detect_intent_locally(state, "show me options").value == "buying"
+    state["disclosed_slots"]["material"] = {"cotton"}
+    assert Agent._detect_intent_locally(state, "maybe shoes").value == "browsing"
+    assert Agent._detect_intent_locally(state, "show me options").value == "browsing"
     assert Agent._detect_intent_locally(state, "actually, show me other styles").value == "browsing"
     assert Agent._detect_intent_locally(state, "start over").value == "browsing"
 

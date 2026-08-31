@@ -283,6 +283,9 @@ class Catalogue:
 
     def eligibility(self, state: dict[str, Any]) -> Eligibility:
         hard = np.ones(len(self.ids), dtype=bool)
+        # price_min is deliberately NOT a hard mask.  "around $20-30" states a range, not a
+        # floor to enforce, and nobody abandons a session over a cheaper match.  It stays in
+        # state and in the retrieval query text, so it still steers ranking.
         price_max = float(state.get("price_max", 9999.0))
         if price_max < 9999.0:
             hard &= np.isfinite(self.prices) & (self.prices <= price_max)

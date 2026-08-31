@@ -73,6 +73,10 @@ def test_hard_masks_and_unknown_rating_review_benefit_of_doubt(tmp_path):
     assert eligible.mask[0]  # unknown rating/review metadata gets benefit of doubt
     assert not eligible.mask[1]  # incompatible demographic
     assert not eligible.mask[6]  # over budget
+    # price_min is a ranking preference, never a hard mask: a shopper who says "$20-30"
+    # is not asking us to hide the $18 match, and excluding it can only strand the session.
+    stated_floor = catalogue.eligibility({"price_min": 25.0})
+    assert stated_floor.mask.all()
     assert allowed_departments("men") >= {"men", "unisex-adult", "unspecified", "multi-demographic"}
     assert standardize_department("Unisex Adult") == "unisex-adult"
 

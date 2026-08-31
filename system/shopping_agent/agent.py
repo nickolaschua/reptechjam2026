@@ -541,6 +541,23 @@ STOPWORDS = {
     "make", "made", "done", "run", "doing"
 }
 
+# A session event, not an intent read: the shopper is abandoning the current thread.
+_SESSION_RESETS = ("start over", "actually, show me other styles")
+
+_EVALUATOR_INITIAL_RE = re.compile(
+    r"^i['\u2019]m looking for (?P<category>[^.,]{1,80}?)"
+    r"(?:, but i['\u2019]m still exploring\.?|\. a key requirement is: .+|\. \S.*)$",
+    re.IGNORECASE | re.DOTALL,
+)
+_EVALUATOR_FOLLOWUP_RES = tuple(re.compile(pattern, re.IGNORECASE | re.DOTALL) for pattern in (
+    r"^for that, what matters is: \S.*\.$",
+    r"^actually, ignore my earlier preference\. what i need is: \S.*\.$",
+    r"^actually, please ignore my earlier preference\.$",
+    r"^i don['\u2019]t have a preference for [a-z_]+; please use your judgment\.$",
+    r"^i don['\u2019]t have an additional preference for [a-z_]+\.$",
+    r"^those options are not quite right yet\. ask me about one specific attribute\.$",
+))
+
 def _text(value: object) -> str:
     if value is None:
         return ""
@@ -1496,40 +1513,26 @@ class Agent:
 
     @staticmethod
     def _detect_intent_locally(state: dict[str, Any], user_message: str) -> BuyerMode | None:
-        """Deterministic fallback for Yangxu's live Buying/Browsing transition rules."""
+        """Read this message's posture for turns the constrained parser did not handle.
+
+        Reads the message only.  Intent selects retrieval thresholds, the memory blend,
+        and clarification order -- all soft -- so a stale latch silently costs every
+        later turn, while a wrong read costs one turn and self-corrects on the next.
+        """
 
         message = " ".join(str(user_message).lower().split())
         if not message:
             return None
-        true_resets = ("start over", "actually, show me other styles")
-        if any(signal in message for signal in true_resets):
+        if any(reset in message for reset in _SESSION_RESETS):
             return BuyerMode.BROWSING
-
-        previous = str(state.get("intent_mode", BuyerMode.BROWSING.value)).lower()
         buying_signals = (
             "i need", "it must", "must have", "i want specifically", "what i need is",
             "a key requirement is", "for that, what matters is", "my budget", "under $",
+            "not just looking",
         )
-        concrete_slots = {"budget", "size", "brand", "material", "color"}
-        disclosed = set(state.get("disclosed_slots", {}))
-        has_hard_condition = (
-            float(state.get("price_max", 9999.0)) < 9999.0
-            or bool(state.get("target_department"))
-            or float(state.get("min_avg_rating", 0.0)) > 0.0
-            or int(state.get("min_rating_number", 0)) > 0
-            or bool(state.get("store"))
-        )
-        message_has_concrete = (
-            any(signal in message for signal in buying_signals)
-            or bool(re.search(r"(?:\$\s*\d|\b(?:under|below|max(?:imum)?|budget)\s+\$?\d)", message))
-            or bool(re.search(r"\b(?:specific|waterproof|nike|size\s+\w+)\b", message))
-            or "not just looking" in message
-        )
-        if message_has_concrete or has_hard_condition or disclosed & concrete_slots:
+        if any(signal in message for signal in buying_signals):
             return BuyerMode.BUYING
-        if "just looking" in message:
-            return BuyerMode.BROWSING
-        if previous == BuyerMode.BUYING.value:
+        if re.search(r"(?:\$\s*\d|\b(?:under|below|over|max(?:imum)?|budget)\s+\$?\d)", message):
             return BuyerMode.BUYING
         return BuyerMode.BROWSING
 
@@ -1539,17 +1542,15 @@ class Agent:
         user_message: str,
         caller_fallback: BuyerMode | None,
     ) -> BuyerMode:
-        detected = self._detect_intent_locally(state, user_message)
+        normalized = " ".join(str(user_message).lower().split())
+        if any(reset in normalized for reset in _SESSION_RESETS):
+            state["intent_mode"] = BuyerMode.BROWSING.value
+            state["intent_source"] = "session_reset"
+            return BuyerMode.BROWSING
         if state.pop("_intent_detection_succeeded", False):
-            llm_mode = BuyerMode(str(state.get("intent_mode", BuyerMode.BROWSING.value)))
-            normalized = " ".join(str(user_message).lower().split())
-            if detected is BuyerMode.BUYING or any(
-                reset in normalized for reset in ("start over", "actually, show me other styles")
-            ):
-                state["intent_mode"] = detected.value
-                state["intent_source"] = "deterministic_precedence"
-                return detected
-            return llm_mode
+            state["intent_source"] = "winston_parser"
+            return BuyerMode(str(state.get("intent_mode", BuyerMode.BROWSING.value)))
+        detected = self._detect_intent_locally(state, user_message)
         if detected is not None:
             state["intent_mode"] = detected.value
             state["intent_source"] = "deterministic"
@@ -1807,6 +1808,250 @@ class Agent:
         snapshot["model_calls"] = [] if client is None else client.instrumentation()
         snapshot["ollama"] = snapshot["model_calls"] if snapshot["model_provider"] == "ollama" else []
         return snapshot
+
+    @staticmethod
+    def _usable_category_phrase(value: object) -> bool:
+        normalized = _normalize(value)
+        return bool(normalized) and normalized not in {
+            "item", "items", "product", "products", "thing", "things",
+            "something", "anything", "clothing item",
+        }
+
+    @staticmethod
+    def _has_explicit_correction(message: str) -> bool:
+        return bool(re.search(
+            r"\b(?:actually|instead(?: of)?|rather than|changed my mind|change it|"
+            r"make it|correction|what i need is|not .+ (?:but|make|want)|replace)\b",
+            str(message).lower(),
+        ))
+
+    @staticmethod
+    def _has_explicit_product_change(message: str) -> bool:
+        return bool(re.search(
+            r"\b(?:instead(?: of)?|changed my mind|switch(?:ing)? to|replace .+ with|"
+            r"now (?:i['\u2019]?m|i am) looking for|ignore .+ (?:i want|what i need is)|"
+            r"not .+[,;]? (?:i want|give me|show me))\b",
+            str(message).lower(),
+        ))
+
+    @staticmethod
+    def _target_department_from_parser(value: str | None) -> str:
+        return {
+            "womens": "women",
+            "mens": "men",
+            "girls": "girls",
+            "boys": "boys",
+            "baby-girls": "toddler",
+            "baby-boys": "toddler",
+            "unisex-child": "kids",
+            "unisex-adult": "",
+        }.get(str(value or "").lower(), "")
+
+    @staticmethod
+    def _product_department_for_category(category: str) -> str:
+        normalized = _normalize(category)
+        if any(word in normalized for word in (
+            "shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat",
+        )):
+            return "shoes"
+        if any(word in normalized for word in (
+            "ring", "necklace", "earring", "bracelet", "jewelry", "pendant", "charm",
+        )):
+            return "jewelry"
+        if "watch" in normalized:
+            return "watches"
+        if any(word in normalized for word in (
+            "shirt", "pant", "hoodie", "jacket", "dress", "sock", "clothing",
+            "skirt", "sweater", "coat", "jean", "short", "underwear", "tee",
+        )):
+            return "clothing"
+        return ""
+
+    def _clear_category_specific_state(self, state: dict, turn: int) -> None:
+        protected = {"budget", "gender", "rating", "reviews"}
+        category_attributes = set(state.get("disclosed_slots", {})) - protected
+        category_attributes.update(
+            record.get("attribute")
+            for record in state.get("constraint_provenance", [])
+            if record.get("attribute") not in protected
+        )
+        for attr in sorted(value for value in category_attributes if value):
+            self._erase_attribute_memory(state, str(attr))
+        state["negated_terms"].clear()
+        state["asked_attributes"].intersection_update(protected)
+        state["department"] = ""
+        state["store"] = ""
+        state["exact_terms"] = []
+        self._advance_search_epoch(state)
+        self._rebuild_active_terms(state)
+
+    def _apply_price_bounds(
+        self,
+        state: dict,
+        parsed: ParsedTurn,
+        turn: int,
+        source_type: str,
+        user_message: str,
+        *,
+        replace: bool,
+    ) -> None:
+        old_min = float(state.get("price_min", 0.0))
+        old_max = float(state.get("price_max", 9999.0))
+        new_min = parsed.price_min
+        new_max = parsed.price_max
+        target_min = old_min
+        target_max = old_max
+        # ponytail: a restated bound REPLACES the old one. The previous rule only
+        # ever narrowed (max(old,new) / min(old,new)) unless `replace` was set by an
+        # explicit "instead"/"changed my mind" phrase, so on public_0006 the band went
+        # [20,30] -> [20,20] -> [25,20] and matched nothing for seven turns.
+        if new_min is not None:
+            target_min = float(new_min)
+        if new_max is not None:
+            target_max = float(new_max)
+        if new_min is None and new_max is None:
+            return
+        # A newly stated ceiling supersedes a floor it cannot clear: "under $20"
+        # after "around $20-30" leaves no min, not the empty band [20, 20].
+        if target_min >= target_max:
+            target_min = 0.0
+
+        values = {
+            value
+            for value in self._slot_values(state["disclosed_slots"].get("budget"))
+            if not re.match(r"^(?:over|under)\s+\$?\d", value, re.IGNORECASE)
+        }
+        if target_min > 0:
+            values.add(f"over ${target_min:g}")
+        if target_max < 9999.0:
+            values.add(f"under ${target_max:g}")
+        self._set_constraint(state, "budget", values, turn, source_type, user_message)
+        state["price_min"] = target_min
+        state["price_max"] = target_max
+
+    def _apply_parsed_turn(
+        self,
+        state: dict,
+        parsed: ParsedTurn,
+        user_message: str,
+        turn: int,
+    ) -> bool:
+        """Merge one validated turn; resolver confidence remains telemetry-only."""
+
+        state["resolver_candidates"] = list(parsed.resolver_candidates[:3])
+        state["resolver_confidence"] = float(parsed.resolver_confidence)
+        state["last_message_type"] = parsed.message_type
+        state["intent_mode"] = parsed.intent
+        state["intent_source"] = "winston_parser"
+        state["_intent_detection_succeeded"] = True
+
+        usable_category = self._usable_category_phrase(parsed.category)
+        established = bool(state.get("category_established"))
+        category_differs = usable_category and _normalize(parsed.category) != _normalize(state.get("category"))
+        explicit_change = bool(
+            established and category_differs and self._has_explicit_product_change(user_message)
+        )
+
+        if explicit_change:
+            self._clear_category_specific_state(state, turn)
+            state["pending_category_change"] = False
+
+        if usable_category and (not established or explicit_change):
+            state["category"] = str(parsed.category).strip()
+            state["category_established"] = True
+            product_department = self._product_department_for_category(state["category"])
+            if product_department:
+                state["department"] = product_department
+
+        source_type = (
+            "explicit_override"
+            if self._has_explicit_correction(user_message)
+            else ("initial_preference" if turn <= 1 else "clarification")
+        )
+        replace_values = source_type == "explicit_override"
+
+        for attr in parsed.declined_attributes:
+            if attr in set(ATTRIBUTE_ORDER):
+                state["asked_attributes"].add(attr)
+            self._erase_attribute_memory(state, attr)
+
+        grouped: dict[str, set[str]] = {}
+        for slot in parsed.positive_slots:
+            grouped.setdefault(slot.attribute, set()).add(slot.value)
+        for attr, new_values in grouped.items():
+            old_values = self._slot_values(state["disclosed_slots"].get(attr))
+            merged = new_values if replace_values else old_values | new_values
+            self._set_constraint(state, attr, merged, turn, source_type, user_message)
+
+        if "brand" in grouped:
+            # Only a brand the parser could verify against the catalogue may filter.  A soft
+            # brand stays in disclosed_slots and steers ranking; promoting it here would
+            # rebuild the hard mask the tiering just refused, and match zero products.
+            brand_values = sorted({
+                slot.value for slot in parsed.positive_slots
+                if slot.attribute == "brand" and slot.tier == "hard"
+            })
+            state["store"] = (
+                "" if not brand_values else brand_values[0] if len(brand_values) == 1 else tuple(brand_values)
+            )
+
+        self._apply_price_bounds(
+            state,
+            parsed,
+            turn,
+            source_type,
+            user_message,
+            replace=replace_values,
+        )
+
+        target_department = self._target_department_from_parser(parsed.department)
+        if target_department:
+            state["target_department"] = target_department
+            self._set_constraint(
+                state,
+                "gender",
+                target_department,
+                turn,
+                source_type,
+                user_message,
+            )
+
+        for slot in parsed.negatives:
+            normalized = _normalize(slot.value)
+            if not normalized:
+                continue
+            state["negated_terms"].add(normalized)
+            self._record_constraint(
+                state,
+                slot.attribute,
+                slot.value,
+                turn,
+                "negation",
+                polarity="negative",
+            )
+
+        if replace_values:
+            positive_values = {
+                _normalize(value)
+                for values in grouped.values()
+                for value in values
+            }
+            state["negated_terms"].difference_update(positive_values)
+            for record in state.get("constraint_provenance", []):
+                if (
+                    record.get("status") == "active"
+                    and record.get("polarity") == "negative"
+                    and _normalize(record.get("value")) in positive_values
+                ):
+                    self._revoke_constraint_record(state, record)
+
+        if parsed.model_code:
+            state["exact_terms"] = [parsed.model_code]
+
+        self._reconcile_negated_state(state, turn)
+        self._rebuild_active_terms(state)
+
+        return False
 
     def _update_state_via_llm(
         self,
