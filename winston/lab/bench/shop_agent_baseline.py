@@ -39,6 +39,18 @@ def main() -> None:
         return real_call(prompt, system_prompt, session_id=session_id, response_json=True)
     agent._call_llm = rank_only
 
+    # His Ollama branch hard-codes requests.post(..., timeout=3). An 8B JSON state
+    # update takes 5-15 s locally, so every call timed out into the static fallback
+    # and the agent ran without its state tracker (measured: 0.043, identical to the
+    # regex agent). Override the timeout IN MEMORY for the local Ollama URL only.
+    import requests
+    _post = requests.post
+    def patient_post(url, *a, **kw):
+        if "localhost:11434" in str(url) and kw.get("timeout", 0) < 180:
+            kw["timeout"] = 180
+        return _post(url, *a, **kw)
+    requests.post = patient_post
+
     cases = [json.loads(l) for l in (BENCH / "cases.jsonl").open() if l.strip()][:limit]
     done = {json.loads(l)["case_id"] for l in OUT.open()} if OUT.exists() else set()
     todo = [c for c in cases if c["case_id"] not in done]
@@ -52,7 +64,9 @@ def main() -> None:
                 resp = agent.respond(sid, c["utterance"], 1, 50)
                 ids = [r["parent_asin"] if isinstance(r, dict) else r for r in resp.get("recommendations", [])]
                 rank = ids.index(c["asin"]) + 1 if c["asin"] in ids else None
-                row = {"case_id": c["case_id"], "asin": c["asin"], "shop_agent_rank": rank}
+                model_used = (agent._sessions.get(sid, {}).get("debug_info") or {}).get("model")
+                row = {"case_id": c["case_id"], "asin": c["asin"], "shop_agent_rank": rank,
+                       "model_used": model_used}           # proves the state tracker actually ran
             except Exception as exc:            # noqa: BLE001 - a crash is a data point, not a stop
                 row = {"case_id": c["case_id"], "asin": c["asin"], "shop_agent_rank": None,
                        "error": f"{type(exc).__name__}: {exc}"[:200]}
@@ -65,7 +79,9 @@ def main() -> None:
     ranks = [r["shop_agent_rank"] for r in rows]
     hit = sum(1 for r in ranks if r and r <= 10) / len(ranks)
     mrr = sum(1 / r for r in ranks if r and r <= 10) / len(ranks)
+    from collections import Counter
     print(f"\nshop_agent on {len(rows)} messy cases: hit@10 {hit:.3f}  mrr {mrr:.3f}  errors {sum(1 for r in rows if r.get('error'))}")
+    print("model that served the state update:", dict(Counter(r.get("model_used") for r in rows)))
 
 
 if __name__ == "__main__":
