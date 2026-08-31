@@ -21,6 +21,7 @@ __pycache__/
 .ipynb_checkpoints/
 .cache/
 graphify-out/cache/ast/
+graphify-out/.graph.tmp.json
 
 # Local configuration and secret files
 .env
