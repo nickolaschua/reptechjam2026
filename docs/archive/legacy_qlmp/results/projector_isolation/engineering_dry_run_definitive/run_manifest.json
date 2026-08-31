@@ -1,0 +1,94 @@
+{
+  "b3_retrieval_steering_enabled": false,
+  "buying_or_browsing_labels": [
+    "Buying"
+  ],
+  "candidate_universe": "m0_full_catalogue",
+  "catalogue_fingerprint": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+  "catalogue_row_count": 50000,
+  "created_at_utc": "2026-08-30T08:08:33.146136+00:00",
+  "embedding_cache": {
+    "hashed": false,
+    "path": "C:\\Users\\nicko\\Desktop\\techjam26\\nickolas\\shopping_agent\\embedding_cache\\catalog_cache_openai-text-embedding-3-large.npz",
+    "reused_without_rebuild": true
+  },
+  "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+  "fixture_count": 4,
+  "fixture_sha256": "b6f445b42c555076046be7b3f20388fccbf5095f4dec5f5f0c6bd9e1d34166dc",
+  "fixture_vector_snapshot_sha256": "df68feb29af14cfb96a3ab34503cacec01cdf6bf9b15d390f01013c65b09c8ae",
+  "fixture_version": "projector-isolation-v1",
+  "label_counts": {
+    "CROSS_DOMAIN_DISTRACTOR": 5,
+    "IRRELEVANT": 0,
+    "RELEVANT_BUT_REDUNDANT": 5,
+    "SAME_CATEGORY_HARD_NEGATIVE": 8,
+    "USEFUL_ADDITIONAL_STEERING": 6
+  },
+  "local_k": 500,
+  "memory_pair_count": 24,
+  "negative_polarity_count": 0,
+  "product_families": [
+    "apparel",
+    "footwear"
+  ],
+  "product_text_fingerprint": "f219fbfbc2a99b87e638241c2206c421eb69760037f9aa3a2e8da87c36a01da0",
+  "projection_epsilon": 1e-08,
+  "projector_replay_external_calls": {
+    "llm": 0,
+    "openai": 0
+  },
+  "query_count": 4,
+  "rank": 16,
+  "run_type": "projector_isolation",
+  "sessions": [
+    "u1_stable_s5",
+    "u1_stable_s6",
+    "u1_stable_s8",
+    "u1_stable_s9"
+  ],
+  "source_freeze": {
+    "component_harness": {
+      "nickolas/shopping_agent/longitudinal_eval/build_projector_fixture.py": "b96f6f6f395fcbb5482dbb892e5ddf010334e73d46be629df80ba72f95bc4440",
+      "nickolas/shopping_agent/longitudinal_eval/qlmp_component_eval.py": "eba66d0016f275de670e5b53218617d250d84a03d917d1306f54a19cd178cd0f",
+      "nickolas/shopping_agent/run_projector_isolation.py": "c4c809df5aec8393be9818b3912e8e5a3535a92f8669709afbc088f253400981",
+      "nickolas/shopping_agent/tests/test_m0_qlmp_contract.py": "58fa9997f6965861b0cfaacbd786218b4c2472bf8765bf1bc59a28e11c648be6"
+    },
+    "generated_at_utc": "2026-08-30T08:08:33.146868+00:00",
+    "m0": {
+      "nickolas/shopping_agent/agent.py": "2d34446a4ac2b26ae36aa7e867efb5fa0380fefba53691ded171d4a70a58e9cf",
+      "nickolas/shopping_agent/agent_openai.py": "1af4729049295034d2b15071719c7dcc5aa81bc4122961d09527c871c57c2463",
+      "nickolas/shopping_agent/configs/m0_openai.json": "ad193a5363bb7c93cf2291dc0d2447773f347082a544e67286842a7132e70ee3",
+      "nickolas/shopping_agent/embedding_backends.py": "3f1eb4bd286b703fa05084bc79cfa9065ee6d24f87fef6d8e9282d1437bd93ea",
+      "nickolas/shopping_agent/run_m0.py": "01489b7330528155957c6ea6c226a31e6c9a59919458fbde5ef33b2b916cda9d",
+      "nickolas/shopping_agent/tests/test_dense_vector_interface.py": "a4e04dac85c11d9f428da293676e5fb496da218b0b06c1d9ced87494c15dc47a",
+      "nickolas/shopping_agent/tests/test_state_routing.py": "0200cdd547a29e6c508c6167e7bc0630e0572e8a40602c5cbc08060cc8122d11"
+    },
+    "qlmp_phase_1_2": {
+      "nickolas/memory/qlmp/README.md": "857b23ef43f11379ade1f35862b789a87b00d577072cf9791d74a92ac50594c6",
+      "nickolas/memory/qlmp/__init__.py": "6a2fb453b0dd5fdf6b26a70a0f537ff23c28269761d791ddaf39c041519f902b",
+      "nickolas/memory/qlmp/aggregation.py": "8bcb43c88fc4ce7e91cefb599c5e485e44113e41ca541e8e274691f7a1143ac7",
+      "nickolas/memory/qlmp/baselines.py": "fb4303ead482296796fee10f21c41dca18347cb0a1128a1f7d4b05e782aebb06",
+      "nickolas/memory/qlmp/config.py": "5f3505c7d04f62b6560eccceb9213432c2d5a59d7ba9f91da240f06cb2237964",
+      "nickolas/memory/qlmp/diagnostics.py": "737792034b76488a09c384d3e556d780ecd2c8be3cd44a13c70ec2dcb85d8215",
+      "nickolas/memory/qlmp/geometry.py": "62c50f0684f0b8740915cdad45e9ce502548aacd107504c1c23091d121f78249",
+      "nickolas/memory/qlmp/models.py": "b2399a43a90ab792ec1616545520eebf9c9333e2556239e0890129c7e4647a0d",
+      "nickolas/memory/qlmp/projection.py": "a2ef11f4e1d4340db46597cc2883e62831d6909b7338ddb0b712d43fa6141c80",
+      "nickolas/memory/qlmp/steering.py": "9fef12fb576e6ca56490653be770afacfc5f929851da4d5a9e81a56295087cad",
+      "nickolas/memory/qlmp/synthetic.py": "a60bf32841bb857562b8fc9ba52112c80688a70b106f6f5c7c72dbb013877462",
+      "nickolas/memory/qlmp/tests/test_aggregation.py": "8cefb03d6194068711bd1a01f49b4006181403ae18a56bcc444029eadc823292",
+      "nickolas/memory/qlmp/tests/test_baselines.py": "41470c38324c28a1b742beada84608b1e5859656fef3f7b492bce633ba04eb60",
+      "nickolas/memory/qlmp/tests/test_diagnostics.py": "2996aa77003cbc68c4f0327dd60ef643a1611e5b18040919007c689cdb3b8e57",
+      "nickolas/memory/qlmp/tests/test_geometry.py": "158caca64b9dcad10bd3f258884b2e0263e0ed931c53208cd0bc4ef4640869e9",
+      "nickolas/memory/qlmp/tests/test_projection.py": "f514017efb1a09416c5e7a5478e42d8d883521f112de0d2372cda93877455e56",
+      "nickolas/memory/qlmp/tests/test_steering.py": "335bfaba401b440ce865ef8ae3dcf29ab543004b76f9677bf57168f9340d2651",
+      "nickolas/memory/qlmp/tests/test_synthetic.py": "bc3ae1e3ae900792fcfddfcfa4479a6d32bcffdac81c63b745072cba444a96db"
+    }
+  },
+  "splits": [
+    "development",
+    "held_out"
+  ],
+  "users": [
+    "u1_stable"
+  ]
+}

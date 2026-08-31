@@ -1,0 +1,134 @@
+Target Product Title: Mordenmiss Women's Loose Sweatshirt Spring/Fall Simple Shirt Tops
+Target ASIN: B06XRFSDL4
+Scenario: intent_override
+Constraints: ['cotton', '90% Cotton, 10% Others']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a loose sweatshirt for women, something simple for spring or fall. ideally, it has a pull on closure, and i really want it to be mostly cotton.
+Copilot: That sounds great! Do you have a preferred color in mind for the sweatshirt?
+Copilot Attribute Query: color
+Recommendations:
+  1. Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops (ASIN: B07H7BWMQF)
+  2. YESNO Summer Dresses for Women Casual Loose Bohemian Floral Dress with Pockets Spaghetti Strap Maxi Dress E75 (ASIN: B08F5G843H)
+  3. Sarin Mathews Womens Shirts Casual Tee Shirts Short Sleeve Patchwork Color Block Loose Fits Tunic Tops Blouses (ASIN: B07TVDN6JH)
+  4. Langwyqu Womens' Cap Sleeve Casual Loose Fit Basic Shirts Tank Tops (ASIN: B096FXGVF5)
+  5. Keyocean Women Nightgowns, Soft Comfy Lightweight 100% Cotton Short Sleeves Comfy Ladies Nightdress (ASIN: B07BQK1RTD)
+  6. Keyocean Women Nightgowns, Soft 100% Cotton Lightweight Short Sleeve Night-dresses for Ladies (ASIN: B07CCLV3XP)
+  7. IZZY + TOBY 100% Cotton Nightgowns for Women Soft Ladies Gowns Sleepwear Long Sleeveless Nightgown (ASIN: B0834HZQZF)
+  8. Tutorutor Womens Summer Sleeveless V Neck Sweater Vest Fall Knitted Loose Cami Tank Tops (ASIN: B085Y3HZV2)
+  9. NEATS Nipple Covers for Women, Reusable & Hypoallergenic Silicone Pasties (ASIN: B0C8L59GRR)
+  10. Koinshha Women's Knitted Turtleneck Sweater Long Sleeve Solid Color Side Slit Pullover Ribbed Sweaters (ASIN: B0B611JGLD)
+
+--- TURN 2 ---
+Shopper: i'm not really focused on color right now, but i'm looking for something that's loose and comfy, ideally with a pull on closure. do you have anything that fits that description?
+Copilot: I found some options that might work for you! Just to narrow it down a bit, what size are you looking for in the sweatshirt?
+Copilot Attribute Query: size
+Recommendations:
+  1. Riviera Sun Dress Dresses for Women (ASIN: B0C5TKHCRK)
+  2. Asvivid Womens Casual Boho Floral Print 3/4 Flare Sleeve Blouses Summer Off The Shoulder Tops Tie Knot Shirts (ASIN: B09M84R91V)
+  3. Pink Queen Womens Loose Crew Neck Batwing Sleeve Patches Blouse Top T-Shirts (ASIN: B077JXNCPW)
+  4. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+  5. Zeagoo Women's Polka Dots Shirt Striped 3/4 Sleeve Casual Scoop Neck Tops Tee S-XXXL (ASIN: B074K2QX3M)
+  6. Zando Womens Floral Kimono Cover Ups Short Sleeve Kimono Cardigans Casual Shawl Cardigan Loose Open Front Kimono Tops (ASIN: B08S3V99RN)
+  7. icyzone Womens' Racerback Workout Athletic Running Tank Tops (Pack of 3) (ASIN: B07BZ6T96P)
+  8. Womens Casual Sweatshirts Long Sleeve Shirts Oversized With Pocket Tunic Tops S-2XL (ASIN: B08G1N5KS1)
+  9. LETDIOSTO Women's Plus Size Tops Casual Blouse Short Sleeve Lace Tunic Tops Fit Flare, M-4XL (ASIN: B09MSY8926)
+  10. VOBAGA Women's Black White Stripe Pattern Printed Loose Batwing Chiffon Blouse T-Shirt L (ASIN: B00IMV2YR6)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. also, ideally, i’d like something with a pull on closure if possible.
+Copilot: Got it! One more thing to help refine your search—do you have a preferred brand in mind for the sweatshirt?
+Copilot Attribute Query: brand
+Recommendations:
+  1. MOOSLOVER Women Casual Graphic Hoodies Sweatshirt Loose Pullover Tops Shirts with Pockets (ASIN: B08C4RG1CG)
+  2. ECOWISH Womens Halter Neck Lace Patchwork Backless Loose Tunic Tank Dress Sleeveless Casual Top Dresses (ASIN: B08BPC3LYQ)
+  3. Straight Outta Quarantine Class of 2020 Funny T-Shirt (ASIN: B0872J8KB1)
+  4. WAIZLAVIN Tunic Tops for Leggings for Women Plain 3/4 Sleeve Loose Fit T Shirt (ASIN: B07L4HCNDT)
+  5. Graphic Tees Women Summer Tops Long Sleeve Cute Shirts Blouses for Women Fashion Colorful Plus Size Loose T Tshirts (ASIN: B09B12C1Q6)
+  6. I2CRAZY Womens Casual Tops Cute Twist Knot Crew Neck Tops for Women-XL, (ASIN: B08164N7MM)
+  7. Tabeez Women's Casual 3/4 Sleeve and Long Sleeve Loose Bubble Jersey Shift Cocoon Midi Dress (Made in The USA) (ASIN: B076JHHSYZ)
+  8. Aleumdr Women Letter Print Hooded Collar Yellowstone Sweatshirt with Pockets Fall Winter Casual Loose Hoodie Sky Blue Medium 8 10 (ASIN: B08L6KV83T)
+  9. ASYOLY Red Blouses for Women Short Sleeve Cold Shoulder Tops Side Buttons Casual Twisted Shirts Tunic Tunic Tops for Leggings Medium (ASIN: B083DN341J)
+  10. COOTRY Split Open Back Workout Tops for Women Long Sleeve Yoga Tops Split Back T-Shirts Athletic Tunis Tops Athleisure Womens Clothes for Gym Running Exercise Sports White Medium (ASIN: B08VFKBZ7Q)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. SAMACHICA Women Sleeveless Pocket Ankle Length Loose Casual Pullover Long Hoodie Dress Gray Medium (ASIN: B0C582Z9PV)
+  2. Nandashe Polka Dot Shirts for Women, Summer Juniors Vintage 3 4 Sleeve Loose Comfortable Cotton Blend Black Button Tshirt 1920s Dressy Blouses Medium (ASIN: B07DJ1PGVT)
+  3. Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops (ASIN: B07H7BWMQF)
+  4. ECOWISH Womens Halter Neck Lace Patchwork Backless Loose Tunic Tank Dress Sleeveless Casual Top Dresses (ASIN: B08BPC3LYQ)
+  5. Evobak Women's Long Sleeve V-Neck Shirts Tunic Blouse Loose Casual Tee T-Shirt (ASIN: B08CR9R1YV)
+  6. Genérico -Fashion Puff Long Sleeve Formal Loose Blouse, Loose Stand-up Collar Floral Print Shirt (ASIN: B09Y42KFK7)
+  7. Soesdemo Women’s Summer Spaghetti Strap V Neck Embroidered Rompers Loose Casual Short Jumpsuit Playsuit with Pockets (ASIN: B07RMFZPX9)
+  8. Womens Leopard Print Tunic Top Casual Long Sleeve Shirt Pullover Leopard Color Block Tops (O-Neck Pink, Medium) (ASIN: B07Y21DQX4)
+  9. Muhadrs Women's Long/Short Sleeve Casual Tunic Tops Loose Blouse Shirts with Pockets (ASIN: B07VBZG1WN)
+  10. Womens Cotton Tank Top Loose Cami Shirt Scoop Neck Pleated, Black, Size X-Large (ASIN: B07DCB85D3)
+
+--- TURN 5 ---
+Shopper: none of these really match what i'm looking for. i'm hoping to find something that's mostly cotton, ideally with a pull on closure. do you have any options like that?
+Copilot: I understand you're looking for a medium-sized sweatshirt made mostly of cotton with a pull-on closure. Just to refine your search further, what’s your budget for this sweatshirt?
+Copilot Attribute Query: budget
+Recommendations:
+  1. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  2. Hanes Men's Underwear Briefs Pack, Mid-Rise, Moisture-Wicking, 6-Pack (ASIN: B088QF5G58)
+  3. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  4. Fruit of the Loom Men's Tag-Free Tank A-Shirt (ASIN: B008U7KRBW)
+  5. Jerzees Men's Short Sleeve Polo Shirts, SpotShield Stain Resistant, Sizes S-5X (ASIN: B0BXXH77N8)
+  6. Lildy Women's Denim Jeggings, Stretchable Cotton Blend (ASIN: B07VXRB6NG)
+  7. INTO THE AM Mens T Shirt - Short Sleeve Crew Neck Soft Fitted Tees S - 4XL Fresh Classic Tshirts (ASIN: B09MVF4SDH)
+  8. HILEELANG Boys Long Sleeve Tops Tees Shirts Graphic Cotton Casual Crewneck T-Shirts Sets 3 Packs (ASIN: B08DCWH1DT)
+  9. Hanes Women's Value, Crew Soft Moisture-Wicking Socks, Available in 10 and 14-Packs (ASIN: B0C5RLJDSF)
+  10. Chaps Men's Marl Low Cut Dress Socks - 3 Pair Pack - Casual Assorted (ASIN: B07B4NNL91)
+
+--- TURN 6 ---
+Shopper: i'm not really looking for any of those. i'm focused on a loose sweatshirt, ideally with a pull-on closure. do you have anything that fits that style?
+Copilot: I see you're focused on a loose sweatshirt with a pull-on closure. Could you let me know if you have a preferred material in mind, aside from cotton?
+Copilot Attribute Query: material
+Recommendations:
+  1. Riviera Sun Dress Dresses for Women (ASIN: B0C5TKHCRK)
+  2. Asvivid Womens Casual Boho Floral Print 3/4 Flare Sleeve Blouses Summer Off The Shoulder Tops Tie Knot Shirts (ASIN: B09M84R91V)
+  3. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+  4. Pink Queen Womens Loose Crew Neck Batwing Sleeve Patches Blouse Top T-Shirts (ASIN: B077JXNCPW)
+  5. Zeagoo Women's Polka Dots Shirt Striped 3/4 Sleeve Casual Scoop Neck Tops Tee S-XXXL (ASIN: B074K2QX3M)
+  6. Zando Womens Floral Kimono Cover Ups Short Sleeve Kimono Cardigans Casual Shawl Cardigan Loose Open Front Kimono Tops (ASIN: B08S3V99RN)
+  7. icyzone Womens' Racerback Workout Athletic Running Tank Tops (Pack of 3) (ASIN: B07BZ6T96P)
+  8. LETDIOSTO Women's Plus Size Tops Casual Blouse Short Sleeve Lace Tunic Tops Fit Flare, M-4XL (ASIN: B09MSY8926)
+  9. Womens Casual Sweatshirts Long Sleeve Shirts Oversized With Pocket Tunic Tops S-2XL (ASIN: B08G1N5KS1)
+  10. VOBAGA Women's Black White Stripe Pattern Printed Loose Batwing Chiffon Blouse T-Shirt L (ASIN: B00IMV2YR6)
+
+--- TURN 7 ---
+Shopper: i'm really looking for something that's mostly cotton, ideally with that pull-on style. do you have anything like that?
+Copilot: Got it! You're looking for a loose sweatshirt with a pull-on closure, primarily made of cotton. Would you be interested in any specific features like pockets or a certain length?
+Copilot Attribute Query: other
+Recommendations:
+  1. YESNO Summer Dresses for Women Casual Loose Bohemian Floral Dress with Pockets Spaghetti Strap Maxi Dress E75 (ASIN: B08F5G843H)
+  2. Sarin Mathews Womens Shirts Casual Tee Shirts Short Sleeve Patchwork Color Block Loose Fits Tunic Tops Blouses (ASIN: B07TVDN6JH)
+  3. Langwyqu Womens' Cap Sleeve Casual Loose Fit Basic Shirts Tank Tops (ASIN: B096FXGVF5)
+  4. Keyocean Women Nightgowns, Soft Comfy Lightweight 100% Cotton Short Sleeves Comfy Ladies Nightdress (ASIN: B07BQK1RTD)
+  5. Keyocean Women Nightgowns, Soft 100% Cotton Lightweight Short Sleeve Night-dresses for Ladies (ASIN: B07CCLV3XP)
+  6. IZZY + TOBY 100% Cotton Nightgowns for Women Soft Ladies Gowns Sleepwear Long Sleeveless Nightgown (ASIN: B0834HZQZF)
+  7. Tutorutor Womens Summer Sleeveless V Neck Sweater Vest Fall Knitted Loose Cami Tank Tops (ASIN: B085Y3HZV2)
+  8. NEATS Nipple Covers for Women, Reusable & Hypoallergenic Silicone Pasties (ASIN: B0C8L59GRR)
+  9. Koinshha Women's Knitted Turtleneck Sweater Long Sleeve Solid Color Side Slit Pullover Ribbed Sweaters (ASIN: B0B611JGLD)
+  10. NACHILA Women's Bamboo Viscose T-Shirt Soft Short Sleeve Lounge Top Casual Pajamas Tops Stretch Pjs Shirt S-XL (ASIN: B08GPJY45B)
+
+--- TURN 8 ---
+Shopper: none of these seem right. i'm really looking for a loose sweatshirt that's mostly cotton and has a pull-on style. do you have anything like that?
+Copilot: I understand you're looking for a loose sweatshirt that's primarily cotton with a pull-on style. How about considering the sleeve length? Would you prefer short sleeves, long sleeves, or something else?
+Copilot Attribute Query: other
+Recommendations:
+  1. Disney Boys' Mickey Mouse 2-Piece Snug-fit Cotton Pajamas Set (ASIN: B093X5TG3L)
+  2. Jescakoo Womens V Neck Tshirts Short Sleeve Tops Casual Loose Fit (ASIN: B08T8YBQ88)
+  3. Mordenmiss Women's Loose Sweatshirt Spring/Fall Simple Shirt Tops (ASIN: B06XRFSDL4)
+  4. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  5. BALEAF Women's Pima Cotton Workout Tank Tops Double Slit Athletic Yoga Running Casual Sleeveless Shirts (ASIN: B0BNL36ZCG)
+  6. AmeriMark Women's Short Sleeve Knit Sun Dress Knee Length Dress with Shirring (ASIN: B07X6D79LQ)
+  7. Under Armour Men's Project Rock Show Your BSR Sweat Activated Graphic Tank Top (ASIN: B09SQ31BCN)
+  8. Romwe Women's Loose Tee Short Sleeve V Neck T-Shirt Casual Top White L (ASIN: B01FU56JPO)
+  9. Under New Management T-Shirt - Funny Wedding Gift Bachelor Party Tee (ASIN: B06XWGFDJ9)
+  10. Zahrajia Women's Tank Tops V Neck Summer Sleeveless Solid Color Casual Loose Shirt Blouses (ASIN: B09R1KXRHC)
+
+=== RESULT: SUCCESS (Turn 8) ===

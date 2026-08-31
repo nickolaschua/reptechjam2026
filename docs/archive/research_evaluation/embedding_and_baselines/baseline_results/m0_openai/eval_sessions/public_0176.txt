@@ -1,0 +1,22 @@
+Target Product Title: adidas Originals Originals Sport Waist Pack
+Target ASIN: B0C3MKNZJN
+Scenario: browsing
+Constraints: ['polyester', '93% Polyester, 3% Natural Latex Rubber, 2% Spandex, 2% Nylon']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a small waist pack that i can wear either around my waist or as a crossbody. it should be made of polyester and have a zip closure.
+Copilot: Great! Do you have a preferred color for the waist pack?
+Copilot Attribute Query: color
+Recommendations:
+  1. Tobrief Women's Sexy Wrap V Neck Short Flutter Sleeve Mini Satin Dress with Belt (ASIN: B08HCVH3ZR)
+  2. Fluffy Christmas Elk Clutch Small Round Cell Phone Holder Shoulder Handbag (ASIN: B08JGJQTWB)
+  3. adidas Originals Originals Sport Waist Pack (ASIN: B0C3MKNZJN)
+  4. Lug Women's Can 2 Convertible Crossbody Bag & Waist Bag (ASIN: B09FMGWXSC)
+  5. TINYAT Fanny Bag Waist Pack Sling Backpack Water Resistant Durable Polyester Small Outdoor Lightweight Crossbody Daypack for Women Men T213 (ASIN: B07C8HG5MY)
+  6. GEEAD Fanny Packs for Women Fashion Waist Bag Leather Belt Bum Bag Waterproof (ASIN: B07F71PP3S)
+  7. Nopuper Mens 2-Pack Casual Cotton Shorts Comfy Workout Sweat Shorts 7 inches with Zipper Pockets Elastic Waist (ASIN: B0B22NRC7X)
+  8. Heated Hoodie with USB 5V 10000mAh Battery Pack Men and Women (Unisex) Washable Zip Fleece Hooded Sweatshirt (ASIN: B09SS262CG)
+  9. Women's Crop Zip Up Hoodie Pocket Winter Pacthwork Long Sleeve Keep Cat Ears Warm Coat Tshirts Shirts (ASIN: B0BGL7N9FY)
+  10. Lovezesent Women's High Waist A-Line Pleated Midi Skirt Dresses (ASIN: B01JLRJ2CY)
+
+=== RESULT: SUCCESS (Turn 1) ===

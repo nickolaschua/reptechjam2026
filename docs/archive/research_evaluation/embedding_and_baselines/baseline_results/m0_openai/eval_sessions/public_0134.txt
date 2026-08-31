@@ -1,0 +1,22 @@
+Target Product Title: YOFANST 2pcs-12pcs Double Flare Stainless Steel Tunnels Gauges Screwed Gem Rhinestones Tunnels Plugs Stretcher Jewelry
+Target ASIN: B081SF3QRL
+Scenario: browsing
+Constraints: ['Gauge in Choice: 8g(3mm), 6g(4mm), 4g(5mm), 2g(6mm), 0g(8mm), 00g(10mm), 1/2"(12mm), 9/16"(14mm)', 'You will get 3 pairs fashion gem double flare screw-fit tunnels in same size, in same color']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some double flare tunnels with rhinestones. i need a few different gauge sizes, like 8g up to 00g, and i want them to come in the same size and color.
+Copilot: That sounds great! Just to narrow it down a bit, do you have a specific color in mind for the rhinestones?
+Copilot Attribute Query: color
+Recommendations:
+  1. YOFANST 2pcs-12pcs Double Flare Stainless Steel Tunnels Gauges Screwed Gem Rhinestones Tunnels Plugs Stretcher Jewelry (ASIN: B081SF3QRL)
+  2. Crystal Rhinestones Ear Tunnels Plugs Expander Gauges Stretcher Earrings Screw Stainless Steel Piercing Body Jewelry(3/4"(20mm)) (ASIN: B07JXS7DXW)
+  3. Crystal Ear Tunnels (2g(6mm)) (ASIN: B07JNVT2NL)
+  4. BodyJ4You 36PC Gauges Kit Ear Stretching 8G-00G Color Splash Acrylic Spiral Tapers Plugs Body Piercing (ASIN: B0182OKCD0)
+  5. Oyaface 36 PCS Big Gauges Ear Stretching Kit 00G-20mm Acrylic Tapers Plugs Silicone Tunnels Piercing Set (ASIN: B07ZM7XV2C)
+  6. FLYUN Ear Gauges Plugs and Tunnels Ear Stretcher Expander 6mm-25mm Double Flared Screw Plug Piecing Jewelry (ASIN: B088QKVJHS)
+  7. YOFANST Ear Stretching Kit 70 Pieces 14G-00G Ear Gauges Expander Set Acrylic Tapers Plugs Spiral Crescent Piercing Jewelry (ASIN: B08Z75CC6R)
+  8. Yr Fashion Stainless Steel Dangle Earrings Double Flared Tunnels for Ears Piercing Gauge 0g-16mm (ASIN: B07N38CB41)
+  9. Longbeauty 2Pairs Single Flared Stainless Steel Ear Plugs Tunnels Stretcher with O-Ring(4 Colors,6 Combinations) (ASIN: B0725C9JXM)
+  10. Pair (2) Stainless Steel Hexagon Shape Ear Plugs Hollow Tunnels Screw Look Double Flared Gauges- 00G 10MM (ASIN: B00DDO844O)
+
+=== RESULT: SUCCESS (Turn 1) ===

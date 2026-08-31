@@ -118,7 +118,7 @@ def discover_cache_path(catalog_path: Path) -> Path | None:
         f"seq{MINILM_MAX_SEQUENCE_LENGTH}.npy"
     )
     for ancestor in catalog_path.resolve().parents:
-        candidate = ancestor / "nickolas" / "results" / "cache" / name
+        candidate = ancestor / "docs" / "archive" / "research_evaluation" / "cache" / name
         if candidate.is_file():
             return candidate
     return None
@@ -128,7 +128,7 @@ def discover_local_model(catalog_path: Path, config: MemoryConfig) -> Path | Non
     if config.embedding_model_id != MINILM_MODEL_ID:
         return None
     relative = Path(
-        "nickolas/results/cache/models/"
+        "docs/archive/research_evaluation/cache/models/"
         "models--sentence-transformers--all-MiniLM-L6-v2/snapshots"
     )
     for ancestor in catalog_path.resolve().parents:

@@ -1,0 +1,22 @@
+Target Product Title: Proud Army Girlfriend US Flag Dog Tags Pride Military Lovers Zip Hoodie
+Target ASIN: B07XT6PLTB
+Scenario: browsing
+Constraints: ['cotton', 'color: grey']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a zip hoodie that's comfy and made of cotton. ideally, it would be grey and have a cool design, maybe something related to the army or military.
+Copilot: I found a great option for you! Check out the Proud Army Girlfriend US Flag Dog Tags Pride Military Lovers Zip Hoodie. It’s comfy and has that military vibe you’re looking for. What size do you need?
+Copilot Attribute Query: size
+Recommendations:
+  1. Fall Jackets for Women Fashion Petite to Plus Size Full Zip Down Puffer Jacket Long Length Stand Collar Long Pea Coat (ASIN: B0BB7F1PX3)
+  2. Ripple Junction Men’s Naruto Shippuden Cosplay Military-Style Hoodie (ASIN: B01789QZB8)
+  3. Softball Short Sleeve T-Shirt Small Town Girl Big Time Game Hitter Pitcher Fast Pitch Travel Ball League Team Tee Shirt (ASIN: B0B784PZNC)
+  4. Purple Heart T-Shirt Military Veteran Tee (ASIN: B0748F16XQ)
+  5. Proud Army Girlfriend US Flag Dog Tags Pride Military Lovers Zip Hoodie (ASIN: B07XT6PLTB)
+  6. Mens Camouflage T Shirts Tops Short Sleeve Crewneck Gym Tees Military Shirts (ASIN: B08LPR9ML3)
+  7. Propper Men's Long Sleeve Tactical Dress Shirt, Dark Grey, 3X Large Regular (ASIN: B001EJ7NU6)
+  8. Thaluta Women's Harem Pants Comfy Drawstring Yoga Cotton Boho Trousers with Pockets Grey (ASIN: B07F78MN24)
+  9. F-4U Corsair WWII Aircraft T Shirt (ASIN: B06XKL4L8S)
+  10. Patriotic A-10 Warthog jet American flag t-shirt (ASIN: B0755GCKZZ)
+
+=== RESULT: SUCCESS (Turn 1) ===

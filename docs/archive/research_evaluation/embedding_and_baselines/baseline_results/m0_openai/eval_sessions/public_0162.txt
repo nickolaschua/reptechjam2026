@@ -1,0 +1,22 @@
+Target Product Title: Satin Silk Slip Maxi Dress for Wedding Guest Women- Cowl Neck Pleated Bust Split Wedding Guest Cocktail Midi Dresses
+Target ASIN: B0B71JNMQY
+Scenario: browsing
+Constraints: ['silk', 'Satin']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a dress for a wedding. i really want something in silk or satin, maybe with a nice cowl neck and some pleating at the bust.
+Copilot: That sounds lovely! Do you have a specific color in mind for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. Satin Silk Slip Maxi Dress for Wedding Guest Women- Cowl Neck Pleated Bust Split Wedding Guest Cocktail Midi Dresses (ASIN: B0B71JNMQY)
+  2. MAXMODA Silk Pajama Set Womens Sexy Lingerie Cowl Neck Cami Shorts Set Satin Sleepwear 2 Piece Pjs Nightwear XS-XXL (ASIN: B0B457FN69)
+  3. Womens Spaghetti Strap Cowl Neck Backless Split Satin Cami Ruched Bodycon Smocked Short Mini Dress (ASIN: B0BBRKC345)
+  4. BEAUTYVAN Women's Tie Dye Long Sleeve Loose Fit Sweatshirts Casual Pullover Top Blouse (ASIN: B07TXJ8D5J)
+  5. Sunmoot Clearance: Plus Size Cat Ear Hooded T-Shirt for Women - Casual Summer Cartoon Print, Side Pockets, Short Sleeve, Gray (ASIN: B07Q45QGFJ)
+  6. Keatvoic Women’s Adjustable Spaghetti Straps Cami Dress Side Slit Cowl Neck Bodycon Dress Solid Slip Satin Mini Dress (ASIN: B09C42HWF6)
+  7. IN'VOLAND Plus Size Women's Satin Nightgown 3/4 Sleeve Sleepwear Silk Sleep Shirt V-neck Nightdress (ASIN: B09PVN6XGB)
+  8. AUQCO Silk Tank Top for Women Sexy V-Neck Satin Camisole with Soft Satin Sleeveless Tank Cami Top (ASIN: B07SFM5N3G)
+  9. SweatyRocks Women's Cowl Neck Criss Cross Back Satin Nightgown Spaghetti Strap Sleep Dress (ASIN: B0B5SPBZW4)
+  10. Ekouaer Womens Tank Tops Silk Satin Casual Cami Sleeveless (ASIN: B09WQY8456)
+
+=== RESULT: SUCCESS (Turn 1) ===

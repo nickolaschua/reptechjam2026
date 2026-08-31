@@ -1,0 +1,22 @@
+Target Product Title: LETDIOSTO Women's Plus Size Tops Casual Blouse Short Sleeve Lace Tunic Tops Fit Flare, M-4XL
+Target ASIN: B09MSY8926
+Scenario: boundary
+Constraints: ['polyester', '3X women tops care: Hand wash or machine wash in gentle; Hang to dry; No ironing; No shrinkage']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual blouse that's plus size, preferably with short sleeves and some lace details. it should be comfortable and made of polyester.
+Copilot: That sounds lovely! Do you have a specific color in mind for the blouse?
+Copilot Attribute Query: color
+Recommendations:
+  1. LETDIOSTO Women's Plus Size Tops Casual Blouse Short Sleeve Lace Tunic Tops Fit Flare, M-4XL (ASIN: B09MSY8926)
+  2. Womens Casual Elastic Waist Stripe Skirt Stretch Hight Waist Stripe Maxi Long Skirts with Pockets (ASIN: B07GSRCS5X)
+  3. Behkiuoda Women Bohemia Dress with Lace Double Layered Ruffled Long Dress Sleeveless Long Dress (ASIN: B07NXXN214)
+  4. LINKIOM Hidden Pocket Yoga Pants, Women's High Waist and Tight Fitness Nude Yoga Pants (ASIN: B08311BJQ2)
+  5. Ruhiku GW Clearance Women Tank Tops Sleeveless T-Shirt Blouse Casual Vest Tops Loose Summer Shirts (ASIN: B07D2BHGLG)
+  6. IMIDO Womens Tops Plus Size Tie-Dye Floral V Neck Tee Shirts Casual Soft Buttons up Tunic Short/Long Sleeve (ASIN: B07J5RFSRL)
+  7. obaSeteck Goth Dress for Women Plus Size Halloween Lace Mesh Patchwork Sleeveless Camisole Mini Dresses (ASIN: B0BHJJM424)
+  8. Women's Cute Color Block Long Sleeve Plaid Button Down Blouse Chest Pockets Boyfriend Long Sleeve Oversized Shacket Tops (ASIN: B09GG6ZZXM)
+  9. Women's Short Sleeve V Neck Lace T-Shirt Office Tunic Plus Size Tops Rockabilly Sweatshirt Tropical Tops Basic Tees E. (ASIN: B0B31LR7G4)
+  10. Womens Summer Dress Sleeveless Boho Floral Print Mini Tank Dress Plus Size Beach Casual Sundress Short Dress (ASIN: B07FXFCW4Q)
+
+=== RESULT: SUCCESS (Turn 1) ===

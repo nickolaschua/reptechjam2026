@@ -1,0 +1,22 @@
+Target Product Title: The Children's Place Boys' Pull on Cargo Pants
+Target ASIN: B08KKBBMMD
+Scenario: browsing
+Constraints: ['cotton', 'Imported']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some boys' pants, specifically cargo style. they need to be made of cotton and preferably imported.
+Copilot: Great choice! What color are you looking for in the cargo pants?
+Copilot Attribute Query: color
+Recommendations:
+  1. The Children's Place Boys' Pull on Cargo Pants (ASIN: B08KKBBMMD)
+  2. Nautica Boys' Two Piece Solid Tee with Cargo Bottom (ASIN: B015UIT980)
+  3. Men's Punk Pants, Vintage Gothic Steampunk Slim Fit Leather Leggings Long Pants Hip Hop Skinny Running Jogger Trouser (ASIN: B09NB7MT7M)
+  4. The Children's Place Baby Boys Roll Up Solid Cargo Pants (ASIN: B07GK92LZQ)
+  5. Daniel Jacob Big Boys' Husky Ripstop Cargo Shorts Full Elastic (ASIN: B00XWLCCY6)
+  6. Gymboree Boys' Heather Cargo Pant (ASIN: B01JW0XPI2)
+  7. Thrill Jeans Boy's Premium Loop Terry Jogger Pants (ASIN: B0115EBGIY)
+  8. Carhartt Men's 11" Cotton Ripstop Cargo Work Short (ASIN: B006TC6Q1K)
+  9. Unionbay Young Men's Lewis Belted Cargo Short (ASIN: B00PI7V5CC)
+  10. EULLA Baby Toddler Little Boys Shorts Elastic Waist Pull-on Short 2T 3T 4T 5T 6T 7T (ASIN: B083FDL6WF)
+
+=== RESULT: SUCCESS (Turn 1) ===

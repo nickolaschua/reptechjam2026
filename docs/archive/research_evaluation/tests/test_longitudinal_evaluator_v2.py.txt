@@ -1,0 +1,158 @@
+from __future__ import annotations
+
+from copy import deepcopy
+import json
+from pathlib import Path
+
+import numpy as np
+import pytest
+
+from nickolas.shopping_agent.agent import ForensicRankingSnapshot
+from nickolas.shopping_agent.longitudinal_eval.evaluator_v2 import (
+    FIXTURE_SCHEMA_VERSION, assert_paired_ranking_invariants, build_metrics,
+    distribution, metric_summary, rank_rows, raw_and_penalized_rank, tied_auc,
+    validate_fixture_v2, vector_reference, verify_bundle,
+    verify_vector_reference, write_bundle,
+)
+from nickolas.shopping_agent.run_longitudinal_eval import (
+    PAIRED_RESPONSE_PROSE, _memory_description, _record_agent_llm_calls,
+    _replay_agent_llm_calls,
+)
+from nickolas.shopping_agent.memory_store import InMemoryVectorMemoryStore
+
+
+ROOT = Path(__file__).parents[1]
+FIXTURE = ROOT / "longitudinal_eval" / "users_40_v2.json"
+
+
+def test_frozen_v2_fixture_shape_and_rejections():
+    fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    result = validate_fixture_v2(fixture)
+    assert result["valid"]
+    assert result["scenario_counts"] == {name: 10 for name in (
+        "LONGITUDINAL_POSITIVE", "MEMORY_IRRELEVANT", "CURRENT_OVERRIDE",
+        "BROWSING_PERSONALIZATION")}
+    broken = deepcopy(fixture)
+    broken["users"][0]["sessions"][2]["scripted_turns"][0] += " waterproof"
+    assert not validate_fixture_v2(broken)["valid"]
+    broken = deepcopy(fixture)
+    broken["users"][20]["sessions"][2]["history_matching_current_conflicting_asins"] = []
+    assert not validate_fixture_v2(broken)["valid"]
+
+
+def test_serializer_is_truthful_vector_state_not_fake_item():
+    store = InMemoryVectorMemoryStore()
+    commit = store.commit(user_id="u", session_id="s", sequence_index=0,
+                          embedding_space_id="space", new_preferences=np.array([1, 0], np.float32))
+    description = _memory_description(commit)
+    assert description["user_id"] == "u"
+    assert description["vector_version"] == "gated-vector-memory-v2"
+    assert len(description["vector_sha256"]) == 64
+    assert "id" not in description and "text" not in description
+
+
+class _Calls:
+    def __init__(self):
+        self._call_llm = lambda *args, **kwargs: "parsed"
+
+
+def test_paired_call_tape_records_parser_only_and_stubs_prose():
+    tape = []
+    first = _Calls()
+    assert _record_agent_llm_calls(first, tape)
+    assert first._call_llm("rank-dependent", response_json=False) == PAIRED_RESPONSE_PROSE
+    assert tape == []
+    assert first._call_llm("parser", "system", session_id="s", response_json=True) == "parsed"
+    assert len(tape) == 1
+    replay = _Calls(); state = {"index": 0, "prompt_mismatches": []}
+    _replay_agent_llm_calls(replay, tape, state)
+    assert replay._call_llm("other ranking prompt", response_json=False) == PAIRED_RESPONSE_PROSE
+    assert replay._call_llm("parser", "system", session_id="s", response_json=True) == "parsed"
+    with pytest.raises(RuntimeError, match="extra LLM call"):
+        replay._call_llm("parser", "system", session_id="s", response_json=True)
+
+
+def _snapshot() -> ForensicRankingSnapshot:
+    matrix = np.asarray([[1, 0], [1, 0], [0, 1], [-1, 0]], np.float32)
+    v1, v2 = np.asarray([1, 0], np.float32), np.asarray([.6, .8], np.float32)
+    s1, s2 = matrix @ v1, matrix @ v2
+    s3 = .8 * s1 + .2 * s2
+    mask = np.asarray([True, True, True, False])
+    asins = ["b", "a", "c", "d"]
+    return ForensicRankingSnapshot("s", 1, {"category": "x"}, v1, v2, s1, s2, s3,
+                                   np.ones(4, bool), mask, mask,
+                                   rank_rows(s1, mask, asins), rank_rows(s3, mask, asins),
+                                   .6, True, .8, .2)
+
+
+def test_score_eligible_separation_stable_ties_and_real_drift_rejection():
+    snap = _snapshot(); asins = ["b", "a", "c", "d"]
+    matrix = np.asarray([[1, 0], [1, 0], [0, 1], [-1, 0]], np.float32)
+    checks = assert_paired_ranking_invariants(snap, asins, matrix, required_rows=4)
+    assert all(checks.values())
+    assert snap.m0_ranked_rows.tolist() == [1, 0, 2]
+    with pytest.raises(RuntimeError, match="embedding_scores"):
+        assert_paired_ranking_invariants(snap, asins, matrix[[2, 1, 0, 3]], required_rows=4)
+
+
+def test_relevant_metrics_penalty_quantiles_and_tied_auc():
+    rows = [
+        {"m0_relevant_rank": 5, "m3_relevant_rank": 1, "m0_penalized_rank": 5,
+         "m3_penalized_rank": 1, "gate_passed": True},
+        {"m0_relevant_rank": None, "m3_relevant_rank": None, "m0_penalized_rank": 11,
+         "m3_penalized_rank": 11, "gate_passed": False},
+    ]
+    summary = metric_summary(rows)
+    assert summary["m3"]["relevant_set_hit_at_1"] == .5
+    assert summary["relevant_set_help_rate"] == .5
+    assert raw_and_penalized_rank(["a", "b"], ["z"], 2) == (None, 3)
+    stats = distribution([0, 10])
+    assert stats["p10"] == 1 and stats["median"] == 5
+    assert tied_auc([1, 2], [1, 1]) == .75
+
+
+def _metric_rows():
+    rows = []
+    for scenario, behavior, mode, relation in (
+        ("LONGITUDINAL_POSITIVE", "HELP", "Buying", "RELEVANT"),
+        ("MEMORY_IRRELEVANT", "IGNORE", "Buying", "IRRELEVANT"),
+        ("CURRENT_OVERRIDE", "DO_NOT_OVERRIDE", "Buying", "CONFLICTING"),
+        ("BROWSING_PERSONALIZATION", "PERSONALIZE", "Browsing", "RELEVANT"),
+    ):
+        rows.append({"record_type": "probe", "session_id": scenario, "scenario_class": scenario,
+                     "expected_behavior": behavior, "buyer_mode": mode, "memory_relation": relation,
+                     "gate_cosine": .5 if relation == "RELEVANT" else 0.0, "gate_passed": relation == "RELEVANT",
+                     "eligible_count": 3, "m0_relevant_rank": 2, "m3_relevant_rank": 1,
+                     "m0_penalized_rank": 2, "m3_penalized_rank": 1,
+                     "m0_target_rank": 2, "m3_target_rank": 1, "relevant_asins": ["a"]})
+    return rows
+
+
+def test_vector_reference_bundle_replay_and_tamper_detection(tmp_path):
+    rows = _metric_rows(); arrays = {"catalog_asins": np.asarray(["a", "b", "c"])}
+    for index, row in enumerate(rows):
+        for key, value in (("s1", np.array([.5, 1., 0.], np.float32)),
+                           ("s3", np.array([1., .5, 0.], np.float32)),
+                           ("eligibility", np.ones(3, bool))):
+            name = f"r{index}_{key}"; arrays[name] = value
+            row.setdefault("array_references", {})[key] = vector_reference(name, value)
+    fixture = tmp_path / "fixture.json"; fixture.write_text("{}")
+    catalog = tmp_path / "catalog"; catalog.write_text("catalog")
+    cache = tmp_path / "cache"; cache.write_text("cache")
+    write_bundle(tmp_path / "bundle", rows=rows, arrays=arrays, fixture_path=fixture,
+                 catalog_path=catalog, embedding_cache_path=cache, embedding_space_id="space")
+    assert verify_bundle(tmp_path / "bundle")["valid"]
+    with np.load(tmp_path / "bundle" / "vectors.npz", allow_pickle=False) as loaded:
+        assert verify_vector_reference(rows[0]["array_references"]["s1"], loaded)
+    metrics = tmp_path / "bundle" / "metrics.json"
+    metrics.write_text(metrics.read_text() + " ")
+    assert not verify_bundle(tmp_path / "bundle")["valid"]
+
+
+@pytest.mark.parametrize("behavior,m0,m3,expected", [
+    ("HELP", 5, 1, .8), ("IGNORE", 2, 2, 0),
+    ("DO_NOT_OVERRIDE", 1, 1, 0), ("PERSONALIZE", 4, 2, .25),
+])
+def test_toy_mechanism_cases(behavior, m0, m3, expected):
+    delta = 1 / m3 - 1 / m0
+    assert delta == pytest.approx(expected)

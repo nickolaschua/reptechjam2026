@@ -1,0 +1,22 @@
+Target Product Title: RockDove Women's Nomad Slipper with Memory Foam
+Target ASIN: B08CTFPBN5
+Scenario: browsing
+Constraints: ['Sherpa Fleece', 'Rubber sole']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some cozy slippers for women. they need to have a rubber sole and be made of sherpa fleece for that warm, soft feel.
+Copilot: That sounds cozy! What color are you looking for in your slippers?
+Copilot Attribute Query: color
+Recommendations:
+  1. RockDove Women's Nomad Slipper with Memory Foam (ASIN: B08CTFPBN5)
+  2. Homeier Ralph Women’s Cozy Comfy Chenille Slippers Luxury Sherpa Fleece House Shoes Indoor Outdoor Closed Back (ASIN: B08C76ND5Y)
+  3. Zizor Women's Adjustable Strap Closed Back Slipper with Memory Foam, Ladies' Cozy House Slipper for Indoor Outdoor (ASIN: B09RZJ3P96)
+  4. Snug Leaves Women's Fuzzy Woolen Memory Foam Slippers with Dual Side Elastic Gores (ASIN: B07ZSDWSZZ)
+  5. HomeTop Women's Men's Sharon Memory Foam Moc Slipper with Genuine Suede Mudguard (ASIN: B08GC1PJG5)
+  6. KuaiLu Womens Cozy Memory Foam Slippers, Ladies Plaid House Slippers, Comfy Arch Support Bedroom Slippers, Slip on Warm Fuzzy Lined Winter Home Shoes with Non-slip Indoor Outdoor Hard Rubber Sole (ASIN: B0BB69XF89)
+  7. Snoozies Womens Fleece Lined Footies, Farm Life Collection (ASIN: B00B50RJ5I)
+  8. Acorn Women's Drew (ASIN: B004T0YCSS)
+  9. DUOYANGJIASHA Women's House Shoes Comfort Fleece Memory Foam Slippers Fuzzy Plush Slip on Warm Slippers Lining Indoor Outdoor Black (ASIN: B08D794LZ9)
+  10. Fupoia Women Slippers Bootie Fleece Mid-culf Slippers for Women Memory Foam Winter Nonslip Chenille House Bootie Shoes Pink Size 9-10 (ASIN: B093GZXC8J)
+
+=== RESULT: SUCCESS (Turn 1) ===

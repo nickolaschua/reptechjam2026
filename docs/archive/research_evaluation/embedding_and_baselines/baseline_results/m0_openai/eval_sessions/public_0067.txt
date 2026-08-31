@@ -1,0 +1,22 @@
+Target Product Title: TLZC Men's Lightweight Bomber Jacket Windbreaker Slim Fit Active Coat Outerwear
+Target ASIN: B09G9BXJZM
+Scenario: buying
+Constraints: ['polyester', 'Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a lightweight bomber jacket, and it has to be made of polyester. any suggestions?
+Copilot: Sure! Do you have a preferred color for the bomber jacket?
+Copilot Attribute Query: color
+Recommendations:
+  1. TLZC Men's Lightweight Bomber Jacket Windbreaker Slim Fit Active Coat Outerwear (ASIN: B09G9BXJZM)
+  2. Andrew Marc Men's Light Weight Bomber Jacket (ASIN: B0751SRBVF)
+  3. Landing Leathers Men's Air Force MA1 Bomber Jacket (ASIN: B01E3MTR2M)
+  4. SUNSIOM Women Men Hooded Patchwork Lightweight Windbreaker Jacket Winter Coat Outerwear (ASIN: B07KJYMYZM)
+  5. FEDTOSING Men's Casual Bomber Jacket Fall Fashion Windbreaker Jacket Coat Outdoor Military Jacket (ASIN: B07X1X47B7)
+  6. TOTNMC Men's Lightweight Jacket Winter Warm Up Jacket Thick Full Zip Jacket Coat Bomber Varsity Jacket Windbreaker (ASIN: B07WTW7XSC)
+  7. Top Gun Official Miss MA-1 Bomber Jacket with Patches (ASIN: B09BYMSH7H)
+  8. Womens Summer Kimono Cardigan Loose Open Front Boho Floral Print Irregular Flowy Beach Wear Coverup Tops Lightweight (ASIN: B09B1Z1MPX)
+  9. BHSJ Women's Fashion Long Sleeve Tops Cute Frog Printed Pullover Hoodie Sweatshirt Ladies Casual Loose Pocket Hoodie (ASIN: B09BJMYCQ8)
+  10. PHSHY Striped Leopard Printed Color Block Knitted Sweaters Women Crew Neck Long Sleeve Casual Pullover Jumper Tops (ASIN: B09JWG3MXR)
+
+=== RESULT: SUCCESS (Turn 1) ===

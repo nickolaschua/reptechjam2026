@@ -1,0 +1,204 @@
+{
+  "text-embedding-3-large": {
+    "embedding_model": "text-embedding-3-large",
+    "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+    "masking_destroyed_useful_memory_count": 2,
+    "masking_destroyed_useful_memory_session_ids": [
+      "u2_override_s7",
+      "u4_negative_s8"
+    ],
+    "masking_rescue_count": 2,
+    "masking_rescue_session_ids": [
+      "u1_stable_s6",
+      "u4_negative_s2"
+    ],
+    "metrics": {
+      "M0": {
+        "hr_at_10": 0.3888888888888889,
+        "mean_target_rank": 104.16666666666667,
+        "median_target_rank": 34.0,
+        "mrr": 0.23986270016880262,
+        "session_count": 18
+      },
+      "M1": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 136.72222222222223,
+        "median_target_rank": 49.5,
+        "mrr": 0.22964343250253524,
+        "session_count": 18
+      },
+      "M2": {
+        "hr_at_10": 0.3888888888888889,
+        "mean_target_rank": 110.72222222222223,
+        "median_target_rank": 36.0,
+        "mrr": 0.23844013703845393,
+        "session_count": 18
+      },
+      "M3": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 121.55555555555556,
+        "median_target_rank": 39.5,
+        "mrr": 0.2369631888101233,
+        "session_count": 18
+      }
+    },
+    "paired_bootstrap_m3_minus_m0": {
+      "caution": "descriptive paired bootstrap; the fixture is small and previously inspected",
+      "delta_mrr": -0.002899511358679294,
+      "percentile_95_ci": [
+        -0.005401024503225602,
+        -0.0010114179539344548
+      ],
+      "samples": 10000,
+      "seed": 20260830
+    },
+    "pairwise": {
+      "M1-M0": {
+        "compared": "M1",
+        "mean_rank_change_reference_minus_compared": -32.55555555555556,
+        "mrr_change_compared_minus_reference": -0.010219267666267386,
+        "reference": "M0",
+        "sessions_improved": 2,
+        "sessions_regressed": 12,
+        "sessions_unchanged": 4
+      },
+      "M2-M0": {
+        "compared": "M2",
+        "mean_rank_change_reference_minus_compared": -6.555555555555555,
+        "mrr_change_compared_minus_reference": -0.0014225631303486181,
+        "reference": "M0",
+        "sessions_improved": 2,
+        "sessions_regressed": 10,
+        "sessions_unchanged": 6
+      },
+      "M3-M0": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": -17.38888888888889,
+        "mrr_change_compared_minus_reference": -0.002899511358679294,
+        "reference": "M0",
+        "sessions_improved": 0,
+        "sessions_regressed": 11,
+        "sessions_unchanged": 7
+      },
+      "M3-M1": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": 15.166666666666666,
+        "mrr_change_compared_minus_reference": 0.007319756307588092,
+        "reference": "M1",
+        "sessions_improved": 12,
+        "sessions_regressed": 2,
+        "sessions_unchanged": 4
+      },
+      "M3-M2": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": -10.833333333333334,
+        "mrr_change_compared_minus_reference": -0.001476948228330676,
+        "reference": "M2",
+        "sessions_improved": 0,
+        "sessions_regressed": 12,
+        "sessions_unchanged": 6
+      }
+    }
+  },
+  "text-embedding-3-small": {
+    "embedding_model": "text-embedding-3-small",
+    "embedding_space_id": "openai-text-embedding-3-small:text-embedding-3-small:dimensions=1536:normalization=l2:query=backend-defined-v1",
+    "masking_destroyed_useful_memory_count": 3,
+    "masking_destroyed_useful_memory_session_ids": [
+      "u2_override_s7",
+      "u3_distractor_s5",
+      "u4_negative_s8"
+    ],
+    "masking_rescue_count": 1,
+    "masking_rescue_session_ids": [
+      "u4_negative_s2"
+    ],
+    "metrics": {
+      "M0": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 333.77777777777777,
+        "median_target_rank": 39.0,
+        "mrr": 0.23350520769998706,
+        "session_count": 18
+      },
+      "M1": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 472.27777777777777,
+        "median_target_rank": 58.5,
+        "mrr": 0.22898694599322778,
+        "session_count": 18
+      },
+      "M2": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 384.3333333333333,
+        "median_target_rank": 40.5,
+        "mrr": 0.23343170271871985,
+        "session_count": 18
+      },
+      "M3": {
+        "hr_at_10": 0.3333333333333333,
+        "mean_target_rank": 405.3333333333333,
+        "median_target_rank": 45.5,
+        "mrr": 0.2330816090865197,
+        "session_count": 18
+      }
+    },
+    "paired_bootstrap_m3_minus_m0": {
+      "caution": "descriptive paired bootstrap; the fixture is small and previously inspected",
+      "delta_mrr": -0.0004235986134674051,
+      "percentile_95_ci": [
+        -0.0015844203904145568,
+        0.0008293788144256248
+      ],
+      "samples": 10000,
+      "seed": 20260830
+    },
+    "pairwise": {
+      "M1-M0": {
+        "compared": "M1",
+        "mean_rank_change_reference_minus_compared": -138.5,
+        "mrr_change_compared_minus_reference": -0.004518261706759339,
+        "reference": "M0",
+        "sessions_improved": 3,
+        "sessions_regressed": 10,
+        "sessions_unchanged": 5
+      },
+      "M2-M0": {
+        "compared": "M2",
+        "mean_rank_change_reference_minus_compared": -50.55555555555556,
+        "mrr_change_compared_minus_reference": -7.350498126727248e-05,
+        "reference": "M0",
+        "sessions_improved": 3,
+        "sessions_regressed": 9,
+        "sessions_unchanged": 6
+      },
+      "M3-M0": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": -71.55555555555556,
+        "mrr_change_compared_minus_reference": -0.0004235986134674051,
+        "reference": "M0",
+        "sessions_improved": 2,
+        "sessions_regressed": 10,
+        "sessions_unchanged": 6
+      },
+      "M3-M1": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": 66.94444444444444,
+        "mrr_change_compared_minus_reference": 0.004094663093291935,
+        "reference": "M1",
+        "sessions_improved": 9,
+        "sessions_regressed": 3,
+        "sessions_unchanged": 6
+      },
+      "M3-M2": {
+        "compared": "M3",
+        "mean_rank_change_reference_minus_compared": -21.0,
+        "mrr_change_compared_minus_reference": -0.00035009363220013263,
+        "reference": "M2",
+        "sessions_improved": 3,
+        "sessions_regressed": 9,
+        "sessions_unchanged": 6
+      }
+    }
+  }
+}

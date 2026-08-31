@@ -1,0 +1,70 @@
+Target Product Title: CreepyParty Novelty Halloween Costume Party Animal Head Mask - King Lion
+Target ASIN: B012ZM6RGQ
+Scenario: browsing
+Constraints: ['Roomy enough to fit any adult.You can see through the nostrils or the mouth', 'Made from 100% natural latex, environmental friendly and non-toxic. We offer a range of quality choices with the best price']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a fun animal head mask for a party. it should be roomy enough for an adult and made from natural latex. i want to be able to see through it too.
+Copilot: It sounds like you're looking for a unique animal head mask! Could you let me know what color you're interested in?
+Copilot Attribute Query: color
+Recommendations:
+  1. M&M SCRUBS Women Scrub Set Medical Scrub Top and Pants MYellow (ASIN: B015P3O4O4)
+  2. Ckikiou Womens Ruffle Chiffon Dress V Neck Short Long Sleeve Floral Print Flowy Swing Boho Summer Dresses (ASIN: B08PVJVCT2)
+  3. Tabeez Women's Casual 3/4 Sleeve and Long Sleeve Loose Bubble Jersey Shift Cocoon Midi Dress (Made in The USA) (ASIN: B076JHHSYZ)
+  4. Artisan Outfitters Mens Outer Banks Batik Cotton Hawaiian Shirt (ASIN: B00T6SM0G4)
+  5. Dockers Men's Classic Fit Perfect Short Pleated (ASIN: B00BF77LM2)
+  6. Artisan Outfitters Mens EL Pescador Batik Cotton Hawaiian Shirt (ASIN: B07771295Q)
+  7. Ekouaer Womens Nightgown V Veck Cap Sleeve Nightshirt Soft Long Lounge Wear (ASIN: B07X3922XV)
+  8. YIANNA Waist Trainer for Women Latex Underbust Waist Corsets Cincher Hourglass Body Shaper 4 Hooks (ASIN: B094W6VZGC)
+  9. adidas Originals Women's Originals Mesh Back Trucker (ASIN: B0C3MHQGKJ)
+  10. Goodthreads Men's Lightweight 4-Pocket Military Jacket (ASIN: B077QTWX2F)
+
+--- TURN 2 ---
+Shopper: i'm actually looking for a lion mask, something that fits well and is made of latex. do you have any options like that?
+Copilot: I can help with that! Let me find some lion masks made from latex that fit well. Just a quick question: do you have a specific budget in mind for this mask?
+Copilot Attribute Query: budget
+Recommendations:
+  1. TAILONG Latex Waist Trainer Belt for Men Body Weight Loss Hot Sweat Fat Burning Shaper Workout Trimmer Band (ASIN: B07FQHMZVQ)
+  2. Lady Slim Fajas Colombianas Reductoras Y Moldeadoras para Mujer Underbust Latex Waist Trainer Hourglass Body Shaper for Women Beige L (ASIN: B06VW84S8T)
+  3. Lover-Beauty Waist Trainer for Women Corset Cincher Waist Shaper Girdle Trimmer Steel Bones Waist Training (ASIN: B096WVZRCS)
+  4. FeelinGirl Waist Trainer for Women Waist Wrap Tummy Control Waist Shaper with Loop Waist Trainer for Lower Belly Fat (ASIN: B09JBZMQ6D)
+  5. Babygoal Reusable Swim Diaper, One Size Adjustable and Washable Swim Underwear Fits 0-2 Years Babies for Baby Shower Gifts and Swimming Lessons FSWD02 (ASIN: B06XX8TLP9)
+  6. Waist Trainer for Women ，Latex Waist Corsets Cincher Hourglass Body Shaper Trimmer with Steel Bones Extender (ASIN: B08NSLG7MC)
+  7. Athletican Women's Hypoallergenic Latex-Free Halter Tankini Top (ASIN: B073VJBM9N)
+  8. OUDOTA Multi-pack Women's Hiking Crew Socks, Wicking Cotton Cushion Socks Outdoor Socks Thick Warm Winter Gift (ASIN: B09C675V6L)
+  9. PANDANINJIA Jessica Toddler Girls Dress Shoes Ankle Strap Ballet Flats Flower Girl Shoes for Wedding Party School (ASIN: B085W27C7N)
+  10. IDIFU Dress Flat Sandals for Women Cute Sandals Women Dressy Summer Flat Comfortable Adjustable Ankle Strap Sandals with Two Front-straps for Casual Wedding Work Beach Prom (ASIN: B0B2PJD4R1)
+
+--- TURN 3 ---
+Shopper: i'm not really looking for waist trainers or anything like that. i'm just after a cool lion mask made from latex that fits well and is safe. if you can find something like that, that'd be great!
+Copilot: Got it! I'll focus on finding a lion mask made of latex that fits well. Just to narrow it down a bit more, do you have a preferred style in mind, like realistic or cartoonish?
+Copilot Attribute Query: style
+Recommendations:
+  1. VIM & VIGR Cotton 15-20 mmHg Graduated Compression Socks for Women & Men (Heathered Navy, Medium/Large (2)) (ASIN: B07YN6YR91)
+  2. Hopgo Unisex 3pcs Bandanas Face Mask for Outdoors Sports Neck Gaiter Triangle Face Scarf with Earloop (ASIN: B08882QBFT)
+  3. Hopgo Child Seamless Face Mask Mouth Cover Face Scarf Bandanas for Dust, Outdoors, Festivals, Sports - 3pcs (ASIN: B0892JBCTP)
+  4. Women's Sexy Bodycon Tanks Dresses Elegant Sleeveless Printed Basic Club Long Dress with Mask (ASIN: B08RDF5RYN)
+  5. Barefoot Dreams Washed Satin Eyemask PJ Set, Luxe Satin Sleepwear with Sleep Mask, Cream Multi, (ASIN: B09HHD3PRG)
+  6. FEDO DESIGN Shapewear by WunderWear Women's Latex Waist Trainer (ASIN: B017WWHGO6)
+  7. Squeem Magic Silhouette High Compression Waist Cincher Shapewear, Latex, Size 34 (ASIN: B000QW6LPK)
+  8. FOMANSH Latex Waist Trainer Slimming Cincher Underbust Corsets Training Tummy Control Body Shaper(Size:S-4XL) (ASIN: B07XG6W8R7)
+  9. Nolama Women's Latex Underbust Waist Trainer Corset Waist Shaper for Weight Loss (ASIN: B00ZBTVVKS)
+  10. DIDI USA Celebrity Double Wide Waist Trainer Corset, Black, Large, 3.9 Ounce (ASIN: B010CVMDWY)
+
+--- TURN 4 ---
+Shopper: uh, i'm really looking for something more realistic, like a king lion mask made of latex. none of these seem to fit what i'm after. can you find something that fits an adult and has good visibility through the nostrils or mouth?
+Copilot: I understand you're looking for a realistic king lion mask made of latex that fits adults and allows good visibility. Could you let me know if you have a preferred color for the mask?
+Copilot Attribute Query: color
+Recommendations:
+  1. CreepyParty Novelty Halloween Costume Party Animal Head Mask - King Lion (ASIN: B012ZM6RGQ)
+  2. Waylike Horse Mask Horse Head Halloween Mask Rubber Animal Mask for Horse Costume (ASIN: B07NRSSLTS)
+  3. S.Y. Face Mask Bandanas for Men Women Multi-Purpose Protective Neck Gaiter Balaclavas Face Cover Outdoors Sports (ASIN: B089374PMD)
+  4. nobrand Fashion Face Bandanas Sports & Casual Headwear Seamless Neck Gaiter, Headwrap, Balaclava, Helmet Liner (ASIN: B086M3RQ77)
+  5. Plymouth Roadrunner 1969 Car Adult Short Sleeve T-shirt-Black-XL (ASIN: B01C1XFWUG)
+  6. ifkoo Frog Mask Halloween Cosplay Costume Latex Animal Head Masks for Adults Party Decoration Props (ASIN: B07SC8YX95)
+  7. ifkoo Cow mask Novelty Halloween Costume Party Latex Pink Cow Animal Head Mask for adult (ASIN: B07WYTSRHL)
+  8. Disney Lion King Sunset Pride Stroll Africa Simba Mufasa Disneyland World Adult Tee Graphic T-Shirt for Men Tshirt (ASIN: B07JH9BW86)
+  9. Disney Villains Lion King Hook Little Mermaid Aladdin Graphic Tee Classic Vintage Disneyland World Mens Adult T-Shirt Apparel (X-Large) Black (ASIN: B07BNT95J1)
+  10. Custom Face Mask Reusable Design Add Your Image Photos Text Cover with Filter for Outdoor, Festivals, Travel (ASIN: B08RD8CX5F)
+
+=== RESULT: SUCCESS (Turn 4) ===

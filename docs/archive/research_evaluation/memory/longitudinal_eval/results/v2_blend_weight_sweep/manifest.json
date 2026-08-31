@@ -1,0 +1,15 @@
+{
+  "catalog_sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+  "frozen_artifact_hashes": {
+    "metrics.json": "e62232625558e99eb7f4ca06c896ddee530ea1c15c143fd11d9f85e5bff14349",
+    "report.md": "b8fcb33427cdb082a3c464249da4acc5a3ef3ae99f457f2ae4dd760180d4cf9e",
+    "sessions.jsonl": "cbfbc09643f644973e91bc4e5defb817b8255b64fcde9f1660f2c653756ef241",
+    "vectors.npz": "91d783c567795b015857b71a4b014e892d1500a68ee8f730057a49909c8ad783"
+  },
+  "output_hashes": {
+    "report.md": "3801cd438e116d92acc70cadfc99f4fc9852dc967f3265e282414472688e1070",
+    "results.json": "ae080e88fd379259cf4d74970bf9f0157d70d49edcfc95d4033dd734b59cb353",
+    "stage_1_buying.csv": "bf757d2310a769457f33d8d1ef8071eb50ddc83642c3100d9f640fa6f7f520d7"
+  },
+  "schema_version": "v2-staged-mode-blend-sweep-1"
+}

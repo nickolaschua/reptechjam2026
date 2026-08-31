@@ -1,0 +1,22 @@
+Target Product Title: Timex Men's Classic Digital Watch
+Target ASIN: B01LWOGORL
+Scenario: buying
+Constraints: ['Imported', 'color: green']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a watch that's imported and has a green color.
+Copilot: Great! Do you have a preferred brand in mind for the watch?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Timex Men's Classic Digital Watch (ASIN: B01LWOGORL)
+  2. Luminox Atacama Adventurer Field XL.1768 Mens Watch 42mm - Automatic Watch in Braun Date Function 200m Water Resistant Sapphire Glass (ASIN: B07YCH6HLZ)
+  3. SEIKO 5 Sports #SNZG09 Men's Green Nylon Fabric Band Military Dial Automatic Watch (ASIN: B08R7VMYPF)
+  4. Men’s Rugged Special Forces Style Tactical Watch with Green Black Nylon Band Calendar Date for Outdoor Field (ASIN: B01HIDEJ2G)
+  5. Skagen Men's Signatur Quartz Watch (ASIN: B0BG1TDG31)
+  6. Hunputa® 2016 New Watches Women Flower Popular Quartz Watch Luxury Bracelet Women Dress Lady Gift Flower Gemstone Wristwatch (Green) (ASIN: B01IHD3J2W)
+  7. Anne Klein Women's Diamond Dial Bracelet Watch with Faceted Lens (ASIN: B07P581PNR)
+  8. Black Clip on Carabiner FOB Watch Luminous Green Dial Ideal for Doctors Nurses Paramedics Chefs (ASIN: B00O83IBVA)
+  9. Premium Canvas Fabric Watch Bands Ballistic Nylon Straps Width,Army Green,20mm (ASIN: B01MY9SDDE)
+  10. Cronos Automatic Diving Watch Stainless Sapphire Glass Steel 3000 Meters Water Resistance Professional Diver Watches (ASIN: B08Z8JCN7W)
+
+=== RESULT: SUCCESS (Turn 1) ===

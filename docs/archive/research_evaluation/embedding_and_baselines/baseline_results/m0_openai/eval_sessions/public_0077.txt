@@ -1,0 +1,38 @@
+Target Product Title: Ashford & Brooks Mens Flannel Long Sleeve Sleep Nightshirt
+Target ASIN: B077JDSZ27
+Scenario: browsing
+Constraints: ['cotton', '55% Cotton /45% Polyester Flannel']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a men's flannel nightshirt. i want it to be made of cotton, ideally with a button closure and machine washable too.
+Copilot: That sounds cozy! What color are you looking for in your flannel nightshirt?
+Copilot Attribute Query: color
+Recommendations:
+  1. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  2. Jerzees Men's Short Sleeve Polo Shirts, SpotShield Stain Resistant, Sizes S-5X (ASIN: B0BXXH77N8)
+  3. Allsense Men's Long Sleeve Regular Fit Dress Shirts (ASIN: B07PH33837)
+  4. Wrangler Men's Sport Western Basic Two Pocket Long Sleeve Snap Shirt (ASIN: B07W4CFNFG)
+  5. Carhartt Men's Loose Fit Midweight Chambray Long-Sleeve Shirt (ASIN: B0BW9JYZS9)
+  6. Hanes Men’s X-Temp Short Sleeve Polo Shirt, Midweight Men's Shirt (ASIN: B06Y45LQP3)
+  7. Amazon Essentials Men's Regular-Fit Short-Sleeve Print Shirt (ASIN: B07JH72TND)
+  8. Goodthreads Men's Standard-Fit Short-Sleeve Printed Poplin Shirt (ASIN: B0BT158RRR)
+  9. Wrangler Authentics Men's Classic Relaxed Fit Five Pocket Jean Short (ASIN: B08DJXX7FD)
+  10. Wrangler Riggs Workwear Men's Logger Twill Long Sleeve Workshirt (ASIN: B07YHBF835)
+
+--- TURN 2 ---
+Shopper: i'm not really looking for those options. i'm hoping to find a flannel nightshirt, ideally in a classic plaid pattern. it should be made of cotton, like a good mix of cotton and polyester.
+Copilot: Got it! I found a couple of options that fit your criteria. Can you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Gioberti Men's Plaid Short Sleeve Shirt (ASIN: B0B2KK4V2W)
+  2. Ashford & Brooks Mens Flannel Long Sleeve Sleep Nightshirt (ASIN: B077JDSZ27)
+  3. Ten West Apparel Flannel Pajamas Set - Long Sleeve Button Down Sleep Shirt and Flannel Sweatpants Sleepwear Set (ASIN: B08MS48KHQ)
+  4. Dickies Men's Short Sleeve Western Shirt (ASIN: B00DDJY3LM)
+  5. MHJHBBE Mens Bathrobe, Lightweight Cotton Short Sleeve Silky Bath Robe for Men (ASIN: B09DGDC764)
+  6. COEVALS CLUB Men's Western Cowboy Pearl Snap Casual Plaid Work Shirts (ASIN: B0BTYJSL7S)
+  7. Women's Cute Color Block Long Sleeve Plaid Button Down Blouse Chest Pockets Boyfriend Long Sleeve Oversized Shacket Tops (ASIN: B09GG6ZZXM)
+  8. HEZIOWYUN Womens One Piece Christmas Pajamas, Novelty Long Sleeve Zipper Hooded Jumpsuit Rompers Sleepwear (ASIN: B08F1V1J3H)
+  9. Slim Fit Linen Dress Shirts for Men, Men's Cotton Linen Button Down Dress Shirt Short Sleeve Casual Beach Tops White (ASIN: B07SVZTWP8)
+  10. Summer T Shirt for Women Graphic Tees Printed Novelty Shirts Good Vibes Rainbow Lucky Shamrock Tops Blouse (ASIN: B08V8C14CF)
+
+=== RESULT: SUCCESS (Turn 2) ===

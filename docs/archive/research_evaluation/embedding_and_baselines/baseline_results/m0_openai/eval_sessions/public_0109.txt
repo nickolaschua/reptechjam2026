@@ -1,0 +1,22 @@
+Target Product Title: Hanes Men’s Short Sleeve Graphic T-shirt Collection
+Target ASIN: B016OT9D3K
+Scenario: buying
+Constraints: ['fabric', '100% Other Fibers']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a t-shirt, and my main thing is the fabric. i need it to be 100% other fibers.
+Copilot: Got it! What color are you looking for in your t-shirt?
+Copilot Attribute Query: color
+Recommendations:
+  1. Hanes Men’s Short Sleeve Graphic T-shirt Collection (ASIN: B016OT9D3K)
+  2. adidas Originals Men's Blackbird Solid (ASIN: B07HKRKNLK)
+  3. Columbia Boys' Bugaboo Interchange (ASIN: B07JDBDMW3)
+  4. Columbia Men's PFG Slack Tide Camp Shirt (ASIN: B071ZN2JKM)
+  5. Vince Camuto Women's Leather Moto Jacket (ASIN: B010C9XU0U)
+  6. ZOIC Women's Navaeh Shorts, Grey, Medium (ASIN: B01M3QB5PE)
+  7. Under Armour Women's Favorite Fleece Capri (ASIN: B01A02YLXO)
+  8. Life is Good Womens Bike Graphic V-Neck T-Shirt Collection (ASIN: B07FDNDYY2)
+  9. Outdoor Research Women's Ferrosi Capris, Cornflower, 8 (ASIN: B0101QIVCG)
+  10. Arctix Men's Satellite Insulated Jacket (ASIN: B01EFJSGMK)
+
+=== RESULT: SUCCESS (Turn 1) ===

@@ -26,7 +26,8 @@ __pycache__/
 .env.local
 .env.*.local
 *.secrets
-nickolas/shopping_agent/.env
+system/shopping_agent/.env
+system/shopping_agent/.demo_state/
 
 # Personal development directories
 yangxu/
@@ -41,12 +42,13 @@ failed_sessions.txt
 experiment_10_colab_input.zip
 experiment_10_colab_output.zip
 **/experiment_10_colab_output.zip
-nickolas/results/experiment_10*/warp_index/
-nickolas/results/experiment_10*/imported/warp_index/
+docs/archive/research_evaluation/results/experiment_10*/warp_index/
+docs/archive/research_evaluation/results/experiment_10*/imported/warp_index/
+docs/archive/research_evaluation/retrieval/results/experiment_10_xtr_warp_retrieval/imported/warp_index/techjam26-products-xtr-warp.nbits=4/residuals.repacked.compacted.pt
 retrieval/experiment_10_build/
 retrieval/experiment_10_staging/
 retrieval/xtr-warp-inspect/
 
-# Experiment 1 model weights and session logs
-experiment_1/model_finetuned/
-experiment_1/eval_sessions/
+# Archived Yangxu model weights and session logs
+docs/archive/legacy_hybrid_agent/model_finetuned/
+docs/archive/legacy_hybrid_agent/eval_sessions/

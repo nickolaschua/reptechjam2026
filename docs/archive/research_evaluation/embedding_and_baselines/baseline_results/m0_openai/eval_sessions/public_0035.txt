@@ -1,0 +1,22 @@
+Target Product Title: Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe Sneaker
+Target ASIN: B0BN6CCHB7
+Scenario: boundary
+Constraints: ['fabric', '100% Textile']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a comfortable walking shoe that's made of fabric, specifically 100% textile. something with a good cushioned sole would be great too.
+Copilot: Got it! To help narrow it down further, what size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe Sneaker (ASIN: B0BN6CCHB7)
+  2. Hi-Tec Men's V-Lite Rio Quest I Walking Shoe (ASIN: B00LHUEHF6)
+  3. Merrell Women's All Out Rave Walking Shoe (ASIN: B00HF6K5ZM)
+  4. Skechers Performance Women's Go Walk 2 Extreme Walking Shoe (ASIN: B00ITKSNFM)
+  5. KEEN Women's Whisper Closed Toe Sport Sandals, Malachite/Silver Birch, 5.5 (ASIN: B01H7588IQ)
+  6. USHOBE 2 Pairs Sports Gym Sneakers Shoe Slip- Sole Womens Slip-on Female Rocker Fashion Middle-Aged Comfy of Women Breathable Platform Casual Walking Excercising On Wedge Exercise Black (ASIN: B0BLRS4D39)
+  7. Propét Men's TravelFit Strap Walking Shoe (ASIN: B01I42AKS2)
+  8. Propét Men's Stability Strider Walking Shoe (ASIN: B09LMB8W1C)
+  9. Olivia K Women's Open Toe T-Strap Chunky Block Heel - Adjustable Ankle Strap (ASIN: B07348CX11)
+  10. KEEN Women's Waimea H2 Sandal (ASIN: B00E0GOZ74)
+
+=== RESULT: SUCCESS (Turn 1) ===

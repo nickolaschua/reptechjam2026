@@ -1,0 +1,22 @@
+Target Product Title: CAMPSNAIL 4 Pack Biker Shorts for Women High Waist - 5" Soft Summer Womens Shorts Spandex Workout Shorts for Running Athletic
+Target ASIN: B091F54MWM
+Scenario: buying
+Constraints: ['spandex', '92% Polyester, 8% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: I'm looking for Active Active Shorts.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. High Waisted Biker Shorts Women - 8 inches Soft Tummy Control Shorts for Workout, Gym, Yoga, Running (ASIN: B096WW7MXD)
+  2. HeyNuts Essential Biker Shorts for Women, High Waisted Workout Compression Yoga Shorts 4''/ 6''/ 8'' (ASIN: B0B45WQNSC)
+  3. CAMPSNAIL 4 Pack Biker Shorts for Women High Waist - 5" Soft Summer Womens Shorts Spandex Workout Shorts for Running Athletic (ASIN: B091F54MWM)
+  4. maamgic Mens Athletic Gym Shorts 5.5" Elastic Waist Casual Pajama Pocket Jogger Men Workout Short Pants (ASIN: B0BV2C1V44)
+  5. Jmr Usa Inc. Men's Cotton Lounge Fleece Shorts with Side Pockets, Elastic Waist Bands, and Drawstring Closure (ASIN: B0721R3422)
+  6. YoungLA Men’s Bodybuilding Shorts | Slim Fit Gym Active Comfort Sport Style| Gym Squat Lunges Weightlifting | 103 (ASIN: B08VQGWGML)
+  7. GAYHAY 3 Pack Womens Biker Shorts - 5" High Waisted Buttery Soft Shorts for Athletic Workout Yoga (ASIN: B09Z9G7HW2)
+  8. RBX Boys' Activewear Set – Short Sleeve T-Shirt, Tank Top, and Gym Shorts Performance Set (2 Pack) (ASIN: B08QQ3XTKX)
+  9. Prince Women's Stretch Woven Athletic Skort (ASIN: B06VW2DQZK)
+  10. Columbia Men's ROC II Short (ASIN: B0058YQYRG)
+
+=== RESULT: SUCCESS (Turn 1) ===

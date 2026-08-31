@@ -1,0 +1,70 @@
+Target Product Title: Memorose Womens Sexy Long Sleeve Cut-Out Bandage Bodycon Clubwear Midi Dress
+Target ASIN: B019DU687Q
+Scenario: intent_override
+Constraints: ['cotton', 'cotton blend']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a sexy long sleeve midi dress for a night out. ideally, it would be hand wash only and have some cool cut-out details. also, i want it to be comfy and stylish!
+Copilot: That sounds like a great choice for a night out! Do you have a specific color in mind for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. Gothic Vintage Ball Gown Medieval Lace Costume 18th Century Renaissance Steampunk Period Dress for Women Princess (ASIN: B092QYLHYQ)
+  2. LAISHEN Women's Twist Front Knot Crewneck Bodycon Dress Long Sleeve Mini Hollow Out Ruched Wrap Dresses (ASIN: B09LLSLDB5)
+  3. Memorose Womens Sexy Long Sleeve Cut-Out Bandage Bodycon Clubwear Midi Dress (ASIN: B019DU6AL0)
+  4. egease Womens Spring Summer Knot Front V Neck Ruffles Long Sleeve Floral Print Swing Mini Dress (ASIN: B0B12RRWQ6)
+  5. Womens Tops Long Sleeve Round Neck Leopard Pocket Casual T Shirts Blouses Tunic Sweatshirt (ASIN: B083ZB8RH3)
+  6. LILLUSORY Womens Cutout Split Linen Cotton Sleeveless Slit Maxi Dress (ASIN: B0BR12TY7F)
+  7. Women Long Sleeve Hollow Ruffle A-Line Lace Formal Evening Cocktail Wedding Party Midi Dress Black (ASIN: B07P32ZVHG)
+  8. Yacooh Womens V Neck Sleeveless Flowy Tank Top Casual Loose Crochet Knitted Sweater Vest Cami Summer Tee Shirts (ASIN: B088FRY4ZT)
+  9. BTFBM Women Long Sleeve V Neck Fashion Sweater Solid Color Ribbed Knit Foldover Collar Pullover Cute Relaxed Fit Jumper (ASIN: B09BVKBVLF)
+  10. Miessial Women's Fashion V Neck Striped Knitted Sweater Loose Colorblock Pullover Sweater Pink 12 (ASIN: B08BFXN64S)
+
+--- TURN 2 ---
+Shopper: i'm thinking maybe black, but i'm really drawn to that one with the cut-out design. i want to buy that!
+Copilot: I found a fantastic option for you! The Memorose Womens Sexy Long Sleeve Cut-Out Bandage Bodycon Clubwear Midi Dress is exactly what you're looking for. What size do you need?
+Copilot Attribute Query: size
+Recommendations:
+  1. PRETTYGARDEN Women's 2023 Fall Knit Pullover Sweater Dress Lantern Sleeve Boat Neck Bodycon Pencil Dresses (ASIN: B0B5Z6N81F)
+  2. Memorose Womens Sexy Long Sleeve Cut-Out Bandage Bodycon Clubwear Midi Dress (ASIN: B019DU687Q)
+  3. Women's Business Slim Style Leather Work Pencil Dress Bodycon Peplum Knee Length Party Dress Black (ASIN: B07PL9BPLL)
+  4. Women's Vintage Gothic Patchwork Plaid Print Dress Elegant Long Sleeve Mock Neck Skirt Button Ruffle Flowy Maxi Party Dresses (ASIN: B09JGLG694)
+  5. Cardigan for Women 2023 Trendy Short Sleeve Summer Drape Open Front Lightweight Kimono Cardigans Casual Cover Up Tops (ASIN: B0C43X83CP)
+  6. HGWXX7 Womens Plus Size Short Sleeve Loose t-Shirts Colorful Retro Print V Neck Pullover Comfy Tee Shirts Blouse Tops (ASIN: B091FNL5Q1)
+  7. KOH KOH Womens Long Sleeveless Bridals Summer Beach Floor-Length Gowns Wedding Maxi Dress (ASIN: B07BF7GVSY)
+  8. Summer Midi Dresses for Women Floral Tshirt Dresses Casual Short Sleeve Crewneck Pleated Empire Waist Dresses (ASIN: B0B3M52JYD)
+  9. GEMEIQ Women’s Deep V Neck Long Sleeve Maxi Dresses Hollow Out Shoulder High Waist Split Party Cocktail Formal Dress (ASIN: B0B79ZHL6Q)
+  10. YOINS Sequin Sparkle Tops for Women Cold Shoulder Long Sleeves Sexy Deep V Neck Casual Pullovers Cut Out Shirts Blouses (ASIN: B082SXK2WL)
+
+--- TURN 3 ---
+Shopper: oh yeah, i see the memorose dress in the list! i want to buy that one. what size do you have available?
+Copilot: Great choice! The Memorose dress typically comes in sizes S to L. Which size would you like to go for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Womens Floral Print Crew Neck T-Shirt Fitted Beach Aesthetic Summer Tops Short Sleeve Shirt Comfy Blouse Casual Tunic Graphic (ASIN: B0B3DGV5SG)
+  2. Womens Short Sleeves Button Down Shirt with Pocket V Neck Collared Blouse Tops Casual T-Shirt(S-3XL) (ASIN: B08B14396X)
+  3. PHSHY Striped Leopard Printed Color Block Knitted Sweaters Women Crew Neck Long Sleeve Casual Pullover Jumper Tops (ASIN: B09JWG3MXR)
+  4. ONHUON Christmas Dresses for Women Long Sleeve,Women Christmas Hooded Dress Casual Long Sleeve Tunic Sweatshirts Pullover Knee Length Midi Dresses with Pocket Black (ASIN: B09HGCMNXH)
+  5. 977 Plus Size Shirts for Women V-Neck Cold Shoulder Short Sleeve Tops Floral Print Flowy T Shirts Summer Comfy Blouses A10~purple, 5X-Large (ASIN: B095CM4F2J)
+  6. andy & natalie Women's Button Sweater V Neck Sweater Ribbed Pullover Sweater Long Sleeve Sweater with Pockets (ASIN: B07Y2LKNGM)
+  7. Womens Bra, Full Figure Magic Lift Plus Size Seamless Wirefree Front Close Sports Bra, Padded Comfort Bra for Women (ASIN: B098NRHGMZ)
+  8. Dresses for Womens, Women Summer Butterfly Printed Loose V Neck Casual Long Maxi Dress Beach Pockets Sundress Plus Size (ASIN: B0922TJGNL)
+  9. Antopmen Women Sexy V Neck Ribbed Knitted Long Sleeve Midi Dress Bodycon Slim Partywear Maxi Dress (ASIN: B0995LKCSV)
+  10. Locryz Women's Casual Swing Dresses Long Sleeve T-Shirt Dress with Pockets (ASIN: B07YH9PC3K)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Memorose Womens Sexy Long Sleeve Cut-Out Bandage Bodycon Clubwear Midi Dress (ASIN: B019DU687Q)
+  2. Dasbayla Women's Sexy Bodycon Turtleneck Long Sleeve Midi Knit Jumper Dresses (ASIN: B074VX7ZSD)
+  3. Loose Plain Maxi Dresses Women's Short Sleeve Casual Long Dresses with Pockets (ASIN: B07LB2S44R)
+  4. Womens Sexy Mesh Jeweled Waist Long Sleeve Midi Dress Clubwear Medium Red (ASIN: B01EUWF92M)
+  5. Unbound Classic Black Midi Dress Black Dress – One Shoulder Dresses for Women – Bodycon Midi Dress, Cocktail Dress (ASIN: B09FSJMZJZ)
+  6. KILIG Women's V-Neck Long Sleeve Ruched Ruffle Bodycon Sheath Midi Dress(Purple,XL) (ASIN: B07VLFQ658)
+  7. Ho.Volta Women’s Y2K Dress Bodycon Lace Patchwork Spaghetti Strap V Neck Camisole Dresses Criss-Cross Lace Y2K Mini Dress (ASIN: B08NZGBBPY)
+  8. EGELEXY Summer Women Irregular Dresses Round Neck Bodycon Short Sleeve Wrap Dress Midi Club (ASIN: B07F33VP6X)
+  9. YOINS Sequin Sparkle Tops for Women Cold Shoulder Long Sleeves Sexy Deep V Neck Casual Pullovers Cut Out Shirts Blouses (ASIN: B082SXK2WL)
+  10. Adogirl Women's Sleeveless Bodycon Midi Dress - Elegant Party Cocktail Long Dresses with Bow (ASIN: B07TK99JGZ)
+
+=== RESULT: SUCCESS (Turn 4) ===

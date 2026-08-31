@@ -1,0 +1,54 @@
+Target Product Title: Hide & Drink, Rustic Handmade Full Grain Leather Men's Belt, Two Row Stitch Stylish Design - Everyday Belts for Men
+Target ASIN: B071X54486
+Scenario: intent_override
+Constraints: ['leather', '100% Leather']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a nice leather belt, ideally with a buckle closure. something stylish and comfortable would be great too.
+Copilot: Great choice! Do you have a preferred color for the leather belt?
+Copilot Attribute Query: color
+Recommendations:
+  1. LL Leather Lovers Women's Lambskin Leather Bomber Biker Jacket (ASIN: B09NDB1PRW)
+  2. Sandals for Women Flat,Women's 2020 Snakeskin Comfy Platform Sandal Shoes Summer Beach Travel Fashion Slipper Flip Flops (ASIN: B0854L7756)
+  3. Lavemi Men's Real Leather Ratchet Dress Casual Belt, Cut to Exact Fit, Elegant Gift Box (ASIN: B08FLYBP2J)
+  4. Barry.Wang Men Ratchet Buckle or Strap Only Genuine Leather Belt Replacement Nickel Free Buckle Adjustable (ASIN: B07NZ4YQ3F)
+  5. DailyShoes Women's Fashion Alina-01 Sandal Shoes Buckle Flat Casual Adjustable Strap (ASIN: B07DNLC3FY)
+  6. Brinley Co. Womens Stacked Heel Buckle Laser-Cut Round Toe Ankle Booties (ASIN: B073CK3QQX)
+  7. GuillalaWomen's Crossbody Shoulder Bag PU Leather Solid Color Chain Strap Clutch Stylish Satchel Handbags Small square bag (ASIN: B0BGHFFFTJ)
+  8. Journee Collection Womens Stacked Heel Buckle Laser-cut Round Toe Ankle Booties (ASIN: B01I1VAGYE)
+  9. KEEPBLANCE Men's Italian Cow Leather Belt Casual Classic Jean Buckle Style Gift Box (ASIN: B075KHPQBX)
+  10. KKP Handbag Versatile soft leather messenger bag High texture single shoulder bag (ASIN: B0BPM97R3Y)
+
+--- TURN 2 ---
+Shopper: i'm really looking for a stylish leather belt, ideally with a buckle closure. do you have any options that fit that description?
+Copilot: I have a few stylish leather belts in mind! Could you let me know what size you typically wear for belts?
+Copilot Attribute Query: size
+Recommendations:
+  1. Tommy Hilfiger Men's Ribbon Inlay Fabric Belt with Harness Buckle (ASIN: B08QN272FH)
+  2. BULLIANT Men's Belt, Reversible Belt 1.25" For Mens Casual Golf Dress pants shirts,One Reverse For 2 Sides (ASIN: B08L13H7SY)
+  3. Hide & Drink, Rustic Handmade Full Grain Leather Men's Belt, Two Row Stitch Stylish Design - Everyday Belts for Men (ASIN: B071X54486)
+  4. LYPULY Small Crossbody Shoulder Bags for Women, PU leather Shoulder Purse Trendy Quilted Wallet Purse (ASIN: B09MQ388RD)
+  5. KEEN Women's Presidio MJ Shoe (ASIN: B00HG8XXRG)
+  6. Sinwo Women Fashion Buckle Round Toe Flat Roman Sandals Leisure Beach Shoes (ASIN: B07FYCCLGL)
+  7. Disney Bag, Cross Body, Beauty and the Beast Prince and Enchanted Rose Scene Purple, Vegan Leather (ASIN: B0B4F9HBJX)
+  8. AIBI Men's AB50801-4 40mm Analog Quartz Brown Leather Strap Rosegold Watch (ASIN: B0177LPPVS)
+  9. bbruriy Women's Patent Leather Ankle Strap Slingback Pointed Toe Crystal Low Heel High Heels Business Office Work Dress Shoes 1.96IN (ASIN: B0B4G4GRHC)
+  10. TUNGHO Simplicity Leather Belts For Women Polished Buckle Plus Size XXXL (ASIN: B078HG9KCY)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: leather.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Hide & Drink, Rustic Handmade Full Grain Leather Men's Belt, Two Row Stitch Stylish Design - Everyday Belts for Men (ASIN: B071X54486)
+  2. GuillalaWomen's Crossbody Shoulder Bag PU Leather Solid Color Chain Strap Clutch Stylish Satchel Handbags Small square bag (ASIN: B0BGHFFFTJ)
+  3. SUOSDEY Women Brown PU Leather Belt Waist Belt for Jeans (ASIN: B07Y7S3WCY)
+  4. Men's Belt - Autolock Leather Ratchet Dress Belt for Men With Automatic Buckle - Trim to Fit (ASIN: B07TCGFKZF)
+  5. Rowfaner Women's Loafer Shoes Low Chunky Heel Square Toe Platform Flats Slip On Leather Loafer Shoes Metal Buckle Mules (ASIN: B0BGPSH9GN)
+  6. Montana West Leather Crossbody Bag for Women Multi-pocket Cell Phone Purse Stylish Ladies Top Zip Small Shoulder Bag MWUSA-MWC-023 BK (ASIN: B08F56D4DK)
+  7. Men’s Leather Automatic Buckle Ratchet Dress Belt for Men Perfect Fit Waist Size Up to 46"-Functional, Stylish and Durable (ASIN: B07415W7FG)
+  8. Guitars Electric Acoustic Rock and Roll Luggage ID Tags Cards Set of 2 (ASIN: B07KKLFR43)
+  9. Top Plaza Womens Fashion Wrist Watch Luxury Rhinestones Case Roman Numerals Thin Leather Strap Analog Quartz Dress Watches (ASIN: B07FS7JNFZ)
+  10. 14mm Black Genuine Leather Watch Band | Teju Lizard Grain, Lightly Padded, Replacement Wrist Strap that brings New Life to Any Watch (Womens Standard Length) (ASIN: B00MHZHVZ8)
+
+=== RESULT: SUCCESS (Turn 3) ===

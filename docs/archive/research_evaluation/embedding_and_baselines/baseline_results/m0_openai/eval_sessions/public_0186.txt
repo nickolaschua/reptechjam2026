@@ -1,0 +1,54 @@
+Target Product Title: ASICS Women's Gel-Contend 6 Running Shoes
+Target ASIN: B07XPLHXC1
+Scenario: intent_override
+Constraints: ['100% Synthetic', 'Rubber sole']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some running shoes that are comfortable and have a good fit. ideally, i’d like them to have an ortholite sockliner for moisture management. do you have any suggestions?
+Copilot: Sure! What color do you prefer for your running shoes?
+Copilot Attribute Query: color
+Recommendations:
+  1. ASICS Women's Gel-Contend 6 Running Shoes (ASIN: B07XPLHXC1)
+  2. New Balance Women's Fresh Foam 1080 V11 Running Shoe (ASIN: B08BMSXBDC)
+  3. adidas Originals Men's Swift Running Shoe (ASIN: B077X8SP43)
+  4. ASICS Women's Gel-Contend 4 Running Shoes (ASIN: B07M9SLF2Q)
+  5. PUMA Men's Faas 800 S Running Shoe (ASIN: B0073FRXOQ)
+  6. adidas Men's Galaxy 3 m Running Shoe, Black/Black/Black, 11 Medium US (ASIN: B01MY0JIJK)
+  7. adidas Women's Swift Run W Running-Shoes,white/white/white,9.5 M US (ASIN: B071F95N7C)
+  8. adidas Originals Men's Swift Running Shoe, Trace Cargo/Core Black/White, 11.5 (ASIN: B07KWV69NZ)
+  9. Salomon Men's XT Hawk 2 Trail Running Shoe (ASIN: B0033PSIHQ)
+  10. Salomon Speedcross 3 Trail Running Shoes - SS15 (ASIN: B00RM33QUO)
+
+--- TURN 2 ---
+Shopper: i'm not too picky about color, but i really like the asics women's gel-contend 6 running shoes from your list. i want to buy those!
+Copilot: Great choice! Just to confirm, what size do you need for the ASICS Women's Gel-Contend 6 running shoes?
+Copilot Attribute Query: size
+Recommendations:
+  1. ASICS Women's GEL-Foundation Walker 3 Running Shoe (ASIN: B00GXEHEN8)
+  2. ASICS Women's Gel-Foundation¿ Workplace (ASIN: B00KI3PRKW)
+  3. adidas Men's Questar BYD Running Shoe, Base Green/Black/Grey, 14 M US (ASIN: B077XB9K58)
+  4. adidas Energyfalcon Shoes Men's, Black, Size 12 (ASIN: B08TMNWR38)
+  5. PUMA Men's Powertech Defier SL Running Shoe (ASIN: B00FJC11ZM)
+  6. PUMA Women's PowerTech Voltaic DipDye Running Shoe (ASIN: B00ETI2IQS)
+  7. Men’s Walking Shoes Sneakers Breathable Mesh Upper Casual Jogging Shoes for Men with Non-Slip Blade Running Shoes for Gym Outdoor Workout (ASIN: B09BZ71ZT5)
+  8. RIBONGZ Wide Toddler Boys Shoes Slip On Little Girls Sneakers for Athletic Walking Running Outdoor/Indoor Grey/Orange Size 8 (ASIN: B08R86WZ11)
+  9. PromArder Women Running Shoes Casual Sports Non Slip Walking Sneakers (ASIN: B07RDDPSSN)
+  10. Mens Womens Athletic Shoes, Running Shoes, Non Slip Tennis Shoes, Sneakers for Sports Gym Walking or Work Casual (ASIN: B08S3GN546)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: 100% Synthetic.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. ASICS Women's Gel-Contend 6 Running Shoes (ASIN: B07XPLHXC1)
+  2. ASICS Men's Gel-Contend 3 (ASIN: B00OZG5AIC)
+  3. PUMA Men's Faas 800 S Running Shoe (ASIN: B0073FRXOQ)
+  4. Saucony Women's Progrid Kinvara 2 Running Shoe (ASIN: B004O2FTU6)
+  5. Skechers Sport Women's Good Stuff Fashion Sneaker (ASIN: B00I3CQCTU)
+  6. adidas Originals Men's Swift Running Shoe (ASIN: B077X8SP43)
+  7. adidas Men's Galaxy 3 m Running Shoe, Black/Black/Black, 11 Medium US (ASIN: B01MY0JIJK)
+  8. adidas Originals Men's Swift Running Shoe, Trace Cargo/Core Black/White, 11.5 (ASIN: B07KWV69NZ)
+  9. Brooks Men's Beast Running Shoe (ASIN: B0012HR4QI)
+  10. Salomon Men's XT Hawk 2 Trail Running Shoe (ASIN: B0033PSIHQ)
+
+=== RESULT: SUCCESS (Turn 3) ===

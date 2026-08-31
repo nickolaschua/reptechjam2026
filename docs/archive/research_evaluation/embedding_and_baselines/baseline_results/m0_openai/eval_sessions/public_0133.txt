@@ -1,0 +1,22 @@
+Target Product Title: Flying Fisherman womens 7719cs sunglasses, Camo Frames/Smoke Lenses, Medium US
+Target ASIN: B01KILT64Q
+Scenario: buying
+Constraints: ['Imported', 'color: gray']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's sunglasses that are imported. they should have a gray color, ideally with a polycarbonate frame and lens.
+Copilot: Great choice! Can you tell me what style of sunglasses you're interested in?
+Copilot Attribute Query: style
+Recommendations:
+  1. Flying Fisherman womens 7719cs sunglasses, Camo Frames/Smoke Lenses, Medium US (ASIN: B01KILT64Q)
+  2. Large Oversized Retro Fashion Square Flat Top Sunglasses (Gray) (ASIN: B00DR72Y0C)
+  3. Ray-Ban Mens Sunglasses (RB4115) Black Matte/Green Plastic,Nylon - Non-Polarized - 57mm (ASIN: B004KDXE1A)
+  4. Colorful One Piece Rimless Transparent Cat Eye Sunglasses for Women Tinted Candy Colored Glasses … (ASIN: B07MPVGD5X)
+  5. SDINM Rimless Heart Sunglasses for Women Heart Shaped Sunglasses Red Heart Sunglasses Festival Party Hippie Glasses (ASIN: B0C7PVY6C5)
+  6. Kyra Women's High Fashion Kitty Cat Bow Two Tone Rubber Clear Lens Glasses (ASIN: B00BJ8N7D4)
+  7. MessyWeekend Sunglasses for Women in a Oversized Polycarbonate Cat-Eye Round Frame - Lenses with UV400 Protection - THELMA (ASIN: B07D9RLKG2)
+  8. Suncloud Zephyr Reading Glasses (ASIN: B07CPTB25P)
+  9. American Flag Team USA Patriotic Design Plastic Shades Party Props Decoration USMNT USWNT Heart (ASIN: B07194B4D4)
+  10. Valentino Women's Round Fashion Sunglasses, Blue/Gradient Grey, One Size (ASIN: B088CZSD5N)
+
+=== RESULT: SUCCESS (Turn 1) ===

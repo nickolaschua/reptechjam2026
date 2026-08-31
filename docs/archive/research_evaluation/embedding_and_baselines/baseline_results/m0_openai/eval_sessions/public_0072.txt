@@ -1,0 +1,54 @@
+Target Product Title: Facitisu Womens Winter Warm Jacket Long Down Faux Fur Hooded Quilted Sherpa Lined Coat
+Target ASIN: B09JG4V9ZR
+Scenario: intent_override
+Constraints: ['Faux Fur', 'Drawstring closure']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a women's winter jacket that's warm and cozy. ideally, it should have a faux fur hood and maybe a drawstring closure.
+Copilot: That sounds great! What color are you looking for in your winter jacket?
+Copilot Attribute Query: color
+Recommendations:
+  1. JASAMBAC Womens Casual Fuzzy Fleece Hooded Cardigan Pocket Faux Fur Outerwear Coat (ASIN: B099Z7PFJS)
+  2. ZAFUL Men' s Fuzzy Hoodie Unisex Color Block Sherpa Pullover Loose Fluffy Drawstring Hooded Sweatshirt Outwear (ASIN: B0814TB2DM)
+  3. Facitisu Womens Winter Warm Jacket Long Down Faux Fur Hooded Quilted Sherpa Lined Coat (ASIN: B09JG4V9ZR)
+  4. Doshoop Womens Oversized Hooded Sweatshirts Quarter Zipper Hoodies Long Sleeve Casual Drawstring Pullover Tops with Pockets (ASIN: B0BJZZVND7)
+  5. Arssm Women's Winter Casual Full Zip Up Fleece Lined Hoodie Sweatshirt (ASIN: B09H2XR7PY)
+  6. 32 Degrees Womens Cozy Fleece Full-Zip Hoodie (ASIN: B07X4BD93K)
+  7. ELESOL Womens Sweaters V-Neck Long Sleeve Side Slit Sweatershirt with Drawstring Hood Casual Knit Pullover Sweater S-XXL (ASIN: B09JG9X6LF)
+  8. BTFBM Womens Hoodies Trendy Tie Dye Print Long Sleeve Drawstring Front Pockets Lightweight Casual Sweatshirts Pullover (Tie Dye Multicolor, Large) (ASIN: B08DD9X139)
+  9. Womens Sherpa Pullover Long Sleeve Sweatshirt Fuzzy Fleece 1/4 Zip Color Block Jackets with Pocket Sweater Outerwear (ASIN: B098D5VJGJ)
+  10. PRETTYGARDEN Women’s Casual Striped Color Block Fleece Hoodie Long Sleeve Drawstring Sweatshirt Pullover Tops (ASIN: B08G8FY295)
+
+--- TURN 2 ---
+Shopper: i'm not too picky about color, but i really like the style with the faux fur hood. actually, ignore my earlier preference. what i need is: faux fur. the third option looks perfect, i want to buy that one!
+Copilot: It sounds like you’re interested in the Women's Hooded Vest Faux Fur! Before you proceed, could you let me know what size you need?
+Copilot Attribute Query: size
+Recommendations:
+  1. Comeon Womens Long Winter Coat Hooded Faux Fur Fuzzy Fleece Sherpa Jacket Casual Lapel Button Warm Teddy Outerwear (ASIN: B0BK4RJTG3)
+  2. Zilcremo Women Hooded Cardigan Fuzzy Jacket Winter Open Front Fleece Coat Outwear with Pockets (ASIN: B077FRXRT4)
+  3. just one Women's Hooded Vest Faux Fur, Full Zipper, Front Side Pockets, Black White Sizes Small Medium Large XLarge (ASIN: B07CP14LQG)
+  4. Womens Hooded Down Jacket Long Quilted Lightweight Puffer Coat, Standard and Plus Size (ASIN: B0995HJKRX)
+  5. Joeoy Women's Lapel Zip Up Fleece Shaggy Oversized Jacket Tie Dye Faux Shearling Coat Jacket with Pockets (ASIN: B08DXH2ZSD)
+  6. Gets Women's Winter Oblique Lapel Sweatshirt Faux Shearling Shaggy Warm Pullover Zipped Up with Pockets Outerwear (ASIN: B07X8V44BZ)
+  7. Womens Active Coat Fashion Printed Pocket Jacket Outerwear Cardigan Overcoat Long Trench Coat Jackets (ASIN: B09FNZB1T8)
+  8. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  9. Mens Beefy Long Sleeve Henley T-Shirt V Neck Front Placket Tees Fashion Casual Slim Fit Basic Shirt Top (ASIN: B09JZLMRNM)
+  10. Roaman's Women's Plus Size Mid-Length Puffer Jacket With Hood Winter Coat (ASIN: B08DHVQMN1)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: Faux Fur.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Roaman's Women's Plus Size Mid-Length Puffer Jacket With Hood Winter Coat (ASIN: B08DHVQMN1)
+  2. Facitisu Womens Winter Warm Jacket Long Down Faux Fur Hooded Quilted Sherpa Lined Coat (ASIN: B09JG4V9ZR)
+  3. Gets Women's Winter Oblique Lapel Sweatshirt Faux Shearling Shaggy Warm Pullover Zipped Up with Pockets Outerwear (ASIN: B07X8V44BZ)
+  4. JASAMBAC Womens Casual Fuzzy Fleece Hooded Cardigan Pocket Faux Fur Outerwear Coat (ASIN: B099Z7PFJS)
+  5. Marc New York by Andrew Marc Women's Plymouth Belted Down Jacket with Faux Fur Removable Hood (ASIN: B07RHVLJ13)
+  6. Weathertamer Women's Mid-Length Puffer Coat with Faux Fur-Trimmed Hood (ASIN: B013EDSRD6)
+  7. Hee grand Women Winter Faux Fur Coat Winter Coats for Women Warm Parka Jackets for Women Hood Jacket Beige M 8 (ASIN: B00DR4LVVS)
+  8. Jessica Simpson Women Nylon Quilted Bubble Jacket with Faux Fur Lined Hood (ASIN: B07HN8V8GZ)
+  9. Betsey Johnson Women's Toggle Wool-Blend Coat with Faux-Fur Hood (ASIN: B00X5WOHOK)
+  10. kensie Women's Bonded Button Up Parka with Faux Fur Trimmed Fully Removable Hood (ASIN: B01LOS71XK)
+
+=== RESULT: SUCCESS (Turn 3) ===

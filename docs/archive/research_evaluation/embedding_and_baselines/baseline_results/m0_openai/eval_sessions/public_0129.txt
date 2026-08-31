@@ -1,0 +1,38 @@
+Target Product Title: MANGOPOP Women's Square Neck Short Sleeve Long Sleeve Tops Bodysuit Jumpsuit
+Target ASIN: B0936ZJJ68
+Scenario: buying
+Constraints: ['fabric', 'Stretchy fabric: 95% gossypium, 5% spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a bodysuit and my main thing is the fabric. i need something with a good amount of stretch, like 95% cotton and 5% spandex.
+Copilot: Got it! What color are you looking for in the bodysuit?
+Copilot Attribute Query: color
+Recommendations:
+  1. Amazon Essentials Women's Cotton Bikini Brief Underwear (Available in Plus Size), Multipacks (ASIN: B07Z6J5N6Y)
+  2. POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack (ASIN: B07X9V6HZX)
+  3. Emmalise Women's Basic Casual Long Camisole Adjustable Strap Cami Layering Top (ASIN: B07C2XPZ6D)
+  4. SPECIALMAGIC Women's Sweatpants Capri Pants Cropped Jogger Running Pants Lounge Loose Fit Drawstring Waist with Side Pockets (ASIN: B085L58P9F)
+  5. YTD Mens Casual Slim Fit Basic Henley Long Sleeve Fashion T-Shirt (ASIN: B07WK8T3ZB)
+  6. V FOR CITY Women's Cotton Tank Top with Shelf Bra Adjustable Wider Strap Camisole Basic Cami Tanks (ASIN: B08975T43L)
+  7. Toddler-Baby-Girl-Floral-Clothes-Set Tunic Dress+Leggings Princess Outfit Boutique Clothing (ASIN: B08CGSXBW8)
+  8. BGDK Women’s Cotton A-Line Skirt- Elastic Waist Office Skirt (ASIN: B07B3JDDM5)
+  9. Sofishie Women Classic Cotton Legging 2 Pack (ASIN: B07D31915D)
+  10. Ladybranch Summer Women Short Sleeve V Neck Sexy Ruched Side Asymmetrical Casual Mini Dress (ASIN: B087M4BNKS)
+
+--- TURN 2 ---
+Shopper: i'm really looking for something with a square neck and maybe short or long sleeves. do you have any options like that?
+Copilot: I have a great option for you! Check out the MANGOPOP Women's Square Neck Short Sleeve Long Sleeve Tops Bodysuit Jumpsuit, which should have the stretch you're looking for. What size do you usually wear?
+Copilot Attribute Query: size
+Recommendations:
+  1. MANGOPOP Women's Square Neck Short Sleeve Long Sleeve Tops Bodysuit Jumpsuit (ASIN: B0936ZJJ68)
+  2. EXLURA Womens Square Neck Long Sleeve Dress High Waist Off Shoulder Smocked a Line Ruffle Swing Ditsy Short Mini Dress (ASIN: B097N31RCN)
+  3. eLuxury Lightweight Waffle Kimono Robe Spa Waffle Robe Light Waffle Bathrobe Shower Wrap (ASIN: B01DYHF56O)
+  4. Natural Uniforms Men's Kitchen Basic Cook Shirt Short Sleeve White (ASIN: B088W9Z8H5)
+  5. KANCY KOLE Women's Smocked Waist Dress Square Neck Short Bubble Sleeve Ruffle Mini Dress S-XXL (ASIN: B08MWNB6GP)
+  6. Zeagoo Women's Long Puff Sleeve Square Neck Top Velvet Tops Slim Fit Crop Cropped Top Blouse Sweatshirt S-XXXL (ASIN: B0B4RW6DF2)
+  7. cooki Summer Dresses for Women Beach, Womens Casual V-Neck Roll Up Sleeve Striped Printed Cotton Linen Long Maxi Dresses (ASIN: B09S3745S2)
+  8. Kafiloe Women Club Ruched Mini Dresses Ribbed Long Puff Sleeve Dress with Drawstring Sexy Bodycon Nightout Outfit (ASIN: B095XYTTVF)
+  9. Women Scoop Neck Long Sleeves Crop Top Slim fit Ribbed Knitted Basic Klein Blue Cropped T Shirt Top (ASIN: B0BHZLYX8P)
+  10. Sweater Cardigans for Women Autumn Solid Long Sleeve Knit Cardigan Slim fit Button Down Light Jacket Coat with Pocket (ASIN: B0BGHFN87N)
+
+=== RESULT: SUCCESS (Turn 2) ===

@@ -1,0 +1,22 @@
+Target Product Title: 47 Pairs Fashion Earrings for Women Girls, Boho Statement Tassel Rattan Leather Earrings Butterfly Acrylic Hoop Stud Drop Dangle Earrings Set, Hypoallergenic for Sensitive Ears
+Target ASIN: B08BWR1T58
+Scenario: browsing
+Constraints: ['leather', 'color: pink']
+============================================================
+--- TURN 1 ---
+Shopper: I'm looking for Earrings Drop & Dangle.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Kandinsky Statement Earrings for Women by Spirit Hoops, Fabric, Lightweight Drop and Dangle Stainless Steel Hoop Earrings for Women Fashion, Artsy (ASIN: B07K34RX5J)
+  2. 47 Pairs Fashion Earrings for Women Girls, Boho Statement Tassel Rattan Leather Earrings Butterfly Acrylic Hoop Stud Drop Dangle Earrings Set, Hypoallergenic for Sensitive Ears (ASIN: B08BWR1T58)
+  3. Acrylic Earrings For Women Girls Statement Geometric Earrings Resin Acetate Drop Dangle Earrings Mottled Hoop Earrings Fashion Jewelry (ASIN: B07ZFBQ76H)
+  4. SMALLLOVE Wooden Hoop Earrings for Women Girls Retro Black African Bohemian Wood Teardrop Geometric Lightweight Dangle Drop Earrings (ASIN: B08678QV6Z)
+  5. WOWORAMA Colorful Christmas Earrings for Women Crystal Christmas Light Bulb Earrings Cute Reindeer Earrings Christmas Tree Gingerbread Pom Hat Earrings Gifts (ASIN: B09NMYN81X)
+  6. CiNily 18K White Gold Plated Leaf Opal Dangle Drop Earrings for Women Teen Girls Hypoallergenic Opal Jewelry Gift (ASIN: B0711QBT8X)
+  7. Reffeer 925 Sterling Silver Leaf Tassel Threader Earrings Drops for Women Girls Leaf Dangle Earrings Chain (ASIN: B09YT8R9P2)
+  8. Fashion Sterling Silver Bling Design Long Dangle Drop Hypoallergenic & Nickel Free Stud Drop Dangle Earrings Jewelry for Girls Women (ASIN: B081CML5WK)
+  9. Gold Clip On Drop Earrings for Women Non Piercing Dangle Earrings Fashion Jewelry (ASIN: B0BJ2G3BDR)
+  10. BONALUNA Bohemian Wood And Marble Effect Oblong Shaped Drop Statement Earrings (ASIN: B08HWDR881)
+
+=== RESULT: SUCCESS (Turn 1) ===

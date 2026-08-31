@@ -1,0 +1,118 @@
+Target Product Title: Azules Women's Long Sleeve Flowy Tunic
+Target ASIN: B08JK818ZD
+Scenario: buying
+Constraints: ['spandex', '5% spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a long sleeve tunic top and it has to have spandex in it. something comfy and flowy would be great.
+Copilot: That sounds great! Do you have a specific color in mind for the tunic top?
+Copilot Attribute Query: color
+Recommendations:
+  1. Lotusmile Women's Funnel Neck Pullover Sweatshirt Check Contrast Lightweight Hoodie Tops (ASIN: B07J3Z2LMR)
+  2. Women's 3/4 Sleeve Short Sleeve Loose Tunic Top Asymmetrical Swing Blouse Casual Long Shirt for Leggings (ASIN: B08GC9MWHY)
+  3. Luckymore Women's Casual Long Sleeve Tunic Tops Loose Fit Pleated Fall Shirts Blouse M-3XL (ASIN: B0B8NB7BF2)
+  4. Lakemiss Women V Neck 3/4 Cuffed Sleeve Shoulder Overlay Buttons Tunics Blouses (ASIN: B08H5T746G)
+  5. Graphic Tees Women Summer Tops Long Sleeve Cute Shirts Blouses for Women Fashion Colorful Plus Size Loose T Tshirts (ASIN: B09B12C1Q6)
+  6. Girls Tunic Top Lace Long Sleeve Unicorn Tee Loose Fit Soft Blouse Swing T-Shirt (ASIN: B07XRB2C63)
+  7. Kimmery Woman Long Sleeve Heaps Collar Double Pockets Loose Fitting Tunic (ASIN: B07FLZKLSD)
+  8. egease Womens Spring Summer Knot Front V Neck Ruffles Long Sleeve Floral Print Swing Mini Dress (ASIN: B0B12RRWQ6)
+  9. Locryz Women's Casual Swing Dresses Long Sleeve T-Shirt Dress with Pockets (ASIN: B07YH9PC3K)
+  10. TIMOCHALA Women's Comfy Casual Long Sleeve Tunic Tops Fall Tshirt Basic Tee Tops Blouses (Navy Blue, XXL) (ASIN: B097XJ93RQ)
+
+--- TURN 2 ---
+Shopper: i'm not really set on a specific color, just looking for something comfy and flowy. but none of these seem quite right. do you have anything that has a curved hem and is made with spandex?
+Copilot: I understand you're looking for a comfy, flowy long sleeve tunic top with a curved hem and made of spandex. Could you let me know what size you typically wear?
+Copilot Attribute Query: size
+Recommendations:
+  1. Women's Plus Size Shirts Lace Trim Cold Shoulder Blouse Long Sleeve Loose Tunic Tops (ASIN: B07LG1H65T)
+  2. Miusey Women Drawstring 3/4 Sleeve Henley V Neck Tops Blouse Shirts Tunic (ASIN: B097DBQTL5)
+  3. R-Jun Women's Long Sleeve Casual Loose T-Shirt Dress Comfy Swing Tunic Dress Round Neck Flowy Midi Dress with Pockets (ASIN: B077BWNM2R)
+  4. Lotusmile Women's Funnel Neck Pullover Sweatshirt Check Contrast Lightweight Hoodie Tops (ASIN: B07J3WBZ1J)
+  5. Womens Plus Size Maxi Dress with Ruffle Hem Long Sleeve Loose Plus Size Dress-USA (ASIN: B07JKDHQQR)
+  6. Women's Casual Cuffed Long Sleeve Button Down Shirt Dress Plus Size V Neck Tunic Blouses Tops with Pockets (ASIN: B09KGDR3KB)
+  7. KOH KOH Womens Long Flowy Loose Fit Kaftan Evening Elegant Gown Maxi Dress (ASIN: B085NHQ946)
+  8. AMZ PLUS Women Plus Size V Neck Tunic Tops Long Sleeve Pleated Loose Fit Casual Shirts (ASIN: B082YTPSJK)
+  9. GOOTUCH Women's Long Sleeve Tops V Neck Button Down T Shirt Casual Loose Cute Tunic (ASIN: B096Z5T9XB)
+  10. INWECH Women Striped Tee Shirt Colorblock Tops Yellow Long Sleeve Tops and Blouses (Yellow, Large) (ASIN: B086WCM2MR)
+
+--- TURN 3 ---
+Shopper: What options do you have?
+Copilot: I have a few options that match your criteria! One is a long sleeve tunic top with a curved hem that's perfect for leggings, and another is a plus size floral swing tunic. Just to narrow it down a bit, could you share what you plan to use it for, like casual wear or something dressier?
+Copilot Attribute Query: size
+Recommendations:
+  1. Womens Fall Fashion Tops Dressy Casual Long Sleeve Tunic Tops for Leggings Crewneck Curved-Hem Sweatshirts Soft Shirts (ASIN: B0BN6DBB4K)
+  2. FULVM Women's Plus Size Swing Tunic Top Long Sleeve Floral Flare Shirts (ASIN: B07VXN5VMW)
+  3. Jdaxiy Women's Short/Long Sleeve Tunic Tops Loose Fit Flare Shirts V Neck Flowy Casual Blouse (ASIN: B07J5DYGDH)
+  4. Ruffle Halter Tank Top for Women Flowy Casual Loose Sleeveless Shirt Comfy Adjustable Cami Tops Blouse Cute Summer Tops (ASIN: B09Z7DBCKQ)
+  5. Uniboutique Women's Long Sleeve Loose Floral Swing Plus Size Tunics Tops Shirt (ASIN: B07JX9L6B5)
+  6. MONNURO Open Front Cardigan for Women Plus Size Long Sleeve Button Cardigan Sweaters with PocketsFlower23 5X (ASIN: B08D38SXYR)
+  7. URBAN DAIZY Women's Tank Top – Sleeveless Casual Loose Fit Scoop Neck Round Hem Solid Summer Tunic T Shirts (ASIN: B084P6KDV8)
+  8. PRETTYGARDEN Women's Summer Wrap Maxi Dress Casual Boho Floral V Neck Short Sleeve Ruffle Hem Split Beach Long Dresses (ASIN: B08X6CZS6R)
+  9. netdraw Men's Ultra-Soft Bamboo Henley T-Shirts Curved Hem Lightweight Cooling Short Sleeve Casual Plain Tee (ASIN: B0B1Y59186)
+  10. Women's Open Front 3/4 Sleeve Lace Lightweight Soft Casual Long Duster Cardigan Outerwear (ASIN: B08NXDW2BT)
+
+--- TURN 4 ---
+Shopper: i'm just looking for something comfy for casual wear, ideally with a bit of stretch since i like a good fit. do any of those have spandex in them?
+Copilot: Yes, I have options that include spandex for that stretchy comfort you’re looking for! Just to refine the search a bit more, do you have a preferred brand in mind?
+Copilot Attribute Query: brand
+Recommendations:
+  1. Vshemoi Summer Spaghetti Strap Dress for Women Casual V Neck High Low Dresses Flowy Long Sundress (ASIN: B09MFMFCTP)
+  2. Miskely Women's Summer Short Sleeve Damask Blouse Floral Printed Irregular Hem Tunic Tops Casual Asymmetrical T Shirt (ASIN: B07ZCM5S4X)
+  3. DOUBLE ICON Women's Sleeveless Dress - Casual Midi Swing Flowy Crewneck Summer Basic Tank Top T Shirt One Piece (ASIN: B094GG2K6N)
+  4. ALLTB American Flag Shirt Women Patriotic Shirt USA Flag Stars Stripes Print T-Shirt 4th of July Tee Tops (ASIN: B09XMMJN2T)
+  5. Lamilus Women's Casual Summer Tshirt Dresses Sleeveless Boho Beach Sundress Dress with Pockets (ASIN: B08CMV5BCQ)
+  6. Biucly Women's Casual V Neck Tops 3/4 Sleeve Tie Knot Chiffon Blouses Button Down Shirts (ASIN: B07TZPFQ9N)
+  7. Women's Plus Size Wrap Short Sleeve Belted Empire Waist Casual Summer Beach Party Mini Flowy Dress (ASIN: B0886DFK61)
+  8. Halife Women's Floral Printed Short Sleeve Henley V Neck T-Shirt Pleated Casual Flowy Tunic Blouse Tops (ASIN: B086BMHQDQ)
+  9. Hibelle Women's Long Sleeve Round Neck Buttons Casual Flared Basic Tunic Tops (ASIN: B07T2HCJY1)
+  10. aladuo Women Midi Dress Long Sleeve with Pocket for Work Casual V Neck Midi Dress for Women (ASIN: B07WPTZCB1)
+
+--- TURN 5 ---
+Shopper: i don't have a specific brand in mind, but i'm really looking for something soft and flowy, maybe with long sleeves and a nice curved hem. do you have anything like that?
+Copilot: I found some great options that fit your description! Just to help narrow it down further, could you let me know your budget for this purchase?
+Copilot Attribute Query: budget
+Recommendations:
+  1. SheIn Women's Long Sleeve Button Down V Neck Striped Print Blouse Shirt Top (ASIN: B0BGBM979S)
+  2. ayreus Women's Floral Prints V-Neck Blouse Shirts Button Down Long Sleeve Flowy Tunic Top (ASIN: B08P2SXC54)
+  3. FairyLove Women's Casual V Neck Dress Long Sleeve Flowy Babydoll Swing Ruffle Dress (ASIN: B0C6FJK8YH)
+  4. Hount Womens Long Sleeve Shirts Casual V Neck Leopard Tie Dye Loose Tunic Tops with Front Pocket (ASIN: B08FCKRL97)
+  5. FairyLove Womens Casual Long Bell Sleeves Dress Loose Flowy Dresses for Wedding Guest (ASIN: B0BG8R3H31)
+  6. levaca Women's Plain Casual High Low Hem Flowy Midi Dress (ASIN: B07QYMBPPJ)
+  7. Ckikiou Womens Ruffle Chiffon Dress V Neck Short Long Sleeve Floral Print Flowy Swing Boho Summer Dresses (ASIN: B08PVJVCT2)
+  8. IN'VOLAND Women Plus Size Nightgown Short Sleeve Loungewear V-Neck Sleepwear Comfy Sleep Shirt Pajama Dress (16W-24W (ASIN: B07RWB95CX)
+  9. BLENCOT Women's Fashion Floral V Neck Long Sleeve Blouses Casual Flowy Bohemian Shirts Tops Work Sky Blue S (ASIN: B07T5D5F6N)
+  10. II ININ Women's Pockets Comfy Short Sleeve High Low Pleated Loose Swing Dress (Navy, XL) (ASIN: B07PPM9987)
+
+--- TURN 6 ---
+Shopper: i'm not really looking to spend too much, maybe around 30 to 50 bucks. do any of these have that stretchy material i need?
+Copilot: I have some options within your budget that feature spandex for that stretchy feel! How about a casual style? Would that work for you?
+Copilot Attribute Query: style
+Recommendations:
+  1. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  2. LONGYUAN Womens Long Sleeve Fashion Tunic Tops Casual Vneck Shirts Dressy Blouses (ASIN: B08Y8ZJJC1)
+  3. Avidlove Sleepwear for Women Tank Nightgown Chemise Racerback Sleeveless Sleep Dress (ASIN: B07KR1YDV4)
+  4. Lildy Women's Denim Jeggings, Stretchable Cotton Blend (ASIN: B07VXRB6NG)
+  5. Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops (ASIN: B07H7BWMQF)
+  6. RUEWEY Women's V-Neck Sleeveless Pajamas Set Lace Cami Set with Short Pants Sleepwear PJ Set Nightwear (ASIN: B088BLB7MN)
+  7. Actloe Womens Summer Tanks Sleeveless Button Up Shirts Henley Tight Low Cut Tops Casual (ASIN: B08TG8JRDZ)
+  8. High Waisted Biker Shorts Women - 8 inches Soft Tummy Control Shorts for Workout, Gym, Yoga, Running (ASIN: B096WW7MXD)
+  9. Asvivid Womens Casual Boho Floral Print 3/4 Flare Sleeve Blouses Summer Off The Shoulder Tops Tie Knot Shirts (ASIN: B09M84R91V)
+  10. Zando Womens Floral Kimono Cover Ups Short Sleeve Kimono Cardigans Casual Shawl Cardigan Loose Open Front Kimono Tops (ASIN: B08S3V99RN)
+
+--- TURN 7 ---
+Shopper: i'm looking for something more like a long sleeve tunic, ideally with a flowy fit and a curved hem. do you have anything like that?
+Copilot: I have a couple of long sleeve tunics that fit your flowy style and curved hem preference! Just to refine the search a bit more, could you let me know what use case you have in mind for these tunics?
+Copilot Attribute Query: other
+Recommendations:
+  1. Azules Women's Long Sleeve Flowy Tunic (ASIN: B08JK818ZD)
+  2. F_Gotal Womens Dresses Summer Plus Size Deep V Short Sleeve Sequined Evening Party Mesh Dress Sundress Party Cocktail (ASIN: B07RD5CVF8)
+  3. Lace Up Shirt for Women Long Sleeve Black Floral Top Blouse Tunic (ASIN: B07N6G3L1W)
+  4. Women V Neck Lantern Sleeve Multicolor Striped Sequin Short Rompers Jumpsuits (ASIN: B086755PW7)
+  5. PHSHY Striped Leopard Printed Color Block Knitted Sweaters Women Crew Neck Long Sleeve Casual Pullover Jumper Tops (ASIN: B09JWG3MXR)
+  6. Womens Summer Kimono Cardigan Loose Open Front Boho Floral Print Irregular Flowy Beach Wear Coverup Tops Lightweight (ASIN: B09B1Z1MPX)
+  7. Summer Casual Cross Cold Shoulder Long Sleeve Tops for Women Fashion Round Neck Print Loose Blouses Shirts Pullover (ASIN: B098K9TSBC)
+  8. Generic Tunics for Women to Wear with Leggings Short Sleeve Flowy Shirts Dandelion Print Tops Plus Size S-5XL, watermelon Red (ASIN: B093KV7LP1)
+  9. Lanmia Women Long Bell Sleeve Double Layers Floral Print Mesh Blouses Loose Casual Flowy Dressy Shirt Top (ASIN: B0C74K6GL4)
+  10. Womens Summer Tops Dressy Casual, Shirts for Women, Womens Short Sleeve Tops, Women's Fashion V Neck Solid T Shirts Loose Fit Tunic Casual Summer Top Blouses Shirts (ASIN: B09C7TT7JV)
+
+=== RESULT: SUCCESS (Turn 7) ===

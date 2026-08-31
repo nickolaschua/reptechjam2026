@@ -1,0 +1,520 @@
+{
+  "candidate_recall": {
+    "by_k": {
+      "10": {
+        "hits": 4,
+        "recall": 0.3333333333333333,
+        "total": 12
+      },
+      "3": {
+        "hits": 4,
+        "recall": 0.3333333333333333,
+        "total": 12
+      },
+      "5": {
+        "hits": 4,
+        "recall": 0.3333333333333333,
+        "total": 12
+      }
+    },
+    "portable_count": 12
+  },
+  "coverage": {
+    "independent_queries": 18,
+    "label_counts": {
+      "CONFLICTING": 13,
+      "CONTEXTUAL": 33,
+      "IRRELEVANT": 23,
+      "PORTABLE": 12,
+      "REDUNDANT": 18
+    },
+    "memory_pairs": 109,
+    "no_useful_history_states": 10,
+    "positive_polarity_pairs": 99,
+    "u4_negative_polarity_diagnostic": 10,
+    "users": 4
+  },
+  "decision": {
+    "reason": "MEMORY PROVENANCE INSUFFICIENT: atomic MemoryItem text lost persistence/episode provenance for classification errors",
+    "verdict": "PORTABILITY INCONCLUSIVE"
+  },
+  "deployable_cosine_top10": {
+    "binary": {
+      "classification": {
+        "f1": 0.0,
+        "false_negative": 12,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "pair_count": 81,
+      "portable_score": {
+        "auprc": 0.20132953466286801,
+        "auroc": 0.3242753623188406
+      },
+      "positive_count": 12,
+      "raw_cosine": {
+        "auprc": 0.12039364125856876,
+        "auroc": 0.35144927536231885
+      }
+    },
+    "classification_error_audit": {
+      "AMBIGUOUS_LABEL": 0,
+      "CONTEXT_LOST_DURING_MEMORY_DISTILLATION": 34,
+      "ENOUGH_CONTEXT": 0,
+      "MODEL_ERROR": 45
+    },
+    "classification_error_count": 79,
+    "hard_negatives": {
+      "CONFLICTING": {
+        "count": 13,
+        "rejected": 13,
+        "rejection_accuracy": 1.0
+      },
+      "CONTEXTUAL": {
+        "count": 33,
+        "rejected": 33,
+        "rejection_accuracy": 1.0
+      },
+      "IRRELEVANT": {
+        "count": 23,
+        "rejected": 23,
+        "rejection_accuracy": 1.0
+      },
+      "nearby_same_category": {
+        "count": 46,
+        "rejected": 46,
+        "rejection_accuracy": 1.0
+      }
+    },
+    "multiclass": {
+      "balanced_accuracy": 0.17105841018884496,
+      "confusion_matrix": {
+        "CONFLICTING": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 5,
+          "IRRELEVANT": 8,
+          "PORTABLE": 0,
+          "REDUNDANT": 0
+        },
+        "CONTEXTUAL": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 2,
+          "IRRELEVANT": 31,
+          "PORTABLE": 0,
+          "REDUNDANT": 0
+        },
+        "IRRELEVANT": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 6,
+          "IRRELEVANT": 17,
+          "PORTABLE": 0,
+          "REDUNDANT": 0
+        },
+        "PORTABLE": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 0,
+          "IRRELEVANT": 11,
+          "PORTABLE": 0,
+          "REDUNDANT": 1
+        },
+        "REDUNDANT": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 4,
+          "IRRELEVANT": 11,
+          "PORTABLE": 2,
+          "REDUNDANT": 1
+        }
+      },
+      "macro_f1": 0.10332673267326734,
+      "pair_count": 99,
+      "per_class": {
+        "CONFLICTING": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 13
+        },
+        "CONTEXTUAL": {
+          "f1": 0.08,
+          "precision": 0.11764705882352941,
+          "recall": 0.06060606060606061,
+          "support": 33
+        },
+        "IRRELEVANT": {
+          "f1": 0.3366336633663366,
+          "precision": 0.21794871794871795,
+          "recall": 0.7391304347826086,
+          "support": 23
+        },
+        "PORTABLE": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 12
+        },
+        "REDUNDANT": {
+          "f1": 0.09999999999999999,
+          "precision": 0.5,
+          "recall": 0.05555555555555555,
+          "support": 18
+        }
+      }
+    },
+    "negative_polarity_diagnostic": {
+      "accuracy": 0.2,
+      "correct": 2,
+      "included_in_primary_metrics": false,
+      "pair_count": 10,
+      "predicted_class_counts": {
+        "CONFLICTING": 0,
+        "CONTEXTUAL": 0,
+        "IRRELEVANT": 10,
+        "PORTABLE": 0,
+        "REDUNDANT": 0
+      }
+    },
+    "no_useful_history": {
+      "false_portable_count": 2,
+      "false_portable_rate": 0.043478260869565216,
+      "fixture_ids": [
+        "u2_override_s2_final",
+        "u2_override_s4_final",
+        "u2_override_s7_final",
+        "u2_override_s9_final",
+        "u3_distractor_s3_final",
+        "u3_distractor_s5_final",
+        "u4_negative_s2_final",
+        "u4_negative_s5_final",
+        "u4_negative_s8_final",
+        "u4_negative_s9_final"
+      ],
+      "pair_count": 46,
+      "query_count": 10
+    },
+    "query_bootstrap_95_ci": {
+      "available": true,
+      "intervals": {
+        "auprc_gain": {
+          "lower_95": -0.06172757664597628,
+          "successful_samples": 1000,
+          "upper_95": 0.28510488936273737
+        },
+        "auroc_gain": {
+          "lower_95": -0.16768207282913167,
+          "successful_samples": 1000,
+          "upper_95": 0.21751852757845902
+        },
+        "portable_auprc": {
+          "lower_95": 0.07318207959512307,
+          "successful_samples": 1000,
+          "upper_95": 0.39634561206824853
+        },
+        "portable_auroc": {
+          "lower_95": 0.16101694915254236,
+          "successful_samples": 1000,
+          "upper_95": 0.5282694327731092
+        },
+        "raw_auprc": {
+          "lower_95": 0.06307697613508133,
+          "successful_samples": 1000,
+          "upper_95": 0.2244631024235797
+        },
+        "raw_auroc": {
+          "lower_95": 0.1880281690140845,
+          "successful_samples": 1000,
+          "upper_95": 0.5381016639610389
+        }
+      },
+      "samples_requested": 1000,
+      "seed": 2603,
+      "unit": "fixture_id",
+      "unit_count": 18
+    },
+    "user_bootstrap_95_ci": {
+      "available": true,
+      "intervals": {
+        "auprc_gain": {
+          "lower_95": 0.006962115270543211,
+          "successful_samples": 937,
+          "upper_95": 0.14511102765506217
+        },
+        "auroc_gain": {
+          "lower_95": -0.06712962962962962,
+          "successful_samples": 937,
+          "upper_95": 0.04475308641975306
+        },
+        "portable_auprc": {
+          "lower_95": 0.06737053795877326,
+          "successful_samples": 937,
+          "upper_95": 0.3712121212121212
+        },
+        "portable_auroc": {
+          "lower_95": 0.2064102564102564,
+          "successful_samples": 937,
+          "upper_95": 0.4224137931034483
+        },
+        "raw_auprc": {
+          "lower_95": 0.06040842268823005,
+          "successful_samples": 937,
+          "upper_95": 0.2904935480593375
+        },
+        "raw_auroc": {
+          "lower_95": 0.2717948717948718,
+          "successful_samples": 937,
+          "upper_95": 0.4583333333333333
+        }
+      },
+      "samples_requested": 1000,
+      "seed": 2604,
+      "unit": "user_id",
+      "unit_count": 4
+    }
+  },
+  "failures": [],
+  "judge_capability_all": {
+    "binary": {
+      "classification": {
+        "f1": 0.0,
+        "false_negative": 12,
+        "false_positive": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "pair_count": 81,
+      "portable_score": {
+        "auprc": 0.1504735328936242,
+        "auroc": 0.4027777777777778
+      },
+      "positive_count": 12,
+      "raw_cosine": {
+        "auprc": 0.12039364125856876,
+        "auroc": 0.35144927536231885
+      }
+    },
+    "classification_error_audit": {
+      "AMBIGUOUS_LABEL": 0,
+      "CONTEXT_LOST_DURING_MEMORY_DISTILLATION": 34,
+      "ENOUGH_CONTEXT": 0,
+      "MODEL_ERROR": 46
+    },
+    "classification_error_count": 80,
+    "hard_negatives": {
+      "CONFLICTING": {
+        "count": 13,
+        "rejected": 13,
+        "rejection_accuracy": 1.0
+      },
+      "CONTEXTUAL": {
+        "count": 33,
+        "rejected": 32,
+        "rejection_accuracy": 0.9696969696969697
+      },
+      "IRRELEVANT": {
+        "count": 23,
+        "rejected": 23,
+        "rejection_accuracy": 1.0
+      },
+      "nearby_same_category": {
+        "count": 46,
+        "rejected": 45,
+        "rejection_accuracy": 0.9782608695652174
+      }
+    },
+    "multiclass": {
+      "balanced_accuracy": 0.15994729907773383,
+      "confusion_matrix": {
+        "CONFLICTING": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 8,
+          "IRRELEVANT": 5,
+          "PORTABLE": 0,
+          "REDUNDANT": 0
+        },
+        "CONTEXTUAL": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 2,
+          "IRRELEVANT": 29,
+          "PORTABLE": 1,
+          "REDUNDANT": 1
+        },
+        "IRRELEVANT": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 5,
+          "IRRELEVANT": 17,
+          "PORTABLE": 0,
+          "REDUNDANT": 1
+        },
+        "PORTABLE": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 0,
+          "IRRELEVANT": 12,
+          "PORTABLE": 0,
+          "REDUNDANT": 0
+        },
+        "REDUNDANT": {
+          "CONFLICTING": 0,
+          "CONTEXTUAL": 6,
+          "IRRELEVANT": 8,
+          "PORTABLE": 4,
+          "REDUNDANT": 0
+        }
+      },
+      "macro_f1": 0.0871552403467297,
+      "pair_count": 99,
+      "per_class": {
+        "CONFLICTING": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 13
+        },
+        "CONTEXTUAL": {
+          "f1": 0.07407407407407407,
+          "precision": 0.09523809523809523,
+          "recall": 0.06060606060606061,
+          "support": 33
+        },
+        "IRRELEVANT": {
+          "f1": 0.36170212765957444,
+          "precision": 0.23943661971830985,
+          "recall": 0.7391304347826086,
+          "support": 23
+        },
+        "PORTABLE": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 12
+        },
+        "REDUNDANT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 18
+        }
+      }
+    },
+    "negative_polarity_diagnostic": {
+      "accuracy": 0.2,
+      "correct": 2,
+      "included_in_primary_metrics": false,
+      "pair_count": 10,
+      "predicted_class_counts": {
+        "CONFLICTING": 0,
+        "CONTEXTUAL": 3,
+        "IRRELEVANT": 3,
+        "PORTABLE": 1,
+        "REDUNDANT": 3
+      }
+    },
+    "no_useful_history": {
+      "false_portable_count": 4,
+      "false_portable_rate": 0.08695652173913043,
+      "fixture_ids": [
+        "u2_override_s2_final",
+        "u2_override_s4_final",
+        "u2_override_s7_final",
+        "u2_override_s9_final",
+        "u3_distractor_s3_final",
+        "u3_distractor_s5_final",
+        "u4_negative_s2_final",
+        "u4_negative_s5_final",
+        "u4_negative_s8_final",
+        "u4_negative_s9_final"
+      ],
+      "pair_count": 46,
+      "query_count": 10
+    },
+    "query_bootstrap_95_ci": {
+      "available": true,
+      "intervals": {
+        "auprc_gain": {
+          "lower_95": -0.05691536517854279,
+          "successful_samples": 1000,
+          "upper_95": 0.04956657441730616
+        },
+        "auroc_gain": {
+          "lower_95": -0.13929056711721371,
+          "successful_samples": 1000,
+          "upper_95": 0.21032430213464698
+        },
+        "portable_auprc": {
+          "lower_95": 0.07352135112684985,
+          "successful_samples": 1000,
+          "upper_95": 0.22555115227909342
+        },
+        "portable_auroc": {
+          "lower_95": 0.325748556998557,
+          "successful_samples": 1000,
+          "upper_95": 0.46428714514652014
+        },
+        "raw_auprc": {
+          "lower_95": 0.06307697613508133,
+          "successful_samples": 1000,
+          "upper_95": 0.2244631024235797
+        },
+        "raw_auroc": {
+          "lower_95": 0.1880281690140845,
+          "successful_samples": 1000,
+          "upper_95": 0.5381016639610389
+        }
+      },
+      "samples_requested": 1000,
+      "seed": 2603,
+      "unit": "fixture_id",
+      "unit_count": 18
+    },
+    "user_bootstrap_95_ci": {
+      "available": true,
+      "intervals": {
+        "auprc_gain": {
+          "lower_95": -0.017766275332064818,
+          "successful_samples": 937,
+          "upper_95": 0.03852571884574846
+        },
+        "auroc_gain": {
+          "lower_95": -0.15625,
+          "successful_samples": 937,
+          "upper_95": 0.1529051987767584
+        },
+        "portable_auprc": {
+          "lower_95": 0.07320698625046451,
+          "successful_samples": 937,
+          "upper_95": 0.2727272727272727
+        },
+        "portable_auroc": {
+          "lower_95": 0.29545454545454547,
+          "successful_samples": 937,
+          "upper_95": 0.46405228758169936
+        },
+        "raw_auprc": {
+          "lower_95": 0.06040842268823005,
+          "successful_samples": 937,
+          "upper_95": 0.2904935480593375
+        },
+        "raw_auroc": {
+          "lower_95": 0.2717948717948718,
+          "successful_samples": 937,
+          "upper_95": 0.4583333333333333
+        }
+      },
+      "samples_requested": 1000,
+      "seed": 2604,
+      "unit": "user_id",
+      "unit_count": 4
+    }
+  },
+  "usage": {
+    "failures": 0,
+    "hosted_calls": 37,
+    "input_tokens": 32371,
+    "mean_latency_seconds": 2.833261408331358,
+    "median_latency_seconds": 2.694019600006868,
+    "output_tokens": 12573,
+    "retries": 1,
+    "successful_query_calls": 36
+  }
+}

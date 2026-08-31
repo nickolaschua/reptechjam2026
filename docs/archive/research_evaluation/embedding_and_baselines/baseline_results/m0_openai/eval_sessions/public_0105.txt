@@ -1,0 +1,70 @@
+Target Product Title: IUGA High Waisted Yoga Pants for Women with Pockets Capri Leggings for Women Workout Leggings for Women Yoga Capris
+Target ASIN: B07Q46M2J2
+Scenario: browsing
+Constraints: ['polyester', '77% Polyester, 23% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some high waisted yoga pants for women, ideally with pockets and made of a blend that includes polyester and spandex.
+Copilot: Great choice! Do you have a specific color in mind for the yoga pants?
+Copilot Attribute Query: color
+Recommendations:
+  1. Leggings Depot Premium Quality Women's Cotton Blend Stretch Pull-on Jeggings with Pockets (ASIN: B074KJ49F2)
+  2. Persit Leggings for Women-Workout High Waisted Womens Leggings with Pockets Tummy Control Yoga Pants (ASIN: B083TLNBGW)
+  3. chouyatou Women's Casual Stretch Waist Washed Denim A-line Maxi Skirt (ASIN: B015K51VPM)
+  4. XIEERDUO 2.5'' Women's High Waisted Workout Running Shorts with Liner Back Zipper Pocket (ASIN: B09262V39H)
+  5. INDJXND Womens Metallic Shiny Jogger Pants Tapered Pant Holographic Hip Hop Sweatpants with Pockets (ASIN: B07TN6CT5F)
+  6. VISNXGI Workout Yoga Pants for Women High Waist Athletic Compression Ankle Length Leggings with Gym Sport (ASIN: B07Q4MMQLJ)
+  7. Mondetta Women Active Legging (ASIN: B07Z9GFFBR)
+  8. AFITNE womens Soft (ASIN: B08G4SZDN7)
+  9. URBAN DAIZY Women's Joggers Sweatpants - Elastic Waistband Drawstring Melange Velboa Lounge Active Casual Pants with Pockets (ASIN: B0B1HLDQ61)
+  10. IEPOFG Womens Yoga Pants Workout Stretchy Bootcut Flare Cargo Pants with Pockets High-Waisted Wide Leg Pants Tummy Control (ASIN: B0C145HTY3)
+
+--- TURN 2 ---
+Shopper: i'm looking for something in maroon, if possible. do you have any options that fit that color?
+Copilot: I found some options for high waisted yoga pants in maroon with pockets! Could you let me know what size you’re looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Jvini Women's High Waisted Pleated Pull-On Stretchy Skinny Jeggings with Pockets (ASIN: B07DD1KKFZ)
+  2. CRZ YOGA Women's Travel Cargo Scrub Joggers with Pockets Quick Dry High Waisted Hiking Workout Lounge Pants (ASIN: B083BR74MW)
+  3. Palazzo Pants with Pockets for Women - Many Colors and Prints - High Waisted Wide Legged - LG237X031 - One Size - LG237X031 (ASIN: B072PVQ53X)
+  4. Cityoung Women's High Waisted Athletic Skirts Running Skorts with Shorts Pockets Golf Skirt Tummy Control Casual Summer Sports Skirts Navy XL (ASIN: B09BJ76D6K)
+  5. NEW YOUNG 3 Pack Biker Shorts with Pockets for Women – High Waisted Tummy Control 8" Workout Spandex Yoga Bike Shorts (ASIN: B0BJDV4ZS1)
+  6. M MOTEEPI Womens 25" High Waisted Workout Leggings with Pockets Gym Yoga Running Pants (ASIN: B08JH28MY9)
+  7. Women's Vintage Striped Ripped Bell Bottom Jeans High Waist Stretchy Hem Raw Flared Denim Pants (ASIN: B0BBWB2MSS)
+  8. Naggoo Women's High Waisted Joggers Lightweight Sweatpants Workout Running Lounge Sport Pants with Pockets (ASIN: B08DFVFZSP)
+  9. HOTLOOX Women Pleated Tennis Skirts with Pockets Athletic Golf Skorts with Shorts High Waisted Mini Skirt for Workout Running (ASIN: B09QPVXB8B)
+  10. Sunzel 8" / 5" / 3" Biker Shorts for Women with Pockets, High Waisted Yoga Workout Shorts Beige (ASIN: B09Q3211PD)
+
+--- TURN 3 ---
+Shopper: i'm looking for a size xx-large. do you have anything that fits those details?
+Copilot: I have some great options for high waisted yoga pants in maroon with pockets in size XX-large. Do you have a preferred brand in mind?
+Copilot Attribute Query: brand
+Recommendations:
+  1. luvamia Women's High Waisted Denim Shorts Stretch Ripped Frayed Hem Jean Shorts (ASIN: B09J85LDSC)
+  2. Vetinee Women's Button Fly High Waisted Bermuda Denim Shorts Stretch Ripped Hem Jean Shorts (ASIN: B09MRNG1ZL)
+  3. Color Block Jeans for Women High Waisted Straight Leg Stretch Patchwork Denim Pants Womens Girls Patch Pencil Jeans (ASIN: B095H8JKTR)
+  4. TRENDY UNITED Women's Rayon Spandex High Waist Shirring Flared Pocket Skirt (ASIN: B01MTIUSD9)
+  5. TRENDY UNITED Women's Bohemian Style High Waist Shirring Ruffle Pocket Skirt (ASIN: B076DM1MRG)
+  6. CAMPSNAIL High Waisted Capri Leggings for Women - Printed Tummy Control Soft Compression Pants for Workout Yoga Running Dark Grey (ASIN: B07NPJX2KV)
+  7. NEWITIN 3 Pieces High Waist Shorts Workout Yoga Shorts with Side Pockets Sport Shorts for Women (Leopard M) (ASIN: B08CMMBJ5L)
+  8. GOSOPIN Women High Waist Distressed Straight Jeans Wide Leg Ripped Denim Pants (ASIN: B0BD51VD1Q)
+  9. Honwenle Women's Plus Size Bootcut Yoga Pants with Pockets High Waisted Stretch Bootleg Flared Workout Printed Leggings (ASIN: B093T7JBFV)
+  10. Yskkt Womens Long Sleeve Zip Up Hoodie Jackets Plus Size Tie Dye Casual Sport Sweatshirt Coats with Pockets (ASIN: B08CC3FYRW)
+
+--- TURN 4 ---
+Shopper: i'm actually looking for something specifically made of polyester, like 77% polyester and 23% spandex. ideally, it should be from a brand that focuses on style and comfort for workouts. do you have anything like that?
+Copilot: I have some options that match your specifications for high waisted yoga pants made of 77% polyester and 23% spandex. Just to narrow it down a bit more, what's your budget for these pants?
+Copilot Attribute Query: budget
+Recommendations:
+  1. TQD Women's Yoga Pants with Pockets High Waist Capris Workout Running Athletic Sports Leggings Pants (ASIN: B086QKCK2T)
+  2. LifeSky Women Yoga Leggings Pants: High Waist Tummy Control 4-Way Stretch Yoga Pants with 3 Pockets for Ladies - Compression Anti-Squat Proof Tights for Workout Gym Running Athletic Exercise Fitness (ASIN: B08NDXJQQB)
+  3. Fengbay High Waist Yoga Pants with Pockets, Capri Leggings for Women Tummy Control Running 4 Way Stretch Workout Leggings (ASIN: B087CYC9NR)
+  4. HOFI High Waist Yoga Pants with Pockets, 4 Way Stretch Workout Running Pants, Yoga Leggings for Women (ASIN: B0899GKNQQ)
+  5. IUGA High Waisted Yoga Pants for Women with Pockets Capri Leggings for Women Workout Leggings for Women Yoga Capris (ASIN: B07Q46M2J2)
+  6. SySea Womens High Waisted Stretch Jeans Casual Drawstring Straight Leg Denim Jogger Pants with Pockets (ASIN: B0BK3DXHMC)
+  7. Ritiriko Women's Yoga Pants High Waisted Crop Workout Running Leggings with Side Pocketed Tummy Control (ASIN: B08LN1DSCP)
+  8. Youmymine Women High Waist Yoga Sport Pants Workout Fashion Skinny Leggings Fitness Athletic Pockets Pants (ASIN: B07ZLPXMHP)
+  9. OFEEFAN Womens Joggers with Pockets High Waist Yoga Pants for Women Loose Fit with Track Cuffs (ASIN: B09BVC89F9)
+  10. LOVE FANG Sweatpants for Women with Pockets High Waisted Ladies Joggers Loose Drawstring Workout Casual Lounge Pants (ASIN: B09CDC14HG)
+
+=== RESULT: SUCCESS (Turn 4) ===

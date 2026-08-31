@@ -1,0 +1,38 @@
+Target Product Title: IZZY + TOBY 100% Cotton Nightgowns for Women Soft Ladies Gowns Sleepwear Long Sleeveless Nightgown
+Target ASIN: B0834HZQZF
+Scenario: buying
+Constraints: ['cotton', '100% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a nightgown made of cotton. it has to be 100% cotton for sure. any suggestions?
+Copilot: What color are you thinking for the nightgown?
+Copilot Attribute Query: color
+Recommendations:
+  1. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  2. Columbia Men's Thistletown Park Crew (ASIN: B07KCFS4VC)
+  3. Hanes Men's Underwear Briefs Pack, Mid-Rise, Moisture-Wicking, 6-Pack (ASIN: B088QF5G58)
+  4. Hudson Durable Goods - Professional Grade Chef Apron for Kitchen, BBQ & Grill (ASIN: B075R22Y5X)
+  5. Champion Men's Joggers, Everyday Joggers, Lightweight, Comfortable Joggers for Men, 31" (ASIN: B08ZJWTCDR)
+  6. Lee Men's Performance Series Extreme Comfort Relaxed Pant (ASIN: B0BM7477G1)
+  7. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  8. Hudson Baby Unisex Baby Preemie Sleep and Play (ASIN: B07GXPPBVB)
+  9. Jerzees Men's Short Sleeve Polo Shirts, SpotShield Stain Resistant, Sizes S-5X (ASIN: B0BXXH77N8)
+  10. Ocnoant Mens Pullover Hoodies Warm Hooded Sweatshirts Outwear (ASIN: B09QZSCJ5D)
+
+--- TURN 2 ---
+Shopper: i'm not really looking for those items. i'm hoping to find a soft nightgown made of 100% cotton, maybe something long and sleeveless. ideally, it would have a pull-on closure. do you have anything like that?
+Copilot: I found a few options that fit your criteria! Would you like to specify a size for the nightgown?
+Copilot Attribute Query: size
+Recommendations:
+  1. IZZY + TOBY 100% Cotton Nightgowns for Women Soft Ladies Gowns Sleepwear Long Sleeveless Nightgown (ASIN: B0834HZQZF)
+  2. CHUNG Toddler Little Girls Cotton Nightgowns Princess Sleep Dress Short Sleeve Embroidery Pajamas Summer Vintage Gown (ASIN: B08BC9XSYS)
+  3. Ezi Women's V-Neck Sleeveless Cotton-rich Lingerie Nightgown (ASIN: B071WDJYDH)
+  4. ARIA Women's Sleeveless Short Nightgown (ASIN: B01MRKYVL8)
+  5. Lauren by Ralph Lauren Women's Sleeveless Short Nightgown (ASIN: B073C936WZ)
+  6. Eileen West Sleeveless Ballet Swiss Dot Cotton in White Ground Floral (ASIN: B09PFCZM2H)
+  7. Dorekim Women’s Sleeveless 100% Cotton Blue Sling Dress Embroidery With Lace At Collar Casual Nightshirt DK1994 (ASIN: B071781N8X)
+  8. AmeriMark Women's Sleeveless Lounge Dress Knee Length Patio Dress with V-Neck (ASIN: B08FBDKK1N)
+  9. Komar Kids Girls' Big Sleeveless Jersey Nightgown with Matching Eye mask (ASIN: B0756L55W1)
+  10. Zexxxy Women's Short Sleeve/Sleeveless Sleepwear V-Neck Nightgown Soft Loose Pockets Sleeping Shirts (ASIN: B07LF94F7G)
+
+=== RESULT: SUCCESS (Turn 2) ===

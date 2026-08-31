@@ -1,0 +1,198 @@
+from __future__ import annotations
+
+from pathlib import Path
+from types import SimpleNamespace
+import json
+import sys
+import unittest
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
+
+from nickolas.memory.qlmp import MemoryItem, MemoryPolarity, MemorySource
+from nickolas.shopping_agent.longitudinal_eval.relevant_memory_evaluation import (
+    _load_frozen_baselines,
+)
+from nickolas.shopping_agent.longitudinal_eval.relevant_memory_retrieval import (
+    assert_logical_memory_parity,
+    relevant_memory_query,
+    score_relevant_memory_query,
+)
+
+
+def unit(values: list[float]) -> np.ndarray:
+    vector = np.asarray(values, dtype=np.float64)
+    return vector / np.linalg.norm(vector)
+
+
+def memory(identifier: str, values: list[float], text: str | None = None) -> MemoryItem:
+    return MemoryItem(
+        identifier,
+        text or identifier,
+        unit(values),
+        MemorySource.USER,
+        MemoryPolarity.POSITIVE,
+    )
+
+
+def run(
+    query: np.ndarray,
+    memories: tuple[MemoryItem, ...],
+    origins: tuple[int, ...],
+    *,
+    current: int = 10,
+    k: int = 3,
+) -> tuple[np.ndarray, object]:
+    return relevant_memory_query(
+        query,
+        memories,
+        origins,
+        current_sequence_index=current,
+        query_space_id="space",
+        memory_space_id="space",
+        k=k,
+        lambda_memory=0.20,
+    )
+
+
+class CapturingScorer:
+    def __init__(self) -> None:
+        self.received: np.ndarray | None = None
+        self.top_n: int | None = None
+
+    def dense_retrieve_vector(self, query_embedding: np.ndarray, top_n: int = 150):
+        self.received = query_embedding.copy()
+        self.top_n = top_n
+        return SimpleNamespace(product_ids=["p"], scores=np.asarray([1.0]))
+
+
+class RelevantMemoryRetrievalTests(unittest.TestCase):
+    def test_exact_relevance_ranking(self) -> None:
+        memories = (
+            memory("low", [0, 1]),
+            memory("highest", [1, 0]),
+            memory("middle", [1, 1]),
+            memory("negative", [-1, 0]),
+        )
+        _, diagnostic = run(unit([1, 0]), memories, (0, 1, 2, 3))
+        self.assertEqual(diagnostic.selected_memory_ids, ("highest", "middle", "low"))
+        np.testing.assert_allclose(diagnostic.selected_similarity_scores, [1.0, 2**-0.5, 0.0])
+
+    def test_stable_ties_use_chronology_then_memory_id(self) -> None:
+        memories = (
+            memory("z", [4, 3]),
+            memory("b", [4, -3]),
+            memory("a", [4, 3]),
+        )
+        _, diagnostic = run(unit([1, 0]), memories, (2, 1, 1), k=3)
+        self.assertEqual(diagnostic.selected_memory_ids, ("a", "b", "z"))
+
+    def test_k_fallback_uses_both_available_memories(self) -> None:
+        memories = (memory("a", [1, 0]), memory("b", [0, 1]))
+        _, diagnostic = run(unit([1, 0]), memories, (0, 1))
+        self.assertEqual(diagnostic.selected_memory_ids, ("a", "b"))
+        self.assertEqual(diagnostic.selected_memory_count, 2)
+
+    def test_no_memory_returns_exact_m0_query(self) -> None:
+        query = unit([3, 4])
+        output, diagnostic = run(query, (), ())
+        np.testing.assert_array_equal(output, query)
+        self.assertFalse(diagnostic.applied)
+
+    def test_formula_parity(self) -> None:
+        query = unit([3, 4, 0])
+        memories = (
+            memory("a", [1, 0, 0]),
+            memory("b", [0, 1, 0]),
+            memory("c", [0, 0, 1]),
+        )
+        output, _ = run(query, memories, (0, 1, 2))
+        m_top = unit(np.mean(np.stack([item.embedding for item in memories]), axis=0).tolist())
+        expected = unit((query + 0.20 * m_top).tolist())
+        np.testing.assert_allclose(output, expected, rtol=0.0, atol=1e-15)
+
+    def test_temporal_isolation_rejects_current_or_future_memory(self) -> None:
+        with self.assertRaisesRegex(ValueError, "current/future memory"):
+            run(unit([1, 0]), (memory("current", [1, 0]),), (10,), current=10)
+        with self.assertRaisesRegex(ValueError, "current/future memory"):
+            run(unit([1, 0]), (memory("future", [1, 0]),), (11,), current=10)
+
+    def test_cross_space_protection(self) -> None:
+        with self.assertRaisesRegex(ValueError, "embedding spaces differ"):
+            relevant_memory_query(
+                unit([1, 0]),
+                (memory("m", [1, 0]),),
+                (0,),
+                current_sequence_index=1,
+                query_space_id="large",
+                memory_space_id="small",
+            )
+
+    def test_logical_memory_parity(self) -> None:
+        left = SimpleNamespace(
+            session_id="s", memories=(memory("m", [1, 0], "same"),), memory_origin_indices=(0,)
+        )
+        right = SimpleNamespace(
+            session_id="s", memories=(memory("m", [0, 1], "same"),), memory_origin_indices=(0,)
+        )
+        assert_logical_memory_parity((left,), (right,))
+        right.memories = (memory("different", [0, 1], "same"),)
+        with self.assertRaisesRegex(ValueError, "candidate memory IDs differ"):
+            assert_logical_memory_parity((left,), (right,))
+
+    def test_frozen_m0_m1_m2_m3_artifacts_are_unchanged(self) -> None:
+        rows, summary, manifest = _load_frozen_baselines()
+        self.assertEqual(len(rows), 144)
+        self.assertEqual(manifest["buyer_session_count"], 18)
+        self.assertEqual(set(summary), {"text-embedding-3-large", "text-embedding-3-small"})
+
+    def test_canonical_scorer_receives_exact_m4_vector(self) -> None:
+        scorer = CapturingScorer()
+        query = unit([1, 1])
+        memories = (memory("a", [1, 0]), memory("b", [0, 1]))
+        result, q_m4, _ = score_relevant_memory_query(
+            scorer,
+            query,
+            memories,
+            (0, 1),
+            current_sequence_index=2,
+            query_space_id="space",
+            memory_space_id="space",
+            top_n=50_000,
+        )
+        self.assertEqual(result.product_ids, ["p"])
+        self.assertEqual(scorer.top_n, 50_000)
+        np.testing.assert_array_equal(scorer.received, q_m4)
+
+    def test_frozen_m4_session_artifact_is_complete(self) -> None:
+        path = ROOT / "nickolas" / "shopping_agent" / "longitudinal_eval" / "results" / "relevant_memory_retrieval" / "session_results.jsonl"
+        rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+        self.assertEqual(len(rows), 36)
+        self.assertEqual({row["embedding_model"] for row in rows}, {
+            "text-embedding-3-large", "text-embedding-3-small"
+        })
+        required = {
+            "eligible_memory_ids", "eligible_memory_similarity_scores",
+            "selected_top_k_memory_ids", "selected_top_k_memory_texts",
+            "selected_similarity_scores", "aggregate_selected_memory_norm",
+            "cosine_q_m_top", "cosine_q_q_m4", "m0_target_rank",
+            "m1_target_rank", "m3_target_rank", "m4_target_rank",
+            "reciprocal_rank_m4", "hit_at_10_m4", "rank_delta_m4_vs_m0",
+            "rank_delta_m4_vs_m1", "rank_delta_m4_vs_m3",
+        }
+        for row in rows:
+            self.assertTrue(required <= set(row))
+            self.assertEqual(row["number_of_eligible_memories"], len(row["eligible_memory_ids"]))
+            self.assertEqual(len(row["eligible_memory_ids"]), len(row["eligible_memory_similarity_scores"]))
+            self.assertEqual(row["selected_memory_count"], 3)
+            self.assertAlmostEqual(row["aggregate_selected_memory_norm"], 1.0, places=12)
+            self.assertTrue(all(
+                origin < row["sequence_index"]
+                for origin in row["eligible_memory_origin_indices"]
+            ))
+
+
+if __name__ == "__main__":
+    unittest.main()

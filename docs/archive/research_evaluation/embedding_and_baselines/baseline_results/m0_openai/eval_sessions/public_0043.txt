@@ -1,0 +1,22 @@
+Target Product Title: Levi's Women's Classic Bootcut Jeans
+Target ASIN: B0C1KNGLPX
+Scenario: browsing
+Constraints: ['cotton', '60% Cotton, 23% Viscose, 16% Polyester, 1% Elastane']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's bootcut jeans. they should be mostly cotton with a bit of stretch, like around 60% cotton, and i’d love if they had a zipper closure too.
+Copilot: Great choice! Do you have a specific color in mind for the bootcut jeans?
+Copilot Attribute Query: color
+Recommendations:
+  1. Signature by Levi Strauss & Co. Gold Label Women's Modern Skinny Jeans (Standard and Plus) (ASIN: B0BQDTGHMZ)
+  2. Democracy Women's Ab Solution Jegging (ASIN: B0BVFNRYFP)
+  3. Levi's Women's Classic Bootcut Jeans (ASIN: B0C1KNGLPX)
+  4. Riders by Lee Indigo Women's Ultra Soft Denim Capri (ASIN: B0858VDFDW)
+  5. Lee Women's Plus Size Relaxed Fit Straight Leg Jean (ASIN: B0BG4G4R72)
+  6. TheMogan Women's Distressed Destructed Washed Denim Mid~High Rise Relaxed Boyfriend Jeans (ASIN: B09VD2299T)
+  7. Lee Women's Sculpting Slim Fit Skinny Leg Jean (ASIN: B0BT8PMKPV)
+  8. Wrangler Women's Western Plus Size Mid Rise Stretch Boot Cut Jean (ASIN: B09QT6D6R3)
+  9. GLORIA VANDERBILT Women's Plus Size Classic Amanda High Rise Tapered Jean, Scottsdale Wash, 20 Plus regular (ASIN: B073H3GF9H)
+  10. WallFlower Women's Juniors Luscious Curvy Bling Skinny Jeans (ASIN: B07MXMHXDF)
+
+=== RESULT: SUCCESS (Turn 1) ===

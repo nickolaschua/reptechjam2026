@@ -1,0 +1,22 @@
+Target Product Title: MANGOPOP Women's Mock Turtle Neck Long Sleeve Tops Bodysuit Jumpsuit
+Target ASIN: B0929KL5W7
+Scenario: buying
+Constraints: ['fabric', 'Stretchy fabric: 95% modal, 5% spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a bodysuit and my main thing is the fabric. i need something that's stretchy, like 95% modal and 5% spandex.
+Copilot: Got it! Do you have a specific color in mind for the bodysuit?
+Copilot Attribute Query: color
+Recommendations:
+  1. MANGOPOP Women's Mock Turtle Neck Long Sleeve Tops Bodysuit Jumpsuit (ASIN: B0929KL5W7)
+  2. Bluetime Women Adjustable Spaghetti Strap Tank Tops Basic Solid Stretchy Scoop Neck Camis Undershirts 2-3 Pack (S-XXL) (ASIN: B09P7W9WJR)
+  3. NACHILA Women's Bamboo Viscose T-Shirt Soft Short Sleeve Lounge Top Casual Pajamas Tops Stretch Pjs Shirt S-XL (ASIN: B08GPJY45B)
+  4. Jusfitsu Women's Pajamas Set Long Sleeve Sleepwear Soft Loungewear Sets Top and Pants Pjs 2 Piece Pajama Set for Women (ASIN: B07JMR7VYS)
+  5. AMZ PLUS Women Plus Size Casual Cold Shoulder Drape Tent Shift Dress (ASIN: B06XCBVLG1)
+  6. Adjustable Women Camisole with Built in Shelf Bra, Tank Top Seamless Comfortable Padded Wireless Bra cami (ASIN: B074SK7TCP)
+  7. Lovasy Nightgowns for Women Sexy V Neck Sleep Dress Slip Chemise Nightdres Baby Doll Nighties Modal Lace Sleepwear (ASIN: B0963V1PYN)
+  8. Lyssé Women's Lupe Dress (ASIN: B015OHJ1OO)
+  9. 2(X)IST Men's Modal Bikini Brief (ASIN: B08NCK71WX)
+  10. Felina Women's Inviting Hipster (ASIN: B00YIUZWBK)
+
+=== RESULT: SUCCESS (Turn 1) ===

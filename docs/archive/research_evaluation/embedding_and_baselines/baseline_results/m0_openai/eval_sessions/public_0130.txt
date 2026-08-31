@@ -1,0 +1,54 @@
+Target Product Title: POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack
+Target ASIN: B07X9V6HZX
+Scenario: intent_override
+Constraints: ['cotton', '95% Cotton, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's cotton underwear, specifically high waisted briefs. ideally, i want something that's soft and breathable, and i’d prefer if they can be hand washed or machine washed with a laundry bag at 30°c max.
+Copilot: Great choice! To help narrow it down further, what size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack (ASIN: B07X9V6HZX)
+  2. wirarpa Women's High Waisted Cotton Underwear Ladies Soft Full Briefs Panties Multipack (ASIN: B077276QGC)
+  3. Circletee Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs 5-Pack (ASIN: B09SYVPC12)
+  4. OPIBOO Women's Cotton High Waisted Underwear Double-Layer Waistband Panties Soft Full Coverage Breathable Briefs 5 Packs (ASIN: B07JCMHH58)
+  5. MIOTAN Boy Shorts Underwear for Women High Waisted Panties Cotton Boxer Briefs 4 Pack (ASIN: B0BCW4QKV5)
+  6. Hcaixing Women's Mid Waist Cotton Underwear Soft Breathable panties(5 Pack) (ASIN: B088YP2LW8)
+  7. Sinophant Women High Waisted Cotton Underwear, Ladies Briefs and Breathable Plus Size Panties for Women Daily Wear (5 Pack) (ASIN: B08GFR2T6K)
+  8. Austus 6 Pack Womens Period Underwears, Breathable High Waisted Leak Proof Cotton Postpartum Period Panties (ASIN: B0BKPTWKN4)
+  9. Women's Underwear, Cotton Panties Soft Comfy Stretch Ladies Underwear Hipster Briefs Regular & Plus Size 5 Pack (ASIN: B09BT8VPVM)
+  10. Ceseboo Thongs for Women, Womens Thongs Seamless Thongs Underwear for Women Low Waist No Show Thong (ASIN: B08MTQLDT9)
+
+--- TURN 2 ---
+Shopper: i'm looking for regular and plus sizes, but honestly, i think i found what i need. the first option looks perfect, i want to buy it!
+Copilot: That sounds fantastic! If you need any help with the purchase or have questions about the product, feel free to ask. Happy shopping!
+Copilot Attribute Query: other
+Recommendations:
+  1. Agnes Orinda Plus Size Women's Jeans Skirts Casual Mid Waisted Distressed Denim Short Skirt (ASIN: B08TWFNXGB)
+  2. jijamas Incredibly Soft Women's Pajamas Set - The Peaceful Mind (ASIN: B074FFHR52)
+  3. MEIDAYAI Womens Underwear Polyester Stretch Panties High Waisted Briefs Hipster Full Coverage Underpants Plus Size (ASIN: B0BCYRCJL6)
+  4. cerpite Plus Size Compression Socks Wide Calf for Women & Men 20-30 mmhg-Extra Wide Calf Knee High Support Socks for Nurse (ASIN: B0BVVGNDZ4)
+  5. Women's High Waist Cotton Underwear Soft Brief Panties Regular and Plus Size (Small, Black+Nude) (ASIN: B07WNH77B2)
+  6. ATTRACO Plus Size Rash Guard for Women Short Sleeve UPF 50 Swim Shirt Floral Print (ASIN: B094XKH39G)
+  7. Fruit of the Loom Women's Breathable Underwear (Regular & Plus Size) (ASIN: B09TGKBFCM)
+  8. Comfort Choice Women's Plus Size 5-Pack Stretch Cotton Full-Cut Brief Underwear - 10, Geo Hearts Pack Multicolored (ASIN: B07DDB3QKY)
+  9. UWOCEKA Pack of 5 Women's Panties Plus Size Bamboo Fiber Super Stretchy Soft Breathable High Middle Waist Briefs (3XL) (ASIN: B0745BRYW9)
+  10. BLAKE & CO. Wireless Front Clasp Bras for Women, Wireless Bra and Padded Bra, Bras for Women No Underwire, Seamless Bra (ASIN: B09T782383)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack (ASIN: B07X9V6HZX)
+  2. wirarpa Women's High Waisted Cotton Underwear Ladies Soft Full Briefs Panties Multipack (ASIN: B077276QGC)
+  3. Dongpai Women's Casual Zip Up Hoodie Solid Long Jacket Sweatshirt Outerwear L Size (ASIN: B075R1GX9G)
+  4. ROCHVIE Underwear for Women Cotton Panties Full Coverage Soft Womens Underwear Briefs (ASIN: B07WTC11SR)
+  5. Women's High Waist Cotton Underwear Soft Brief Panties Regular and Plus Size (Small, Black+Nude) (ASIN: B07WNH77B2)
+  6. Store Indya 100% Cotton Sleeveless Tank Top for Women-White-Meditation-Gym-Training (ASIN: B01GZPHBNW)
+  7. Circletee Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs 5-Pack (ASIN: B09SYVPC12)
+  8. Women Cotton Underwear Seamless Hipster Panties Soft Breathable Ladies Stretch Briefs 6-Pack (ASIN: B093STRF2L)
+  9. Sinophant Women High Waisted Cotton Underwear, Ladies Briefs and Breathable Plus Size Panties for Women Daily Wear (5 Pack) (ASIN: B08GFR2T6K)
+  10. MISSWHO Womens Cotton Underwear High Waist Postpartum Care Panties Soft Breathable No Muffin Briefs for Ladies (ASIN: B07XC165FX)
+
+=== RESULT: SUCCESS (Turn 3) ===

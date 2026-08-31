@@ -1,0 +1,22 @@
+Target Product Title: YESNO Summer Dresses for Women Casual Loose Bohemian Floral Dress with Pockets Spaghetti Strap Maxi Dress E75
+Target ASIN: B08F5G843H
+Scenario: buying
+Constraints: ['fabric', 'Fabric: 100% Cotton, Soft, Comfy, Breathable and keep you cool']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a summer dress that's really comfy and made of 100% cotton fabric. it should be soft and breathable to keep me cool.
+Copilot: That sounds perfect for summer! What color are you thinking of for your dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. YESNO Summer Dresses for Women Casual Loose Bohemian Floral Dress with Pockets Spaghetti Strap Maxi Dress E75 (ASIN: B08F5G843H)
+  2. BTFBM Women's 2023 Summer Casual Beach Dresses Crew Neck Short Sleeve Wrap Party Club Mini Ruched Bodycon T Shirt Dress (ASIN: B08B8BKPQS)
+  3. STYLEWORD Women's Round Neck Floral Spaghetti Strap Summer Dress Midi Swing Casual Sundress (ASIN: B082XV7WPC)
+  4. Summer Midi Dresses for Women Floral Tshirt Dresses Casual Short Sleeve Crewneck Pleated Empire Waist Dresses (ASIN: B0B3M52JYD)
+  5. Boho Smocked Dress Tiered Cowl Neck Backless Flowy Cami Babydoll Dresses with Adjustable Strap Drawstring Plus (ASIN: B091KX3PWR)
+  6. HIRIRI Women Fashion Lace Floral Splicing O-Neck T-Shirt Tops Long Sleeve Tunic Shirt (ASIN: B07XL8LC3G)
+  7. Women's Rainbow Striped Color Block Hoodie Sweater Long Sleeve V Neck Casual Hollow Out Knit Pullover Tops (ASIN: B0B31JFX4H)
+  8. BGDK Women’s Cotton A-Line Skirt- Elastic Waist Office Skirt (ASIN: B07B3JDDM5)
+  9. MOLYHUA Toddler Girls Dress Pink, Baby Girl Doughnut Print Skirt Sleeveless Dress Summer (ASIN: B07PQJHK29)
+  10. Graphic Tees Women Summer Tops Long Sleeve Cute Shirts Blouses for Women Fashion Colorful Plus Size Loose T Tshirts (ASIN: B09B12C1Q6)
+
+=== RESULT: SUCCESS (Turn 1) ===
