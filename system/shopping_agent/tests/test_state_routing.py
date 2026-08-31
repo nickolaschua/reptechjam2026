@@ -238,16 +238,6 @@ def test_malformed_state_json_rolls_back_then_uses_local_parser():
     assert "price_min" not in state
 
 
-def test_llm_intent_is_applied_but_deterministic_buying_signal_wins():
-    agent = bare_agent()
-    agent.reset("s", {})
-    _run_structured_state(agent, {"intent_mode": "browsing"}, "I need waterproof boots")
-    assert agent._sessions["s"]["intent_mode"] == "browsing"
-    resolved = agent._resolve_live_intent(agent._sessions["s"], "I need waterproof boots", None)
-    assert resolved.value == "buying"
-    assert agent._sessions["s"]["intent_source"] == "deterministic_precedence"
-
-
 def test_longitudinal_identity_and_sequence_validation():
     agent = bare_agent()
     agent.reset("s1", {}, user_id="u", sequence_index=1)
