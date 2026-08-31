@@ -8,6 +8,7 @@ from copy import deepcopy
 from dataclasses import asdict
 from datetime import datetime, timezone
 import hashlib
+import os
 import json
 import random
 from pathlib import Path
@@ -19,9 +20,12 @@ import numpy as np
 
 from .agent import Agent, ExperimentConfig
 from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR, PROJECT_ROOT
-from .embedding_backends import BGEEmbeddingBackend, fingerprint_file
+from .embedding_backends import (
+    BGEEmbeddingBackend, OpenAIEmbeddingBackend, fingerprint_file,
+)
 from .memory_store import InMemoryUserMemoryStore
 from .ollama_client import OllamaClient
+from .openai_client import OpenAIClient
 from .visualizer.simulator import (
     coarse_category,
     load_samples,
@@ -152,6 +156,8 @@ def preflight(
     cache_dir: Path,
     model: str,
     *,
+    provider: str = "ollama",
+    embedding_model: str = "text-embedding-3-small",
     require_research_shape: bool = True,
 ) -> tuple[dict[str, Any], dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
     fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
@@ -165,18 +171,32 @@ def preflight(
     # Agent's strict CacheExpectation checks row order, fingerprints, space ID,
     # dimensions, normalization, and schema.  Successful construction is the
     # experiment's verified-BGE-cache gate.
+    if provider == "openai":
+        api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+        if not api_key:
+            raise RuntimeError("provider=openai requires OPENAI_API_KEY")
+        embedding_backend = OpenAIEmbeddingBackend(
+            api_key=api_key, model=embedding_model, vector_dimension=1536,
+        )
+        llm_client = OpenAIClient(api_key=api_key, model=model)
+    elif provider == "ollama":
+        embedding_backend = BGEEmbeddingBackend()
+        llm_client = OllamaClient(model=model)
+    else:
+        raise ValueError("provider must be 'ollama' or 'openai'")
     checker = Agent(
         catalog_path=catalog_path,
-        embedding_backend=BGEEmbeddingBackend(),
+        embedding_backend=embedding_backend,
         embedding_cache_dir=cache_dir,
         allow_catalog_embedding=False,
         memory_store=InMemoryUserMemoryStore(),
-        llm_client=OllamaClient(model=model),
+        llm_client=llm_client,
         experiment_config=CONDITIONS["baseline"],
     )
     try:
         validation["bge_cache"] = {
             "verified": checker.instrumentation["initialization"]["cache_status"] == "hit",
+            "provider": provider,
             "path": str(checker.embedding_cache_path.resolve()),
             "embedding_space_id": checker.embedding_space_id,
         }
@@ -233,17 +253,19 @@ def _target_full_rank(agent: Agent, session_id: str, target: str) -> int | None:
 
 
 def _shopper_call(
-    client: OllamaClient,
+    client: Any,
     prompt: str,
     system_prompt: str,
-    seed: int,
+    seed: int | None,
     transcript: list[dict[str, Any]],
 ) -> str:
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": prompt},
     ]
-    options = {"temperature": 0.0, "seed": seed, "num_predict": 150}
+    options: dict[str, Any] = {"temperature": 0.0, "num_predict": 150}
+    if seed is not None:
+        options["seed"] = seed
     call = client.chat_result(messages, options=options, role="shopper")
     transcript.append({
         "role": "shopper", "messages": messages, "response": call.content,
@@ -254,14 +276,14 @@ def _shopper_call(
 
 def _run_session(
     agent: Agent,
-    client: OllamaClient,
+    client: Any,
     condition: str,
     user: Mapping[str, Any],
     session: Mapping[str, Any],
     sample: Mapping[str, Any],
     products: Mapping[str, Mapping[str, Any]],
     *,
-    seed: int,
+    seed: int | None,
     max_turns: int = MAX_TURNS,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     uid, sequence = str(user["user_id"]), int(session["sequence_index"])
@@ -341,7 +363,7 @@ def _run_session(
             "ltm_applied": bool(memory.get("ltm_applied", False)),
             "retrieval_route": memory.get("retrieval_route"),
             "eligible_count": memory.get("eligible_count"),
-            "model_options": {"temperature": 0.0, "seed": seed},
+            "model_options": {"temperature": 0.0, **({"seed": seed} if seed is not None else {})},
             "latency_seconds": latency,
             "model_call_count": 1 + len(agent_calls),
         })
@@ -533,10 +555,21 @@ def _run_condition(
     condition: str, config: ExperimentConfig, fixture: Mapping[str, Any],
     samples: Mapping[str, Mapping[str, Any]], products: Mapping[str, Mapping[str, Any]],
     *, model: str, seed: int, catalog_path: Path, cache_dir: Path,
+    provider: str = "ollama", embedding_model: str = "text-embedding-3-small",
 ) -> list[dict[str, Any]]:
-    client = OllamaClient(model=model)
+    if provider == "openai":
+        api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+        if not api_key:
+            raise RuntimeError("provider=openai requires OPENAI_API_KEY")
+        client = OpenAIClient(api_key=api_key, model=model)
+        embedding_backend = OpenAIEmbeddingBackend(
+            api_key=api_key, model=embedding_model, vector_dimension=1536,
+        )
+    else:
+        client = OllamaClient(model=model)
+        embedding_backend = BGEEmbeddingBackend()
     agent = Agent(
-        catalog_path=catalog_path, embedding_backend=BGEEmbeddingBackend(),
+        catalog_path=catalog_path, embedding_backend=embedding_backend,
         embedding_cache_dir=cache_dir, allow_catalog_embedding=False,
         memory_store=InMemoryUserMemoryStore(), llm_client=client,
         experiment_config=config,
@@ -617,18 +650,21 @@ def _report(summaries: Mapping[str, Mapping[str, Any]], comparisons: Mapping[str
 def run(args: argparse.Namespace) -> dict[str, Any]:
     fixture, samples, products = preflight(
         args.fixture, args.public, args.catalog, args.embedding_cache_dir, args.model,
+        provider=args.provider, embedding_model=args.embedding_model,
         require_research_shape=not args.allow_small_fixture,
     )
+    applied_seed = args.seed if args.provider == "ollama" else None
     configs = {
         name: ExperimentConfig(
-            cfg.clarification_policy, cfg.long_term_memory_read_enabled, 0.0, args.seed
+            cfg.clarification_policy, cfg.long_term_memory_read_enabled, 0.0, applied_seed
         ) for name, cfg in CONDITIONS.items()
     }
     started = time.time()
     results = {
         name: _run_condition(
-            name, config, fixture, samples, products, model=args.model, seed=args.seed,
+            name, config, fixture, samples, products, model=args.model, seed=applied_seed,
             catalog_path=args.catalog, cache_dir=args.embedding_cache_dir,
+            provider=args.provider, embedding_model=args.embedding_model,
         )
         for name, config in configs.items()
     }
@@ -639,8 +675,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if args.deterministic_rerun:
         repeated = {
             name: _run_condition(
-                name, config, fixture, samples, products, model=args.model, seed=args.seed,
+                name, config, fixture, samples, products, model=args.model, seed=applied_seed,
                 catalog_path=args.catalog, cache_dir=args.embedding_cache_dir,
+                provider=args.provider, embedding_model=args.embedding_model,
             )
             for name, config in configs.items()
         }
@@ -664,7 +701,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     _write_json(output / "paired_comparisons.json", comparisons)
     manifest = {
         "schema_version": 1, "created_at": datetime.now(timezone.utc).isoformat(),
-        "model": args.model, "seed": args.seed, "temperature": 0.0,
+        "provider": args.provider, "model": args.model,
+        "embedding_model": args.embedding_model, "seed_requested": args.seed,
+        "seed_applied": applied_seed, "seed_supported_by_provider": args.provider != "openai",
+        "temperature": 0.0,
         "fixture": str(args.fixture.resolve()), "fixture_sha256": _sha256(args.fixture),
         "catalog": str(args.catalog.resolve()), "catalog_sha256": _sha256(args.catalog),
         "conditions": {name: asdict(config) for name, config in configs.items()},
@@ -681,6 +721,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="llama3.1:8b")
+    parser.add_argument("--provider", choices=("ollama", "openai"), default="ollama")
+    parser.add_argument("--embedding-model", default="text-embedding-3-small")
     parser.add_argument("--seed", type=int, default=20260901)
     parser.add_argument("--deterministic-rerun", action="store_true")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)

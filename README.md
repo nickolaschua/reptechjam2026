@@ -1,5 +1,10 @@
 # TechJam 2026 shopping system
 
+> Submission status: the active demo is tested, but the repository is not yet a
+> frozen submission bundle. The official evaluator imports `starter.agent.Agent`,
+> while the active implementation is `system.shopping_agent.Agent`. Follow
+> [`SUBMISSION_GUIDE.md`](SUBMISSION_GUIDE.md) before submitting a commit.
+
 The canonical presentation is the browser dashboard backed by the active `system` package:
 
 ```powershell
@@ -76,7 +81,7 @@ Work in `system/shopping_agent/` for the active application:
 | `tests/` | Active unit, integration, lifecycle, and regression tests |
 | `colab/` | Reproducible production BGE cache build, optional tuning, and artifact verifier |
 
-The runtime reads `techjam-conversational-search/data/catalog.jsonl` and `public_set.jsonl` as competition data; do not add active application logic there. `techjam-conversational-search/` is the submission-style reference implementation, `techjam-conversational-search-participant-kit/` is the untouched starter kit, and `archive/` contains historical research and legacy implementations. Winston's original probes, benchmarks, parser/pipeline snapshots, proof adapters, and experimental branches are preserved at `archive/winston/`.
+The runtime reads `techjam-conversational-search/data/catalog.jsonl` and `public_set.jsonl` as competition data; do not add active application logic there. `techjam-conversational-search/` contains the official-style evaluator plus an older reference agent; it is not currently wired to the active `system` agent. `techjam-conversational-search-participant-kit/` is the untouched starter kit, and `archive/` contains historical research and legacy implementations. Winston's original probes, benchmarks, parser/pipeline snapshots, proof adapters, and experimental branches are preserved at `archive/winston/`.
 
 The supporting CLI is:
 

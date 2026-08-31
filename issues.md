@@ -174,7 +174,10 @@ The prompt now gives demographics one exclusive destination, `target_department`
 - Attribution: Ours; part of the frozen OpenAI cache integration.
 - Location: `system/shopping_agent/agent.py:323`
 
-`allow_catalog_embedding` defaults to `True`. The canonical server and CLI pass `False`, but another caller constructing `Agent()` can regenerate and write embeddings if the cache is absent or rejected. This conflicts with the documented fixed, validated 50,000-row matrix.
+Status: Resolved. `allow_catalog_embedding` now defaults to `False`; catalogue
+generation additionally requires the explicit cache-build path. Ordinary direct,
+CLI, and server construction therefore fail closed when the compatible cache is
+missing or invalid.
 
 ### SYS-013 — CLI `/mode` claims to lock a mode that live intent can override
 

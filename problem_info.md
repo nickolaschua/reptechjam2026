@@ -4,16 +4,23 @@ This is a self-contained technical briefing for anyone brainstorming or designin
 
 ## 1. Challenge in one paragraph
 
-Build a Python conversational shopping agent that identifies one hidden target product from a frozen catalog of 50,000 Amazon `Clothing_Shoes_and_Jewelry` products. Each evaluation session lasts at most 10 turns. On every turn the agent may ask for one structured attribute and may return an ordered list of product IDs. A session ends as soon as the hidden target appears in the scored Top 10 (except for a special intent-override rule described below). The public development set contains 200 labeled sessions; the organizer has 800 private sessions. Public and private splits use different users and targets.
+Build a Python conversational shopping agent that identifies one hidden target product from a frozen catalog of 50,000 Amazon `Clothing_Shoes_and_Jewelry` products. Each evaluation session lasts at most 10 turns. On every turn the agent may ask for one structured attribute and may return an ordered list of product IDs. A session ends as soon as the hidden target appears in the scored Top 10 (except for a special intent-override rule described below). The public development set contains 200 labeled sessions. The 800 final sessions remain unreleased until the Devpost deadline, after which teams run the official package against their frozen submitted commit. The public and final splits use different users and targets.
 
 ## 2. Source of truth in this repository
 
-The runnable participant kit is under `techjam-conversational-search-participant-kit/`:
+The original runnable participant-kit snapshot is under
+`techjam-conversational-search-participant-kit/`:
 
 - `starter/agent.py`: editable weak BM25 baseline.
 - `evaluator/local_evaluator.py`: deterministic local simulator and scorer.
 - `data/catalog.jsonl`: the 50,000-product catalog (downloaded locally and ignored in this kit).
 - `data/public_set.jsonl`: 200 public labeled sessions.
+
+That directory remains untouched and is useful for evaluator mechanics, but its
+policy prose predates the current final-evaluation FAQ. Use the synchronized files
+under `techjam-conversational-search/docs/` for current rules. The current candidate
+implementation is `system/shopping_agent/`; it still needs a submission wrapper
+that the official `starter.agent` import can load.
 - `docs/evaluation_config.json`: metric constants and weights.
 - `docs/agent_api_contract.json`: request/response schema.
 - `docs/baseline_results.json`: published weak-baseline result.
@@ -88,7 +95,7 @@ At reset, the agent receives only a safe aggregate profile with:
 
 At each turn it receives only the random `session_id`, current simulated `user_message`, 1-based `turn`, and `top_k=10`.
 
-The agent is **not** passed the scenario label, target ASIN, difficulty bucket, hidden intent card, or simulator state. The public JSONL contains labels for offline evaluation and analysis, but using those labels as a lookup table would overfit the public set and cannot generalize to the 800 private sessions.
+The agent is **not** passed the scenario label, target ASIN, difficulty bucket, hidden intent card, or simulator state. The public JSONL contains labels for offline evaluation and analysis, but using those labels as a lookup table would overfit the public set and cannot generalize to the 800 final sessions.
 
 Catalog fields available for retrieval are:
 
@@ -302,7 +309,7 @@ These are reasoned implications of the verified evaluator, not additional compet
 9. **Use profile data cautiously.** Preference tags and summary can help tie-break or choose questions, but they describe historical aggregate tendencies, not guaranteed target requirements. They should not overpower explicit current-session constraints.
 10. **Do not confuse natural dialogue quality with simulator control.** `message` matters for validity and demos, while `ask_attribute` is the actual control channel in local scoring.
 11. **Do not exploit public ground truth.** Use labels for evaluation, error analysis, and tuning general rules—not sample-ID-to-ASIN memorization.
-12. **Build an offline path.** Official scoring may disable network access. Any API/LLM layer must fail safely into a deterministic local retriever and dialogue manager.
+12. **Disclose the runtime path.** Teams run final evaluation in their own environments, so network access and external APIs are allowed. An offline fallback is optional, but every network dependency, credential variable, cost, and fallback behavior must be documented.
 
 ## 10. Suggested experiment loop
 
@@ -323,7 +330,7 @@ For every meaningful agent revision:
 3. Record overall and per-scenario Hit Rate, MRR, MTTC, Efficiency, and Technical Score.
 4. Inspect session-level failures in `results.json`, joining them to public labels and catalog metadata for analysis only.
 5. Compare against the frozen baseline above.
-6. Check initialization time, per-turn latency, memory use, token use, and offline behavior.
+6. Check initialization time, per-turn latency, memory use, token use, estimated cost, network dependencies, and any fallback behavior.
 7. Avoid tuning a rule solely to individual public ASINs; prefer improvements that follow from catalog and simulator structure and should transfer to private targets.
 
 ## 11. Submission and operational constraints
@@ -333,9 +340,18 @@ For every meaningful agent revision:
 - Do not mutate the frozen catalog or emit fabricated/non-catalog IDs.
 - Never commit API keys or secrets; use environment variables.
 - Declare model choice, approximate cost, token use, latency, network requirements, and fallback behavior.
-- Expect possible CPU, memory, timeout, and network restrictions during final judging.
-- A paid LLM is optional; reproducibility and a reliable offline fallback matter more than elaborate prose generation.
+- Final evaluation is self-run on the frozen submitted commit; there is no standardized organizer-provided CPU, memory, startup-time, network, or per-response limit.
+- A paid LLM is optional. Reproducibility and complete dependency disclosure are mandatory; an offline fallback is not.
 
 ## 12. Current status
 
-So far, the workspace has been placed in the GitHub repository `nickolaschua/reptechjam2026`, the evaluator has been run successfully on the untouched starter, and development is occurring on the `nickolas` branch. No improved agent result has yet been established in this conversation; `0.10671` is the verified reference score to beat.
+The active candidate is `system.shopping_agent` on `main`; the untouched participant
+kit and the modified reference agent are not the active submission entry point. The
+active test suite currently passes (`152 passed, 9 subtests passed`). A stored older
+reference-agent run reports Hit Rate@10 `0.955`, MRR `0.651821`, and MTTC `2.61`,
+but it is not a reproducible score for the packaged active candidate. The completed
+confidence-gate ablation is the strongest positive controlled result. Long-term
+memory has trustworthy negative downstream evidence and must not be presented as a
+measured performance improvement. Submission packaging, dependency locking,
+provider/cache selection, and an unmodified-evaluator run of the packaged active
+Agent remain open; see `SUBMISSION_GUIDE.md`.

@@ -61,3 +61,6 @@ retrieval/xtr-warp-inspect/
 # Archived Yangxu model weights and session logs
 archive/legacy_hybrid_agent/model_finetuned/
 archive/legacy_hybrid_agent/eval_sessions/
+
+# Root-level model transfer archives (publish through external artifact storage)
+/model_finetuned-*.zip

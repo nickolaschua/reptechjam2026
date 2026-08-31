@@ -4,7 +4,7 @@ So, when considering both the user's current intent and their long-term memory, 
 
 1. First, we construct `v1` by embedding the current active session state—not just the latest prompt. This includes the current category, department, and positive preferences disclosed during the conversation. We load `v2`, the user's stored long-term preference vector, at the start of the session and keep it frozen throughout that session.
 
-2. Next, we determine whether the long-term memory is relevant to the current intent. We calculate the cosine similarity between `v1` and `v2`. This is the **relevance gate**. If the similarity is below the threshold of `0.20`, we ignore the long-term memory by setting `a = 1` and `b = 0`. If the user has no existing long-term memory, we use the same weights.
+2. Next, we determine whether the long-term memory is relevant to the current intent. We calculate the cosine similarity between `v1` and `v2`. This is the **relevance gate**. If the similarity is below the active threshold of `0.30`, we ignore the long-term memory by setting `a = 1` and `b = 0`. If the user has no existing long-term memory, we use the same weights.
 
 3. For every product in the 50,000-product catalogue, which is already represented as a normalized embedding `p_i`, we calculate its similarity to the current intent:
 

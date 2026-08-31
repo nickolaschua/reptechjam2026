@@ -1,0 +1,4 @@
+# Frozen direct runtime dependencies for Python 3.13.
+numpy==2.4.3
+sentence-transformers==5.6.0
+torch==2.12.1

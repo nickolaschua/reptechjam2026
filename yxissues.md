@@ -105,7 +105,7 @@ SYS-008 also affects the product-catalog page. Product titles, brands, and image
 
 ### Medium/Low severity
 
-- SYS-012: Direct `Agent()` construction can regenerate catalogue embeddings because generation defaults to enabled.
+- SYS-012: Resolved; direct `Agent()` construction now defaults catalogue embedding generation to disabled.
 
 ### Low severity
 

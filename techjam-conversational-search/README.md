@@ -1,6 +1,9 @@
 # TechJam Conversational E-Commerce Search Challenge
 
-> **Competition/reference tree:** This directory contains the submission-style evaluator and agent. Current longitudinal research lives under `system/shopping_agent`.
+> **Competition/reference tree:** This directory contains the official-style
+> evaluator and an older reference agent. The active candidate implementation is
+> `system/shopping_agent` and is not yet wired to this evaluator; see the root
+> `SUBMISSION_GUIDE.md`.
 
 Build an AI shopping agent that asks useful follow-up questions and recommends the customer's hidden target product within at most 10 turns.
 
@@ -11,7 +14,12 @@ Build an AI shopping agent that asks useful follow-up questions and recommends t
 - A weak BM25 starter agent and deterministic local evaluator.
 - The Agent API contract and scoring rules.
 
-The organizer keeps 800 additional sessions private for final evaluation.
+The organizer keeps 800 additional sessions unreleased until the Devpost
+submission deadline. After the deadline, teams run the released final package in
+their own environments using the frozen commit submitted before the deadline.
+
+See `docs/final_evaluation_faq.md` for the final evaluation, network,
+credentials, hardware, data, and scoring policy.
 
 ## Task
 
@@ -36,7 +44,9 @@ Verify the downloaded file using the published `SHA256SUMS` file.
 
 ## Run the Starter
 
-Python 3.10 or later is recommended. The starter uses only the Python standard library.
+Python 3.10 or later is recommended. The current local reference agent optionally
+uses NumPy, SciPy, and scikit-learn and falls back to SQLite FTS5; see
+`starter/requirements.txt`. This differs from the current active candidate agent.
 
 ```bash
 python3 -m evaluator.local_evaluator
@@ -45,8 +55,9 @@ python3 -m evaluator.local_evaluator
 Edit `starter/agent.py` to implement your system. Do not edit the evaluator or public labels when reporting your local score.
 The command writes per-session results and aggregate metrics to `results.json`.
 
-The included weak BM25 starter scores Hit Rate@10 `0.125`, MRR `0.068034`, and
-MTTC `9.81` on the released public set. See `docs/baseline_results.json`.
+The organizer's published weak BM25 baseline scores Hit Rate@10 `0.125`, MRR
+`0.068034`, and MTTC `9.81` on the released public set. Those numbers do not
+describe the modified local `starter/agent.py`. See `docs/baseline_results.json`.
 
 ## Agent Interface
 
@@ -85,13 +96,14 @@ Only exact `parent_asin` equality produces a hit. Core metrics are also reported
 
 ## Model Choice and Cost
 
-Teams may use any legally accessible LLM API or local model. Teams manage their own credentials and must never commit API keys. Model choice, estimated cost, token usage, and latency must be disclosed. Token usage is a feasibility metric, not part of the core technical score. The organizer may reimburse model costs through prizes instead of issuing API keys.
+Teams may use any legally accessible LLM API, local model, or non-LLM approach. Teams manage their own credentials and must never commit API keys. Model choice, estimated cost, token usage, latency, network dependencies, and fallback behavior must be disclosed. Token usage is a feasibility metric, not part of the core technical score. The organizer does not provide or reimburse model API credits.
 
 ## Files
 
 ```text
 data/public_set.jsonl             200 labeled development sessions
 docs/competition_specification.md participant rules and evaluation protocol
+docs/final_evaluation_faq.md      final evaluation and judging clarifications
 docs/agent_api_contract.json      machine-readable Agent contract
 docs/evaluation_config.json       scoring configuration
 docs/baseline_results.json        reproducible weak-starter reference score
@@ -102,10 +114,7 @@ evaluator/local_evaluator.py      public-set simulator and scorer
 ## Judging and Submission Policy
 
 - Participant submission requirements: `docs/submission_rules.md`
-- Participant release checklist: `docs/participant_release_checklist.md`
-- Organizer-only final judging controls: `organizer/JUDGING_RUNBOOK.md`
-- Organizer private release checklist: `organizer/private_release_checklist.md`
-- Judging day operations SOP: `organizer/JUDGING_DAY_SOP.md`
+- Final evaluation FAQ: `docs/final_evaluation_faq.md`
 
 ## Data Source
 

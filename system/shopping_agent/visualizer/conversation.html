@@ -1296,8 +1296,8 @@
 
             const senderClass = msg.role === 'customer' ? 'shopper' : (msg.role === 'error' ? 'error' : 'copilot');
             const senderName = msg.role === 'customer'
-                ? 'Shopper (__MODEL_LABEL__)'
-                : (msg.role === 'error' ? 'Request Error' : 'Copilot (__MODEL_LABEL__)');
+                ? 'Shopper'
+                : (msg.role === 'error' ? 'Request Error' : 'Copilot');
 
         function getProductImage(r) {
             if (r.image_url && safeImageUrl(r.image_url)) {

@@ -47,8 +47,8 @@ Participants receive a frozen and reproducible competition kit derived from the 
 ### Competition Data
 * A frozen catalog containing 50,000 products from the Amazon Reviews 2023 `Clothing_Shoes_and_Jewelry` category.
 * 200 labeled public development sessions for local testing and iteration.
-* 800 additional sessions retained privately by the organizer for final evaluation.
-* Public and private evaluation sessions use separate users and target products.
+* 800 additional sessions withheld until the Devpost submission deadline, then released for teams to run with the unmodified evaluator and their frozen submitted commit.
+* Public and final evaluation sessions use separate users and target products.
 
 ### Participant Resources
 * A weak BM25 starter Agent implemented in Python.
