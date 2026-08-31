@@ -10,13 +10,16 @@ import sys
 
 
 BUNDLE_ROOT = Path(__file__).resolve().parents[1]
-REPOSITORY_ROOT = BUNDLE_ROOT.parent
+# Self-contained by default: the organizer kit and data are mounted inside the
+# bundle. Override with --kit / --catalog / --dataset to point elsewhere.
+DEFAULT_KIT = BUNDLE_ROOT / "kit"
+DEFAULT_DATA = BUNDLE_ROOT / "data"
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--kit", type=Path, default=REPOSITORY_ROOT / "techjam-conversational-search"
+        "--kit", type=Path, default=DEFAULT_KIT
     )
     parser.add_argument("--catalog", type=Path)
     parser.add_argument("--dataset", type=Path)
@@ -25,8 +28,8 @@ def main() -> None:
 
     kit = args.kit.resolve()
     evaluator = kit / "evaluator" / "local_evaluator.py"
-    catalog = (args.catalog or kit / "data" / "catalog.jsonl").resolve()
-    dataset = (args.dataset or kit / "data" / "public_set.jsonl").resolve()
+    catalog = (args.catalog or DEFAULT_DATA / "catalog.jsonl").resolve()
+    dataset = (args.dataset or DEFAULT_DATA / "public_set.jsonl").resolve()
     cache_dir = Path(
         os.environ.get("TECHJAM_BGE_CACHE_DIR", BUNDLE_ROOT / "artifacts")
     ).resolve()

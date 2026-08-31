@@ -12,9 +12,11 @@ SHOPPING_AGENT_DIR = Path(__file__).resolve().parent
 SYSTEM_DIR = SHOPPING_AGENT_DIR.parent
 PROJECT_ROOT = SYSTEM_DIR.parent
 
-CATALOG_PATH = PROJECT_ROOT / "techjam-conversational-search" / "data" / "catalog.jsonl"
-EMBEDDING_CACHE_DIR = SHOPPING_AGENT_DIR / "embedding_cache"
-MEMORY_STORE_PATH = SHOPPING_AGENT_DIR / ".demo_state" / "vector_memory.json"
+# Bundle layout: PROJECT_ROOT is the submission/ root, not the source repo, so
+# these defaults must match starter/agent.py rather than the main-repo tree.
+CATALOG_PATH = PROJECT_ROOT / "data" / "catalog.jsonl"
+EMBEDDING_CACHE_DIR = PROJECT_ROOT / "artifacts"
+MEMORY_STORE_PATH = PROJECT_ROOT / ".demo_state" / "vector_memory.json"
 
 DEFAULT_OPENAI_CHAT_MODEL = "gpt-4o-mini"
 DEFAULT_OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"

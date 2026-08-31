@@ -1,7 +1,15 @@
 .env
-artifacts/*.npz
-data/catalog.jsonl
 results/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.demo_state/
+
+# Locally mounted, never committed: organizer data, evaluation labels, the
+# organizer evaluator, the BGE artifact, and the vendored model weights.
+# See README.md "Self-contained layout" for how to populate these.
+data/catalog.jsonl
+data/public_set.jsonl
+kit/
+artifacts/*.npz
+models/

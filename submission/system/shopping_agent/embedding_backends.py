@@ -19,6 +19,14 @@ import urllib.request
 import numpy as np
 
 BGE_MODEL = "BAAI/bge-base-en-v1.5"
+# Weights vendored inside the bundle so evaluation needs no Hugging Face
+# download. model_id stays the hub id: it is baked into embedding_space_id
+# and the cache metadata, so only the load source may differ.
+LOCAL_BGE_DIR = Path(__file__).resolve().parents[2] / "models" / "bge-base-en-v1.5"
+
+
+def resolve_bge_source() -> str:
+    return str(LOCAL_BGE_DIR) if (LOCAL_BGE_DIR / "config.json").is_file() else BGE_MODEL
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 PRODUCT_TEXT_VERSION = "patch2-product-text-v1"
 
@@ -275,7 +283,7 @@ class BGEEmbeddingBackend(EmbeddingBackend):
                 from sentence_transformers import SentenceTransformer
 
                 self._model_factory = SentenceTransformer
-            self._model = self._model_factory(self.model_id)
+            self._model = self._model_factory(resolve_bge_source())
         return self._model
 
     def embed_catalog(self, texts: Sequence[str]) -> np.ndarray:

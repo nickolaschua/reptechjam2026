@@ -10,8 +10,55 @@ frozen to:
 - catalogue cache: precomputed, validated, never generated during evaluation
 - hosted APIs: none
 
-The organizer catalogue and the large BGE cache are external release artifacts
-and are intentionally not committed here.
+Every path used by this bundle resolves inside this directory. Nothing reads
+from a parent directory or a sibling project.
+
+## 0. Self-contained layout
+
+Four directories are populated locally and are never committed (see
+`.gitignore`). Everything else in this bundle is version-controlled source.
+
+| Path | Contents | How to obtain |
+| --- | --- | --- |
+| `data/catalog.jsonl` | organizer catalogue, 50,000 rows | participant kit, §0.1 |
+| `data/public_set.jsonl` | 200 labeled public sessions | participant kit, §0.1 |
+| `kit/evaluator/` | unmodified organizer evaluator | participant kit, §0.1 |
+| `artifacts/*.npz` | precomputed BGE catalogue cache | download or rebuild, §3 |
+| `models/bge-base-en-v1.5/` | BGE weights for query encoding | automatic, §0.2 |
+
+### 0.1 Organizer participant kit
+
+Download the kit and catalogue from the organizer release, then unpack them into
+this bundle:
+
+```bash
+# https://github.com/TechJam2026/techjam-conversational-search/releases/tag/participant-kit
+unzip techjam-participant-kit.zip -d /tmp/kit
+gunzip -c catalog.jsonl.gz > data/catalog.jsonl
+cp /tmp/kit/data/public_set.jsonl data/
+mkdir -p kit && cp -R /tmp/kit/evaluator kit/
+```
+
+Published organizer checksums:
+
+| File | SHA-256 |
+| --- | --- |
+| `catalog.jsonl.gz` | `07fd142631fd6b03e2b4d09988c3eb7d53720e9d57010c79db48eeaada50a8f8` |
+| `techjam-participant-kit.zip` | `b3d7e283b835343b42c4919ea2ca90f2fb5a2aa2b10537f14dcf42f03e5b38ae` |
+
+### 0.2 Model weights
+
+Nothing to do: if `models/bge-base-en-v1.5/` is absent, Sentence Transformers
+downloads `BAAI/bge-base-en-v1.5` on first use. To pin it offline instead, place
+the model snapshot at that path; `model_id` and `embedding_space_id` are
+identical either way, so the catalogue cache stays valid.
+
+`models/` lets the agent encode queries with no Hugging Face download and no
+network access. If it is absent the backend falls back to the hub id and will
+download on first use; `model_id` and `embedding_space_id` are identical either
+way, so the catalogue cache stays valid.
+
+Run every command below from inside this `submission/` directory.
 
 ## 1. Requirements
 
@@ -23,20 +70,16 @@ Validated development environment:
 - Sentence Transformers `5.6.0`
 - PyTorch `2.12.1`
 
-Create an isolated environment from the repository root:
-
-```powershell
-python -m venv .venv-submission
-.\.venv-submission\Scripts\Activate.ps1
+```bash
+python -m venv .venv
+source .venv/bin/activate          # PowerShell: .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -r submission\requirements.txt
+python -m pip install -r requirements.txt
 ```
-
-On Linux/macOS, activate with `source .venv-submission/bin/activate`.
 
 ## 2. Start the local model
 
-```powershell
+```bash
 ollama pull llama3.1:8b
 ollama serve
 ```
@@ -47,33 +90,42 @@ OpenAI branch through an inherited shell variable.
 
 ## 3. Install the BGE catalogue cache
 
-Required filename:
+Required path:
 
 ```text
-submission/artifacts/catalog_cache_bge-base-en-v1.5.npz
+artifacts/catalog_cache_bge-base-en-v1.5.npz
 ```
 
-The existing root-level `catalog_cache_Users_...npz` is an older two-array cache
-and is incompatible with the release validator. Do not rename or ship it.
+Install a published asset atomically:
 
-Build the production artifact with `colab/bge_pipeline.ipynb` at the candidate
-commit, or publish the verified output as a repository release asset. Install a
-published asset atomically with:
-
-```powershell
-python submission\scripts\install_artifact.py `
-  --url "REPLACE_WITH_RELEASE_ASSET_URL" `
-  --sha256 "REPLACE_WITH_64_CHARACTER_SHA256"
+```bash
+python scripts/install_artifact.py \
+  --url "REPLACE_WITH_RELEASE_ASSET_URL" \
+  --sha256 "a05b1dcee3c40bb254ccf73ab437e8d08fc33d28d444a32c812158842526191f"
 ```
 
-Before freezing the submission, replace both placeholders above with the real
-release URL and checksum. Verify the installed cache against the exact organizer
-catalogue:
+Replace the URL placeholder with the real release asset before freezing the
+submission. Then verify the installed cache against the organizer catalogue:
 
-```powershell
-python submission\scripts\verify_artifact.py `
-  --catalog techjam-conversational-search\data\catalog.jsonl
+```bash
+python scripts/verify_artifact.py --catalog data/catalog.jsonl
 ```
+
+If no release asset is available, rebuild the cache locally instead. This uses
+the same production code path as the download, so the fingerprints match:
+
+```bash
+python scripts/build_artifact.py --catalog data/catalog.jsonl
+```
+
+Expect roughly 50 minutes for 50,000 rows on CPU. Then verify it as above.
+
+Expected identities for the frozen release:
+
+| Value | SHA-256 |
+| --- | --- |
+| organizer catalogue | `da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67` |
+| BGE catalogue cache | `a05b1dcee3c40bb254ccf73ab437e8d08fc33d28d444a32c812158842526191f` |
 
 The verifier checks row count, exact ASIN order, catalogue fingerprint, product
 text fingerprint/version, model and embedding-space identity, dimension,
@@ -83,52 +135,41 @@ normalization, cache schema, and SHA-256.
 
 Bundle contract tests:
 
-```powershell
-$env:PYTHONPATH = (Resolve-Path submission)
-python -m pytest submission\tests -q
+```bash
+PYTHONPATH=. python -m pytest tests -q       # PowerShell: $env:PYTHONPATH="."
 ```
 
 Verify the allowlisted runtime snapshot:
 
-```powershell
-python submission\scripts\verify_bundle.py
+```bash
+python scripts/verify_bundle.py
 ```
 
-Canonical implementation tests:
+Real BGE/Ollama smoke test, after installing the cache and starting Ollama:
 
-```powershell
-python -m pytest system\shopping_agent\tests -q
-```
-
-Real BGE/Ollama smoke test after installing the cache and starting Ollama:
-
-```powershell
-python submission\scripts\smoke_test.py `
-  --catalog techjam-conversational-search\data\catalog.jsonl
+```bash
+python scripts/smoke_test.py --catalog data/catalog.jsonl
 ```
 
 ## 5. Run the unmodified official evaluator
 
-From the repository root:
-
-```powershell
-python submission\scripts\run_official_evaluator.py
+```bash
+python scripts/run_official_evaluator.py
 ```
 
 The launcher does not edit or copy the evaluator. It puts this bundle first on
-`sys.path`, then executes
-`techjam-conversational-search/evaluator/local_evaluator.py` unchanged with the
-organizer catalogue and public set. Output is written to
-`submission/results/results.json`.
+`sys.path`, then executes `kit/evaluator/local_evaluator.py` unchanged against
+`data/catalog.jsonl` and `data/public_set.jsonl`. Output is written to
+`results/results.json`.
 
-Alternative paths are explicit:
+Every path is overridable:
 
-```powershell
-python submission\scripts\run_official_evaluator.py `
-  --kit C:\path\to\official-kit `
-  --catalog C:\path\to\catalog.jsonl `
-  --dataset C:\path\to\public_set.jsonl `
-  --output C:\path\to\results.json
+```bash
+python scripts/run_official_evaluator.py \
+  --kit /path/to/official-kit \
+  --catalog /path/to/catalog.jsonl \
+  --dataset /path/to/public_set.jsonl \
+  --output /path/to/results.json
 ```
 
 ## 6. Required Agent contract
@@ -142,9 +183,9 @@ response = agent.respond(session_id, user_message, turn, top_k)
 ```
 
 The adapter accepts the organizer's positional catalogue path, routes the cache
-to `submission/artifacts` by default, disables online catalogue embedding, and
-inherits the active response contract. Official sessions do not pass `user_id`,
-so longitudinal memory is not committed across evaluator sessions.
+to `artifacts/` by default, disables online catalogue embedding, and inherits the
+active response contract. Official sessions do not pass `user_id`, so
+longitudinal memory is not committed across evaluator sessions.
 
 ## 7. Runtime environment variables
 
@@ -154,8 +195,8 @@ so longitudinal memory is not committed across evaluator sessions.
 | `OLLAMA_MODEL` | `llama3.1:8b` | Frozen local chat/state model |
 | `OLLAMA_TIMEOUT_SECONDS` | `30` | Per-request transport timeout; the client retries once |
 | `CONFIDENCE_SIMILARITY_THRESHOLD` | `0.40` | Inclusive current-query confidence gate |
-| `TECHJAM_CATALOG_PATH` | `submission/data/catalog.jsonl` | Optional standalone catalogue location |
-| `TECHJAM_BGE_CACHE_DIR` | `submission/artifacts` | Optional cache directory override |
+| `TECHJAM_CATALOG_PATH` | `data/catalog.jsonl` | Optional catalogue location override |
+| `TECHJAM_BGE_CACHE_DIR` | `artifacts/` | Optional cache directory override |
 
 `OPENAI_API_KEY` is not read by this release path. No credentials are required.
 
@@ -171,15 +212,15 @@ so longitudinal memory is not committed across evaluator sessions.
 
 ## 9. Before the Devpost freeze
 
-1. Publish the BGE cache, insert its URL and SHA-256 above, and verify it from a
-   clean download.
+1. Publish the BGE cache, insert its URL above, and verify it from a clean
+   download.
 2. Rebuild `bundle_manifest.json` from the final clean source commit; the current
-   manifest truthfully records that this first bundle was built from a dirty
+   manifest truthfully records that the first bundle was built from a dirty
    development worktree.
-3. Run both test commands, bundle verification, and the real smoke test.
+3. Run the bundle tests, bundle verification, and the real smoke test.
 4. Run the unmodified public evaluator and complete `REPORT.md` with results,
    latency, hardware, and team contributions.
-5. Review `git status`, ensure no `.env`, `.npz`, results, model ZIP, or secret is
-   staged, then record the full submission commit SHA.
+5. Review `git status`, ensure no `.env`, `.npz`, results, model weights, or
+   secret is staged, then record the full submission commit SHA.
 6. After the final package is released, check out that SHA and do not modify the
    Agent, prompts, indexes, cache, model configuration, or other solution files.
