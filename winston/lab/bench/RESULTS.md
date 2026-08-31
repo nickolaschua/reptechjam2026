@@ -32,6 +32,27 @@ every call fell to a static string), API keys stripped after import, 0 Ollama fa
 0 JSON-parse failures. The `model_used` label on his LLM-route rows is his static telemetry
 string ("GPT-4o-Mini"), not the model that answered.
 
+### Our reader in front of HIS retriever (same 400 cases)
+
+`shop_agent_plug.py`: his agent with two overrides - `is_template()` decides his simulator
+route instead of the "i'm looking for " prefix, and his LLM state tracker is replaced by our
+cached parse written through his own `_set_constraint()`. His FTS5 -> BGE fallback ->
+post-scoring untouched. No LLM call at all.
+
+| system, same 400 | hit@10 | MRR |
+|---|--:|--:|
+| Yang Xu legacy, as shipped | 0.050 | 0.030 |
+| his retriever + our reader | 0.150 | 0.084 |
+| starter + our reader | **0.182** | **0.088** |
+
+Two findings. (1) The reader is the lever: the same parse lifts his stack 3x. (2) **His BGE
+fallback fired on 3 of 400 cases.** It only engages when FTS5 returns fewer than 10 hits;
+once the state entering FTS5 is clean, that almost never happens, so the embedder never
+participates. Dense retrieval helps on this benchmark only as a PARALLEL fused route
+(section below, ~0.44 on held-out products), not as a fallback behind an FTS5 threshold.
+His FTS5 + post-scoring is slightly behind the starter's weighted bm25 on identical state
+(paired 64 better / 84 worse / 252 tie).
+
 The paraphrase result (regex 0.03 -> parsed 0.77, = the un-paraphrased regex score 30/30)
 is kept as a gate in `template_check.py`, not a headline.
 
