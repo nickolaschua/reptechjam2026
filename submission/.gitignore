@@ -1,5 +1,6 @@
 .env
-results/
+results/*
+!results/eval_v1_results.json
 __pycache__/
 *.py[cod]
 .pytest_cache/

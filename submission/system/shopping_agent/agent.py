@@ -1496,7 +1496,7 @@ class Agent:
 
     @staticmethod
     def _detect_intent_locally(state: dict[str, Any], user_message: str) -> BuyerMode | None:
-        """Deterministic fallback for Yangxu's live Buying/Browsing transition rules."""
+        """Deterministic fallback for the live Buying/Browsing transition rules."""
 
         message = " ".join(str(user_message).lower().split())
         if not message:

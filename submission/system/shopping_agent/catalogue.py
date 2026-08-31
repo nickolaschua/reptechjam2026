@@ -1,4 +1,4 @@
-"""Catalogue loading, exact Yangxu FTS5 routing, and hard eligibility masks."""
+"""Catalogue loading, exact FTS5 routing, and hard eligibility masks."""
 
 from __future__ import annotations
 
@@ -50,7 +50,7 @@ def _normalize(value: object) -> str:
 
 
 def standardize_department(dept_val: Any) -> str:
-    """Return Yangxu's canonical demographic department bucket."""
+    """Return the canonical demographic department bucket."""
 
     if dept_val is None:
         return "unspecified"

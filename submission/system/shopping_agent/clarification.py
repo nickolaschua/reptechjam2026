@@ -1,4 +1,4 @@
-"""Yangxu's entropy-based clarification selector."""
+"""Entropy-based clarification selector."""
 
 from __future__ import annotations
 
