@@ -1,0 +1,30 @@
+{
+  "note": "turn-1 messages reconstructed with the evaluator's own initial_message()",
+  "sessions": 200,
+  "carrier_phrase_parsed": 200,
+  "exact_bucket_lookup": {
+    "hit_rate": 1.0,
+    "target_inside_that_bucket": 1.0,
+    "median_pool_size": 181.5,
+    "max_pool_size": 1354
+  },
+  "idf_resolution_on_same_text": {
+    "top1": 0.985,
+    "top3": 1.0,
+    "median_rank": 1.0
+  },
+  "constraint_kinds": {
+    "material": 67,
+    "feature": 34,
+    "style": 5,
+    "size": 3,
+    "color": 1
+  },
+  "misses": [],
+  "catalog_granularity": {
+    "full_leaf_paths": 1628,
+    "evaluator_last2_buckets": 1115,
+    "leaf_labels_only": 800
+  },
+  "verdict": "Turn 1 contains the target's coarse_category string verbatim, so the category route is a regex plus a dict lookup - not an inference problem. Spend the LLM/encoder budget on turns 2+ and on the private set's paraphrase risk (EXP06), not on turn-1 category resolution."
+}

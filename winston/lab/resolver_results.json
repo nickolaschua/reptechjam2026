@@ -1,0 +1,26 @@
+{
+  "A category_phrase only": {
+    "top1": 0.167,
+    "top3": 0.333,
+    "median_rank": 20.0,
+    "median_pool_at_top3": 106.5
+  },
+  "B phrase + soft slots": {
+    "top1": 0.267,
+    "top3": 0.433,
+    "median_rank": 10.0,
+    "median_pool_at_top3": 206.0
+  },
+  "C phrase + soft + hard slots": {
+    "top1": 0.233,
+    "top3": 0.433,
+    "median_rank": 7.5,
+    "median_pool_at_top3": 203.0
+  },
+  "D slots only (no phrase)": {
+    "top1": 0.1,
+    "top3": 0.167,
+    "median_rank": 25.0,
+    "median_pool_at_top3": 68.0
+  }
+}

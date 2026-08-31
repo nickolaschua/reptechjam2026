@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Flow Comparator</title>
+  <style>
+    :root {
+      --ink: #17201d;
+      --muted: #66736e;
+      --paper: #f4f1e9;
+      --panel: #fffdf7;
+      --line: #d8d3c7;
+      --baseline: #5a6d8b;
+      --baseline-soft: #edf1f7;
+      --candidate: #16745c;
+      --candidate-soft: #e6f5ef;
+      --accent: #ef7d4d;
+      --danger: #b93e3e;
+      --shadow: 0 14px 45px rgba(29, 40, 36, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(239, 125, 77, .13), transparent 31rem),
+        linear-gradient(180deg, #f8f5ed 0, var(--paper) 35rem);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+    }
+
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .shell { width: min(1560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 64px; }
+    .eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { max-width: 850px; margin: 9px 0 8px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 500; line-height: .98; letter-spacing: -.035em; }
+    h2, h3, p { margin-top: 0; }
+    .subtitle { max-width: 850px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .header-row { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+    .header-actions { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 8px; }
+    .btn, .file-label {
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+      min-height: 42px; padding: 0 14px; border: 1px solid var(--line); border-radius: 11px;
+      background: rgba(255,255,255,.7); color: var(--ink); text-decoration: none; font-weight: 750; font-size: 13px;
+    }
+    .btn:hover, .file-label:hover { border-color: #9b9589; background: #fff; }
+    #jsonFile { display: none; }
+
+    .flow-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch;
+      margin: 30px 0 18px; border: 1px solid var(--line); border-radius: 15px; overflow: hidden;
+      background: var(--panel); box-shadow: var(--shadow);
+    }
+    .flow-step { position: relative; padding: 15px 18px 14px 36px; min-height: 68px; border-right: 1px solid var(--line); }
+    .flow-step:first-child { padding-left: 18px; }
+    .flow-step:last-child { border-right: 0; }
+    .flow-step:not(:last-child)::after {
+      content: ""; position: absolute; right: -8px; top: 25px; z-index: 2; width: 14px; height: 14px;
+      background: var(--panel); border-top: 1px solid var(--line); border-right: 1px solid var(--line); transform: rotate(45deg);
+    }
+    .flow-step b { display: block; margin-bottom: 3px; font-size: 13px; }
+    .flow-step span { color: var(--muted); font-size: 11px; line-height: 1.3; }
+
+    .summary-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 12px 0 18px; }
+    .metric-card { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,253,247,.9); }
+    .metric-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .metric-value { display: block; margin: 7px 0 3px; font-family: Georgia, serif; font-size: 29px; line-height: 1; }
+    .metric-delta { color: var(--muted); font-size: 11px; }
+    .metric-delta.good { color: var(--candidate); font-weight: 750; }
+    .metric-delta.bad { color: var(--danger); font-weight: 750; }
+
+    .notice {
+      display: none; margin: 14px 0; padding: 14px 16px; border: 1px solid #e6bfab; border-radius: 12px;
+      background: #fff1e8; color: #79442d; font-size: 13px; line-height: 1.5;
+    }
+    .notice.show { display: block; }
+
+    .workspace { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 14px; min-height: 700px; }
+    .session-panel, .detail-panel { border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,247,.94); box-shadow: var(--shadow); overflow: hidden; }
+    .session-panel { display: flex; flex-direction: column; max-height: calc(100vh - 48px); position: sticky; top: 24px; }
+    .panel-head { padding: 16px; border-bottom: 1px solid var(--line); }
+    .panel-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .panel-title h2 { margin: 0; font-family: Georgia, serif; font-size: 21px; font-weight: 500; }
+    .count { color: var(--muted); font-size: 12px; }
+    .controls { display: grid; gap: 8px; }
+    .controls input, .controls select {
+      width: 100%; height: 40px; padding: 0 11px; border: 1px solid var(--line); border-radius: 9px; background: white; color: var(--ink);
+    }
+    .filter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .session-list { flex: 1; overflow: auto; padding: 7px; }
+    .session-item {
+      width: 100%; padding: 12px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: inherit; text-align: left;
+    }
+    .session-item:hover { background: #f4f1e9; }
+    .session-item.active { border-color: #b7cfc6; background: var(--candidate-soft); }
+    .session-id { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 800; }
+    .session-meta { margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .status-dot { flex: 0 0 auto; width: 9px; height: 9px; margin-top: 4px; border-radius: 50%; background: #a8aea9; }
+    .status-dot.candidate_win, .status-dot.candidate_better { background: var(--candidate); }
+    .status-dot.baseline_win, .status-dot.baseline_better { background: var(--danger); }
+
+    .detail-panel { min-width: 0; }
+    .empty { padding: 80px 24px; color: var(--muted); text-align: center; }
+    .detail-head { padding: 22px 24px 17px; border-bottom: 1px solid var(--line); }
+    .detail-kicker { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+    .detail-head h2 { margin: 8px 0 7px; font-family: Georgia, serif; font-size: 29px; font-weight: 500; line-height: 1.15; }
+    .tag { display: inline-flex; padding: 4px 8px; border-radius: 999px; background: #ece9e0; color: #59635f; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .target-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; }
+    .target-meta { color: var(--muted); font-size: 12px; }
+    .target-id { padding: 9px 11px; border-radius: 9px; background: #202b27; color: #f8f6ee; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; }
+
+    .outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 24px; border-bottom: 1px solid var(--line); }
+    .outcome { padding: 15px; border-radius: 12px; border: 1px solid; }
+    .outcome.baseline { border-color: #ccd4e0; background: var(--baseline-soft); }
+    .outcome.candidate { border-color: #bedfd3; background: var(--candidate-soft); }
+    .outcome-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .outcome-label { font-weight: 850; font-size: 13px; }
+    .outcome-value { margin-top: 8px; font-family: Georgia, serif; font-size: 22px; }
+    .outcome-sub { margin-top: 4px; color: var(--muted); font-size: 11px; }
+
+    .section { padding: 19px 24px 23px; }
+    .section + .section { border-top: 1px solid var(--line); }
+    .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 13px; }
+    .section-title h3 { margin: 0; font-family: Georgia, serif; font-size: 21px; font-weight: 500; }
+    .section-title span { color: var(--muted); font-size: 11px; }
+    .simulator-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .simulator-field { padding: 12px; border-radius: 10px; background: #f4f1e9; }
+    .simulator-field b { display: block; margin-bottom: 5px; font-size: 11px; }
+    .simulator-field span { color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .turns { display: grid; gap: 12px; }
+    .turn-pair { border: 1px solid var(--line); border-radius: 13px; overflow: hidden; }
+    .turn-label { padding: 8px 12px; border-bottom: 1px solid var(--line); background: #f4f1e9; color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .turn-columns { display: grid; grid-template-columns: 1fr 1fr; }
+    .turn { min-width: 0; padding: 14px; }
+    .turn:first-child { border-right: 1px solid var(--line); }
+    .turn-agent { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+    .turn-agent.baseline { color: var(--baseline); }
+    .turn-agent.candidate { color: var(--candidate); }
+    .hit-badge { padding: 3px 7px; border-radius: 99px; background: #d9f2e8; color: #075e47; font-size: 9px; }
+    .message { margin: 0 0 8px; padding: 9px 10px; border-radius: 9px; background: #f7f5ef; font-size: 12px; line-height: 1.45; }
+    .message.agent { background: white; border: 1px dashed var(--line); }
+    .message-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .ask { margin: 9px 0; color: var(--muted); font-size: 11px; }
+    .ask code { padding: 2px 6px; border-radius: 5px; background: #ece9e0; color: var(--ink); }
+    .agent-state { margin: 8px 0; padding: 8px 9px; border-radius: 8px; background: #edf6f2; color: #315f50; font-size: 10px; line-height: 1.45; }
+    .agent-state b { color: #174d3d; }
+    .recommendations { display: grid; gap: 5px; }
+    .rec { display: grid; grid-template-columns: 25px minmax(0, 1fr) auto; gap: 7px; align-items: center; padding: 6px 7px; border: 1px solid #e5e1d7; border-radius: 7px; font-size: 10px; }
+    .rec.target { border-color: #63a88f; background: #e9f7f1; }
+    .rec-rank { color: var(--muted); font-family: ui-monospace, monospace; }
+    .rec-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rec-id { color: var(--muted); font-family: ui-monospace, monospace; font-size: 9px; }
+    .no-recs { padding: 10px; border: 1px dashed var(--line); border-radius: 8px; color: var(--muted); font-size: 11px; text-align: center; }
+    .error { margin: 8px 0; padding: 8px; border-radius: 7px; background: #ffebeb; color: var(--danger); font-size: 10px; }
+
+    details { border: 1px solid var(--line); border-radius: 11px; overflow: hidden; }
+    summary { padding: 12px 14px; background: #f4f1e9; font-weight: 750; font-size: 12px; cursor: pointer; }
+    pre { max-height: 520px; margin: 0; padding: 15px; overflow: auto; background: #1f2926; color: #e8f1ed; font: 11px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; }
+
+    @media (max-width: 1000px) {
+      .summary-grid { grid-template-columns: repeat(3, 1fr); }
+      .workspace { grid-template-columns: 270px minmax(0, 1fr); }
+      .simulator-card { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 20px, 680px); padding-top: 18px; }
+      .header-row { display: block; }
+      .flow-strip { grid-template-columns: 1fr; }
+      .flow-step { padding-left: 18px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .flow-step:last-child { border-bottom: 0; }
+      .flow-step::after { display: none; }
+      .summary-grid { grid-template-columns: 1fr 1fr; }
+      .workspace { display: block; }
+      .session-panel { position: static; max-height: 430px; margin-bottom: 12px; }
+      .target-grid, .outcomes, .turn-columns { grid-template-columns: 1fr; }
+      .turn:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
+      .detail-head, .section { padding-left: 16px; padding-right: 16px; }
+      .outcomes { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="header-row">
+      <div>
+        <div class="eyebrow">TechJam 2026 · Evaluation explorer</div>
+        <h1>See every decision, not just the final score.</h1>
+        <p class="subtitle">A complete turn-by-turn view of the provided agent beside your current system, including simulator replies, Top-10 recommendations, target rank, and session outcome.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn" href="comparison.json" download>↓ Download JSON</a>
+        <label class="file-label" for="jsonFile">Open another trace</label>
+        <input id="jsonFile" type="file" accept="application/json,.json">
+      </div>
+    </div>
+
+    <div class="flow-strip" aria-label="Evaluation flow">
+      <div class="flow-step"><b>1 · Public dataset</b><span>200 labeled sessions + profiles</span></div>
+      <div class="flow-step"><b>2 · Simulator</b><span>Reveals deterministic constraints</span></div>
+      <div class="flow-step"><b>3 · Agent response</b><span>Message + ask_attribute</span></div>
+      <div class="flow-step"><b>4 · Top-10 slate</b><span>Ordered product recommendations</span></div>
+      <div class="flow-step"><b>5 · Evaluation</b><span>Hit, target rank, MRR, MTTC</span></div>
+    </div>
+
+    <div id="loadNotice" class="notice">Could not automatically load <code>comparison.json</code>. Start the local server described in the README, or use “Open another trace” above.</div>
+    <section id="summary" class="summary-grid" aria-label="Comparison summary"></section>
+
+    <div class="workspace">
+      <aside class="session-panel">
+        <div class="panel-head">
+          <div class="panel-title"><h2>Sessions</h2><span id="visibleCount" class="count">—</span></div>
+          <div class="controls">
+            <input id="search" type="search" placeholder="Search ID, target, or ASIN…" aria-label="Search sessions">
+            <div class="filter-row">
+              <select id="scenarioFilter" aria-label="Filter by scenario"><option value="">All scenarios</option></select>
+              <select id="statusFilter" aria-label="Filter by comparison status"><option value="">All outcomes</option></select>
+            </div>
+          </div>
+        </div>
+        <div id="sessionList" class="session-list"></div>
+      </aside>
+
+      <section id="detail" class="detail-panel"><div class="empty">Loading comparison trace…</div></section>
+    </div>
+  </main>
+
+  <script>
+    const state = { data: null, selectedId: null };
+    const $ = (selector) => document.querySelector(selector);
+    const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+    const pct = (value) => value == null ? "—" : `${(Number(value) * 100).toFixed(1)}%`;
+    const num = (value, digits = 3) => value == null ? "—" : Number(value).toFixed(digits);
+    const signed = (value, formatter = v => num(v)) => value == null ? "—" : `${value > 0 ? "+" : ""}${formatter(value)}`;
+    const statusLabels = {
+      candidate_win: "Current system wins",
+      candidate_better: "Current system is faster / higher",
+      baseline_win: "Provided agent wins",
+      baseline_better: "Provided agent is faster / higher",
+      same: "Same result"
+    };
+
+    function metricCard(label, baseline, candidate, delta, formatter, higherIsBetter = true) {
+      const d = Number(delta || 0);
+      const tone = d === 0 ? "" : (higherIsBetter ? d > 0 : d < 0) ? "good" : "bad";
+      return `<article class="metric-card">
+        <span class="metric-label">${esc(label)}</span>
+        <strong class="metric-value">${formatter(candidate)}</strong>
+        <div class="metric-delta ${tone}">Provided ${formatter(baseline)} · Δ ${signed(delta, formatter)}</div>
+      </article>`;
+    }
+
+    function renderSummary() {
+      const { dataset_summary: ds, aggregate: a } = state.data;
+      $("#summary").innerHTML = [
+        `<article class="metric-card"><span class="metric-label">Dataset</span><strong class="metric-value">${ds.session_count}</strong><div class="metric-delta">sessions · ${ds.catalog_product_count.toLocaleString()} catalog products</div></article>`,
+        metricCard("Hit rate @ 10", a.baseline.hit_rate_at_10, a.candidate.hit_rate_at_10, a.delta.hit_rate_at_10, pct),
+        metricCard("MRR", a.baseline.mrr, a.candidate.mrr, a.delta.mrr, v => num(v, 3)),
+        metricCard("MTTC", a.baseline.mttc, a.candidate.mttc, a.candidate.mttc - a.baseline.mttc, v => num(v, 2), false),
+        metricCard("Technical score", a.baseline.technical_score, a.candidate.technical_score, a.delta.technical_score, v => num(v, 3))
+      ].join("");
+    }
+
+    function populateFilters() {
+      const scenarios = [...new Set(state.data.sessions.map(s => s.scenario_type))].sort();
+      $("#scenarioFilter").innerHTML = '<option value="">All scenarios</option>' + scenarios.map(v => `<option value="${esc(v)}">${esc(v.replaceAll("_", " "))}</option>`).join("");
+      const statuses = [...new Set(state.data.sessions.map(s => s.comparison.status))].sort();
+      $("#statusFilter").innerHTML = '<option value="">All outcomes</option>' + statuses.map(v => `<option value="${esc(v)}">${esc(statusLabels[v] || v)}</option>`).join("");
+    }
+
+    function filteredSessions() {
+      const query = $("#search").value.trim().toLowerCase();
+      const scenario = $("#scenarioFilter").value;
+      const status = $("#statusFilter").value;
+      return state.data.sessions.filter(session => {
+        const haystack = `${session.sample_id} ${session.target.parent_asin} ${session.target.title}`.toLowerCase();
+        return (!query || haystack.includes(query)) && (!scenario || session.scenario_type === scenario) && (!status || session.comparison.status === status);
+      });
+    }
+
+    function renderSessionList() {
+      const sessions = filteredSessions();
+      $("#visibleCount").textContent = `${sessions.length} / ${state.data.sessions.length}`;
+      $("#sessionList").innerHTML = sessions.length ? sessions.map(session => `
+        <button class="session-item ${session.sample_id === state.selectedId ? "active" : ""}" data-id="${esc(session.sample_id)}">
+          <div class="session-id"><span>${esc(session.sample_id)}</span><span class="status-dot ${esc(session.comparison.status)}" title="${esc(statusLabels[session.comparison.status])}"></span></div>
+          <div class="session-meta">${esc(session.scenario_type.replaceAll("_", " "))} · ${esc(session.difficulty_bucket)} · ${esc(session.target.parent_asin)}</div>
+        </button>`).join("") : '<div class="empty">No sessions match these filters.</div>';
+      document.querySelectorAll(".session-item").forEach(button => button.addEventListener("click", () => selectSession(button.dataset.id)));
+    }
+
+    function outcomeCard(kind, label, outcome) {
+      const result = outcome.hit ? `Hit on turn ${outcome.first_hit_turn}` : "Miss after 10 turns";
+      const detail = outcome.hit ? `Target rank ${outcome.best_rank} · reciprocal rank ${num(outcome.reciprocal_rank, 3)}` : "Target never appeared in an eligible Top-10 slate";
+      return `<article class="outcome ${kind}"><div class="outcome-top"><span class="outcome-label">${esc(label)}</span><span class="tag">${outcome.hit ? "hit" : "miss"}</span></div><div class="outcome-value">${esc(result)}</div><div class="outcome-sub">${esc(detail)}</div></article>`;
+    }
+
+    function recsHtml(turn) {
+      if (!turn || !turn.recommendations.length) return '<div class="no-recs">No valid recommendations</div>';
+      return `<div class="recommendations">${turn.recommendations.map(rec => `<div class="rec ${rec.is_target ? "target" : ""}"><span class="rec-rank">#${rec.rank}</span><span class="rec-title" title="${esc(rec.title)}">${esc(rec.title)}</span><span class="rec-id">${esc(rec.parent_asin)}${rec.is_target ? " ★" : ""}</span></div>`).join("")}</div>`;
+    }
+
+    function turnHtml(turn, kind, label) {
+      if (!turn) return `<article class="turn"><div class="turn-agent ${kind}">${esc(label)}</div><div class="no-recs">Session already ended</div></article>`;
+      const debug = turn.debug;
+      const stateHtml = debug ? `<div class="agent-state"><b>${esc(debug.mode)}</b><br>Category: ${esc(debug.category)}<br>Active constraints: ${esc((debug.constraints || []).join(" · ") || "none yet")}</div>` : "";
+      return `<article class="turn">
+        <div class="turn-agent ${kind}"><span>${esc(label)}</span>${turn.eligible_hit ? '<span class="hit-badge">Target hit</span>' : ""}</div>
+        <p class="message"><span class="message-label">Customer</span>${esc(turn.user_message)}</p>
+        <p class="message agent"><span class="message-label">Agent</span>${esc(turn.agent_message || "(empty message)")}</p>
+        <div class="ask">Asked attribute: <code>${esc(turn.ask_attribute ?? "null")}</code>${turn.target_rank ? ` · target at rank <b>${turn.target_rank}</b>${turn.override_applied ? "" : " (not eligible before override)"}` : ""}</div>
+        ${stateHtml}
+        ${turn.error ? `<div class="error">${esc(turn.error)}</div>` : ""}
+        ${recsHtml(turn)}
+      </article>`;
+    }
+
+    function turnsHtml(session) {
+      const count = Math.max(session.baseline.turns.length, session.candidate.turns.length);
+      return Array.from({ length: count }, (_, i) => `<div class="turn-pair"><div class="turn-label">Turn ${i + 1}</div><div class="turn-columns">${turnHtml(session.baseline.turns[i], "baseline", "Provided agent")}${turnHtml(session.candidate.turns[i], "candidate", "Current system")}</div></div>`).join("");
+    }
+
+    function simulatorHtml(session) {
+      const card = session.simulator.intent_card;
+      const override = session.simulator.behavior.override;
+      return `<div class="simulator-card">
+        <div class="simulator-field"><b>Target category</b><span>${esc(card.target_category)}</span></div>
+        <div class="simulator-field"><b>Hidden preferences</b><span>${esc([...(card.hard_constraints || []), ...(card.soft_preferences || [])].join(" · "))}</span></div>
+        <div class="simulator-field"><b>Scenario behavior</b><span>${override ? `Override on turn ${override.turn}: ${esc(override.new_value)}` : "No intent override"}</span></div>
+      </div>`;
+    }
+
+    function selectSession(id) {
+      const session = state.data.sessions.find(row => row.sample_id === id);
+      if (!session) return;
+      state.selectedId = id;
+      renderSessionList();
+      const price = session.target.price == null ? "Price unavailable" : `$${Number(session.target.price).toFixed(2)}`;
+      $("#detail").innerHTML = `
+        <header class="detail-head">
+          <div class="detail-kicker"><span>${esc(session.sample_id)}</span><span class="tag">${esc(session.scenario_type.replaceAll("_", " "))}</span><span class="tag">${esc(session.difficulty_bucket)}</span><span class="tag">${esc(statusLabels[session.comparison.status])}</span></div>
+          <div class="target-grid"><div><h2>${esc(session.target.title)}</h2><div class="target-meta">Target product · ${esc(session.target.store || "Unknown store")} · ${esc(price)}</div></div><div class="target-id">${esc(session.target.parent_asin)}</div></div>
+        </header>
+        <div class="outcomes">${outcomeCard("baseline", "Provided agent", session.baseline)}${outcomeCard("candidate", "Current system", session.candidate)}</div>
+        <section class="section"><div class="section-title"><h3>Simulator truth</h3><span>Visible here for testing only</span></div>${simulatorHtml(session)}</section>
+        <section class="section"><div class="section-title"><h3>Turn-by-turn flow</h3><span>★ marks the target product</span></div><div class="turns">${turnsHtml(session)}</div></section>
+        <section class="section"><details><summary>Raw JSON for this complete example</summary><pre>${esc(JSON.stringify(session, null, 2))}</pre></details></section>`;
+    }
+
+    function loadData(data) {
+      if (!data || !Array.isArray(data.sessions) || !data.aggregate) throw new Error("This is not a valid comparison trace.");
+      state.data = data;
+      state.selectedId = data.example_session_id || data.sessions[0]?.sample_id || null;
+      $("#loadNotice").classList.remove("show");
+      renderSummary();
+      populateFilters();
+      renderSessionList();
+      if (state.selectedId) selectSession(state.selectedId);
+    }
+
+    ["#search", "#scenarioFilter", "#statusFilter"].forEach(selector => $(selector).addEventListener("input", renderSessionList));
+    $("#jsonFile").addEventListener("change", async event => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try { loadData(JSON.parse(await file.text())); }
+      catch (error) { alert(`Could not open trace: ${error.message}`); }
+    });
+
+    fetch("comparison.json", { cache: "no-store" })
+      .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+      .then(loadData)
+      .catch(() => { $("#loadNotice").classList.add("show"); $("#detail").innerHTML = '<div class="empty">Open a comparison JSON trace to begin.</div>'; });
+  </script>
+</body>
+</html>

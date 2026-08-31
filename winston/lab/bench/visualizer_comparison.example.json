@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-31T02:59:31.010551+00:00",
+  "metadata": {
+    "dataset": "/Users/winstonyang/Desktop/Coding/Hackathons/Techjam 2026/reptechjam2026/techjam-conversational-search/data/public_set.jsonl",
+    "catalog": "/Users/winstonyang/Desktop/Coding/Hackathons/Techjam 2026/reptechjam2026/techjam-conversational-search/data/catalog.jsonl",
+    "baseline_agent": {
+      "label": "Provided agent",
+      "path": "/Users/winstonyang/Desktop/Coding/Hackathons/Techjam 2026/reptechjam2026/techjam-conversational-search/starter/agent.py"
+    },
+    "candidate_agent": {
+      "label": "Current system",
+      "path": "/Users/winstonyang/Desktop/Coding/Hackathons/Techjam 2026/reptechjam2026/winston/lab/bench/bolt_on_agent.py"
+    },
+    "max_turns": 10,
+    "top_k": 10
+  },
+  "aggregate": {
+    "baseline": {
+      "sample_count": 10,
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.77,
+      "mttc": 2.1,
+      "efficiency": 0.89,
+      "technical_score": 0.909,
+      "scenario_metrics": {
+        "browsing": {
+          "sample_count": 2,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.55,
+          "mttc": 1.5,
+          "efficiency": 0.95,
+          "technical_score": 0.855
+        },
+        "buying": {
+          "sample_count": 5,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.9,
+          "mttc": 1.8,
+          "efficiency": 0.92,
+          "technical_score": 0.954
+        },
+        "intent_override": {
+          "sample_count": 3,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.7,
+          "mttc": 3.0,
+          "efficiency": 0.8,
+          "technical_score": 0.87
+        }
+      }
+    },
+    "candidate": {
+      "sample_count": 10,
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.77,
+      "mttc": 2.1,
+      "efficiency": 0.89,
+      "technical_score": 0.909,
+      "scenario_metrics": {
+        "browsing": {
+          "sample_count": 2,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.55,
+          "mttc": 1.5,
+          "efficiency": 0.95,
+          "technical_score": 0.855
+        },
+        "buying": {
+          "sample_count": 5,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.9,
+          "mttc": 1.8,
+          "efficiency": 0.92,
+          "technical_score": 0.954
+        },
+        "intent_override": {
+          "sample_count": 3,
+          "hit_rate_at_10": 1.0,
+          "mrr": 0.7,
+          "mttc": 3.0,
+          "efficiency": 0.8,
+          "technical_score": 0.87
+        }
+      }
+    },
+    "delta": {
+      "hit_rate_at_10": 0.0,
+      "mrr": 0.0,
+      "mttc_improvement": 0.0,
+      "technical_score": 0.0
+    },
+    "session_status_counts": {
+      "same": 10
+    }
+  },
+  "example": {
+    "sample_id": "public_0001",
+    "scenario_type": "buying",
+    "category_bucket": "clothing",
+    "difficulty_bucket": "easy",
+    "user_profile": {
+      "average_prior_rating": 5.0,
+      "preference_tags": [
+        "fit",
+        "comfort",
+        "durability"
+      ],
+      "purchase_frequency": "3-4 prior purchases",
+      "rating_style": "usually positive",
+      "summary": "Prior purchases emphasize fit, comfort, durability; ratings are usually positive."
+    },
+    "target": {
+      "parent_asin": "B09PYB7B6Z",
+      "title": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+      "store": "QIAN0813",
+      "price": 9.99,
+      "average_rating": 4.5,
+      "rating_number": 490,
+      "categories": [
+        "Clothing, Shoes & Jewelry",
+        "Boys",
+        "Jewelry",
+        "Necklaces"
+      ]
+    },
+    "simulator": {
+      "intent_card": {
+        "target_category": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+        "hard_constraints": [
+          "Material:alloy",
+          "Triple Moon Pentagram Symbol"
+        ],
+        "soft_preferences": [
+          "The Triple Moon represents the Phases of the Moon which are linked to the three aspects of the Goddess and the phases of the Life of Women.The Pentagram representing the holistic r",
+          "♥ a special gift to your wife/mom/girlfriend/daughter/grandmother/best friend/kids on St. Valentine’s Day, Easter， Christmas day,Birthday,Anniversary ,Independence Day,Labor Day,Th"
+        ]
+      },
+      "behavior": {
+        "scenario_type": "buying"
+      }
+    },
+    "baseline": {
+      "sample_id": "public_0001",
+      "scenario_type": "buying",
+      "hit": true,
+      "first_hit_turn": 1,
+      "best_rank": 1,
+      "reciprocal_rank": 1.0,
+      "reported_token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "turns": [
+        {
+          "turn": 1,
+          "user_message": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "I am using 1 stated preference. What other requirement should I consider?",
+          "ask_attribute": "other",
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": true,
+              "parent_asin": "B09PYB7B6Z",
+              "title": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+              "store": "QIAN0813",
+              "price": 9.99,
+              "average_rating": 4.5,
+              "rating_number": 490,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07CVVF3G2",
+              "title": "PANGRUI Exquisite Minimalism Style Kangaroo Animal Pendant Antique Simple Seahorse Necklace",
+              "store": "PANGRUI",
+              "price": 9.7,
+              "average_rating": 4.0,
+              "rating_number": 1,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B075KXNBNF",
+              "title": "OIDEA Double Mens Punk Cool Black Military Dog Tag Pendant Necklace for Birthday",
+              "store": "OIDEA",
+              "price": 8.99,
+              "average_rating": 5.0,
+              "rating_number": 2,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B0140NWUGE",
+              "title": "Elobeth 1Pc Silver- Women Lady Amazing Retro Alloy Crucifix Cross Pendant Chain Necklace Accessories",
+              "store": "EloBeth",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B017NHP88G",
+              "title": "Jovivi Retro Bohemia Style Millet Chain Crystal Phoenix Peacock Pendant Necklace for Women Girls",
+              "store": "Jovivi",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 23,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B077J2Y5FB",
+              "title": "Joya Gift Dainty Beads Gold Choker Necklace for Women Simple Boho Minimalist Jewellry",
+              "store": "Joya Gift",
+              "price": 8.58,
+              "average_rating": 3.7,
+              "rating_number": 48,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Chokers"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B072PTLN1L",
+              "title": "Z-Jeris Women's Fashion Jewelry Simple Tassel Pendant Long Chain Necklace",
+              "store": "Z-Jeris",
+              "price": 10.68,
+              "average_rating": 3.9,
+              "rating_number": 15,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B07ZFM77HB",
+              "title": "SanLan Big Skull and Dead Moth Head Insect Jewellery Butterfly Pendant Necklace",
+              "store": "SanLan",
+              "price": 10.0,
+              "average_rating": 4.6,
+              "rating_number": 390,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B07CZ2TPVB",
+              "title": "WLL Gold Enamel Colorful Rainbow Pendant Necklace Girls Gifts",
+              "store": "WLL",
+              "price": 9.99,
+              "average_rating": 4.1,
+              "rating_number": 47,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Jewelry",
+                "Necklaces & Pendants",
+                "Pendants"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B0046EC1NK",
+              "title": "Amazon Collection Sterling Silver Diamond Accent Lotus Flower Pendant Necklace, 18\"",
+              "store": "Amazon Collection",
+              "price": null,
+              "average_rating": 4.5,
+              "rating_number": 240,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            }
+          ],
+          "target_rank": 1,
+          "eligible_hit": true,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": {
+            "mode": "exact_stateful_bm25_rrf",
+            "category": "Jewelry Necklaces",
+            "constraints": [
+              "Material:alloy"
+            ]
+          },
+          "error": null,
+          "next_user_message": null
+        }
+      ]
+    },
+    "candidate": {
+      "sample_id": "public_0001",
+      "scenario_type": "buying",
+      "hit": true,
+      "first_hit_turn": 1,
+      "best_rank": 1,
+      "reciprocal_rank": 1.0,
+      "reported_token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "turns": [
+        {
+          "turn": 1,
+          "user_message": "I'm looking for Jewelry Necklaces. A key requirement is: Material:alloy.",
+          "disclosed_constraints_before_response": [
+            "Material:alloy"
+          ],
+          "override_applied": true,
+          "agent_message": "I am using 1 stated preference. What other requirement should I consider?",
+          "ask_attribute": "other",
+          "recommendations": [
+            {
+              "rank": 1,
+              "is_target": true,
+              "parent_asin": "B09PYB7B6Z",
+              "title": "QIAN0813 Celttic Knot Triple Moon Pentagram Pentacle Star Wicca Pendant Necklace Round Pagan Jewelry",
+              "store": "QIAN0813",
+              "price": 9.99,
+              "average_rating": 4.5,
+              "rating_number": 490,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 2,
+              "is_target": false,
+              "parent_asin": "B07CVVF3G2",
+              "title": "PANGRUI Exquisite Minimalism Style Kangaroo Animal Pendant Antique Simple Seahorse Necklace",
+              "store": "PANGRUI",
+              "price": 9.7,
+              "average_rating": 4.0,
+              "rating_number": 1,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 3,
+              "is_target": false,
+              "parent_asin": "B075KXNBNF",
+              "title": "OIDEA Double Mens Punk Cool Black Military Dog Tag Pendant Necklace for Birthday",
+              "store": "OIDEA",
+              "price": 8.99,
+              "average_rating": 5.0,
+              "rating_number": 2,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 4,
+              "is_target": false,
+              "parent_asin": "B0140NWUGE",
+              "title": "Elobeth 1Pc Silver- Women Lady Amazing Retro Alloy Crucifix Cross Pendant Chain Necklace Accessories",
+              "store": "EloBeth",
+              "price": null,
+              "average_rating": 3.3,
+              "rating_number": 3,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 5,
+              "is_target": false,
+              "parent_asin": "B017NHP88G",
+              "title": "Jovivi Retro Bohemia Style Millet Chain Crystal Phoenix Peacock Pendant Necklace for Women Girls",
+              "store": "Jovivi",
+              "price": null,
+              "average_rating": 4.2,
+              "rating_number": 23,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            {
+              "rank": 6,
+              "is_target": false,
+              "parent_asin": "B077J2Y5FB",
+              "title": "Joya Gift Dainty Beads Gold Choker Necklace for Women Simple Boho Minimalist Jewellry",
+              "store": "Joya Gift",
+              "price": 8.58,
+              "average_rating": 3.7,
+              "rating_number": 48,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Chokers"
+              ]
+            },
+            {
+              "rank": 7,
+              "is_target": false,
+              "parent_asin": "B072PTLN1L",
+              "title": "Z-Jeris Women's Fashion Jewelry Simple Tassel Pendant Long Chain Necklace",
+              "store": "Z-Jeris",
+              "price": 10.68,
+              "average_rating": 3.9,
+              "rating_number": 15,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            {
+              "rank": 8,
+              "is_target": false,
+              "parent_asin": "B07ZFM77HB",
+              "title": "SanLan Big Skull and Dead Moth Head Insect Jewellery Butterfly Pendant Necklace",
+              "store": "SanLan",
+              "price": 10.0,
+              "average_rating": 4.6,
+              "rating_number": 390,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Jewelry",
+                "Necklaces"
+              ]
+            },
+            {
+              "rank": 9,
+              "is_target": false,
+              "parent_asin": "B07CZ2TPVB",
+              "title": "WLL Gold Enamel Colorful Rainbow Pendant Necklace Girls Gifts",
+              "store": "WLL",
+              "price": 9.99,
+              "average_rating": 4.1,
+              "rating_number": 47,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Jewelry",
+                "Necklaces & Pendants",
+                "Pendants"
+              ]
+            },
+            {
+              "rank": 10,
+              "is_target": false,
+              "parent_asin": "B0046EC1NK",
+              "title": "Amazon Collection Sterling Silver Diamond Accent Lotus Flower Pendant Necklace, 18\"",
+              "store": "Amazon Collection",
+              "price": null,
+              "average_rating": 4.5,
+              "rating_number": 240,
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            }
+          ],
+          "target_rank": 1,
+          "eligible_hit": true,
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0
+          },
+          "debug": {
+            "mode": "exact_stateful_bm25_rrf",
+            "category": "Jewelry Necklaces",
+            "constraints": [
+              "Material:alloy"
+            ]
+          },
+          "error": null,
+          "next_user_message": null
+        }
+      ]
+    },
+    "comparison": {
+      "status": "same",
+      "hit_delta": 0,
+      "turn_delta": 0,
+      "rank_delta": 0
+    }
+  }
+}

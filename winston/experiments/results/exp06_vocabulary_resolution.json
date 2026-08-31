@@ -1,0 +1,722 @@
+{
+  "note": "rank of the TRUE bucket among 1,115 candidates, resolved by IDF-weighted token overlap",
+  "per_case": {
+    "B00E4N07B6": {
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "title": "RYKA Women's Tenacity Cross-Trainer Shoe",
+      "phrasings": [
+        {
+          "phrasing": "cross training shoes",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 160
+        },
+        {
+          "phrasing": "cross-trainer",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 151
+        },
+        {
+          "phrasing": "multi-sport shoe",
+          "true_bucket_rank": 283,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 70
+        },
+        {
+          "phrasing": "all-purpose athletic shoe",
+          "true_bucket_rank": 25,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 574
+        },
+        {
+          "phrasing": "gym shoes",
+          "true_bucket_rank": 445,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 56
+        },
+        {
+          "phrasing": "training shoes",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 684
+        },
+        {
+          "phrasing": "womens athletic shoes",
+          "true_bucket_rank": 25,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 212
+        },
+        {
+          "phrasing": "workout shoes",
+          "true_bucket_rank": 443,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 884
+        }
+      ],
+      "top1_rate": 0.25,
+      "top3_rate": 0.375,
+      "target_recovered_rate": 0.375
+    },
+    "B07RWZDSM1": {
+      "catalog_bucket": "Dresses Formal",
+      "title": "meilun Women's Maxi Bandage Dress Fishtail Bodycon Formal Evening Dres",
+      "phrasings": [
+        {
+          "phrasing": "evening dress",
+          "true_bucket_rank": 62,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 205
+        },
+        {
+          "phrasing": "formal dress",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 253
+        },
+        {
+          "phrasing": "party dress",
+          "true_bucket_rank": 60,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 140
+        },
+        {
+          "phrasing": "cocktail dress",
+          "true_bucket_rank": 61,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 258
+        },
+        {
+          "phrasing": "bodycon dress",
+          "true_bucket_rank": 60,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 140
+        },
+        {
+          "phrasing": "going-out dress",
+          "true_bucket_rank": 63,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 140
+        },
+        {
+          "phrasing": "nightgown",
+          "true_bucket_rank": 53,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1580
+        }
+      ],
+      "top1_rate": 0.143,
+      "top3_rate": 0.143,
+      "target_recovered_rate": 0.143
+    },
+    "B07XC9CGZQ": {
+      "catalog_bucket": "Accessories Breast Petals",
+      "title": "Breast Lift Tape - 3 Pairs w/Nipple Covers - Boob Tape - Boobtape Cara",
+      "phrasings": [
+        {
+          "phrasing": "nipple covers",
+          "true_bucket_rank": 309,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 19
+        },
+        {
+          "phrasing": "breast petals",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 1559
+        },
+        {
+          "phrasing": "fashion tape",
+          "true_bucket_rank": 330,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 347
+        },
+        {
+          "phrasing": "boob tape",
+          "true_bucket_rank": 307,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1580
+        },
+        {
+          "phrasing": "adhesive bra",
+          "true_bucket_rank": 309,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 213
+        },
+        {
+          "phrasing": "body tape",
+          "true_bucket_rank": 310,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 59
+        }
+      ],
+      "top1_rate": 0.167,
+      "top3_rate": 0.167,
+      "target_recovered_rate": 0.167
+    },
+    "B08N5LWFFC": {
+      "catalog_bucket": "Women Shoes",
+      "title": "J. Adams Cyprus Booties for Women - Strappy Cutout Peep Toe Chunky Hee",
+      "phrasings": [
+        {
+          "phrasing": "ankle boots",
+          "true_bucket_rank": 197,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 650
+        },
+        {
+          "phrasing": "booties",
+          "true_bucket_rank": 175,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1580
+        },
+        {
+          "phrasing": "heeled boots",
+          "true_bucket_rank": 197,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 593
+        },
+        {
+          "phrasing": "peep toe boots",
+          "true_bucket_rank": 197,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 328
+        },
+        {
+          "phrasing": "womens boots",
+          "true_bucket_rank": 198,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 328
+        },
+        {
+          "phrasing": "high heel ankle boots",
+          "true_bucket_rank": 198,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 757
+        }
+      ],
+      "top1_rate": 0.0,
+      "top3_rate": 0.0,
+      "target_recovered_rate": 0.0
+    },
+    "B074N8JH9G": {
+      "catalog_bucket": "Shoes Slippers",
+      "title": "Skysole Boys Fleece Clog Slipper with Rugged Outsole",
+      "phrasings": [
+        {
+          "phrasing": "slippers",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 540
+        },
+        {
+          "phrasing": "kids slippers",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 593
+        },
+        {
+          "phrasing": "house shoes",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 1145
+        },
+        {
+          "phrasing": "boys slippers",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 573
+        },
+        {
+          "phrasing": "indoor shoes",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 1145
+        },
+        {
+          "phrasing": "clog slippers",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 540
+        }
+      ],
+      "top1_rate": 1.0,
+      "top3_rate": 1.0,
+      "target_recovered_rate": 1.0
+    },
+    "B08513YB2T": {
+      "catalog_bucket": "Shoes Mules & Clogs",
+      "title": "Crocs Unisex-Adult Classic Clog",
+      "phrasings": [
+        {
+          "phrasing": "clogs",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 325
+        },
+        {
+          "phrasing": "foam clogs",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 325
+        },
+        {
+          "phrasing": "rubber clogs",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 325
+        },
+        {
+          "phrasing": "crocs",
+          "true_bucket_rank": 40,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1555
+        },
+        {
+          "phrasing": "slip on shoes",
+          "true_bucket_rank": 19,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 673
+        },
+        {
+          "phrasing": "garden shoes",
+          "true_bucket_rank": 15,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1145
+        }
+      ],
+      "top1_rate": 0.5,
+      "top3_rate": 0.5,
+      "target_recovered_rate": 0.5
+    },
+    "B085S67VBB": {
+      "catalog_bucket": "Sunglasses & Eyewear Accessories Sunglasses",
+      "title": "SOJOS Small Retro Square Sunglasses with Rivets Flat Lens Sunnies DAYT",
+      "phrasings": [
+        {
+          "phrasing": "sunglasses",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 544
+        },
+        {
+          "phrasing": "retro sunglasses",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 544
+        },
+        {
+          "phrasing": "sunnies",
+          "true_bucket_rank": 6,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1580
+        },
+        {
+          "phrasing": "shades",
+          "true_bucket_rank": 6,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1580
+        },
+        {
+          "phrasing": "square sunglasses",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 544
+        },
+        {
+          "phrasing": "eyewear",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 530
+        }
+      ],
+      "top1_rate": 0.0,
+      "top3_rate": 0.667,
+      "target_recovered_rate": 0.667
+    },
+    "B00KZIV0Q0": {
+      "catalog_bucket": "Running Trail Running",
+      "title": "Merrell Women's Vapor Glove 2 Barefoot Trail Running Shoe",
+      "phrasings": [
+        {
+          "phrasing": "trail running shoes",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 343
+        },
+        {
+          "phrasing": "trail runners",
+          "true_bucket_rank": 1,
+          "in_top1": true,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 339
+        },
+        {
+          "phrasing": "off-road running shoes",
+          "true_bucket_rank": 3,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 864
+        },
+        {
+          "phrasing": "hiking shoes",
+          "true_bucket_rank": 260,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 254
+        },
+        {
+          "phrasing": "running shoes",
+          "true_bucket_rank": 2,
+          "in_top1": false,
+          "in_top3": true,
+          "target_in_top3_pool": true,
+          "pool_size_top3": 864
+        },
+        {
+          "phrasing": "barefoot shoes",
+          "true_bucket_rank": 254,
+          "in_top1": false,
+          "in_top3": false,
+          "target_in_top3_pool": false,
+          "pool_size_top3": 1145
+        }
+      ],
+      "top1_rate": 0.333,
+      "top3_rate": 0.667,
+      "target_recovered_rate": 0.667
+    }
+  },
+  "summary": {
+    "phrasings_tested": 51,
+    "true_bucket_rank_1": 15,
+    "true_bucket_in_top_3": 22,
+    "target_recovered_by_top3_union": 22,
+    "median_rank_when_found": 19
+  },
+  "failures": [
+    {
+      "asin": "B00E4N07B6",
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "phrasing": "multi-sport shoe",
+      "true_bucket_rank": 283
+    },
+    {
+      "asin": "B00E4N07B6",
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "phrasing": "all-purpose athletic shoe",
+      "true_bucket_rank": 25
+    },
+    {
+      "asin": "B00E4N07B6",
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "phrasing": "gym shoes",
+      "true_bucket_rank": 445
+    },
+    {
+      "asin": "B00E4N07B6",
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "phrasing": "womens athletic shoes",
+      "true_bucket_rank": 25
+    },
+    {
+      "asin": "B00E4N07B6",
+      "catalog_bucket": "Athletic Fitness & Cross-Training",
+      "phrasing": "workout shoes",
+      "true_bucket_rank": 443
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "evening dress",
+      "true_bucket_rank": 62
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "party dress",
+      "true_bucket_rank": 60
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "cocktail dress",
+      "true_bucket_rank": 61
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "bodycon dress",
+      "true_bucket_rank": 60
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "going-out dress",
+      "true_bucket_rank": 63
+    },
+    {
+      "asin": "B07RWZDSM1",
+      "catalog_bucket": "Dresses Formal",
+      "phrasing": "nightgown",
+      "true_bucket_rank": 53
+    },
+    {
+      "asin": "B07XC9CGZQ",
+      "catalog_bucket": "Accessories Breast Petals",
+      "phrasing": "nipple covers",
+      "true_bucket_rank": 309
+    },
+    {
+      "asin": "B07XC9CGZQ",
+      "catalog_bucket": "Accessories Breast Petals",
+      "phrasing": "fashion tape",
+      "true_bucket_rank": 330
+    },
+    {
+      "asin": "B07XC9CGZQ",
+      "catalog_bucket": "Accessories Breast Petals",
+      "phrasing": "boob tape",
+      "true_bucket_rank": 307
+    },
+    {
+      "asin": "B07XC9CGZQ",
+      "catalog_bucket": "Accessories Breast Petals",
+      "phrasing": "adhesive bra",
+      "true_bucket_rank": 309
+    },
+    {
+      "asin": "B07XC9CGZQ",
+      "catalog_bucket": "Accessories Breast Petals",
+      "phrasing": "body tape",
+      "true_bucket_rank": 310
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "ankle boots",
+      "true_bucket_rank": 197
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "booties",
+      "true_bucket_rank": 175
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "heeled boots",
+      "true_bucket_rank": 197
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "peep toe boots",
+      "true_bucket_rank": 197
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "womens boots",
+      "true_bucket_rank": 198
+    },
+    {
+      "asin": "B08N5LWFFC",
+      "catalog_bucket": "Women Shoes",
+      "phrasing": "high heel ankle boots",
+      "true_bucket_rank": 198
+    },
+    {
+      "asin": "B08513YB2T",
+      "catalog_bucket": "Shoes Mules & Clogs",
+      "phrasing": "crocs",
+      "true_bucket_rank": 40
+    },
+    {
+      "asin": "B08513YB2T",
+      "catalog_bucket": "Shoes Mules & Clogs",
+      "phrasing": "slip on shoes",
+      "true_bucket_rank": 19
+    },
+    {
+      "asin": "B08513YB2T",
+      "catalog_bucket": "Shoes Mules & Clogs",
+      "phrasing": "garden shoes",
+      "true_bucket_rank": 15
+    },
+    {
+      "asin": "B085S67VBB",
+      "catalog_bucket": "Sunglasses & Eyewear Accessories Sunglasses",
+      "phrasing": "sunnies",
+      "true_bucket_rank": 6
+    },
+    {
+      "asin": "B085S67VBB",
+      "catalog_bucket": "Sunglasses & Eyewear Accessories Sunglasses",
+      "phrasing": "shades",
+      "true_bucket_rank": 6
+    },
+    {
+      "asin": "B00KZIV0Q0",
+      "catalog_bucket": "Running Trail Running",
+      "phrasing": "hiking shoes",
+      "true_bucket_rank": 260
+    },
+    {
+      "asin": "B00KZIV0Q0",
+      "catalog_bucket": "Running Trail Running",
+      "phrasing": "barefoot shoes",
+      "true_bucket_rank": 254
+    }
+  ],
+  "strategy_sweep": {
+    "label_only": {
+      "recovery_at_top_k": {
+        "top1": 0.216,
+        "top3": 0.392,
+        "top5": 0.392,
+        "top10": 0.412,
+        "top20": 0.451
+      },
+      "median_pool_at_top10": 638
+    },
+    "content_only": {
+      "recovery_at_top_k": {
+        "top1": 0.137,
+        "top3": 0.392,
+        "top5": 0.431,
+        "top10": 0.49,
+        "top20": 0.647
+      },
+      "median_pool_at_top10": 447
+    },
+    "combined_1_1": {
+      "recovery_at_top_k": {
+        "top1": 0.196,
+        "top3": 0.49,
+        "top5": 0.529,
+        "top10": 0.549,
+        "top20": 0.608
+      },
+      "median_pool_at_top10": 625
+    },
+    "combined_1_2": {
+      "recovery_at_top_k": {
+        "top1": 0.176,
+        "top3": 0.431,
+        "top5": 0.529,
+        "top10": 0.549,
+        "top20": 0.647
+      },
+      "median_pool_at_top10": 622
+    },
+    "combined_2_1": {
+      "recovery_at_top_k": {
+        "top1": 0.176,
+        "top3": 0.471,
+        "top5": 0.51,
+        "top10": 0.529,
+        "top20": 0.588
+      },
+      "median_pool_at_top10": 671
+    },
+    "phrasings_tested": 51,
+    "verdict": "Lexical category resolution caps out near 55-65% recovery for genuinely paraphrased category language, and needs a 600+ product pool to get there. This is the one place a sentence encoder is not optional: 1,115 short strings, ~2MB, and it only has to fire when lexical confidence is low."
+  }
+}

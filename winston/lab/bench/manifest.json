@@ -1,0 +1,57 @@
+{
+  "seed": 20260829,
+  "generators": [
+    "llama3.1:8b",
+    "gemma2:9b"
+  ],
+  "modifier_p": {
+    "negation": 0.2,
+    "for_other": 0.2,
+    "vague_budget": 0.2,
+    "format_noise": 0.3
+  },
+  "overlap_limit": 0.5,
+  "planned": 1685,
+  "written": 1685,
+  "dry_run": false,
+  "by_style": {
+    "exact": 38,
+    "product_type": 269,
+    "feature": 269,
+    "use_case": 269,
+    "symptom": 269,
+    "compatibility": 33,
+    "plain": 269,
+    "lay": 269
+  },
+  "by_generator": {
+    "llama3.1:8b": 843,
+    "gemma2:9b": 842
+  },
+  "by_modifier": {
+    "negation": 356,
+    "for_other": 369,
+    "vague_budget": 311,
+    "format_noise": 10
+  },
+  "by_intent": {
+    "buying": 38,
+    "browsing": 1647
+  },
+  "overlap_flagged": 141,
+  "last_run": {
+    "generated_this_run": 1554,
+    "skipped": 0,
+    "seconds": 9795.4,
+    "by_style": {
+      "lay": 247,
+      "use_case": 248,
+      "plain": 247,
+      "symptom": 251,
+      "feature": 247,
+      "product_type": 249,
+      "compatibility": 30,
+      "exact": 35
+    }
+  }
+}

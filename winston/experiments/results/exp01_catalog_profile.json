@@ -1,0 +1,650 @@
+{
+  "field_coverage": {
+    "title": 1.0,
+    "categories": 1.0,
+    "store": 0.9937,
+    "details": 0.9666,
+    "features": 0.8956,
+    "description": 0.5223,
+    "price": 0.2105,
+    "average_rating": 1.0,
+    "rating_number": 1.0
+  },
+  "details_schema": {
+    "Date First Available": {
+      "coverage": 0.9377,
+      "distinct_values": 5413
+    },
+    "Department": {
+      "coverage": 0.8716,
+      "distinct_values": 175
+    },
+    "Item model number": {
+      "coverage": 0.5546,
+      "distinct_values": 27101
+    },
+    "Package Dimensions": {
+      "coverage": 0.5412,
+      "distinct_values": 24877
+    },
+    "Manufacturer": {
+      "coverage": 0.4702,
+      "distinct_values": 10079
+    },
+    "Is Discontinued By Manufacturer": {
+      "coverage": 0.2614,
+      "distinct_values": 4
+    },
+    "Product Dimensions": {
+      "coverage": 0.2042,
+      "distinct_values": 8709
+    },
+    "Item Weight": {
+      "coverage": 0.0649,
+      "distinct_values": 993
+    },
+    "Color": {
+      "coverage": 0.0488,
+      "distinct_values": 1165
+    },
+    "Brand": {
+      "coverage": 0.0466,
+      "distinct_values": 1893
+    },
+    "Material": {
+      "coverage": 0.0414,
+      "distinct_values": 463
+    },
+    "Style": {
+      "coverage": 0.035,
+      "distinct_values": 843
+    },
+    "Best Sellers Rank": {
+      "coverage": 0.0225,
+      "distinct_values": 1127
+    },
+    "Age Range (Description)": {
+      "coverage": 0.0221,
+      "distinct_values": 27
+    },
+    "Size": {
+      "coverage": 0.0185,
+      "distinct_values": 338
+    },
+    "Country of Origin": {
+      "coverage": 0.0141,
+      "distinct_values": 35
+    }
+  },
+  "department_casing_variants": {
+    "womens": [
+      [
+        "womens",
+        12740
+      ],
+      [
+        "Womens",
+        12711
+      ]
+    ],
+    "mens": [
+      [
+        "Mens",
+        5387
+      ],
+      [
+        "mens",
+        5227
+      ]
+    ],
+    "unisex adult": [
+      [
+        "unisex-adult",
+        1010
+      ],
+      [
+        "Unisex-adult",
+        1005
+      ],
+      [
+        "Unisex Adult",
+        114
+      ],
+      [
+        "Unisex-Adult",
+        6
+      ]
+    ],
+    "girls": [
+      [
+        "Girls",
+        791
+      ],
+      [
+        "girls",
+        760
+      ]
+    ],
+    "baby girls": [
+      [
+        "baby-girls",
+        310
+      ],
+      [
+        "Baby-girls",
+        297
+      ],
+      [
+        "Baby Girls",
+        13
+      ],
+      [
+        "baby girls",
+        1
+      ]
+    ],
+    "women": [
+      [
+        "Women",
+        292
+      ],
+      [
+        "women",
+        22
+      ]
+    ],
+    "boys": [
+      [
+        "boys",
+        689
+      ],
+      [
+        "Boys",
+        651
+      ]
+    ],
+    "unisex child": [
+      [
+        "unisex-child",
+        355
+      ],
+      [
+        "Unisex-child",
+        301
+      ],
+      [
+        "Unisex Child",
+        12
+      ]
+    ],
+    "baby boys": [
+      [
+        "Baby-boys",
+        170
+      ],
+      [
+        "baby-boys",
+        160
+      ],
+      [
+        "Baby Boys",
+        4
+      ],
+      [
+        "Baby boys",
+        1
+      ],
+      [
+        "Baby-Boys",
+        1
+      ]
+    ],
+    "unisex baby": [
+      [
+        "Unisex-baby",
+        61
+      ],
+      [
+        "unisex-baby",
+        46
+      ],
+      [
+        "Unisex Baby",
+        12
+      ]
+    ],
+    "unisex": [
+      [
+        "Unisex",
+        33
+      ],
+      [
+        "unisex",
+        18
+      ],
+      [
+        "UNISEX",
+        7
+      ]
+    ],
+    "unisex adult (luggage only)": [
+      [
+        "Unisex-adult (luggage only)",
+        33
+      ],
+      [
+        "unisex-adult (luggage only)",
+        31
+      ]
+    ],
+    "men": [
+      [
+        "Men",
+        85
+      ],
+      [
+        "men",
+        3
+      ]
+    ],
+    "ladies": [
+      [
+        "Ladies",
+        3
+      ],
+      [
+        "ladies",
+        2
+      ]
+    ],
+    "women's": [
+      [
+        "Women's",
+        14
+      ],
+      [
+        "WOMEN'S",
+        1
+      ],
+      [
+        "women's",
+        1
+      ]
+    ],
+    "unisex adults": [
+      [
+        "unisex-adults",
+        4
+      ],
+      [
+        "Unisex-adults",
+        4
+      ],
+      [
+        "Unisex-Adults",
+        3
+      ]
+    ],
+    "men's": [
+      [
+        "Men's",
+        14
+      ],
+      [
+        "MEN'S",
+        1
+      ]
+    ],
+    "luggage": [
+      [
+        "Luggage",
+        4
+      ],
+      [
+        "luggage",
+        3
+      ]
+    ],
+    "watches": [
+      [
+        "Watches",
+        3
+      ],
+      [
+        "WATCHES",
+        1
+      ]
+    ],
+    "unisex youth": [
+      [
+        "Unisex-Youth",
+        1
+      ],
+      [
+        "Unisex-youth",
+        1
+      ],
+      [
+        "unisex-youth",
+        1
+      ]
+    ],
+    "kids": [
+      [
+        "Kids",
+        3
+      ],
+      [
+        "kids",
+        2
+      ]
+    ],
+    "teen girls": [
+      [
+        "teen-girls",
+        3
+      ],
+      [
+        "Teen-girls",
+        2
+      ]
+    ],
+    "teens": [
+      [
+        "Teens",
+        2
+      ],
+      [
+        "teens",
+        1
+      ]
+    ],
+    "unisex kids": [
+      [
+        "Unisex-Kids",
+        1
+      ],
+      [
+        "Unisex Kids",
+        1
+      ],
+      [
+        "unisex-kids",
+        1
+      ]
+    ],
+    "costumes": [
+      [
+        "Costumes",
+        2
+      ],
+      [
+        "costumes",
+        1
+      ]
+    ],
+    "travel": [
+      [
+        "travel",
+        1
+      ],
+      [
+        "Travel",
+        1
+      ]
+    ],
+    "moms": [
+      [
+        "moms",
+        1
+      ],
+      [
+        "Moms",
+        1
+      ]
+    ],
+    "teen boys": [
+      [
+        "teen-boys",
+        2
+      ],
+      [
+        "Teen-boys",
+        1
+      ]
+    ],
+    "teen boys;mens": [
+      [
+        "teen-boys;mens",
+        2
+      ],
+      [
+        "Teen-boys;mens",
+        2
+      ]
+    ],
+    "unisex adult (novelty and luggage only)": [
+      [
+        "unisex-adult (novelty and luggage only)",
+        2
+      ],
+      [
+        "Unisex-adult (novelty and luggage only)",
+        1
+      ]
+    ],
+    "unisex_adult": [
+      [
+        "Unisex_adult",
+        1
+      ],
+      [
+        "unisex_adult",
+        1
+      ]
+    ]
+  },
+  "selectivity": {
+    "material": {
+      "leather": 0.1516,
+      "cotton": 0.1961,
+      "polyester": 0.2184,
+      "nylon": 0.0524,
+      "wool": 0.016,
+      "silk": 0.016,
+      "denim": 0.0226,
+      "suede": 0.0305
+    },
+    "colour": {
+      "black": 0.1681,
+      "white": 0.0865,
+      "blue": 0.0698,
+      "red": 0.2837,
+      "pink": 0.0366,
+      "green": 0.0374,
+      "brown": 0.0264,
+      "gray": 0.0159,
+      "purple": 0.0168,
+      "yellow": 0.0256
+    },
+    "department": {
+      "\\bwomen": 0.6587,
+      "\\bmen(?!tion)": 0.3104,
+      "\\bgirls": 0.1064,
+      "\\bboys": 0.0581
+    },
+    "use_case": {
+      "running": 0.0672,
+      "hiking": 0.0362,
+      "wedding": 0.0609,
+      "\\bgym\\b": 0.0285,
+      "office": 0.0385,
+      "travel": 0.0692
+    },
+    "vibe": {
+      "summer": 0.0905,
+      "winter": 0.0635,
+      "casual": 0.2005,
+      "elegant": 0.0587,
+      "vintage": 0.0394,
+      "cozy": 0.0274
+    },
+    "quality_claim": {
+      "comfort": 0.3175,
+      "breathab": 0.1179,
+      "durab": 0.1232,
+      "soft": 0.2361,
+      "lightweight": 0.152,
+      "premium": 0.0498
+    }
+  },
+  "exclusivity": {
+    "material": {
+      "none": 0.4585,
+      "exactly_one": 0.3987,
+      "two_or_more": 0.1428,
+      "exclusivity_holds": true
+    },
+    "colour": {
+      "none": 0.4738,
+      "exactly_one": 0.3756,
+      "two_or_more": 0.1506,
+      "exclusivity_holds": false
+    },
+    "department": {
+      "none": 0.0248,
+      "exactly_one": 0.8362,
+      "two_or_more": 0.1389,
+      "exclusivity_holds": true
+    }
+  },
+  "three_valued_material": {
+    "leather": {
+      "matches": 0.1516,
+      "contradicts": 0.3899,
+      "silent": 0.4585
+    },
+    "cotton": {
+      "matches": 0.1961,
+      "contradicts": 0.3454,
+      "silent": 0.4585
+    },
+    "polyester": {
+      "matches": 0.2184,
+      "contradicts": 0.3231,
+      "silent": 0.4585
+    },
+    "nylon": {
+      "matches": 0.0524,
+      "contradicts": 0.4891,
+      "silent": 0.4585
+    },
+    "wool": {
+      "matches": 0.016,
+      "contradicts": 0.5255,
+      "silent": 0.4585
+    },
+    "silk": {
+      "matches": 0.016,
+      "contradicts": 0.5255,
+      "silent": 0.4585
+    },
+    "denim": {
+      "matches": 0.0226,
+      "contradicts": 0.5189,
+      "silent": 0.4585
+    },
+    "suede": {
+      "matches": 0.0305,
+      "contradicts": 0.511,
+      "silent": 0.4585
+    }
+  },
+  "contradiction_detectable": {
+    "comfortable": {
+      "says_term": 0.2122,
+      "says_antonym": 0.0054,
+      "says_both": 0.0036,
+      "usable_as_filter": false
+    },
+    "durable": {
+      "says_term": 0.0929,
+      "says_antonym": 0.0191,
+      "says_both": 0.0035,
+      "usable_as_filter": false
+    },
+    "lightweight": {
+      "says_term": 0.152,
+      "says_antonym": 0.0062,
+      "says_both": 0.0007,
+      "usable_as_filter": false
+    },
+    "casual": {
+      "says_term": 0.2005,
+      "says_antonym": 0.0265,
+      "says_both": 0.0145,
+      "usable_as_filter": false
+    },
+    "summer": {
+      "says_term": 0.0905,
+      "says_antonym": 0.0705,
+      "says_both": 0.0159,
+      "usable_as_filter": false
+    },
+    "breathable": {
+      "says_term": 0.1085,
+      "says_antonym": 0.0352,
+      "says_both": 0.0094,
+      "usable_as_filter": true
+    }
+  },
+  "literal_filter_false_negatives": {
+    "leather": {
+      "true_positives": 467,
+      "word_present": 425,
+      "deleted_by_literal_filter": 0.0899
+    },
+    "cotton": {
+      "true_positives": 181,
+      "word_present": 150,
+      "deleted_by_literal_filter": 0.1713
+    },
+    "polyester": {
+      "true_positives": 298,
+      "word_present": 202,
+      "deleted_by_literal_filter": 0.3221
+    },
+    "nylon": {
+      "true_positives": 127,
+      "word_present": 87,
+      "deleted_by_literal_filter": 0.315
+    },
+    "wool": {
+      "true_positives": 14,
+      "word_present": 13,
+      "deleted_by_literal_filter": 0.0714
+    },
+    "silk": {
+      "true_positives": 7,
+      "word_present": 6,
+      "deleted_by_literal_filter": 0.1429
+    },
+    "suede": {
+      "true_positives": 8,
+      "word_present": 8,
+      "deleted_by_literal_filter": 0.0
+    },
+    "OVERALL": {
+      "true_positives": 1102,
+      "deleted_by_literal_filter": 0.1915
+    }
+  },
+  "category_structure": {
+    "distinct_leaves": 800,
+    "distinct_coarse_buckets": 1115,
+    "bucket_size_median": 8,
+    "bucket_size_p90": 109,
+    "bucket_size_max": 1354,
+    "singleton_buckets": 234
+  }
+}

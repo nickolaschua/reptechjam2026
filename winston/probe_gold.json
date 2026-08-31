@@ -1,0 +1,1302 @@
+[
+  {
+    "case": 1,
+    "asin": "B00D8G0WX8",
+    "stratum": "A",
+    "utterance": "i want a men's shoe for playing tennis, preferably something that has decent cushioning so it's comfortable. i also want the shoe to be quite grippy so that i don't slip on the court. hmm does the material of the rest of the shoe matter? i guess not? idk",
+    "discard_spans": [
+      "so i don't slip on the court",
+      "hmm does the material of the rest of the shoe matter? i guess not? idk"
+    ],
+    "gold": {
+      "category_phrase": "tennis-shoes",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "cushioning",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "grippy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 2,
+    "asin": "B00E4N07B6",
+    "stratum": "A",
+    "utterance": "i'm looking for a shoe that is good for all purpose usage, like if i do a mixture of sports like lifting weights, running,  maybe maybe if i want to do racket sports as well. i'm a woman.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "cross-training-shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "versatile",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "weightlifting",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "running",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "racquet-sports",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "supportive",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 3,
+    "asin": "B00KZIV0Q0",
+    "stratum": "A",
+    "utterance": "looking for a pair of women's shoes for running in the forests and mountains. trail running is it called? i prefer stuff from a more reputable brand and something well-rated.",
+    "discard_spans": [
+      "trail running is it called?"
+    ],
+    "gold": {
+      "category_phrase": "trail-running-shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "trail",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "outdoor",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "mountain",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "reputable_brand",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 4,
+    "asin": "B07FDB7GMZ",
+    "stratum": "A",
+    "utterance": "i need a pair of waterproof pair of slides so i can wear them to the beach or shower.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "slides",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "waterproof",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "beach",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "shower",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "quick-dry",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 5,
+    "asin": "B07K3SMCXL",
+    "stratum": "A",
+    "utterance": "i need a stretchy bathing suit for swimming, something a lil sexy but also comfortable with things like padding and support",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "swimwear",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "stretchy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "padded",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "supportive",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "flattering",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 6,
+    "asin": "B089QYV4SD",
+    "stratum": "A",
+    "utterance": "i'm a big sized female, looking for a raincoat to keep me out of the water when it's pouring. hopefully something that has some good designs to prevent the water from coming in especially at the seams and zippers and stuff",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "raincoat",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "plus-size",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "waterproof",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "sealed-seams",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "hooded",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lightweight",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 7,
+    "asin": "B074N8JH9G",
+    "stratum": "B",
+    "utterance": "i'm a father shopping for my 9 year old son. looking for a pair of comfy slippers with like the furry design on the inside of the shoe so that it keeps his little feet warm during the later months and hopefully something with some good grip so my son stays safe.",
+    "discard_spans": [
+      "so my son stays safe"
+    ],
+    "gold": {
+      "category_phrase": "slippers",
+      "department": "boys",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "kids",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "fleece-lined",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "warm",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "grippy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "non-slip",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 8,
+    "asin": "B07K34RX5J",
+    "stratum": "B",
+    "utterance": "i'm looking for a pair of earrings that would catch people's eyes. something artful but also bold and shows taste. maybe something like a hoop earrings.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "hoop-earrings",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "statement",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "bold",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "eye-catching",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "artistic",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lightweight",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 9,
+    "asin": "B07RWZDSM1",
+    "stratum": "B",
+    "utterance": "i need something that looks classy bold and provocative for a night event. i'm a woman. thinking of liek a nightgown or like a dress to wear to a party or event. in terms of colour preferences maybe something brighter. i need it to show off my figure as well.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "evening-dress",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "bodycon",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "figure-hugging",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "bold",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "classy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "formal",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "bright-colour",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 10,
+    "asin": "B085S67VBB",
+    "stratum": "B",
+    "utterance": "i'm looking for a pair of sunnies that look classy and fits with the throwback look.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "sunglasses",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "retro",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "vintage",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "classy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "square-frame",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 11,
+    "asin": "B08N5LWFFC",
+    "stratum": "B",
+    "utterance": "i'm looking for one of those pair of boots with high heels and with the toe sticking out a little bit like for that little bit of flair and sexiness (i'm a woman in case you didn't know)",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "ankle-boots",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "peep-toe",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "chunky-heel",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "high-heel",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "strappy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "flirty",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 12,
+    "asin": "B006H1I85K",
+    "stratum": "C",
+    "utterance": "i want a pair of shoes that are good for doing a variety of different sports, including racket sports and lifting weights. i am a woman. i think i prefer brands like asics.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "cross-training-shoes",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "versatile",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "racquet-sports",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "weightlifting",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 13,
+    "asin": "B006H32MDC",
+    "stratum": "C",
+    "utterance": "i want a pair of high quality, probably like leather shoes that are good for doing a variety of different sports, including racket sports and lifting weights. i am a man. i think i prefer brands like asics",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "tennis-shoes",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "brand",
+          "value": "asics",
+          "declined": false
+        },
+        {
+          "attribute": "material",
+          "value": "leather",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "versatile",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "weightlifting",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "high-quality",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 14,
+    "asin": "B01BN0MLE8",
+    "stratum": "C",
+    "utterance": "i want a good pair of jeans that show enough figure like slim fitting but is not too out there. comfortable, maybe stretchy material? something that is just easy to wash, standard pair of denim jeans.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "jeans",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "denim",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "slim-fit",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "stretchy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "machine-washable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "understated",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 15,
+    "asin": "B079P4GPY4",
+    "stratum": "C",
+    "utterance": "looking for a pair of high heels to wear to the office, looks more plain like maybe something black and with a skinny stem",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "pumps",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "black",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "stiletto",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "plain",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "office-wear",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 16,
+    "asin": "B07XC9CGZQ",
+    "stratum": "C",
+    "utterance": "i'm going to wear a strapless top which might be quite revealing so i need something that can cover my nipples and accentuate my boobs a bit as well. and hopefully something like skin coloured so if any wardrobe malfunctions were to happen it wouldn't be too obvious",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "breast-petals",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "skin-toned",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lift",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "invisible",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "strapless-compatible",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 17,
+    "asin": "B016HCI5DS",
+    "stratum": "D",
+    "utterance": "I'm looking for wool socks for my children. something easy to wash would be preferred.",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "socks",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "material",
+          "value": "wool",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "machine-washable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "warm",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "childrens",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "comfortable",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 18,
+    "asin": "B07SMPKSZH",
+    "stratum": "D",
+    "utterance": "need one of those long sleeve shirts for fishing, the kind that blocks the sun. upf something? 50 i think. gotta be quick drying too cause i sweat a lot out on the boat",
+    "discard_spans": [
+      "cause i sweat a lot out on the boat"
+    ],
+    "gold": {
+      "category_phrase": "mens-shirts",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "upf-50",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "sun-protection",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "quick-dry",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "moisture-wicking",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "long-sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "fishing",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 19,
+    "asin": "B08K8HVQN4",
+    "stratum": "D",
+    "utterance": "looking for a golf shirt for my dad, long sleeve, the sun protective type. he likes the ones with the buttons at the collar. stretchy would be good, he's not exactly slim these days",
+    "discard_spans": [
+      "he's not exactly slim these days"
+    ],
+    "gold": {
+      "category_phrase": "active-shirts",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "golf",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "upf-50",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "long-sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "button-collar",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "stretch",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lightweight",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 20,
+    "asin": "B0BNP1RZ2W",
+    "stratum": "D",
+    "utterance": "want gold hoop earrings, the chunky kind not the thin dainty ones. not real gold obviously, plated is fine. budget is like 60 bucks max",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "hoop-earrings",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "chunky",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "gold-plated",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lightweight",
+          "declined": false
+        }
+      ],
+      "price_max": 60,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 21,
+    "asin": "B083WGBK79",
+    "stratum": "E",
+    "utterance": "my daughter is turning 2 and i want to get her one of those matching outfit sets, like top and pants together. she likes the army print thing",
+    "discard_spans": [
+      "my daughter is turning 2"
+    ],
+    "gold": {
+      "category_phrase": "clothing-sets",
+      "department": "baby-girls",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "toddler",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "camouflage",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "matching-set",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "two-piece",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 22,
+    "asin": "B08DL4SL2M",
+    "stratum": "E",
+    "utterance": "looking for a plain fitted short sleeve top, cropped, with a v neckline. ribbed material maybe? just something basic i can layer under stuff",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "t-shirts",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "crop-top",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "v-neck",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "ribbed",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "slim-fit",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "short-sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "basic",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "layering",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 23,
+    "asin": "B08GKV2M6R",
+    "stratum": "E",
+    "utterance": "i have really wide feet and wide calves and normal rain boots never fit me. need ankle height ones, women's. honestly the wide fit is the whole thing, everything else i don't care about",
+    "discard_spans": [
+      "normal rain boots never fit me"
+    ],
+    "gold": {
+      "category_phrase": "rain-boots",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "size",
+          "value": "wide-width",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "wide-calf",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "ankle-height",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "",
+          "declined": true
+        },
+        {
+          "attribute": "material",
+          "value": "",
+          "declined": true
+        },
+        {
+          "attribute": "brand",
+          "value": "",
+          "declined": true
+        },
+        {
+          "attribute": "budget",
+          "value": "",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 24,
+    "asin": "B08VDM4G8B",
+    "stratum": "E",
+    "utterance": "halloween's coming up and i'm going as sandy from grease, need that pink jacket thing with the scarf. nothing expensive, like $25 tops",
+    "discard_spans": [
+      "halloween's coming up"
+    ],
+    "gold": {
+      "category_phrase": "costume-jacket",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "pink",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "satin",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "neck-scarf",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "1950s",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "halloween-costume",
+          "declined": false
+        }
+      ],
+      "price_max": 25,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 25,
+    "asin": "B07KCFS4VC",
+    "stratum": "F",
+    "utterance": "need a couple of plain tees for my husband, he's outdoorsy and wears them hiking. under 30 dollars each. he hates anything that feels like plastic against his skin",
+    "discard_spans": [
+      "he's outdoorsy"
+    ],
+    "gold": {
+      "category_phrase": "t-shirts",
+      "department": "mens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "plain",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "outdoor",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "breathable",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "natural-feel",
+          "declined": false
+        }
+      ],
+      "price_max": 30,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 26,
+    "asin": "B08MBM15JB",
+    "stratum": "F",
+    "utterance": "cheap house slippers, the fluffy open toe kind with memory foam in them. don't want to spend more than like 15",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "slippers",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "fuzzy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "faux-fur",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "open-toe",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "memory-foam",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "house-slippers",
+          "declined": false
+        }
+      ],
+      "price_max": 15,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 27,
+    "asin": "B08W4JXR19",
+    "stratum": "F",
+    "utterance": "want a nice summery blouse, v neck, short sleeves, with some lace or crochet detail at the front. something i could wear to brunch",
+    "discard_spans": [
+      "something i could wear to brunch"
+    ],
+    "gold": {
+      "category_phrase": "blouses",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "v-neck",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "short-sleeve",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lace",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "crochet",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "eyelet",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "summer",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "casual",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 28,
+    "asin": "B07GXHPWTJ",
+    "stratum": "G",
+    "utterance": "looking for a big shoulder bag, soft leather-looking, roomy enough to fit a laptop. i only buy stuff with loads of good reviews so nothing obscure please",
+    "discard_spans": [],
+    "gold": {
+      "category_phrase": "tote-bags",
+      "department": "womens",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "roomy",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "hobo",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "soft-pu-leather",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "shoulder-strap",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "laptop-capacity",
+          "declined": false
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "well_rated",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 29,
+    "asin": "B07VCYFB5D",
+    "stratum": "G",
+    "utterance": "i want a baseball cap i can put my own text on, custom printed or embroidered, whatever. needs the adjustable strap at the back. around 20 bucks",
+    "discard_spans": [
+      "custom printed or embroidered, whatever"
+    ],
+    "gold": {
+      "category_phrase": "baseball-caps",
+      "department": null,
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "custom-text",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "personalized",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "strap-closure",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "adjustable",
+          "declined": false
+        }
+      ],
+      "price_max": 20,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  },
+  {
+    "case": 30,
+    "asin": "B08513YB2T",
+    "stratum": "G",
+    "utterance": "those foam clog things with the holes in them that everyone wears, you know the ones. unisex ideally. don't really care what colour",
+    "discard_spans": [
+      "you know the ones"
+    ],
+    "gold": {
+      "category_phrase": "clogs",
+      "department": "unisex-adult",
+      "slots": [
+        {
+          "attribute": "feature",
+          "value": "foam",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "lightweight",
+          "declined": false
+        },
+        {
+          "attribute": "feature",
+          "value": "slip-on",
+          "declined": false
+        },
+        {
+          "attribute": "color",
+          "value": "",
+          "declined": true
+        }
+      ],
+      "price_max": null,
+      "price_min": null,
+      "quality_prior": "none",
+      "exploring": false,
+      "specificity": null
+    }
+  }
+]

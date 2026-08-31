@@ -1,0 +1,99 @@
+{
+  "transcript": {
+    "sample_id": "public_0085",
+    "scenario": "browsing",
+    "target": "B0C3YJMRRD",
+    "turns_recorded": 10,
+    "reported_outcome": "FAILED (target never surfaced)",
+    "target_in_catalog": true,
+    "target_title": "welltree Slides for Women Men Pillow Slippers Non-Slip Bathroom Shower Sandals Soft Thick Sole Indoor and Outdoor Slides",
+    "bucket": "Sandals Slides",
+    "bucket_size": 190,
+    "target_rating_number": 12021,
+    "target_rank_by_popularity": 2
+  },
+  "bug_1_category_regex": {
+    "pattern": "I'm looking for ([^.,]+)",
+    "captures_per_turn": [
+      "a pair of slides that are super comfortable and have a soft",
+      null,
+      null,
+      "something with a soft",
+      null
+    ],
+    "problem": "[^.,]+ runs to the first comma, so the whole clause becomes state['category']; 'I'm specifically looking for' does not match the anchor at all"
+  },
+  "bug_2_template_only_parsing": {
+    "a_key_requirement": 0,
+    "what_matters_is": 0,
+    "what_i_need_is": 0,
+    "boundary_phrase": 0,
+    "messages_tested": 5,
+    "problem": "every constraint path is a template written against the simulator's literal output strings; a real shopper triggers none, so EVA / non-slip / 1.57in are discarded"
+  },
+  "bug_3_seen_asins": {
+    "code": "if pid in state['seen_asins']: continue  /  state['seen_asins'].update(recommendations)",
+    "products_removed_per_turn": 10,
+    "products_removed_over_session": 100,
+    "cleared_only_on": [
+      "category change",
+      "override regex match"
+    ],
+    "problem": "neither clears here, so the agent consumes its own candidate pool; turn 1 returns slides, turn 10 returns t-shirts"
+  },
+  "whole_message_resolution": {
+    "description": "no anchor phrase, no template regexes, no seen_asins exclusion",
+    "per_turn": [
+      {
+        "turn": 1,
+        "resolved_buckets": [
+          "sandals slides",
+          "athletic sport sandals & slides",
+          "outdoor climbing"
+        ],
+        "pool_size": 339,
+        "target_rank": 1
+      },
+      {
+        "turn": 2,
+        "resolved_buckets": [
+          "sandals slides",
+          "athletic sport sandals & slides",
+          "outdoor climbing"
+        ],
+        "pool_size": 339,
+        "target_rank": 1
+      },
+      {
+        "turn": 3,
+        "resolved_buckets": [
+          "sandals slides",
+          "athletic sport sandals & slides",
+          "outdoor climbing"
+        ],
+        "pool_size": 339,
+        "target_rank": 1
+      },
+      {
+        "turn": 4,
+        "resolved_buckets": [
+          "sandals slides",
+          "athletic sport sandals & slides",
+          "outdoor climbing"
+        ],
+        "pool_size": 339,
+        "target_rank": 1
+      },
+      {
+        "turn": 5,
+        "resolved_buckets": [
+          "sandals slides",
+          "athletic sport sandals & slides",
+          "outdoor climbing"
+        ],
+        "pool_size": 339,
+        "target_rank": 1
+      }
+    ]
+  }
+}
