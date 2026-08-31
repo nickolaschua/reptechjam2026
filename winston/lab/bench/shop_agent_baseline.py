@@ -30,6 +30,12 @@ OUT = BENCH / "results_shop_agent.jsonl"
 def main() -> None:
     limit = int(sys.argv[1]) if len(sys.argv) > 1 else 400
     import shop_agent
+    # shop_agent loads a .env at import and re-arms API keys: strip them AFTER import
+    # and disable the SDK paths, so the cascade can only reach local Ollama.
+    for k in ("OPENAI_API_KEY", "DEEPSEEK_API_KEY", "GEMINI_API_KEY"):
+        os.environ.pop(k, None)
+    shop_agent.HAS_OPENAI = False
+    shop_agent.HAS_GEMINI = False
     agent = shop_agent.Agent(REPO / "techjam-conversational-search" / "data" / "catalog.jsonl")
 
     real_call = agent._call_llm
@@ -64,9 +70,14 @@ def main() -> None:
                 resp = agent.respond(sid, c["utterance"], 1, 50)
                 ids = [r["parent_asin"] if isinstance(r, dict) else r for r in resp.get("recommendations", [])]
                 rank = ids.index(c["asin"]) + 1 if c["asin"] in ids else None
-                model_used = (agent._sessions.get(sid, {}).get("debug_info") or {}).get("model")
+                # His respond() routes any turn-1 message starting with "i'm looking for " to
+                # the no-LLM exact lexical matcher (simulator mode). Record which route served
+                # the case and which model, from both places the agent writes them.
+                route = "baseline_lexical" if agent._simulator_sessions.get(sid, False) else "custom_llm"
+                model_used = ((resp.get("debug") or {}).get("model")
+                              or (agent._sessions.get(sid, {}).get("debug_info") or {}).get("model"))
                 row = {"case_id": c["case_id"], "asin": c["asin"], "shop_agent_rank": rank,
-                       "model_used": model_used}           # proves the state tracker actually ran
+                       "route": route, "model_used": model_used}
             except Exception as exc:            # noqa: BLE001 - a crash is a data point, not a stop
                 row = {"case_id": c["case_id"], "asin": c["asin"], "shop_agent_rank": None,
                        "error": f"{type(exc).__name__}: {exc}"[:200]}
@@ -81,7 +92,11 @@ def main() -> None:
     mrr = sum(1 / r for r in ranks if r and r <= 10) / len(ranks)
     from collections import Counter
     print(f"\nshop_agent on {len(rows)} messy cases: hit@10 {hit:.3f}  mrr {mrr:.3f}  errors {sum(1 for r in rows if r.get('error'))}")
-    print("model that served the state update:", dict(Counter(r.get("model_used") for r in rows)))
+    print("route:", dict(Counter(r.get("route") for r in rows)), "| model:", dict(Counter(r.get("model_used") for r in rows)))
+    for route in ("baseline_lexical", "custom_llm"):
+        rs = [r["shop_agent_rank"] for r in rows if r.get("route") == route]
+        if rs:
+            print(f"  {route:16s} n={len(rs):3d}  hit@10 {sum(1 for r in rs if r and r <= 10)/len(rs):.3f}")
 
 
 if __name__ == "__main__":
