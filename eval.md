@@ -2,7 +2,7 @@
 
 We have enough infrastructure to build a convincing evaluation story, but we cannot yet make clean claims that every feature improves the live system.
 
-The strongest evidence today is for the confidence gate. Long-term memory currently has trustworthy but negative evidence. Entropy is implemented and tested, but it is not independently ablatable or evaluated against a reasonable control.
+The strongest completed evidence today is for the confidence gate. Long-term memory currently has trustworthy but negative evidence. Entropy is implemented and tested, and the active four-condition runner can now compare entropy with a fixed-priority control, but a completed frozen comparison is not yet recorded.
 
 ## What already exists
 
@@ -17,8 +17,9 @@ The strongest evidence today is for the confidence gate. Long-term memory curren
 | Memory evaluation artifacts | Complete but archived | The artifacts include manifests, forensic records, hashes, paired reconstruction, slice metrics, and deterministic verification. |
 | Memory improvement | Not demonstrated | Relevant-set MRR fell from `0.02145` without memory to `0.01933` with memory. The mechanism was classified `HARMFUL`. |
 | Entropy feature | Implemented | Shannon entropy and gain-ratio selection are active and deterministic. |
-| Entropy ablation | Missing | There is no runtime switch or evaluator comparison against a fixed-priority or random-question control. |
-| General feature flags | Missing | Most features are hardwired rather than selected through a shared experiment configuration. |
+| Entropy ablation | Runner ready; result missing | `ExperimentConfig.clarification_policy` and `run_ablation_experiments.py` compare fixed-priority and entropy policies. A completed frozen report is still required. |
+| Long-term-memory read ablation | Runner ready; result missing | The same runner crosses clarification policy with long-term-memory reads enabled/disabled. |
+| General feature flags | Partial | Clarification policy, LTM reads, model temperature, and seed are configurable. Confidence gate, retrieval route, update policy, and parser mode are not all exposed through the same runner. |
 
 Relevant sources include:
 
@@ -131,17 +132,19 @@ Partially.
 
 - The 200-session evaluator is available.
 - The confidence-gate runner is operational and already has complete results.
-- Ollama is reachable locally.
-- The default live BGE deployment cache is missing. Only the OpenAI embedding cache is present, and there is currently no OpenAI credential configured. A fresh live end-to-end run is therefore not immediately reproducible in the current environment.
+- Provider availability must be established during release preflight rather than inferred from a developer `.env` file.
+- The default live BGE deployment cache is missing. An ignored OpenAI embedding cache is present locally, but an end-to-end release run still depends on the selected provider, credentials/model service, and matching verified cache.
 - The archived v2 longitudinal runner is broken after relocation: importing it fails because it looks for `archive.research_evaluation.memory.scripts.agent`.
 - Long-term memory can be controlled programmatically through `VectorMemoryConfig`, but the active system has no clean CLI-level `memory_enabled` switch.
 - The confidence threshold is switchable.
-- Entropy, retrieval routing, and several other features have no clean experiment switches.
-- There is no unified runner guaranteeing that every variant uses the same commit, fixture, model, seed, cache, and evaluator.
+- Entropy and LTM reads have clean experiment switches. Retrieval routing, confidence gating, update policy, and parser mode still need unified controls if they are included in a larger ablation matrix.
+- `system.shopping_agent.run_ablation_experiments` now provides a shared four-condition runner and records configuration and artifact identifiers, but no completed release report from the candidate submission commit exists yet.
 
-## Experiment infrastructure to add
+## Experiment infrastructure status
 
-The missing piece is a small experiment layer, not another evaluator:
+The first experiment layer now exists as `ExperimentConfig` plus
+`run_ablation_experiments.py`. It currently covers the clarification-policy × LTM-read
+matrix. A broader release runner would expose:
 
 ```text
 ExperimentConfig
@@ -167,10 +170,11 @@ For the four-user fixture, do not treat 40 sessions as 40 independent observatio
 
 ## Recommended order of work
 
-1. Add the unified feature configuration and entropy control.
-2. Restore or port the longitudinal evaluator to the active agent.
-3. Provision and verify the BGE cache.
-4. Re-run all variants from the same commit.
-5. Only put features on the "measurably improves performance" slide if their paired results support the claim.
+1. Freeze the provider and provision its matching verified cache.
+2. Run the existing four-condition clarification × LTM experiment from one commit.
+3. Restore or port any additional longitudinal evaluation needed for adaptive-update claims.
+4. Add switches only for other features that will receive judge-facing ablation claims.
+5. Re-run all reported variants from the same candidate submission commit.
+6. Only put features on the "measurably improves performance" slide if their paired results support the claim.
 
-Today, we can confidently demonstrate the confidence gate. We can demonstrate that memory is rigorously evaluated, but not yet that it improves performance. Entropy is the most straightforward next feature for which to generate clean positive-or-negative ablation evidence.
+Today, we can confidently demonstrate the confidence gate. We can demonstrate that memory is rigorously evaluated, but not yet that it improves performance. The existing four-condition runner makes entropy versus fixed priority the most direct next positive-or-negative result to generate.

@@ -697,12 +697,6 @@ class Agent:
             time.perf_counter() - catalog_started
         )
 
-        print(
-            f"[Hybrid Agent] Embedding backend: {self.embedding_backend_id} "
-            f"({self.embedding_model_id})"
-        )
-        print(f"[Hybrid Agent] Model provider: "
-              f"{getattr(self.llm_client, 'provider', 'unknown')} ({self.llm_client.model})")
         self._build_vector_index()
 
         self.instrumentation["initialization"]["total_seconds"] = (
@@ -754,7 +748,7 @@ class Agent:
         self.embedding_cache_path = cache_path
 
         if cache_path.exists():
-            print(f"[Hybrid Agent] Loading pre-computed embeddings: {cache_path.name}")
+            print("[Hybrid Agent] Loading cached search index...")
             cache_started = time.perf_counter()
             try:
                 self.catalog_embeddings = load_embedding_cache(cache_path, expectation)
@@ -763,12 +757,12 @@ class Agent:
                     time.perf_counter() - cache_started
                 )
                 return
-            except CacheValidationError as exc:
+            except CacheValidationError:
                 self.instrumentation["initialization"]["cache_status"] = "rejected"
                 self.instrumentation["initialization"]["embedding_cache_load_seconds"] = (
                     time.perf_counter() - cache_started
                 )
-                print(f"[Hybrid Agent] Rejecting incompatible embedding cache: {exc}")
+                print("[Hybrid Agent] Cached search index unavailable; rebuilding...")
 
         openai_requires_command = (
             self.embedding_backend_id == "openai" and not self.explicit_cache_build
@@ -785,8 +779,8 @@ class Agent:
         batch_size = int(getattr(self.embedding_backend, "batch_size", count or 1))
         expected_batches = (count + batch_size - 1) // batch_size
         print(
-            f"[Hybrid Agent] Encoding {count} products with {self.embedding_backend_id} "
-            f"in approximately {expected_batches} batch(es); cache={cache_path}"
+            f"[Hybrid Agent] Building catalogue search index for {count} products "
+            f"in approximately {expected_batches} batch(es)..."
         )
         generation_started = time.perf_counter()
         self.catalog_embeddings = self.embedding_backend.embed_catalog(self.catalog_texts)
@@ -825,7 +819,10 @@ class Agent:
         try:
             options: dict[str, Any] = {
                 "temperature": experiment_config.llm_temperature,
-                "num_predict": 150,
+                # The structured state schema is substantially larger than a
+                # prose reply; OpenAI can otherwise truncate valid JSON at the
+                # old 150-token conversational budget.
+                "num_predict": 512 if response_json else 150,
             }
             if experiment_config.llm_seed is not None:
                 options["seed"] = experiment_config.llm_seed

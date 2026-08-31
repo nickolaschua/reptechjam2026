@@ -1,0 +1,7 @@
+.env
+artifacts/*.npz
+data/catalog.jsonl
+results/
+__pycache__/
+*.py[cod]
+.pytest_cache/

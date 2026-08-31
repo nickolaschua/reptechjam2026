@@ -104,6 +104,37 @@
             gap: 12px;
         }
 
+        .panel-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .panel-toggle {
+            min-height: 34px;
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .panel-toggle:hover,
+        .panel-toggle[aria-expanded="true"] {
+            color: var(--text-main);
+            border-color: rgba(108, 92, 231, 0.65);
+            background: rgba(108, 92, 231, 0.12);
+        }
+
+        .focus-toggle {
+            color: var(--accent-cyan);
+            border-color: rgba(0, 206, 201, 0.32);
+        }
+
         .stat-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-color);
@@ -135,10 +166,19 @@
         /* Sidebar: Session Directory */
         .sidebar {
             width: 320px;
+            flex: 0 0 320px;
             background: var(--bg-sidebar);
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            transition: width 0.25s ease, flex-basis 0.25s ease, transform 0.25s ease;
+        }
+
+        body.sidebar-collapsed .sidebar {
+            width: 0;
+            flex-basis: 0;
+            border-right: 0;
         }
 
         .search-container {
@@ -592,12 +632,27 @@
         /* Right Sidebar: Details Inspector */
         .inspector {
             width: 320px;
+            flex: 0 0 320px;
             border-left: 1px solid var(--border-color);
             background: var(--bg-sidebar);
             display: flex;
             flex-direction: column;
             padding: 20px;
             overflow-y: auto;
+            transition: width 0.25s ease, flex-basis 0.25s ease, padding 0.25s ease, transform 0.25s ease;
+        }
+
+        body.inspector-collapsed .inspector {
+            width: 0;
+            flex-basis: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border-left: 0;
+            overflow: hidden;
+        }
+
+        .panel-scrim {
+            display: none;
         }
 
         .inspector-title {
@@ -680,6 +735,80 @@
             font-size: 18px;
         }
 
+        @media (max-width: 1180px) {
+            header { padding: 0 16px; }
+            .workspace { position: relative; }
+
+            .sidebar,
+            .inspector {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                z-index: 92;
+                width: min(360px, calc(100vw - 24px));
+                max-width: calc(100vw - 24px);
+            }
+
+            .sidebar {
+                left: 0;
+                flex-basis: auto;
+                box-shadow: 18px 0 45px rgba(0, 0, 0, 0.45);
+            }
+
+            .inspector {
+                right: 0;
+                flex-basis: auto;
+                box-shadow: -18px 0 45px rgba(0, 0, 0, 0.45);
+            }
+
+            body.sidebar-collapsed .sidebar {
+                width: min(360px, calc(100vw - 24px));
+                transform: translateX(-105%);
+                border-right: 1px solid var(--border-color);
+            }
+
+            body.inspector-collapsed .inspector {
+                width: min(360px, calc(100vw - 24px));
+                padding: 20px;
+                transform: translateX(105%);
+                border-left: 1px solid var(--border-color);
+                overflow-y: auto;
+            }
+
+            body.panel-open .panel-scrim {
+                display: block;
+                position: absolute;
+                inset: 0;
+                z-index: 91;
+                border: 0;
+                background: rgba(4, 5, 8, 0.62);
+                backdrop-filter: blur(2px);
+                cursor: pointer;
+            }
+
+            .simulator-stat { display: none; }
+            .chat-header,
+            .chat-board {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        @media (max-width: 1050px) {
+            .logo-section h1 {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .toggle-label,
+            .catalog-link { display: none; }
+            .panel-toggle {
+                min-width: 34px;
+                padding: 6px 8px;
+            }
+            .header-stats { gap: 6px; }
+            .stat-item { padding: 4px 8px; }
+        }
+
     </style>
 </head>
 <body>
@@ -690,7 +819,12 @@
             <h1>ASTRA <span>Conversational Search</span></h1>
         </div>
         <div class="header-stats">
-            <a href="/" style="color:var(--text-muted);font-size:13px;text-decoration:none;padding:6px 14px;border:1px solid var(--border-color);border-radius:8px;transition:all 0.2s" onmouseover="this.style.color='var(--text-main)';this.style.borderColor='rgba(255,255,255,0.2)'" onmouseout="this.style.color='var(--text-muted)';this.style.borderColor='var(--border-color)'">← Catalog</a>
+            <div class="panel-controls" aria-label="Demo layout controls">
+                <button type="button" class="panel-toggle" id="toggle-sessions" aria-controls="session-sidebar" aria-expanded="true" title="Show or hide sessions" onclick="togglePanel('sessions')">☰ <span class="toggle-label">Sessions</span></button>
+                <button type="button" class="panel-toggle" id="toggle-inspector" aria-controls="target-inspector" aria-expanded="true" title="Show or hide target inspector" onclick="togglePanel('inspector')">◫ <span class="toggle-label">Inspector</span></button>
+                <button type="button" class="panel-toggle focus-toggle" id="focus-chat" aria-pressed="false" title="Hide both panels for a clean demo" onclick="toggleFocusMode()">✦ <span class="toggle-label">Focus chat</span></button>
+            </div>
+            <a href="/" class="catalog-link" style="color:var(--text-muted);font-size:13px;text-decoration:none;padding:6px 14px;border:1px solid var(--border-color);border-radius:8px;transition:all 0.2s" onmouseover="this.style.color='var(--text-main)';this.style.borderColor='rgba(255,255,255,0.2)'" onmouseout="this.style.color='var(--text-muted)';this.style.borderColor='var(--border-color)'">← Catalog</a>
             <div class="stat-item" style="padding: 2px 6px;">
                 <span style="color: var(--text-muted); font-size: 12px;">Mode:</span>
                 <select id="mode-select" class="search-bar" style="padding: 4px 10px; border-radius: 6px; font-size: 12px; width: auto; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); outline: none;">
@@ -698,7 +832,7 @@
                     <option value="manual">Manual (Write as Shopper)</option>
                 </select>
             </div>
-            <div class="stat-item">
+            <div class="stat-item simulator-stat">
                 <span style="color: var(--text-muted);">Simulator Model:</span>
                 <span style="color: var(--accent-cyan); font-weight: 600;">__MODEL_LABEL__</span>
             </div>
@@ -708,7 +842,7 @@
     <!-- Main Workspace -->
     <div class="workspace">
         <!-- Sidebar: Sessions List -->
-        <div class="sidebar">
+        <div class="sidebar" id="session-sidebar">
             <div class="search-container">
                 <input type="text" id="search-input" class="search-bar" placeholder="Search sessions...">
             </div>
@@ -756,7 +890,7 @@
         </div>
 
         <!-- Right: Inspector -->
-        <div class="inspector">
+        <div class="inspector" id="target-inspector">
             <div id="inspector-container" style="margin-bottom: 24px;">
                 <h2 class="inspector-title">Target Item Inspector</h2>
                 <div class="empty-state" style="padding: 0;">
@@ -770,10 +904,78 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="panel-scrim" aria-label="Close open panel" onclick="closePanels()"></button>
     </div>
 
     <!-- Script logic -->
     <script>
+        const narrowLayout = window.matchMedia('(max-width: 1180px)');
+        let panelLayoutWasChanged = false;
+
+        function setPanelVisibility(panel, visible) {
+            const className = panel === 'sessions' ? 'sidebar-collapsed' : 'inspector-collapsed';
+            const control = document.getElementById(panel === 'sessions' ? 'toggle-sessions' : 'toggle-inspector');
+            document.body.classList.toggle(className, !visible);
+            control.setAttribute('aria-expanded', String(visible));
+        }
+
+        function syncPanelScrim() {
+            const anyOpen = narrowLayout.matches && (
+                !document.body.classList.contains('sidebar-collapsed') ||
+                !document.body.classList.contains('inspector-collapsed')
+            );
+            document.body.classList.toggle('panel-open', anyOpen);
+            const focused = document.body.classList.contains('sidebar-collapsed') &&
+                document.body.classList.contains('inspector-collapsed');
+            const focusButton = document.getElementById('focus-chat');
+            focusButton.setAttribute('aria-pressed', String(focused));
+            focusButton.title = focused ? 'Restore a panel' : 'Hide both panels for a clean demo';
+        }
+
+        function togglePanel(panel) {
+            panelLayoutWasChanged = true;
+            const collapsedClass = panel === 'sessions' ? 'sidebar-collapsed' : 'inspector-collapsed';
+            const shouldOpen = document.body.classList.contains(collapsedClass);
+            if (narrowLayout.matches && shouldOpen) {
+                setPanelVisibility(panel === 'sessions' ? 'inspector' : 'sessions', false);
+            }
+            setPanelVisibility(panel, shouldOpen);
+            syncPanelScrim();
+        }
+
+        function closePanels() {
+            panelLayoutWasChanged = true;
+            setPanelVisibility('sessions', false);
+            setPanelVisibility('inspector', false);
+            syncPanelScrim();
+        }
+
+        function toggleFocusMode() {
+            const focused = document.body.classList.contains('sidebar-collapsed') &&
+                document.body.classList.contains('inspector-collapsed');
+            if (!focused) {
+                closePanels();
+                return;
+            }
+            panelLayoutWasChanged = true;
+            setPanelVisibility('sessions', true);
+            setPanelVisibility('inspector', !narrowLayout.matches);
+            syncPanelScrim();
+        }
+
+        function applyResponsivePanelDefaults() {
+            if (panelLayoutWasChanged) return;
+            setPanelVisibility('sessions', !narrowLayout.matches);
+            setPanelVisibility('inspector', !narrowLayout.matches);
+            syncPanelScrim();
+        }
+
+        narrowLayout.addEventListener('change', applyResponsivePanelDefaults);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && narrowLayout.matches) closePanels();
+        });
+        applyResponsivePanelDefaults();
+
         let sessionsList = [];
         let selectedSessionId = '';
         let currentFilter = 'all';
@@ -882,6 +1084,9 @@
 
             // Hide input area when selecting a new session
             document.getElementById('chat-input-area').style.display = 'none';
+
+            // On split-screen widths, return to the chat as soon as a session is chosen.
+            if (narrowLayout.matches) closePanels();
         }
 
         function updateStartButtonState() {
@@ -1091,8 +1296,8 @@
 
             const senderClass = msg.role === 'customer' ? 'shopper' : (msg.role === 'error' ? 'error' : 'copilot');
             const senderName = msg.role === 'customer'
-                ? 'Shopper (__MODEL_LABEL__)'
-                : (msg.role === 'error' ? 'Request Error' : 'Copilot (__MODEL_LABEL__)');
+                ? 'Shopper'
+                : (msg.role === 'error' ? 'Request Error' : 'Copilot');
 
         function getProductImage(r) {
             if (r.image_url && safeImageUrl(r.image_url)) {

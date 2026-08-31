@@ -161,3 +161,43 @@ def test_manual_ui_rejects_error_payloads_instead_of_rendering_undefined_turns()
     assert "!Number.isInteger(data.turn)" in html
     assert "manualTurn = Math.max(0, manualTurn - 1)" in html
     assert "Request failed: ${e.message" in html
+
+
+def test_conversation_ui_has_collapsible_demo_panels_and_narrow_defaults():
+    html = (Path(__file__).parents[1] / "visualizer" / "conversation.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'id="toggle-sessions"' in html
+    assert 'id="toggle-inspector"' in html
+    assert 'id="focus-chat"' in html
+    assert "function toggleFocusMode()" in html
+    assert "window.matchMedia('(max-width: 1180px)')" in html
+    assert "setPanelVisibility('sessions', !narrowLayout.matches)" in html
+    assert "setPanelVisibility('inspector', !narrowLayout.matches)" in html
+    assert "if (narrowLayout.matches) closePanels();" in html
+
+
+def test_chat_sender_labels_do_not_expose_provider_or_model_name():
+    html = (Path(__file__).parents[1] / "visualizer" / "conversation.html").read_text(
+        encoding="utf-8"
+    )
+    assert "'Shopper (__MODEL_LABEL__)'" not in html
+    assert "'Copilot (__MODEL_LABEL__)'" not in html
+    assert "? 'Shopper'" in html
+    assert "'Request Error' : 'Copilot'" in html
+
+
+def test_demo_startup_logs_do_not_expose_provider_or_model_details():
+    shopping_agent_dir = Path(__file__).parents[1]
+    startup_source = "\n".join(
+        (shopping_agent_dir / relative_path).read_text(encoding="utf-8")
+        for relative_path in ("agent.py", "visualizer/server.py")
+    )
+    for provider_detail in (
+        "[Hybrid Agent] Embedding backend:",
+        "[Hybrid Agent] Model provider:",
+        "Loading pre-computed embeddings:",
+        "chat={selected.llm_client.model}",
+        "cache={cache_path}",
+    ):
+        assert provider_detail not in startup_source

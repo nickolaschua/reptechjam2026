@@ -2,7 +2,17 @@
 
 ## A. Active demo
 
-`shopping_agent/agent.py`, `ollama_client.py`, `catalogue.py`, `clarification.py`, `config.py`, `demo.py`, `demo_scenarios.json`, `embedding_backends.py`, `memory_store.py`, `vector_memory.py`, `visualizer/server.py`, `visualizer/simulator.py`, both dashboard HTML pages and assets, and the validated BGE catalogue cache in `shopping_agent/embedding_cache/`. The reproducible artifact workflow is under top-level `colab/`.
+`shopping_agent/agent.py`, `model_client.py`, `runtime.py`, `ollama_client.py`,
+`openai_client.py`, `catalogue.py`, `clarification.py`, `config.py`, `demo.py`,
+`demo_scenarios.json`, `embedding_backends.py`, `memory_store.py`,
+`vector_memory.py`, `visualizer/server.py`, `visualizer/simulator.py`, both
+dashboard HTML pages and assets. The reproducible BGE artifact workflow is under
+top-level `colab/`.
+
+The active runtime requires a provider-compatible 50,000-row catalogue cache.
+The stock BGE cache is a deployment artifact and is currently absent from this
+working tree; an OpenAI `text-embedding-3-small` cache is present locally and is
+ignored by Git. Neither cache should be committed as an ordinary repository file.
 
 The 50,000-row catalogue remains at `techjam-conversational-search/data/catalog.jsonl`; it is read-only competition data, not active system code.
 
@@ -37,12 +47,13 @@ python -m system.shopping_agent.demo
   -> demo.DemoApplication
   -> agent.Agent
      -> short-term state editor + response generator
-     -> ollama_client.OllamaClient -> local llama3.1:8b for state editing, assistant, shopper
+     -> runtime provider selection
+        -> TEST_MODE=false: local Ollama llama3.1:8b + BGE query embeddings
+        -> TEST_MODE=true: OpenAI Responses API + OpenAI embeddings
      -> catalogue.Catalogue + clarification.select_best_attributes
      -> vector_memory.score_catalog
      -> memory_store.JsonFileVectorMemoryStore
-     -> embedding_backends.BGEEmbeddingBackend
-     -> embedding_cache/catalog_cache_bge-base-en-v1.5.npz
+     -> provider-compatible validated catalogue embedding cache
      -> techjam-conversational-search/data/catalog.jsonl
   -> visualizer.server.BrowserApplication + ThreadingHTTPServer
 ```

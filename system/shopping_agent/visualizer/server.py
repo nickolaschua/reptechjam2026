@@ -531,9 +531,8 @@ def run_server(
 ) -> None:
     global APPLICATION
     from ..runtime import get_runtime_providers
-    selected = get_runtime_providers()
-    print(f"[Server] Loading the 50,000-row catalogue with {selected.provider} "
-          f"chat={selected.llm_client.model} embeddings={selected.embedding_backend.model_id}...")
+    get_runtime_providers()
+    print("[Server] Loading the 50,000-row catalogue...")
     APPLICATION = BrowserApplication(
         allow_catalog_embedding=allow_catalog_embedding,
     )

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "built_at": "2026-09-01",
+  "built_from_commit": "f7e856885c3c821974178379d345c1f50a2152f5",
+  "source_worktree_dirty": true,
+  "provider": "ollama",
+  "chat_model": "llama3.1:8b",
+  "validated_ollama_model_id": "46e0c10c039e",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 768,
+  "runtime_files_sha256": {
+    "__init__.py": "ea0e9acf4cac97937544dfd1b53d4e7068713ff002b26e357d81e8dd58d24cbc",
+    "agent.py": "fc1de1c4c0a915de82b3aff3aa02a74fc9a73edc7e2f2d521a0cb0dcfe99238a",
+    "catalogue.py": "e2b2b6cc302ff09f49089d50720427a3174d70c1c2a8b7d7704df8afe40c7997",
+    "clarification.py": "9fd2fe8b8094fc9a6735f6c00b16220e3c7edbfa018c1ee6acbdd2f3dd078b2b",
+    "config.py": "ca0b8e818e9ba84b819017150569881d5c02f9e59a29e44f7be0cb010161a390",
+    "embedding_backends.py": "7a6cf7d0b41261d6827b53d43800f424caa638986ee12d35096daa45bff8aa28",
+    "memory_store.py": "13207c9ad079c771de8f3eee28079906d279a3e580a94d10d5a2d6ea807504b8",
+    "model_client.py": "2ed0f80381a4f3866f4675add46fb8e4e42ea416c3b05bece7af2037f6058307",
+    "ollama_client.py": "1c2ce3e91ee54cbf9a49014d1dfb8b3cbf31e5f13e54d6c51f6486b71dacddca",
+    "runtime.py": "5210f9ed98b28762def5380daa1f1ecca4ffa9b7dede94299c1e18ed3aea1149",
+    "vector_memory.py": "07b179ddd9c41af206d094488d08237d3b0aeb983bf44634eb277367bf23d6fa"
+  }
+}
