@@ -1,0 +1,86 @@
+Target Product Title: Floerns Women's Ruffle Off Shoulder Rose Embroidery Loose Blouse Top
+Target ASIN: B072M4K5LF
+Scenario: browsing
+Constraints: ['rayon', '100% Rayon']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a loose blouse for women that's made of rayon, like 100% rayon. something with a nice off-shoulder design would be great too.
+Copilot: Great choice! Do you have a specific color in mind for the blouse?
+Copilot Attribute Query: color
+Recommendations:
+  1. Dare2bStylish Women Plus Size Long 3/4 Sleeve Flared Swing Tunic Dress Blouse Top (ASIN: B0971VZ8SR)
+  2. Ekouaer Women's Swimsuit Beach Cover Up Crochet Swimwear Loose Off-Shoulder Tunic Dresses (ASIN: B08RRZ67NK)
+  3. VZULY Women's Off Shoulder Tops 3 4 Flared Bell Sleeve Summer Casual Loose Blouse T-Shirts (ASIN: B08935G3LD)
+  4. HOSIKA Women's Long Sleeve V Neck Button Down Casual Swing Knit Tunic Dress with Pockets (ASIN: B09DT144NK)
+  5. FFever Off Shoulder Dress for Women - Ruffle Floral Print Summer Dresses, Bohemian Style Short Dress, Vintage Boho Sundress (ASIN: B096MXLR9V)
+  6. Ekaliy Womens Off Shoulder Tops Casual Loose Button Down Long Sleeve Tunic Blouse Jumper (ASIN: B09HGWBY2K)
+  7. Jouica Women's Summer Casual Spaghetti Strap Sundress Dress Cold Shoulder Ruffle Sleeves Dresses with Pocket (ASIN: B0BBGHSP2S)
+  8. MIROL Women's Cap Sleeve Tank Tops U Neck Solid Color Casual Shirts Loose Fit Basic Blouse (ASIN: B09P81G2K9)
+  9. ZEZCLO Women's Plus Size Tops Long Sleeve Scoop Neck Plaid Print Tee Tunic Blouse Shirt (ASIN: B07QNKVMYP)
+  10. Sarin Mathews Womens One Shoulder Ruched Bodycon Dress Sexy Sleeveless Slit Midi Party Cocktail Wedding Guest Dresses (ASIN: B0BCQWYQLQ)
+
+--- TURN 2 ---
+Shopper: i'm not really sure about the color yet, but i'm looking for something with a nice off-shoulder style and maybe some cute embroidery. do you have anything like that?
+Copilot: I found some options that match your criteria! Just to narrow it down a bit more, what size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Hocuos Women's Dresses Sexy One Shoulder Cutout Asymmetrical Sleeveless Wrap Split Ruched Bodycon Midi Party Dress (ASIN: B0B4NWJL7H)
+  2. Evanhome Sleepwear Womens Sexy Lingerie Loungewear Cami Pajama Set V-Neck Nightwear Tank and Capri Pants Loungewear Set(Black, X-Large) (ASIN: B08FHQT82T)
+  3. Irregular Hood Sweatshirt for Women Casual Pullover Blouse Hooded Ladies Long Tops (ASIN: B07J6PF8VW)
+  4. StyleDome Off The Shoulder Pullover Sweater Sexy Long Sleeves Tops for Women (ASIN: B07W4QYS1Q)
+  5. Womens Plus Size Tops Trendy Casual Crochet Lace Trim Blouses Summer Dressy Pleated Tunic Tops Short Sleeve Tees Shirts (ASIN: B09W8QCYG7)
+  6. Lakemiss Women V Neck 3/4 Cuffed Sleeve Shoulder Overlay Buttons Tunics Blouses (ASIN: B08H5T746G)
+  7. Ivicoer Casual Puff Long Sleeve Tee Shirts for Women Drop Shoulder Tshirt Drawstring Tie V Neck Tunic Tops Blouses S-XXL (ASIN: B0B3MVMSPL)
+  8. TECREW Women's Casual Batwing Sleeve Lounge Sets Oversized 2 Piece Jogger Outfits Sweatsuit (ASIN: B09DT7PMN2)
+  9. Belle Poque Women Vintage Puff Sleeve Blouse Off The Shoulder Slim Fit Tee Shirts (ASIN: B09VS3CGMZ)
+  10. Senllen Women's Lantern Sleeve Tie Back Dress Ruffled Off The Shoulder A-Line Summer Mini Dress White (ASIN: B09GVCK8HZ)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium, and i really want something that's 100% rayon. also, i love off-shoulder styles with some cute embroidery. do you have anything like that?
+Copilot: I have some great options for you! Just to help refine your search, do you have a preferred brand in mind?
+Copilot Attribute Query: brand
+Recommendations:
+  1. WDIRARA Women's Long Sleeve Mushroom Print Casual Round Neck Sweater Pullover Tops (ASIN: B09KV13F1F)
+  2. Ms Lovely Women's Ultra Soft Off The Shoulder Boatneck Pullover Sweatshirt - Cute Comfy Sweater (ASIN: B07JB5HTBD)
+  3. LEXISLOVE Womens Cute Tops Off Shoulder Long Sleeve Knitwear Shirts Leisure Waffle Top Spring Blouses Khaki XL (ASIN: B07Z4LR1K5)
+  4. Sakkas Abree Off-Shoulder Short Sleeve Blouse Top Ankara Wax Dutch African Print (ASIN: B07N97V83B)
+  5. YOGASASA one Shoulder Sport Bra (ASIN: B09KP93V5B)
+  6. ASYOLY Red Blouses for Women Short Sleeve Cold Shoulder Tops Side Buttons Casual Twisted Shirts Tunic Tunic Tops for Leggings Medium (ASIN: B083DN341J)
+  7. IVIR Women's Summer Dress Square Neck Tie Back Lace Puff Sleeve Ruffle A-Line Casual Mini Dresses (ASIN: B09TKT5Q2P)
+  8. Graphic Tees Women Summer Tops Long Sleeve Cute Shirts Blouses for Women Fashion Colorful Plus Size Loose T Tshirts (ASIN: B09B12C1Q6)
+  9. Women's Casual Linen Long Blouses Tops Button Down Shirts Cotton Shirt Dresses Tops with Pockets (ASIN: B098R3VXP6)
+  10. PrinStory Womens Sleepwear Short Sleeve Nightgown Soft Sleepshirt Pleated Nightshirt Scoopneck Casual Loungewear (ASIN: B08VWZBYPY)
+
+--- TURN 4 ---
+Shopper: i'm not really focused on a specific brand, just looking for something with a nice fit and made of rayon. i also like off-shoulder styles with some cute detailing.
+Copilot: Great! I’ll keep looking for rayon off-shoulder styles with cute embroidery and a nice fit. Just to finalize, what’s your budget for this purchase?
+Copilot Attribute Query: budget
+Recommendations:
+  1. Conmite Hoodies For Women V Neck Long Sleeve Casual Pullover Tops Drawstring Loose Sweatshirts Army Green L (ASIN: B0BG9KWN2P)
+  2. Metyou Women's Casual Short Sleeve Bodycon Pencil Dress Crewneck Tie Waist Stretchy Mini Dress (ASIN: B09KC3WN6N)
+  3. Womens Ribbed Short Sets 2 Piece Outfits Knit Lounge Pajama Set Long Sleeve Pullover Top and Shorts D (ASIN: B08QRQGWWV)
+  4. PeoKia Womens Pajamas Shorts Sets V Neck Short Sleeve Tops with Shorts Casual Two Piece Lounge Set Nightwear (ASIN: B08T14G2R9)
+  5. Ninedaily Womens Business Tops Lapel V Neck Slimming Long Sleeve Office Blouse (ASIN: B06ZZW2ZT1)
+  6. Kyerivs Women Summer Round Neck Sleeveless Ribbed Knitted Tank Tops Casual Slim Basic Solid Crop Tops (ASIN: B088H3MH35)
+  7. Ekouaer Nightgown Button Front Sleepshirt Short Sleeve Dusters and Housecoats V-Neck Lounger Dress for Women (ASIN: B08NXKWF2R)
+  8. XIEERDUO Womens Summer Tops Loose Fit Short Sleeve V Neck T Shirts Side Split (ASIN: B0BLGLR7TP)
+  9. dailycos Women's Casual Dress Sundress Beach Dress Boho Floral Print Beach Dress High Waist Loose Dress (ASIN: B092QB21NK)
+  10. andy & natalie Women's Button Sweater V Neck Sweater Ribbed Pullover Sweater Long Sleeve Sweater with Pockets (ASIN: B07Y2LKNGM)
+
+--- TURN 5 ---
+Shopper: i'm not really looking for those options. i'm hoping to find something with a loose fit, off-shoulder style, and some pretty rose embroidery. ideally, it should be made of 100% rayon. do you have anything like that?
+Copilot: I found a lovely option that fits your criteria! Would you prefer a specific size for the loose fit you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Floerns Women's Ruffle Off Shoulder Rose Embroidery Loose Blouse Top (ASIN: B072M4K5LF)
+  2. Love Melrose Womens Solid Color Loose Fit Ladies Harem Jumper HeatherGray Medium (ASIN: B010C6876A)
+  3. DOROSE Womens V Neck Ruffle Tops Casual Sleeveless Shirts Tank Top (ASIN: B09MCK7XLJ)
+  4. RITERA Plus Size Tops for Women Off the Shoulder Cold Shoulder Tops Short Sleeve Shirts Summer Blouses Sexy Tunics Tee XL-5XL (ASIN: B08PF98BV4)
+  5. Prime Hot JayJay Women Casual U-Neck Off Shoulder Ruffle Sleeve Long Maxi Dress (ASIN: B07141HJGD)
+  6. Blibea Womens Spaghetti Strap Loose T Shirts Off Shoulder Blouse Long Flared Ruffled Sleeve Shirts Elegant Tee Tops Medium Rose Red (ASIN: B07FVLY33B)
+  7. Aly Rose Women's Wide Leg Comfy Fold Over Casual Day Off Palazzo Pants (ASIN: B01I79PSC0)
+  8. LL Womens Ombre Round Neck Short Sleeve Shoulder Off Top - Made in USA (ASIN: B01GR9L2FY)
+  9. LILLUSORY Women's Off Shoulder Fall Pullover Sweaters Long Sleeve Casual Loose Sweater Knit Jumper Tops Grey (ASIN: B09GB11L4B)
+  10. Riviera Sun Womens Off Shoulder Embroidered Jumpsuit Romper (ASIN: B076X3JXMW)
+
+=== RESULT: SUCCESS (Turn 5) ===

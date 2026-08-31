@@ -1,0 +1,70 @@
+Target Product Title: URBAN REPUBLIC Women's Winter Jacket - Heavyweight Water Resistant Expedition Faux-Fur Lined Parka Jacket
+Target ASIN: B08LMMDYV7
+Scenario: intent_override
+Constraints: ['polyester', '100% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a women's winter jacket that's pretty warm and has a zipper closure. ideally, it should be water-resistant and have some nice features like faux-fur lining and big pockets.
+Copilot: Great choice! Do you have a preferred color in mind for the jacket?
+Copilot Attribute Query: color
+Recommendations:
+  1. Reebok Women's Winter Jacket - Reversible Sherpa-Lined Puffer Windbreaker Coat (S-XL) (ASIN: B09LRJ6NQX)
+  2. SCHONTAN Women's Outerwear Winter Long Fleece Camouflage Print Lined Thickened Parka Puffer Coats with Faux Fur Hood… (ASIN: B07X4W3383)
+  3. YMI Women's Junior Full Length Water Resistant Puffer Jacket (ASIN: B0BHC7CKY6)
+  4. UUANG Raincoats Waterproof Rain Jacket Active Outdoor Detachable Hooded Women's Trench Coats (ASIN: B0871R9JDP)
+  5. 33,000ft Thermolite Heat-Generate Women's Long Puffer Parka Jacket,Ultra Light Water-Resistant Hooded Padded Quilted Jacket (ASIN: B07R4YP5TH)
+  6. Premium Wear Packable Down Puffer Jacket for Men & Women With Zipper Pockets (ASIN: B09LRF4N6N)
+  7. Ustyle Women's Lightweight Down Jacket Packable Puffer Coat Hooded Water-Resistant Jacket … (ASIN: B09S6HJFP4)
+  8. CHERFLY Women's Winter Puffer Coat Heavy Warm Long Parka Down Jacket with Fur Hood (ASIN: B07XDJX81Q)
+  9. Zilcremo Women Hooded Cardigan Fuzzy Jacket Winter Open Front Fleece Coat Outwear with Pockets (ASIN: B077FRXRT4)
+  10. CHSWVUKQ Women's Long Down Vest Plus Size Sleeveless Hooded Jacket Winter Slim Zipper Coat Outdoor Puffer Quilted Vest (ASIN: B09KCGL2XJ)
+
+--- TURN 2 ---
+Shopper: i'm not really focused on color right now, but i'm looking for something with a faux-fur lined hood and water-resistant material. ideally, it should have a zipper closure too.
+Copilot: Got it! Just to narrow it down a bit more, what size are you looking for in the jacket?
+Copilot Attribute Query: size
+Recommendations:
+  1. RIJING Women's Winter Coat Thicken Warm Puffer Jacket Long Sleeve Zip Windproof Jacket with Fur Removable Hood (ASIN: B0B68X2DMM)
+  2. UUANG Raincoats Waterproof Rain Jacket Active Outdoor Detachable Hooded Women's Trench Coats (ASIN: B07PR8GZS5)
+  3. URBAN REPUBLIC Women's Winter Jacket - Heavyweight Water Resistant Expedition Faux-Fur Lined Parka Jacket (ASIN: B08LMMDYV7)
+  4. Womens Active Coat Fashion Printed Pocket Jacket Outerwear Cardigan Overcoat Long Trench Coat Jackets (ASIN: B09FNZB1T8)
+  5. Mens Beefy Long Sleeve Henley T-Shirt V Neck Front Placket Tees Fashion Casual Slim Fit Basic Shirt Top (ASIN: B09JZLMRNM)
+  6. Molemsx Men's Winter Water-Resistant Hooded Packable Down Puffer Jacket,Black,XX-Large (ASIN: B07VK9DQ9K)
+  7. TACVASEN Women's Athletic Jacket Waterproof Windbreaker Fleece SoftShell Snow Ski Coats with Hood (ASIN: B08H8FPJQT)
+  8. ZIAI Winter Coats For Women Thickened Short & Long Puffer Jacket Womens with Fur S-XXL (ASIN: B0BCK59834)
+  9. Women's Packable Puffer Down Jacket II Lightweight Full-Zip Water-Resistant Collar Short Coat with Travel Bag (ASIN: B07VVWPQ4Y)
+  10. Amazon Essentials Women's Standard Lightweight Water-Resistant Packable Down Jacket_dnu (ASIN: B0738JQHD3)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. also, i see that urban republic jacket in the list, and that's exactly what i want to buy!
+Copilot: It sounds like you've found exactly what you're looking for! Just to finalize things, do you have a specific brand in mind, or are you open to any options?
+Copilot Attribute Query: brand
+Recommendations:
+  1. IHeat Women's Heated Jacket, Winter Jacket Slim Fit Heated Coat with 14400 mAh Battery Pack Black (ASIN: B0B7MLXMMT)
+  2. LookbookStore Women Open Draped Front Fleece Cardigan Pockets Sherpa Jacket Coat (ASIN: B096FV5KNC)
+  3. CHERRY CHICK Women's Light Weight Down Jacket with Hood (ASIN: B01LDBLG9S)
+  4. Alexander Del Rossa Women's Zip Up Fleece Robe with Hood, Warm Fitted Bathrobe, Medium Ocean Depth (A0477ODPMD) (ASIN: B086BDFMCQ)
+  5. GOSOPIN Women High Waist Distressed Straight Jeans Wide Leg Ripped Denim Pants (ASIN: B0BD51VD1Q)
+  6. Pink Platinum Women's Winter Coat - Faux Fur Lined Anorak Parka Jacket (Size: S-3XL) (ASIN: B09CB2FNW3)
+  7. WANGPU Oversized Long Down Vest for Women Lightweight Puffer Jackets with Hood Outdoor Coats Recreation Waistcoat Outerwear (ASIN: B09HXN7ZJ5)
+  8. MTENG Mens Vest Jackets Puffer Padded Downs Winter Warm Quilted Sleeveless Lightweight Packable Waistcoats Big and Tall (ASIN: B09KC473XZ)
+  9. Plusfeel Women's Puffer Coat Outdoor Cycling Lightweight Long Puffer Jacket Outdoor Coat, S-3XL (ASIN: B08JXKM9GN)
+  10. Jackets for Women Windproof Outwear Hooded Plus Size Winter Cute Fleece Coat Winter Hiking Windproof Coat (ASIN: B0B7Q1MN1J)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: polyester.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Reebok Puffer Coat for Women-Winter Coat with Sherpa lined Faux Fur Hood (ASIN: B09GL52KHY)
+  2. Keebon Apparel Women's Faux Fur Lined Fashion Military Hoodie Coat Jacket (ASIN: B0188GOVOI)
+  3. Molemsx Men's Winter Water-Resistant Hooded Packable Down Puffer Jacket,Black,XX-Large (ASIN: B07VK9DQ9K)
+  4. RIJING Women's Winter Coat Thicken Warm Puffer Jacket Long Sleeve Zip Windproof Jacket with Fur Removable Hood (ASIN: B0B68X2DMM)
+  5. SCHONTAN Women's Outerwear Winter Long Fleece Camouflage Print Lined Thickened Parka Puffer Coats with Faux Fur Hood… (ASIN: B07X4W3383)
+  6. URBAN REPUBLIC Women's Winter Jacket - Heavyweight Water Resistant Expedition Faux-Fur Lined Parka Jacket (ASIN: B08LMMDYV7)
+  7. OCHENTA Girls' Puffer Down Coat Winter Jacket with Faux Fur Trim Hood Black Tag 120-4-5T (ASIN: B07G446DV6)
+  8. Jessica Simpson Women Nylon Quilted Bubble Jacket with Faux Fur Lined Hood (ASIN: B07HN8V8GZ)
+  9. Comeon Women's Winter Warm Faux Fur Coat Long Sleelve Cardigan Boyfriend Shearling Fuzzy Jacket with Pockets (ASIN: B07ZF2QWJ1)
+  10. Beyove Women Winter Warm Hoodie Faux Fur Lined Down Parka Outdoor Long Jacket Coats (ASIN: B075J8NZR4)
+
+=== RESULT: SUCCESS (Turn 4) ===

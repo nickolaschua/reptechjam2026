@@ -1,0 +1,40 @@
+{
+  "artifact_hashes": {
+    "metrics.json": "e62232625558e99eb7f4ca06c896ddee530ea1c15c143fd11d9f85e5bff14349",
+    "report.md": "b8fcb33427cdb082a3c464249da4acc5a3ef3ae99f457f2ae4dd760180d4cf9e",
+    "sessions.jsonl": "cbfbc09643f644973e91bc4e5defb817b8255b64fcde9f1660f2c653756ef241",
+    "vectors.npz": "91d783c567795b015857b71a4b014e892d1500a68ee8f730057a49909c8ad783"
+  },
+  "catalog_row_count": 50000,
+  "catalog_sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+  "code_revision": "working-tree",
+  "embedding_cache_sha256": "3f8c0bf2e13ac1227d41276c6b454f9d017bc74ed466208e1eb2249d397c4fd9",
+  "embedding_space_id": "openai-text-embedding-3-large:text-embedding-3-large:dimensions=3072:normalization=l2:query=symmetric-v1",
+  "evaluator_classification": "EVALUATOR NOW TRUSTWORTHY",
+  "fixture_sha256": "e6f578364a9494ee4a94752adbb7e9c1690fa64a066ff2ff1868593427c94f5f",
+  "frozen_parameters": {
+    "browsing_current_weight": 0.2,
+    "browsing_memory_weight": 0.8,
+    "buying_current_weight": 0.8,
+    "buying_memory_weight": 0.2,
+    "ewma_alpha": 0.3,
+    "relevance_threshold": 0.2
+  },
+  "schema_version": "nickolas-longitudinal-eval-v2",
+  "source_hashes": {
+    "nickolas\\shopping_agent\\agent.py": "6020bf02aded1e432b962c7c33eac291f87639b123efea850774810240c2e9db",
+    "nickolas\\shopping_agent\\longitudinal_eval\\evaluator_v2.py": "bc3c57484968091b532500ce52c0f66e98d6adb7d97c92c19d850dad308dfc2a",
+    "nickolas\\shopping_agent\\memory_store.py": "4ab9e7f697d13fc80ed14a39c7b79eed40149d9153b0c65701b64662b909ae86",
+    "nickolas\\shopping_agent\\run_longitudinal_eval.py": "b9425c4cb5e3af9a2eb3cc976ca802189e8fc235f7abcfc532350a1b45060459",
+    "nickolas\\shopping_agent\\run_longitudinal_eval_v2.py": "ea2d0b4dace16f9e110f0bb47fedfc112a97769f293c65c5c070e37fabe94e5e",
+    "nickolas\\shopping_agent\\vector_memory.py": "34e6348a77bc98c45d11621a97f6bef7ed9187bd0d036652021dc6c5b9f7bf7c"
+  },
+  "verification": {
+    "artifact_hashes": true,
+    "complete_test_suite": true,
+    "deterministic_rerun": true,
+    "fixture_validation": true,
+    "offline_reconstruction": true,
+    "paired_invariants": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "catalog_sha256": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+  "frozen_artifact_hashes": {
+    "metrics.json": "e62232625558e99eb7f4ca06c896ddee530ea1c15c143fd11d9f85e5bff14349",
+    "report.md": "b8fcb33427cdb082a3c464249da4acc5a3ef3ae99f457f2ae4dd760180d4cf9e",
+    "sessions.jsonl": "cbfbc09643f644973e91bc4e5defb817b8255b64fcde9f1660f2c653756ef241",
+    "vectors.npz": "91d783c567795b015857b71a4b014e892d1500a68ee8f730057a49909c8ad783"
+  },
+  "output_hashes": {
+    "baseline_metrics.csv": "95dde81260d28284282ed3d6a98dddc7840bd5f82090182f71b4d0640af30a75",
+    "classification_cutoffs.csv": "948ccd7a58fd1e1b91787bcb513ad92cbc8f9d15ade6837ac13d301151b665f7",
+    "forensics.csv": "5833dd8395ab58d45051646bacb53dc75221a753f34f81af66f3b1f881b1979e",
+    "forensics.json": "5042d7a6342d77b543192e542341b567d1b0248a0b8ab34fe4c2bca5c78afc10",
+    "gate_distributions.csv": "6f173428bc1a0dd82027532d5e87d826e161f76b2d4bd2ad50dcf3db4679af83",
+    "report.md": "31cdd37aad4f940ddc404facdb17c9e24b23ba5ccc2a361ff3dea09959c73eb8",
+    "results.json": "57c60182c68e8112988118ce41e351df7956f60f933f0557c6902caaa521b221",
+    "sorted_probes.csv": "e3c6e8eac7b1c0c89ed340d28949efbd3ae1e29be97c348d06266e16c663ab8c",
+    "threshold_metrics.csv": "8bd233a56cdd2c6db7cd7e04e58bc8e8d67d59c2dd01f25db8ba86bbf62481e7",
+    "threshold_summary.csv": "9c7099688b348d160a9d5b335435de08c5093fa9484c1602b49ab845e92e0eb1"
+  },
+  "production_calls": {
+    "embedding": 0,
+    "llm": 0
+  },
+  "production_configuration_changed": false,
+  "schema_version": "v2-threshold-calibration-1"
+}

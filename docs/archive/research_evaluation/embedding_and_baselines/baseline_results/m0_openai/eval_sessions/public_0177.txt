@@ -1,0 +1,61 @@
+Target Product Title: ANIXAY Women's Short/Long Sleeve Henley Button up T Shirt Casual Basic Tops Blouse
+Target ASIN: B07HV9WW6Q
+Scenario: intent_override
+Constraints: ['cotton', 'Cotton, Rayon']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual top, something with short or long sleeves. ideally, it has a button closure and is comfy to wear.
+Copilot: Great! What color are you interested in for your casual top?
+Copilot Attribute Query: color
+Recommendations:
+  1. Bloggerlove House Dresses for Women With Pockets Mumu Duster Housecoat Short Sleeve Patio Dress S-XXL (ASIN: B0BKV4GGCX)
+  2. Graphic Tees Women Summer Tops Long Sleeve Cute Shirts Blouses for Women Fashion Colorful Plus Size Loose T Tshirts (ASIN: B09B12C1Q6)
+  3. Capri Pants for Women Summer Casual Plus Size Cotton Linen Pants Drawstring Knee Length Trousers with Pockets (ASIN: B0C1BT5862)
+  4. GRAPENT Womens Denim Jacket Oversized Distressed Ripped Jean Jacket Western Boyfriend Trucker Shacket (ASIN: B0B6935RTV)
+  5. Swyss Women's Casual Crop Tops Yes,Daddy? Letter Printed Short Sleeve T-Shirt Blouses (Yellow,M) (ASIN: B07M6FRYW9)
+  6. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  7. Kid Nation Girls Long Sleeve Shrug Bolero Sweater Crew Neck Bow Detailed Cardigan Jacket (ASIN: B0779X9K1Z)
+  8. MakeMeChic Women's Tropical Puff Sleeve V Neck High Slit Ruffle Long Maxi Summer Dress (ASIN: B09YY1GTB3)
+  9. Womens Oversized Sweatshirt Long Sleeve Solid Pullover Quarter Zip Sweater Top Teen Girls Christmas Fall Y2K Clothes (ASIN: B0BHNNQYX8)
+  10. Plaid Jacket for Women, Womens Trendy Plaid Flannel Lapel Button Down Long Sleeve Shirt Jacket Shackets Long Coats (ASIN: B09K7XRD16)
+
+--- TURN 2 ---
+Shopper: i'm not really looking for those options. ideally, i want something with button closure. maybe in a nice color like blue or green.
+Copilot: Got it! To help narrow it down further, what size are you looking for in your casual top?
+Copilot Attribute Query: size
+Recommendations:
+  1. GRAPENT Women's Plus Size Cocktail Lace Top Chiffon Skirt Evening A-line Blue Green Dress 16W (ASIN: B01N3TCMOP)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. also, ideally, i’d like something with a button closure.
+Copilot: Thanks for the details! What type of material do you prefer for your casual top?
+Copilot Attribute Query: material
+Recommendations:
+  1. Vetinee Womens Classic Adjustable Straps Pockets Denim Bib Overalls Jeans Pants (ASIN: B082FG7LFW)
+  2. Nautica Men's Homespun Medium Plaid Button-Down Shirt (ASIN: B00S1GQMV6)
+  3. DINOGREY Modern Fit Men’s Chino Pants Flat Front Zip Fly Classic Khaki Pant (ASIN: B08G13S11Z)
+  4. Cyanstyle Women's Sleeveless V Neck Button Down Tunic Blouses Solid Color Flowy Casual Tunic Tank Tops Black Medium (ASIN: B083NV5WG7)
+  5. Tempt Me Women's Vintage Half Sleeve Classic A-line Pleated Cocktail Party Dress (ASIN: B01N7735RM)
+  6. Euaoxnc Women's Casual V Neck Button Down Strappy Cami Tank Tops Summer Sleeveless Loose Shirts Blouses (ASIN: B07SGBNLFD)
+  7. ACEVOG Women's Notched Lapel No-Buckl Curved Jacket Suit Asymmertrical Hem Apricot Medium (ASIN: B01N8Y33RM)
+  8. COOFANDY Mens Casual Slim Fit Blazer 3 Button Suit Sport Coat Lightweight Jacket (Medium, White) (ASIN: B07M69WGBS)
+  9. The Organic Project Girls Patchwork Dress - Assorted Color Block Skirt with Floral Stitched Embroidered Patchwork Pattern (ASIN: B09LZXPFRM)
+  10. Red Hanger Womens Bodycon Fitted Pull On Knee Length Midi Pencil Skirt, Teal-M (ASIN: B014E96UA6)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Nautica Men's Homespun Medium Plaid Button-Down Shirt (ASIN: B00S1GQMV6)
+  2. Auxo Women's Lapel Button Down Shirt Dress Long/Short Sleeve Tunic Blouse Casual Chambray Boyfriend Shirt Tops with Pockets Black Medium (ASIN: B07QXSPKYL)
+  3. COOFANDY Mens Casual Slim Fit Blazer 3 Button Suit Sport Coat Lightweight Jacket (Medium, White) (ASIN: B07M69WGBS)
+  4. Cooper James Men's Checked Casual Button Down Short Sleeved Shirt (ASIN: B077DNXLP9)
+  5. Sdencin Women Long Sleeve Y2K Oversized Lapel Button Blazer Jacket Casual Solid Shoulder Pad Collar Coat Outerwear (Medium, Black) (ASIN: B099WD2PN5)
+  6. Lapco FR KB-15 1/2-M Heavy-Duty 2-Tone Welder's Shirts, 10 oz, 100% Cotton Duck, 12 oz, 15 1/2 Medium, Khaki/Brown (ASIN: B00FPKYFRY)
+  7. Reyn Spooner Men's Lau Palaka Button Down Shirt, Hunter Green, Medium (ASIN: B01ASUDPMG)
+  8. siliteelon Men's Denim Shirts Western Long Sleeve Button Down Shirts Cowboy Printed Casual Work Shirts for Men(DPST23, Medium) (ASIN: B09T6FH4L4)
+  9. ANIXAY Women's Short/Long Sleeve Henley Button up T Shirt Casual Basic Tops Blouse (ASIN: B07HV9WW6Q)
+  10. Goodthreads Men's Standard-Fit Long-Sleeve Gingham Poplin Shirt (ASIN: B06WLHD6PL)
+
+=== RESULT: SUCCESS (Turn 4) ===

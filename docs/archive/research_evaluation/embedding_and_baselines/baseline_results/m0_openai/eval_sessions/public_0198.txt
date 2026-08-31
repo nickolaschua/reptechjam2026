@@ -1,0 +1,70 @@
+Target Product Title: lola mae Quilted Crossbody Bag, Medium Lightweight Shoulder Purse Top Zipper Tassel Accent
+Target ASIN: B08K1ZJZ4N
+Scenario: intent_override
+Constraints: ['leather', 'color: black']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a medium crossbody bag, something lightweight with a top zipper and maybe a tassel accent. ideally, i’d like it to be imported and in black leather.
+Copilot: Great choice! Do you have a specific brand in mind for the crossbody bag?
+Copilot Attribute Query: brand
+Recommendations:
+  1. lola mae Quilted Crossbody Bag, Medium Lightweight Shoulder Purse Top Zipper Tassel Accent (ASIN: B08K1ZJZ4N)
+  2. JJAI Crossbody Bag Purses for Women Triple Zip Guitar Strap Shoulder Crossbody Handbags With Tassel (ASIN: B0BZRCYNCG)
+  3. PASOK Men's Faux Leather Jacket Casual Long Sleeve Stand Collar Baseball Coat (ASIN: B07TT9Y2SN)
+  4. USA Leather 1500-Black 'Classic' Mens Leather Bomber Jacket - Medium (ASIN: B00194AWVI)
+  5. DELUXITY Women's Soft Touch Leather Hobo Crossdoby (ASIN: B07HYJ38H6)
+  6. Marino Orlandi Medium Handpainted Roses Purse Chocolate Genuine Leather Tote Crossbody Bag With Italian Designer Handbag (ASIN: B08LW3H4CB)
+  7. SG SUGU Lightweight Medium Crossbody Bag | Bow Tassel Zipper Pocket | Adjustable and Removable Strap (ASIN: B07KPQ4KXM)
+  8. B BRENTANO Vegan Mini Multi-Zipper Crossbody Handbag Purse with Tassel Accents (ASIN: B07G5KNZJN)
+  9. SG SUGU American Flag Lightweight Medium Crossbody Bag with Tassel and Zipper Pocket for Women (ASIN: B07RPQP34D)
+  10. CLUCI Crossbody Purses for Women, Medium Size Zipper Pocket Adjustable Strap, Soft Leather Women's Shoulder Handbags (ASIN: B0B5ZS2J2W)
+
+--- TURN 2 ---
+Shopper: i'm not really focused on a specific brand, but i did notice that the first option looks perfect with its quilted design and tassel accent. i want to buy that one!
+Copilot: It sounds like you've found the perfect bag! Just to confirm, do you have a budget in mind for your purchase?
+Copilot Attribute Query: budget
+Recommendations:
+  1. Mens Beefy Long Sleeve Henley T-Shirt V Neck Front Placket Tees Fashion Casual Slim Fit Basic Shirt Top (ASIN: B09JZLMRNM)
+  2. CROJUYI Tote Bag for Women Satchel Purse and Handbags Ladies Shoulder Totes Bag Crossbody Bags (ASIN: B0C6J5J3JX)
+  3. Sanxiner PU Leather Crossbody Bag for Women Multi-Pocket Purse Shoulder Handbag (ASIN: B07B2S1XWM)
+  4. 21-K Crossbody Bags for Women Multi-Pocket Shoulder Purse Soft Faux Leather Messenger Bag (ASIN: B08F9XDQ9F)
+  5. Purse King Mini Duchess Cross Body Handbag (RFID Protected Organizer Crossbody & Shoulder Bag) (ASIN: B015VNVBDK)
+  6. SG SUGU Women's Designer Geometric Essential Multi-Pocket Zipper Crossbody Purse (ASIN: B07YSXPBKR)
+  7. DELUXITY Everyday Chic Fashion Front Pocket Zipper Crossbody Purse for Women (ASIN: B07ZFX8Z8L)
+  8. FOXER Leather Handbags for Women, Genuine Leather Ladies Top-handle Bags with Adjustable Shoulder Strap Womens Casual Satchel Purses and Handbags Women's Fashion Crossbody Bags Medium Totes (Black) (ASIN: B07QV4HRW2)
+  9. Toimothcn Women Sleeveless Sunflowe Print T Shirt Casual Loose Vest Tank Top Soft Comfortable (ASIN: B07P6H2X9F)
+  10. Blingsoul Leather Jackets for Men - Real Lambskin Motorcycle Leather Jacket Mens (ASIN: B09VGXN6YQ)
+
+--- TURN 3 ---
+Shopper: i'm looking for something under 50 bucks. also, i noticed that foxer leather handbag looks nice. can you tell me more about it?
+Copilot: It seems like you're interested in a stylish option! Just to clarify, what style are you leaning towards for the crossbody bag?
+Copilot Attribute Query: style
+Recommendations:
+  1. Genda 2Archer Women Leather Tassel Fashion Multipurpose Chest Crossbody Backpack (ASIN: B0BB9NCZ97)
+  2. Angelina's Palace Tote bag Shoulder Bag Organizer Insert Waterproof PU Leather Sturdy Zipper Top-handle Purse Women Bags (BLACK) (ASIN: B07791KH2D)
+  3. MKF Crossbody Bag for Women - Adjustable Strap - Vegan Leather Crossover, Designer Handbag, Messenger Purse (ASIN: B084RWDBVW)
+  4. SDIYABOLO Small Black Sling Crossbody Backpack Shoulder Bag for Men Women Vintage PU Leather Sling Backpack Cycling (ASIN: B07CBYYHTL)
+  5. POIUGOYA Small Crossbody Bags for Women,Leather Women's Shoulder Handbag Satchel,Four Zip Pocket Camera Purse with Wide Strap (ASIN: B0BNL5B54Z)
+  6. ZLMBAGUS Women Exquisite Heart Shape Evening Clutch Velvet Tote Handbag Chain Shoulder Bag (ASIN: B074P4Y4HW)
+  7. YALUXE Crossbody Bag for Women Leather Lightweight Medium Shoulder Bag Zipper Pocket Adjustable Strap Organizer (ASIN: B08F7FWVYD)
+  8. Crossbody Bags for Women, Vegan Leather Dome Crossbody Purse with Adjustable Strap (ASIN: B09GXCZQLV)
+  9. YongColer Fashionable Red Black Buffalo Check Plaid Pattern Cell Phone Small Shoulders Bag Crossbody Pouch Smartphone Outdoor Pack for Travel Work Shopping Walking (ASIN: B07YJNJYK6)
+  10. 18mm Black Genuine Leather Watchband | Beautiful Ostrich Grain, Medium Padded Replacement Watchstrap That Brings New Life to Any Watch (Mens Standard Length) (ASIN: B018AKIC2Y)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: leather.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. lola mae Quilted Crossbody Bag, Medium Lightweight Shoulder Purse Top Zipper Tassel Accent (ASIN: B08K1ZJZ4N)
+  2. SG SUGU Lightweight Medium Crossbody Bag | Bow Tassel Zipper Pocket | Adjustable and Removable Strap (ASIN: B07KPQ4KXM)
+  3. B BRENTANO Vegan Mini Multi-Zipper Crossbody Handbag Purse with Tassel Accents (ASIN: B07G5KNZJN)
+  4. LOVEVOOK Crossbody Bags for Women Trendy Design Lightweight Quilted Shoulder Purse Vegan Leather with Tassel (ASIN: B09JWBKRLX)
+  5. SG SUGU American Flag Lightweight Medium Crossbody Bag with Tassel and Zipper Pocket for Women (ASIN: B07RPQP34D)
+  6. Purse King Mini Duchess Cross Body Handbag (RFID Protected Organizer Crossbody & Shoulder Bag) (ASIN: B015VNVBDK)
+  7. Angelina's Palace Tote bag Shoulder Bag Organizer Insert Waterproof PU Leather Sturdy Zipper Top-handle Purse Women Bags (BLACK) (ASIN: B07791KH2D)
+  8. Water Resistant Oxford Waist Pouch 6.5" Crossbody Shoulder Cell Phone Bag(Black) (ASIN: B01KC1H5HC)
+  9. Chikencall Skull Backpack Hooded Skull Gothic Rucksack Rivet Studded Zipper Shoulder Purse Black Punk Metal 3D Stereo Daypack (ASIN: B0C64KRS1H)
+  10. JJAI Crossbody Bag Purses for Women Triple Zip Guitar Strap Shoulder Crossbody Handbags With Tassel (ASIN: B0BZRCYNCG)
+
+=== RESULT: SUCCESS (Turn 4) ===

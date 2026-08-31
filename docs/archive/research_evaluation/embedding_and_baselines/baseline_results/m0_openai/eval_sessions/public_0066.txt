@@ -1,0 +1,54 @@
+Target Product Title: GRAPENT Women's Plus Size Sequin 3/4 Sleeves Evening Gown Party Long Maxi Dress
+Target ASIN: B0BFLFSB2Y
+Scenario: buying
+Constraints: ['polyester', '96% Polyester, 4% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a formal dress, and it has to be made of polyester. i prefer something comfortable and fitting, maybe with some nice design details.
+Copilot: That sounds great! Do you have a specific color in mind for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. Sieanear Women's Puff Long-Sleeve V-Neck Sweater Casual Tunic Tops (ASIN: B0BQ32FHW4)
+  2. Kranda Women V/Round Neck Long Sleeve Floral Pleated Midi Buffalo Plaid Dress with Pocket (ASIN: B086WT4FTM)
+  3. Womens Plus Size Maxi Dresses V Neck Casual Summer Short Sleeve Split T Shirt Long Dress with Pockets (ASIN: B07G7WYLQZ)
+  4. HGWXX7 Womens Plus Size Short Sleeve Loose t-Shirts Colorful Retro Print V Neck Pullover Comfy Tee Shirts Blouse Tops (ASIN: B091FNL5Q1)
+  5. Wgooyheya Women One Shoulder Hollow Slit Long Dress Elegant Sleeveless High Waist Party Ruched Maxi Dress (ASIN: B09BCX1RXZ)
+  6. KOH KOH Womens Long Flowy Loose Fit Kaftan Evening Elegant Gown Maxi Dress (ASIN: B085NHQ946)
+  7. YATHON Women's Vintage Pockets Flared Swing Party Summer Casual Work Dresses (ASIN: B083M79J19)
+  8. 42R Zonettie Mens Daytona Red Slim Fit Blazer (ASIN: B01D1XIJI2)
+  9. PINKMARCO Women Casual V Neck Collar Button Down Rolled Cuff Short Sleeve Work Blouses Shirt Tops Burgundy (ASIN: B0935ZL61W)
+  10. Comeon Womens Long Winter Coat Hooded Faux Fur Fuzzy Fleece Sherpa Jacket Casual Lapel Button Warm Teddy Outerwear (ASIN: B0BK4RJTG3)
+
+--- TURN 2 ---
+Shopper: i'm not really focused on color right now, just looking for something with sequins and a nice fit. do you have anything like that?
+Copilot: I have a few options that fit your criteria! Would you prefer a specific size for the dress?
+Copilot Attribute Query: size
+Recommendations:
+  1. Metme Women's 1920s Vintage Flapper Fringe Beaded Great Gatsby Short Sleeve Dress (ASIN: B07RWHKF25)
+  2. Womens Tops Long Sleeve Round Neck Leopard Pocket Casual T Shirts Blouses Tunic Sweatshirt (ASIN: B083ZB8RH3)
+  3. Eiffel Women's Victorian Trimmed Gold Sequins Bodycon Dress Party Club Night Out Dresses (ASIN: B01M7NX0A7)
+  4. Riviera Sun Dress Dresses for Women (ASIN: B0C5TKHCRK)
+  5. MISSCHEN 1920s Flapper Dress Hand Knitted Long Fringed Sequins Beaded Roaring 20s Mini Dress with Fringe Sleeve (ASIN: B082SD1QDJ)
+  6. Christmas Women Glitter Round Neck Casual T Shirt Sequins Short Sleeve Xmas Party Top Silver XL (ASIN: B07ZP4DZDM)
+  7. Yikisdy Bride Wedding Satin Gloves Black Long Gloves Fingerless Glove Sequins 1920s Party Dance Opera Bridal Accessories for Women and Girls (Black) (ASIN: B08K38R9M1)
+  8. BeryLove Women 50s Petticoat Skirts Tutu Crinoline Underskirt Ballet Sequins Dress (ASIN: B08DHRXST9)
+  9. Bow Dream Lovely Sequins Flower Girl's Dress (ASIN: B018E69PSO)
+  10. ladyline Rayon Silk Embroidery Sequins Kurtis for Women Indian Kurta Tunic Dress (ASIN: B08QJLWDX9)
+
+--- TURN 3 ---
+Shopper: i'm looking for a plus size dress, preferably something with sequins and long sleeves. do you have anything like that?
+Copilot: I found some lovely plus size dresses with sequins and long sleeves! What kind of occasion do you have in mind for wearing the dress?
+Copilot Attribute Query: use_case
+Recommendations:
+  1. GRAPENT Women's Plus Size Sequin 3/4 Sleeves Evening Gown Party Long Maxi Dress (ASIN: B0BFLFSB2Y)
+  2. LLmansha Women's Plus Size Glitter V-Neck Long Sleeve Bodycon Sequin Cocktail Party Club Sparkly Evening Mini Dress (ASIN: B07HRKVWHS)
+  3. kaimimei Casual Maxi Dresses Plus Size for Women Letter Print Long Sleeve Oversized Dress with Pockets (ASIN: B09BJR5R81)
+  4. ESPRLIA Women's Plus Size Pajamas V-Neck Sleepwear with Long Pants Loungewear Set (ASIN: B09G64YZ4C)
+  5. Women's Flapper Dresses 1920s Beaded Fringed Great Gatsby Dress with Sleeves (ASIN: B084Q6KTQB)
+  6. YOINS Cold Shoulder Tops for Women Long Bat Sleeves Rhinestone Casual Baggy Sequins Blouse T-shirts NEWVSN-Black XL (ASIN: B07ZX1QPRB)
+  7. Sequins Party Dress,Keepfit Women's Fashion Long Sleeve Deep V-Neck Bodycon Dress (ASIN: B07N87P7JH)
+  8. Odishabazaar Kaftan Tunic Kimono Dress Ladies Summer Women Evening Short Maxi Party Plus Size 6-24 (ASIN: B0762HS9NN)
+  9. AQF Women's Short Sleeve Pajama Short Sets Sleepwear Petite Plus Size S-4XL (ASIN: B08SLMG4R4)
+  10. MIROL Women's Batwing Sleeve Kimono Cardigan Waffle Knit Sweater Open Front Cable Long Coat (ASIN: B089W24DWN)
+
+=== RESULT: SUCCESS (Turn 3) ===

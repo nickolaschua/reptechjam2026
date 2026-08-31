@@ -1,0 +1,22 @@
+Target Product Title: Travelambo Womens Wallet RFID Blocking Bifold Multi Card Case Wallet with Zipper Pocket
+Target ASIN: B089RXP8K2
+Scenario: buying
+Constraints: ['leather', 'color: red']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a wallet made of leather. it should be in red, preferably with some nice features like a zipper pocket.
+Copilot: Great choice! Do you have a specific style in mind for the wallet, like a clutch or a bifold?
+Copilot Attribute Query: style
+Recommendations:
+  1. Travelambo Womens Wallet RFID Blocking Bifold Multi Card Case Wallet with Zipper Pocket (ASIN: B089RXP8K2)
+  2. SENDEFN Wallets for Women Genuine Leather Credit Card Holder with RFID Blocking Large Capacity Wristlet (ASIN: B08GPGX2QG)
+  3. CYANB Small Wallets for Women Slim Leather Card Case Holder Wallet Coin Change Purse with Keychain Wine Red (ASIN: B07YDDWCQG)
+  4. JEEBURYEE Women's RFID Blocking Leather Wallet Credit Card Holder Zipper Clutch Purse (ASIN: B07F1WY89W)
+  5. SHUIBIAN Women's RFID Blocking Genuine Leather Clutch Wallet Multi Card Holder Organizer Ladies Purse with Zipper Pocket (Red Wine3) (ASIN: B07XB1LWHG)
+  6. Mageloly Mens Cotton Short Sleeve Tee Casual T Shirts for Adults (1, M) (ASIN: B01HECM82Y)
+  7. Leviro Men's Fashion RFID Blocking Wallets Genuine Leather Wax Cowhide Leather Zipper Purse (3002-Crazy Horse Brown) (ASIN: B07QQBDTK5)
+  8. Womens Fall Christmas Sweatshirts Long Sleeve Shirts Red Wine Glass Santa Claus Snowman Reindeer Graphic Blouse (ASIN: B09HT6W76Q)
+  9. Mens Beefy Long Sleeve Henley T-Shirt V Neck Front Placket Tees Fashion Casual Slim Fit Basic Shirt Top (ASIN: B09JZLMRNM)
+  10. Victorinox Men's Torrent Full-Zip Track Jacket (ASIN: B014GBMHEU)
+
+=== RESULT: SUCCESS (Turn 1) ===

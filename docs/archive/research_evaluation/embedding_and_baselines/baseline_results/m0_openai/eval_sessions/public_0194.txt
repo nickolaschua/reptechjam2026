@@ -1,0 +1,22 @@
+Target Product Title: Graphic Tees for Women Short Sleeve Tshirts,Womens Summer Tops Crewneck Shirt Blouse
+Target ASIN: B09WR1NZ48
+Scenario: buying
+Constraints: ['rayon', '95% Rayon, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some graphic tees for women, and i really need them to be made of rayon.
+Copilot: Great choice! Do you have a preferred color in mind for the graphic tees?
+Copilot Attribute Query: color
+Recommendations:
+  1. Women Vacay Mode T Shirt Vacation Graphic Short Sleeve Tops Cute Pineapple Tees Funny Summer Travel Shirt (ASIN: B09V2JC7B5)
+  2. We The People T Shirts for Women 4th of July Patriotic Shirt American Flag Graphic Tees Shirts (ASIN: B09T699F5X)
+  3. Summer Graphic Tees Sleeveless Tops Casual Loose Camo Tie Dye Ruffle Tank Tops Shirts for Women (ASIN: B089GHN8TN)
+  4. Funny Saying Shirts Whisper Words of Wisdom Let it Be Dragonfly Graphic Tank Top Racerback Sleeveless (ASIN: B0924933FS)
+  5. Graphic Tees for Women Short Sleeve Tshirts,Womens Summer Tops Crewneck Shirt Blouse (ASIN: B09WR1NZ48)
+  6. BLANCHES Mama Sweatshirt Women Mama Mommy Mom Bruh Funny Mom Life Sweatshirts Pullover Tops Casual Loose Long Sleeve Shirt (ASIN: B0C4PCXD8H)
+  7. JINX Overwatch Women's Mei's Sorry Sorbet Gamer Graphic T-Shirt (ASIN: B07JX4RHNX)
+  8. Grace Wins Women's Fashion Relaxed T-Shirt Tee (ASIN: B07CBB346P)
+  9. Havanese Dog Silhouette Women's Relaxed V-Neck T-Shirt Tee Heather Grey (ASIN: B076HJY7FC)
+  10. Women Come We Fly Tshirt Funny Witchy Hat Broom Graphic Shirt Halloween Hocus Pocus Fall Tops (ASIN: B0997SX354)
+
+=== RESULT: SUCCESS (Turn 1) ===

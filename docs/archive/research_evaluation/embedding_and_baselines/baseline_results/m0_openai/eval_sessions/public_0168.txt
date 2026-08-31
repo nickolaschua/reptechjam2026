@@ -1,0 +1,22 @@
+Target Product Title: Desimtion Mothers Day Gifts,Mother Daughter Bracelets Set for 2,3,4,5,6.Matching Heart Back to School Bracelets for Mommy and Me Easter Gifts for Girl
+Target ASIN: B08YYHDJD1
+Scenario: buying
+Constraints: ['Mother Daughter Bracelets - Heart bracelet on card meaning “Never Truly Part,Maybe in Distance,But Never in Heart”. All daughters love their mom, but sometimes we just forget to sa', 'Size & High Quality -The heart Bracelets are adjustable, don’t worried about size.The Bracelet is made of stainless steel, strong, corrosion-resistant, and will not change color af']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some mother-daughter bracelets. i need one that has a heart design and comes with a card that says something like “never truly part, maybe in distance, but never in heart.” it's really important to me.
+Copilot: I found a lovely option that fits your criteria! The "Mothers Day Gifts, Mother Daughter Bracelets Set for 2" features a heart design and would be perfect for your needs. Do you have a specific color in mind for the bracelets?
+Copilot Attribute Query: color
+Recommendations:
+  1. Desimtion Mothers Day Gifts,Mother Daughter Bracelets Set for 2,3,4,5,6.Matching Heart Back to School Bracelets for Mommy and Me Easter Gifts for Girl (ASIN: B08YYHDJD1)
+  2. Sllaiss 925 Sterling Silver Infinity Bracelet Austria Crystal Bracelet for Womens S925 Heart Bow Bracelet Endless Love Symbol Charm for Girfriend (ASIN: B08FSNC5MS)
+  3. Magnetic Couples Bracelets Long Distance Relationship Bracelets Heart Magnet Promise Husband and Wife Bracelet Sets Cute BF Gifts from GF (ASIN: B0B37R41VW)
+  4. SEVENSTONE Two Souls One Heart Pendant Necklaces Stone Couple Black White Minimalist Magnet Distance Friendship Simple Jewelry Set for Men Women (ASIN: B08YDVSH8R)
+  5. Magnetic Couples Long Distance Bracelets, VGWON Mutual Attraction Relationship Matching Friendship Bracelet, Couple Gifts for Boyfriend Girlfriend Women Men Lover 2pcs (Ver.3) (ASIN: B09DSHJKQN)
+  6. Iefil Mom Gifts Mom Butterfly Birthstone Necklace, 925 Sterling Silver Butterfly Birthstone Necklace Jewelry Mom Mothers Valentines Day Gifts for Mom Birthday Chirstmas Gifts for Mom (ASIN: B0B5L59CHX)
+  7. RUNXINTD Side By Side Or Miles Apart Best Friends Bracelet Long Distance Friendship Gift… (ASIN: B07G6ZRHFT)
+  8. Starain 12-15Pcs Dainty Gold Bracelets for Women Cute Infinity Heart Paperclip Thin Chain Bracelet Set with Gift Box (ASIN: B07S8KZD34)
+  9. MCS Jewelry 14 Karat Yellow Gold Anchor, Heart and Key Charms Pendant Necklace (18") (ASIN: B06XDG81G4)
+  10. ASHLI JENA Women 925 Sterling Silver Necklace Love Heart Pendant - Van Chloe Only You Cubic Zirconia Diamond White Gold Plated Necklace Jewelry Gifts for Women (ASIN: B07TGSMNBT)
+
+=== RESULT: SUCCESS (Turn 1) ===

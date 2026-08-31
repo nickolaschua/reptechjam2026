@@ -1,0 +1,22 @@
+Target Product Title: Ariat Men’s M2 Relaxed Boot Cut Jean
+Target ASIN: B07D5M61T2
+Scenario: browsing
+Constraints: ['cotton', '100% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some men's jeans that are relaxed fit, preferably made of 100% cotton. i like a boot cut style, too.
+Copilot: Great choice! Do you have a specific color in mind for the jeans?
+Copilot Attribute Query: color
+Recommendations:
+  1. Ariat Men’s M2 Relaxed Boot Cut Jean (ASIN: B07D5M61T2)
+  2. ARIAT Men's Flame Resistant Work Pant (ASIN: B08TC2R14G)
+  3. prAna Halle Pant (ASIN: B07CK79Z58)
+  4. Mom Life Got Me Feelin Like HEI HEI Shirts for Women Mom Life Short Sleeve T-Shirt Casual Top (ASIN: B07P18FH38)
+  5. Women's Crewneck Cute Ruffle Shirt Balloon Sleeve Loose Casual Blouses Tops (ASIN: B08H8SH6FJ)
+  6. TAKEYAL Lets Be Better Humans Inspirational Quotes Shirts Women Positive Saying Short Sleeve Tee Tops (Green, L) (ASIN: B08FWX6LDD)
+  7. 28 Palms Men's Relaxed-fit 100% Cotton Tropical Vacation Shirt (ASIN: B07T6PJYSG)
+  8. YOINS Summer Top for Women Cold Shoulder Short Sleeve Blouse Loose Casual Cut Out T-Shirts (ASIN: B0873XGP72)
+  9. OTTBOOM Men's Regular Fit Jeans,Straight Jeans,Bootcut Jeans Pants M606 (ASIN: B08LVJCFNX)
+  10. Eagle Men's Non Iron Regular Fit Stripe Button Down Collar Dress Shirt (ASIN: B001V8NU8E)
+
+=== RESULT: SUCCESS (Turn 1) ===

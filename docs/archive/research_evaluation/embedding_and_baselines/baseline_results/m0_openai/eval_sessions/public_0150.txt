@@ -1,0 +1,22 @@
+Target Product Title: Sivvan Scrubs for Men - Zippered Short Sleeve Jacket
+Target ASIN: B07P6MPQY5
+Scenario: browsing
+Constraints: ['polyester', '65% Polyester, 35% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a men's medical scrub jacket, preferably one with a zip front closure. it should be made of a good mix of polyester and cotton, like 65% polyester and 35% cotton.
+Copilot: I found a great option for you: the Sivvan Scrubs for Men - Zippered Short Sleeve Jacket. What size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. SCHONTAN Women's Outerwear Winter Long Fleece Camouflage Print Lined Thickened Parka Puffer Coats with Faux Fur Hood… (ASIN: B07X4W3383)
+  2. Carhartt Men's Thermal Lined Sweatshirt Zip Front Hooded Original Fit (ASIN: B002GHCE3Q)
+  3. TRGPSG Men's Tactical Military Combat Shirts,Long Sleeve 1/4 Zip Slim Fit Camo Airsoft Army Hiking T Shirt with Pockets (ASIN: B083FGPJ6J)
+  4. ZooYung Men's Casual Bomber Jackets Lightweight Windbreaker Spring Fall Full Zip Active Coat Windproof Outwear (ASIN: B076LP45L5)
+  5. Sivvan Scrubs for Men - Zippered Short Sleeve Jacket (ASIN: B07P6MPQY5)
+  6. Toimothcn Women Sleeveless Sunflowe Print T Shirt Casual Loose Vest Tank Top Soft Comfortable (ASIN: B07P6H2X9F)
+  7. Men's Classic 300 Fleece Vest Anthracite L (ASIN: B09R2HH28Z)
+  8. Under Armour Men's Storm Playoff Half Zip (ASIN: B077XSSNN6)
+  9. Medical Cargo Pants for Men Workwear Originals, Zipper Fly Scrubs for Men 4000 (ASIN: B07QMS8TX8)
+  10. London Fog Men's Auburn Zip-Front Golf Jacket (Regular & Big-Tall Sizes) (ASIN: B08224J2ZG)
+
+=== RESULT: SUCCESS (Turn 1) ===

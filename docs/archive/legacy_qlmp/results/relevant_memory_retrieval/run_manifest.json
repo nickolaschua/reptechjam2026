@@ -1,0 +1,52 @@
+{
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260830,
+  "buyer_session_count": 18,
+  "catalogue_cache_sha256": {
+    "text-embedding-3-large": "3f8c0bf2e13ac1227d41276c6b454f9d017bc74ed466208e1eb2249d397c4fd9",
+    "text-embedding-3-small": "1c0338a0a83ff88702860dfcdf37f6537c5e48f00048ccfe1f57ff995d8af72b"
+  },
+  "catalogue_fingerprint": "da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67",
+  "catalogue_row_count": 50000,
+  "created_at_utc": "2026-08-30T11:13:39.923995+00:00",
+  "embedding_calls_during_evaluation": 0,
+  "fixture_path": "nickolas\\shopping_agent\\longitudinal_eval\\projector_fixture_v1.json",
+  "fixture_sha256": "8b782aee8ed7e23504f5c3420388e6b2003c16918fa0108f28dfdd7c630aa2bf",
+  "frozen_m0_m3_artifact_sha256": {
+    "run_manifest.json": "2a11f16572276263b1dd0686a41223652254aaab26e231a7ba1de914995609c8",
+    "session_manifest.json": "10913ec671809a8401ce0c4f903055dbab4700b9ce3eb4a4b03c2e5bdb40cd37",
+    "session_results.jsonl": "f5bd42f45561114f6c07bddcd277c74f6be33d241780400d544b04d499df2811",
+    "summary.json": "0f4623fc1fe498fb5a3b6232897b9cdffde0600af331941d555140de54cc7f58"
+  },
+  "k": 3,
+  "lambda_memory": 0.2,
+  "large_vector_snapshot_sha256": "4763a536c9a16c25a7aa99eb062aec95778299ab5d2ea6d92decb337423b975a",
+  "logical_memory_manifest_sha256": "cdb7e3496f71b06acdf205ca24dcb3dd4f0414763df7ce82911044192d998601",
+  "ordered_session_ids": [
+    "u1_stable_s5",
+    "u1_stable_s6",
+    "u1_stable_s8",
+    "u1_stable_s9",
+    "u2_override_s2",
+    "u2_override_s4",
+    "u2_override_s7",
+    "u2_override_s9",
+    "u3_distractor_s3",
+    "u3_distractor_s5",
+    "u3_distractor_s6",
+    "u3_distractor_s7",
+    "u3_distractor_s8",
+    "u3_distractor_s9",
+    "u4_negative_s2",
+    "u4_negative_s5",
+    "u4_negative_s8",
+    "u4_negative_s9"
+  ],
+  "previously_inspected_fixture": true,
+  "product_order_fingerprint": "7fdf8a833a7cfa23ed814e915be7dd9e29128f176ca5b1c2a39ff804fd1a1a34",
+  "product_text_fingerprint": "f219fbfbc2a99b87e638241c2206c421eb69760037f9aa3a2e8da87c36a01da0",
+  "run_type": "locked_relevant_memory_retrieval_dual_openai",
+  "selected_memory_weighting": "equal",
+  "similarity_threshold": null,
+  "small_vector_snapshot_sha256": "7a22843da584c56a99df1293f8aa1779cef4f86fa173ddc8ccd93823b402149e"
+}

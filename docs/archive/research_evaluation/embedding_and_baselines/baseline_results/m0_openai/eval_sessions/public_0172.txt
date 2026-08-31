@@ -1,0 +1,22 @@
+Target Product Title: Skechers Women's Sneaker
+Target ASIN: B0829PZGBB
+Scenario: browsing
+Constraints: ['cotton', '100% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's sneakers. i'm really into ones made from cotton, like 100% cotton if possible.
+Copilot: Great choice! Do you have a specific color in mind for the sneakers you're looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. Skechers Women's Sneaker (ASIN: B0829PZGBB)
+  2. LHSPOSIFD Unisex Mens Baseball Hat Casual Adjustable Mesh Sports-MTU-Friedrichshafen-Flat Cap (ASIN: B07S75ZJZR)
+  3. Skechers Women's Bobs Sneaker (ASIN: B0C62X675S)
+  4. Converse Women's Chuck Taylor Shoreline All of The Stars Sneaker (ASIN: B07L14F3V4)
+  5. Converse Women's Chuck Taylor All Star Madison Low Top Sneaker (ASIN: B0728LDBKL)
+  6. WDIRARA Women's Long Sleeve Pullove Crop Sweatshirt Rainbow Print Raw Hem Hoodie (ASIN: B07FMBYQY3)
+  7. Superga Women's S4116zw Sneaker (ASIN: B09N4S7XXK)
+  8. GEMLON Womens Denim Dresses Sleeveless V Neck Jean Button Down Casual Midi Dress with Pocket (ASIN: B09TR933RK)
+  9. Women Gothic Skeleton Print Hoodie Long Sleeve Fashion Graphic Zipper Cardigan Hooded Jacket Sweatshirt with Pocket (ASIN: B09B3DTJL2)
+  10. Ash As-Hop Shoes Womens Black/MULTI 39M EU (ASIN: B01A9DWZP0)
+
+=== RESULT: SUCCESS (Turn 1) ===

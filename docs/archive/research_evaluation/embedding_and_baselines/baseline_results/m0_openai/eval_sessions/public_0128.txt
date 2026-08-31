@@ -1,0 +1,22 @@
+Target Product Title: PAVOI 14K Gold Plated Lightweight Chunky Open Hoops | Gold Hoop Earrings for Women
+Target ASIN: B0BNP1RZ2W
+Scenario: browsing
+Constraints: ['✦18K GOLD VERMEIL✦ A premium offering of our best selling styles, our vermeil jewelry is made with a solid s925 sterling silver base and plated in 18K gold that is 10x thicker than', 'color: yellow']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some gold hoop earrings, specifically something lightweight and chunky. i really want them to be made with a solid silver base and plated in gold, ideally 18k.
+Copilot: Great choice! Do you have a preference for a specific color or finish for the gold plating, or are you open to any shade?
+Copilot Attribute Query: color
+Recommendations:
+  1. PAVOI 14K Gold Plated Lightweight Chunky Open Hoops | Gold Hoop Earrings for Women (ASIN: B0BNP1RZ2W)
+  2. I'S ISAACSONG Dainty Gold Layered Coin Necklace and Stud Earrings, 18k Gold Plated Sterling Silver Mother of Pearl Pendant Necklace Earrings Jewelry Set for Women (ASIN: B07QYLQH5Z)
+  3. Hoops & Loops 925 Sterling Silver 5mm Thick High Polished Circle Chunky Click-Top Hoop Earrings for Women and Teen Girls, Sterling Silver, Yellow & Rose Gold Flash Plated 20mm-40mm (ASIN: B01BLUCCGM)
+  4. Cute Sterling Silver Safety Pin Small Hoop Earrings for Women Girls Men Cartilage Minimalist Sleeper Hoops Lightweight Personalized Lock Dangle Drop Fashion Jewelry Gifts 24mm (ASIN: B07SL245RZ)
+  5. FOCALOOK Hoop Earrings Set 3 Pairs for Women 18K Gold Plated Round Circle Thin Huggie Hoop Earrings 30mm 50mm 70mm (ASIN: B0BGGHSYHC)
+  6. Krfy Cuban Chain for Men Chunky Miami Cuban Link Chain for Men Women 6/10/12/14mm 18K Gold Plated 316L Stainless Steel Thick Heavy Cuban Link Chain Boys Gift 18/20/22/24/26/30 Inches (ASIN: B0B9NQ7DYR)
+  7. LecAit 14K Gold Chunky Waterdrop Earrings for Women,Lightweight Big Teardrop Hollow Drop Dangle Earrings for Women Girls Fashion Jewelry Gift Gold & Silver (ASIN: B0C85G9DGS)
+  8. LADYGD 14K Gold Plated Sterling Silver Post Chunky Open Hoops Earrings for Women Twisted Hoop Earrings Lightweight Jewelry Gifts for Girls (ASIN: B0CB3DXNM9)
+  9. WeeFurni Jewelry Set for Women 925 Sterling Silver Pendant Necklace Cubic Zirconia Necklace Earrings Set Jewelry Gift for Her on Anniversary, Birthday, Christmas, Valentine's and Mother's Day (ASIN: B09FJZK7YW)
+  10. CiNily Fashion Sterling Silver or White Gold Plated Opal Bracelets for Bridal, Wedding, Prom, Party, Pageant, Evening Wear, Party Wear (ASIN: B0798KXJBQ)
+
+=== RESULT: SUCCESS (Turn 1) ===

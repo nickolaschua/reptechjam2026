@@ -1,0 +1,38 @@
+Target Product Title: MUXXN Women's Retro 1950s Style Sleeveless Slim Business Pencil Dress
+Target ASIN: B01H54X6CM
+Scenario: buying
+Constraints: ['rayon', '65% Rayon, 30% Cotton, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a dress for work, and it has to be made of rayon. something with a nice fit and maybe a vintage style would be great.
+Copilot: That sounds lovely! Do you have a specific color in mind for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. Retirement Gift T Shirt for Women Retired 2022 Not My Problem Anymore Shirt Retired Party Tee Tops (ASIN: B09T9NZT8Q)
+  2. YATHON Women's Vintage Ruffle Floral Flared A Line Swing Casual Cocktail Party Dresses (ASIN: B07N4GLDMB)
+  3. ANIXAY Women's Short/Long Sleeve Henley Button up T Shirt Casual Basic Tops Blouse (ASIN: B07HV9WW6Q)
+  4. GownTown Women's 1950s Vintage Plaid&Dot Swing Tea Dress with Pockets (ASIN: B07B4875PX)
+  5. BOKALY Women's Vintage Ruffles Dress V Neck Floral Flared Swing A-Line Casual Party Dresses (ASIN: B07RW8RF22)
+  6. YIXUAN Women's Short Sleeve Colorblock Knee-Length Flared A-Line Casual Dress Cocktail Party Dresses with Lace S-XL (ASIN: B097B8GJ22)
+  7. Miskely Women's Paisley Printed Short Sleeve Blouses V Neck Pleated Ruffle Casual Tunic Tops Shirt (ASIN: B07DD8J3JS)
+  8. YATHON Women's Vintage Pockets Flared Swing Party Summer Casual Work Dresses (ASIN: B083M79J19)
+  9. Afibi Womens High Waist A Line Ruffle Swing Long Maxi Skirt with Pockets (ASIN: B09XQYP9CP)
+  10. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+
+--- TURN 2 ---
+Shopper: i'm not too picky about color, just something classic would be great. but none of these seem to fit what i'm looking for. i need something with a slim fit, ideally made of rayon with a bit of spandex for comfort, you know?
+Copilot: Got it! How about we narrow it down a bit more? What size are you looking for in the dress?
+Copilot Attribute Query: size
+Recommendations:
+  1. MUXXN Women's Retro 1950s Style Sleeveless Slim Business Pencil Dress (ASIN: B01H54X6CM)
+  2. ALLEGRACE Women Plus Size Skinny Pants Stretch Slim Fit Pull-on High Waist Pants with Pockets (ASIN: B09BQ74R56)
+  3. Belle Poque Women Vintage Puff Sleeve Blouse Off The Shoulder Slim Fit Tee Shirts (ASIN: B09VS3CGMZ)
+  4. FOWSMON Womens Basic Long Sleeve T Shirt Comfy Layer Scoop Neck Tee Shirts Solid Tops (ASIN: B08HPM5PX1)
+  5. Grlasen Women's Zipper Summer Pleated Button Short Sleeve T-Shirt Summer V-Neck Solid Color Casual top (ASIN: B09G2ZNZY4)
+  6. YARN & INK Women's Bodycon Pencil Skirt Work Office Stretch Straight High Waist Below Knee midi Skirt with Slit (ASIN: B097Q5933V)
+  7. Awesome21 Women's Basic Office Slim Stretchy Full Length Pants (ASIN: B072K3NWFT)
+  8. Noctflos Women's Floral Lace Long Sleeve Bodycon Pencil Cocktail Party Dress (ASIN: B07K245S7D)
+  9. Dickies Women's Jr. Fit Mid-Rise Slim Drawstring Pant (ASIN: B00UYE32DO)
+  10. IZOD Men's Comfort Stretch Straight Fit Jean (ASIN: B07R5D462C)
+
+=== RESULT: SUCCESS (Turn 2) ===

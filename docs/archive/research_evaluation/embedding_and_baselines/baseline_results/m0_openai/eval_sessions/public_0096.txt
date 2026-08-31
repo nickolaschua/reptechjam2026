@@ -1,0 +1,54 @@
+Target Product Title: Zeagoo Women's Polka Dots Shirt Striped 3/4 Sleeve Casual Scoop Neck Tops Tee S-XXXL
+Target ASIN: B074K2QX3M
+Scenario: intent_override
+Constraints: ['polyester', '95% Polyester, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual top with polka dots and stripes. ideally, it has a pull on closure and is made of a comfy material. something with a scoop neck would be great too.
+Copilot: That sounds like a great style! What size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Zeagoo Women's Polka Dots Shirt Striped 3/4 Sleeve Casual Scoop Neck Tops Tee S-XXXL (ASIN: B074K2QX3M)
+  2. Nova In Sky Women's Summer Casual V Neck Short Sleeve Ruffle Polka Dot Loose Flowy Swing Babydoll Dress (ASIN: B0BY4QMDJ5)
+  3. Zip Up Hoodie Women Long Sleeve Fall Oversized Sweatshirts Casual Drawstring Hoodies Jacket with Pocket Athletic Tops (ASIN: B09F2KFNQZ)
+  4. Syrirotus Men's T-Shirt Casual Crewneck Striped T-Shirts Basic Pullover tee Shirt (ASIN: B08FWN56N3)
+  5. Sovelen Women's Color Block Leopard Print Short Sleeve T Shirts Scoop Neck Choker Casual Cute Loose Tops Tees (ASIN: B08XBTGV8K)
+  6. Farktop Womens Sweaters Pullover Cute Front Heart Crewneck Black Grey Knit Jumper Top for Juniors (ASIN: B078W3377B)
+  7. DREAGAL Women's Racer Back Zig-Zag Tank Top Loose Sleeveless Tunic (ASIN: B07C1D2V1N)
+  8. Pink Queen Women's 3 Piece Pajama Lounge Set Fuzzy Crop Vest Top Long Pants Cardigan Open Front Outfit (ASIN: B08QYV5MXB)
+  9. Bluetime Women Adjustable Spaghetti Strap Tank Tops Basic Solid Stretchy Scoop Neck Camis Undershirts 2-3 Pack (S-XXL) (ASIN: B09P7W9WJR)
+  10. Womens Basic Fitted Crop Tops Short Sleeve Stretchy Cropped Tees (ASIN: B09V8B7DSB)
+
+--- TURN 2 ---
+Shopper: i'm looking for a size medium. also, i'm really hoping to find something with a pull on closure if possible.
+Copilot: Got it! Just to narrow it down a bit more, do you have a preferred color in mind for the top?
+Copilot Attribute Query: color
+Recommendations:
+  1. Ekouaer Women's Tank Capri Soft Pajama Sets (ASIN: B07SMWH3S9)
+  2. ANRABESS Women's Crewneck Petal Short Sleeve T Shirt Dress Casual Solid Swing Midi Dresses with Pockets (ASIN: B09QMBXNNS)
+  3. Plus Size Spaghetti Dresses - Sexy Summer Long Maxi Dress with Pockets Beach Causal (ASIN: B08CKBLRZT)
+  4. Lauweion Women Drop Shoulder Long Sleeve Stretch Cropped Sweatshirt Tops Slim Fitted Athletic Pullover Ribbed Edge Crop Top (ASIN: B0BBLPS1Z4)
+  5. chouyatou Women's Summer Casual Sleeveless Cotton Sun Dress Maxi Tunic Tank Beach Dress with Pocket (ASIN: B0BQDST96X)
+  6. FEDPOP St Patricks Day Shirt Women V Neck T Shirt Short Sleeve Green Irish Shirt Tops (ASIN: B09MYHZKSN)
+  7. ALLTB American Flag Shirt Women Patriotic Shirt USA Flag Stars Stripes Print T-Shirt 4th of July Tee Tops (ASIN: B09XMMJN2T)
+  8. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+  9. Womens Striped Long Sleeve T Shirts Color Block Comfy Casual Blouses Tunics Tops Fashion Clothes (ASIN: B0B3RC268V)
+  10. Metyou Women's Casual Short Sleeve Bodycon Pencil Dress Crewneck Tie Waist Stretchy Mini Dress (ASIN: B09KC3WN6N)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: polyester.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Zeagoo Women's Polka Dots Shirt Striped 3/4 Sleeve Casual Scoop Neck Tops Tee S-XXXL (ASIN: B074K2QX3M)
+  2. Nicole Miller Girls and Toddler Ankle Socks Low Cut No Show Stripes Polka Dots and Assorted 10 Pack (ASIN: B07YNYHGQH)
+  3. Anni Coco Women's 1950s Vintage Audrey Hepburn Floral Scoop Neckline Stitching A-Line Swing Dresses Black and Polka Dots Large (ASIN: B01DVVXOO8)
+  4. Romwe Women's Polka Dots Short Sleeve Mesh Sheer Mock Neck Chiffon Blouse Tops (ASIN: B08YDRS89X)
+  5. WDIRARA Women's Leopard Print V Neck Bishop Sleeve Elegant Pullover Blouse Top Leopard (ASIN: B08JLQQP6C)
+  6. roswear Women's Casual Polka Dots Blouse Short Sleeve Top Shirt Pink Large (ASIN: B07SNBJW8R)
+  7. STYLEWORD Women’s Summer Dress V Neck Polka Dot Ruffle Sundress Casual Loose Swing with Pocket（Navy-M (ASIN: B08P353WP5)
+  8. Womens Short Sleeve Scoop Neck T Shirts Casual Loose Fit Basic Summer Tee Tops Red (ASIN: B091C2S833)
+  9. Recabee Women's Color Block Scoop Neck Blouse Casual Loose Tops Long Sleeve Shirts (ASIN: B07VSY1SJK)
+  10. NY Collection Women's Petite Size Printed Elbow Sleeve Scoop Neck Fit and Flare Knee Length Dress (ASIN: B016OZLK8K)
+
+=== RESULT: SUCCESS (Turn 3) ===

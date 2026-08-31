@@ -1,0 +1,22 @@
+Target Product Title: KORSIS Summer Dresses For Women Casual T Shirt Dresses Swing Flowy Beach Vacation Sundress with Pockets
+Target ASIN: B0B4BRW7JT
+Scenario: browsing
+Constraints: ['rayon', '95% Rayon, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual summer dress that's really comfy, ideally made from rayon with a bit of spandex. i love dresses that have pockets and a loose fit, you know?
+Copilot: That sounds great! Do you have a preferred color in mind for your summer dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. KORSIS Summer Dresses For Women Casual T Shirt Dresses Swing Flowy Beach Vacation Sundress with Pockets (ASIN: B0B4BRW7JT)
+  2. POSESHE Womens Plus Size Summer Dress 2023 Casual Short Sleeve Empire Waist Loose Fit Swing T-Shirt Dress with Pockets (ASIN: B097XNM8J8)
+  3. MIROL Women's Crew Neck Long Sleeve Pajamas Two-Piece Sleepwear Tops and Shorts Loungewear PJ Sets (ASIN: B08R17NYW5)
+  4. MCTY Women's Summer Button Casual Loose Swing Sleeveless Plain Weave Pleated T-Shirt Dresses with Pockets Knee Length (ASIN: B07RQGVCP4)
+  5. AKEWEI Women's Lounge Pants Drawstring Loose Elastic Waist Yoga Pants Soft Pajama Bottoms with Pockets (ASIN: B08BL7GQJH)
+  6. Lamilus Women's Casual Summer Tshirt Dresses Sleeveless Boho Beach Sundress Dress with Pockets (ASIN: B08CMV5BCQ)
+  7. Lakemiss Women V Neck 3/4 Cuffed Sleeve Shoulder Overlay Buttons Tunics Blouses (ASIN: B08H5T746G)
+  8. Naggoo Women's High Waisted Joggers Lightweight Sweatpants Workout Running Lounge Sport Pants with Pockets (ASIN: B08DFVFZSP)
+  9. Invug Women Button Down Nightgown Short Sleeve Sleepshirt Casual Pajama Dress (ASIN: B08HYDS5LQ)
+  10. OFEEFAN Women's Casual Plain Simple Pockets T-Shirt Loose Dress Purple XL (ASIN: B0719FJJCG)
+
+=== RESULT: SUCCESS (Turn 1) ===

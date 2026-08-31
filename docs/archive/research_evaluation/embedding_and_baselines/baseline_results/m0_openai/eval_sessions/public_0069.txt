@@ -1,0 +1,22 @@
+Target Product Title: Acrylic Earrings For Women Girls Statement Geometric Earrings Resin Acetate Drop Dangle Earrings Mottled Hoop Earrings Fashion Jewelry
+Target ASIN: B07ZFBQ76H
+Scenario: browsing
+Constraints: ['【FASHION DESIGN 】—Acrylic mottled hoop earrings. Square and oval silhouette. Marbled Floral and Leopard design. Post back. Light-weight earrings. these acrylic earrings are the per', "【COMFORTABLE TO WEAR】—Acrylic Leopard dangle earring give a summer-ready feel to any look. Post back closures for pieced ears. Size: 2.5''in length weight 0.2oz a pair,Lightweight,"]
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some cute earrings, like those lightweight acrylic ones with a mottled design. i really like the geometric shapes, maybe something with a floral or leopard pattern.
+Copilot: That sounds lovely! Do you have a specific color in mind for the earrings you're looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. Acrylic Earrings For Women Girls Statement Geometric Earrings Resin Acetate Drop Dangle Earrings Mottled Hoop Earrings Fashion Jewelry (ASIN: B07ZFBQ76H)
+  2. Allywit Women Creative Deer Stud Earrings Christmas Earrings Fashion Trends Earrings for Birthday/Party/Christmas/Friendship Gifts (ASIN: B0824R8PNV)
+  3. Acrylic Geometric Statement Earrings Stone Rhinestone Crystal Earring Dangle Jewelry for Women (ASIN: B07XJLP7TX)
+  4. Wovanoo Leopard Print Earring Leather Fur Earrings for Women Statement Drop Dangle Earrings (ASIN: B081YMDWH4)
+  5. VOYOMI Leopard Drop Earrings for Women - Statement Geometric Medium/Tiny Dangle Earrings for Girls, Suitable for Party/Various Festivals/Gifts (ASIN: B09GPP8SCY)
+  6. Acrylic Earring for Women - Statement Leaf Drop Dangle Earrings Resin Tortoise Leopard Earrings Bohemian Fashion Jewelry for Mom,Sister,Daughter Gifts (ASIN: B07SRY4LSW)
+  7. Punk Acrylic Geometric Choker Necklace Colorful Adjustable Resin Acetate Sweater Chunky Necklaces Vintage Large Choker Collar Delicate Statement for Women Girls Fashion Jewelry (ASIN: B09BT6SKLW)
+  8. Acrylic Drop Dangle Earrings Chunky Long Link Chain Dangle Earrings Statement Geometric Resin Paperclip Chain Drop Dangling Earrings for Women Girls (ASIN: B08T6L5P17)
+  9. Multicolor Chunky Acrylic Bead Necklace Dangle Earring Set Retro Bohemian Acrylic African Geometric Beaded Choker Necklace Simple Lucky Declaration Sweater Costume Jewelry for Women Girls (ASIN: B08QR3LV5T)
+  10. Shmei Vintage Womens Silver Cocktail Rings Luxurious Diamond Artificial Stone Geometric Oval Openwork Ring Ladies Jewelry (Silver, 7) (ASIN: B07S9ZKSGF)
+
+=== RESULT: SUCCESS (Turn 1) ===

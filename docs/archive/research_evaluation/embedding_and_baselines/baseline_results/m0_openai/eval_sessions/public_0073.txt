@@ -1,0 +1,22 @@
+Target Product Title: WNEEDU Women's Summer Casual T Shirt Dresses Short Sleeve Swing Dress with Pockets
+Target ASIN: B07QPM54V7
+Scenario: browsing
+Constraints: ['polyester', '♥【Try RISK FREE】: Wear COMFORTABLE or Your MONEY BACK! 30-day wear test! FREE shipping and returns.If for any reason you’re unhappy with your purchase,feel free to contact us']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual summer dress that's comfy and has pockets. it should be made of polyester and come with a good return policy.
+Copilot: That sounds great! Do you have a preferred color in mind for the dress?
+Copilot Attribute Query: color
+Recommendations:
+  1. YATHON Casual Dresses for Women Sleeveless Cotton Summer Beach Dress A Line Spaghetti Strap Sundresses with Pockets (ASIN: B0895GRVYV)
+  2. WNEEDU Women's Summer Casual T Shirt Dresses Short Sleeve Swing Dress with Pockets (ASIN: B07QPM54V7)
+  3. Women Lightweight Cardigan Leopard Printed Button Down Cardigans Shirt W Pockets(S-2XL) (ASIN: B07PRVKWJG)
+  4. MEISITE Womens Juniors Denim Shorts High Waist Ripped Hole Washed Distressed Short Jeans (ASIN: B08YDYR4BK)
+  5. HUSKARY Women's Summer Maxi Dress Casual Loose Pockets Long Dress Short Sleeve Split (ASIN: B07HHYDKK7)
+  6. Toddler Girls Kids Floral Jumpsuit One Piece Romper Sleeveless Strap Leopard/Sunflower Overall Pants Summer Clothes (ASIN: B092V5JL9K)
+  7. BTFBM Womens Hoodies Trendy Tie Dye Print Long Sleeve Drawstring Front Pockets Lightweight Casual Sweatshirts Pullover (Tie Dye Multicolor, Large) (ASIN: B08DD9X139)
+  8. URBAN DAIZY Women's Joggers Sweatpants - Elastic Waistband Drawstring Melange Velboa Lounge Active Casual Pants with Pockets (ASIN: B0B1HLDQ61)
+  9. Sexyshine Women's Casual 2 Piece Outfits Ruffled Sleeve Sweatshirt Tops and Long Sweatpants Tracksuits Sets Sweatsuits (ASIN: B08HWVC2S5)
+  10. WINLIEBA Summer Jean Shorts for Women Plus Size Stretchy, Frayed Cute Casual Hem Cutoff Ripped Denim High Waisted Short Pants (ASIN: B08VH7R86L)
+
+=== RESULT: SUCCESS (Turn 1) ===

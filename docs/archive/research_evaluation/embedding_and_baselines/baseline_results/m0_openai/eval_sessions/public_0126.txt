@@ -1,0 +1,22 @@
+Target Product Title: Asvivid Womens Casual Boho Floral Print 3/4 Flare Sleeve Blouses Summer Off The Shoulder Tops Tie Knot Shirts
+Target ASIN: B09M84R91V
+Scenario: browsing
+Constraints: ['polyester', '95% Polyester, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual blouse that has a floral print and some cute flare sleeves. it should be made of mostly polyester with a bit of spandex for stretch.
+Copilot: I found a great option for you! Check out the Asvivid Women's Casual Boho Floral Print 3/4 Flare Sleeve Blouse. What color are you interested in?
+Copilot Attribute Query: color
+Recommendations:
+  1. Asvivid Womens Casual Boho Floral Print 3/4 Flare Sleeve Blouses Summer Off The Shoulder Tops Tie Knot Shirts (ASIN: B09M84R91V)
+  2. YATHON Women's Vintage Ruffle Floral Flared A Line Swing Casual Cocktail Party Dresses (ASIN: B07N4GLDMB)
+  3. LETDIOSTO Women's Plus Size Tops Casual Blouse Short Sleeve Lace Tunic Tops Fit Flare, M-4XL (ASIN: B09MSY8926)
+  4. levaca Women's Plain Casual High Low Hem Flowy Midi Dress (ASIN: B07QYMBPPJ)
+  5. Apperloth Women's Sexy Off Shoulder Dress Floral Print Short Sleeve A-Line Fit and Flare Mini Dress (ASIN: B07S9CKPJX)
+  6. WFTBDREAM Women's Floral Printed High Waist Drawstring Wide Leg Palazzo Lounge Pants (ASIN: B076M48KKT)
+  7. Womens Long Sleeve Dresses Midi T Shirt Casual Floral (ASIN: B07483YC42)
+  8. KANCY KOLE Women's Smocked Waist Dress Square Neck Short Bubble Sleeve Ruffle Mini Dress S-XXL (ASIN: B08MWNB6GP)
+  9. BOKALY Women's Vintage Ruffles Dress V Neck Floral Flared Swing A-Line Casual Party Dresses (ASIN: B07QGRSBL8)
+  10. Toddler Baby Girl Clothes Ruffle Short Sleeve T-Shirt Tops + Floral Print Flare Pants Bell-bottom 2Pcs Summer Outfits (ASIN: B09QKWYRD2)
+
+=== RESULT: SUCCESS (Turn 1) ===

@@ -1,0 +1,22 @@
+Target Product Title: RITERA Plus Size Tops for Women Off the Shoulder Cold Shoulder Tops Short Sleeve Shirts Summer Blouses Sexy Tunics Tee XL-5XL
+Target ASIN: B08PF98BV4
+Scenario: browsing
+Constraints: ['polyester', '75% Polyester, 20% Rayon, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some cute summer blouses, specifically something that's off the shoulder or has a cold shoulder design. i really need it to be made of mostly polyester, like around 75%, with a bit of rayon and spandex too.
+Copilot: That sounds great! What color are you thinking for your summer blouses?
+Copilot Attribute Query: color
+Recommendations:
+  1. RITERA Plus Size Tops for Women Off the Shoulder Cold Shoulder Tops Short Sleeve Shirts Summer Blouses Sexy Tunics Tee XL-5XL (ASIN: B08PF98BV4)
+  2. Hocuos Women's Dresses Sexy One Shoulder Cutout Asymmetrical Sleeveless Wrap Split Ruched Bodycon Midi Party Dress (ASIN: B0B4NWJL7H)
+  3. Cable Stitch Women's Cowl Neck Hacci Pullover Top (ASIN: B088BM45MX)
+  4. Ivicoer Casual Puff Long Sleeve Tee Shirts for Women Drop Shoulder Tshirt Drawstring Tie V Neck Tunic Tops Blouses S-XXL (ASIN: B0B3MVMSPL)
+  5. Jouica Women's Summer Casual Spaghetti Strap Sundress Dress Cold Shoulder Ruffle Sleeves Dresses with Pocket (ASIN: B0BBGHSP2S)
+  6. Sedimond Women's Cold Shoulder Casual Short Sleeve Tunic Tops Loose Blouse Shirt S-2XL (ASIN: B0882N8H6Y)
+  7. Amy Byer Girls' Big Print Knit Cold Shoulder Ruffle Dress (ASIN: B073XVX6SK)
+  8. Women's Plus Size Shirts Lace Trim Cold Shoulder Blouse Long Sleeve Loose Tunic Tops (ASIN: B07LG1H65T)
+  9. demonlick Women Off Shoulder T Shirt Long Sleeve Slim Fit Stretchy Blouse Tops (XL, A01-Black) (ASIN: B07W81HKR2)
+  10. OUGES Women's Cutout Cold Shoulder Long Sleeve T-Shirt Tunic Tops (ASIN: B078Q1PP26)
+
+=== RESULT: SUCCESS (Turn 1) ===

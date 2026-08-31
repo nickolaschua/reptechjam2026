@@ -1,0 +1,22 @@
+Target Product Title: Iflex Scrubs for Women, Yoga-Inspired Knit Waistband Scrub Pants CK002
+Target ASIN: B01MQUDPPO
+Scenario: buying
+Constraints: ['polyester', '94% Polyester, 6% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some scrub pants made of polyester. they should also have a bit of spandex for stretch.
+Copilot: Great choice on the material! What size are you looking for in the scrub pants?
+Copilot Attribute Query: size
+Recommendations:
+  1. Fruit of the Loom mens Cushioned Durable Cotton Work Gear With Moisture Wicking Casual Sock, White, 6-12 US(Pack of 10) (ASIN: B0735V67KT)
+  2. PRETTYGARDEN Women's Summer Wrap Maxi Dress Casual Boho Floral V Neck Short Sleeve Ruffle Hem Split Beach Long Dresses (ASIN: B08X6CZS6R)
+  3. Lee Men's Performance Series Extreme Comfort Relaxed Pant (ASIN: B0BM7477G1)
+  4. Ocnoant Mens Pullover Hoodies Warm Hooded Sweatshirts Outwear (ASIN: B09QZSCJ5D)
+  5. Iflex Scrubs for Women, Yoga-Inspired Knit Waistband Scrub Pants CK002 (ASIN: B01MQUDPPO)
+  6. Lildy Women's Denim Jeggings, Stretchable Cotton Blend (ASIN: B07VXRB6NG)
+  7. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+  8. Lacozy Women's Off Shoulder Long Sleeve Oversized Pullover Sweater Knit Jumper Loose Tunic Tops (ASIN: B07H7BWMQF)
+  9. 5 Pack Womens Wool Socks Winter Warm Socks Thick Knit Cabin Cozy Crew Soft Socks Gifts for Women (ASIN: B0C246QRQS)
+  10. Actloe Womens Summer Tanks Sleeveless Button Up Shirts Henley Tight Low Cut Tops Casual (ASIN: B08TG8JRDZ)
+
+=== RESULT: SUCCESS (Turn 1) ===

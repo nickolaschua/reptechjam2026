@@ -1,0 +1,42 @@
+{
+  "description": "Deterministic presentation flow using real catalogue queries and the frozen memory algorithm.",
+  "users": ["techjam_floral", "techjam_black", "techjam_cold"],
+  "sessions": [
+    {
+      "label": "User A preference setup",
+      "user_id": "techjam_floral",
+      "buyer_mode": "browsing",
+      "messages": [
+        "I'm looking for dresses.",
+        "For that, what matters is: floral."
+      ]
+    },
+    {
+      "label": "User B preference setup",
+      "user_id": "techjam_black",
+      "buyer_mode": "browsing",
+      "messages": [
+        "I'm looking for dresses.",
+        "For that, what matters is: black."
+      ]
+    },
+    {
+      "label": "User A vague later query",
+      "user_id": "techjam_floral",
+      "buyer_mode": "browsing",
+      "messages": ["I'm looking for dresses."]
+    },
+    {
+      "label": "User B same vague later query",
+      "user_id": "techjam_black",
+      "buyer_mode": "browsing",
+      "messages": ["I'm looking for dresses."]
+    },
+    {
+      "label": "Cold-start gate-off example",
+      "user_id": "techjam_cold",
+      "buyer_mode": "buying",
+      "messages": ["I'm looking for boots."]
+    }
+  ]
+}

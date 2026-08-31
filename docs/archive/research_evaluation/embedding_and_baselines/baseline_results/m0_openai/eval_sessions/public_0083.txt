@@ -1,0 +1,54 @@
+Target Product Title: CHICZONE Plaid Shacket Jacket Womens Long Flannel Jacket Casual Lapel Button Down Tartan Trench Coats
+Target ASIN: B0BPMCJ1RD
+Scenario: buying
+Constraints: ['polyester', '100% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a women's jacket made of polyester. i really want something that's comfortable and has a nice fit.
+Copilot: That sounds great! What color are you looking for in the jacket?
+Copilot Attribute Query: color
+Recommendations:
+  1. YATHON Casual Dresses for Women Sleeveless Cotton Summer Beach Dress A Line Spaghetti Strap Sundresses with Pockets (ASIN: B0895GRVYV)
+  2. WNEEDU Women's Summer Casual T Shirt Dresses Short Sleeve Swing Dress with Pockets (ASIN: B07QPM54V7)
+  3. SHEKINI Women's Bikini Bottom Twist Front Cheeky Swimsuit Ruched Bathing Suit Bottoms (ASIN: B082QN637V)
+  4. Halife Women's Floral Printed Short Sleeve Henley V Neck T-Shirt Pleated Casual Flowy Tunic Blouse Tops (ASIN: B086BMHQDQ)
+  5. YATHON Women's Vintage Ruffle Floral Flared A Line Swing Casual Cocktail Party Dresses (ASIN: B07N4GLDMB)
+  6. Long Sleeve Turtleneck Women Strech/Short Sleeve High Neck Tops Fitted Tee Shirt (ASIN: B07Y4WKK7Q)
+  7. FITTIN Cross Back Sports Bras for Women - Seamless Sports Bra with Removable Padded for Yoga Gym Workout (ASIN: B09FT7XZSV)
+  8. Thermal Underwear for Women Solid Ultra Soft Long John thermal Underwear Sets Base Layer for Women (ASIN: B09B1Q8X57)
+  9. Women 2 Pieces Outfits Patchwork Sweatsuits Sets Sweatshirts & Pants Tracksuits Lounge Sets (ASIN: B09K7BT774)
+  10. Debra Weitzner 5/6 Pairs Non-slip Hospital Socks Fuzzy Slipper Grip Socks For Women Men (ASIN: B07HJVXBT2)
+
+--- TURN 2 ---
+Shopper: i'm looking for something with a plaid pattern, ideally in a color that stands out but is still casual. do you have any options like that?
+Copilot: I have a stylish plaid jacket that fits your criteria perfectly! Before I show you some options, could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Plaid Jacket for Women, Womens Trendy Plaid Flannel Lapel Button Down Long Sleeve Shirt Jacket Shackets Long Coats (ASIN: B09K7XRD16)
+  2. Womens Summer Tops Fashion Tank Tops Trendy Loose Fit Womens Tops with Cute Printing C-Purple (ASIN: B09NQRPVCF)
+  3. Mens Big and Tall Tee Shirts, Summer Casual Retro Distressed Map Printed T-Shirt Vintage Crewneck Short Sleeve Tshirt (ASIN: B09WR6D62H)
+  4. Women's Business Slim Style Leather Work Pencil Dress Bodycon Peplum Knee Length Party Dress Black (ASIN: B07PL9BPLL)
+  5. Mens Beefy Long Sleeve Henley T-Shirt V Neck Front Placket Tees Fashion Casual Slim Fit Basic Shirt Top (ASIN: B09JZLMRNM)
+  6. Sunmoot Clearance: Plus Size Cat Ear Hooded T-Shirt for Women - Casual Summer Cartoon Print, Side Pockets, Short Sleeve, Gray (ASIN: B07Q45QGFJ)
+  7. LOLONG Womens Long Sleeve Lapel Zipper Sweatshirt Casual Stand Collar Pullover with Pockets (ASIN: B08CKC3PLP)
+  8. Romanstii Womens Fashion Lapel Open Front Sleeveless Plaid Casual Vest Cardigan Jacket with Pocket (ASIN: B07ZNQBNQP)
+  9. Gaharu Women's Summer Tunic Tank V Neck Sleeveless Blouse Top Shirts (ASIN: B0B6FSV1YJ)
+  10. Fall Jackets for Women Fashion Petite to Plus Size Full Zip Down Puffer Jacket Long Length Stand Collar Long Pea Coat (ASIN: B0BB7F1PX3)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. the first option looks like what i'm after with that plaid design and button-down style. i want to buy it!
+Copilot: That's awesome to hear! Just to finalize everything, do you have a specific brand in mind, or are you open to any options?
+Copilot Attribute Query: brand
+Recommendations:
+  1. CHICZONE Plaid Shacket Jacket Womens Long Flannel Jacket Casual Lapel Button Down Tartan Trench Coats (ASIN: B0BPMCJ1RD)
+  2. LookbookStore Women Long Sleeve Plaid Hoodie Button Down Blouse Loose Shacket Jacket (ASIN: B09H2HLZ7J)
+  3. Vince Camuto Womens Plaid Ruffle Peplum Blouse (ASIN: B0945CGH9C)
+  4. Honey GD Women's Plaid Buttoned Long Sleeve Top Shirt (ASIN: B01LY79OMM)
+  5. Dokotoo Womens 2023 Fall Clothes Button Down Plaid Long Cardigans Shacket Jacket Long Sleeve Shirts Coats with Pockets (ASIN: B0B7MFSYVP)
+  6. Misaky Blouse for Women, Autumn Irregular Ruffles Shirt Long Lantern Sleeve Long Tops Shirt (ASIN: B07H3VSMZ1)
+  7. Gnveub Women's Fashion Plaid Shacket Blouses Casual Oversized Flannel Shirt Jacket (ASIN: B09N6S7NV8)
+  8. Fiona Jolin Women's Flannel Shirt Long Sleeve Button Down Plaid Shacket Tops (ASIN: B09LHBW5J9)
+  9. LUYAA Womens Plaid Flannel Shirts Oversized Long Sleeve Casual Button Down Shacket Jacket 2023 Fall Fashion (ASIN: B0C9Q8V5P6)
+  10. Gihuo Women' s Long Plaid Shacket Jacket Fuzzy Fleece Sherpa Coat Fluffy Outerwear (ASIN: B09G6V5TL4)
+
+=== RESULT: SUCCESS (Turn 3) ===

@@ -1,0 +1,22 @@
+Target Product Title: Ray-Ban Woman Sunglasses Black Frame, Green Classic G-15 Lenses, 57MM
+Target ASIN: B0BWLFCTTF
+Scenario: browsing
+Constraints: ['nylon', 'color: black']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's sunglasses with a black frame. i really want them to be made of nylon, and if possible, i’d also prefer a composite or plastic frame.
+Copilot: I found some great options for women's sunglasses with a black frame made from nylon and plastic. Do you have a preferred style in mind, like oversized, cat-eye, or something else?
+Copilot Attribute Query: style
+Recommendations:
+  1. Allegra K Stretchy Black Butterfly Cross Back Bra Shoulder Strap (ASIN: B0094DFXRE)
+  2. Ray-Ban Mens Sunglasses (RB4115) Black Matte/Green Plastic,Nylon - Non-Polarized - 57mm (ASIN: B004KDXE1A)
+  3. Ray-Ban Woman Sunglasses Black Frame, Green Classic G-15 Lenses, 57MM (ASIN: B0BWLFCTTF)
+  4. Bantoye 9pcs Bra Extender 2 Hooks/3 Hooks/4 Hooks Nylon Elastic Back Bra Band Extension Strap Black & White & Nude (ASIN: B07BMMQX7S)
+  5. Spy Optic Libra Wrap Sunglasses, 60 mm (Black/Merlot Fade) (ASIN: B00C4UQ1Q6)
+  6. Spike Studs Sunglasses Womens Punk Fashion Oversized Frame UV 400 (ASIN: B07DVLVZ3H)
+  7. Eyeglasses Kate Spade Jonnie 0QOP Black White (ASIN: B01CVU9L0Q)
+  8. Tom Ford Eyeglasses TF 5184 BLACK 001 TF5184 (ASIN: B005SFPHO6)
+  9. Saint Laurent SL 136 COMBI Sunglasses 001 Black/Silver / Grey Lens 52 mm (ASIN: B076PQ7648)
+  10. BURBERRY BE 2292 3798 Check Multilayer Black Plastic Rectangle Eyeglasses 53mm (ASIN: B08258C8PC)
+
+=== RESULT: SUCCESS (Turn 1) ===

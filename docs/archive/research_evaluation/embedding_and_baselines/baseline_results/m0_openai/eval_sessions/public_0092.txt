@@ -1,0 +1,54 @@
+Target Product Title: COSOSA Womens Satin Striped Pajamas Long Sleeve V-neck Tops and Pants 2-piece Pj Set
+Target ASIN: B07FKNZC43
+Scenario: browsing
+Constraints: ['polyester', '95% Polyester, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfy pajamas, like a two-piece set with long sleeves and a v-neck. i really want them to be made of mostly polyester with a bit of spandex for stretch.
+Copilot: That sounds great! What color are you looking for in your pajamas?
+Copilot Attribute Query: color
+Recommendations:
+  1. Women's Medical Uniform Scrub Sets - 2 Piece V Neck Top and Pants Stretch Lightweight with Pocket TGU12859 Navy L (ASIN: B083LDYTWJ)
+  2. PRETTYGARDEN Women's Two Piece Outfit Long Sleeve Crewneck Pullover Tops And Long Pants Tracksuit (ASIN: B08NTGBDD8)
+  3. Plusfeel Women's Velour Hoodie and Pants Pullover Tracksuits Sports Sweat Suit Sets, S-3XL (ASIN: B088FHB31Q)
+  4. Amstotbbs Women's Tie Dye Printed Long Sleeve Pajamas Set Soft Top and Pants Pockets Joggers PJ Sets Sleepwear Loungewear (ASIN: B08DX9JPV1)
+  5. CHOMOLEZA Womens Pajamas Set Short/Long Sleeve Lounge Sets Printed Sleepwear Soft Pjs with Pockets S-XXL (ASIN: B08CXTHTW6)
+  6. luvamia Women Tie Dye Pajama Sets Long Sleeve Tops and Pants PJ Sets Joggers Loungewear Sleepwear (ASIN: B0953BX2J8)
+  7. Christmas Pajamas for Family, Family Christmas Pjs Matching Sets, Matching Christmas Pjs for Family Xmas Sleepwear (ASIN: B0B9JF7D34)
+  8. Ekouaer Pjs Womens Loungewear Set Tie Dye Pajama Set Sleepwear Long Pants Two Piece Pajamas (ASIN: B096X9M1TT)
+  9. Womens Ribbed Short Sets 2 Piece Outfits Knit Lounge Pajama Set Long Sleeve Pullover Top and Shorts D (ASIN: B08QRQGWWV)
+  10. oodji Ultra Women's V-Neck Back Velvet Dress (ASIN: B07DDD3RBH)
+
+--- TURN 2 ---
+Shopper: i'm not really picky about the color, just something comfy. do you have any options that are soft and have a nice fit?
+Copilot: I found some options that match your criteria! Could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Ymdltue Womens Satin Nightgown with Robe Sexy Silk Robe Lingerie Set 2 Piece Sleepwear (ASIN: B09NHSVSTQ)
+  2. IN'VOLAND Women Plus Size Nightgown Short Sleeve Loungewear V-Neck Sleepwear Comfy Sleep Shirt Pajama Dress (16W-24W (ASIN: B07RWB95CX)
+  3. BELAROI Women Plus Size Tunic Tops Short Sleeve Henley V Neck Button Floral Casual Loose Swing T Shirts for Leggings (ASIN: B09NLVTC6Y)
+  4. PeoKia Womens Pajamas Shorts Sets V Neck Short Sleeve Tops with Shorts Casual Two Piece Lounge Set Nightwear (ASIN: B08T14G2R9)
+  5. AKEWEI Womens Tie Dye Printed Pajamas Set Long Sleeve Shirt & Shorts Two Piece Outfit Sleepwear Lounge Wear Sets (Purple, X-Large) (ASIN: B08GKN3D9B)
+  6. Peddney Women’s Rash Guard Long Sleeve Striped Crop Top UPF 50+ Sun Protection Strappy Knotted Bikini Bathing Suit (ASIN: B08NSX2JHW)
+  7. Uniexcosm Women's Waffle Knit Pajama Sets 2 Piece Long Sleeve Tops and Shorts Loungwear with Pockets (ASIN: B099RSBJG9)
+  8. aihihe Women's Rain Jackets Lightweight Jackets Raincoat Waterproof Lightweight Windproof Adjustable Windbreaker Rain Coat (ASIN: B09HMXWF7C)
+  9. luvamia Women's Black Long Sleeve Henley Shirt Front Buttons Casual Tunic Ruched Top Blouse Size XL(US 16-18) (ASIN: B07DWTPJYB)
+  10. Chicwe Women's Plus Size Silky Satin Pajamas Sets Long Sleeve Loungewear - Two-piece Lace V-Neck Button-Down Nightwear (ASIN: B09HBCHWBS)
+
+--- TURN 3 ---
+Shopper: i'm looking for a medium size. also, do any of these have that soft satin feel and a nice v-neck design?
+Copilot: I have some great options that feature a soft satin feel and a nice v-neck design in medium size! Would you like to see specific recommendations?
+Copilot Attribute Query: size
+Recommendations:
+  1. Barefoot Dreams Washed Satin Eyemask PJ Set, Luxe Satin Sleepwear with Sleep Mask, Cream Multi, (ASIN: B09HHD3PRG)
+  2. Womens Satin Pajamas 2 Piece Short Pajama Set | Silky PJs for Women by Lunachi - Pijamas De Mujer (ASIN: B09YTDCYFK)
+  3. Women Sleepwear Short Set with Spaghetti Strap Satin Slip Black Size L ZE55-2 (ASIN: B074Z4ZVJN)
+  4. luvamia Women Tie Dye Pajama Sets Long Sleeve Tops and Pants PJ Sets Joggers Loungewear Sleepwear (ASIN: B0963L93JY)
+  5. andy & natalie Women's Button Sweater V Neck Sweater Ribbed Pullover Sweater Long Sleeve Sweater with Pockets (ASIN: B07Y2LKNGM)
+  6. COSOSA Womens Satin Striped Pajamas Long Sleeve V-neck Tops and Pants 2-piece Pj Set (ASIN: B07FKNZC43)
+  7. AMTF 2023 Unisex Men and Women Sportswear Suit Autumn and Winter Long Sleeve Pullover Sweatshirt and Trouser Tracksuits (ASIN: B09MKFFG8L)
+  8. Ekouaer Womens Pajamas Set Sleeveless Sleepwear V Neck Nightwear Soft Pj Lounge Sets S-XXL (ASIN: B085XQD5YD)
+  9. VENTELAN Women’s Tie Dye Sweatsuit Long Sleeve Pajamas Set Pullover Sweatpants Joggers Sets Loose Sleepwear with Pockets (ASIN: B08DKLS5D8)
+  10. BTFBM Women Long Sleeve V-Neck Buttons Loose Shirts Blouses Casual Cozy Soft Sweatshirts Tops Leopard Print Solid Color (ASIN: B08L6BB77C)
+
+=== RESULT: SUCCESS (Turn 3) ===

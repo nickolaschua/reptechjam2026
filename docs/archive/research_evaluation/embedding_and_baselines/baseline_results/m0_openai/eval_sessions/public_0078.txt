@@ -1,0 +1,54 @@
+Target Product Title: Hanes Women's Value, Crew Soft Moisture-Wicking Socks, Available in 10 and 14-Packs
+Target ASIN: B0C5RLJDSF
+Scenario: intent_override
+Constraints: ['cotton', '78% Cotton, 21% Polyester, 1% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some women's crew socks that are soft and moisture-wicking. ideally, i want them to have a pull-on closure. i prefer ones made mostly of cotton too.
+Copilot: I found a great option for you! How about the Hanes Women's Value, Crew Soft Moisture-Wicking Socks? They come in 10 and 14-packs. What color are you looking for?
+Copilot Attribute Query: color
+Recommendations:
+  1. Hanes Women's Signature Breathe Cotton Brief Underwear 6-Pack (ASIN: B07PYB8F1G)
+  2. Hanes Women's Value, Crew Soft Moisture-Wicking Socks, Available in 10 and 14-Packs (ASIN: B0C5RLJDSF)
+  3. Daisy Bra Womens Bras Bras for Women no Underwire Lisa Charm Bras Low Back Bra for Backless Dress Sports Bras for Women (ASIN: B0C3CKY894)
+  4. HHX YONLEE No Show Under Ankle Premium Cotton Socks Gift Box Low-Cut Striped patterned Casual Socks for Women and Men (ASIN: B0BZJC1RNV)
+  5. NACHILA Women's Bamboo Viscose T-Shirt Soft Short Sleeve Lounge Top Casual Pajamas Tops Stretch Pjs Shirt S-XL (ASIN: B08GPJY45B)
+  6. JIANG Novelty Funny Socks Birthday Present Chiristmas Gifts Christmas Men Women Unisex (ASIN: B0BPD3RDY5)
+  7. MT EXESPR Athletic Ankle Running Socks Comfy Cotton Cushion Low Cut Tab Socks 6 Pack No Blister Moisture Wicking Sports Socks (ASIN: B09CNSVJC6)
+  8. MIOTAN Boy Shorts Underwear for Women High Waisted Panties Cotton Boxer Briefs 4 Pack (ASIN: B0BCW4QKV5)
+  9. Envlon Womens Yoga Sweatpants for Women High Waisted Jogging Pants Workout Drawstring Comfy Casual Lounge Pants with Pockets (ASIN: B09FPXQHHC)
+  10. We The People T Shirts for Women 4th of July Patriotic Shirt American Flag Graphic Tees Shirts (ASIN: B09T699F5X)
+
+--- TURN 2 ---
+Shopper: oh yeah, that's the one i want! i’ll take it.
+Copilot: Great choice! I'll get that ordered for you. Would you like to specify a size for the socks?
+Copilot Attribute Query: size
+Recommendations:
+  1. Women's Golf Polo Shirts Sleeveless Ladies Tank Top Moisture Wicking Workout Gym Tennis Shirts (ASIN: B095BKZBRQ)
+  2. uSecee Flare Yoga Pants for Women High Waist V Crossover Leggings Workout Pants Wide Leg Workout Pants (ASIN: B0BX6JK787)
+  3. Champion Women's Plus Size Double Dry Cotton Tee (ASIN: B072W7MGFL)
+  4. Ekouaer Short Sleeve Pajamas V Neck Sleepwear Capri Pants Pj Set Wine Red (ASIN: B087MC94RM)
+  5. SERISIMPLE Low Cut Performance Cotton Bamboo Socks Padding Athletic Cushion Compression Wicking Running Men Women 3 Pairs (ASIN: B0BV6747SQ)
+  6. Fishers Finery Women's Ecofabric Active Yoga High Waist Workout Shorts (ASIN: B086SHWLR5)
+  7. Lusome Everyday Womens Moisture Wicking Nina Sleep T-Shirt Size XS-XL (ASIN: B0792KQF5T)
+  8. Nlife Womens Tank Tops Novelty Graphic Tees Shirt with Sayings Casual Tshirts Summer Ladies Tops (ASIN: B07G1TC1X8)
+  9. ClothingAve. Women Ribbed Racerback Stretchy Cotton Blend Tank Top in Singles, Value Packs S-3X (ASIN: B08FC1WB1X)
+  10. EMPIRELION 9" Women Lightweight Beanies Hats, Thin Sports Running Skull Cap Chemo Headwear Sleep Caps (ASIN: B091FV1X6T)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: cotton.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Hanes Women's Value, Crew Soft Moisture-Wicking Socks, Available in 10 and 14-Packs (ASIN: B0C5RLJDSF)
+  2. SERISIMPLE Low Cut Performance Cotton Bamboo Socks Padding Athletic Cushion Compression Wicking Running Men Women 3 Pairs (ASIN: B0BV6747SQ)
+  3. MT EXESPR Athletic Ankle Running Socks Comfy Cotton Cushion Low Cut Tab Socks 6 Pack No Blister Moisture Wicking Sports Socks (ASIN: B09CNSVJC6)
+  4. Women's Golf Polo Shirts Sleeveless Ladies Tank Top Moisture Wicking Workout Gym Tennis Shirts (ASIN: B095BKZBRQ)
+  5. Lusome Everyday Womens Moisture Wicking Nina Sleep T-Shirt Size XS-XL (ASIN: B0792KQF5T)
+  6. Randy Orton Legend Killer Gas Mask Retro T-Shirt Black 2XL (ASIN: B089B2TCFS)
+  7. Hiking Socks, Anyou Men & Women Moisture Wicking Cushion Crew Socks for Trekking & Outdoor Sports (ASIN: B07HG1KYGD)
+  8. Amorbella Womens Cotton Thermal Underwear Long Johns Base Layer Set (ASIN: B08JGCSHXP)
+  9. Loozykit Women's Casual No Show Socks 6-10 Pack Non Slip Flat Boat Line Low Cut Socks (ASIN: B07DPBNYVR)
+  10. YOZLY Sleep Shirt Women Tie Dye Nightgown Short Sleeve Cotton Nightshirt S-XXL (ASIN: B08R3B84YG)
+
+=== RESULT: SUCCESS (Turn 3) ===

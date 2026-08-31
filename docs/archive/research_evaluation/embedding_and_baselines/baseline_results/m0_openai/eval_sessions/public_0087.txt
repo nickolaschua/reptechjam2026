@@ -1,0 +1,22 @@
+Target Product Title: Goodthreads Men's Standard-Fit Short-Sleeve Printed Poplin Shirt
+Target ASIN: B0BT158RRR
+Scenario: browsing
+Constraints: ['cotton', '100% Cotton']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a casual button-down shirt that's made of 100% cotton. something comfortable and with a good fit would be great.
+Copilot: Great choice! Do you have a preferred color in mind for the shirt?
+Copilot Attribute Query: color
+Recommendations:
+  1. Goodthreads Men's Standard-Fit Short-Sleeve Printed Poplin Shirt (ASIN: B0BT158RRR)
+  2. Alimens & Gentle 100% Cotton Regular Fit Short Sleeve Casual Hawaiian Shirt for Men (ASIN: B0BGQFMD6L)
+  3. Goodthreads Men's Standard-Fit Long-Sleeve Gingham Poplin Shirt (ASIN: B06WLHD6PL)
+  4. Keyocean Women Nightgowns, Soft 100% Cotton Lightweight Short Sleeve Night-dresses for Ladies (ASIN: B07CCLV3XP)
+  5. WEWINK CUKOO 100% Cotton Women Capri Pajama Pants, Soft Lounge Bottom with Pockets Sleepwear (ASIN: B07C5L3V4Y)
+  6. Embroidery Men's Sweater Cardigan Custom Casual Cotton, Monogrammed Your Text Here (ASIN: B085NLCL16)
+  7. Men's Short Sleeve Oxford Button Down Casual Shirt Light Gray XX-Large (ASIN: B0788L9M7W)
+  8. Jauoop Womens Square Neck Puff Sleeve Summer Dresses Casual Buttonned Backless Tiered Ruffle A-line Flowy Mini Dress (ASIN: B0BNMKCDLL)
+  9. WHATLEES Mens Fashion Luxury Casual Slim Fit Stylish Long Sleeve Dress Shirts (ASIN: B07GB6L476)
+  10. Smiley Face Hoodie Trendy Couples Sweatshirts Hip Hop Sweater Casual Pullover Hooded for Teens Men Women (ASIN: B0BDQYB7SC)
+
+=== RESULT: SUCCESS (Turn 1) ===

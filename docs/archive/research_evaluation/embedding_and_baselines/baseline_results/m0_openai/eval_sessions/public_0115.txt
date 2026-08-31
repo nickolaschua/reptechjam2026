@@ -1,0 +1,22 @@
+Target Product Title: PrinStory Womens Sleepwear Short Sleeve Nightgown Soft Sleepshirt Pleated Nightshirt Scoopneck Casual Loungewear
+Target ASIN: B08VWZBYPY
+Scenario: browsing
+Constraints: ['rayon', '95% Rayon, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a comfy nightgown, something with short sleeves and a scoop neck. it should be soft, made mostly of rayon with a bit of spandex for stretch.
+Copilot: That sounds lovely! What color are you thinking for your nightgown?
+Copilot Attribute Query: color
+Recommendations:
+  1. PrinStory Womens Sleepwear Short Sleeve Nightgown Soft Sleepshirt Pleated Nightshirt Scoopneck Casual Loungewear (ASIN: B08VWZBYPY)
+  2. Ekouaer Womens Nightshirt Short Sleeve Nightgown Soft Comfy Sleep Shirts Pleated Scoopneck Night Dress S-XXL (ASIN: B07X7ND7T7)
+  3. Ekouaer Women's Nightgown Short Sleeves Nightshirt V-Neck Sleepwear Button Down Pajama Dress (ASIN: B08YNV5LCR)
+  4. Evanhome Nightgown for Women Button Down Nightshirt Boyfriend Sleep Tee Loose House Dress Soft Lounge Dress (ASIN: B08M43YMR9)
+  5. Jouica Women's Summer Casual Spaghetti Strap Sundress Dress Cold Shoulder Ruffle Sleeves Dresses with Pocket (ASIN: B0BBGHSP2S)
+  6. IN'VOLAND Women Plus Size Nightgown Short Sleeve Loungewear V-Neck Sleepwear Comfy Sleep Shirt Pajama Dress (16W-24W (ASIN: B07RWB95CX)
+  7. Nandashe Womens 3/4 Sleeves Floral Tunic Shirts Summer Casual Dressy Blouse Tops (ASIN: B07BBH2R9M)
+  8. FOWSMON Womens Basic Long Sleeve T Shirt Comfy Layer Scoop Neck Tee Shirts Solid Tops (ASIN: B08HPM5PX1)
+  9. 2LUV Women's Sequin Shoulder Shift Dress (ASIN: B00GG2B208)
+  10. YIMANIE Night Gown for Ladies, Soft Short Sleeve Women's Sleepwear Breathable Nightgowns for Women (ASIN: B093SQWKKH)
+
+=== RESULT: SUCCESS (Turn 1) ===

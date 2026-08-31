@@ -1,5 +1,7 @@
 # TechJam Conversational E-Commerce Search Challenge
 
+> **Competition/reference tree:** This directory contains the submission-style evaluator and agent. Current longitudinal research lives under `system/shopping_agent`.
+
 Build an AI shopping agent that asks useful follow-up questions and recommends the customer's hidden target product within at most 10 turns.
 
 ## What You Receive

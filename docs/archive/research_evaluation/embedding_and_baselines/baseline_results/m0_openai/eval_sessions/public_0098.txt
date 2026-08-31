@@ -1,0 +1,22 @@
+Target Product Title: adidas Men's Lite Racer Adapt 4.0 Running Shoe
+Target ASIN: B08CZ34D75
+Scenario: browsing
+Constraints: ['polyester', '100% Rubber']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some running shoes that are really comfortable and have a slip-on design. they should be made of polyester and have a rubber sole.
+Copilot: Great choice! What color are you looking for in your running shoes?
+Copilot Attribute Query: color
+Recommendations:
+  1. adidas Men's Lite Racer Adapt 4.0 Running Shoe (ASIN: B08CZ34D75)
+  2. GFtime Water Shoes, Unisex Men Women Barefoot Quick Dry Slip On Aqua Shoes for Swim Beach Pool Surf Yoga Sports (ASIN: B072Q5WGY7)
+  3. CAMEL CROWN Mens Sneakers Running Shoes Lightweight Casual Walking Training Sports Athletic Shoes (ASIN: B07GWF1N28)
+  4. KUNWFNIX Boys Girls Sneakers Kids Lightweight Breathable Strap Athletic Running Shoes for Kids/Toddler Grey (ASIN: B08V55QT5L)
+  5. Women's Trial Running Shoes Men's Walking Shoes Minimalist Barefoot Shoes for Women Slip on Fashion Sneakers Lightweight Water Hiking Shoes Non-Slip Running Shoes Fitness Cross Trainning Workout (ASIN: B08CXRD64S)
+  6. Nike Toddler Girls' Flex Runner Slip-On Athletic Sneakers (ASIN: B0919JRQ14)
+  7. Running Shoes Athletic Shoes Slip-On Sport Shoes Lightweight Comfortable Sneakers (ASIN: B079GNZ3CD)
+  8. WYSBAOSHU Boys Girls Shoes Kids Tennis Running Sneakers Lightweight Mesh Breathable Athletic Shoes (ASIN: B08THB3STJ)
+  9. Breifola Women's Slip-On Walking Shoes Running Tennis Mesh-Comfortable Lightweight Sneakers 004-11-8.5 Navy/Grey (ASIN: B08FQVK21D)
+  10. Wonvatu Walking Shoes for Women Lightweight Athletic Slip-On Running Shoes Fashion Sneakers Sports Shoes Black935 8 (ASIN: B07FZ16V34)
+
+=== RESULT: SUCCESS (Turn 1) ===

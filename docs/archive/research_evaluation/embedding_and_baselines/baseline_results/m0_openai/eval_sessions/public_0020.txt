@@ -1,0 +1,22 @@
+Target Product Title: Funny Saying Novelty Gift ideas - My Favorite People Call Me Grandma Long Sleeve T-Shirt
+Target ASIN: B08P4SSFX4
+Scenario: buying
+Constraints: ['cotton', 'color: grey']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a long sleeve t-shirt that's made of cotton. i want something fun that says something cute about being a grandma, and ideally, i’d like it in grey.
+Copilot: That sounds like a great choice! Could you let me know what size you're looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Marilyn Monroe Outlaw Forever T-Shirt Biker Live to Ride Motorcycle Men's Tee (ASIN: B08KGTRCZM)
+  2. Distressed Ford Trucks Women's T-Shirt F150 American Pick Up (ASIN: B0768LS2JF)
+  3. No Zip a dee in my Do dah day Shirt Fun Older Persons Saying (ASIN: B073R7XCWH)
+  4. Funny Saying Novelty Gift ideas - My Favorite People Call Me Grandma Long Sleeve T-Shirt (ASIN: B08P4SSFX4)
+  5. Womens Mom Life Messy Bun Coffee Run T-Shirt (ASIN: B07612DBS9)
+  6. 3dRose InspirationzStore Typography - Im a Bubbie - Whats Your Superpower - hot Pink. Funny Gift for Grandma - Adult Light-Pink-T-Shirt 2XL (ts_193729_38) (ASIN: B00MW6ZZJ6)
+  7. Funny 50th Birthday Joke Gift 50 Years Old Novelty Gag Shirt (ASIN: B074S36RH8)
+  8. Womens Messy Hair Yoga Pants Coffee Mom Life Shirt Christmas Idea (ASIN: B01MYPZLFN)
+  9. Old Lives Matter Funny Elderly Grandparents 70th 80thT-Shirt (ASIN: B0785FP3BH)
+  10. I Can't a dult Today Shirt for Women Funny Summer O Neck Short Sleeve Tops Holiday Cute Family Trip Shirt (ASIN: B092QJQSJR)
+
+=== RESULT: SUCCESS (Turn 1) ===

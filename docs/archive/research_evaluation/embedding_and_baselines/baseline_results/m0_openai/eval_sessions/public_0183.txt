@@ -1,0 +1,70 @@
+Target Product Title: SheIn Women's Double Breasted Long Vest Jacket Casual Sleeveless Pocket Outerwear Longline
+Target ASIN: B07Z2KSZR3
+Scenario: intent_override
+Constraints: ['polyester', '100% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a long vest jacket that's sleeveless and has pockets. ideally, it should be hand wash only. do you have anything like that?
+Copilot: I found a couple of options that match your criteria! Could you let me know what color you prefer for the vest jacket?
+Copilot Attribute Query: color
+Recommendations:
+  1. SheIn Women's Double Breasted Long Vest Jacket Casual Sleeveless Pocket Outerwear Longline (ASIN: B07Z2KSZR3)
+  2. Digood Women's Coat, Women Camouflage Jacket Coat Autumn Winter Street Jacket Women Casual Jackets (ASIN: B091NQBS12)
+  3. Longwu Women's Casual V-Neck Sleeveless/Short Sleeve Side Split Drawstring Waist Midi Length Vest Dress with Pocket (ASIN: B08BJMT9M7)
+  4. Shakumy Women's Long Sleeve Zipper Sherpa Sweatshirt Pullover Fuzzy Fleece Winter Casual Hooded Outwear Jackets Coats (ASIN: B08J7SYZPH)
+  5. Willit Men's Golf Vest Lightweight Fleece Lined Vest Softshell Outerwear Sleeveless Jacket for Hiking Runing Causal (ASIN: B09DCBFKQK)
+  6. Romanstii Womens Fashion Lapel Open Front Sleeveless Plaid Casual Vest Cardigan Jacket with Pocket (ASIN: B07ZNQBNQP)
+  7. Geckatte Womens Sleeveless Plaid Vest Lapel Cardigan Open Front Jacket with Pockets (ASIN: B07DQN9FDR)
+  8. Men Winter Genuine Sheepskin Vest, Spring Fur Leather Plus Size Jacket Coat (ASIN: B09BMT754Q)
+  9. MIHOLL Women's Fashion V Neck Sleeveless Maxi Dress Long with Pockets (ASIN: B075WRJSP8)
+  10. FLORHO Women Casual Spaghetti Strap Overalls Loose Jumper Dress with Side Pocket (ASIN: B08XQLYF82)
+
+--- TURN 2 ---
+Shopper: i'm really looking for something in a neutral color, like beige or black. the first option looks perfect, i want to buy it!
+Copilot: Great choice! The long vest jacket in black or beige will be a stylish addition to your wardrobe. Before you proceed to checkout, could you let me know what size you need?
+Copilot Attribute Query: size
+Recommendations:
+  1. BHSJ Women's Fashion Long Sleeve Tops Cute Frog Printed Pullover Hoodie Sweatshirt Ladies Casual Loose Pocket Hoodie (ASIN: B09BJMYCQ8)
+  2. Men's Short Sleeve T-Shirt and Shorts Set 2 Piece Summer Outfits Fashion Stripe Color Block Tracksuits Casual Set (ASIN: B0BWRSD1W3)
+  3. Women's Rainbow Striped Color Block Hoodie Sweater Long Sleeve V Neck Casual Hollow Out Knit Pullover Tops (ASIN: B0B31JFX4H)
+  4. WANGPU Oversized Long Down Vest for Women Lightweight Puffer Jackets with Hood Outdoor Coats Recreation Waistcoat Outerwear (ASIN: B09HXN7ZJ5)
+  5. Womens Short Sleeves Button Down Shirt with Pocket V Neck Collared Blouse Tops Casual T-Shirt(S-3XL) (ASIN: B08B14396X)
+  6. Howley Women V Neck Tops Daisy Print Blouse Short Sleeve Shirts Lace Patchwork Tunic Casual Loose Pullover (ASIN: B08YK1WWZT)
+  7. Clothink Women Black Organza Plaid Print Skater Elegant Long Maxi Dress (ASIN: B019GF9C4Y)
+  8. QILINXUAN 4th of July Dress for Women American Flag Printed Independence Day Long Maxi Dresses Sleeveless Summer Cami Dress (ASIN: B093SLD4MG)
+  9. Kamidun Womens Overalls Summer Casual Cotton Adjustable Loose Button Bib Linen Baggy Sleeveless Jumpsuits with Pockets (ASIN: B0BWCWX4DC)
+  10. Womens Jumpsuits Casual Button Deep V Neck Short Sleeve High Waist Wide Leg Playsuit Trousers Long Rompers with Pockets (ASIN: B07PQMX1PW)
+
+--- TURN 3 ---
+Shopper: i'm looking for a size medium. also, ideally, i’d like something that’s hand wash only. do you have any options like that?
+Copilot: I found a couple of options that are hand wash only! Just to narrow it down further, do you have a preferred brand in mind for the vest jacket?
+Copilot Attribute Query: brand
+Recommendations:
+  1. HOULENGS Women's Stand Collar Crop Puffer Vest Lightweight Sleeveless Winter Warm Outerwear Puffer Vest Padded Gilet (ASIN: B0B1DRXCCK)
+  2. Katoot@ Steampunk Gothic Punk Slim fit Sleeveless Vest Leather Female Jacket Coat (ASIN: B09P7864Q5)
+  3. Womens Tops Dressy Casual, Women's Light Up Shiny Xmas Tree Print Shirts Casual Ugly Christmas Sweater Holiday T Shirts (ASIN: B0BFRKL41C)
+  4. Girls Hoodie, Misaky Rose Parttern Sweatshirt Jumper Sweater Crop Top Pullover Tops (ASIN: B07GFQ6BBW)
+  5. Women's Elegant Flowy Dress Round Neck Short Sleeve High Waist Tunic Floral Maxi Long Dresses Midi Sundress for Party (ASIN: B0B2VR1BCH)
+  6. Fall Jackets for Women Fashion Petite to Plus Size Full Zip Down Puffer Jacket Long Length Stand Collar Long Pea Coat (ASIN: B0BB7F1PX3)
+  7. Womens Tops Long Sleeve Round Neck Leopard Pocket Casual T Shirts Blouses Tunic Sweatshirt (ASIN: B083ZB8RH3)
+  8. Yu He Women's New Womens Real Rabbit Fur Raccoon collar Poncho Knitted Cape Jacket Coat Shawl (ASIN: B07GNX76CF)
+  9. LISTHA Women Long Sleeve Hoodie Cat Ear Sweatshirt Hooded Pullover Tops Blouse (ASIN: B07JHH7K6W)
+  10. GRACE KARIN Women Crewneck Sleeveless Sweater Vest Ribbed Knitwear Jumper Tank Tops Streetwear Black L (ASIN: B097254XDV)
+
+--- TURN 4 ---
+Shopper: Actually, ignore my earlier preference. What I need is: polyester.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. SheIn Women's Double Breasted Long Vest Jacket Casual Sleeveless Pocket Outerwear Longline (ASIN: B07Z2KSZR3)
+  2. Katoot@ Steampunk Gothic Punk Slim fit Sleeveless Vest Leather Female Jacket Coat (ASIN: B09P7864Q5)
+  3. Devil Fashion Gothic Vintage Long Swallowtail Coat for Women Steampunk Black Red Velvet Jackets Overcoats (ASIN: B07DNBBYH3)
+  4. Romanstii Womens Fashion Lapel Open Front Sleeveless Plaid Casual Vest Cardigan Jacket with Pocket (ASIN: B07ZNQBNQP)
+  5. Geckatte Womens Sleeveless Plaid Vest Lapel Cardigan Open Front Jacket with Pockets (ASIN: B07DQN9FDR)
+  6. Ferbia Womens Cardigans Vest Kimonos Hooded Plaid Sleeveless Fringe Drape Shawl Coat Jacket (ASIN: B075T6J17H)
+  7. Longwu Women's Casual V-Neck Sleeveless/Short Sleeve Side Split Drawstring Waist Midi Length Vest Dress with Pocket (ASIN: B08BJMT9M7)
+  8. HOW'ON Men's Classic Sleeveless Stand Collar Quilted Puffer Down Vest Outwear Army Green S (ASIN: B0758CF17N)
+  9. PRETTYGARDEN Women's Two Piece Tracksuit Set Long Sleeve Zipper Hoodie Jacket with Sweatpants Sweatsuit Jogger Workout Set Solid-Black (ASIN: B08KXNCH77)
+  10. Port Authority Core Soft Shell Vest J325 - Black J325 M (ASIN: B00TSOA03G)
+
+=== RESULT: SUCCESS (Turn 4) ===

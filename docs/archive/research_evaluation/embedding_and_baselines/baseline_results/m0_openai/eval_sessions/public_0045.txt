@@ -1,0 +1,38 @@
+Target Product Title: HOCOSIT Women's Floral Print Short Ruffle Sleeve Pleated Front V Neck Button Tunic Tops
+Target ASIN: B07Z8NTWVV
+Scenario: buying
+Constraints: ['polyester', '95% Polyester, 5% Spandex']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a top that has a floral print and is made of polyester. it should have a nice fit and maybe some ruffle sleeves too.
+Copilot: That sounds lovely! What color are you interested in for the floral top?
+Copilot Attribute Query: color
+Recommendations:
+  1. Halife Women's Floral Printed Short Sleeve Henley V Neck T-Shirt Pleated Casual Flowy Tunic Blouse Tops (ASIN: B086BMHQDQ)
+  2. YATHON Women's Vintage Ruffle Floral Flared A Line Swing Casual Cocktail Party Dresses (ASIN: B07N4GLDMB)
+  3. PRETTYGARDEN Women's Casual Long Sleeve Midi Fall Dress Boho Pleated V Neck Ruffled Vintage Floral Print Flowy Long Dresses (ASIN: B09GNFWBJH)
+  4. BOKALY Women's Vintage Ruffles Dress V Neck Floral Flared Swing A-Line Casual Party Dresses (ASIN: B07QGRSBL8)
+  5. obuobu Women's Tie Back Lantern Long Sleeve Dresses Ruffle Off Shoulder a Line Mini Dress (ASIN: B09GYDZ779)
+  6. Toddler Baby Girl Clothes Ruffle Short Sleeve T-Shirt Tops + Floral Print Flare Pants Bell-bottom 2Pcs Summer Outfits (ASIN: B09QKWYRD2)
+  7. Sunmoot Clearance: Plus Size Cat Ear Hooded T-Shirt for Women - Casual Summer Cartoon Print, Side Pockets, Short Sleeve, Gray (ASIN: B07Q45QGFJ)
+  8. Baby Girls Two Piece Tankini Swimsuit Hawaiian Ruffle Swimwear Bathing Suit Set (Rose Red Polka Dot, 18-24 Months) (ASIN: B083R7Q77P)
+  9. levaca Women's Plain Casual High Low Hem Flowy Midi Dress (ASIN: B07QYMBPPJ)
+  10. Womens Long Sleeve Dresses Midi T Shirt Casual Floral (ASIN: B07483YC42)
+
+--- TURN 2 ---
+Shopper: i'm looking for something with a floral print, maybe with ruffles. i prefer a comfy fit, ideally with a v-neck and button closure. do you have any options that match?
+Copilot: I found some great options for you! Just to narrow it down further, what size are you looking for in the floral top?
+Copilot Attribute Query: size
+Recommendations:
+  1. Sequins Party Dress,Keepfit Women's Fashion Long Sleeve Deep V-Neck Bodycon Dress (ASIN: B07N87P7JH)
+  2. FORESTIME Summer Dresses for Women 2021,Womens Summer Beach Boho Print Halter Neck Sleeveless Splice Dress (ASIN: B0948T9V3Y)
+  3. ayreus Women's Floral Prints V-Neck Blouse Shirts Button Down Long Sleeve Flowy Tunic Top (ASIN: B08P2SXC54)
+  4. HIRIRI Women Fashion Lace Floral Splicing O-Neck T-Shirt Tops Long Sleeve Tunic Shirt (ASIN: B07XL8LC3G)
+  5. Women's Wrap V Neck Dress Short Sleeve Floral Print Ruffle A-Line Swing Short Dress with Belt (ASIN: B083DM2SVX)
+  6. KOJOOIN Women's Summer Boho Maxi Dresses Casual Short Sleeve V Neck Button Up Flowy Ruffle Hem Long Beach Dress (ASIN: B0BV2TDKJ6)
+  7. Summer Women Lace Tshirt Tops Trendy Cute Loose Fit Crewneck Tunic Blouses Short Sleeve Casual Comfy Soft Peplum Tees (ASIN: B09721LJ61)
+  8. Women's Vintage Gothic Patchwork Plaid Print Dress Elegant Long Sleeve Mock Neck Skirt Button Ruffle Flowy Maxi Party Dresses (ASIN: B09JGLG694)
+  9. HOCOSIT Women's Floral Print Short Ruffle Sleeve Pleated Front V Neck Button Tunic Tops (ASIN: B07Z8NTWVV)
+  10. ROVLET Women's Floral Boho V-Neck Button Down Long Sleeve Ruffle Elastic Waist Printed Mini Dress Beach Sundress… (ASIN: B08L65ZNPX)
+
+=== RESULT: SUCCESS (Turn 2) ===

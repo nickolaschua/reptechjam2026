@@ -1,0 +1,49 @@
+Target Product Title: Lanzom Womens Classic Wide Brim Floppy Panama Hat Belt Buckle Wool Fedora Hat
+Target ASIN: B07CZ84YFJ
+Scenario: intent_override
+Constraints: ['wool', '65% Polyester, 35% Wool']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for a nice floppy panama hat, ideally with a buckle closure. something stylish and comfortable would be great!
+Copilot: That sounds like a great choice! Could you let me know what color you're looking for in your Panama hat?
+Copilot Attribute Query: color
+Recommendations:
+  1. XingL Unisex Bill Murray Awesome Adjustable Washed Hat Baseball Caps (ASIN: B01IHIG762)
+  2. Lisianthus Women's Western Cowboy & Cowgirl Hat Wide Brim Style (ASIN: B099PML187)
+  3. Gossifan Classic Wide Brim Fedora Panama Hat with Belt Buckle (ASIN: B0881KXXSL)
+  4. Trapper Bluetooth Hat Ushanka Russian Hat with Mask for Men Women Winter Hunting Hat Windproof Ski Mask Aviator Bomber Hat with Build-in Wireless Earphones Mic Black (ASIN: B0BC7RYD2M)
+  5. Women's Crisscross Ponytail Hats Baseball Caps Adjustable Washed Trucker Dad Hat (ASIN: B095X3LCMG)
+  6. LHSPOSIFD Unisex Mens Baseball Hat Casual Adjustable Mesh Sports-MTU-Friedrichshafen-Flat Cap (ASIN: B07S75ZJZR)
+  7. 2 Pieces Newsboy Hats for Men Flat Cotton Cap Irish Hats Gatsby Cabbie Cap for Hunting Traveling Cycling Fishing Hiking, Black and Dark Gray() (ASIN: B0B9W9YYHW)
+  8. squaregarden Flat Caps for Men, Beret Leather Hat Cabbie Gatsby Newsboy Cap Ivy Irish Hats (ASIN: B078H4173W)
+  9. Us Air Force Retired Colonel Mens Womens Running Baseball Cap Outwork Hat Adjustable Exercise Chapeau (ASIN: B08WPBHQY8)
+  10. Sun Visor Wide Brim Straw Hat Women Beach Sun Visor Uv Protection Women's Foldable Sun Hat Women Beach Hat with Leopard Trim (ASIN: B0B2HD6S9F)
+
+--- TURN 2 ---
+Shopper: i'm not really focused on color right now, but i'm leaning towards something with a buckle closure. do you have any options like that?
+Copilot: I understand! How about we narrow it down a bit more? What size are you looking for in your Panama hat?
+Copilot Attribute Query: size
+Recommendations:
+  1. Us Navy Aviation Machinist's Mate Ad Rating Unisex Sandwich Cap Denim Hats Baseball Cap (ASIN: B0BJW2X35V)
+  2. Eurzom 2 Pieces Girls Baseball Cap Summer Ponytail Hats Adjustable Baseball Cap High Messy Bun Baseball Hat for Girls Women (ASIN: B0B92C8FFY)
+  3. DXYAKY Beret Hats for Women and Girls, Classic PU Leather French Artist Beret Cap, Fashion Ladies Solid Color Beanie Hat (ASIN: B0B6ST9NGK)
+  4. Hijab Double Loop Slip On Scarf Pull Over Crepe Convenient Shawl Headscarf,Muslim Head Wraps AccessoriesF252 (ASIN: B09YTQMSKP)
+  5. Custom Hat Customized Hip Hop Hat Add Your Design Here Unisex Personalized Hats Custom Trucker Hat Custom Baseball Hat (ASIN: B0B3RSGP9J)
+
+--- TURN 3 ---
+Shopper: Actually, ignore my earlier preference. What I need is: wool.
+Copilot: Here are the top matches based on your preferences.
+Copilot Attribute Query: other
+Recommendations:
+  1. Dancing Buddha Nepal Hand Knit Tiryagyoni Sherpa Hat - Cold Weather Hat with Ear Flaps & Soft, Warm & Comfortable (ASIN: B00RY50VYY)
+  2. XingL Unisex Bill Murray Awesome Adjustable Washed Hat Baseball Caps (ASIN: B01IHIG762)
+  3. Men's Belt - Autolock Leather Ratchet Dress Belt for Men With Automatic Buckle - Trim to Fit (ASIN: B07TCGFKZF)
+  4. 14mm Black Genuine Leather Watch Band | Teju Lizard Grain, Lightly Padded, Replacement Wrist Strap that brings New Life to Any Watch (Womens Standard Length) (ASIN: B00MHZHVZ8)
+  5. Lanzom Womens Classic Wide Brim Floppy Panama Hat Belt Buckle Wool Fedora Hat (ASIN: B07CZ84YFJ)
+  6. ZSXZSYTO Classic fashion white Scarf knitting wool Set Cold Weather Hat and scarves sets for men women (ASIN: B09F3FZZY3)
+  7. Sakkas Womens Wool Blend Foldable Cloche Bucket Winter Hat with Buckle Accent (ASIN: B009YLK89E)
+  8. Wool Trilby Hat Felt Fedora Hats Men Women Dress Wide Brim Gangster Wonderful (M,Gray) (ASIN: B07583JR1F)
+  9. FALETO Two Tone Red Bottom Wide Brim Wool Felt Fedora Hat Panama Hat Casual Jazz Hats for Men Women (ASIN: B08MXLQCQV)
+  10. Thin Red Line,Thin Blue Line, Thin RED & Blue Line Flexfit Baseball Cap (ASIN: B079K9QNGT)
+
+=== RESULT: SUCCESS (Turn 3) ===

@@ -1,0 +1,6111 @@
+{
+  "schema_version": "nickolas-longitudinal-fixture-v2",
+  "frozen_before_m3": true,
+  "selection_policy": "catalogue category/trait evidence only; lexicographic ASIN; no M3 outcomes",
+  "users": [
+    {
+      "user_id": "lp_00",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for boots."
+          ],
+          "target_asin": "B000FHEA4A",
+          "relevant_asins": [
+            "B000FHEA4A",
+            "B000MRV3JI",
+            "B000R9BSUU",
+            "B000R9DEPM",
+            "B000S6OKOI"
+          ],
+          "relevant_asin_audit": {
+            "B000FHEA4A": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Wolverine Men's Tacoma Hiker 6\" Steel Toe EH",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men"
+              ]
+            },
+            "B000MRV3JI": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Bates Men's Enforcer 8 Inch Nylon Leather Waterproof Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Outdoor & Work",
+                "Work & Safety"
+              ]
+            },
+            "B000R9BSUU": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Women's Lavela II Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots"
+              ]
+            },
+            "B000R9DEPM": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Women's Bugabootoo Snow Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes"
+              ]
+            },
+            "B000S6OKOI": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Sorel Men's Alpha Trac Buckle Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Outdoor & Work",
+                "Snow & Cold Weather"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "waterproof"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "waterproof"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_01",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for necklaces."
+          ],
+          "target_asin": "7750000348",
+          "relevant_asins": [
+            "7750000348",
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0007PQO3U"
+          ],
+          "relevant_asin_audit": {
+            "7750000348": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Vatican Holy Pray Rosary Roses Petal Odor Beads Silver Plated In Plastic Round Box",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0007PQO3U": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Silver Insanity Halloween Black Widow Spider Witch Necklace - Large & Unique Bib Necklace and Earring Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Jewelry Sets"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "silver"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_02",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for dresses."
+          ],
+          "target_asin": "B004LGK0Z4",
+          "relevant_asins": [
+            "B004LGK0Z4",
+            "B005UPSF20",
+            "B007Z3T85S",
+            "B0081NVESA",
+            "B00AOHEY24"
+          ],
+          "relevant_asin_audit": {
+            "B004LGK0Z4": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Bonnie Jean Girls 2T-6X Yellow Peach Coral Floral Burnout Bubble Skirt Dress",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Clothing",
+                "Dresses",
+                "Special Occasion"
+              ]
+            },
+            "B005UPSF20": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "GO2BRAS Sarah Semi Demi Unlined Underwire 1432144",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses"
+              ]
+            },
+            "B007Z3T85S": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "FRYE Women's Carson Collapsible Ballet",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Flats"
+              ]
+            },
+            "B0081NVESA": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Crocs Women's Kadee Flats Ballet, 11",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Flats"
+              ]
+            },
+            "B00AOHEY24": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Evan Picone Women's Sleeveless Floral Dress",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Work"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "floral"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "floral"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_03",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for backpacks."
+          ],
+          "target_asin": "B0018DVOQW",
+          "relevant_asins": [
+            "B0018DVOQW",
+            "B0020MMQBW",
+            "B002MPPW0E",
+            "B002MUBEOC",
+            "B003IO2OPY"
+          ],
+          "relevant_asin_audit": {
+            "B0018DVOQW": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Simple Men's 2534 Clog",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Mules & Clogs"
+              ]
+            },
+            "B0020MMQBW": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Lowa Women's Tibet Pro GTX Backpacking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Backpacking Boots"
+              ]
+            },
+            "B002MPPW0E": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Lowa Men's Renegade II GTX Lo Hiking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B002MUBEOC": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Simple Men's D-Solve Sneaker",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Fashion Sneakers"
+              ]
+            },
+            "B003IO2OPY": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Merrell Men's Moab Gore-Tex Hiking Shoe, Beluga,12 W US",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Shoes"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "leather"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "leather"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_04",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for jackets."
+          ],
+          "target_asin": "B000B8QEO2",
+          "relevant_asins": [
+            "B000B8QEO2",
+            "B000K7IJ10",
+            "B001CM8L5G",
+            "B001N2MSRW",
+            "B002MCZKFE"
+          ],
+          "relevant_asin_audit": {
+            "B000B8QEO2": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "MARMOT Women's PreCip Jacket, Sea Breeze, X-Small",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests",
+                "Trench, Rain & Anoraks",
+                "Raincoats"
+              ]
+            },
+            "B000K7IJ10": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Oakley Half Jacket Polarized Replacement Lenses",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Accessories",
+                "Sunglasses & Eyewear Accessories",
+                "Replacement Sunglass Lenses"
+              ]
+            },
+            "B001CM8L5G": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Kidorable Red Ladybug Natural Rubber Rain Boots With A Pull On Heel Tab",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Girls",
+                "Outdoor & Work",
+                "Rain"
+              ]
+            },
+            "B001N2MSRW": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Helly Hansen Women's Vancouver Jacket",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests"
+              ]
+            },
+            "B002MCZKFE": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Sportswear Cuddly Kate Waterproof Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Baby",
+                "Baby Girls",
+                "Clothing",
+                "Snow & Rainwear",
+                "Snow Suits"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "waterproof"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "waterproof"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_05",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for sandals."
+          ],
+          "target_asin": "B0002M6JB0",
+          "relevant_asins": [
+            "B0002M6JB0",
+            "B0007DHELS",
+            "B0009F1A4G",
+            "B000HVY0A8",
+            "B000IBPEOI"
+          ],
+          "relevant_asin_audit": {
+            "B0002M6JB0": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Merrell Men's Tideriser Luna Slide LTR Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B0007DHELS": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Naturalizer Women's Dafny Dress Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Platforms & Wedges"
+              ]
+            },
+            "B0009F1A4G": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Exchange by Charles David Women's Gilda Platform Slide",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B000HVY0A8": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "FRYE Women's Carson Heel Tab Knee-High Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Women",
+                "Fashion",
+                "Riding"
+              ]
+            },
+            "B000IBPEOI": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Two Lips Women's Tevonna Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots",
+                "Mid-Calf"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "leather"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "leather"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_06",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for earrings."
+          ],
+          "target_asin": "B0000APUDV",
+          "relevant_asins": [
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0002Z7M40",
+            "B0006O1H7A"
+          ],
+          "relevant_asin_audit": {
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0002Z7M40": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Large Filigree Teardrop Hook Earrings with Gold Overlay in Two Tone Sterling Silver",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            },
+            "B0006O1H7A": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Joyous Heart Celtic Knot Chain Dangle and Amethyst Sterling Silver Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "silver"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_07",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for shirts."
+          ],
+          "target_asin": "B0009GCUIU",
+          "relevant_asins": [
+            "B0009GCUIU",
+            "B0009GI3CM",
+            "B0009IJO8M",
+            "B0009VXN6I",
+            "B000AMFZCG"
+          ],
+          "relevant_asin_audit": {
+            "B0009GCUIU": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Hanes Mens TAGLESS ComfortSoftCrewneck T-Shirt,Orange,Small",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B0009GI3CM": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Hanes Men's ComfortSoft T-Shirt, Deep Forest, Medium",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B0009IJO8M": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Polo Ralph Lauren Striped Woven Boxers",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Shirts",
+                "Polos"
+              ]
+            },
+            "B0009VXN6I": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "USA Water Polo 100% Cotton T-Shirt",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B000AMFZCG": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Men's UA Tech™ Sleeveless T-Shirt",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Active",
+                "Active Shirts & Tees",
+                "T-Shirts"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "cotton"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "cotton"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_08",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for socks."
+          ],
+          "target_asin": "B001G4NBPA",
+          "relevant_asins": [
+            "B001G4NBPA",
+            "B001GUP0WG",
+            "B001MA6AWY",
+            "B001V5J61M",
+            "B002ACD6DO"
+          ],
+          "relevant_asin_audit": {
+            "B001G4NBPA": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "FALKE Women's Bedsock W So",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            "B001GUP0WG": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Bridgedale Endurance Summit Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Hiking & Outdoor Recreation",
+                "Women",
+                "Socks"
+              ]
+            },
+            "B001MA6AWY": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Darn Tough Vermont in-Town Series Women's Triangles Light Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Active",
+                "Athletic Socks"
+              ]
+            },
+            "B001V5J61M": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Darn Tough Vermont Merino Wool Standard Issue Crew Cushion Sock",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Active",
+                "Athletic Socks"
+              ]
+            },
+            "B002ACD6DO": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Wigwam Women's Countryside Casual Boot Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks",
+                "Calf Socks"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "wool"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "wool"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "lp_09",
+      "constant_profile": {},
+      "scenario_class": "LONGITUDINAL_POSITIVE",
+      "expected_behavior": "HELP",
+      "buyer_mode": "Buying",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for watches."
+          ],
+          "target_asin": "B0001V67WI",
+          "relevant_asins": [
+            "B0001V67WI",
+            "B0002IC5IK",
+            "B0002SZOW4",
+            "B0007N53K2",
+            "B0007N54BK"
+          ],
+          "relevant_asin_audit": {
+            "B0001V67WI": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Fossil Men's Blue watch #BQ9165",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0002IC5IK": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Skagen Women's Chronograph Pink and White Crystal Bezel and Pink Suede Watch #558SSLPCR",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0002SZOW4": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Tissot Men's T33159859 Orange T-Touch Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007N53K2": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Seiko Men's SFP602 Strap Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007N54BK": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Seiko Women's SNA467 Coutura Alarm Chronograph Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "stainless steel"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "stainless steel"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "mi_00",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for hiking boots."
+          ],
+          "target_asin": "B0014YO2RI",
+          "relevant_asins": [
+            "B0014YO2RI",
+            "B001AMG588",
+            "B0029MSBCG",
+            "B002HWSHE0",
+            "B002MPPUL0"
+          ],
+          "relevant_asin_audit": {
+            "B0014YO2RI": {
+              "catalogue_verified": true,
+              "category_term": "hiking boots",
+              "historical_or_current_trait": null,
+              "title": "WOLVERINE Men's W05745 Wilderness Gunmetal-M",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B001AMG588": {
+              "catalogue_verified": true,
+              "category_term": "hiking boots",
+              "historical_or_current_trait": null,
+              "title": "Columbia Men's Coremic Ridge Mid Hiking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B0029MSBCG": {
+              "catalogue_verified": true,
+              "category_term": "hiking boots",
+              "historical_or_current_trait": null,
+              "title": "Hanwag Special Forces GTX",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B002HWSHE0": {
+              "catalogue_verified": true,
+              "category_term": "hiking boots",
+              "historical_or_current_trait": null,
+              "title": "Columbia Men's BM3565 Pole Creek Omni-Tech Hiking Boot,Stout/Burnt Orange,10.5 M",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B002MPPUL0": {
+              "catalogue_verified": true,
+              "category_term": "hiking boots",
+              "historical_or_current_trait": null,
+              "title": "Lowa Women's Sella GTX Hiking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "hiking boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "necklaces",
+            "silver"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "necklaces",
+            "current_category": "hiking boots",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_01",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for hiking boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "hiking boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for hiking boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "hiking boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for necklaces."
+          ],
+          "target_asin": "7750000348",
+          "relevant_asins": [
+            "7750000348",
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0007PQO3U"
+          ],
+          "relevant_asin_audit": {
+            "7750000348": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Vatican Holy Pray Rosary Roses Petal Odor Beads Silver Plated In Plastic Round Box",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0007PQO3U": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Silver Insanity Halloween Black Widow Spider Witch Necklace - Large & Unique Bib Necklace and Earring Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Jewelry Sets"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "hiking boots",
+            "waterproof"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "hiking boots",
+            "current_category": "necklaces",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_02",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for dresses."
+          ],
+          "target_asin": "9479290707",
+          "relevant_asins": [
+            "9479290707",
+            "B00009EIVN",
+            "B0007DHELS",
+            "B000FJOT1M",
+            "B000V5IP0G"
+          ],
+          "relevant_asin_audit": {
+            "9479290707": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": null,
+              "title": "Dyexces Sweaters for Women Cable Knit Sweater Women V Neck Long Sleeve Pullover Short Sweater Dresses",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Sweaters",
+                "Pullovers"
+              ]
+            },
+            "B00009EIVN": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": null,
+              "title": "Casio Men's EDB610-1 Databank Digital Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007DHELS": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": null,
+              "title": "Naturalizer Women's Dafny Dress Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Platforms & Wedges"
+              ]
+            },
+            "B000FJOT1M": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": null,
+              "title": "Swissco Ring Holder Elephant -Gold Tone",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Shoe, Jewelry & Watch Accessories",
+                "Jewelry Accessories",
+                "Jewelry Boxes & Organizers",
+                "Jewelry Trays"
+              ]
+            },
+            "B000V5IP0G": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": null,
+              "title": "Berkshire Women's Ultra Sheer Control Top Pantyhose 4419 - Reinforced Toe, Off Black, 2",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Sheers"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "watches",
+            "stainless steel"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "watches",
+            "current_category": "dresses",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_03",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: gold."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "gold"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: gold."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "gold"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for rain jackets."
+          ],
+          "target_asin": "B001CM8L5G",
+          "relevant_asins": [
+            "B001CM8L5G",
+            "B004HZYFFA",
+            "B004IFAMXS",
+            "B0055N6S8K",
+            "B006SVLS0G"
+          ],
+          "relevant_asin_audit": {
+            "B001CM8L5G": {
+              "catalogue_verified": true,
+              "category_term": "rain jackets",
+              "historical_or_current_trait": null,
+              "title": "Kidorable Red Ladybug Natural Rubber Rain Boots With A Pull On Heel Tab",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Girls",
+                "Outdoor & Work",
+                "Rain"
+              ]
+            },
+            "B004HZYFFA": {
+              "catalogue_verified": true,
+              "category_term": "rain jackets",
+              "historical_or_current_trait": null,
+              "title": "Stephen Joseph Raincoat",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boys",
+                "Clothing",
+                "Snow & Rainwear",
+                "Rain Jackets"
+              ]
+            },
+            "B004IFAMXS": {
+              "catalogue_verified": true,
+              "category_term": "rain jackets",
+              "historical_or_current_trait": null,
+              "title": "A-w Weather All Weather Rain Jacket Colors: Bluegray Size:xl",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Jackets & Coats",
+                "Trench & Rain"
+              ]
+            },
+            "B0055N6S8K": {
+              "catalogue_verified": true,
+              "category_term": "rain jackets",
+              "historical_or_current_trait": null,
+              "title": "Caterpillar Men's Packable rain Jacket",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Jackets & Coats",
+                "Trench & Rain"
+              ]
+            },
+            "B006SVLS0G": {
+              "catalogue_verified": true,
+              "category_term": "rain jackets",
+              "historical_or_current_trait": null,
+              "title": "Sierra Designs Women's Clandestine Trench",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests",
+                "Trench, Rain & Anoraks",
+                "Trench Coats"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "rain jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "earrings",
+            "gold"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "earrings",
+            "current_category": "rain jackets",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_04",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for watches."
+          ],
+          "target_asin": "9999666671",
+          "relevant_asins": [
+            "9999666671",
+            "B00009EIVN",
+            "B0000V9NBG",
+            "B00016W998",
+            "B0001V67WI"
+          ],
+          "relevant_asin_audit": {
+            "9999666671": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": null,
+              "title": "Artist Unknown Urban Ladies Silver Diamante Large Dial Red PU Leather Strap Watch Analog Japanese Quartz Extra Battery",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B00009EIVN": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": null,
+              "title": "Casio Men's EDB610-1 Databank Digital Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0000V9NBG": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": null,
+              "title": "Pulsar Men's PVM004 Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B00016W998": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": null,
+              "title": "Swatch Men's YCS410GX Windfall Chronograph Silver-Tone Bracelet Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0001V67WI": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": null,
+              "title": "Fossil Men's Blue watch #BQ9165",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "sandals",
+            "leather"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "sandals",
+            "current_category": "watches",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_05",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: blue."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "blue"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: blue."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "blue"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for earrings."
+          ],
+          "target_asin": "9479290707",
+          "relevant_asins": [
+            "9479290707",
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000C4E4Y",
+            "B0000EVVP4"
+          ],
+          "relevant_asin_audit": {
+            "9479290707": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": null,
+              "title": "Dyexces Sweaters for Women Cable Knit Sweater Women V Neck Long Sleeve Pullover Short Sweater Dresses",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Sweaters",
+                "Pullovers"
+              ]
+            },
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": null,
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000C4E4Y": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": null,
+              "title": "Platinum Hoop Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Hoop"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "backpacks",
+            "blue"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "backpacks",
+            "current_category": "earrings",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_06",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for work boots."
+          ],
+          "target_asin": "B0002PUNXM",
+          "relevant_asins": [
+            "B0002PUNXM",
+            "B000M0EMES",
+            "B000MF6M8M",
+            "B000TAIJ9A",
+            "B000Y06SXO"
+          ],
+          "relevant_asin_audit": {
+            "B0002PUNXM": {
+              "catalogue_verified": true,
+              "category_term": "work boots",
+              "historical_or_current_trait": null,
+              "title": "Carolina Men's 8 Inch Sarge Hi Light Brown",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Uniforms, Work & Safety",
+                "Shoes",
+                "Work & Utility",
+                "Shoes"
+              ]
+            },
+            "B000M0EMES": {
+              "catalogue_verified": true,
+              "category_term": "work boots",
+              "historical_or_current_trait": null,
+              "title": "Justin Mens Dbl Cmfrt Rnd Black Work Boots 13D",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Uniforms, Work & Safety",
+                "Shoes",
+                "Work & Utility",
+                "Industrial & Construction Boots"
+              ]
+            },
+            "B000MF6M8M": {
+              "catalogue_verified": true,
+              "category_term": "work boots",
+              "historical_or_current_trait": null,
+              "title": "Dr. Martens Men's Josh Frayed Toe Thong Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B000TAIJ9A": {
+              "catalogue_verified": true,
+              "category_term": "work boots",
+              "historical_or_current_trait": null,
+              "title": "Red Wing Heritage Men's Round 6\" Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Outdoor & Work",
+                "Work & Safety"
+              ]
+            },
+            "B000Y06SXO": {
+              "catalogue_verified": true,
+              "category_term": "work boots",
+              "historical_or_current_trait": null,
+              "title": "Blundstone BL490 Work Chelsea Boot Brown AU 10.5 (US Men's 11.5) Medium",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Boots",
+                "Chelsea"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "work boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "dresses",
+            "floral"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "dresses",
+            "current_category": "work boots",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_07",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for necklaces."
+          ],
+          "target_asin": "7750000348",
+          "relevant_asins": [
+            "7750000348",
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0007PQO3U"
+          ],
+          "relevant_asin_audit": {
+            "7750000348": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Vatican Holy Pray Rosary Roses Petal Odor Beads Silver Plated In Plastic Round Box",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0007PQO3U": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": null,
+              "title": "Silver Insanity Halloween Black Widow Spider Witch Necklace - Large & Unique Bib Necklace and Earring Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Jewelry Sets"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "shirts",
+            "cotton"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "shirts",
+            "current_category": "necklaces",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_08",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for backpacks."
+          ],
+          "target_asin": "B000NSTV0O",
+          "relevant_asins": [
+            "B000NSTV0O",
+            "B000NZKTFI",
+            "B000OZC6Z8",
+            "B000UCDGXG",
+            "B0010ZMXWM"
+          ],
+          "relevant_asin_audit": {
+            "B000NSTV0O": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": null,
+              "title": "Samsonite Wander Verb Backpack-Black/Dark Orange",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks",
+                "Casual Daypacks"
+              ]
+            },
+            "B000NZKTFI": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": null,
+              "title": "Lafuma Men's Active Trail Mesh Trail Running Shoe",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes"
+              ]
+            },
+            "B000OZC6Z8": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": null,
+              "title": "High Sierra Carry-On Wheeled Backpack with Removable Day Pack (Dark Denim, Steel)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks"
+              ]
+            },
+            "B000UCDGXG": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": null,
+              "title": "Kiva Hide-Away Duffel, Black",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Travel Duffels"
+              ]
+            },
+            "B0010ZMXWM": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": null,
+              "title": "Merrell",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Athletic",
+                "Water Shoes"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "socks",
+            "wool"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "socks",
+            "current_category": "backpacks",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "mi_09",
+      "constant_profile": {},
+      "scenario_class": "MEMORY_IRRELEVANT",
+      "expected_behavior": "IGNORE",
+      "buyer_mode": "Buying",
+      "memory_relation": "IRRELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for sandals."
+          ],
+          "target_asin": "B0002M6JB0",
+          "relevant_asins": [
+            "B0002M6JB0",
+            "B0007D4UD8",
+            "B0007DHELS",
+            "B0009F1A4G",
+            "B000BHNHYS"
+          ],
+          "relevant_asin_audit": {
+            "B0002M6JB0": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": null,
+              "title": "Merrell Men's Tideriser Luna Slide LTR Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B0007D4UD8": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": null,
+              "title": "Tabi socks, Japanese Style One Toe Socks for Zori Sold in Inch Sizes",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            "B0007DHELS": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": null,
+              "title": "Naturalizer Women's Dafny Dress Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Platforms & Wedges"
+              ]
+            },
+            "B0009F1A4G": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": null,
+              "title": "Exchange by Charles David Women's Gilda Platform Slide",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B000BHNHYS": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": null,
+              "title": "Ellie Shoes 6\" Heel Clear Mule W/Dice and Poker Chips.",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Heeled Sandals"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [],
+          "irrelevant_historical_facts": [
+            "jackets",
+            "waterproof"
+          ],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "semantic_separation_audit": {
+            "history_category": "jackets",
+            "current_category": "sandals",
+            "basis": "disjoint catalogue product families selected before M3 scoring"
+          }
+        }
+      ]
+    },
+    {
+      "user_id": "co_00",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "Actually, ignore my earlier preference. What I need is: red dresses."
+          ],
+          "target_asin": "9479290707",
+          "relevant_asins": [
+            "9479290707",
+            "B00009EIVN",
+            "B000XW7XVY",
+            "B000YEIAO0",
+            "B002VLYEB2"
+          ],
+          "relevant_asin_audit": {
+            "9479290707": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "red",
+              "title": "Dyexces Sweaters for Women Cable Knit Sweater Women V Neck Long Sleeve Pullover Short Sweater Dresses",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Sweaters",
+                "Pullovers"
+              ]
+            },
+            "B00009EIVN": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "red",
+              "title": "Casio Men's EDB610-1 Databank Digital Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B000XW7XVY": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "red",
+              "title": "The Mountain Grim Rider T-Shirt",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B000YEIAO0": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "red",
+              "title": "sunpangpang",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Formal"
+              ]
+            },
+            "B002VLYEB2": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "red",
+              "title": "Banana Blues Men's Foxx Ankle Height Oxford",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Boots"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "red"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B00009EIVN",
+            "B000V5IP0G",
+            "B003TFDLR2"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_01",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "Actually, ignore my earlier preference. What I need is: blue backpacks."
+          ],
+          "target_asin": "B0041I5HLY",
+          "relevant_asins": [
+            "B0041I5HLY",
+            "B00642PLFW",
+            "B00CHSC36C",
+            "B00DZQXBFC",
+            "B00GV46IW8"
+          ],
+          "relevant_asin_audit": {
+            "B0041I5HLY": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "blue",
+              "title": "Yens® Fantasybag All-Purpose Backpack-Navy Blue, 6BP-03",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks",
+                "Kids' Backpacks"
+              ]
+            },
+            "B00642PLFW": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "blue",
+              "title": "Ed Hardy by Christian Audigier Misha American Eagle Backpack in Blue Camo",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks",
+                "Casual Daypacks"
+              ]
+            },
+            "B00CHSC36C": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "blue",
+              "title": "JanSport SuperBreak Backpack (Bayside Blue Interrupted Zebra)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks",
+                "Casual Daypacks"
+              ]
+            },
+            "B00DZQXBFC": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "blue",
+              "title": "Canterbury Mercury TCR Backpack - Navy, One Size",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Luggage & Travel Gear",
+                "Backpacks"
+              ]
+            },
+            "B00GV46IW8": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "blue",
+              "title": "Arcteryx Alpha SL Jacket - Men's Masago Medium",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Snowboarding",
+                "Men",
+                "Jackets"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "blue"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B000NSTV0O",
+            "B000UCDGXG",
+            "B001CM8L5G"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_02",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "Actually, ignore my earlier preference. What I need is: pink jackets."
+          ],
+          "target_asin": "B002HRF57C",
+          "relevant_asins": [
+            "B002HRF57C",
+            "B003U5X5LS",
+            "B00ATREB4U",
+            "B00CPS0TLA",
+            "B00CZ8I8R2"
+          ],
+          "relevant_asin_audit": {
+            "B002HRF57C": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "pink",
+              "title": "Janska Scarf, Pink, OS",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Accessories",
+                "Scarves & Wraps",
+                "Cold Weather Scarves & Wraps"
+              ]
+            },
+            "B003U5X5LS": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "pink",
+              "title": "Alilang Fashion Statement Cross Topaz Amber Autumn Ruby Red Collectible Costume Pin Brooch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Brooches & Pins"
+              ]
+            },
+            "B00ATREB4U": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "pink",
+              "title": "The North Face Womens Oso Hoodie ARHBE9F Passion Pink/Passion Pink LG",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests",
+                "Active & Performance",
+                "Fleece"
+              ]
+            },
+            "B00CPS0TLA": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "pink",
+              "title": "Walleva Replacement Vented Lenses for Oakley Jawbone Sunglasses - Multiple Options Available (Yellow)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Accessories",
+                "Sunglasses & Eyewear Accessories",
+                "Replacement Sunglass Lenses"
+              ]
+            },
+            "B00CZ8I8R2": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "pink",
+              "title": "Rugged Bear Little Girls' Solid Ski Jacket with Contrast Lining",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Clothing",
+                "Jackets & Coats",
+                "Down & Down Alternative"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "pink"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B0009PCTMI",
+            "B000JLOXQM",
+            "B000K7IJ10"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_03",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "Actually, ignore my earlier preference. What I need is: white boots."
+          ],
+          "target_asin": "B000R9BSUU",
+          "relevant_asins": [
+            "B000R9BSUU",
+            "B0046CKCXS",
+            "B0058CB32Y",
+            "B005ADL1UA",
+            "B005UUTMVS"
+          ],
+          "relevant_asin_audit": {
+            "B000R9BSUU": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "white",
+              "title": "Columbia Women's Lavela II Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots"
+              ]
+            },
+            "B0046CKCXS": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "white",
+              "title": "Old Time Plush Santa Suit Christmas Costume + Bonus Wig & Beard (Size: X-Large XL)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Costumes & Accessories",
+                "Men",
+                "Costumes & Cosplay Apparel",
+                "Costumes"
+              ]
+            },
+            "B0058CB32Y": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "white",
+              "title": "ASICS Men's Omniflex Pursuit Wrestling Shoe",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Athletic",
+                "Wrestling"
+              ]
+            },
+            "B005ADL1UA": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "white",
+              "title": "Robeez Soft Soles Braedon Pre-Walker (Infant/Toddler),White/Grey/Red,18-24 Months (6.5-8 M US Toddler)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Baby",
+                "Baby Boys",
+                "Shoes",
+                "Sneakers"
+              ]
+            },
+            "B005UUTMVS": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "white",
+              "title": "White Mountain Women's Golly",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots",
+                "Knee-High"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "white"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B000JOP9K8",
+            "B000M0EMES",
+            "B000OLUUDW"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_04",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "Actually, ignore my earlier preference. What I need is: blue shirts."
+          ],
+          "target_asin": "B000VZR0XO",
+          "relevant_asins": [
+            "B000VZR0XO",
+            "B000WNUZWS",
+            "B000XYLX86",
+            "B0017JON0Q",
+            "B001GTGMY2"
+          ],
+          "relevant_asin_audit": {
+            "B000VZR0XO": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "blue",
+              "title": "Beach Depot Solid Women's UPF 50+ Rashguard | Made in USA",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Swimsuits & Cover Ups",
+                "Rash Guard Shirts"
+              ]
+            },
+            "B000WNUZWS": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "blue",
+              "title": "2019 Cassette to MP3 Converter USB Cassette Player from Tapes to MP3 Converter for Laptop, PC and Mac Work for Window iOS Convert Walkman Cassettes to Digital Format",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Women",
+                "Tops & Tees",
+                "T-Shirts"
+              ]
+            },
+            "B000XYLX86": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "blue",
+              "title": "Rothco Vintage T-Shirt/Winged Star - Blue",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Uniforms, Work & Safety",
+                "Clothing",
+                "Military",
+                "Tops"
+              ]
+            },
+            "B0017JON0Q": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "blue",
+              "title": "Jimi Hendrix - Flames T-Shirt X-Large Blue",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Westlake"
+              ]
+            },
+            "B001GTGMY2": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "blue",
+              "title": "The Mountain Adult 100% Cotton Orca Collage Realistic T-Shirt (Ocean Blue, 2XL)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "blue"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B000A6UBJE",
+            "B000E7WMO6",
+            "B000EGZCA8"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_05",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "Actually, ignore my earlier preference. What I need is: pink sandals."
+          ],
+          "target_asin": "B002GOFVXE",
+          "relevant_asins": [
+            "B002GOFVXE",
+            "B003FLL1RM",
+            "B004GB0QCQ",
+            "B0075ROJMQ",
+            "B009F7K16C"
+          ],
+          "relevant_asin_audit": {
+            "B002GOFVXE": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "pink",
+              "title": "DAWGS Women's Premium Z Sandal,Dark Brown/Black,5 M US",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Slides"
+              ]
+            },
+            "B003FLL1RM": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "pink",
+              "title": "FRYE Men's James Lace Up Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Fashion",
+                "Combat"
+              ]
+            },
+            "B004GB0QCQ": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "pink",
+              "title": "Ivanka Trump Women's Pinkish Platform Pump",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Pumps"
+              ]
+            },
+            "B0075ROJMQ": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "pink",
+              "title": "Lindsay Phillips Marcella - Snap Sandal Switches",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Shoe, Jewelry & Watch Accessories",
+                "Shoe Care & Accessories",
+                "Shoe Decoration Charms"
+              ]
+            },
+            "B009F7K16C": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "pink",
+              "title": "Birkenstock Madrid Classic Birko-Flor Cork Sandals - Pink Patent (Art: 239831)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Slides"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "pink"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B0007D4UD8",
+            "B000KPP3BQ",
+            "B000LM8GU8"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_06",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "Actually, ignore my earlier preference. What I need is: gold necklaces."
+          ],
+          "target_asin": "B0000ATC4O",
+          "relevant_asins": [
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0007XD5P2",
+            "B000AXYEA4",
+            "B000F2HSS0"
+          ],
+          "relevant_asin_audit": {
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "gold",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "gold",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0007XD5P2": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "gold",
+              "title": "Silver-Toned Pewter Gothic Sacred Dragon Star of Solomon Charm Pendant Necklace",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B000AXYEA4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "gold",
+              "title": "Amazon Collection 14k Yellow Gold Citrine Dangle Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            },
+            "B000F2HSS0": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "gold",
+              "title": "Amazon Collection 14k Yellow Gold Sea Star Pendant",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "silver",
+            "current": "gold"
+          },
+          "history_matching_current_conflicting_asins": [
+            "7750000348",
+            "B0000APUDV",
+            "B0000ATC4O"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_07",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "Actually, ignore my earlier preference. What I need is: gold earrings."
+          ],
+          "target_asin": "B0000ATC4O",
+          "relevant_asins": [
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B00015VKVW",
+            "B0002Z7M40",
+            "B000AXYEA4"
+          ],
+          "relevant_asin_audit": {
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "gold",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "gold",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B00015VKVW": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "gold",
+              "title": "Blomdahl 5mm Imitation Pearl Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Stud"
+              ]
+            },
+            "B0002Z7M40": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "gold",
+              "title": "Large Filigree Teardrop Hook Earrings with Gold Overlay in Two Tone Sterling Silver",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            },
+            "B000AXYEA4": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "gold",
+              "title": "Amazon Collection 14k Yellow Gold Citrine Dangle Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "silver",
+            "current": "gold"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_08",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "Actually, ignore my earlier preference. What I need is: blue watches."
+          ],
+          "target_asin": "B00009EIVN",
+          "relevant_asins": [
+            "B00009EIVN",
+            "B0001V67WI",
+            "B0007N54BK",
+            "B0007R7D9C",
+            "B0009P834G"
+          ],
+          "relevant_asin_audit": {
+            "B00009EIVN": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "blue",
+              "title": "Casio Men's EDB610-1 Databank Digital Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0001V67WI": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "blue",
+              "title": "Fossil Men's Blue watch #BQ9165",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007N54BK": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "blue",
+              "title": "Seiko Women's SNA467 Coutura Alarm Chronograph Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007R7D9C": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "blue",
+              "title": "Nike Big Al Analog D Line Watch Photo Blue WC0008-004",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0009P834G": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "blue",
+              "title": "Casio Women's 'Classic' Quartz Resin Casual Watch, Color:Black (Model: LQ139A-1)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "blue"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B00009EIVN",
+            "B00016W998",
+            "B0002SZOW4"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "co_09",
+      "constant_profile": {},
+      "scenario_class": "CURRENT_OVERRIDE",
+      "expected_behavior": "DO_NOT_OVERRIDE",
+      "buyer_mode": "Buying",
+      "memory_relation": "CONFLICTING",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: black."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "black"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "Actually, ignore my earlier preference. What I need is: white socks."
+          ],
+          "target_asin": "B0007D4UD8",
+          "relevant_asins": [
+            "B0007D4UD8",
+            "B000FEFW3G",
+            "B001B15VSS",
+            "B001VH6TMO",
+            "B002JV0IWS"
+          ],
+          "relevant_asin_audit": {
+            "B0007D4UD8": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "white",
+              "title": "Tabi socks, Japanese Style One Toe Socks for Zori Sold in Inch Sizes",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            "B000FEFW3G": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "white",
+              "title": "adidas Men's 3-Stripe No Show Sock 3-Pack ( sz. One Size Fits All, White/Black )",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Westlake"
+              ]
+            },
+            "B001B15VSS": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "white",
+              "title": "BSI Women's Basic #420 Bowling Shoes",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Athletic",
+                "Bowling"
+              ]
+            },
+            "B001VH6TMO": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "white",
+              "title": "Nautica Men's 3 Pack Performance Quarter Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Active",
+                "Athletic Socks"
+              ]
+            },
+            "B002JV0IWS": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "white",
+              "title": "BSI Men's #540 Bowling Shoes",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Athletic",
+                "Bowling"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "black"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [],
+          "current_query_alone_sufficient": true,
+          "explicit_conflict": {
+            "historical": "black",
+            "current": "white"
+          },
+          "history_matching_current_conflicting_asins": [
+            "B00009RHH1",
+            "B0003024HO",
+            "B0007D4UD8"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "bp_00",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for watches.",
+            "For that, what matters is: stainless steel."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "stainless steel"
+            ],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for watches."
+          ],
+          "target_asin": "B0001V67WI",
+          "relevant_asins": [
+            "B0001V67WI",
+            "B0002IC5IK",
+            "B0002SZOW4",
+            "B0007N53K2",
+            "B0007N54BK"
+          ],
+          "relevant_asin_audit": {
+            "B0001V67WI": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Fossil Men's Blue watch #BQ9165",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0002IC5IK": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Skagen Women's Chronograph Pink and White Crystal Bezel and Pink Suede Watch #558SSLPCR",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0002SZOW4": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Tissot Men's T33159859 Orange T-Touch Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007N53K2": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Seiko Men's SFP602 Strap Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Watches",
+                "Wrist Watches"
+              ]
+            },
+            "B0007N54BK": {
+              "catalogue_verified": true,
+              "category_term": "watches",
+              "historical_or_current_trait": "stainless steel",
+              "title": "Seiko Women's SNA467 Coutura Alarm Chronograph Watch",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Watches",
+                "Wrist Watches"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "watches"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "stainless steel"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "stainless steel"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_01",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for socks.",
+            "For that, what matters is: wool."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "wool"
+            ],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for socks."
+          ],
+          "target_asin": "B001G4NBPA",
+          "relevant_asins": [
+            "B001G4NBPA",
+            "B001GUP0WG",
+            "B001MA6AWY",
+            "B001V5J61M",
+            "B002ACD6DO"
+          ],
+          "relevant_asin_audit": {
+            "B001G4NBPA": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "FALKE Women's Bedsock W So",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks"
+              ]
+            },
+            "B001GUP0WG": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Bridgedale Endurance Summit Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Sport Specific Clothing",
+                "Hiking & Outdoor Recreation",
+                "Women",
+                "Socks"
+              ]
+            },
+            "B001MA6AWY": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Darn Tough Vermont in-Town Series Women's Triangles Light Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Active",
+                "Athletic Socks"
+              ]
+            },
+            "B001V5J61M": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Darn Tough Vermont Merino Wool Standard Issue Crew Cushion Sock",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Active",
+                "Athletic Socks"
+              ]
+            },
+            "B002ACD6DO": {
+              "catalogue_verified": true,
+              "category_term": "socks",
+              "historical_or_current_trait": "wool",
+              "title": "Wigwam Women's Countryside Casual Boot Socks",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Socks & Hosiery",
+                "Socks",
+                "Calf Socks"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "socks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "wool"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "wool"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_02",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for shirts.",
+            "For that, what matters is: cotton."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "cotton"
+            ],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for shirts."
+          ],
+          "target_asin": "B0009GCUIU",
+          "relevant_asins": [
+            "B0009GCUIU",
+            "B0009GI3CM",
+            "B0009IJO8M",
+            "B0009VXN6I",
+            "B000AMFZCG"
+          ],
+          "relevant_asin_audit": {
+            "B0009GCUIU": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Hanes Mens TAGLESS ComfortSoftCrewneck T-Shirt,Orange,Small",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B0009GI3CM": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Hanes Men's ComfortSoft T-Shirt, Deep Forest, Medium",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B0009IJO8M": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Polo Ralph Lauren Striped Woven Boxers",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Shirts",
+                "Polos"
+              ]
+            },
+            "B0009VXN6I": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "USA Water Polo 100% Cotton T-Shirt",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Novelty & More",
+                "Clothing",
+                "Novelty",
+                "Men",
+                "Shirts",
+                "T-Shirts"
+              ]
+            },
+            "B000AMFZCG": {
+              "catalogue_verified": true,
+              "category_term": "shirts",
+              "historical_or_current_trait": "cotton",
+              "title": "Men's UA Tech™ Sleeveless T-Shirt",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Clothing",
+                "Active",
+                "Active Shirts & Tees",
+                "T-Shirts"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "shirts"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "cotton"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "cotton"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_03",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for earrings.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for earrings."
+          ],
+          "target_asin": "B0000APUDV",
+          "relevant_asins": [
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0002Z7M40",
+            "B0006O1H7A"
+          ],
+          "relevant_asin_audit": {
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0002Z7M40": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Large Filigree Teardrop Hook Earrings with Gold Overlay in Two Tone Sterling Silver",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            },
+            "B0006O1H7A": {
+              "catalogue_verified": true,
+              "category_term": "earrings",
+              "historical_or_current_trait": "silver",
+              "title": "Joyous Heart Celtic Knot Chain Dangle and Amethyst Sterling Silver Earrings",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Earrings",
+                "Drop & Dangle"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "earrings"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "silver"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_04",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for sandals.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for sandals."
+          ],
+          "target_asin": "B0002M6JB0",
+          "relevant_asins": [
+            "B0002M6JB0",
+            "B0007DHELS",
+            "B0009F1A4G",
+            "B000HVY0A8",
+            "B000IBPEOI"
+          ],
+          "relevant_asin_audit": {
+            "B0002M6JB0": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Merrell Men's Tideriser Luna Slide LTR Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B0007DHELS": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Naturalizer Women's Dafny Dress Sandal",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals",
+                "Platforms & Wedges"
+              ]
+            },
+            "B0009F1A4G": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Exchange by Charles David Women's Gilda Platform Slide",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Sandals"
+              ]
+            },
+            "B000HVY0A8": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "FRYE Women's Carson Heel Tab Knee-High Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Women",
+                "Fashion",
+                "Riding"
+              ]
+            },
+            "B000IBPEOI": {
+              "catalogue_verified": true,
+              "category_term": "sandals",
+              "historical_or_current_trait": "leather",
+              "title": "Two Lips Women's Tevonna Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots",
+                "Mid-Calf"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "sandals"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "leather"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "leather"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_05",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for jackets.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for jackets."
+          ],
+          "target_asin": "B000B8QEO2",
+          "relevant_asins": [
+            "B000B8QEO2",
+            "B000K7IJ10",
+            "B001CM8L5G",
+            "B001N2MSRW",
+            "B002MCZKFE"
+          ],
+          "relevant_asin_audit": {
+            "B000B8QEO2": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "MARMOT Women's PreCip Jacket, Sea Breeze, X-Small",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests",
+                "Trench, Rain & Anoraks",
+                "Raincoats"
+              ]
+            },
+            "B000K7IJ10": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Oakley Half Jacket Polarized Replacement Lenses",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Accessories",
+                "Sunglasses & Eyewear Accessories",
+                "Replacement Sunglass Lenses"
+              ]
+            },
+            "B001CM8L5G": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Kidorable Red Ladybug Natural Rubber Rain Boots With A Pull On Heel Tab",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Girls",
+                "Outdoor & Work",
+                "Rain"
+              ]
+            },
+            "B001N2MSRW": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Helly Hansen Women's Vancouver Jacket",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Coats, Jackets & Vests"
+              ]
+            },
+            "B002MCZKFE": {
+              "catalogue_verified": true,
+              "category_term": "jackets",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Sportswear Cuddly Kate Waterproof Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Baby",
+                "Baby Girls",
+                "Clothing",
+                "Snow & Rainwear",
+                "Snow Suits"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "jackets"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "waterproof"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "waterproof"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_06",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for backpacks.",
+            "For that, what matters is: leather."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "leather"
+            ],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for backpacks."
+          ],
+          "target_asin": "B0018DVOQW",
+          "relevant_asins": [
+            "B0018DVOQW",
+            "B0020MMQBW",
+            "B002MPPW0E",
+            "B002MUBEOC",
+            "B003IO2OPY"
+          ],
+          "relevant_asin_audit": {
+            "B0018DVOQW": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Simple Men's 2534 Clog",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Mules & Clogs"
+              ]
+            },
+            "B0020MMQBW": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Lowa Women's Tibet Pro GTX Backpacking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Backpacking Boots"
+              ]
+            },
+            "B002MPPW0E": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Lowa Men's Renegade II GTX Lo Hiking Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Boots"
+              ]
+            },
+            "B002MUBEOC": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Simple Men's D-Solve Sneaker",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Fashion Sneakers"
+              ]
+            },
+            "B003IO2OPY": {
+              "catalogue_verified": true,
+              "category_term": "backpacks",
+              "historical_or_current_trait": "leather",
+              "title": "Merrell Men's Moab Gore-Tex Hiking Shoe, Beluga,12 W US",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men",
+                "Shoes",
+                "Outdoor",
+                "Hiking & Trekking",
+                "Hiking Shoes"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "backpacks"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "leather"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "leather"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_07",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for dresses.",
+            "For that, what matters is: floral."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "floral"
+            ],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for dresses."
+          ],
+          "target_asin": "B004LGK0Z4",
+          "relevant_asins": [
+            "B004LGK0Z4",
+            "B005UPSF20",
+            "B007Z3T85S",
+            "B0081NVESA",
+            "B00AOHEY24"
+          ],
+          "relevant_asin_audit": {
+            "B004LGK0Z4": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Bonnie Jean Girls 2T-6X Yellow Peach Coral Floral Burnout Bubble Skirt Dress",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Girls",
+                "Clothing",
+                "Dresses",
+                "Special Occasion"
+              ]
+            },
+            "B005UPSF20": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "GO2BRAS Sarah Semi Demi Unlined Underwire 1432144",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses"
+              ]
+            },
+            "B007Z3T85S": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "FRYE Women's Carson Collapsible Ballet",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Flats"
+              ]
+            },
+            "B0081NVESA": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Crocs Women's Kadee Flats Ballet, 11",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Flats"
+              ]
+            },
+            "B00AOHEY24": {
+              "catalogue_verified": true,
+              "category_term": "dresses",
+              "historical_or_current_trait": "floral",
+              "title": "Evan Picone Women's Sleeveless Floral Dress",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Clothing",
+                "Dresses",
+                "Work"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "dresses"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "floral"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "floral"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_08",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for necklaces.",
+            "For that, what matters is: silver."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "silver"
+            ],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for necklaces."
+          ],
+          "target_asin": "7750000348",
+          "relevant_asins": [
+            "7750000348",
+            "B0000APUDV",
+            "B0000ATC4O",
+            "B0000EVVP4",
+            "B0007PQO3U"
+          ],
+          "relevant_asin_audit": {
+            "7750000348": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Vatican Holy Pray Rosary Roses Petal Odor Beads Silver Plated In Plastic Round Box",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Y-Necklaces"
+              ]
+            },
+            "B0000APUDV": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection Sterling Silver Freshwater Cultured Pearl & Square Coin Pearl Bracelet, 7.75\"",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Bracelets"
+              ]
+            },
+            "B0000ATC4O": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "14k Yellow Gold Freshwater Cultured Pearl 5.0-5.5mm Pendant w/ Diamond (0.02ctw)",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Necklaces",
+                "Pendant Necklaces"
+              ]
+            },
+            "B0000EVVP4": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Amazon Collection 18k Yellow Gold 7mm Comfort Fit Milgrain Plain Wedding Band",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Wedding & Engagement"
+              ]
+            },
+            "B0007PQO3U": {
+              "catalogue_verified": true,
+              "category_term": "necklaces",
+              "historical_or_current_trait": "silver",
+              "title": "Silver Insanity Halloween Black Widow Spider Witch Necklace - Large & Unique Bib Necklace and Earring Set",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Jewelry",
+                "Jewelry Sets"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "necklaces"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "silver"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "silver"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    },
+    {
+      "user_id": "bp_09",
+      "constant_profile": {},
+      "scenario_class": "BROWSING_PERSONALIZATION",
+      "expected_behavior": "PERSONALIZE",
+      "buyer_mode": "Browsing",
+      "memory_relation": "RELEVANT",
+      "sessions": [
+        {
+          "sequence_index": 0,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 1,
+          "session_role": "setup",
+          "scripted_turns": [
+            "I'm looking for boots.",
+            "For that, what matters is: waterproof."
+          ],
+          "fact_scope_annotations": {
+            "persistent": [
+              "waterproof"
+            ],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [],
+          "scenario_class": null,
+          "expected_behavior": null
+        },
+        {
+          "sequence_index": 2,
+          "session_role": "probe",
+          "scripted_turns": [
+            "I'm looking for boots."
+          ],
+          "target_asin": "B000FHEA4A",
+          "relevant_asins": [
+            "B000FHEA4A",
+            "B000MRV3JI",
+            "B000R9BSUU",
+            "B000R9DEPM",
+            "B000S6OKOI"
+          ],
+          "relevant_asin_audit": {
+            "B000FHEA4A": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Wolverine Men's Tacoma Hiker 6\" Steel Toe EH",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Men"
+              ]
+            },
+            "B000MRV3JI": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Bates Men's Enforcer 8 Inch Nylon Leather Waterproof Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Outdoor & Work",
+                "Work & Safety"
+              ]
+            },
+            "B000R9BSUU": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Women's Lavela II Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes",
+                "Boots"
+              ]
+            },
+            "B000R9DEPM": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Columbia Women's Bugabootoo Snow Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Women",
+                "Shoes"
+              ]
+            },
+            "B000S6OKOI": {
+              "catalogue_verified": true,
+              "category_term": "boots",
+              "historical_or_current_trait": "waterproof",
+              "title": "Sorel Men's Alpha Trac Buckle Boot",
+              "categories": [
+                "Clothing, Shoes & Jewelry",
+                "Boot Shop",
+                "Men",
+                "Outdoor & Work",
+                "Snow & Cold Weather"
+              ]
+            }
+          },
+          "fact_scope_annotations": {
+            "persistent": [],
+            "session_specific": [
+              "boots"
+            ],
+            "unknown": []
+          },
+          "setup_sequence_references": [
+            0,
+            1
+          ],
+          "intended_historical_facts": [
+            "waterproof"
+          ],
+          "irrelevant_historical_facts": [],
+          "historical_fact_leakage_terms": [
+            "waterproof"
+          ],
+          "current_query_alone_sufficient": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Target Product Title: Duufin 5 Pcs Lace Bralettes for Women Bralette Padded Lace Bandeau Bra
+Target ASIN: B08HS712ZB
+Scenario: browsing
+Constraints: ['nylon', 'color: black']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some lace bralettes for women. i really want them in black and made of nylon.
+Copilot: I found a great option for you! The Duufin 5 Pcs Lace Bralettes for Women are padded and come in black, made from nylon. What size are you looking for?
+Copilot Attribute Query: size
+Recommendations:
+  1. Duufin 5 Pcs Lace Bralettes for Women Bralette Padded Lace Bandeau Bra (ASIN: B08HS712ZB)
+  2. Tapata Women's Bootcut Dress Pants 28"/30"/32"/34" Slacks Business Casual Office Pants Petite/Regular/Long/Tall Length (ASIN: B09K41YGNC)
+  3. THINX Hiphugger Period Underwear for Women, Heavy Absorbency Period Panties, Feminine Care, Black, Small (ASIN: B09XT5HRBD)
+  4. GRAPENT Women Lace Crochet Halter Strap One-Piece Bathing Suit Swimsuit Swimwear (ASIN: B01MQH15KM)
+  5. BTFBM Women Long Sleeve V Neck Fashion Sweater Solid Color Ribbed Knit Foldover Collar Pullover Cute Relaxed Fit Jumper (ASIN: B09BVKBVLF)
+  6. New Balance Women's 3 Pack Core Cotton Quarter Socks (ASIN: B00ZCKRWOA)
+  7. Feionusin Women Fleece Lined Tights Sheer Winter Warm Pantyhose High Waist Translucent Tights Thick Thermal Leggings (ASIN: B0BKGM24TM)
+  8. KOJOOIN Womens Lace Splicing Long Sleeve Shirts Scallop V Neck Ribbed Knit Slim Fit Tunic Tops Blouse Navy Blue XL (ASIN: B09Y8VHYD6)
+  9. Border Collie Disc Dog Agility Dog Border Collie Black And White Border Blue Socks Women & Men Socks Soccer Sock Sport Tube Stockings Length 11.8 Inch (ASIN: B07YV1PG6L)
+  10. Yii ouneey Plus Size Swimsuit for Women High Waisted Bikini Sets for Women Bathing Suit for Women (ASIN: B08DF9F8KG)
+
+=== RESULT: SUCCESS (Turn 1) ===

@@ -1,0 +1,22 @@
+Target Product Title: isotoner Women's Terry Slip on Clog Slipper with Memory Foam for Indoor/Outdoor Comfort
+Target ASIN: B08X2X83DW
+Scenario: buying
+Constraints: ['cotton', '80% Cotton, 20% Polyester']
+============================================================
+--- TURN 1 ---
+Shopper: hey, i'm looking for some comfy slippers, and they really need to be made of cotton.
+Copilot: Great choice with cotton! Do you have a specific color in mind for your slippers?
+Copilot Attribute Query: color
+Recommendations:
+  1. isotoner Women's Terry Slip on Clog Slipper with Memory Foam for Indoor/Outdoor Comfort (ASIN: B08X2X83DW)
+  2. HRFEER Women Memory Foam Slipper Rabbit Ear Double Fur Ball Indoor Cotton Slippers for Girls (ASIN: B07JVS5WYZ)
+  3. Blebeey Women's Comfy Suede Slippers Memory Foam Cozy House Slippers with Fuzzy Plush Fur Lining (ASIN: B08CHHRTMS)
+  4. Women's Cute Animal Warm Slippers Memory Foam Cotton Home Slippers Soft Fleece Plush House Slippers Indoor Outdoor (ASIN: B07WHWQ8G6)
+  5. Lxso Mens Womens Comfort House Slippers Knitted Cotton Non-slip Rubber Sole Ultra Lightweight Home Shoes (ASIN: B075Q53F27)
+  6. BIGU Slipper Men's Women's Memory Foam Slippers Fuzzy Plush Lining Slip-on Winter Cotton House Shoes for Indoor & Outdoor (ASIN: B07HP1GKGM)
+  7. XIANV Men Women Slippers Plush Lining Slip on Indoor House Shoes Outdoor Anti-Skid Garden Loafers Shoes (ASIN: B08NVCDM9M)
+  8. KuaiLu Womens Cozy Memory Foam Slippers, Ladies Plaid House Slippers, Comfy Arch Support Bedroom Slippers, Slip on Warm Fuzzy Lined Winter Home Shoes with Non-slip Indoor Outdoor Hard Rubber Sole (ASIN: B0BB69XF89)
+  9. Candora Cartoon Brown Cute Eevee Plush Slipper Home Slipper Anime Cotton Slipper Winter Slipper (ASIN: B09F37LN2L)
+  10. Aganmi Womens Home Clogs Shoes House Slippers Cotton Anti-Slip Indoor & Outdoor Winter Couple Shoes（Black Women 35-36） (ASIN: B07WVWK85G)
+
+=== RESULT: SUCCESS (Turn 1) ===
