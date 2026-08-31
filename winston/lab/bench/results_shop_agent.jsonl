@@ -1,0 +1,400 @@
+{"case_id": "c0001", "asin": "B01GZMJAAM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0002", "asin": "B06XQ44VPK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0003", "asin": "B06XP363RD", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0004", "asin": "B0BXWBZ7L7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0005", "asin": "B000IBZRLI", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0006", "asin": "B07N83FQLF", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0007", "asin": "B07WYK9NXT", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0008", "asin": "B07CRJRKZD", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0009", "asin": "B09BPSC7MV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0010", "asin": "B09BPSC7MV", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0011", "asin": "B008A0D07W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0012", "asin": "B001ANP7QS", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0013", "asin": "B07P54KR55", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0014", "asin": "B01HGW7NE0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0015", "asin": "B01C785KAM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0016", "asin": "B06Y2R5LZX", "shop_agent_rank": 21, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0017", "asin": "B0917HMBBG", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0018", "asin": "B08738T96C", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0019", "asin": "B077J6DKSN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0020", "asin": "B00BXAA3SK", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0021", "asin": "B00JRNWCPM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0022", "asin": "B00E0OS01S", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0023", "asin": "B00BIQKYD8", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0024", "asin": "B09ZJNQ64X", "shop_agent_rank": 3, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0025", "asin": "B07RLFXNCQ", "shop_agent_rank": 8, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0026", "asin": "B00JRNWCPM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0027", "asin": "B089N2V62P", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0028", "asin": "B084P55J89", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0029", "asin": "B071RLLDT2", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0030", "asin": "B074BC43M2", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0031", "asin": "B07H2X1SK2", "shop_agent_rank": 15, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0032", "asin": "B08X12YCD1", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0033", "asin": "B08P5MXWDD", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0034", "asin": "B01IQPGUB8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0035", "asin": "B014J2QKGW", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0036", "asin": "B003FLMK9A", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0037", "asin": "B07NJ5K3MQ", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0038", "asin": "B005EC21BK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0039", "asin": "B00F3Q8FO4", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0040", "asin": "B084P55J89", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0041", "asin": "B076F1X7YB", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0042", "asin": "B002LCEM0Y", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0043", "asin": "B0919Y37TR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0044", "asin": "B00BXAA3SK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0045", "asin": "B00LU2EFLM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0046", "asin": "B07PRF6JKV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0047", "asin": "B00827JE5U", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0048", "asin": "B01BVR728S", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0049", "asin": "B07WR8TMXF", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0050", "asin": "B001ANP7QS", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0051", "asin": "B01GURXSDM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0052", "asin": "B06XL16BML", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0053", "asin": "B07CMBH6TC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0054", "asin": "B086DX765T", "shop_agent_rank": 16, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0055", "asin": "B001H0FVWO", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0056", "asin": "B07N63VV3T", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0057", "asin": "B09YXYKB24", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0058", "asin": "B077V518G8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0059", "asin": "B01AWPPLYC", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0060", "asin": "B07Z1SF8VV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0061", "asin": "B00GWKPQPG", "shop_agent_rank": 19, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0062", "asin": "B09Q5BBYYM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0063", "asin": "B0714B733Q", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0064", "asin": "B089K2CNS6", "shop_agent_rank": 11, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0065", "asin": "B00BIQKYD8", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0066", "asin": "B01N1RC2TD", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0067", "asin": "B014U9ZEIY", "shop_agent_rank": 23, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0068", "asin": "B08HS2FF3P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0069", "asin": "B00VWPAVLU", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0070", "asin": "B00ESK5E4U", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0071", "asin": "B01AWPPLYC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0072", "asin": "B019C7KBE6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0073", "asin": "B09W65SWSV", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0074", "asin": "B0917HMBBG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0075", "asin": "B0BHPM19JW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0076", "asin": "B06XQ44VPK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0077", "asin": "B07H7353QG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0078", "asin": "B07N83FQLF", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0079", "asin": "B0BLTNDKJ9", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0080", "asin": "B01DS32E9U", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0081", "asin": "B07C24QYMM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0082", "asin": "B07LH5YQ8B", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0083", "asin": "B06X6D2R6W", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0084", "asin": "B084P55J89", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0085", "asin": "B09Q5BBYYM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0086", "asin": "B07M7P8NHG", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0087", "asin": "B003XQRAGU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0088", "asin": "B0BGPSH9GN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0089", "asin": "B09T6NW68F", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0090", "asin": "B07P54KR55", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0091", "asin": "B07Z1SF8VV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0092", "asin": "B09MK3DSVZ", "shop_agent_rank": 10, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0093", "asin": "B01JYUVN3E", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0094", "asin": "B07RT7JDNK", "shop_agent_rank": 15, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0095", "asin": "B016K36RMK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0096", "asin": "B007W1YFXI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0097", "asin": "B0BXWBZ7L7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0098", "asin": "B0054D2678", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0099", "asin": "B00H31KRVG", "shop_agent_rank": 16, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0100", "asin": "B01825SQ4Q", "shop_agent_rank": 3, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0101", "asin": "B01FU56JPO", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0102", "asin": "B001ENYS0K", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0103", "asin": "B002LCEM0Y", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0104", "asin": "B00SDCIAEK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0105", "asin": "B08CV6FM23", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0106", "asin": "B07CQSSSZG", "shop_agent_rank": 32, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0107", "asin": "B01HGW7NE0", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0108", "asin": "B01I5N3KZA", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0109", "asin": "B0714B733Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0110", "asin": "B00MUAZQGG", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0111", "asin": "B07TJJM7ZJ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0112", "asin": "B016K36RMK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0113", "asin": "B00GWKPQPG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0114", "asin": "B001BO2LR4", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0115", "asin": "B0856S1V73", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0116", "asin": "B00JQ6YN5C", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0117", "asin": "B079QLPYRZ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0118", "asin": "B001ENYS0K", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0119", "asin": "B00OF4ZY9Y", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0120", "asin": "B00P5BCQHO", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0121", "asin": "B07WR8TMXF", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0122", "asin": "B07M7DPKLR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0123", "asin": "B09Q5BBYYM", "shop_agent_rank": 2, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0124", "asin": "B0764L6MDK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0125", "asin": "B012BLXMPK", "shop_agent_rank": 15, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0126", "asin": "B082QVXS5Y", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0127", "asin": "B0038YXGTC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0128", "asin": "B08BZ9V16Z", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0129", "asin": "B093HLL7F7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0130", "asin": "B076D2SHDD", "shop_agent_rank": 14, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0131", "asin": "B09NZDC2BK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0132", "asin": "B0777WPRG1", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0135", "asin": "B00OTRPFOQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0136", "asin": "B00JRNWCPM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0139", "asin": "B0054QYVK0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0140", "asin": "B00LU2EFLM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0143", "asin": "B07TJJM7ZJ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0147", "asin": "B08HS2FF3P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0150", "asin": "B07HFMFRSK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0151", "asin": "B09QT3ZWZ1", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0152", "asin": "B01FT03IRW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0153", "asin": "B07Q49R1JM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0154", "asin": "B00H31KRVG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0158", "asin": "B07WJLB71H", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0160", "asin": "B01BVR728S", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0163", "asin": "B09VNYJ9T8", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0165", "asin": "B00AWR9T3U", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0167", "asin": "B01I5N3KZA", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0168", "asin": "B07LH5YQ8B", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0169", "asin": "B07TC6ZPDR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0171", "asin": "B0BS3LGL5G", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0172", "asin": "B0054QYVK0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0174", "asin": "B00UGFSXM6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0179", "asin": "B07PRF6JKV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0180", "asin": "B0007Q7I02", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0181", "asin": "B00TPRJ2W6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0182", "asin": "B01FT03IRW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0187", "asin": "B076D2SHDD", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0188", "asin": "B072N86ZGW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0191", "asin": "B008D242VK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0193", "asin": "B082QVXS5Y", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0194", "asin": "B0856S1V73", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0195", "asin": "B008D242VK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0196", "asin": "B07RT7JDNK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0199", "asin": "B08LSK4RC7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0200", "asin": "B00PFXI7GG", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0201", "asin": "B07HYSVQFG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0208", "asin": "B08Y76YBLQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0209", "asin": "B00PKK7JYU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0212", "asin": "B007W1YFXI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0214", "asin": "B00BP4D4RG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0215", "asin": "B0764L6MDK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0217", "asin": "B06Y2R5LZX", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0220", "asin": "B086DX765T", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0222", "asin": "B07C24QYMM", "shop_agent_rank": 3, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0223", "asin": "B0BGPSH9GN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0224", "asin": "B07DW2BZ8B", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0227", "asin": "B07P54KR55", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0228", "asin": "B079QLPYRZ", "shop_agent_rank": 5, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0229", "asin": "B008JFEPJU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0230", "asin": "B09H3ZG1G2", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0233", "asin": "B01HGW7NE0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0237", "asin": "B07N63VV3T", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0239", "asin": "B07VSZQX54", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0240", "asin": "B00P5BCQHO", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0241", "asin": "B07C24QYMM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0242", "asin": "B08P5MXWDD", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0243", "asin": "B004PB0BJU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0244", "asin": "B07TC6ZPDR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0248", "asin": "B09VNYJ9T8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0251", "asin": "B01IQPGUB8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0252", "asin": "B08HS2FF3P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0255", "asin": "B01CFJH27W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0256", "asin": "B017G0OF5W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0257", "asin": "B07WNGKCTH", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0258", "asin": "B01AWPPLYC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0262", "asin": "B0756BLX6R", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0263", "asin": "B07D9VBZFM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0264", "asin": "B07G4ZDXCN", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0266", "asin": "B006Z34MCI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0268", "asin": "B007I0BA68", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0269", "asin": "B0071IBN2S", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0272", "asin": "B07N6NK4CS", "shop_agent_rank": 2, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0273", "asin": "B001ENYS0K", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0274", "asin": "B089N2V62P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0275", "asin": "B0BGB8G28H", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0277", "asin": "B01JYUVN3E", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0281", "asin": "B077V518G8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0285", "asin": "B089K2CNS6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0288", "asin": "B08CV6FM23", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0292", "asin": "B09T6NW68F", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0295", "asin": "B01CFJH27W", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0296", "asin": "B087CCZGZ8", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0298", "asin": "B084P55J89", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0301", "asin": "B08CH3XWX3", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0303", "asin": "B00PKK7JYU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0305", "asin": "B005D7HSOQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0306", "asin": "B00VWPAVLU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0308", "asin": "B007W1YFXI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0311", "asin": "B095LZT1TH", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0312", "asin": "B00302DDH2", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0314", "asin": "B09Y52B9DC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0318", "asin": "B06XGBTLWL", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0321", "asin": "B07RKP5S65", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0322", "asin": "B09SYVPC12", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0323", "asin": "B007VQLEVA", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0324", "asin": "B0856S1V73", "shop_agent_rank": 21, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0325", "asin": "B00A0TEN1S", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0327", "asin": "B018LT7U2W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0329", "asin": "B00H31KRVG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0331", "asin": "B00334UE7E", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0332", "asin": "B06Y18N8YW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0334", "asin": "B01825SQ4Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0336", "asin": "B07XFMK5VH", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0338", "asin": "B079H84LSR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0339", "asin": "B081WW125V", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0341", "asin": "B0054D2678", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0348", "asin": "B077TPVTMT", "shop_agent_rank": 31, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0349", "asin": "B01LZJGCC8", "shop_agent_rank": 36, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0350", "asin": "B08Y76YBLQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0354", "asin": "B079D3NL4V", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0357", "asin": "B00P22QV90", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0359", "asin": "B004PB0BJU", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0362", "asin": "B06X6D2R6W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0364", "asin": "B07RT7JDNK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0369", "asin": "B0027O9SLY", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0370", "asin": "B019COKF2M", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0373", "asin": "B08LSK4RC7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0374", "asin": "B07YMN2471", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0380", "asin": "B00OF4ZY9Y", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0382", "asin": "B09MK3DSVZ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0383", "asin": "B00302DDH2", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0384", "asin": "B07NJ5K3MQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0385", "asin": "B01825SQ4Q", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0387", "asin": "B07M6VSF11", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0388", "asin": "B0BZRRP3Z7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0389", "asin": "B0856S1V73", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0390", "asin": "B00Z8NZL30", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0391", "asin": "B08G1WN3Z7", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0393", "asin": "B073HQNWLM", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0399", "asin": "B07JQBGSC9", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0403", "asin": "B07H77W6G4", "shop_agent_rank": 44, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0404", "asin": "B00334UE7E", "shop_agent_rank": 1, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0405", "asin": "B019COKF2M", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0408", "asin": "B01BVR728S", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0411", "asin": "B077GMFYWZ", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0413", "asin": "B071PFGR4J", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0414", "asin": "B014J2QKGW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0419", "asin": "B07FCQCB4T", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0423", "asin": "B008195SMW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0424", "asin": "B08P5MXWDD", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0425", "asin": "B07RT7JDNK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0433", "asin": "B08D7K53L5", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0434", "asin": "B07GLKT34B", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0435", "asin": "B005972FPM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0438", "asin": "B008B9CACI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0441", "asin": "B07DW2BZ8B", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0446", "asin": "B012BLXMPK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0447", "asin": "B07PRF6JKV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0452", "asin": "B00UGFSXM6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0453", "asin": "B00QW3LMYM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0456", "asin": "B07LH5YQ8B", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0457", "asin": "B00IEYZKOK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0460", "asin": "B08G81SR12", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0461", "asin": "B00E0OS01S", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0464", "asin": "B011EU1LMU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0469", "asin": "B003OQ4SNC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0470", "asin": "B00WCO05T8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0474", "asin": "B00IEYZKOK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0475", "asin": "B07T6LHPM5", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0476", "asin": "B00LU2EFLM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0479", "asin": "B076D2SHDD", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0481", "asin": "B07NJ5K3MQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0482", "asin": "B09NZDC2BK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0484", "asin": "B07JQBGSC9", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0493", "asin": "B0777WPRG1", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0496", "asin": "B08D7K53L5", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0497", "asin": "B07CQSSSZG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0504", "asin": "B016K36RMK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0506", "asin": "B079H84LSR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0507", "asin": "B07SJ8L37H", "shop_agent_rank": 37, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0508", "asin": "B011EU1LMU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0509", "asin": "B00PHNKMPI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0511", "asin": "B086DX765T", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0512", "asin": "B00QW3LMYM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0515", "asin": "B07TXNWF9Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0516", "asin": "B074NZ3D63", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0517", "asin": "B0BZV6PVJG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0518", "asin": "B073ZC9871", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0520", "asin": "B085XXRDGR", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0521", "asin": "B0714B733Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0522", "asin": "B07SJ8L37H", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0524", "asin": "B0007Q7I02", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0525", "asin": "B00H9ZK9U0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0528", "asin": "B00TPRJ2W6", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0531", "asin": "B0C2JBR98W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0536", "asin": "B06XQ44VPK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0539", "asin": "B077ZGRY8P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0541", "asin": "B00OSXN2AU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0545", "asin": "B0B8TK3QNW", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0546", "asin": "B01MT1K1SC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0547", "asin": "B087Q6L93Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0548", "asin": "B01GURXSDM", "shop_agent_rank": 2, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0549", "asin": "B00P5BCQHO", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0551", "asin": "B00BP4D4RG", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0552", "asin": "B09W65SWSV", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0553", "asin": "B08NYJPNF4", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0554", "asin": "B00H9ZK9U0", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0555", "asin": "B09882214F", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0559", "asin": "B07DHWH7WB", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0560", "asin": "B00HZT96RW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0561", "asin": "B08YR2NMLB", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0562", "asin": "B0756BLX6R", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0564", "asin": "B087CCZGZ8", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0565", "asin": "B072JLWX7P", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0566", "asin": "B01GURXSDM", "shop_agent_rank": 2, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0569", "asin": "B08BZ9V16Z", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0571", "asin": "B00M0GH7IK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0573", "asin": "B087Q6L93Q", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0578", "asin": "B09T6NW68F", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0580", "asin": "B07GKVLQPZ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0582", "asin": "B00827JE5U", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0583", "asin": "B006NYP2KK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0584", "asin": "B01M0S5UZ2", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0585", "asin": "B00KT48NC4", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0587", "asin": "B00BXAA3SK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0588", "asin": "B08YR2NMLB", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0589", "asin": "B00KT48NC4", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0590", "asin": "B005D7HSOQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0591", "asin": "B001ANP7QS", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0593", "asin": "B00U6Q7EZM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0595", "asin": "B08CV6FM23", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0598", "asin": "B06XGBTLWL", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0600", "asin": "B08NYJPNF4", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0601", "asin": "B072N86ZGW", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0602", "asin": "B07JQBGSC9", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0604", "asin": "B06XP363RD", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0606", "asin": "B08GR3VKSN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0612", "asin": "B08Y76YBLQ", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0614", "asin": "B08HD1XXBC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0617", "asin": "B073HQNWLM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0619", "asin": "B01FU56JPO", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0620", "asin": "B00U6Q7EZM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0623", "asin": "B09Y52B9DC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0625", "asin": "B09VNYJ9T8", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0627", "asin": "B08LM3MLRK", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0629", "asin": "B008A0D07W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0631", "asin": "B00BXAA3SK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0632", "asin": "B004PB0BJU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0633", "asin": "B07TC6ZPDR", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0639", "asin": "B00BF21TO8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0640", "asin": "B0BPL9TBWY", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0641", "asin": "B06X6D2R6W", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0642", "asin": "B00LU2EFLM", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0644", "asin": "B01AWPPLYC", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0645", "asin": "B06XL16BML", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0646", "asin": "B008D242VK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0650", "asin": "B08738T96C", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0651", "asin": "B075LT9MJ9", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0652", "asin": "B00WCO05T8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0654", "asin": "B0BZV6PVJG", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0655", "asin": "B07RKP5S65", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0656", "asin": "B07HNPCXL8", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0658", "asin": "B07C24QYMM", "shop_agent_rank": 7, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0659", "asin": "B08YR2NMLB", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0660", "asin": "B07GLKT34B", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0661", "asin": "B07HYSVQFG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0664", "asin": "B00PHNKMPI", "shop_agent_rank": null, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0665", "asin": "B06XL16BML", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0666", "asin": "B077J6DKSN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0667", "asin": "B019COKF2M", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0673", "asin": "B003XQRAGU", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0676", "asin": "B07M7P8NHG", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0677", "asin": "B085XXRDGR", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0678", "asin": "B0BLTNDKJ9", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0680", "asin": "B072BXRZVN", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0681", "asin": "B09Q5BBYYM", "shop_agent_rank": 2, "route": "custom_llm", "model_used": "GPT-4o-Mini"}
+{"case_id": "c0682", "asin": "B012BLXMPK", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0686", "asin": "B07VSZQX54", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
+{"case_id": "c0687", "asin": "B000IBZRLI", "shop_agent_rank": null, "route": "baseline_lexical", "model_used": "Exact Lexical Matcher (Agent 1)"}
