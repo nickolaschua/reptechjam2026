@@ -682,13 +682,13 @@
             <div class="stat-item" style="padding: 2px 6px;">
                 <span style="color: var(--text-muted); font-size: 12px;">Mode:</span>
                 <select id="mode-select" class="search-bar" style="padding: 4px 10px; border-radius: 6px; font-size: 12px; width: auto; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); outline: none;">
-                    <option value="auto">Auto (Llama 3.1 Shopper)</option>
+                    <option value="auto">Auto (Ollama Llama 3.1 8B)</option>
                     <option value="manual">Manual (Write as Shopper)</option>
                 </select>
             </div>
             <div class="stat-item">
                 <span style="color: var(--text-muted);">Simulator Model:</span>
-                <span style="color: var(--accent-cyan); font-weight: 600;">Llama 3.1</span>
+                <span style="color: var(--accent-cyan); font-weight: 600;">Ollama Llama 3.1 8B</span>
             </div>
         </div>
     </header>
@@ -732,7 +732,7 @@
             <div class="chat-board" id="chat-board-container">
                 <div class="empty-state">
                     <h3>Select a Session</h3>
-                    <p>Choose a public session from the sidebar directory on the left to start a real-time conversational simulation with Llama 3.1 shopper.</p>
+                    <p>Choose a public session from the sidebar directory on the left to start a real-time conversational simulation with the local Ollama Llama 3.1 8B shopper.</p>
                 </div>
             </div>
 
@@ -1059,7 +1059,7 @@
             msgWrapper.className = `msg-wrapper ${msg.role}-msg`;
 
             const senderClass = msg.role === 'customer' ? 'shopper' : 'copilot';
-            const senderName = msg.role === 'customer' ? 'Shopper (Llama 3.1)' : 'Copilot Assistant (Hybrid)';
+            const senderName = msg.role === 'customer' ? 'Shopper (Ollama Llama 3.1 8B)' : 'Copilot (Ollama Llama 3.1 8B)';
 
         function getProductImage(r) {
             if (r.image_url && safeImageUrl(r.image_url)) {

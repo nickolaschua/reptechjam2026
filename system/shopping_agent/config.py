@@ -46,15 +46,7 @@ def _env_bool(name: str, default: bool = False) -> bool:
 
 _load_env_file()
 
-OPENAI_EMBEDDING_MODEL = "text-embedding-3-large"
-OPENAI_EMBEDDING_DIMENSIONS = 3072
-OPENAI_SMALL_EMBEDDING_MODEL = "text-embedding-3-small"
-OPENAI_SMALL_EMBEDDING_DIMENSIONS = 1536
-# Main workflow switch: production uses local BGE; test mode uses OpenAI small.
-TEST_MODE = _env_bool("TEST_MODE", False)
 ALLOW_CATALOG_EMBEDDING = _env_bool("ALLOW_CATALOG_EMBEDDING", False)
-OPENAI_CHAT_MODEL = "gpt-4o-mini"
-DEEPSEEK_CHAT_MODEL = "deepseek-chat"
 
 RELEVANCE_THRESHOLD = 0.20
 BUYING_CURRENT_WEIGHT = 0.80
@@ -74,19 +66,12 @@ __all__ = [
     "BUYING_MEMORY_WEIGHT",
     "CATALOG_PATH",
     "DEMO_TOP_K",
-    "DEEPSEEK_CHAT_MODEL",
     "EMBEDDING_CACHE_DIR",
     "EWMA_ALPHA",
     "EXPECTED_CATALOG_ROWS",
     "MEMORY_STORE_PATH",
-    "OPENAI_CHAT_MODEL",
-    "OPENAI_EMBEDDING_DIMENSIONS",
-    "OPENAI_EMBEDDING_MODEL",
-    "OPENAI_SMALL_EMBEDDING_DIMENSIONS",
-    "OPENAI_SMALL_EMBEDDING_MODEL",
     "PROJECT_ROOT",
     "RELEVANCE_THRESHOLD",
     "SHOPPING_AGENT_DIR",
     "SYSTEM_DIR",
-    "TEST_MODE",
 ]

@@ -1,31 +1,30 @@
 from __future__ import annotations
 from copy import deepcopy
 from dataclasses import dataclass
-import os
 import re
-import json
 import time
-import requests
 import numpy as np
 from pathlib import Path
 from typing import Any, Sequence
 import builtins
+import warnings
 
 try:
     from .embedding_backends import (
         CacheExpectation,
         CacheValidationError,
         CatalogCacheMissError,
+        BGEEmbeddingBackend,
         EmbeddingBackend,
         PRODUCT_TEXT_VERSION,
         cache_filename,
-        embedding_backend_for_mode,
         fingerprint_file,
         fingerprint_texts,
         load_embedding_cache,
+        production_product_texts,
         save_embedding_cache,
     )
-    from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR, TEST_MODE
+    from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR
     from .catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -36,6 +35,9 @@ try:
         select_best_attributes,
     )
     from .memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
+    from .category_resolver import CategoryResolver, catalog_bucket_set
+    from .ollama_client import OllamaClient, OllamaError, get_default_ollama_client
+    from .turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from .vector_memory import (
         BuyerMode,
         DEFAULT_VECTOR_MEMORY_CONFIG,
@@ -47,16 +49,17 @@ except ImportError:
         CacheExpectation,
         CacheValidationError,
         CatalogCacheMissError,
+        BGEEmbeddingBackend,
         EmbeddingBackend,
         PRODUCT_TEXT_VERSION,
         cache_filename,
-        embedding_backend_for_mode,
         fingerprint_file,
         fingerprint_texts,
         load_embedding_cache,
+        production_product_texts,
         save_embedding_cache,
     )
-    from config import CATALOG_PATH, EMBEDDING_CACHE_DIR, TEST_MODE
+    from config import CATALOG_PATH, EMBEDDING_CACHE_DIR
     from catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -67,26 +70,15 @@ except ImportError:
         select_best_attributes,
     )
     from memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
+    from category_resolver import CategoryResolver, catalog_bucket_set
+    from ollama_client import OllamaClient, OllamaError, get_default_ollama_client
+    from turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from vector_memory import (
         BuyerMode,
         DEFAULT_VECTOR_MEMORY_CONFIG,
         positive_slot_text,
         score_catalog,
     )
-
-try:
-    import openai
-    HAS_OPENAI = True
-except ImportError:
-    HAS_OPENAI = False
-    openai = None
-
-try:
-    import google.generativeai as genai
-    HAS_GEMINI = True
-except ImportError:
-    HAS_GEMINI = False
-    genai = None
 
 def _normalize(value: object) -> str:
     return re.sub(r"\s+", " ", str(value or "").lower()).strip()
@@ -242,6 +234,20 @@ STOPWORDS = {
     "make", "made", "done", "run", "doing"
 }
 
+_EVALUATOR_INITIAL_RE = re.compile(
+    r"^i['\u2019]m looking for (?P<category>[^.,]{1,80}?)"
+    r"(?:, but i['\u2019]m still exploring\.?|\. a key requirement is: .+|\. \S.*)$",
+    re.IGNORECASE | re.DOTALL,
+)
+_EVALUATOR_FOLLOWUP_RES = tuple(re.compile(pattern, re.IGNORECASE | re.DOTALL) for pattern in (
+    r"^for that, what matters is: \S.*\.$",
+    r"^actually, ignore my earlier preference\. what i need is: \S.*\.$",
+    r"^actually, please ignore my earlier preference\.$",
+    r"^i don['\u2019]t have a preference for [a-z_]+; please use your judgment\.$",
+    r"^i don['\u2019]t have an additional preference for [a-z_]+\.$",
+    r"^those options are not quite right yet\. ask me about one specific attribute\.$",
+))
+
 def _text(value: object) -> str:
     if value is None:
         return ""
@@ -269,6 +275,8 @@ def _state_to_retrieval_query(state: dict) -> str:
 
     add(state.get("category", ""))
     add(state.get("department", ""))
+    for value in state.get("exact_terms", ()):
+        add(value)
     positive_markers = {"true", "yes", "affirmative", "required", "included"}
     negative_markers = {"false", "no", "none", "n/a", "null", "other", ""}
     slots = state.get("disclosed_slots", {})
@@ -304,10 +312,12 @@ class Agent:
         catalog_path: str | Path = None,
         embedding_backend: EmbeddingBackend | None = None,
         *,
-        test_mode: bool = TEST_MODE,
+        test_mode: bool | None = None,
         allow_catalog_embedding: bool = False,
         embedding_cache_dir: str | Path | None = None,
         memory_store: InMemoryUserMemoryStore | None = None,
+        turn_parser: TurnParser | None = None,
+        ollama_client: OllamaClient | None = None,
     ) -> None:
         initialization_started = time.perf_counter()
         self.instrumentation = {
@@ -322,16 +332,21 @@ class Agent:
             "semantic_queries": [],
             "turns": [],
             "agent_errors": [],
-            "baseline_fallback_count": 0,
+            "parser_calls": [],
+            "llm_calls": [],
         }
         if catalog_path is None:
             catalog_path = CATALOG_PATH
         self.catalog_path = Path(catalog_path)
 
-        self.test_mode = bool(test_mode)
-        self.embedding_backend = embedding_backend or embedding_backend_for_mode(
-            self.test_mode
-        )
+        if test_mode is not None:
+            warnings.warn(
+                "Agent(test_mode=...) is deprecated and no longer changes the "
+                "embedding provider; BGE remains selected",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+        self.embedding_backend = embedding_backend or BGEEmbeddingBackend()
         self.embedding_backend_id = self.embedding_backend.backend_id
         self.embedding_model_id = self.embedding_backend.model_id
         self.embedding_space_id = self.embedding_backend.embedding_space_id
@@ -340,6 +355,7 @@ class Agent:
         self.allow_catalog_embedding = bool(allow_catalog_embedding)
         self.embedding_cache_dir = Path(embedding_cache_dir or EMBEDDING_CACHE_DIR)
         self.memory_store = memory_store or InMemoryUserMemoryStore()
+        self.ollama_client = ollama_client or get_default_ollama_client()
         self.vector_memory_config = DEFAULT_VECTOR_MEMORY_CONFIG
         self._active_lifecycle: dict[str, dict[str, Any]] = {}
         self._ended_lifecycle: dict[str, dict[str, Any]] = {}
@@ -354,6 +370,13 @@ class Agent:
         # Build only metadata and the cached vector index used by the demo path.
         catalog_started = time.perf_counter()
         self._build_category_index()
+        if turn_parser is None:
+            resolver = CategoryResolver(self.catalogue)
+            self.turn_parser = WinstonTurnParser(resolver, client=self.ollama_client)
+            self._template_buckets = resolver.bucket_names
+        else:
+            self.turn_parser = turn_parser
+            self._template_buckets = catalog_bucket_set(self.catalogue)
         self.instrumentation["initialization"]["catalog_loading_seconds"] = (
             time.perf_counter() - catalog_started
         )
@@ -389,13 +412,7 @@ class Agent:
 
     def _build_vector_index(self) -> None:
         product_text_started = time.perf_counter()
-        self.catalog_texts = []
-        for p in self.catalog_products:
-            title = p.get("title") or ""
-            cats = ", ".join(p.get("categories") or [])
-            feats = "; ".join((p.get("features") or [])[:3])
-            text = f"Product: {title}. Categories: {cats}. Features: {feats}.".strip()
-            self.catalog_texts.append(text)
+        self.catalog_texts = production_product_texts(self.catalog_products)
         self.instrumentation["initialization"]["product_text_build_seconds"] = (
             time.perf_counter() - product_text_started
         )
@@ -466,296 +483,46 @@ class Agent:
                 catalogue.close()
             self._closed = True
 
-    def _call_llm(self, prompt: str, system_prompt: str = "", session_id: str = None, response_json: bool = False) -> str:
-        import urllib.request
+    def _call_llm(
+        self,
+        prompt: str,
+        system_prompt: str = "",
+        session_id: str | None = None,
+        response_json: bool = False,
+    ) -> str:
+        """Generate one assistant response through the shared local Ollama client."""
 
-        if os.environ.get("FAST_EVAL") == "1":
-            return "Here are the top matches based on your preferences."
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": prompt})
+        try:
+            call = self.ollama_client.chat_result(
+                messages,
+                format="json" if response_json else None,
+                options={"temperature": 0.4, "num_predict": 150},
+                role="assistant",
+            )
+        except OllamaError as exc:
+            trace = exc.instrumentation()
+            trace.update({"session_id": session_id, "rolled_back": False})
+            self.instrumentation.setdefault("llm_calls", []).append(trace)
+            raise
 
-        openai_key = os.environ.get("OPENAI_API_KEY")
-        deepseek_key = os.environ.get("DEEPSEEK_API_KEY")
-        gemini_key = os.environ.get("GEMINI_API_KEY")
-
-        # Cleanup placeholders
-        if openai_key and (openai_key.startswith("your_") or "placeholder" in openai_key.lower()):
-            openai_key = None
-        if deepseek_key and (deepseek_key.startswith("your_") or "placeholder" in deepseek_key.lower()):
-            deepseek_key = None
-        if gemini_key and (gemini_key.startswith("your_") or "placeholder" in gemini_key.lower()):
-            gemini_key = None
-
-        model_used = "Static Fallback"
-        res_text = ""
-
-        # ==========================================
-        # 1. Attempt DeepSeek if key is present
-        # ==========================================
-        if deepseek_key:
-            # Method A: OpenAI SDK pointing to DeepSeek
-            if HAS_OPENAI:
-                try:
-                    client = openai.OpenAI(api_key=deepseek_key, base_url="https://api.deepseek.com/v1")
-                    res = client.chat.completions.create(
-                        model="deepseek-chat",
-                        messages=[
-                            {"role": "system", "content": system_prompt},
-                            {"role": "user", "content": prompt}
-                        ],
-                        temperature=0.4,
-                        max_tokens=150,
-                        response_format={"type": "json_object"} if response_json else None
-                    )
-                    res_text = res.choices[0].message.content.strip()
-                    model_used = "DeepSeek-Chat (DeepSeek SDK)"
-                except Exception as sdk_err:
-                    print(f"[Hybrid Agent] DeepSeek SDK call failed: {sdk_err}. Trying urllib...")
-
-            # Method B: urllib.request (System SSL native)
-            if not res_text:
-                url = "https://api.deepseek.com/v1/chat/completions"
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {deepseek_key}",
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-                }
-                payload = {
-                    "model": "deepseek-chat",
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.4,
-                    "max_tokens": 150
-                }
-                if response_json:
-                    payload["response_format"] = {"type": "json_object"}
-                try:
-                    req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-                    with urllib.request.urlopen(req, timeout=3) as response:
-                        data = json.loads(response.read().decode("utf-8"))
-                        res_text = data["choices"][0]["message"]["content"].strip()
-                        model_used = "DeepSeek-Chat (DeepSeek urllib)"
-                except Exception as urllib_err:
-                    print(f"[Hybrid Agent] DeepSeek urllib call failed: {urllib_err}. Trying requests...")
-
-            # Method C: requests
-            if not res_text:
-                url = "https://api.deepseek.com/v1/chat/completions"
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {deepseek_key}"
-                }
-                payload = {
-                    "model": "deepseek-chat",
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.4,
-                    "max_tokens": 150
-                }
-                if response_json:
-                    payload["response_format"] = {"type": "json_object"}
-                try:
-                    res = requests.post(url, json=payload, timeout=3)
-                    res.raise_for_status()
-                    data = res.json()
-                    res_text = data["choices"][0]["message"]["content"].strip()
-                    model_used = "DeepSeek-Chat (DeepSeek requests)"
-                except Exception as e:
-                    print(f"[Hybrid Agent] DeepSeek requests call failed: {e}")
-
-        # ==========================================
-        # 2. Attempt OpenAI if key is present
-        # ==========================================
-        if not res_text and openai_key:
-            # Method A: OpenAI SDK
-            if HAS_OPENAI:
-                try:
-                    client = openai.OpenAI(api_key=openai_key)
-                    res = client.chat.completions.create(
-                        model="gpt-4o-mini",
-                        messages=[
-                            {"role": "system", "content": system_prompt},
-                            {"role": "user", "content": prompt}
-                        ],
-                        temperature=0.4,
-                        max_tokens=150,
-                        response_format={"type": "json_object"} if response_json else None
-                    )
-                    res_text = res.choices[0].message.content.strip()
-                    model_used = "GPT-4o-Mini (OpenAI SDK)"
-                except Exception as sdk_err:
-                    print(f"[Hybrid Agent] OpenAI SDK call failed: {sdk_err}. Trying urllib...")
-
-            # Method B: urllib.request (System SSL native)
-            if not res_text:
-                url = "https://api.openai.com/v1/chat/completions"
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {openai_key}",
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-                }
-                payload = {
-                    "model": "gpt-4o-mini",
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.4,
-                    "max_tokens": 150
-                }
-                if response_json:
-                    payload["response_format"] = {"type": "json_object"}
-                try:
-                    req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-                    with urllib.request.urlopen(req, timeout=3) as response:
-                        data = json.loads(response.read().decode("utf-8"))
-                        res_text = data["choices"][0]["message"]["content"].strip()
-                        model_used = "GPT-4o-Mini (OpenAI urllib)"
-                except Exception as urllib_err:
-                    print(f"[Hybrid Agent] OpenAI urllib call failed: {urllib_err}. Trying requests...")
-
-            # Method C: requests
-            if not res_text:
-                url = "https://api.openai.com/v1/chat/completions"
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {openai_key}"
-                }
-                payload = {
-                    "model": "gpt-4o-mini",
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.4,
-                    "max_tokens": 150
-                }
-                if response_json:
-                    payload["response_format"] = {"type": "json_object"}
-                try:
-                    res = requests.post(url, json=payload, timeout=3)
-                    res.raise_for_status()
-                    data = res.json()
-                    res_text = data["choices"][0]["message"]["content"].strip()
-                    model_used = "GPT-4o-Mini (OpenAI requests)"
-                except Exception as e:
-                    print(f"[Hybrid Agent] OpenAI requests call failed: {e}")
-
-        # ==========================================
-        # 3. Attempt Gemini if key is present
-        # ==========================================
-        if not res_text and gemini_key:
-            # Method A: Google GenerativeAI SDK
-            if HAS_GEMINI:
-                try:
-                    genai.configure(api_key=gemini_key)
-                    model = genai.GenerativeModel("gemini-1.5-flash")
-                    # Format system instructions if supported, or prepend
-                    res = model.generate_content(
-                        f"{system_prompt}\n\nUser request: {prompt}",
-                        generation_config={
-                            "temperature": 0.4,
-                            "max_output_tokens": 150,
-                            "response_mime_type": "application/json" if response_json else "text/plain"
-                        }
-                    )
-                    res_text = res.text.strip()
-                    model_used = "Gemini-1.5-Flash (Gemini SDK)"
-                except Exception as sdk_err:
-                    print(f"[Hybrid Agent] Gemini SDK call failed: {sdk_err}. Trying urllib...")
-
-            # Method B: urllib.request (System SSL native)
-            if not res_text:
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
-                headers = {
-                    "Content-Type": "application/json",
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-                }
-                payload = {
-                    "contents": [{
-                        "role": "user",
-                        "parts": [{"text": f"{system_prompt}\n\nUser request: {prompt}"}]
-                    }],
-                    "generationConfig": {
-                        "temperature": 0.4,
-                        "maxOutputTokens": 150
-                    }
-                }
-                if response_json:
-                    payload["generationConfig"]["responseMimeType"] = "application/json"
-                try:
-                    req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-                    with urllib.request.urlopen(req, timeout=3) as response:
-                        data = json.loads(response.read().decode("utf-8"))
-                        res_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                        model_used = "Gemini-1.5-Flash (Gemini urllib)"
-                except Exception as urllib_err:
-                    print(f"[Hybrid Agent] Gemini urllib call failed: {urllib_err}. Trying requests...")
-
-            # Method C: requests
-            if not res_text:
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
-                headers = {"Content-Type": "application/json"}
-                payload = {
-                    "contents": [{
-                        "role": "user",
-                        "parts": [{"text": f"{system_prompt}\n\nUser request: {prompt}"}]
-                    }],
-                    "generationConfig": {
-                        "temperature": 0.4,
-                        "maxOutputTokens": 150
-                    }
-                }
-                if response_json:
-                    payload["generationConfig"]["responseMimeType"] = "application/json"
-                try:
-                    res = requests.post(url, json=payload, timeout=3)
-                    res.raise_for_status()
-                    data = res.json()
-                    res_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                    model_used = "Gemini-1.5-Flash (Gemini requests)"
-                except Exception as e:
-                    print(f"[Hybrid Agent] Gemini requests call failed: {e}")
-
-        # ==========================================
-        # 4. Attempt local Ollama as final API option
-        # ==========================================
-        if not res_text:
-            url = "http://localhost:11434/api/chat"
-            payload = {
-                "model": "llama3.1",
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": prompt}
-                ],
-                "stream": False,
-                "options": {
-                    "temperature": 0.4
-                }
-            }
-            if response_json:
-                payload["format"] = "json"
-            try:
-                res = requests.post(url, json=payload, timeout=3)
-                res.raise_for_status()
-                data = res.json()
-                res_text = data["message"]["content"].strip()
-                model_used = "Llama 3.1 (Ollama)"
-            except Exception as e:
-                print(f"[Hybrid Agent] Ollama fallback failed: {e}")
-                res_text = "Here are the top matches based on your preferences."
-                model_used = "Static Fallback"
-
-        # Save to debug session info if session_id is available
+        trace = call.instrumentation()
+        trace.update({"session_id": session_id, "rolled_back": False})
+        self.instrumentation.setdefault("llm_calls", []).append(trace)
         if session_id and session_id in self._sessions:
             debug_info = self._sessions[session_id].setdefault("debug_info", {})
-            debug_info["model"] = model_used
-            debug_info["system_prompt"] = system_prompt
-            debug_info["user_prompt"] = prompt
-
-        return res_text
+            debug_info.update({
+                "model": call.model,
+                "llm_latency_seconds": call.latency_seconds,
+                "llm_retry_count": call.retry_count,
+                "llm_error_type": None,
+                "system_prompt": system_prompt,
+                "user_prompt": prompt,
+            })
+        return call.content
 
     def _classify_constraint_locally(self, val: str) -> str:
         """Categorize a value into one of the evaluator's allowed attributes."""
@@ -791,24 +558,34 @@ class Agent:
 
     def _record_constraint(
         self, state: dict, attr: str, value: str, turn: int, source_type: str,
-        *, promote_existing: bool = False,
+        *, promote_existing: bool = False, polarity: str = "positive",
     ) -> None:
         normalized = _normalize(value)
         for record in state["constraint_provenance"]:
-            if record["attribute"] == attr and _normalize(record["value"]) == normalized and record["status"] == "active":
+            if (
+                record["attribute"] == attr
+                and _normalize(record["value"]) == normalized
+                and record["status"] == "active"
+                and record.get("polarity", "positive") == polarity
+            ):
                 if source_type == "explicit_override" or promote_existing:
                     record["source_turn"] = turn
                     record["source_type"] = source_type
                 return
-        state["constraint_provenance"].append({
+        record = {
             "attribute": attr, "value": value, "source_turn": int(turn),
             "source_type": source_type, "status": "active",
-        })
+        }
+        if polarity != "positive":
+            record["polarity"] = polarity
+        state["constraint_provenance"].append(record)
 
     def _revoke_constraint_record(self, state: dict, record: dict) -> None:
         if record["status"] != "active":
             return
         record["status"] = "revoked"
+        if record.get("polarity", "positive") == "negative":
+            return
         for term in _terms(record["value"]):
             if term not in state["stashed_terms"]:
                 state["stashed_terms"].append(term)
@@ -822,7 +599,9 @@ class Agent:
             if attr == "gender": state["target_department"] = ""
             elif attr == "rating": state["min_avg_rating"] = 0.0
             elif attr == "reviews": state["min_rating_number"] = 0
-            elif attr == "budget": state["price_max"] = 9999.0
+            elif attr == "budget":
+                state["price_min"] = 0.0
+                state["price_max"] = 9999.0
             elif attr == "brand": state["store"] = ""
 
     def _set_constraint(
@@ -832,7 +611,12 @@ class Agent:
         new_values = self._slot_values(values)
         normalized = {_normalize(value) for value in new_values}
         for record in state["constraint_provenance"]:
-            if record["attribute"] == attr and record["status"] == "active" and _normalize(record["value"]) not in normalized:
+            if (
+                record["attribute"] == attr
+                and record["status"] == "active"
+                and record.get("polarity", "positive") == "positive"
+                and _normalize(record["value"]) not in normalized
+            ):
                 self._revoke_constraint_record(state, record)
         if new_values:
             state["disclosed_slots"][attr] = new_values
@@ -901,6 +685,7 @@ class Agent:
             "hoodie", "jacket", "dress", "ring", "necklace", "earring", "bracelet",
         ]):
             state["category"] = " ".join(new_value.lower().split()[:4])
+            state["category_established"] = True
         self._record_constraint(state, new_attr, new_value, turn, "explicit_override")
         self._advance_search_epoch(state)
         self._rebuild_active_terms(state)
@@ -914,12 +699,16 @@ class Agent:
                     state["stashed_terms"].append(term)
         for record in state["constraint_provenance"]:
             if record["attribute"] == attr and record["status"] == "active":
+                if record.get("polarity", "positive") == "negative":
+                    state.get("negated_terms", set()).discard(_normalize(record["value"]))
                 self._revoke_constraint_record(state, record)
         state["disclosed_slots"].pop(attr, None)
         if attr == "gender": state["target_department"] = ""
         elif attr == "rating": state["min_avg_rating"] = 0.0
         elif attr == "reviews": state["min_rating_number"] = 0
-        elif attr == "budget": state["price_max"] = 9999.0
+        elif attr == "budget":
+            state["price_min"] = 0.0
+            state["price_max"] = 9999.0
         elif attr == "brand": state["store"] = ""
         self._rebuild_active_terms(state)
 
@@ -937,11 +726,19 @@ class Agent:
             "history": [],
             "negated_terms": set(),
             "asked_attributes": set(),
+            "pending_category": False,
+            "pending_category_change": False,
+            "category_established": False,
+            "resolver_candidates": [],
+            "resolver_confidence": 0.0,
+            "last_message_type": None,
+            "exact_terms": [],
             "intent_mode": BuyerMode.BROWSING.value,
             "intent_source": "session_default",
             # Slot attributes
             "category": "clothing",
             "department": "",
+            "price_min": 0.0,
             "price_max": 9999.0,
             "target_department": "",
             "min_avg_rating": 0.0,
@@ -1181,7 +978,7 @@ class Agent:
     @staticmethod
     def _explicit_no_preference_attributes(message: str) -> set[str]:
         matches = re.finditer(
-            r"\bi (?:do not|don't) have (?:an? |any )?(?:additional )?preference for\s+([a-z_]+)",
+            r"\bi (?:do not|don['\u2019]t) have (?:an? |any )?(?:additional )?preference for\s+([a-z_]+)",
             str(message).lower(),
         )
         return {match.group(1).strip() for match in matches}
@@ -1229,7 +1026,11 @@ class Agent:
             if retained == self._slot_values(values):
                 continue
             for record in state.get("constraint_provenance", []):
-                if record.get("attribute") == attr and record.get("status") == "active":
+                if (
+                    record.get("attribute") == attr
+                    and record.get("status") == "active"
+                    and record.get("polarity", "positive") == "positive"
+                ):
                     if any(contains_phrase(record.get("value", ""), term) or contains_phrase(term, record.get("value", "")) for term in negatives):
                         self._revoke_constraint_record(state, record)
             if retained:
@@ -1268,7 +1069,7 @@ class Agent:
 
         # 4. Extract Category, Department, Budget slots
         cat_match = re.search(
-            r"i'm looking for\s+(.+?)(?=\s+(?:under|below|max(?:imum)?|with|without|but|that|which|budget|from\s+brands?)\b|[,.;]|$)",
+            r"i['\u2019]m looking for\s+(.+?)(?=\s+(?:under|below|max(?:imum)?|with|without|but|that|which|budget|from\s+brands?)\b|[,.;]|$)",
             msg_lower,
         )
         if cat_match:
@@ -1280,6 +1081,7 @@ class Agent:
                 state["category"] = cand_cat
             else:
                 state["category"] = " ".join(cand_cat.split()[:4])
+            state["category_established"] = True
 
         if any(w in msg_lower for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog"]):
             state["department"] = "shoes"
@@ -1365,18 +1167,17 @@ class Agent:
 
         self._reconcile_negated_state(state, turn)
 
-    @staticmethod
-    def _can_use_fast_path(user_message: str, turn: int) -> bool:
-        msg_lower = user_message.lower().strip()
+    def _can_use_fast_path(self, user_message: str, turn: int) -> bool:
+        """Accept only complete evaluator forms; human lookalikes use Llama 3.1."""
+
+        text = str(user_message).strip()
         if turn == 1:
-            return msg_lower.startswith("i'm looking for ")
-        return (
-            msg_lower.startswith("for that, what matters is:") or
-            msg_lower.startswith("actually, ignore my earlier preference. what i need is:") or
-            msg_lower.startswith("i don't have a preference for") or
-            msg_lower.startswith("i don't have an additional preference for") or
-            "those options are not quite right yet" in msg_lower
-        )
+            match = _EVALUATOR_INITIAL_RE.fullmatch(text)
+            if match:
+                return _normalize(match.group("category")) in getattr(
+                    self, "_template_buckets", frozenset()
+                )
+        return any(pattern.fullmatch(text) for pattern in _EVALUATOR_FOLLOWUP_RES)
 
     @staticmethod
     def _detect_intent_locally(state: dict[str, Any], user_message: str) -> BuyerMode | None:
@@ -1397,7 +1198,8 @@ class Agent:
         concrete_slots = {"budget", "size", "brand", "material", "color"}
         disclosed = set(state.get("disclosed_slots", {}))
         has_hard_condition = (
-            float(state.get("price_max", 9999.0)) < 9999.0
+            float(state.get("price_min", 0.0)) > 0.0
+            or float(state.get("price_max", 9999.0)) < 9999.0
             or bool(state.get("target_department"))
             or float(state.get("min_avg_rating", 0.0)) > 0.0
             or int(state.get("min_rating_number", 0)) > 0
@@ -1459,8 +1261,11 @@ class Agent:
         route_used = "vector-memory"
         dense_before = len(self.instrumentation["semantic_queries"])
         failed = False
+        rolled_back = False
         state_snapshot = None
         forensic_count = 0
+        parser_call_count = len(self.instrumentation.get("parser_calls", ()))
+        llm_call_count = len(self.instrumentation.get("llm_calls", ()))
         try:
             if session_id not in self._active_lifecycle:
                 raise RuntimeError("reset must be called before respond")
@@ -1476,6 +1281,8 @@ class Agent:
             result = self._respond_custom(
                 session_id, user_message, turn, top_k, mode, emit_debug=False
             )
+            if result.get("ask_attribute") == "category" and not result.get("recommendations"):
+                route_used = "category-clarification"
             if not debug:
                 result.pop("debug", None)
             return result
@@ -1483,15 +1290,32 @@ class Agent:
             failed = True
             if state_snapshot is not None:
                 self._sessions[session_id] = state_snapshot
+                rolled_back = True
                 snapshots = self._forensic_ranking_snapshots.get(session_id)
                 if snapshots is not None:
                     del snapshots[forensic_count:]
+            parser_calls = self.instrumentation.get("parser_calls", [])
+            for call in parser_calls[parser_call_count:]:
+                call["rolled_back"] = rolled_back
+            llm_calls = self.instrumentation.get("llm_calls", [])
+            for call in llm_calls[llm_call_count:]:
+                call["rolled_back"] = rolled_back
+            latest_call = (
+                llm_calls[-1]
+                if len(llm_calls) > llm_call_count
+                else parser_calls[-1] if len(parser_calls) > parser_call_count else None
+            )
             self.instrumentation["agent_errors"].append(
                 {
                     "session_id": session_id,
                     "turn": int(turn),
                     "type": type(exc).__name__,
                     "message": str(exc),
+                    "model": None if latest_call is None else latest_call.get("model"),
+                    "latency_seconds": None if latest_call is None else latest_call.get("latency_seconds"),
+                    "retry_count": None if latest_call is None else latest_call.get("retry_count"),
+                    "provider_error_type": None if latest_call is None else latest_call.get("error_type"),
+                    "rollback": rolled_back,
                 }
             )
             raise
@@ -1504,6 +1328,7 @@ class Agent:
                     "dense_invoked": len(self.instrumentation["semantic_queries"]) > dense_before,
                     "respond_seconds": time.perf_counter() - respond_started,
                     "failed": failed,
+                    "rollback": rolled_back,
                 }
             )
 
@@ -1562,7 +1387,7 @@ class Agent:
     ) -> DenseRetrievalResult:
         """Score a precomputed normalized q against the existing M0 matrix.
 
-        This method does not embed text, call OpenAI, apply filters, or consult
+        This method does not embed text, call an external provider, apply filters, or consult
         longitudinal memory. It intentionally retains M0's existing full-matrix
         dot product and reversed NumPy argsort tie behaviour.
         """
@@ -1663,266 +1488,330 @@ class Agent:
         snapshot["model_id"] = self.embedding_model_id
         snapshot["embedding_space_id"] = self.embedding_space_id
         snapshot["embedding_api"] = self.embedding_backend.usage_snapshot()
+        client = getattr(self, "ollama_client", None)
+        snapshot["ollama"] = [] if client is None else client.instrumentation()
         return snapshot
 
-    def _update_state_via_llm(self, session_id: str, user_message: str, turn: int | None = None) -> None:
-        import json
-        import urllib.request
-        state = self._sessions[session_id]
-        turn = int(state.get("_current_turn", 0) if turn is None else turn)
-
-        # Prepare past state representation for the LLM input
-        past_state_data = {
-            "intent_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
-            "category": state.get("category", "clothing"),
-            "department": state.get("department", ""),
-            "price_max": state.get("price_max", 9999.0),
-            "target_department": state.get("target_department", ""),
-            "min_avg_rating": state.get("min_avg_rating", 0.0),
-            "min_rating_number": state.get("min_rating_number", 0),
-            "store": state.get("store", ""),
-            "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
-            "negated_terms": list(state.get("negated_terms", set())),
-            "asked_attributes": list(state.get("asked_attributes", set()))
+    @staticmethod
+    def _usable_category_phrase(value: object) -> bool:
+        normalized = _normalize(value)
+        return bool(normalized) and normalized not in {
+            "item", "items", "product", "products", "thing", "things",
+            "something", "anything", "clothing item",
         }
 
-        sys_prompt = (
-            "You are a precise dialogue state tracking assistant for an e-commerce fashion shopping copilot.\n"
-            "Your task is to read the customer's message and update the JSON state representing their active shopping filters and constraints.\n\n"
-            "Rules for intent_mode:\n"
-            "- buying: the user has a specific item in mind, definite requirements, or hard constraints. Signals include 'I need', 'it must be', 'I want specifically', or an explicit budget, size, brand, or material.\n"
-            "- browsing: the user is exploring, vague, uncertain, or open to suggestions. Signals include 'just looking', 'show me options', 'still exploring', 'anything', or a vague category-only query.\n"
-            "Re-evaluate intent every turn. Upgrade browsing to buying as soon as requirements become concrete. Revert buying to browsing only after an explicit reset such as 'actually, show me other styles'.\n\n"
-            "Guideline attributes you can extract for constraints:\n"
-            "- color, material, size, brand, use_case, style, budget.\n"
-            "Note: You are NOT confined to this list. If the user specifies requirements for other attributes (e.g. \"zipper closure\" -> closure, \"slim fit\" -> fit, \"striped\" -> pattern), extract them as custom keys inside \"disclosed_slots\".\n"
-            "Note: The \"department\" field must ONLY be empty or one of \"clothing\", \"shoes\", \"jewelry\", \"watches\". Put every target gender or age demographic (men, women, boys, girls, kids, toddler) exclusively in \"target_department\"; never put demographics in \"department\", \"use_case\", or any \"disclosed_slots\" key.\n\n"
-            "Rules:\n"
-            "1. Extract any new constraints specified by the user and add/update them in \"disclosed_slots\". Values should be short strings or lists of strings. \"disclosed_slots\" must be the complete current active mapping; omit revoked or deleted keys.\n"
-            "2. If the user overrides a constraint (e.g. \"Actually, I need polyester, not cotton\" or \"I changed my mind, make it red instead of black\"), erase the old preference and update it with the new one.\n"
-            "3. If the user overrides the product type (e.g., \"ignore slippers, I want sneakers\"), update the \"category\" field and clear all other attributes in \"disclosed_slots\" since they belonged to the old item type.\n"
-            "4. Extract negative preferences (e.g. \"no leather\", \"except dresses\") and add them to \"negated_terms\".\n"
-            "5. If the user explicitly states they don't have a preference for an attribute and tells the assistant to use its judgment (e.g., \"I don't have a preference for size\"), add that attribute to \"asked_attributes\" (to prevent asking again) and remove it from \"disclosed_slots\" if present.\n"
-            "6. Extract hard conditions when explicitly stated: demographic into target_department; minimum stars into min_avg_rating; minimum reviews into min_rating_number; requested brand/store into store. Preserve prior values when not changed.\n"
-            "7. Clean up: ensure \"category\" and \"department\" are updated if mentioned.\n"
-            "8. Return ONLY a valid JSON object matching this schema:\n"
-            "{\n"
-            "  \"intent_mode\": \"buying|browsing\",\n"
-            "  \"category\": \"string\",\n"
-            "  \"department\": \"string\",\n"
-            "  \"price_max\": float,\n"
-            "  \"target_department\": \"women|men|boys|girls|kids|toddler|empty\",\n"
-            "  \"min_avg_rating\": float,\n"
-            "  \"min_rating_number\": integer,\n"
-            "  \"store\": \"string\",\n"
-            "  \"disclosed_slots\": {\n"
-            "    \"attribute_name\": [\"value1\", \"value2\"]\n"
-            "  },\n"
-            "  \"negated_terms\": [\"term1\", \"term2\"],\n"
-            "  \"asked_attributes\": [\"attr1\", \"attr2\"]\n"
-            "}\n"
-            "Do not include any conversational text or markdown codeblock wrappers except raw valid JSON."
+    @staticmethod
+    def _has_explicit_correction(message: str) -> bool:
+        return bool(re.search(
+            r"\b(?:actually|instead(?: of)?|rather than|changed my mind|change it|"
+            r"make it|correction|what i need is|not .+ (?:but|make|want)|replace)\b",
+            str(message).lower(),
+        ))
+
+    @staticmethod
+    def _has_explicit_product_change(message: str) -> bool:
+        return bool(re.search(
+            r"\b(?:instead(?: of)?|changed my mind|switch(?:ing)? to|replace .+ with|"
+            r"now (?:i['\u2019]?m|i am) looking for|ignore .+ (?:i want|what i need is)|"
+            r"not .+[,;]? (?:i want|give me|show me))\b",
+            str(message).lower(),
+        ))
+
+    @staticmethod
+    def _target_department_from_parser(value: str | None) -> str:
+        return {
+            "womens": "women",
+            "mens": "men",
+            "girls": "girls",
+            "boys": "boys",
+            "baby-girls": "toddler",
+            "baby-boys": "toddler",
+            "unisex-child": "kids",
+            "unisex-adult": "",
+        }.get(str(value or "").lower(), "")
+
+    @staticmethod
+    def _product_department_for_category(category: str) -> str:
+        normalized = _normalize(category)
+        if any(word in normalized for word in (
+            "shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat",
+        )):
+            return "shoes"
+        if any(word in normalized for word in (
+            "ring", "necklace", "earring", "bracelet", "jewelry", "pendant", "charm",
+        )):
+            return "jewelry"
+        if "watch" in normalized:
+            return "watches"
+        if any(word in normalized for word in (
+            "shirt", "pant", "hoodie", "jacket", "dress", "sock", "clothing",
+            "skirt", "sweater", "coat", "jean", "short", "underwear", "tee",
+        )):
+            return "clothing"
+        return ""
+
+    def _clear_category_specific_state(self, state: dict, turn: int) -> None:
+        protected = {"budget", "gender", "rating", "reviews"}
+        category_attributes = set(state.get("disclosed_slots", {})) - protected
+        category_attributes.update(
+            record.get("attribute")
+            for record in state.get("constraint_provenance", [])
+            if record.get("attribute") not in protected
+        )
+        for attr in sorted(value for value in category_attributes if value):
+            self._erase_attribute_memory(state, str(attr))
+        state["negated_terms"].clear()
+        state["asked_attributes"].intersection_update(protected)
+        state["department"] = ""
+        state["store"] = ""
+        state["exact_terms"] = []
+        self._advance_search_epoch(state)
+        self._rebuild_active_terms(state)
+
+    def _apply_price_bounds(
+        self,
+        state: dict,
+        parsed: ParsedTurn,
+        turn: int,
+        source_type: str,
+        user_message: str,
+        *,
+        replace: bool,
+    ) -> None:
+        old_min = float(state.get("price_min", 0.0))
+        old_max = float(state.get("price_max", 9999.0))
+        new_min = parsed.price_min
+        new_max = parsed.price_max
+        target_min = old_min
+        target_max = old_max
+        if new_min is not None:
+            target_min = float(new_min) if replace or old_min <= 0 else max(old_min, float(new_min))
+        if new_max is not None:
+            target_max = float(new_max) if replace or old_max >= 9999.0 else min(old_max, float(new_max))
+        if new_min is None and new_max is None:
+            return
+
+        values = {
+            value
+            for value in self._slot_values(state["disclosed_slots"].get("budget"))
+            if not re.match(r"^(?:over|under)\s+\$?\d", value, re.IGNORECASE)
+        }
+        if target_min > 0:
+            values.add(f"over ${target_min:g}")
+        if target_max < 9999.0:
+            values.add(f"under ${target_max:g}")
+        self._set_constraint(state, "budget", values, turn, source_type, user_message)
+        state["price_min"] = target_min
+        state["price_max"] = target_max
+
+    def _apply_parsed_turn(
+        self,
+        state: dict,
+        parsed: ParsedTurn,
+        user_message: str,
+        turn: int,
+    ) -> bool:
+        """Merge one validated turn and return whether category clarification is due."""
+
+        state["resolver_candidates"] = list(parsed.resolver_candidates[:3])
+        state["resolver_confidence"] = float(parsed.resolver_confidence)
+        state["last_message_type"] = parsed.message_type
+        state["intent_mode"] = parsed.intent
+        state["intent_source"] = "winston_parser"
+        state["_intent_detection_succeeded"] = True
+
+        pending = bool(state.get("pending_category"))
+        usable_category = self._usable_category_phrase(parsed.category)
+        established = bool(state.get("category_established"))
+        category_differs = usable_category and _normalize(parsed.category) != _normalize(state.get("category"))
+        explicit_change = bool(
+            established and category_differs and self._has_explicit_product_change(user_message)
+        )
+        category_event = pending or not established or explicit_change
+        has_bound = parsed.price_min is not None or parsed.price_max is not None
+        exempt_type = parsed.message_type in {"exact", "compatibility"}
+        clarify = bool(
+            category_event
+            and not pending
+            and float(parsed.resolver_confidence) < 0.20
+            and not parsed.has_trusted_hard_constraint
+            and not has_bound
+            and not exempt_type
         )
 
-        prompt = (
-            f"Past State:\n{json.dumps(past_state_data, indent=2)}\n\n"
-            f"Customer Message:\n\"{user_message}\"\n\n"
-            "Output the updated JSON state strictly matching the schema:"
+        if explicit_change:
+            self._clear_category_specific_state(state, turn)
+            state["pending_category_change"] = clarify
+
+        if pending and usable_category:
+            state["pending_category"] = False
+            state["pending_category_change"] = False
+            state["category"] = str(parsed.category).strip()
+            state["category_established"] = True
+            product_department = self._product_department_for_category(state["category"])
+            if product_department:
+                state["department"] = product_department
+        elif not clarify and usable_category and (not established or explicit_change):
+            state["category"] = str(parsed.category).strip()
+            state["category_established"] = True
+            product_department = self._product_department_for_category(state["category"])
+            if product_department:
+                state["department"] = product_department
+
+        source_type = (
+            "explicit_override"
+            if self._has_explicit_correction(user_message)
+            else ("initial_preference" if turn <= 1 else "clarification")
         )
+        replace_values = source_type == "explicit_override"
 
-        res_text = self._call_llm(prompt, sys_prompt, session_id=session_id, response_json=True)
+        for attr in parsed.declined_attributes:
+            if attr in set(ATTRIBUTE_ORDER):
+                state["asked_attributes"].add(attr)
+            self._erase_attribute_memory(state, attr)
 
-        # Clean up any potential markdown wrappers
-        if "```json" in res_text:
-            res_text = res_text.split("```json")[1].split("```")[0]
-        elif "```" in res_text:
-            res_text = res_text.split("```")[1].split("```")[0]
-        res_text = res_text.strip()
+        grouped: dict[str, set[str]] = {}
+        for slot in parsed.positive_slots:
+            grouped.setdefault(slot.attribute, set()).add(slot.value)
+        for attr, new_values in grouped.items():
+            old_values = self._slot_values(state["disclosed_slots"].get(attr))
+            merged = new_values if replace_values else old_values | new_values
+            self._set_constraint(state, attr, merged, turn, source_type, user_message)
 
-        state_before_update = deepcopy(state)
-        try:
-            new_state = json.loads(res_text)
-
-            # Sync back to state dict
-            if "intent_mode" in new_state:
-                detected = str(new_state["intent_mode"]).strip().lower()
-                if detected in {BuyerMode.BUYING.value, BuyerMode.BROWSING.value}:
-                    state["intent_mode"] = detected
-                    state["intent_source"] = "llm"
-                    state["_intent_detection_succeeded"] = True
-
-            if "category" in new_state:
-                new_cat = str(new_state["category"]).strip()
-                if new_cat != state.get("category"):
-                    for record in state["constraint_provenance"]:
-                        if record["status"] == "active":
-                            self._revoke_constraint_record(state, record)
-                    state["category"] = new_cat
-                    state["seen_asins"].clear() # Clear recommendations if product category changed
-                    state["disclosed_slots"].clear() # Rule 3: Clear old constraints if category changed
-                    state["asked_attributes"].clear()
-
-            demographic_values = {"men", "women", "boys", "girls", "kids", "toddler"}
-            canonical_departments = {"clothing", "shoes", "jewelry", "watches", ""}
-            dept_val = str(new_state.get("department") or "").strip().lower()
-            target_value = str(new_state.get("target_department") or "").strip().lower()
-            legacy_demographic = dept_val if dept_val in demographic_values else ""
-            resolved_demographic = (
-                target_value if target_value in demographic_values else legacy_demographic
+        if "brand" in grouped:
+            brand_values = sorted(self._slot_values(state["disclosed_slots"].get("brand")))
+            state["store"] = (
+                "" if not brand_values else brand_values[0] if len(brand_values) == 1 else tuple(brand_values)
             )
 
-            if "department" in new_state:
-                if legacy_demographic:
-                    cat_val = state.get("category", "").lower()
-                    if any(w in cat_val for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat"]):
-                        state["department"] = "shoes"
-                    elif any(w in cat_val for w in ["ring", "necklace", "earring", "bracelet", "jewelry"]):
-                        state["department"] = "jewelry"
-                    else:
-                        state["department"] = "clothing"
-                elif dept_val in canonical_departments:
-                    state["department"] = dept_val
+        self._apply_price_bounds(
+            state,
+            parsed,
+            turn,
+            source_type,
+            user_message,
+            replace=replace_values,
+        )
 
-            if "price_max" in new_state:
-                try:
-                    state["price_max"] = float(new_state["price_max"])
-                    if state["price_max"] < 9999.0:
-                        self._set_constraint(state, "budget", f"under {state['price_max']:g}", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
-                    elif "budget" in state["disclosed_slots"]:
-                        self._erase_attribute_memory(state, "budget")
-                except Exception:
-                    state["price_max"] = 9999.0
+        target_department = self._target_department_from_parser(parsed.department)
+        if target_department:
+            state["target_department"] = target_department
+            self._set_constraint(
+                state,
+                "gender",
+                target_department,
+                turn,
+                source_type,
+                user_message,
+            )
 
-            if "target_department" in new_state or legacy_demographic:
-                if resolved_demographic:
-                    state["target_department"] = resolved_demographic
-                    self._set_constraint(state, "gender", resolved_demographic, turn, "initial_preference" if turn <= 1 else "clarification", user_message)
-                elif target_value == "":
-                    state["target_department"] = ""
-                    if "gender" in state["disclosed_slots"]:
-                        self._erase_attribute_memory(state, "gender")
-            if "min_avg_rating" in new_state:
-                try:
-                    state["min_avg_rating"] = max(0.0, float(new_state["min_avg_rating"] or 0.0))
-                    if state["min_avg_rating"] > 0: self._set_constraint(state, "rating", f"{state['min_avg_rating']:g} stars", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
-                    elif "rating" in state["disclosed_slots"]: self._erase_attribute_memory(state, "rating")
-                except (TypeError, ValueError): pass
-            if "min_rating_number" in new_state:
-                try:
-                    state["min_rating_number"] = max(0, int(new_state["min_rating_number"] or 0))
-                    if state["min_rating_number"] > 0: self._set_constraint(state, "reviews", f"{state['min_rating_number']} reviews", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
-                    elif "reviews" in state["disclosed_slots"]: self._erase_attribute_memory(state, "reviews")
-                except (TypeError, ValueError): pass
-            if "store" in new_state:
-                state["store"] = str(new_state["store"] or "").strip().lower()
-                if state["store"]: self._set_constraint(state, "brand", state["store"], turn, "initial_preference" if turn <= 1 else "clarification", user_message)
-                elif "brand" in state["disclosed_slots"]: self._erase_attribute_memory(state, "brand")
+        for slot in parsed.negatives:
+            normalized = _normalize(slot.value)
+            if not normalized:
+                continue
+            state["negated_terms"].add(normalized)
+            self._record_constraint(
+                state,
+                slot.attribute,
+                slot.value,
+                turn,
+                "negation",
+                polarity="negative",
+            )
 
-            incoming_negatives = set(state.get("negated_terms", set()))
-            incoming_negatives.update(self._extract_negated_terms(user_message))
-            if "negated_terms" in new_state and isinstance(new_state["negated_terms"], list):
-                incoming_negatives.update(
-                    str(term).strip() for term in new_state["negated_terms"] if str(term).strip()
-                )
-            state["negated_terms"] = incoming_negatives
+        if replace_values:
+            positive_values = {
+                _normalize(value)
+                for values in grouped.values()
+                for value in values
+            }
+            state["negated_terms"].difference_update(positive_values)
+            for record in state.get("constraint_provenance", []):
+                if (
+                    record.get("status") == "active"
+                    and record.get("polarity") == "negative"
+                    and _normalize(record.get("value")) in positive_values
+                ):
+                    self._revoke_constraint_record(state, record)
 
-            if "disclosed_slots" in new_state and isinstance(new_state["disclosed_slots"], dict):
-                normalized_slots = {}
-                for k, v in new_state["disclosed_slots"].items():
-                    if isinstance(v, list):
-                        normalized_slots[str(k).strip()] = set(str(item).strip() for item in v if str(item).strip())
-                    else:
-                        normalized_slots[str(k).strip()] = {str(v).strip()} if str(v).strip() else set()
-                override_language = bool(re.search(
-                    r"\b(?:actually|instead of|changed my mind|make it|what i need is|rather than)\b",
-                    user_message.lower(),
-                ))
-                for attr, values in normalized_slots.items():
-                    if not values:
-                        continue
-                    merged = values if override_language else self._slot_values(state["disclosed_slots"].get(attr)) | values
-                    self._set_constraint(
-                        state, str(attr), merged, turn,
-                        "explicit_override" if override_language else ("initial_preference" if turn <= 1 else "clarification"),
-                        user_message,
-                    )
-
-            if "asked_attributes" in new_state and isinstance(new_state["asked_attributes"], list):
-                valid_asked = {
-                    str(attr).strip().lower() for attr in new_state["asked_attributes"]
-                    if str(attr).strip().lower() in set(ATTRIBUTE_ORDER)
-                }
-                state["asked_attributes"].update(valid_asked)
-
-            for attr in self._explicit_no_preference_attributes(user_message):
-                if attr in set(ATTRIBUTE_ORDER):
-                    state["asked_attributes"].add(attr)
-                self._erase_attribute_memory(state, attr)
-            self._reconcile_negated_state(state, turn)
-
-        except Exception as parse_err:
-            print(f"[Hybrid Agent] Failed to parse updated state JSON: {parse_err}. Content: {res_text}")
-            # Fallback to local regex-based parsing if LLM Call 1 fails
-            self._sessions[session_id] = state_before_update
-            state = self._sessions[session_id]
-            self._parse_message_locally(session_id, user_message, turn)
+        if parsed.model_code:
+            state["exact_terms"] = [parsed.model_code]
 
         self._reconcile_negated_state(state, turn)
+        self._rebuild_active_terms(state)
 
-    def _parse_generator_json(self, res_text: str, all_attrs: set[str]) -> tuple[str, str]:
-        import re
-        import json
+        if pending and not usable_category:
+            state["pending_category"] = True
+            return True
+        if clarify:
+            state["pending_category"] = True
+            return True
+        return False
 
+    def _update_state_via_llm(
+        self,
+        session_id: str,
+        user_message: str,
+        turn: int | None = None,
+    ) -> bool:
+        """Parse a free-text turn with Winston's authoritative constrained parser."""
+
+        state = self._sessions[session_id]
+        resolved_turn = int(state.get("_current_turn", 0) if turn is None else turn)
+        parser = getattr(self, "turn_parser", None)
+        if parser is None:
+            raise RuntimeError("turn_parser is not configured")
+        model = str(getattr(parser, "model", type(parser).__name__))
+        started = time.perf_counter()
         try:
-            res_json = json.loads(res_text)
-            msg = str(res_json.get("response_message", "")).strip()
-            attr = str(res_json.get("asked_attribute", "")).strip().lower()
-            if msg:
-                return msg, attr
-        except Exception:
-            pass
-
-        # Fallback regex extraction
-        msg = ""
-        attr = "other"
-
-        # 1. Extract message
-        # Check for response_message or message or _message followed by : or = and quotes
-        msg_match = re.search(r'(?:response_message|message|_message)\s*[:=]\s*["\'](.*?)["\']', res_text, re.DOTALL | re.IGNORECASE)
-        if msg_match:
-            msg = msg_match.group(1).strip()
-        else:
-            # If no key found, extract any non-json lines
-            lines = []
-            for line in res_text.splitlines():
-                l = line.strip()
-                if not l or l in ["{", "}"]:
-                    continue
-                if "asked_attribute" in l.lower() or "attribute" in l.lower():
-                    continue
-                # strip potential keys
-                cleaned = re.sub(r'^(?:response_message|message|_message)\s*[:=]\s*', '', l, flags=re.IGNORECASE)
-                cleaned = re.sub(r'^["\']|["\']$', '', cleaned.strip())
-                if cleaned:
-                    lines.append(cleaned)
-            if lines:
-                msg = " ".join(lines)
-
-        # 2. Extract asked_attribute
-        attr_match = re.search(r'(?:asked_attribute|attribute)\s*[:=]\s*["\'](.*?)["\']', res_text, re.IGNORECASE)
-        if attr_match:
-            attr = attr_match.group(1).strip().lower()
-        else:
-            # Check if any keyword in all_attrs is in the text
-            for a in all_attrs:
-                if a in res_text.lower():
-                    attr = a
-                    break
-
-        if not msg:
-            msg = res_text
-
-        return msg, attr
+            parsed = parser.parse(user_message, resolved_turn)
+            if not isinstance(parsed, ParsedTurn):
+                raise TypeError("turn_parser.parse must return ParsedTurn")
+            ask_category = self._apply_parsed_turn(
+                state, parsed, user_message, resolved_turn
+            )
+        except Exception as exc:
+            latency = (
+                exc.latency_seconds
+                if isinstance(exc, TurnParserError)
+                else time.perf_counter() - started
+            )
+            parser_trace = getattr(parser, "last_call", None) or {}
+            self.instrumentation.setdefault("parser_calls", []).append({
+                "session_id": session_id,
+                "turn": resolved_turn,
+                "model": parser_trace.get("model", getattr(exc, "model", model)),
+                "latency_seconds": float(latency),
+                "attempts": parser_trace.get("attempts", getattr(exc, "attempts", 1)),
+                "retry_count": parser_trace.get(
+                    "retry_count", getattr(exc, "retry_count", 0)
+                ),
+                "success": False,
+                "error_type": parser_trace.get("error_type") or type(exc).__name__,
+                "cause_type": parser_trace.get(
+                    "cause_type", getattr(exc, "cause_type", None)
+                ),
+                "rolled_back": False,
+            })
+            raise
+        parser_trace = getattr(parser, "last_call", None) or {}
+        self.instrumentation.setdefault("parser_calls", []).append({
+            "session_id": session_id,
+            "turn": resolved_turn,
+            "model": parser_trace.get("model", model),
+            "latency_seconds": parser_trace.get(
+                "latency_seconds", time.perf_counter() - started
+            ),
+            "attempts": parser_trace.get("attempts", 1),
+            "retry_count": parser_trace.get("retry_count", 0),
+            "success": True,
+            "error_type": None,
+            "cause_type": None,
+            "rolled_back": False,
+            "resolver_candidates": list(parsed.resolver_candidates[:3]),
+            "resolver_confidence": float(parsed.resolver_confidence),
+        })
+        return ask_category
 
     def _extract_asked_attributes(self, agent_message: str, state: dict) -> set[str]:
         all_attrs = set(ATTRIBUTE_ORDER)
@@ -1959,14 +1848,86 @@ class Agent:
         state["_intent_detection_succeeded"] = False
 
         # 1. Preserve the established fast/local versus full parsing boundary.
+        ask_category = False
         if self._can_use_fast_path(user_message, turn):
             self._parse_message_locally(session_id, user_message, turn)
         else:
             state["_current_turn"] = int(turn)
             try:
-                self._update_state_via_llm(session_id, user_message)
+                ask_category = bool(self._update_state_via_llm(session_id, user_message))
             finally:
                 state.pop("_current_turn", None)
+
+        if ask_category:
+            agent_message = "What specific kind of product are you looking for?"
+            state["history"].append({"role": "assistant", "content": agent_message})
+            lifecycle = self._active_lifecycle[session_id]
+            visible = lifecycle["visible_state"]
+            current_intent = _state_to_retrieval_query(state)
+            resolver_debug = {
+                "candidates": list(state.get("resolver_candidates", []))[:3],
+                "confidence": float(state.get("resolver_confidence", 0.0)),
+                "pending_category": True,
+            }
+            state["debug_info"]["resolver"] = resolver_debug
+            memory_trace = {
+                "user_id": lifecycle["user_id"],
+                "mode": state.get("intent_mode", BuyerMode.BROWSING.value),
+                "buyer_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
+                "intent_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
+                "intent_source": state.get("intent_source", "winston_parser"),
+                "current_intent": current_intent,
+                "useful_slots": {
+                    "category": state["category"],
+                    "department": state["department"],
+                    "price_min": state.get("price_min", 0.0),
+                    "price_max": state["price_max"],
+                    "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
+                    "negated_terms": sorted(state.get("negated_terms", set())),
+                },
+                "prior_ltm_exists": visible is not None,
+                "memory_version": SNAPSHOT_VERSION,
+                "memory_update_count": 0 if visible is None else visible.update_count,
+                "gate_cosine": None,
+                "gate_threshold": self.vector_memory_config.relevance_threshold,
+                "gate_passed": False,
+                "a": 0.0,
+                "b": 0.0,
+                "catalog_rows_scored": 0,
+                "eligible_count": 0,
+                "fts_or_threshold": None,
+                "keyword_route_threshold": None,
+                "retrieval_route": "category_clarification",
+                "resolver_candidates": list(state.get("resolver_candidates", []))[:3],
+                "resolver_confidence": float(state.get("resolver_confidence", 0.0)),
+                "ltm_updated_after_turn": False,
+                "ltm_updated_after_session": False,
+                "memory_update_text": None,
+                "returned": [],
+                "final_asins": [],
+            }
+            state["debug_info"]["memory_trace"] = memory_trace
+            debug_data = {
+                "model": "Deterministic category clarification",
+                "category": state["category"],
+                "department": state["department"],
+                "price_min": state.get("price_min", 0.0),
+                "price_max": state["price_max"],
+                "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
+                "asked_attributes": sorted(state.get("asked_attributes", set())),
+                "negated_terms": sorted(state.get("negated_terms", set())),
+                "accumulated_terms": list(state.get("accumulated_terms", [])),
+                "constraint_provenance": deepcopy(state.get("constraint_provenance", [])),
+                "search_epoch": state.get("search_epoch", 0),
+                "resolver": resolver_debug,
+                "memory_trace": deepcopy(memory_trace),
+            }
+            return {
+                "message": agent_message,
+                "ask_attribute": "category",
+                "recommendations": [],
+                "debug": debug_data,
+            }
 
         live_mode = self._resolve_live_intent(state, user_message, buyer_mode)
         if live_mode is BuyerMode.BUYING:
@@ -1995,8 +1956,14 @@ class Agent:
         else:
             # Lightweight compatibility for isolated scorer contract tests.
             hard_mask = np.ones(len(self.catalog_ids), dtype=bool)
+            if state.get("price_min", 0.0) > 0.0:
+                hard_mask &= np.isfinite(self.catalog_prices) & (
+                    self.catalog_prices >= state["price_min"]
+                )
             if state["price_max"] < 9999.0:
-                hard_mask &= self.catalog_prices <= state["price_max"]
+                hard_mask &= np.isfinite(self.catalog_prices) & (
+                    self.catalog_prices <= state["price_max"]
+                )
             negative_mask = np.asarray([
                 not any(
                     contains_phrase(self.catalog_metadata[pid]["searchable_bag"], normalized)
@@ -2031,6 +1998,10 @@ class Agent:
         m0_ranked = sorted(eligible.tolist(), key=lambda row: (-float(s1[row]), self.catalog_ids[row]))
         full_m3_ranked = sorted(eligible.tolist(), key=lambda row: (-float(s3[row]), self.catalog_ids[row]))
         price_mask = np.ones(len(self.catalog_ids), dtype=bool)
+        if state.get("price_min", 0.0) > 0.0:
+            price_mask &= np.isfinite(self.catalog_prices) & (
+                self.catalog_prices >= state["price_min"]
+            )
         if state["price_max"] < 9999.0:
             price_mask &= np.isfinite(self.catalog_prices) & (self.catalog_prices <= state["price_max"])
         if session_id in getattr(self, "_forensic_capture_sessions", set()):
@@ -2077,6 +2048,7 @@ class Agent:
             "useful_slots": {
                 "category": state["category"],
                 "department": state["department"],
+                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
                 "negated_terms": sorted(state.get("negated_terms", set())),
@@ -2085,6 +2057,7 @@ class Agent:
             "revoked_constraints": revoked_constraints,
             "search_epoch": state.get("search_epoch", 0),
             "hard_conditions": {
+                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "target_department": state.get("target_department", ""),
                 "min_avg_rating": state.get("min_avg_rating", 0.0),
@@ -2106,6 +2079,8 @@ class Agent:
             "embedding_space_match": visible is None or visible.embedding_space_id == self.embedding_space_id,
             "catalog_rows_scored": len(self.catalog_ids),
             "price_filtered_count": int(np.count_nonzero(~price_mask)),
+            "resolver_candidates": list(state.get("resolver_candidates", []))[:3],
+            "resolver_confidence": float(state.get("resolver_confidence", 0.0)),
             "hard_eligible_count": eligibility.hard_eligible_count,
             "negative_filtered_count": eligibility.negative_filtered_count,
             "hard_eligible_count_after_negatives": len(eligible),
@@ -2133,6 +2108,7 @@ class Agent:
         # A zero-result hard mask is terminal for this turn; never leak an ineligible row.
         if retrieval_route == "no_eligible":
             active_hard: list[tuple[str, str]] = []
+            if state.get("price_min", 0.0) > 0.0: active_hard.append(("budget", f"minimum price ${state['price_min']:g}"))
             if state["price_max"] < 9999.0: active_hard.append(("budget", f"maximum price ${state['price_max']:g}"))
             if state.get("target_department"): active_hard.append(("gender", f"department {state['target_department']}"))
             if state.get("min_avg_rating", 0.0) > 0: active_hard.append(("rating", f"minimum rating {state['min_avg_rating']:g}"))
@@ -2147,6 +2123,7 @@ class Agent:
             debug_data = {
                 "model": "Deterministic no-result clarification",
                 "category": state["category"], "department": state["department"],
+                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
                 "asked_attributes": sorted(state.get("asked_attributes", set())),
@@ -2171,7 +2148,7 @@ class Agent:
         if state.get("target_department"): avoid_attrs.add("gender")
         if state.get("min_avg_rating", 0.0) > 0: avoid_attrs.add("rating")
         if state.get("min_rating_number", 0) > 0: avoid_attrs.add("reviews")
-        if state.get("price_max", 9999.0) < 9000.0: avoid_attrs.add("budget")
+        if state.get("price_min", 0.0) > 0.0 or state.get("price_max", 9999.0) < 9000.0: avoid_attrs.add("budget")
         if state.get("store"): avoid_attrs.add("brand")
 
         all_attrs = set(ATTRIBUTE_ORDER)
@@ -2198,7 +2175,8 @@ class Agent:
         sys_prompt = (
             "You are a helpful e-commerce shopping copilot. The user is looking for a product.\n"
             "Based on the conversation history and the current state, generate a conversational response.\n\n"
-            f"Active search filters: Category: {state['category']}, Department: {state['department']}, Max Price: {state['price_max']}\n"
+            f"Active search filters: Category: {state['category']}, Department: {state['department']}, "
+            f"Price Range: {state.get('price_min', 0.0)} to {state['price_max']}\n"
             f"Attributes already specified by user: { {k: list(v) for k, v in state['disclosed_slots'].items()} }\n"
             f"Negated terms: {list(state.get('negated_terms', set()))}\n\n"
             "CRITICAL RULES:\n"
@@ -2233,16 +2211,22 @@ class Agent:
                 state["asked_attributes"].add(attr)
 
         # Populate debug data
-        state["debug_info"]["model"] = "DeepSeek-Chat" if os.environ.get("DEEPSEEK_API_KEY") else "GPT-4o-Mini"
-        state["debug_info"]["system_prompt"] = sys_prompt
-        state["debug_info"]["user_prompt"] = prompt
+        state["debug_info"].setdefault(
+            "model", getattr(getattr(self, "ollama_client", None), "model", "unknown")
+        )
+        state["debug_info"].setdefault("system_prompt", sys_prompt)
+        state["debug_info"].setdefault("user_prompt", prompt)
 
         debug_data = {
             "model": state["debug_info"].get("model", "None"),
+            "llm_latency_seconds": state["debug_info"].get("llm_latency_seconds"),
+            "llm_retry_count": state["debug_info"].get("llm_retry_count"),
+            "llm_error_type": state["debug_info"].get("llm_error_type"),
             "system_prompt": state["debug_info"].get("system_prompt", ""),
             "user_prompt": state["debug_info"].get("user_prompt", ""),
             "category": state["category"],
             "department": state["department"],
+            "price_min": state.get("price_min", 0.0),
             "price_max": state["price_max"],
             "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
             "asked_attributes": list(state.get("asked_attributes", set())),
@@ -2252,6 +2236,11 @@ class Agent:
             "stashed_terms": list(state.get("stashed_terms", [])),
             "constraint_provenance": deepcopy(state.get("constraint_provenance", [])),
             "search_epoch": state.get("search_epoch", 0),
+            "resolver": {
+                "candidates": list(state.get("resolver_candidates", []))[:3],
+                "confidence": float(state.get("resolver_confidence", 0.0)),
+                "pending_category": bool(state.get("pending_category")),
+            },
             "intent_mode": live_mode.value,
             "intent_source": state.get("intent_source", "session_default"),
             "fts5_count": len(eligible_fts),

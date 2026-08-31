@@ -10,7 +10,7 @@ from typing import Any
 from uuid import uuid4
 
 from .agent import Agent
-from .config import ALLOW_CATALOG_EMBEDDING, DEMO_TOP_K, MEMORY_STORE_PATH, TEST_MODE
+from .config import ALLOW_CATALOG_EMBEDDING, DEMO_TOP_K, MEMORY_STORE_PATH
 from .memory_store import JsonFileVectorMemoryStore
 from .vector_memory import BuyerMode
 
@@ -55,7 +55,6 @@ class DemoApplication:
         *,
         memory_path: str | Path = MEMORY_STORE_PATH,
         top_k: int = DEMO_TOP_K,
-        test_mode: bool = TEST_MODE,
         allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
         agent: Agent | None = None,
         store: JsonFileVectorMemoryStore | None = None,
@@ -63,7 +62,6 @@ class DemoApplication:
         self.store = store or JsonFileVectorMemoryStore(memory_path)
         self.agent = agent or Agent(
             memory_store=self.store,
-            test_mode=test_mode,
             allow_catalog_embedding=allow_catalog_embedding,
         )
         self.top_k = int(top_k)

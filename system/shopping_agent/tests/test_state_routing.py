@@ -1,8 +1,8 @@
 from copy import deepcopy
-import json
 
 from system.shopping_agent.agent import Agent, _state_to_retrieval_query
 from system.shopping_agent.memory_store import InMemoryVectorMemoryStore
+from system.shopping_agent.turn_parser import PROMPT, SCHEMA, ParsedSlot, ParsedTurn
 
 
 def bare_agent():
@@ -40,49 +40,61 @@ def test_local_live_intent_upgrades_and_only_explicitly_resets():
     assert Agent._detect_intent_locally(state, "start over").value == "browsing"
 
 
-def _run_structured_state(agent, payload):
-    prompts = []
-    agent._call_llm = lambda prompt, system_prompt, **kwargs: (
-        prompts.append(system_prompt) or json.dumps(payload)
+def _turn(*, category=None, department=None, slots=()):
+    return ParsedTurn(
+        category=category,
+        positive_slots=tuple(slots),
+        negatives=(),
+        declined_attributes=(),
+        price_min=None,
+        price_max=None,
+        department=department,
+        specificity="type_with_wishes",
+        intent="browsing",
+        message_type="feature",
+        model_code=None,
+        resolver_candidates=(),
+        resolver_confidence=0.5,
+        raw_parse={},
     )
-    agent._update_state_via_llm("s", "Find something for me", turn=1)
-    return prompts[0], agent._sessions["s"]
 
 
-def test_structured_state_prompt_has_one_demographic_destination():
-    agent = bare_agent()
-    agent.reset("s", {})
-    prompt, _ = _run_structured_state(agent, {})
-    assert 'exclusively in "target_department"' in prompt
-    assert 'demographics in "department", "use_case", or any "disclosed_slots" key' in prompt
-    assert 'under "use_case"' not in prompt
+def _run_structured_state(agent, parsed):
+    agent._apply_parsed_turn(agent._sessions["s"], parsed, "Find something for me", 1)
+    return agent._sessions["s"]
+
+
+def test_constrained_schema_has_one_demographic_destination():
+    assert "department" in SCHEMA["properties"]
+    assert "target_department" not in SCHEMA["properties"]
+    assert "department: only if stated" in PROMPT
 
 
 def test_structured_target_department_activates_session_only_gender():
     agent = bare_agent()
     agent.reset("s", {})
-    _, state = _run_structured_state(agent, {"department": "clothing", "target_department": "women"})
+    state = _run_structured_state(agent, _turn(category="dress", department="womens"))
     assert state["department"] == "clothing"
     assert state["target_department"] == "women"
     assert state["disclosed_slots"]["gender"] == {"women"}
 
 
-def test_structured_legacy_demographic_department_is_normalized():
+def test_structured_mens_department_is_normalized():
     agent = bare_agent()
     agent.reset("s", {})
-    _, state = _run_structured_state(agent, {"category": "boots", "department": "women"})
+    state = _run_structured_state(agent, _turn(category="boots", department="mens"))
     assert state["department"] == "shoes"
-    assert state["target_department"] == "women"
-    assert state["disclosed_slots"]["gender"] == {"women"}
+    assert state["target_department"] == "men"
+    assert state["disclosed_slots"]["gender"] == {"men"}
     assert "use_case" not in state["disclosed_slots"]
 
 
-def test_structured_canonical_target_department_wins_conflict():
+def test_structured_unisex_adult_does_not_invent_a_binary_target():
     agent = bare_agent()
     agent.reset("s", {})
-    _, state = _run_structured_state(agent, {"department": "women", "target_department": "men"})
-    assert state["target_department"] == "men"
-    assert state["disclosed_slots"]["gender"] == {"men"}
+    state = _run_structured_state(agent, _turn(category="shirt", department="unisex-adult"))
+    assert state["target_department"] == ""
+    assert "gender" not in state["disclosed_slots"]
 
 
 def test_structured_demographic_is_absent_from_committed_ltm_text():
@@ -91,11 +103,14 @@ def test_structured_demographic_is_absent_from_committed_ltm_text():
     agent = bare_agent()
     agent.vector_memory_config = type("Config", (), {"ewma_alpha": 0.30})()
     agent.reset("s", {}, user_id="u", sequence_index=0)
-    _run_structured_state(agent, {
-        "department": "women",
-        "target_department": "women",
-        "disclosed_slots": {"color": ["blue"]},
-    })
+    _run_structured_state(
+        agent,
+        _turn(
+            category="dress",
+            department="womens",
+            slots=(ParsedSlot("color", "blue", "soft"),),
+        ),
+    )
     embedded = []
     agent.embed_dense_query = lambda text: embedded.append(text) or np.array([1.0, 0.0], dtype=np.float32)
     agent.end_session("s")

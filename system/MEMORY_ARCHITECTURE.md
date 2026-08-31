@@ -10,11 +10,19 @@ The live `system/shopping_agent` path keeps the existing per-session short-term 
 
 Every turn calls `respond(session_id, user_message, turn, top_k, buyer_mode="buying")`. `buyer_mode` accepts only `buying` or `browsing`, but remains a caller fallback. Live message intent and active hard conditions are authoritative for routing and clarification; concrete buying evidence wins over exploratory wording, while genuine resets such as `start over` return to Browsing.
 
+Exact simulator/evaluator forms update the same canonical state through the local parser.
+Other turns are decoded by the schema-constrained Llama 3.1 parser, validated, and
+adapted transactionally. A lexical resolver contributes only top-three category
+candidates and a relative margin. Category-establishing turns below `0.20` ask an open
+category question before embedding when they contain no other trusted hard condition.
+Parser/resolver exceptions propagate and restore history, state, search epoch, and
+forensic snapshots to the turn-entry snapshot.
+
 `end_session` runs only after scoring. It reconciles negatives again, then serializes sorted positive `disclosed_slots` as `attribute: value` fragments. Category, department, budget, negatives, transcript, outcomes, purchases, target data, asked attributes, and retrieval bookkeeping never enter the update text. Embedding or store failure leaves the session active for retry. Failed response turns restore Fast Memory to its entry snapshot. Failed streams call `discard_session`; successful debug traces are bounded to 32 and may be consumed immediately.
 
 ## Ranking
 
-The canonical active query contains current category, department, and positive disclosed-slot values. Its normalized embedding is `v1`; the reset-time user vector is `v2`.
+The canonical active query contains current category, department, and positive disclosed-slot values. `BAAI/bge-base-en-v1.5` embeds it with the BGE retrieval prefix into a normalized 768-dimensional `v1`; the reset-time BGE-space user vector is `v2`.
 
 ```text
 gate = cosine(v1, v2)
@@ -27,7 +35,7 @@ browsing:                  s3 = 0.2*s1 + 0.8*s2
 
 Here `s1 = catalog @ v1` and `s2 = catalog @ v2`. The normalized full catalog matrix is scored on every turn. FTS5/BM25 routes the candidate pool using the frozen Buying thresholds 15/10 and Browsing thresholds 30/15; both lexical and 150-row vector-fallback pools are still ordered only by `s3` and ASIN. There are no popularity/category boosts, seen-product exclusion, or diversity reshuffling.
 
-After scoring, hard masks apply price, demographic department, minimum rating, minimum review count, requested brand/store, and whole-token negative exclusions. Unknown rating/review metadata receives benefit of doubt. Eligible rows sort by descending `s3`, then ascending ASIN. Constraints are never relaxed to fill `top_k`.
+After scoring, hard masks apply minimum/maximum price, demographic department, minimum rating, minimum review count, requested brand/store, and whole-token negative exclusions. Material and size are positive evidence rather than hard exclusions. Unknown rating/review metadata receives benefit of doubt. Eligible rows sort by descending `s3`, then ascending ASIN. Constraints are never relaxed to fill `top_k`.
 
 ## Update and storage
 
@@ -37,6 +45,6 @@ Cold start stores the normalized new-preference vector directly. Later positive 
 
 ## Trace
 
-Each response exposes a vector-free `debug.memory_trace`: mode, gate cosine/pass, threshold, applied `a`/`b`, vector availability, embedding-space checks, full row count, filter counts, returned `s1`/`s2`/`s3`, and final ASINs. Raw vectors are never logged.
+Each response exposes a vector-free `debug.memory_trace`: mode, gate cosine/pass, threshold, applied `a`/`b`, vector availability, embedding-space checks, full row count, filter counts, returned `s1`/`s2`/`s3`, and final ASINs. LLM instrumentation records the actual Ollama model, latency, retry count, error type, and rollback status. Raw vectors are never logged.
 
-The disconnected QLMP implementation and experiments are retained only in `docs/archive/legacy_qlmp/`. Current evaluator and calibration evidence is retained in `docs/archive/research_evaluation/` and is not part of the runtime import chain.
+The disconnected QLMP implementation and experiments are retained only in `archive/legacy_qlmp/`. Current evaluator and calibration evidence is retained in `archive/research_evaluation/` and is not part of the runtime import chain.
