@@ -1,11 +1,12 @@
 from __future__ import annotations
 from copy import deepcopy
 from dataclasses import dataclass
+import json
 import re
 import time
 import numpy as np
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Callable, Literal, Sequence
 import builtins
 import warnings
 
@@ -24,7 +25,9 @@ try:
         production_product_texts,
         save_embedding_cache,
     )
-    from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR
+    from .config import (
+        CONFIDENCE_SIMILARITY_THRESHOLD, CATALOG_PATH, EMBEDDING_CACHE_DIR,
+    )
     from .catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -32,12 +35,10 @@ try:
     )
     from .clarification import (
         ATTRIBUTE_ORDER, BROWSING_ATTRIBUTE_ORDER, BUYING_ATTRIBUTE_ORDER,
-        select_best_attributes,
+        select_best_attributes, select_fixed_priority_attributes,
     )
-    from .memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
-    from .category_resolver import CategoryResolver, catalog_bucket_set
+    from .memory_store import InMemoryUserMemoryStore, MemoryUpdatePolicy, SNAPSHOT_VERSION
     from .model_client import ModelClient, ModelError
-    from .turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from .vector_memory import (
         BuyerMode,
         DEFAULT_VECTOR_MEMORY_CONFIG,
@@ -59,7 +60,9 @@ except ImportError:
         production_product_texts,
         save_embedding_cache,
     )
-    from config import CATALOG_PATH, EMBEDDING_CACHE_DIR
+    from config import (
+        CONFIDENCE_SIMILARITY_THRESHOLD, CATALOG_PATH, EMBEDDING_CACHE_DIR,
+    )
     from catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -67,12 +70,10 @@ except ImportError:
     )
     from clarification import (
         ATTRIBUTE_ORDER, BROWSING_ATTRIBUTE_ORDER, BUYING_ATTRIBUTE_ORDER,
-        select_best_attributes,
+        select_best_attributes, select_fixed_priority_attributes,
     )
-    from memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
-    from category_resolver import CategoryResolver, catalog_bucket_set
+    from memory_store import InMemoryUserMemoryStore, MemoryUpdatePolicy, SNAPSHOT_VERSION
     from model_client import ModelClient, ModelError
-    from turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from vector_memory import (
         BuyerMode,
         DEFAULT_VECTOR_MEMORY_CONFIG,
@@ -86,6 +87,312 @@ def _normalize(value: object) -> str:
 builtins._normalize = _normalize
 
 SESSION_ONLY_HARD_ATTRIBUTES = {"budget", "gender", "rating", "reviews", "brand", "store"}
+CONFIDENCE_GATE_POOL_LIMIT = 10
+MAX_RECOMMENDATIONS_PER_BRAND = 2
+TITLE_DIVERSITY_JACCARD_THRESHOLD = 0.80
+
+ClarificationSelector = Callable[..., list[str]]
+
+
+@dataclass(frozen=True)
+class ExperimentConfig:
+    """The two ablation factors plus deterministic generation controls."""
+
+    clarification_policy: Literal["fixed_priority", "entropy"] = "entropy"
+    long_term_memory_read_enabled: bool = True
+    llm_temperature: float = 0.4
+    llm_seed: int | None = None
+
+    def __post_init__(self) -> None:
+        if self.clarification_policy not in {"fixed_priority", "entropy"}:
+            raise ValueError("clarification_policy must be 'fixed_priority' or 'entropy'")
+        if not isinstance(self.long_term_memory_read_enabled, bool):
+            raise ValueError("long_term_memory_read_enabled must be a bool")
+        temperature = float(self.llm_temperature)
+        if not np.isfinite(temperature) or temperature < 0.0:
+            raise ValueError("llm_temperature must be finite and non-negative")
+        if self.llm_seed is not None and (
+            isinstance(self.llm_seed, bool) or not isinstance(self.llm_seed, int)
+        ):
+            raise ValueError("llm_seed must be an integer or None")
+        object.__setattr__(self, "llm_temperature", temperature)
+
+    @property
+    def condition_name(self) -> str:
+        entropy = self.clarification_policy == "entropy"
+        ltm = self.long_term_memory_read_enabled
+        return {
+            (False, False): "baseline",
+            (True, False): "entropy_only",
+            (False, True): "ltm_only",
+            (True, True): "all_in",
+        }[(entropy, ltm)]
+
+
+def _keyword_state_score(
+    *,
+    fts_position: int,
+    metadata: dict[str, Any],
+    state: dict[str, Any],
+    department_category_match: bool,
+    category_match: bool,
+) -> float:
+    """Return the root agent's handcrafted post-FTS state score exactly."""
+    searchable_bag = metadata["searchable_bag"]
+    score = -0.001 * fts_position
+
+    if department_category_match:
+        score += 20.0
+    if category_match:
+        score += 15.0
+
+    brand_constraints = state["disclosed_slots"].get("brand")
+    if brand_constraints:
+        if isinstance(brand_constraints, str):
+            brand_constraints = {brand_constraints}
+        if not any(value.lower() in metadata["brand"] for value in brand_constraints):
+            score -= 10.0
+
+    for value in state["accumulated_terms"]:
+        if value.lower() in searchable_bag:
+            score += 0.3
+
+    for values in state["disclosed_slots"].values():
+        value_list = list(values) if isinstance(values, (set, list)) else [values]
+        for value in value_list:
+            if isinstance(value, str):
+                clean_value = value.lower().strip().rstrip(".")
+                if clean_value and clean_value in searchable_bag:
+                    score += 10.0
+                elif clean_value:
+                    meaningful_words = [
+                        word for word in clean_value.split()
+                        if len(word) > 2 and word not in STOPWORDS
+                    ]
+                    if meaningful_words and all(word in searchable_bag for word in meaningful_words):
+                        score += 5.0
+
+    if state["category"]:
+        clean_category = state["category"].lower().strip()
+        if clean_category in searchable_bag:
+            score += 2.0
+
+    score += 0.02 * (metadata["rating_number"] ** 0.1)
+    return score
+
+
+def _keyword_soft_match_rows(
+    state: dict[str, Any],
+    catalog_categories: Sequence[set[str]],
+) -> tuple[set[int], set[int]]:
+    """Build the root agent's department/category soft-boost row sets."""
+    department_rows: set[int] = set()
+    if state["department"]:
+        department_tokens = set(_terms(state["department"]))
+        if department_tokens:
+            department_rows = {
+                row
+                for row, item_categories in enumerate(catalog_categories)
+                if any(department_tokens & set(_terms(category)) for category in item_categories)
+            }
+
+    category_rows: set[int] = set()
+    target_category = state["category"]
+    if target_category:
+        category_tokens = set(target_category.split())
+        category_rows = {
+            row
+            for row, item_categories in enumerate(catalog_categories)
+            if category_tokens & item_categories
+        }
+        if not category_rows:
+            relaxed_tokens = {
+                token.rstrip("s") for token in category_tokens if len(token) > 2
+            }
+            category_rows = {
+                row
+                for row, item_categories in enumerate(catalog_categories)
+                if relaxed_tokens
+                & {category.rstrip("s") for category in item_categories}
+            }
+    return department_rows, category_rows
+
+
+def _apply_confidence_gate(
+    ranked_rows: Sequence[int],
+    s1: np.ndarray,
+    catalog_ids: Sequence[str],
+    *,
+    threshold: float | None = None,
+) -> tuple[list[int], list[int], dict[str, Any]]:
+    """Filter the fixed post-ranking pool by inclusive current-query similarity."""
+    if threshold is None:
+        threshold = CONFIDENCE_SIMILARITY_THRESHOLD
+    pool_rows = list(ranked_rows[:CONFIDENCE_GATE_POOL_LIMIT])
+    survivors = [row for row in pool_rows if float(s1[row]) >= threshold]
+    evaluated = [
+        {
+            "parent_asin": catalog_ids[row],
+            "s1": float(s1[row]),
+            "passed": float(s1[row]) >= threshold,
+        }
+        for row in pool_rows
+    ]
+    trace = {
+        "threshold": threshold,
+        "pool_limit": CONFIDENCE_GATE_POOL_LIMIT,
+        "evaluated_products": evaluated,
+        "pass_count": len(survivors),
+        "reject_count": len(pool_rows) - len(survivors),
+        "empty_result": not survivors,
+    }
+    return pool_rows, survivors, trace
+
+
+def _select_diverse_rows(
+    ranked_rows: Sequence[int],
+    catalog_ids: Sequence[str],
+    catalog_metadata: dict[str, dict[str, Any]],
+    *,
+    top_k: int,
+) -> list[int]:
+    """Preserve rank order while limiting duplicate brands and near-identical titles."""
+    limit = max(0, int(top_k))
+    chosen: list[int] = []
+    deferred: list[int] = []
+    brand_counts: dict[str, int] = {}
+    chosen_title_tokens: list[set[str]] = []
+
+    for row in ranked_rows:
+        asin = str(catalog_ids[row])
+        metadata = catalog_metadata.get(asin, {})
+        brand = _normalize(metadata.get("brand", ""))
+        title_tokens = set(_normalize(metadata.get("title", "")).split())
+        duplicate_brand = bool(
+            brand and brand_counts.get(brand, 0) >= MAX_RECOMMENDATIONS_PER_BRAND
+        )
+        duplicate_title = any(
+            title_tokens
+            and prior
+            and len(title_tokens & prior) / len(title_tokens | prior)
+            > TITLE_DIVERSITY_JACCARD_THRESHOLD
+            for prior in chosen_title_tokens
+        )
+        if duplicate_brand or duplicate_title:
+            deferred.append(row)
+            continue
+        chosen.append(row)
+        if brand:
+            brand_counts[brand] = brand_counts.get(brand, 0) + 1
+        chosen_title_tokens.append(title_tokens)
+        if len(chosen) == limit:
+            return chosen
+
+    chosen.extend(deferred[: max(0, limit - len(chosen))])
+    return chosen
+
+
+def _print_agent_telemetry(
+    debug_data: dict[str, Any], *, turn: int, session_id: str
+) -> None:
+    """Render the complete current turn trace as a compact terminal panel."""
+
+    trace = debug_data.get("memory_trace", {})
+    header = (
+        " [AGENT BRAIN TELEMETRY - CUSTOM HYBRID CASCADE ROUTE] "
+        f"Turn: {turn} | Session: {session_id}"
+    )
+    width = max(80, len(header))
+
+    def row(label: str, value: object) -> None:
+        print(f"{label + ':':<21}{value}")
+
+    def number(value: object, digits: int) -> str:
+        return "n/a" if value is None else f"{float(value):.{digits}f}"
+
+    provider = str(debug_data.get("model_provider", "unknown"))
+    model = str(debug_data.get("model", "unknown"))
+    confidence = trace.get("confidence_gate", {})
+    seen = confidence.get("seen_filter", {})
+    hard = trace.get("hard_conditions", {})
+    latency = debug_data.get("llm_latency_seconds")
+    latency_text = "n/a" if latency is None else f"{float(latency):.3f}s"
+
+    print("\n" + "=" * width)
+    print(header)
+    print("=" * width)
+    row("Active LLM Model", f"{model} ({provider})")
+    row("Embedding Model", debug_data.get("embedding_model", "unknown"))
+    row(
+        "Intent Mode",
+        f"{trace.get('intent_mode', 'unknown')} (source={trace.get('intent_source', 'unknown')})",
+    )
+    row("Current Intent", trace.get("current_intent", ""))
+    row(
+        "Retrieval Route",
+        f"{trace.get('retrieval_route', 'unknown')} "
+        f"(ranking={trace.get('ranking_method', 'unknown')})",
+    )
+    row(
+        "FTS5 Matches",
+        f"{trace.get('fts5_count', 0)} eligible "
+        f"(AND={trace.get('fts_and_count', 0)}, OR={trace.get('fts_or_count', 0)}, "
+        f"or_min={trace.get('fts_or_threshold', 0)}, route_min={trace.get('keyword_route_threshold', 0)})",
+    )
+    row(
+        "Catalog / Eligible",
+        f"{trace.get('catalog_rows_scored', 0)} scored, "
+        f"{trace.get('eligible_count', 0)} eligible, {trace.get('candidate_count', 0)} candidates",
+    )
+    row(
+        "Filtered Rows",
+        f"price={trace.get('price_filtered_count', 0)}, "
+        f"hard={trace.get('catalog_rows_scored', 0) - trace.get('hard_eligible_count', 0)}, "
+        f"negative={trace.get('negative_filtered_count', 0)}",
+    )
+    row("Category State", debug_data.get("category", ""))
+    row("Department", debug_data.get("department", ""))
+    row("Price Max State", debug_data.get("price_max", 9999.0))
+    row(
+        "Hard Conditions",
+        f"Dept={hard.get('target_department', '')}, "
+        f"MinRating={hard.get('min_avg_rating', 0.0)}, "
+        f"MinReviews={hard.get('min_rating_number', 0)}, Store={hard.get('store', '')}",
+    )
+    row("Disclosed Slots", debug_data.get("disclosed_slots", {}))
+    row("Negated Terms", debug_data.get("negated_terms", []))
+    row("Entropy Best", debug_data.get("best_entropy_attrs", []))
+    row("Asked Attributes", debug_data.get("asked_attributes", []))
+    row(
+        "Long-Term Memory",
+        f"prior={trace.get('prior_ltm_exists', False)}, updates={trace.get('memory_update_count', 0)}, "
+        f"space_match={trace.get('embedding_space_match', True)}",
+    )
+    row(
+        "Memory Gate",
+        f"passed={trace.get('gate_passed', False)}, "
+        f"cosine={number(trace.get('gate_cosine'), 3)}, "
+        f"threshold={number(trace.get('gate_threshold'), 3)}, "
+        f"weights={number(trace.get('a'), 2)}/{number(trace.get('b'), 2)}",
+    )
+    row(
+        "Confidence Gate",
+        f"threshold={number(confidence.get('threshold'), 2)}, "
+        f"passed={confidence.get('pass_count', 0)}, rejected={confidence.get('reject_count', 0)}, "
+        f"empty={confidence.get('empty_result', False)}",
+    )
+    row(
+        "Seen Filter",
+        f"previous={seen.get('previously_seen_count', 0)}, "
+        f"removed={seen.get('ranked_rows_removed', 0)}, unseen={seen.get('unseen_ranked_count', 0)}",
+    )
+    row("Final Products", trace.get("final_asins", []))
+    row(
+        "LLM Call",
+        f"latency={latency_text}, retries={debug_data.get('llm_retry_count') or 0}, "
+        f"error={debug_data.get('llm_error_type') or 'none'}",
+    )
+    print("-" * width)
 
 
 class DenseRetrievalError(ValueError):
@@ -234,20 +541,6 @@ STOPWORDS = {
     "make", "made", "done", "run", "doing"
 }
 
-_EVALUATOR_INITIAL_RE = re.compile(
-    r"^i['\u2019]m looking for (?P<category>[^.,]{1,80}?)"
-    r"(?:, but i['\u2019]m still exploring\.?|\. a key requirement is: .+|\. \S.*)$",
-    re.IGNORECASE | re.DOTALL,
-)
-_EVALUATOR_FOLLOWUP_RES = tuple(re.compile(pattern, re.IGNORECASE | re.DOTALL) for pattern in (
-    r"^for that, what matters is: \S.*\.$",
-    r"^actually, ignore my earlier preference\. what i need is: \S.*\.$",
-    r"^actually, please ignore my earlier preference\.$",
-    r"^i don['\u2019]t have a preference for [a-z_]+; please use your judgment\.$",
-    r"^i don['\u2019]t have an additional preference for [a-z_]+\.$",
-    r"^those options are not quite right yet\. ask me about one specific attribute\.$",
-))
-
 def _text(value: object) -> str:
     if value is None:
         return ""
@@ -275,8 +568,6 @@ def _state_to_retrieval_query(state: dict) -> str:
 
     add(state.get("category", ""))
     add(state.get("department", ""))
-    for value in state.get("exact_terms", ()):
-        add(value)
     positive_markers = {"true", "yes", "affirmative", "required", "included"}
     negative_markers = {"false", "no", "none", "n/a", "null", "other", ""}
     slots = state.get("disclosed_slots", {})
@@ -327,9 +618,10 @@ class Agent:
         explicit_cache_build: bool = False,
         embedding_cache_dir: str | Path | None = None,
         memory_store: InMemoryUserMemoryStore | None = None,
-        turn_parser: TurnParser | None = None,
         llm_client: ModelClient | None = None,
         ollama_client: ModelClient | None = None,
+        experiment_config: ExperimentConfig | None = None,
+        clarification_selector: ClarificationSelector | None = None,
     ) -> None:
         initialization_started = time.perf_counter()
         self.instrumentation = {
@@ -344,7 +636,6 @@ class Agent:
             "semantic_queries": [],
             "turns": [],
             "agent_errors": [],
-            "parser_calls": [],
             "llm_calls": [],
         }
         if catalog_path is None:
@@ -379,6 +670,15 @@ class Agent:
         self.embedding_cache_dir = Path(embedding_cache_dir or EMBEDDING_CACHE_DIR)
         self.memory_store = memory_store or InMemoryUserMemoryStore()
         self.llm_client = llm_client or ollama_client or runtime.llm_client
+        self.experiment_config = experiment_config or ExperimentConfig()
+        if not isinstance(self.experiment_config, ExperimentConfig):
+            raise ValueError("experiment_config must be an ExperimentConfig")
+        if clarification_selector is not None:
+            self.clarification_selector = clarification_selector
+        elif self.experiment_config.clarification_policy == "fixed_priority":
+            self.clarification_selector = select_fixed_priority_attributes
+        else:
+            self.clarification_selector = select_best_attributes
         self.vector_memory_config = DEFAULT_VECTOR_MEMORY_CONFIG
         self._active_lifecycle: dict[str, dict[str, Any]] = {}
         self._ended_lifecycle: dict[str, dict[str, Any]] = {}
@@ -393,13 +693,6 @@ class Agent:
         # Build only metadata and the cached vector index used by the demo path.
         catalog_started = time.perf_counter()
         self._build_category_index()
-        if turn_parser is None:
-            resolver = CategoryResolver(self.catalogue)
-            self.turn_parser = WinstonTurnParser(resolver, client=self.llm_client)
-            self._template_buckets = resolver.bucket_names
-        else:
-            self.turn_parser = turn_parser
-            self._template_buckets = catalog_bucket_set(self.catalogue)
         self.instrumentation["initialization"]["catalog_loading_seconds"] = (
             time.perf_counter() - catalog_started
         )
@@ -528,21 +821,38 @@ class Agent:
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
+        experiment_config = getattr(self, "experiment_config", ExperimentConfig())
         try:
+            options: dict[str, Any] = {
+                "temperature": experiment_config.llm_temperature,
+                "num_predict": 150,
+            }
+            if experiment_config.llm_seed is not None:
+                options["seed"] = experiment_config.llm_seed
             call = self.llm_client.chat_result(
                 messages,
                 format="json" if response_json else None,
-                options={"temperature": 0.4, "num_predict": 150},
+                options=options,
                 role="assistant",
             )
         except ModelError as exc:
             trace = exc.instrumentation()
-            trace.update({"session_id": session_id, "rolled_back": False})
+            trace.update({
+                "session_id": session_id, "rolled_back": False,
+                "messages": deepcopy(messages), "response": None,
+                "options": deepcopy(options),
+            })
             self.instrumentation.setdefault("llm_calls", []).append(trace)
             raise
 
         trace = call.instrumentation()
-        trace.update({"session_id": session_id, "rolled_back": False})
+        trace.update({
+            "session_id": session_id,
+            "rolled_back": False,
+            "messages": deepcopy(messages),
+            "response": call.content,
+            "options": deepcopy(options),
+        })
         self.instrumentation.setdefault("llm_calls", []).append(trace)
         if session_id and session_id in self._sessions:
             debug_info = self._sessions[session_id].setdefault("debug_info", {})
@@ -590,34 +900,24 @@ class Agent:
 
     def _record_constraint(
         self, state: dict, attr: str, value: str, turn: int, source_type: str,
-        *, promote_existing: bool = False, polarity: str = "positive",
+        *, promote_existing: bool = False,
     ) -> None:
         normalized = _normalize(value)
         for record in state["constraint_provenance"]:
-            if (
-                record["attribute"] == attr
-                and _normalize(record["value"]) == normalized
-                and record["status"] == "active"
-                and record.get("polarity", "positive") == polarity
-            ):
+            if record["attribute"] == attr and _normalize(record["value"]) == normalized and record["status"] == "active":
                 if source_type == "explicit_override" or promote_existing:
                     record["source_turn"] = turn
                     record["source_type"] = source_type
                 return
-        record = {
+        state["constraint_provenance"].append({
             "attribute": attr, "value": value, "source_turn": int(turn),
             "source_type": source_type, "status": "active",
-        }
-        if polarity != "positive":
-            record["polarity"] = polarity
-        state["constraint_provenance"].append(record)
+        })
 
     def _revoke_constraint_record(self, state: dict, record: dict) -> None:
         if record["status"] != "active":
             return
         record["status"] = "revoked"
-        if record.get("polarity", "positive") == "negative":
-            return
         for term in _terms(record["value"]):
             if term not in state["stashed_terms"]:
                 state["stashed_terms"].append(term)
@@ -631,9 +931,7 @@ class Agent:
             if attr == "gender": state["target_department"] = ""
             elif attr == "rating": state["min_avg_rating"] = 0.0
             elif attr == "reviews": state["min_rating_number"] = 0
-            elif attr == "budget":
-                state["price_min"] = 0.0
-                state["price_max"] = 9999.0
+            elif attr == "budget": state["price_max"] = 9999.0
             elif attr == "brand": state["store"] = ""
 
     def _set_constraint(
@@ -643,12 +941,7 @@ class Agent:
         new_values = self._slot_values(values)
         normalized = {_normalize(value) for value in new_values}
         for record in state["constraint_provenance"]:
-            if (
-                record["attribute"] == attr
-                and record["status"] == "active"
-                and record.get("polarity", "positive") == "positive"
-                and _normalize(record["value"]) not in normalized
-            ):
+            if record["attribute"] == attr and record["status"] == "active" and _normalize(record["value"]) not in normalized:
                 self._revoke_constraint_record(state, record)
         if new_values:
             state["disclosed_slots"][attr] = new_values
@@ -717,7 +1010,6 @@ class Agent:
             "hoodie", "jacket", "dress", "ring", "necklace", "earring", "bracelet",
         ]):
             state["category"] = " ".join(new_value.lower().split()[:4])
-            state["category_established"] = True
         self._record_constraint(state, new_attr, new_value, turn, "explicit_override")
         self._advance_search_epoch(state)
         self._rebuild_active_terms(state)
@@ -731,16 +1023,12 @@ class Agent:
                     state["stashed_terms"].append(term)
         for record in state["constraint_provenance"]:
             if record["attribute"] == attr and record["status"] == "active":
-                if record.get("polarity", "positive") == "negative":
-                    state.get("negated_terms", set()).discard(_normalize(record["value"]))
                 self._revoke_constraint_record(state, record)
         state["disclosed_slots"].pop(attr, None)
         if attr == "gender": state["target_department"] = ""
         elif attr == "rating": state["min_avg_rating"] = 0.0
         elif attr == "reviews": state["min_rating_number"] = 0
-        elif attr == "budget":
-            state["price_min"] = 0.0
-            state["price_max"] = 9999.0
+        elif attr == "budget": state["price_max"] = 9999.0
         elif attr == "brand": state["store"] = ""
         self._rebuild_active_terms(state)
 
@@ -758,19 +1046,11 @@ class Agent:
             "history": [],
             "negated_terms": set(),
             "asked_attributes": set(),
-            "pending_category": False,
-            "pending_category_change": False,
-            "category_established": False,
-            "resolver_candidates": [],
-            "resolver_confidence": 0.0,
-            "last_message_type": None,
-            "exact_terms": [],
             "intent_mode": BuyerMode.BROWSING.value,
             "intent_source": "session_default",
             # Slot attributes
             "category": "clothing",
             "department": "",
-            "price_min": 0.0,
             "price_max": 9999.0,
             "target_department": "",
             "min_avg_rating": 0.0,
@@ -881,13 +1161,18 @@ class Agent:
                     update = np.array(new_preferences, copy=True)
                     update.setflags(write=False)
                     self._forensic_update_vectors[session] = update
+            update_policy = getattr(self.vector_memory_config, "update_policy", None)
+            if update_policy is None:
+                update_policy = MemoryUpdatePolicy.fixed(
+                    getattr(self.vector_memory_config, "ewma_alpha", 0.30)
+                )
             commit = self.memory_store.commit(
                 user_id=metadata["user_id"],
                 session_id=session,
                 sequence_index=metadata["sequence_index"],
                 embedding_space_id=self.embedding_space_id,
                 new_preferences=new_preferences,
-                alpha=self.vector_memory_config.ewma_alpha,
+                update_policy=update_policy,
             )
 
         self._ended_lifecycle[session] = {
@@ -959,6 +1244,11 @@ class Agent:
             "final_fast_memory": deepcopy(final_state),
             "preference_text": metadata.get("preference_text", ""),
             "vector_changed": None if commit is None else commit.vector_changed,
+            "update_mode": None if commit is None else commit.update_mode.value,
+            "raw_update_similarity": None if commit is None else commit.raw_update_similarity,
+            "bounded_update_similarity": None if commit is None else commit.bounded_update_similarity,
+            "effective_alpha": None if commit is None else commit.effective_alpha,
+            "update_fallback_reason": None if commit is None else commit.update_fallback_reason,
             "ltm_updated_after_turn": bool(commit is not None and commit.vector_changed),
             "ltm_updated_after_session": bool(commit is not None and commit.vector_changed),
             "memory_update_text": metadata.get("preference_text", ""),
@@ -975,7 +1265,7 @@ class Agent:
                 "update_count": visible.update_count,
             }]),
             "embedding_space_id": self.embedding_space_id,
-            "historical_memory_applied": bool(final_state.get("debug_info", {}).get("memory_trace", {}).get("gate_passed", False)),
+            "historical_memory_applied": bool(final_state.get("debug_info", {}).get("memory_trace", {}).get("ltm_applied", False)),
         }
         if consume and ended:
             self._ended_lifecycle.pop(session, None)
@@ -1010,7 +1300,7 @@ class Agent:
     @staticmethod
     def _explicit_no_preference_attributes(message: str) -> set[str]:
         matches = re.finditer(
-            r"\bi (?:do not|don['\u2019]t) have (?:an? |any )?(?:additional )?preference for\s+([a-z_]+)",
+            r"\bi (?:do not|don't) have (?:an? |any )?(?:additional )?preference for\s+([a-z_]+)",
             str(message).lower(),
         )
         return {match.group(1).strip() for match in matches}
@@ -1058,11 +1348,7 @@ class Agent:
             if retained == self._slot_values(values):
                 continue
             for record in state.get("constraint_provenance", []):
-                if (
-                    record.get("attribute") == attr
-                    and record.get("status") == "active"
-                    and record.get("polarity", "positive") == "positive"
-                ):
+                if record.get("attribute") == attr and record.get("status") == "active":
                     if any(contains_phrase(record.get("value", ""), term) or contains_phrase(term, record.get("value", "")) for term in negatives):
                         self._revoke_constraint_record(state, record)
             if retained:
@@ -1101,7 +1387,7 @@ class Agent:
 
         # 4. Extract Category, Department, Budget slots
         cat_match = re.search(
-            r"i['\u2019]m looking for\s+(.+?)(?=\s+(?:under|below|max(?:imum)?|with|without|but|that|which|budget|from\s+brands?)\b|[,.;]|$)",
+            r"i'm looking for\s+(.+?)(?=\s+(?:under|below|max(?:imum)?|with|without|but|that|which|budget|from\s+brands?)\b|[,.;]|$)",
             msg_lower,
         )
         if cat_match:
@@ -1113,7 +1399,6 @@ class Agent:
                 state["category"] = cand_cat
             else:
                 state["category"] = " ".join(cand_cat.split()[:4])
-            state["category_established"] = True
 
         if any(w in msg_lower for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog"]):
             state["department"] = "shoes"
@@ -1199,17 +1484,18 @@ class Agent:
 
         self._reconcile_negated_state(state, turn)
 
-    def _can_use_fast_path(self, user_message: str, turn: int) -> bool:
-        """Accept only complete evaluator forms; human lookalikes use Llama 3.1."""
-
-        text = str(user_message).strip()
+    @staticmethod
+    def _can_use_fast_path(user_message: str, turn: int) -> bool:
+        msg_lower = user_message.lower().strip()
         if turn == 1:
-            match = _EVALUATOR_INITIAL_RE.fullmatch(text)
-            if match:
-                return _normalize(match.group("category")) in getattr(
-                    self, "_template_buckets", frozenset()
-                )
-        return any(pattern.fullmatch(text) for pattern in _EVALUATOR_FOLLOWUP_RES)
+            return msg_lower.startswith("i'm looking for ")
+        return (
+            msg_lower.startswith("for that, what matters is:") or
+            msg_lower.startswith("actually, ignore my earlier preference. what i need is:") or
+            msg_lower.startswith("i don't have a preference for") or
+            msg_lower.startswith("i don't have an additional preference for") or
+            "those options are not quite right yet" in msg_lower
+        )
 
     @staticmethod
     def _detect_intent_locally(state: dict[str, Any], user_message: str) -> BuyerMode | None:
@@ -1230,8 +1516,7 @@ class Agent:
         concrete_slots = {"budget", "size", "brand", "material", "color"}
         disclosed = set(state.get("disclosed_slots", {}))
         has_hard_condition = (
-            float(state.get("price_min", 0.0)) > 0.0
-            or float(state.get("price_max", 9999.0)) < 9999.0
+            float(state.get("price_max", 9999.0)) < 9999.0
             or bool(state.get("target_department"))
             or float(state.get("min_avg_rating", 0.0)) > 0.0
             or int(state.get("min_rating_number", 0)) > 0
@@ -1288,6 +1573,7 @@ class Agent:
         *,
         buyer_mode: str | BuyerMode | None = None,
         debug: bool = False,
+        emit_trace: bool | None = None,
     ) -> dict:
         respond_started = time.perf_counter()
         route_used = "vector-memory"
@@ -1296,7 +1582,6 @@ class Agent:
         rolled_back = False
         state_snapshot = None
         forensic_count = 0
-        parser_call_count = len(self.instrumentation.get("parser_calls", ()))
         llm_call_count = len(self.instrumentation.get("llm_calls", ()))
         try:
             if session_id not in self._active_lifecycle:
@@ -1311,10 +1596,13 @@ class Agent:
                 except (TypeError, ValueError) as exc:
                     raise ValueError("buyer_mode must be exactly 'buying' or 'browsing'") from exc
             result = self._respond_custom(
-                session_id, user_message, turn, top_k, mode, emit_debug=False
+                session_id,
+                user_message,
+                turn,
+                top_k,
+                mode,
+                emit_debug=debug if emit_trace is None else bool(emit_trace),
             )
-            if result.get("ask_attribute") == "category" and not result.get("recommendations"):
-                route_used = "category-clarification"
             if not debug:
                 result.pop("debug", None)
             return result
@@ -1326,16 +1614,13 @@ class Agent:
                 snapshots = self._forensic_ranking_snapshots.get(session_id)
                 if snapshots is not None:
                     del snapshots[forensic_count:]
-            parser_calls = self.instrumentation.get("parser_calls", [])
-            for call in parser_calls[parser_call_count:]:
-                call["rolled_back"] = rolled_back
             llm_calls = self.instrumentation.get("llm_calls", [])
             for call in llm_calls[llm_call_count:]:
                 call["rolled_back"] = rolled_back
             latest_call = (
                 llm_calls[-1]
                 if len(llm_calls) > llm_call_count
-                else parser_calls[-1] if len(parser_calls) > parser_call_count else None
+                else None
             )
             self.instrumentation["agent_errors"].append(
                 {
@@ -1526,300 +1811,203 @@ class Agent:
         snapshot["ollama"] = snapshot["model_calls"] if snapshot["model_provider"] == "ollama" else []
         return snapshot
 
-    @staticmethod
-    def _usable_category_phrase(value: object) -> bool:
-        normalized = _normalize(value)
-        return bool(normalized) and normalized not in {
-            "item", "items", "product", "products", "thing", "things",
-            "something", "anything", "clothing item",
-        }
-
-    @staticmethod
-    def _has_explicit_correction(message: str) -> bool:
-        return bool(re.search(
-            r"\b(?:actually|instead(?: of)?|rather than|changed my mind|change it|"
-            r"make it|correction|what i need is|not .+ (?:but|make|want)|replace)\b",
-            str(message).lower(),
-        ))
-
-    @staticmethod
-    def _has_explicit_product_change(message: str) -> bool:
-        return bool(re.search(
-            r"\b(?:instead(?: of)?|changed my mind|switch(?:ing)? to|replace .+ with|"
-            r"now (?:i['\u2019]?m|i am) looking for|ignore .+ (?:i want|what i need is)|"
-            r"not .+[,;]? (?:i want|give me|show me))\b",
-            str(message).lower(),
-        ))
-
-    @staticmethod
-    def _target_department_from_parser(value: str | None) -> str:
-        return {
-            "womens": "women",
-            "mens": "men",
-            "girls": "girls",
-            "boys": "boys",
-            "baby-girls": "toddler",
-            "baby-boys": "toddler",
-            "unisex-child": "kids",
-            "unisex-adult": "",
-        }.get(str(value or "").lower(), "")
-
-    @staticmethod
-    def _product_department_for_category(category: str) -> str:
-        normalized = _normalize(category)
-        if any(word in normalized for word in (
-            "shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat",
-        )):
-            return "shoes"
-        if any(word in normalized for word in (
-            "ring", "necklace", "earring", "bracelet", "jewelry", "pendant", "charm",
-        )):
-            return "jewelry"
-        if "watch" in normalized:
-            return "watches"
-        if any(word in normalized for word in (
-            "shirt", "pant", "hoodie", "jacket", "dress", "sock", "clothing",
-            "skirt", "sweater", "coat", "jean", "short", "underwear", "tee",
-        )):
-            return "clothing"
-        return ""
-
-    def _clear_category_specific_state(self, state: dict, turn: int) -> None:
-        protected = {"budget", "gender", "rating", "reviews"}
-        category_attributes = set(state.get("disclosed_slots", {})) - protected
-        category_attributes.update(
-            record.get("attribute")
-            for record in state.get("constraint_provenance", [])
-            if record.get("attribute") not in protected
-        )
-        for attr in sorted(value for value in category_attributes if value):
-            self._erase_attribute_memory(state, str(attr))
-        state["negated_terms"].clear()
-        state["asked_attributes"].intersection_update(protected)
-        state["department"] = ""
-        state["store"] = ""
-        state["exact_terms"] = []
-        self._advance_search_epoch(state)
-        self._rebuild_active_terms(state)
-
-    def _apply_price_bounds(
-        self,
-        state: dict,
-        parsed: ParsedTurn,
-        turn: int,
-        source_type: str,
-        user_message: str,
-        *,
-        replace: bool,
-    ) -> None:
-        old_min = float(state.get("price_min", 0.0))
-        old_max = float(state.get("price_max", 9999.0))
-        new_min = parsed.price_min
-        new_max = parsed.price_max
-        target_min = old_min
-        target_max = old_max
-        if new_min is not None:
-            target_min = float(new_min) if replace or old_min <= 0 else max(old_min, float(new_min))
-        if new_max is not None:
-            target_max = float(new_max) if replace or old_max >= 9999.0 else min(old_max, float(new_max))
-        if new_min is None and new_max is None:
-            return
-
-        values = {
-            value
-            for value in self._slot_values(state["disclosed_slots"].get("budget"))
-            if not re.match(r"^(?:over|under)\s+\$?\d", value, re.IGNORECASE)
-        }
-        if target_min > 0:
-            values.add(f"over ${target_min:g}")
-        if target_max < 9999.0:
-            values.add(f"under ${target_max:g}")
-        self._set_constraint(state, "budget", values, turn, source_type, user_message)
-        state["price_min"] = target_min
-        state["price_max"] = target_max
-
-    def _apply_parsed_turn(
-        self,
-        state: dict,
-        parsed: ParsedTurn,
-        user_message: str,
-        turn: int,
-    ) -> bool:
-        """Merge one validated turn; resolver confidence remains telemetry-only."""
-
-        state["resolver_candidates"] = list(parsed.resolver_candidates[:3])
-        state["resolver_confidence"] = float(parsed.resolver_confidence)
-        state["last_message_type"] = parsed.message_type
-        state["intent_mode"] = parsed.intent
-        state["intent_source"] = "winston_parser"
-        state["_intent_detection_succeeded"] = True
-
-        usable_category = self._usable_category_phrase(parsed.category)
-        established = bool(state.get("category_established"))
-        category_differs = usable_category and _normalize(parsed.category) != _normalize(state.get("category"))
-        explicit_change = bool(
-            established and category_differs and self._has_explicit_product_change(user_message)
-        )
-
-        if explicit_change:
-            self._clear_category_specific_state(state, turn)
-            state["pending_category_change"] = False
-
-        if usable_category and (not established or explicit_change):
-            state["category"] = str(parsed.category).strip()
-            state["category_established"] = True
-            product_department = self._product_department_for_category(state["category"])
-            if product_department:
-                state["department"] = product_department
-
-        source_type = (
-            "explicit_override"
-            if self._has_explicit_correction(user_message)
-            else ("initial_preference" if turn <= 1 else "clarification")
-        )
-        replace_values = source_type == "explicit_override"
-
-        for attr in parsed.declined_attributes:
-            if attr in set(ATTRIBUTE_ORDER):
-                state["asked_attributes"].add(attr)
-            self._erase_attribute_memory(state, attr)
-
-        grouped: dict[str, set[str]] = {}
-        for slot in parsed.positive_slots:
-            grouped.setdefault(slot.attribute, set()).add(slot.value)
-        for attr, new_values in grouped.items():
-            old_values = self._slot_values(state["disclosed_slots"].get(attr))
-            merged = new_values if replace_values else old_values | new_values
-            self._set_constraint(state, attr, merged, turn, source_type, user_message)
-
-        if "brand" in grouped:
-            brand_values = sorted(self._slot_values(state["disclosed_slots"].get("brand")))
-            state["store"] = (
-                "" if not brand_values else brand_values[0] if len(brand_values) == 1 else tuple(brand_values)
-            )
-
-        self._apply_price_bounds(
-            state,
-            parsed,
-            turn,
-            source_type,
-            user_message,
-            replace=replace_values,
-        )
-
-        target_department = self._target_department_from_parser(parsed.department)
-        if target_department:
-            state["target_department"] = target_department
-            self._set_constraint(
-                state,
-                "gender",
-                target_department,
-                turn,
-                source_type,
-                user_message,
-            )
-
-        for slot in parsed.negatives:
-            normalized = _normalize(slot.value)
-            if not normalized:
-                continue
-            state["negated_terms"].add(normalized)
-            self._record_constraint(
-                state,
-                slot.attribute,
-                slot.value,
-                turn,
-                "negation",
-                polarity="negative",
-            )
-
-        if replace_values:
-            positive_values = {
-                _normalize(value)
-                for values in grouped.values()
-                for value in values
-            }
-            state["negated_terms"].difference_update(positive_values)
-            for record in state.get("constraint_provenance", []):
-                if (
-                    record.get("status") == "active"
-                    and record.get("polarity") == "negative"
-                    and _normalize(record.get("value")) in positive_values
-                ):
-                    self._revoke_constraint_record(state, record)
-
-        if parsed.model_code:
-            state["exact_terms"] = [parsed.model_code]
-
-        self._reconcile_negated_state(state, turn)
-        self._rebuild_active_terms(state)
-
-        return False
-
     def _update_state_via_llm(
         self,
         session_id: str,
         user_message: str,
         turn: int | None = None,
-    ) -> bool:
-        """Parse a free-text turn with Winston's authoritative constrained parser."""
-
+    ) -> None:
+        """Apply a complete state edit from the selected model provider."""
         state = self._sessions[session_id]
-        resolved_turn = int(state.get("_current_turn", 0) if turn is None else turn)
-        parser = getattr(self, "turn_parser", None)
-        if parser is None:
-            raise RuntimeError("turn_parser is not configured")
-        model = str(getattr(parser, "model", type(parser).__name__))
-        started = time.perf_counter()
+        turn = int(state.get("_current_turn", 0) if turn is None else turn)
+        past_state_data = {
+            "intent_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
+            "category": state.get("category", "clothing"),
+            "department": state.get("department", ""),
+            "price_max": state.get("price_max", 9999.0),
+            "target_department": state.get("target_department", ""),
+            "min_avg_rating": state.get("min_avg_rating", 0.0),
+            "min_rating_number": state.get("min_rating_number", 0),
+            "store": state.get("store", ""),
+            "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
+            "negated_terms": list(state.get("negated_terms", set())),
+            "asked_attributes": list(state.get("asked_attributes", set()))
+        }
+        sys_prompt = (
+            "You are a precise dialogue state tracking assistant for an e-commerce fashion shopping copilot.\n"
+            "Your task is to read the customer's message and update the JSON state representing their active shopping filters and constraints.\n\n"
+            "Rules for intent_mode:\n"
+            "- buying: the user has a specific item in mind, definite requirements, or hard constraints. Signals include 'I need', 'it must be', 'I want specifically', or an explicit budget, size, brand, or material.\n"
+            "- browsing: the user is exploring, vague, uncertain, or open to suggestions. Signals include 'just looking', 'show me options', 'still exploring', 'anything', or a vague category-only query.\n"
+            "Re-evaluate intent every turn. Upgrade browsing to buying as soon as requirements become concrete. Revert buying to browsing only after an explicit reset such as 'actually, show me other styles'.\n\n"
+            "Guideline attributes you can extract for constraints:\n"
+            "- color, material, size, brand, use_case, style, budget.\n"
+            "Note: You are NOT confined to this list. If the user specifies requirements for other attributes (e.g. \"zipper closure\" -> closure, \"slim fit\" -> fit, \"striped\" -> pattern), extract them as custom keys inside \"disclosed_slots\".\n"
+            "Note: The \"department\" field must ONLY be empty or one of \"clothing\", \"shoes\", \"jewelry\", \"watches\". Put every target gender or age demographic (men, women, boys, girls, kids, toddler) exclusively in \"target_department\"; never put demographics in \"department\", \"use_case\", or any \"disclosed_slots\" key.\n\n"
+            "Rules:\n"
+            "1. Extract any new constraints specified by the user and add/update them in \"disclosed_slots\". Values should be short strings or lists of strings. \"disclosed_slots\" must be the complete current active mapping; omit revoked or deleted keys.\n"
+            "2. If the user overrides a constraint (e.g. \"Actually, I need polyester, not cotton\" or \"I changed my mind, make it red instead of black\"), erase the old preference and update it with the new one.\n"
+            "3. If the user overrides the product type (e.g., \"ignore slippers, I want sneakers\"), update the \"category\" field and clear all other attributes in \"disclosed_slots\" since they belonged to the old item type.\n"
+            "4. Extract negative preferences (e.g. \"no leather\", \"except dresses\") and add them to \"negated_terms\".\n"
+            "5. If the user explicitly states they don't have a preference for an attribute and tells the assistant to use its judgment (e.g., \"I don't have a preference for size\"), add that attribute to \"asked_attributes\" (to prevent asking again) and remove it from \"disclosed_slots\" if present.\n"
+            "6. Extract hard conditions when explicitly stated: demographic into target_department; minimum stars into min_avg_rating; minimum reviews into min_rating_number; requested brand/store into store. Preserve prior values when not changed.\n"
+            "7. Clean up: ensure \"category\" and \"department\" are updated if mentioned.\n"
+            "8. Return ONLY a valid JSON object matching this schema:\n"
+            "{\n"
+            "  \"intent_mode\": \"buying|browsing\",\n"
+            "  \"category\": \"string\",\n"
+            "  \"department\": \"string\",\n"
+            "  \"price_max\": float,\n"
+            "  \"target_department\": \"women|men|boys|girls|kids|toddler|empty\",\n"
+            "  \"min_avg_rating\": float,\n"
+            "  \"min_rating_number\": integer,\n"
+            "  \"store\": \"string\",\n"
+            "  \"disclosed_slots\": {\n"
+            "    \"attribute_name\": [\"value1\", \"value2\"]\n"
+            "  },\n"
+            "  \"negated_terms\": [\"term1\", \"term2\"],\n"
+            "  \"asked_attributes\": [\"attr1\", \"attr2\"]\n"
+            "}\n"
+            "Do not include any conversational text or markdown codeblock wrappers except raw valid JSON."
+        )
+        prompt = (
+            f"Past State:\n{json.dumps(past_state_data, indent=2)}\n\n"
+            f"Customer Message:\n\"{user_message}\"\n\n"
+            "Output the updated JSON state strictly matching the schema:"
+        )
+        res_text = self._call_llm(
+            prompt, sys_prompt, session_id=session_id, response_json=True
+        )
+        if "```json" in res_text:
+            res_text = res_text.split("```json")[1].split("```")[0]
+        elif "```" in res_text:
+            res_text = res_text.split("```")[1].split("```")[0]
+        res_text = res_text.strip()
+
+        state_before_update = deepcopy(state)
         try:
-            parsed = parser.parse(user_message, resolved_turn)
-            if not isinstance(parsed, ParsedTurn):
-                raise TypeError("turn_parser.parse must return ParsedTurn")
-            ask_category = self._apply_parsed_turn(
-                state, parsed, user_message, resolved_turn
+            new_state = json.loads(res_text)
+
+            if "intent_mode" in new_state:
+                detected = str(new_state["intent_mode"]).strip().lower()
+                if detected in {BuyerMode.BUYING.value, BuyerMode.BROWSING.value}:
+                    state["intent_mode"] = detected
+                    state["intent_source"] = "llm"
+                    state["_intent_detection_succeeded"] = True
+
+            if "category" in new_state:
+                new_cat = str(new_state["category"]).strip()
+                if new_cat != state.get("category"):
+                    for record in state["constraint_provenance"]:
+                        if record["status"] == "active":
+                            self._revoke_constraint_record(state, record)
+                    state["category"] = new_cat
+                    state["seen_asins"].clear()
+                    state["disclosed_slots"].clear()
+                    state["asked_attributes"].clear()
+
+            demographic_values = {"men", "women", "boys", "girls", "kids", "toddler"}
+            canonical_departments = {"clothing", "shoes", "jewelry", "watches", ""}
+            dept_val = str(new_state.get("department") or "").strip().lower()
+            target_value = str(new_state.get("target_department") or "").strip().lower()
+            legacy_demographic = dept_val if dept_val in demographic_values else ""
+            resolved_demographic = (
+                target_value if target_value in demographic_values else legacy_demographic
             )
-        except Exception as exc:
-            latency = (
-                exc.latency_seconds
-                if isinstance(exc, TurnParserError)
-                else time.perf_counter() - started
-            )
-            parser_trace = getattr(parser, "last_call", None) or {}
-            self.instrumentation.setdefault("parser_calls", []).append({
-                "session_id": session_id,
-                "turn": resolved_turn,
-                "model": parser_trace.get("model", getattr(exc, "model", model)),
-                "latency_seconds": float(latency),
-                "attempts": parser_trace.get("attempts", getattr(exc, "attempts", 1)),
-                "retry_count": parser_trace.get(
-                    "retry_count", getattr(exc, "retry_count", 0)
-                ),
-                "success": False,
-                "error_type": parser_trace.get("error_type") or type(exc).__name__,
-                "cause_type": parser_trace.get(
-                    "cause_type", getattr(exc, "cause_type", None)
-                ),
-                "rolled_back": False,
-            })
-            raise
-        parser_trace = getattr(parser, "last_call", None) or {}
-        self.instrumentation.setdefault("parser_calls", []).append({
-            "session_id": session_id,
-            "turn": resolved_turn,
-            "model": parser_trace.get("model", model),
-            "latency_seconds": parser_trace.get(
-                "latency_seconds", time.perf_counter() - started
-            ),
-            "attempts": parser_trace.get("attempts", 1),
-            "retry_count": parser_trace.get("retry_count", 0),
-            "success": True,
-            "error_type": None,
-            "cause_type": None,
-            "rolled_back": False,
-            "resolver_candidates": list(parsed.resolver_candidates[:3]),
-            "resolver_confidence": float(parsed.resolver_confidence),
-        })
-        return ask_category
+            if "department" in new_state:
+                if legacy_demographic:
+                    cat_val = state.get("category", "").lower()
+                    if any(w in cat_val for w in ["shoe", "boot", "sandal", "slide", "sneaker", "clog", "cleat"]):
+                        state["department"] = "shoes"
+                    elif any(w in cat_val for w in ["ring", "necklace", "earring", "bracelet", "jewelry"]):
+                        state["department"] = "jewelry"
+                    else:
+                        state["department"] = "clothing"
+                elif dept_val in canonical_departments:
+                    state["department"] = dept_val
+
+            if "price_max" in new_state:
+                try:
+                    state["price_max"] = float(new_state["price_max"])
+                    if state["price_max"] < 9999.0:
+                        self._set_constraint(state, "budget", f"under {state['price_max']:g}", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
+                    elif "budget" in state["disclosed_slots"]:
+                        self._erase_attribute_memory(state, "budget")
+                except Exception:
+                    state["price_max"] = 9999.0
+            if "target_department" in new_state or legacy_demographic:
+                if resolved_demographic:
+                    state["target_department"] = resolved_demographic
+                    self._set_constraint(state, "gender", resolved_demographic, turn, "initial_preference" if turn <= 1 else "clarification", user_message)
+                elif target_value == "":
+                    state["target_department"] = ""
+                    if "gender" in state["disclosed_slots"]:
+                        self._erase_attribute_memory(state, "gender")
+            if "min_avg_rating" in new_state:
+                try:
+                    state["min_avg_rating"] = max(0.0, float(new_state["min_avg_rating"] or 0.0))
+                    if state["min_avg_rating"] > 0: self._set_constraint(state, "rating", f"{state['min_avg_rating']:g} stars", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
+                    elif "rating" in state["disclosed_slots"]: self._erase_attribute_memory(state, "rating")
+                except (TypeError, ValueError): pass
+            if "min_rating_number" in new_state:
+                try:
+                    state["min_rating_number"] = max(0, int(new_state["min_rating_number"] or 0))
+                    if state["min_rating_number"] > 0: self._set_constraint(state, "reviews", f"{state['min_rating_number']} reviews", turn, "initial_preference" if turn <= 1 else "clarification", user_message)
+                    elif "reviews" in state["disclosed_slots"]: self._erase_attribute_memory(state, "reviews")
+                except (TypeError, ValueError): pass
+            if "store" in new_state:
+                state["store"] = str(new_state["store"] or "").strip().lower()
+                if state["store"]:
+                    self._set_constraint(state, "brand", state["store"], turn, "initial_preference" if turn <= 1 else "clarification", user_message)
+                elif "brand" in state["disclosed_slots"]:
+                    self._erase_attribute_memory(state, "brand")
+
+            incoming_negatives = set(state.get("negated_terms", set()))
+            incoming_negatives.update(self._extract_negated_terms(user_message))
+            if "negated_terms" in new_state and isinstance(new_state["negated_terms"], list):
+                incoming_negatives.update(
+                    str(term).strip() for term in new_state["negated_terms"] if str(term).strip()
+                )
+            state["negated_terms"] = incoming_negatives
+
+            if "disclosed_slots" in new_state and isinstance(new_state["disclosed_slots"], dict):
+                normalized_slots = {}
+                for k, v in new_state["disclosed_slots"].items():
+                    if isinstance(v, list):
+                        normalized_slots[str(k).strip()] = set(str(item).strip() for item in v if str(item).strip())
+                    else:
+                        normalized_slots[str(k).strip()] = {str(v).strip()} if str(v).strip() else set()
+                override_language = bool(re.search(
+                    r"\b(?:actually|instead of|changed my mind|make it|what i need is|rather than)\b",
+                    user_message.lower(),
+                ))
+                for attr, values in normalized_slots.items():
+                    if not values:
+                        continue
+                    merged = values if override_language else self._slot_values(state["disclosed_slots"].get(attr)) | values
+                    self._set_constraint(
+                        state, str(attr), merged, turn,
+                        "explicit_override" if override_language else ("initial_preference" if turn <= 1 else "clarification"),
+                        user_message,
+                    )
+
+            if "asked_attributes" in new_state and isinstance(new_state["asked_attributes"], list):
+                valid_asked = {
+                    str(attr).strip().lower() for attr in new_state["asked_attributes"]
+                    if str(attr).strip().lower() in set(ATTRIBUTE_ORDER)
+                }
+                state["asked_attributes"].update(valid_asked)
+            for attr in self._explicit_no_preference_attributes(user_message):
+                if attr in set(ATTRIBUTE_ORDER):
+                    state["asked_attributes"].add(attr)
+                self._erase_attribute_memory(state, attr)
+            self._reconcile_negated_state(state, turn)
+        except Exception as parse_err:
+            print(f"[Hybrid Agent] Failed to parse updated state JSON: {parse_err}. Content: {res_text}")
+            self._sessions[session_id] = state_before_update
+            state = self._sessions[session_id]
+            self._parse_message_locally(session_id, user_message, turn)
+        self._reconcile_negated_state(state, turn)
 
     def _extract_asked_attributes(self, agent_message: str, state: dict) -> set[str]:
         all_attrs = set(ATTRIBUTE_ORDER)
@@ -1856,89 +2044,14 @@ class Agent:
         state["_intent_detection_succeeded"] = False
 
         # 1. Preserve the established fast/local versus full parsing boundary.
-        ask_category = False
         if self._can_use_fast_path(user_message, turn):
             self._parse_message_locally(session_id, user_message, turn)
         else:
             state["_current_turn"] = int(turn)
             try:
-                ask_category = bool(self._update_state_via_llm(session_id, user_message))
+                self._update_state_via_llm(session_id, user_message)
             finally:
                 state.pop("_current_turn", None)
-
-        if ask_category:
-            agent_message = "What specific kind of product are you looking for?"
-            state["history"].append({"role": "assistant", "content": agent_message})
-            lifecycle = self._active_lifecycle[session_id]
-            visible = lifecycle["visible_state"]
-            current_intent = _state_to_retrieval_query(state)
-            resolver_debug = {
-                "candidates": list(state.get("resolver_candidates", []))[:3],
-                "confidence": float(state.get("resolver_confidence", 0.0)),
-                "pending_category": True,
-            }
-            state["debug_info"]["resolver"] = resolver_debug
-            memory_trace = {
-                "user_id": lifecycle["user_id"],
-                "mode": state.get("intent_mode", BuyerMode.BROWSING.value),
-                "buyer_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
-                "intent_mode": state.get("intent_mode", BuyerMode.BROWSING.value),
-                "intent_source": state.get("intent_source", "winston_parser"),
-                "current_intent": current_intent,
-                "useful_slots": {
-                    "category": state["category"],
-                    "department": state["department"],
-                    "price_min": state.get("price_min", 0.0),
-                    "price_max": state["price_max"],
-                    "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
-                    "negated_terms": sorted(state.get("negated_terms", set())),
-                },
-                "prior_ltm_exists": visible is not None,
-                "memory_version": SNAPSHOT_VERSION,
-                "memory_update_count": 0 if visible is None else visible.update_count,
-                "gate_cosine": None,
-                "gate_threshold": self.vector_memory_config.relevance_threshold,
-                "gate_passed": False,
-                "a": 0.0,
-                "b": 0.0,
-                "catalog_rows_scored": 0,
-                "eligible_count": 0,
-                "fts_or_threshold": None,
-                "keyword_route_threshold": None,
-                "retrieval_route": "category_clarification",
-                "resolver_candidates": list(state.get("resolver_candidates", []))[:3],
-                "resolver_confidence": float(state.get("resolver_confidence", 0.0)),
-                "ltm_updated_after_turn": False,
-                "ltm_updated_after_session": False,
-                "memory_update_text": None,
-                "returned": [],
-                "final_asins": [],
-            }
-            state["debug_info"]["memory_trace"] = memory_trace
-            debug_data = {
-                "model": "Deterministic category clarification",
-                "model_provider": getattr(getattr(self, "llm_client", None), "provider", "unknown"),
-                "embedding_model": getattr(self, "embedding_model_id", "unknown"),
-                "embedding_space_id": self.embedding_space_id,
-                "category": state["category"],
-                "department": state["department"],
-                "price_min": state.get("price_min", 0.0),
-                "price_max": state["price_max"],
-                "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
-                "asked_attributes": sorted(state.get("asked_attributes", set())),
-                "negated_terms": sorted(state.get("negated_terms", set())),
-                "accumulated_terms": list(state.get("accumulated_terms", [])),
-                "constraint_provenance": deepcopy(state.get("constraint_provenance", [])),
-                "search_epoch": state.get("search_epoch", 0),
-                "resolver": resolver_debug,
-                "memory_trace": deepcopy(memory_trace),
-            }
-            return {
-                "message": agent_message,
-                "ask_attribute": "category",
-                "recommendations": [],
-                "debug": debug_data,
-            }
 
         live_mode = self._resolve_live_intent(state, user_message, buyer_mode)
         if live_mode is BuyerMode.BUYING:
@@ -1953,7 +2066,10 @@ class Agent:
         v1 = self.embed_dense_query(query_text)
         lifecycle = self._active_lifecycle[session_id]
         visible = lifecycle["visible_state"]
-        v2 = None if visible is None else visible.vector
+        ltm_available = visible is not None
+        experiment_config = getattr(self, "experiment_config", ExperimentConfig())
+        ltm_read_enabled = experiment_config.long_term_memory_read_enabled
+        v2 = visible.vector if ltm_available and ltm_read_enabled else None
         s1, s2, s3, gate_cosine, gate_passed, a, b = score_catalog(
             self.catalog_embeddings, v1, v2, live_mode, self.vector_memory_config
         )
@@ -1967,10 +2083,6 @@ class Agent:
         else:
             # Lightweight compatibility for isolated scorer contract tests.
             hard_mask = np.ones(len(self.catalog_ids), dtype=bool)
-            if state.get("price_min", 0.0) > 0.0:
-                hard_mask &= np.isfinite(self.catalog_prices) & (
-                    self.catalog_prices >= state["price_min"]
-                )
             if state["price_max"] < 9999.0:
                 hard_mask &= np.isfinite(self.catalog_prices) & (
                     self.catalog_prices <= state["price_max"]
@@ -2005,14 +2117,41 @@ class Agent:
             candidate_rows = sorted(
                 eligible.tolist(), key=lambda row: (-float(s3[row]), self.catalog_ids[row])
             )[:VECTOR_FALLBACK_LIMIT]
-        ranked = sorted(candidate_rows, key=lambda row: (-float(s3[row]), self.catalog_ids[row]))
+        keyword_state_scores: dict[int, float] = {}
+        if retrieval_route == "keyword":
+            catalog_categories = getattr(self, "catalog_categories_set", None)
+            if catalog_categories is None:
+                catalog_categories = [
+                    {_normalize(value) for value in self.catalog_metadata[asin].get("categories", [])}
+                    for asin in self.catalog_ids
+                ]
+            department_rows, category_rows = _keyword_soft_match_rows(
+                state, catalog_categories
+            )
+            keyword_state_scores = {
+                row: _keyword_state_score(
+                    fts_position=position,
+                    metadata=self.catalog_metadata[self.catalog_ids[row]],
+                    state=state,
+                    department_category_match=row in department_rows,
+                    category_match=row in category_rows,
+                )
+                for position, row in enumerate(candidate_rows)
+            }
+            ranked = sorted(
+                candidate_rows,
+                key=lambda row: keyword_state_scores[row],
+                reverse=True,
+            )
+            ranking_method = "keyword_state_score"
+        else:
+            ranked = sorted(
+                candidate_rows, key=lambda row: (-float(s3[row]), self.catalog_ids[row])
+            )
+            ranking_method = "none" if retrieval_route == "no_eligible" else "s3"
         m0_ranked = sorted(eligible.tolist(), key=lambda row: (-float(s1[row]), self.catalog_ids[row]))
         full_m3_ranked = sorted(eligible.tolist(), key=lambda row: (-float(s3[row]), self.catalog_ids[row]))
         price_mask = np.ones(len(self.catalog_ids), dtype=bool)
-        if state.get("price_min", 0.0) > 0.0:
-            price_mask &= np.isfinite(self.catalog_prices) & (
-                self.catalog_prices >= state["price_min"]
-            )
         if state["price_max"] < 9999.0:
             price_mask &= np.isfinite(self.catalog_prices) & (self.catalog_prices <= state["price_max"])
         if session_id in getattr(self, "_forensic_capture_sessions", set()):
@@ -2037,7 +2176,24 @@ class Agent:
                     memory_weight=b,
                 )
             )
-        chosen_rows = ranked[:max(0, int(top_k))]
+        previously_seen = set(state.get("seen_asins", set()))
+        unseen_ranked = [
+            row for row in ranked if self.catalog_ids[row] not in previously_seen
+        ]
+        confidence_pool_rows, confidence_survivor_rows, confidence_gate_trace = (
+            _apply_confidence_gate(unseen_ranked, s1, self.catalog_ids)
+        )
+        confidence_gate_trace["seen_filter"] = {
+            "previously_seen_count": len(previously_seen),
+            "ranked_rows_removed": len(ranked) - len(unseen_ranked),
+            "unseen_ranked_count": len(unseen_ranked),
+        }
+        chosen_rows = _select_diverse_rows(
+            confidence_survivor_rows,
+            self.catalog_ids,
+            self.catalog_metadata,
+            top_k=top_k,
+        )
         recommendations = [self.catalog_ids[row] for row in chosen_rows]
         state["seen_asins"].update(recommendations)
         active_constraints = [
@@ -2059,7 +2215,6 @@ class Agent:
             "useful_slots": {
                 "category": state["category"],
                 "department": state["department"],
-                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
                 "negated_terms": sorted(state.get("negated_terms", set())),
@@ -2068,7 +2223,6 @@ class Agent:
             "revoked_constraints": revoked_constraints,
             "search_epoch": state.get("search_epoch", 0),
             "hard_conditions": {
-                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "target_department": state.get("target_department", ""),
                 "min_avg_rating": state.get("min_avg_rating", 0.0),
@@ -2082,7 +2236,12 @@ class Agent:
             "b": b,
             "v1_available": True,
             "v2_available": v2 is not None,
-            "prior_ltm_exists": v2 is not None,
+            "prior_ltm_exists": ltm_available,
+            "condition_name": experiment_config.condition_name,
+            "clarification_policy": experiment_config.clarification_policy,
+            "ltm_available": ltm_available,
+            "ltm_read_enabled": ltm_read_enabled,
+            "ltm_applied": bool(v2 is not None and gate_passed),
             "memory_version": SNAPSHOT_VERSION,
             "memory_update_count": 0 if visible is None else visible.update_count,
             "embedding_space_id": self.embedding_space_id,
@@ -2090,8 +2249,6 @@ class Agent:
             "embedding_space_match": visible is None or visible.embedding_space_id == self.embedding_space_id,
             "catalog_rows_scored": len(self.catalog_ids),
             "price_filtered_count": int(np.count_nonzero(~price_mask)),
-            "resolver_candidates": list(state.get("resolver_candidates", []))[:3],
-            "resolver_confidence": float(state.get("resolver_confidence", 0.0)),
             "hard_eligible_count": eligibility.hard_eligible_count,
             "negative_filtered_count": eligibility.negative_filtered_count,
             "hard_eligible_count_after_negatives": len(eligible),
@@ -2102,7 +2259,13 @@ class Agent:
             "keyword_route_threshold": keyword_route_threshold,
             "fts5_count": len(eligible_fts),
             "retrieval_route": retrieval_route,
+            "ranking_method": ranking_method,
             "candidate_count": len(candidate_rows),
+            "keyword_state_scores": {
+                self.catalog_ids[row]: float(keyword_state_scores[row])
+                for row in chosen_rows if row in keyword_state_scores
+            },
+            "confidence_gate": confidence_gate_trace,
             "ltm_updated_after_turn": False,
             "ltm_updated_after_session": False,
             "memory_update_text": None,
@@ -2110,7 +2273,9 @@ class Agent:
                 {"parent_asin": self.catalog_ids[row],
                  "title": self.catalog_metadata[self.catalog_ids[row]]["title"],
                  "s1": float(s1[row]),
-                 "s2": None if s2 is None else float(s2[row]), "s3": float(s3[row])}
+                 "s2": None if s2 is None else float(s2[row]), "s3": float(s3[row]),
+                 **({"keyword_state_score": float(keyword_state_scores[row])}
+                    if row in keyword_state_scores else {})}
                 for row in chosen_rows
             ],
             "final_asins": recommendations,
@@ -2119,7 +2284,6 @@ class Agent:
         # A zero-result hard mask is terminal for this turn; never leak an ineligible row.
         if retrieval_route == "no_eligible":
             active_hard: list[tuple[str, str]] = []
-            if state.get("price_min", 0.0) > 0.0: active_hard.append(("budget", f"minimum price ${state['price_min']:g}"))
             if state["price_max"] < 9999.0: active_hard.append(("budget", f"maximum price ${state['price_max']:g}"))
             if state.get("target_department"): active_hard.append(("gender", f"department {state['target_department']}"))
             if state.get("min_avg_rating", 0.0) > 0: active_hard.append(("rating", f"minimum rating {state['min_avg_rating']:g}"))
@@ -2131,13 +2295,13 @@ class Agent:
             agent_message = f"No products satisfy all of those requirements. Would you like to relax {label}?"
             state["history"].append({"role": "assistant", "content": agent_message})
             state["debug_info"]["memory_trace"]["best_entropy_attributes"] = []
+            state["debug_info"]["memory_trace"]["selected_attributes"] = []
             debug_data = {
                 "model": "Deterministic no-result clarification",
                 "model_provider": getattr(getattr(self, "llm_client", None), "provider", "unknown"),
                 "embedding_model": getattr(self, "embedding_model_id", "unknown"),
                 "embedding_space_id": self.embedding_space_id,
                 "category": state["category"], "department": state["department"],
-                "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
                 "disclosed_slots": _json_safe_state(state["disclosed_slots"]),
                 "asked_attributes": sorted(state.get("asked_attributes", set())),
@@ -2150,6 +2314,10 @@ class Agent:
                 "fts5_count": len(eligible_fts), "vector_fallback": False,
                 "memory_trace": deepcopy(state["debug_info"]["memory_trace"]),
             }
+            if emit_debug:
+                _print_agent_telemetry(
+                    debug_data, turn=turn, session_id=session_id
+                )
             return {"message": agent_message, "ask_attribute": asked_attr, "recommendations": [], "debug": debug_data}
 
         # 4. Generate the conversational response without changing ranking.
@@ -2162,14 +2330,17 @@ class Agent:
         if state.get("target_department"): avoid_attrs.add("gender")
         if state.get("min_avg_rating", 0.0) > 0: avoid_attrs.add("rating")
         if state.get("min_rating_number", 0) > 0: avoid_attrs.add("reviews")
-        if state.get("price_min", 0.0) > 0.0 or state.get("price_max", 9999.0) < 9000.0: avoid_attrs.add("budget")
+        if state.get("price_max", 9999.0) < 9000.0: avoid_attrs.add("budget")
         if state.get("store"): avoid_attrs.add("brand")
 
         all_attrs = set(ATTRIBUTE_ORDER)
         remaining_attrs = all_attrs - avoid_attrs
+        entropy_rows = chosen_rows if confidence_survivor_rows else confidence_pool_rows
+        entropy_products = [self.catalog_ids[row] for row in entropy_rows]
         if hasattr(self, "catalogue"):
-            best_attrs = select_best_attributes(
-                self.catalogue, recommendations, remaining_attrs,
+            selector = getattr(self, "clarification_selector", select_best_attributes)
+            best_attrs = selector(
+                self.catalogue, entropy_products, remaining_attrs,
                 top_n=2, intent_mode=live_mode.value,
             )
         else:
@@ -2178,7 +2349,13 @@ class Agent:
             best_attrs += ["other"] * (2 - len(best_attrs))
         selected_attrs = [attr for attr in best_attrs if attr != "other"]
         best_attrs_str = " and ".join(f"'{attr}'" for attr in selected_attrs) or "'other'"
+        selection_label = (
+            "entropy-selected"
+            if experiment_config.clarification_policy == "entropy"
+            else "fixed-priority-selected"
+        )
         state["debug_info"]["memory_trace"]["best_entropy_attributes"] = list(best_attrs)
+        state["debug_info"]["memory_trace"]["selected_attributes"] = list(best_attrs)
 
         # Format top matching products (ASIN + title) for generator context
         recs_meta = [self.catalog_metadata[rid] for rid in recommendations[:10]]
@@ -2186,18 +2363,22 @@ class Agent:
             f"- {meta['title']} (ASIN: {rid})" for rid, meta in zip(recommendations[:10], recs_meta)
         )
 
+        confidence_instruction = ""
+        final_rule_number = 3
+        if not confidence_survivor_rows:
+            final_rule_number = 4
+            confidence_instruction = (
+                "3. No product cleared the current-query confidence gate. Do not claim or imply "
+                "that a product matched; ask the selected clarification question instead.\n"
+            )
         sys_prompt = (
             "You are a helpful e-commerce shopping copilot. The user is looking for a product.\n"
-            "Based on the conversation history and the current state, generate a conversational response.\n\n"
-            f"Active search filters: Category: {state['category']}, Department: {state['department']}, "
-            f"Price Range: {state.get('price_min', 0.0)} to {state['price_max']}\n"
-            f"Attributes already specified by user: { {k: list(v) for k, v in state['disclosed_slots'].items()} }\n"
-            f"Negated terms: {list(state.get('negated_terms', set()))}\n\n"
             "CRITICAL RULES:\n"
             "1. Do not ask the user about any attribute they have already specified or you have already asked about.\n"
             f"Avoid: {', '.join(sorted(list(avoid_attrs)))}\n"
-            f"2. Ask naturally about every entropy-selected attribute listed here: {best_attrs_str}. If two are listed, the response must ask about both. If only 'other' is listed, ask about another relevant preference.\n"
-            "3. Keep your response short, natural, and conversational (1-2 sentences). Do not include any JSON formatting, raw tags, or markers. Just reply normally to the shopper.\n\n"
+            f"2. Ask naturally about every {selection_label} attribute listed here: {best_attrs_str}. If two are listed, the response must ask about both. If only 'other' is listed, ask about another relevant preference.\n"
+            f"{confidence_instruction}"
+            f"{final_rule_number}. Keep your response short, natural, and conversational (1-2 sentences). Do not include any JSON formatting, raw tags, or markers. Just reply normally to the shopper.\n\n"
             "Input Candidate Products:\n"
             f"{candidate_products_str}\n"
         )
@@ -2243,7 +2424,6 @@ class Agent:
             "user_prompt": state["debug_info"].get("user_prompt", ""),
             "category": state["category"],
             "department": state["department"],
-            "price_min": state.get("price_min", 0.0),
             "price_max": state["price_max"],
             "disclosed_slots": {k: list(v) if isinstance(v, set) else v for k, v in state["disclosed_slots"].items()},
             "asked_attributes": list(state.get("asked_attributes", set())),
@@ -2253,11 +2433,6 @@ class Agent:
             "stashed_terms": list(state.get("stashed_terms", [])),
             "constraint_provenance": deepcopy(state.get("constraint_provenance", [])),
             "search_epoch": state.get("search_epoch", 0),
-            "resolver": {
-                "candidates": list(state.get("resolver_candidates", []))[:3],
-                "confidence": float(state.get("resolver_confidence", 0.0)),
-                "pending_category": bool(state.get("pending_category")),
-            },
             "intent_mode": live_mode.value,
             "intent_source": state.get("intent_source", "session_default"),
             "fts5_count": len(eligible_fts),
@@ -2265,19 +2440,9 @@ class Agent:
             "memory_trace": deepcopy(state["debug_info"]["memory_trace"]),
         }
 
-        # Print Hybrid Telemetry to terminal
+        # Print complete hybrid telemetry to terminal.
         if emit_debug:
-            print("\n" + "="*80)
-            print(f" [DEMO TRACE] Turn: {turn} | Session: {session_id}")
-            print("="*80)
-            print(f"User:             {lifecycle['user_id']}")
-            print(f"Live intent:      {debug_data['memory_trace']['intent_mode']}")
-            print(f"Catalog scored:   {debug_data['memory_trace']['catalog_rows_scored']} products")
-            print(f"Eligible rows:    {debug_data['memory_trace']['eligible_count']}")
-            print(f"Memory gate:      {debug_data['memory_trace']['gate_passed']}")
-            print(f"Weights a/b:      {a:.2f}/{b:.2f}")
-            print(f"Current intent:   {query_text}")
-            print("-"*80)
+            _print_agent_telemetry(debug_data, turn=turn, session_id=session_id)
 
         return {
             "message": agent_message,

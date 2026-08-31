@@ -910,7 +910,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_materialize_hidden_fields",
-      "community": 201,
+      "community": 213,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_stream",
-      "community": 201,
+      "community": 213,
       "norm_label": ".handle_stream()"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_sse",
-      "community": 201,
+      "community": 213,
       "norm_label": ".send_sse()"
     },
     {
@@ -2110,7 +2110,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "protocol",
-      "community": 145,
+      "community": 134,
       "norm_label": "protocol"
     },
     {
@@ -30838,7 +30838,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request",
-      "community": 43,
+      "community": 54,
       "norm_label": "turn_request"
     },
     {
@@ -30848,7 +30848,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_type",
-      "community": 43,
+      "community": 54,
       "norm_label": "type"
     },
     {
@@ -30858,7 +30858,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_required",
-      "community": 43,
+      "community": 54,
       "norm_label": "required"
     },
     {
@@ -30958,7 +30958,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_additionalproperties",
-      "community": 43,
+      "community": 54,
       "norm_label": "additionalproperties"
     },
     {
@@ -30968,7 +30968,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response",
-      "community": 54,
+      "community": 61,
       "norm_label": "turn_response"
     },
     {
@@ -30978,7 +30978,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_type",
-      "community": 54,
+      "community": 61,
       "norm_label": "type"
     },
     {
@@ -30988,7 +30988,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_required",
-      "community": 54,
+      "community": 61,
       "norm_label": "required"
     },
     {
@@ -31178,7 +31178,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_usage",
-      "community": 61,
+      "community": 55,
       "norm_label": "usage"
     },
     {
@@ -31188,7 +31188,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_type",
-      "community": 61,
+      "community": 55,
       "norm_label": "type"
     },
     {
@@ -31198,7 +31198,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_required",
-      "community": 61,
+      "community": 55,
       "norm_label": "required"
     },
     {
@@ -31278,7 +31278,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_additionalproperties",
-      "community": 61,
+      "community": 55,
       "norm_label": "additionalproperties"
     },
     {
@@ -31288,7 +31288,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_additionalproperties",
-      "community": 54,
+      "community": 61,
       "norm_label": "additionalproperties"
     },
     {
@@ -31318,7 +31318,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
-      "community": 11,
+      "community": 66,
       "norm_label": "local_evaluator.py"
     },
     {
@@ -31328,7 +31328,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_searchable_text",
-      "community": 11,
+      "community": 66,
       "norm_label": "searchable_text()"
     },
     {
@@ -31338,7 +31338,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_flatten_values",
-      "community": 11,
+      "community": 66,
       "norm_label": "_flatten_values()"
     },
     {
@@ -31348,7 +31348,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_clean_constraint",
-      "community": 11,
+      "community": 66,
       "norm_label": "_clean_constraint()"
     },
     {
@@ -31358,7 +31358,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_intent_card",
-      "community": 11,
+      "community": 66,
       "norm_label": "intent_card()"
     },
     {
@@ -31368,7 +31368,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_behavior_for",
-      "community": 11,
+      "community": 66,
       "norm_label": "behavior_for()"
     },
     {
@@ -31378,7 +31378,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_py_random",
-      "community": 11,
+      "community": 66,
       "norm_label": "random"
     },
     {
@@ -31388,7 +31388,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_load_jsonl",
-      "community": 11,
+      "community": 66,
       "norm_label": "load_jsonl()"
     },
     {
@@ -31398,7 +31398,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_py_path",
-      "community": 11,
+      "community": 66,
       "norm_label": "path"
     },
     {
@@ -31408,7 +31408,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_normalize_recommendations",
-      "community": 11,
+      "community": 66,
       "norm_label": "normalize_recommendations()"
     },
     {
@@ -31418,7 +31418,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_catalog_index",
-      "community": 11,
+      "community": 66,
       "norm_label": "catalog_index()"
     },
     {
@@ -31428,7 +31428,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_coarse_category",
-      "community": 11,
+      "community": 66,
       "norm_label": "coarse_category()"
     },
     {
@@ -31438,7 +31438,7 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_classify_constraint",
-      "community": 11,
+      "community": 66,
       "norm_label": "classify_constraint()"
     },
     {
@@ -31448,7 +31448,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_initial_message",
-      "community": 11,
+      "community": 66,
       "norm_label": "initial_message()"
     },
     {
@@ -31458,7 +31458,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_customer_reply",
-      "community": 11,
+      "community": 66,
       "norm_label": "customer_reply()"
     },
     {
@@ -31468,7 +31468,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_metric_summary",
-      "community": 11,
+      "community": 66,
       "norm_label": "metric_summary()"
     },
     {
@@ -31478,7 +31478,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_materialize_hidden_fields",
-      "community": 11,
+      "community": 66,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -31488,7 +31488,7 @@
       "source_location": "L216",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_evaluate",
-      "community": 11,
+      "community": 66,
       "norm_label": "evaluate()"
     },
     {
@@ -31498,7 +31498,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_py_agent",
-      "community": 11,
+      "community": 66,
       "norm_label": "agent"
     },
     {
@@ -31508,7 +31508,7 @@
       "source_location": "L298",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_evaluator_local_evaluator_main",
-      "community": 11,
+      "community": 66,
       "norm_label": "main()"
     },
     {
@@ -31648,7 +31648,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator",
-      "community": 11,
+      "community": 66,
       "norm_label": "test_evaluator.py"
     },
     {
@@ -31658,7 +31658,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_echotargetagent",
-      "community": 11,
+      "community": 66,
       "norm_label": "echotargetagent"
     },
     {
@@ -31668,7 +31668,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_echotargetagent_reset",
-      "community": 11,
+      "community": 66,
       "norm_label": ".reset()"
     },
     {
@@ -31678,7 +31678,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_echotargetagent_respond",
-      "community": 11,
+      "community": 66,
       "norm_label": ".respond()"
     },
     {
@@ -31688,7 +31688,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_evaluatortest",
-      "community": 11,
+      "community": 66,
       "norm_label": "evaluatortest"
     },
     {
@@ -31698,7 +31698,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_evaluatortest_test_normalization_preserves_first_valid_unique_order",
-      "community": 11,
+      "community": 66,
       "norm_label": ".test_normalization_preserves_first_valid_unique_order()"
     },
     {
@@ -31708,7 +31708,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_evaluatortest_test_metric_summary_assigns_turn_11_to_miss",
-      "community": 11,
+      "community": 66,
       "norm_label": ".test_metric_summary_assigns_turn_11_to_miss()"
     },
     {
@@ -31718,7 +31718,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_tests_test_evaluator_evaluatortest_test_evaluate_derives_hidden_fields_when_public_set_omits_them",
-      "community": 11,
+      "community": 66,
       "norm_label": ".test_evaluate_derives_hidden_fields_when_public_set_omits_them()"
     },
     {
@@ -32008,7 +32008,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_request",
-      "community": 65,
+      "community": 50,
       "norm_label": "turn_request"
     },
     {
@@ -32018,7 +32018,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_request_type",
-      "community": 65,
+      "community": 50,
       "norm_label": "type"
     },
     {
@@ -32028,7 +32028,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_request_required",
-      "community": 65,
+      "community": 50,
       "norm_label": "required"
     },
     {
@@ -32128,7 +32128,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_request_additionalproperties",
-      "community": 65,
+      "community": 50,
       "norm_label": "additionalproperties"
     },
     {
@@ -32138,7 +32138,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_response",
-      "community": 50,
+      "community": 60,
       "norm_label": "turn_response"
     },
     {
@@ -32148,7 +32148,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_response_type",
-      "community": 50,
+      "community": 60,
       "norm_label": "type"
     },
     {
@@ -32158,7 +32158,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_response_required",
-      "community": 50,
+      "community": 60,
       "norm_label": "required"
     },
     {
@@ -32348,7 +32348,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_usage",
-      "community": 60,
+      "community": 51,
       "norm_label": "usage"
     },
     {
@@ -32358,7 +32358,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_usage_type",
-      "community": 60,
+      "community": 51,
       "norm_label": "type"
     },
     {
@@ -32368,7 +32368,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_usage_required",
-      "community": 60,
+      "community": 51,
       "norm_label": "required"
     },
     {
@@ -32448,7 +32448,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_usage_additionalproperties",
-      "community": 60,
+      "community": 51,
       "norm_label": "additionalproperties"
     },
     {
@@ -32458,7 +32458,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_turn_response_additionalproperties",
-      "community": 50,
+      "community": 60,
       "norm_label": "additionalproperties"
     },
     {
@@ -33138,7 +33138,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_semanticparser",
-      "community": 145,
+      "community": 134,
       "norm_label": "semanticparser"
     },
     {
@@ -33368,7 +33368,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_init",
-      "community": 7,
+      "community": 204,
       "norm_label": ".__init__()"
     },
     {
@@ -33378,7 +33378,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_path",
-      "community": 7,
+      "community": 204,
       "norm_label": "path"
     },
     {
@@ -33398,7 +33398,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_ndarray",
-      "community": 7,
+      "community": 204,
       "norm_label": "ndarray"
     },
     {
@@ -33418,7 +33418,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_update_session",
-      "community": 145,
+      "community": 204,
       "norm_label": ".update_session()"
     },
     {
@@ -33448,7 +33448,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_end_session",
-      "community": 204,
+      "community": 105,
       "norm_label": ".end_session()"
     },
     {
@@ -33508,7 +33508,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_rationale_173",
-      "community": 204,
+      "community": 105,
       "norm_label": "distill, embed once, and commit; lifecycle outcomes are ignored."
     },
     {
@@ -34118,7 +34118,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_integration",
-      "community": 138,
+      "community": 256,
       "norm_label": "test_integration.py"
     },
     {
@@ -34338,7 +34338,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_summary_has_fixed_group_order_and_typed_facts",
-      "community": 105,
+      "community": 134,
       "norm_label": ".test_summary_has_fixed_group_order_and_typed_facts()"
     },
     {
@@ -43778,7 +43778,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_server_server",
-      "community": 66,
+      "community": 217,
       "norm_label": "server.md"
     },
     {
@@ -43788,7 +43788,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_server_server_resolver_pass_on_ubuntu_makers",
-      "community": 66,
+      "community": 217,
       "norm_label": "resolver pass on ubuntu-makers"
     },
     {
@@ -49334,6 +49334,50 @@
       "weight": 1.0,
       "source": "archive_legacy_hybrid_agent_starter_agent",
       "target": "shop_agent_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "archive/winston/lab/bench/plug_check.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "archive_winston_lab_bench_plug_check",
+      "target": "archive_legacy_hybrid_agent_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_evaluator_local_evaluator",
+      "target": "archive_legacy_hybrid_agent_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_memory_tests_test_integration",
+      "target": "archive_legacy_hybrid_agent_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
+      "target": "archive_legacy_hybrid_agent_starter_agent",
       "confidence_score": 1.0
     },
     {
@@ -63371,39 +63415,6 @@
       "source_location": "L10",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_library_steering",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/runtime.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "system_shopping_agent_runtime",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/vector_memory.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "system_shopping_agent_vector_memory",
       "target": "archive_legacy_qlmp_library_config",
       "confidence_score": 1.0
     },
@@ -99237,7 +99248,7 @@
       "source_location": "L23",
       "weight": 1.0,
       "source": "archive_winston_lab_bench_frontend_bolt_on",
-      "target": "system_shopping_agent_visualizer_server",
+      "target": "archive_winston_lab_bench_server_server",
       "confidence_score": 1.0
     },
     {
@@ -100421,17 +100432,6 @@
       "weight": 1.0,
       "source": "archive_winston_lab_bench_plug_check",
       "target": "archive_winston_lab_bolt_on",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "archive/winston/lab/bench/plug_check.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "archive_winston_lab_bench_plug_check",
-      "target": "techjam_conversational_search_starter_agent",
       "confidence_score": 1.0
     },
     {
@@ -107477,6 +107477,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "system_shopping_agent_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
       "source_location": "L14",
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
@@ -107719,17 +107730,6 @@
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
       "target": "system_shopping_agent_clarification_select_fixed_priority_attributes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_config",
       "confidence_score": 1.0
     },
     {
@@ -110800,7 +110800,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2393",
+      "source_location": "L2388",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_agent_agent_call_llm",
@@ -111704,7 +111704,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2396",
+      "source_location": "L2391",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_agent_agent_extract_asked_attributes",
@@ -111738,7 +111738,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L2410",
+      "source_location": "L2405",
       "weight": 1.0,
       "source": "system_shopping_agent_agent_agent_respond_custom",
       "target": "system_shopping_agent_embedding_backends_bgeembeddingbackend_model"
@@ -125865,17 +125865,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
-      "target": "techjam_conversational_search_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
@@ -127316,17 +127305,6 @@
       "weight": 1.0,
       "source": "techjam_conversational_search_evaluator_init_rationale_1",
       "target": "techjam_conversational_search_evaluator_init",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_evaluator_local_evaluator",
-      "target": "techjam_conversational_search_starter_agent",
       "confidence_score": 1.0
     },
     {
@@ -131890,17 +131868,6 @@
       "weight": 1.0,
       "source": "techjam_conversational_search_memory_tests_test_fast_memory_fastmemorytests_test_semantic_hook_is_authoritative_and_none_falls_back",
       "target": "techjam_conversational_search_memory_types_typedconstraint"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_memory_tests_test_integration",
-      "target": "techjam_conversational_search_starter_agent",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",

@@ -9,6 +9,7 @@ CONFIG_KEYS = (
     "TEST_MODE", "OPENAI_API_KEY", "OPENAI_CHAT_MODEL", "OPENAI_EMBEDDING_MODEL",
     "OPENAI_EMBEDDING_DIMENSIONS", "OPENAI_TIMEOUT_SECONDS", "OLLAMA_HOST",
     "OLLAMA_MODEL", "OLLAMA_TIMEOUT_SECONDS", "ALLOW_CATALOG_EMBEDDING",
+    "CONFIDENCE_SIMILARITY_THRESHOLD",
 )
 
 
@@ -39,3 +40,14 @@ def test_invalid_boolean_is_rejected(monkeypatch):
     clear(monkeypatch); monkeypatch.setenv("TEST_MODE", "sometimes")
     with pytest.raises(ValueError, match="TEST_MODE must be one of"):
         load_runtime_config()
+
+
+def test_confidence_similarity_threshold_defaults_and_is_validated(monkeypatch):
+    clear(monkeypatch)
+    assert load_runtime_config().confidence_similarity_threshold == 0.40
+    monkeypatch.setenv("CONFIDENCE_SIMILARITY_THRESHOLD", "-0.25")
+    assert load_runtime_config().confidence_similarity_threshold == -0.25
+    for invalid in ("nan", "1.01", "not-a-number"):
+        monkeypatch.setenv("CONFIDENCE_SIMILARITY_THRESHOLD", invalid)
+        with pytest.raises(ValueError, match="CONFIDENCE_SIMILARITY_THRESHOLD"):
+            load_runtime_config()

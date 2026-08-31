@@ -177,7 +177,32 @@ def select_best_attributes(
     return result + ["other"] * (top_n - len(result))
 
 
+def select_fixed_priority_attributes(
+    catalogue: Catalogue,
+    candidate_ids: Iterable[str],
+    remaining_attributes: set[str],
+    *,
+    top_n: int = 2,
+    intent_mode: str = "browsing",
+) -> list[str]:
+    """Select the first still-unasked attributes in the established intent order.
+
+    ``catalogue`` and ``candidate_ids`` are intentionally accepted even though the
+    control policy does not inspect them.  Keeping the same callable contract as
+    :func:`select_best_attributes` makes clarification policy the only changed
+    factor in an experiment.
+    """
+
+    del catalogue, candidate_ids
+    ordered = [
+        attribute
+        for attribute in _priority_order(intent_mode)
+        if attribute in remaining_attributes
+    ][:top_n]
+    return ordered + ["other"] * (top_n - len(ordered))
+
+
 __all__ = [
     "ATTRIBUTE_ORDER", "BROWSING_ATTRIBUTE_ORDER", "BUYING_ATTRIBUTE_ORDER",
-    "select_best_attributes",
+    "select_best_attributes", "select_fixed_priority_attributes",
 ]
