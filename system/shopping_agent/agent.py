@@ -2,6 +2,8 @@ from __future__ import annotations
 from copy import deepcopy
 from dataclasses import dataclass
 import json
+import os
+import urllib.request
 import re
 import time
 import numpy as np
@@ -819,6 +821,62 @@ class Agent:
                 catalogue.close()
             self._closed = True
 
+    _DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+    _DEEPSEEK_MODEL = "deepseek-chat"
+
+    @staticmethod
+    def _deepseek_state_call(prompt: str, system_prompt: str) -> tuple[str, dict] | None:
+        """Legacy hybrid-agent plumbing: DeepSeek parses state, Ollama is the fallback.
+
+        Routes only the structured state-update/intent-detection call; chat
+        replies always stay on the local model. Any failure returns None so the
+        caller falls through to Ollama.
+        """
+        key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+        if not key or key.startswith("your_") or "placeholder" in key.lower():
+            return None
+        payload = {
+            "model": Agent._DEEPSEEK_MODEL,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0.4,
+            "max_tokens": 512,
+            "response_format": {"type": "json_object"},
+        }
+        request = urllib.request.Request(
+            Agent._DEEPSEEK_URL,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {key}"},
+            method="POST",
+        )
+        started = time.perf_counter()
+        try:
+            timeout = float(os.environ.get("DEEPSEEK_TIMEOUT_SECONDS", "3"))
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            content = str(data["choices"][0]["message"]["content"]).strip()
+            json.loads(content)  # state updates must be JSON; prose falls back to Ollama
+        except Exception as exc:
+            print(f"[Hybrid Agent] DeepSeek state call failed: {exc}. Falling back to Ollama.")
+            return None
+        usage = data.get("usage") if isinstance(data.get("usage"), dict) else {}
+        return content, {
+            "provider": "deepseek",
+            "role": "assistant",
+            "model": str(data.get("model", Agent._DEEPSEEK_MODEL)),
+            "latency_seconds": time.perf_counter() - started,
+            "attempts": 1,
+            "retry_count": 0,
+            "success": True,
+            "error_type": None,
+            "cause_type": None,
+            "usage": {k: usage[k] for k in ("prompt_tokens", "completion_tokens")
+                      if isinstance(usage.get(k), int)},
+        }
+
     def _call_llm(
         self,
         prompt: str,
@@ -833,6 +891,26 @@ class Agent:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
         experiment_config = getattr(self, "experiment_config", ExperimentConfig())
+        if response_json:
+            deepseek = self._deepseek_state_call(prompt, system_prompt)
+            if deepseek is not None:
+                content, trace = deepseek
+                trace.update({
+                    "session_id": session_id, "rolled_back": False,
+                    "messages": deepcopy(messages), "response": content,
+                })
+                self.instrumentation.setdefault("llm_calls", []).append(trace)
+                if session_id and session_id in self._sessions:
+                    debug_info = self._sessions[session_id].setdefault("debug_info", {})
+                    debug_info.update({
+                        "model": trace["model"],
+                        "llm_latency_seconds": trace["latency_seconds"],
+                        "llm_retry_count": 0,
+                        "llm_error_type": None,
+                        "system_prompt": system_prompt,
+                        "user_prompt": prompt,
+                    })
+                return content
         try:
             options: dict[str, Any] = {
                 "temperature": experiment_config.llm_temperature,

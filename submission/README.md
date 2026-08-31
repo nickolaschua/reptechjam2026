@@ -4,11 +4,12 @@ This directory is the self-contained participant solution bundle. It exports the
 required `starter.agent.Agent`, snapshots only the active runtime modules, and is
 frozen to:
 
-- chat/state model: `llama3.1:8b` served by Ollama
+- chat replies: `llama3.1:8b` served by Ollama
+- state parsing and intent detection: DeepSeek API (`deepseek-chat`) when `DEEPSEEK_API_KEY` is set, with automatic per-call fallback to Ollama; fully local when unset
 - query and catalogue embeddings: `BAAI/bge-base-en-v1.5`
 - embedding dimension: 768, L2-normalized
 - catalogue cache: precomputed, validated, never generated during evaluation
-- hosted APIs: none
+- hosted APIs: optional DeepSeek for state parsing only; none required
 
 Every path used by this bundle resolves inside this directory. Nothing reads
 from a parent directory or a sibling project.
@@ -193,6 +194,8 @@ longitudinal memory is not committed across evaluator sessions.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
+| `DEEPSEEK_API_KEY` | *(unset)* | Optional: routes state parsing to DeepSeek; unset = fully local |
+| `DEEPSEEK_TIMEOUT_SECONDS` | `3` | DeepSeek call budget before falling back to Ollama |
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama service endpoint |
 | `OLLAMA_MODEL` | `llama3.1:8b` | Frozen local chat/state model |
 | `OLLAMA_TIMEOUT_SECONDS` | `30` | Per-request transport timeout; the client retries once |
@@ -200,7 +203,7 @@ longitudinal memory is not committed across evaluator sessions.
 | `TECHJAM_CATALOG_PATH` | `data/catalog.jsonl` | Optional catalogue location override |
 | `TECHJAM_BGE_CACHE_DIR` | `artifacts/` | Optional cache directory override |
 
-`OPENAI_API_KEY` is not read by this release path. No credentials are required.
+`OPENAI_API_KEY` is not read by this release path. No credentials are required; `DEEPSEEK_API_KEY` is optional and read only for state parsing.
 
 ## 8. Failure behavior
 
@@ -208,6 +211,8 @@ longitudinal memory is not committed across evaluator sessions.
 - Startup never embeds the 50,000-row catalogue.
 - Ollama transport and invalid-response failures are retried once, then raised as
   typed model errors.
+- DeepSeek failures (timeout, non-JSON, transport) fall back to Ollama on that
+  call; a session never fails because DeepSeek is unavailable.
 - Failed turns restore the pre-turn state and do not advance the successful-turn
   lifecycle.
 - There is no hosted-provider fallback; Ollama availability is required.
