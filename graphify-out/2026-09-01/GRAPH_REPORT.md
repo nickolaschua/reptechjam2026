@@ -5,7 +5,7 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5094 nodes · 10162 edges · 272 communities (238 shown, 34 thin omitted)
+- 5094 nodes · 10163 edges · 283 communities (249 shown, 34 thin omitted)
 - Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 995 edges (avg confidence: 0.66)
 - Token cost: 0 input · 0 output
 
@@ -264,19 +264,30 @@
 - [[_COMMUNITY___init__.py|__init__.py]]
 - [[_COMMUNITY_ship.sh|ship.sh]]
 - [[_COMMUNITY_local_evaluator.py|local_evaluator.py]]
+- [[_COMMUNITY_run_b0_shadow_validation.py|run_b0_shadow_validation.py]]
 - [[_COMMUNITY_shopper_agent.py|shopper_agent.py]]
+- [[_COMMUNITY_JsonFileVectorMemoryStore|JsonFileVectorMemoryStore]]
+- [[_COMMUNITY_simulator.py|simulator.py]]
 - [[_COMMUNITY_BaselineAgent|BaselineAgent]]
+- [[_COMMUNITY_InMemoryVectorMemoryStore|InMemoryVectorMemoryStore]]
+- [[_COMMUNITY_aggregate_slow_vector|aggregate_slow_vector]]
 - [[_COMMUNITY_Catalogue|Catalogue]]
 - [[_COMMUNITY_VisualizerHTTPHandler|VisualizerHTTPHandler]]
 - [[_COMMUNITY_ASTRA method and disclosure report|ASTRA method and disclosure report]]
 - [[_COMMUNITY_shop_agent.py|shop_agent.py]]
 - [[_COMMUNITY_ASTRA TechJam submission — BGEOllama release|ASTRA TechJam submission — BGE/Ollama release]]
 - [[_COMMUNITY_Index|Index]]
+- [[_COMMUNITY__nonempty|_nonempty]]
 - [[_COMMUNITY_.__init__|.__init__]]
+- [[_COMMUNITY_MemoryStoreSnapshot|MemoryStoreSnapshot]]
+- [[_COMMUNITY_user_profile|user_profile]]
 - [[_COMMUNITY_user_profile|user_profile]]
 - [[_COMMUNITY_prompts.py|prompts.py]]
+- [[_COMMUNITY_properties|properties]]
+- [[_COMMUNITY_exp07_turn1_category_channel.py|exp07_turn1_category_channel.py]]
 - [[_COMMUNITY_install_artifact.py|install_artifact.py]]
 - [[_COMMUNITY_verify_bundle.py|verify_bundle.py]]
+- [[_COMMUNITY_MemoryUpdateResult|MemoryUpdateResult]]
 - [[_COMMUNITY_run_official_evaluator.py|run_official_evaluator.py]]
 - [[_COMMUNITY_smoke_test.py|smoke_test.py]]
 - [[_COMMUNITY_README|README.md]]
@@ -310,11 +321,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (272 total, 34 thin omitted)
+## Communities (283 total, 34 thin omitted)
 
 ### Community 0 - "experiment_07_residual_failure_analysis.py"
-Cohesion: 0.08
-Nodes (38): load_frozen_split(), assert_parser_identity(), _break_single_token(), catalog_constraint_lexicon(), _clean(), compare_sessions(), detect_initial_intent(), exp7_exact_stateful_bm25() (+30 more)
+Cohesion: 0.09
+Nodes (34): assert_parser_identity(), _break_single_token(), catalog_constraint_lexicon(), _clean(), detect_initial_intent(), exp7_exact_stateful_bm25(), _freeze(), _hash_tree() (+26 more)
 
 ### Community 1 - "harness.py"
 Cohesion: 0.07
@@ -329,7 +340,7 @@ Cohesion: 0.09
 Nodes (37): assert_exact_baseline_identity(), _attribute_evidence(), corrected_active_evidence(), _diagnose_residual(), _diagnostic_exact_rank(), failure_category_counts(), fallback_reasons(), freeze_agent_rankings() (+29 more)
 
 ### Community 4 - "source_snapshot.py"
-Cohesion: 0.14
+Cohesion: 0.15
 Nodes (13): _json_safe_state(), _keyword_soft_match_rows(), _print_agent_telemetry(), Any, BuyerMode, Return the reset-time shadow snapshot without applying it., Return vector-free Phase-5 lifecycle and memory observability., Deterministic fallback for Yangxu's live Buying/Browsing transition rules. (+5 more)
 
 ### Community 5 - "Viewer"
@@ -341,16 +352,16 @@ Cohesion: 0.12
 Nodes (48): array_hash(), browsing_sweep_row(), buying_sweep_row(), contiguous_regions(), flattened_system(), gate_counts(), lock_region(), main() (+40 more)
 
 ### Community 7 - "MemoryConfig"
-Cohesion: 0.09
-Nodes (26): memory_config_for_mode(), MemoryConfig, Configuration for the Fast/Slow longitudinal-memory baseline., The complete set of tunable memory-policy parameters.      ``memory_enabled``, Return the M0 (write-only) or M1 (read/write) baseline config., CatalogEmbeddingIndex, DeterministicLexicalEmbedder, discover_cache_path() (+18 more)
+Cohesion: 0.12
+Nodes (17): MemoryConfig, The complete set of tunable memory-policy parameters.      ``memory_enabled``, CatalogEmbeddingIndex, DeterministicLexicalEmbedder, discover_cache_path(), discover_local_model(), MiniLMEmbeddingProvider, normalize_rows() (+9 more)
 
 ### Community 8 - "local_evaluator.py"
 Cohesion: 0.25
 Nodes (12): build_report(), _compact(), main(), Any, Offline public-row discovery and auditable selection report generator., _evidence_value(), load_jsonl(), main() (+4 more)
 
 ### Community 9 - "Current Best Architecture Research Brief"
-Cohesion: 0.10
-Nodes (25): _as_product_matrix(), _as_vector(), build_local_subspace(), build_tangent_matrix(), cosine_similarity(), normalize(), _numerical_rank_tolerance(), Any (+17 more)
+Cohesion: 0.09
+Nodes (27): Reusable weighted aggregation for raw and projected memory residuals., _as_product_matrix(), _as_vector(), build_local_subspace(), build_tangent_matrix(), cosine_similarity(), normalize(), _numerical_rank_tolerance() (+19 more)
 
 ### Community 10 - "README.md"
 Cohesion: 0.04
@@ -369,8 +380,8 @@ Cohesion: 0.10
 Nodes (48): all_token_candidates, exact_phrase_candidates, token_overlap_candidates, by_position, by_scenario, overall, uniqueness_rate, constraint_position=1 (+40 more)
 
 ### Community 14 - "run_11"
-Cohesion: 0.20
-Nodes (17): _mapped_label(), ModelPrediction, parse_model_output(), PortabilityLabel, Frozen target-independent mapping completed before hosted judgement., Preregistered audit of whether the atomic stored payload supports its label., Strictly validate schema, range, uniqueness, coverage, and input order., ReasonCode (+9 more)
+Cohesion: 0.15
+Nodes (21): _mapped_label(), ModelPrediction, parse_model_output(), PortabilityLabel, Frozen target-independent mapping completed before hosted judgement., Preregistered audit of whether the atomic stored payload supports its label., Strictly validate schema, range, uniqueness, coverage, and input order., ReasonCode (+13 more)
 
 ### Community 15 - "fast_memory.py"
 Cohesion: 0.09
@@ -382,7 +393,7 @@ Nodes (46): By bucket_size quartile — `lexical_rank`, By bucket_size quartile 
 
 ### Community 17 - "colab_import"
 Cohesion: 0.14
-Nodes (16): aggregate_projected_residuals(), aggregate_raw_residuals(), aggregate_residuals(), _as_residual_matrix(), memory_tangent_residual(), normalize_nonnegative_weights(), Any, FloatArray (+8 more)
+Nodes (15): aggregate_projected_residuals(), aggregate_raw_residuals(), aggregate_residuals(), _as_residual_matrix(), memory_tangent_residual(), normalize_nonnegative_weights(), Any, FloatArray (+7 more)
 
 ### Community 18 - "MemorySystem"
 Cohesion: 0.05
@@ -393,8 +404,8 @@ Cohesion: 0.07
 Nodes (24): Candidate definitions, Eleven-experiment evaluation methodology, Leakage boundary, Metrics and counterfactuals, Normalization and retrieval definitions, Reproduction, Scope and datasets, Reproducibility cache (+16 more)
 
 ### Community 20 - "experiment_08_intent_routed_dense_browsing.py"
-Cohesion: 0.11
-Nodes (42): ExperimentConfig, build_parser(), _determinism_signature(), _directive_prompt(), _json_default(), main(), _metric_observation(), paired_comparisons() (+34 more)
+Cohesion: 0.16
+Nodes (30): ExperimentConfig, build_parser(), _determinism_signature(), _directive_prompt(), _json_default(), main(), _metric_observation(), paired_comparisons() (+22 more)
 
 ### Community 21 - "experiment_08_intent_routed_dense_browsing.py"
 Cohesion: 0.06
@@ -425,8 +436,8 @@ Cohesion: 0.11
 Nodes (18): 10. Suggested experiment loop, 11. Submission and operational constraints, 12. Current status, 1. Challenge in one paragraph, 2. Source of truth in this repository, 3. Exact agent interface, 4. What the agent can see, 5.1 Hidden intent-card construction (+10 more)
 
 ### Community 28 - "WARPRetriever"
-Cohesion: 0.07
-Nodes (49): build_fixture(), calculate_retrieval_metrics(), catalog_cache_or_build_time(), command_end_to_end(), command_fixture(), command_retrieval(), command_smoke_openai(), comparison_summary() (+41 more)
+Cohesion: 0.08
+Nodes (47): build_fixture(), calculate_retrieval_metrics(), catalog_cache_or_build_time(), command_end_to_end(), command_fixture(), command_retrieval(), command_smoke_openai(), comparison_summary() (+39 more)
 
 ### Community 29 - "shop_agent.py"
 Cohesion: 0.12
@@ -437,8 +448,8 @@ Cohesion: 0.12
 Nodes (16): 1. Background, 1. Written Project Description (via Devpost), 2. Problem Statement, 2. Public Code/GitHub Repository, 3. Constraints & Scope, 3. Demo Video, 4. Available Resources & Data, 5. Deliverables (+8 more)
 
 ### Community 31 - "aggregate_slow_vector"
-Cohesion: 0.17
-Nodes (12): additionalProperties, properties, required, minLength, type, parent_asin, recommendations, score (+4 more)
+Cohesion: 0.20
+Nodes (10): additionalProperties, required, type, items, type, preference_tags, recommendations, items (+2 more)
 
 ### Community 32 - "trace_agents.py"
 Cohesion: 0.32
@@ -461,32 +472,32 @@ Cohesion: 0.20
 Nodes (20): Compatibility entrypoint for the canonical M0_OPENAI runner., distribution(), failed_session_count(), git_metadata(), load_config(), load_evaluator_data(), main(), parser() (+12 more)
 
 ### Community 37 - "ObservableRetrievalInput"
-Cohesion: 0.13
-Nodes (10): _finite_number(), Controls the common bounded query-steering operation.      ``max_shift_deg=10`, SteeringConfig, bound_query_shift(), Any, Apply ``q + beta * delta`` with a strict tangent angular bound.      The suppl, DiagnosticSerializationTests, AngularSteeringTests (+2 more)
+Cohesion: 0.10
+Nodes (13): _finite_number(), ProjectionConfig, Validated configuration for isolated QLMP geometry and steering., Numerical controls for QLMP.      The defaults are engineering starting points, Controls the common bounded query-steering operation.      ``max_shift_deg=10`, SteeringConfig, bound_query_shift(), Any (+5 more)
 
 ### Community 38 - "FastMemoryState"
-Cohesion: 0.12
-Nodes (42): _auprc(), _auroc(), _average_ranks(), _binary_metrics(), _binary_rows(), build_messages(), build_user_payload(), candidate_recall() (+34 more)
+Cohesion: 0.11
+Nodes (46): _auprc(), _auroc(), _average_ranks(), _binary_metrics(), _binary_rows(), build_messages(), build_user_payload(), candidate_recall() (+38 more)
 
 ### Community 39 - "VisualizerHTTPHandler"
 Cohesion: 0.14
 Nodes (9): Ollama-free checks for the bolt-on. Run: python3 -m unittest test_bolt_on -v, INTENT_EXTRA widens the intent count; HARD_ATTRIBUTES must stay put., The spec's own worked examples. Candidate-pool size scored 3/8 here., raw(), slot(), TestContradictions, TestDerivedLabels, TestMapping (+1 more)
 
 ### Community 40 - "4. Active project: `techjam-conversational-search/`"
-Cohesion: 0.08
-Nodes (35): _diagnostic(), Deterministic B1 naive and B2 cosine-gated memory mechanics., _ScoredMemory, BaselineMode, MemoryBaselineResult, MemorySelectionDiagnostic, _optional_finite(), Any (+27 more)
+Cohesion: 0.14
+Nodes (20): _diagnostic(), Deterministic B1 naive and B2 cosine-gated memory mechanics., _ScoredMemory, BaselineMode, MemoryBaselineResult, MemorySelectionDiagnostic, _optional_finite(), Any (+12 more)
 
 ### Community 41 - "properties"
-Cohesion: 0.15
-Nodes (13): type, average_prior_rating, purchase_frequency, rating_style, summary, user_profile, type, type (+5 more)
+Cohesion: 0.22
+Nodes (9): type, average_prior_rating, purchase_frequency, rating_style, summary, type, type, type (+1 more)
 
 ### Community 42 - "properties"
-Cohesion: 0.15
-Nodes (13): type, type, items, type, average_prior_rating, preference_tags, purchase_frequency, rating_style (+5 more)
+Cohesion: 0.22
+Nodes (9): type, average_prior_rating, purchase_frequency, rating_style, summary, type, type, type (+1 more)
 
 ### Community 43 - "properties"
-Cohesion: 0.15
-Nodes (13): top_k, turn, user_message, const, maximum, minimum, turn_request, additionalProperties (+5 more)
+Cohesion: 0.22
+Nodes (9): top_k, turn, user_message, const, maximum, minimum, properties, type (+1 more)
 
 ### Community 44 - "REP-Makers Compute Server Guide (`ubuntu-makers`)"
 Cohesion: 0.17
@@ -510,7 +521,7 @@ Nodes (14): Agent, _normalize(), Purge the attribute from active slot memory, st
 
 ### Community 49 - "1. Core Architecture Modules"
 Cohesion: 0.12
-Nodes (31): _angle_degrees(), _as_canonical_q(), DenseScorer, _fallback_result(), _invalid(), InvalidReason, ProjectionSteeringDeferredError, ProjectorIsolationResult (+23 more)
+Nodes (32): _angle_degrees(), _as_canonical_q(), DenseScorer, _fallback_result(), _invalid(), ProjectionSteeringDeferredError, ProjectorIsolationResult, ProjectorMemoryResult (+24 more)
 
 ### Community 50 - "agent_api_contract.json"
 Cohesion: 0.18
@@ -530,11 +541,11 @@ Nodes (11): Allowed Submission Contents, Disallowed Submission Contents, Final E
 
 ### Community 54 - "agent_api_contract.json"
 Cohesion: 0.18
-Nodes (10): reset_request, additionalProperties, required, type, $schema, title, turn_response, additionalProperties (+2 more)
+Nodes (10): reset_request, additionalProperties, required, type, $schema, title, turn_request, additionalProperties (+2 more)
 
 ### Community 55 - "usage"
-Cohesion: 0.29
-Nodes (7): minimum, type, minimum, type, completion_tokens, prompt_tokens, properties
+Cohesion: 0.18
+Nodes (11): minimum, type, minimum, type, completion_tokens, prompt_tokens, usage, additionalProperties (+3 more)
 
 ### Community 56 - "Competition Specification"
 Cohesion: 0.18
@@ -558,39 +569,39 @@ Nodes (10): enum, type, type, ask_attribute, message, turn_response, additionalP
 
 ### Community 61 - "turn_response"
 Cohesion: 0.20
-Nodes (10): enum, type, type, ask_attribute, message, usage, properties, additionalProperties (+2 more)
+Nodes (10): enum, type, type, ask_attribute, message, turn_response, additionalProperties, properties (+2 more)
 
 ### Community 62 - "items"
-Cohesion: 0.11
-Nodes (38): _auprc(), _auroc(), _average_ranks(), _binary_rows(), _binary_summary(), build_run_manifest(), build_source_freeze(), _decision() (+30 more)
+Cohesion: 0.14
+Nodes (33): _auprc(), _auroc(), _average_ranks(), _binary_rows(), _binary_summary(), build_run_manifest(), build_source_freeze(), _decision() (+25 more)
 
 ### Community 63 - "15. Minimal Long-Term Memory Integration Point"
-Cohesion: 0.10
-Nodes (20): main(), parse_yaml_block(), Build probe30.json - the machine-readable form of probe_set.md.  Joins each ha, The blocks carry inline comments; PyYAML handles those natively., get_index(), Shared catalog loading, indexes and scoring primitives for the winston experimen, Build once per process; cache to disk across processes., main() (+12 more)
+Cohesion: 0.08
+Nodes (22): main(), parse_yaml_block(), Build probe30.json - the machine-readable form of probe_set.md.  Joins each ha, The blocks carry inline comments; PyYAML handles those natively., field_texts(), get_index(), Index, Path (+14 more)
 
 ### Community 64 - "packages"
 Cohesion: 0.17
 Nodes (23): Build a deterministic query from only the currently active state., _state_to_retrieval_query(), bare_agent(), _run_structured_state(), test_anonymous_reset_keeps_four_argument_api_eligible(), test_end_session_embedding_failure_is_retryable(), test_end_session_exposes_vector_free_adaptive_update_diagnostics(), test_fast_parser_builds_canonical_active_query() (+15 more)
 
 ### Community 65 - "properties"
-Cohesion: 0.15
-Nodes (13): session_id, top_k, turn, user_message, properties, minLength, type, const (+5 more)
+Cohesion: 0.22
+Nodes (9): top_k, turn, user_message, const, maximum, minimum, properties, type (+1 more)
 
 ### Community 66 - "__init__.py"
 Cohesion: 0.20
 Nodes (9): candidate_batch_from_records(), ProjectorFixture, ProjectorMemoryAnnotation, Safe component input plus evaluator-private labels/metadata., Reuse chronologically ordered store envelopes without fetching history., Evaluator-private provenance and label; never passed into QLMP., CandidateMemoryBatch, Ordered memory tuple plus the embedding-space envelope QLMP lacks. (+1 more)
 
 ### Community 67 - "Complete Architecture Audit: Post-Pull Source of Truth"
-Cohesion: 0.23
-Nodes (13): _attribute_values(), _priority_order(), Catalogue, Yangxu's entropy-based clarification selector., Select attributes using entropy, gain ratio, coverage, and usefulness., select_best_attributes(), _catalogue(), _product() (+5 more)
+Cohesion: 0.11
+Nodes (22): _attribute_values(), _priority_order(), Catalogue, Yangxu's entropy-based clarification selector., Select attributes using entropy, gain ratio, coverage, and usefulness., Select the first still-unasked attributes in the established intent order., select_best_attributes(), select_fixed_priority_attributes() (+14 more)
 
 ### Community 68 - "`shopper_agent.py`"
 Cohesion: 0.13
 Nodes (9): CleanFTSAgent, normalize(), Any, Path, Clean, deterministic FTS5 candidate derived from the Experiment 11 audit., Stateful field-weighted FTS5 agent with correct override invalidation.      On, terms(), text() (+1 more)
 
 ### Community 69 - "Experiment 1 Agent: Architecture & Memory Mechanics"
-Cohesion: 0.20
-Nodes (5): Agent, _normalize(), Unified Hybrid Agent (DP1/DP2 Cascade)     1. Tries Keyword string matching (FT, Categorize a value into one of the evaluator's allowed attributes., Purge the attribute from active slot memory, stash its keywords, and update term
+Cohesion: 0.06
+Nodes (23): evaluate_custom(), main(), evaluate_v2(), main(), Agent, BaselineAgent, _normalize(), Any (+15 more)
 
 ### Community 70 - "environment"
 Cohesion: 0.13
@@ -605,16 +616,16 @@ Cohesion: 0.25
 Nodes (7): Aggregation and ranking, Contract, Embedding safety, Fast Memory, Fast/Slow memory architecture, Known limitation, Visibility and storage
 
 ### Community 73 - "5. Nickolas research system"
-Cohesion: 0.10
-Nodes (18): build_parser(), ArgumentParser, test_cli_and_server_configuration_have_no_embedding_mode_switch(), test_dashboard_rejects_script_image_urls_and_catalog_reads_do_not_take_lifecycle_lock(), BrowserApplication, BrowserSession, _catalog_family(), Agent (+10 more)
+Cohesion: 0.17
+Nodes (5): BrowserApplication, BrowserSession, Any, Return Yangxu's catalog payload over the complete active catalogue., VisualizerHTTPHandler
 
 ### Community 74 - "manifest.json"
 Cohesion: 0.08
 Nodes (25): all_member_checksums_passed, archive, archive_bytes, archive_sha256, bundle_revision, checksums_verified, document_count, imported_directory (+17 more)
 
 ### Community 75 - "shopper_agent.py"
-Cohesion: 0.12
-Nodes (16): ExperimentConfig, The two ablation factors plus deterministic generation controls., Select the first still-unasked attributes in the established intent order., select_fixed_priority_attributes(), Public shopping-agent lifecycle., RecordingClient, _row(), test_fixed_priority_is_deterministic_and_intent_specific() (+8 more)
+Cohesion: 0.10
+Nodes (23): ModelCall, _configured_model(), _environment_host(), _environment_timeout(), get_default_ollama_client(), OllamaCall, OllamaClient, OllamaConfigurationError (+15 more)
 
 ### Community 76 - "Technical Overview"
 Cohesion: 0.12
@@ -625,7 +636,7 @@ Cohesion: 0.29
 Nodes (6): Embeddings and limitations, Fast Memory, Fast/Slow longitudinal memory, Lifecycle, Modes, Slow Memory
 
 ### Community 78 - "5. Retrieval Pipeline"
-Cohesion: 0.13
+Cohesion: 0.14
 Nodes (8): _as_basis(), project_memory_residual(), Any, FloatArray, Project a normalized memory's tangent residual onto ``basis``.      The report, _roundoff_clamp_fraction(), ControlledProjectionTests, RandomProjectionInvariantTests
 
 ### Community 79 - "properties"
@@ -677,8 +688,8 @@ Cohesion: 0.40
 Nodes (4): Agent flow visualizer, Generate the full comparison, Open the dashboard, What the JSON contains
 
 ### Community 91 - "2. Actual Live Architecture"
-Cohesion: 0.27
-Nodes (5): Agent, Path, Editable weak baseline: stateless BM25 retrieval with no LLM dependency., _terms(), _text()
+Cohesion: 0.18
+Nodes (17): build_directive_system_prompt(), build_first_turn_prompt(), established_facts_before(), Any, Evaluator-private longitudinal shopper controls and diagnostics., Return only facts whose disclosure was scheduled in an earlier session., Add private controls to the shopper prompt, never to the shopping agent., Public diagnostic matcher; never used for retrieval or ranking. (+9 more)
 
 ### Community 92 - "7. LLM Usage"
 Cohesion: 0.08
@@ -693,8 +704,8 @@ Cohesion: 0.09
 Nodes (22): catalog_sha256, frozen_artifact_hashes, metrics.json, report.md, sessions.jsonl, vectors.npz, output_hashes, baseline_metrics.csv (+14 more)
 
 ### Community 95 - "parse_session_file"
-Cohesion: 0.13
-Nodes (21): ActiveDemoSession, classify_buyer_mode(), DemoApplication, main(), _print_commit(), _print_response(), _products(), Agent (+13 more)
+Cohesion: 0.18
+Nodes (17): ActiveDemoSession, classify_buyer_mode(), DemoApplication, main(), _print_commit(), _print_response(), _products(), Agent (+9 more)
 
 ### Community 96 - "2. Challenge and API contract"
 Cohesion: 0.15
@@ -705,8 +716,8 @@ Cohesion: 0.16
 Nodes (5): DenseVectorInterfaceTests, ExplodingMemory, FixedQueryBackend, Agent, ndarray
 
 ### Community 98 - "3. Lifecycle contract"
-Cohesion: 0.22
-Nodes (10): OpenAIPortabilityJudge, PortabilityJudgeError, Hosted judge failed without provider or model fallback., One explicit OpenAI model, strict structured output, and no fallback., _git(), _load_env_value(), main(), Path (+2 more)
+Cohesion: 0.52
+Nodes (6): _git(), _load_env_value(), main(), Path, CLI for Long-Term Memory P1 portability component evaluation., _sha256()
 
 ### Community 99 - "7. Immutable episodes and profiles"
 Cohesion: 0.09
@@ -733,8 +744,8 @@ Cohesion: 0.09
 Nodes (21): 0. The context that changes everything, 1. Status against the five questions, 2. Q1 — the cross-training case. The disagreement is not where you think., 3. Q2 — goal-not-object descriptions, 4. Q3 — the agreement/disagreement logic, 5. Q4 — the browsing/buying score, 6. Q5 — the four-layer plan, revised against the measurements, 7. What to build next, ranked (+13 more)
 
 ### Community 105 - "5. Current-session parsing"
-Cohesion: 0.08
-Nodes (29): Fast/Slow longitudinal memory for conversational product search., Lifecycle integration for the Fast/Slow memory baseline., Optionally apply the one and only Slow Memory rerank., Distill, embed once, and commit; lifecycle outcomes are ignored., memory_harm_rate(), rank_uplift(), Small rank-comparison helpers for a separate longitudinal evaluator., Positive means memory improved rank; ``missing_rank`` sets the cutoff+1. (+21 more)
+Cohesion: 0.09
+Nodes (29): TestParserAndState, memory_config_for_mode(), Configuration for the Fast/Slow longitudinal-memory baseline., Return the M0 (write-only) or M1 (read/write) baseline config., classify_constraint(), override_intent(), Fast Memory state and deterministic observable-message parsing.  The organizer, Apply an explicit upstream topic/intent override. (+21 more)
 
 ### Community 106 - "build_visualization.py"
 Cohesion: 0.12
@@ -798,23 +809,23 @@ Nodes (17): Activation and operating-region test, All probes by descending exact
 
 ### Community 130 - "directives.py"
 Cohesion: 0.14
-Nodes (31): _comparison(), deterministic_rrf(), _metrics_for_subset(), ndarray, _rank_distribution_rows(), Equal-weight RRF with ascending-ASIN tie-breaking., _assert_control_identity(), _canonical_session() (+23 more)
+Nodes (33): _comparison(), deterministic_rrf(), load_frozen_split(), _metrics_for_subset(), ndarray, _rank_distribution_rows(), Equal-weight RRF with ascending-ASIN tie-breaking., _assert_control_identity() (+25 more)
 
 ### Community 132 - "synthetic.py"
-Cohesion: 0.07
-Nodes (42): InMemoryVectorMemoryStore, LongTermMemoryCommit, LongTermMemoryState, MemoryStoreSnapshot, MemoryUpdateMode, MemoryUpdateResult, _nonempty(), ndarray (+34 more)
+Cohesion: 0.17
+Nodes (19): Pure normalized centroid update with bounded novelty adaptation., update_memory_vector(), _retention_after(), test_adaptive_retains_dormant_interest_across_repeated_orthogonal_sessions(), test_adaptive_update_similarity_grid(), test_cold_start_and_exact_mode_equations(), test_config_defaults_are_frozen_contract(), test_deterministic_retention_sequences_remain_finite_and_normalized() (+11 more)
 
 ### Community 133 - "InMemoryVectorMemoryStore"
 Cohesion: 0.17
 Nodes (10): BaselineAgent, Reference agent: category pool + IDF-weighted constraint match + popularity prio, main(), EXP03 - Which scoring components actually earn their place?  Ablates the popul, run(), main(), make_category_perturber(), make_reply_perturber() (+2 more)
 
 ### Community 134 - ".update"
-Cohesion: 0.15
-Nodes (15): TestParserAndState, classify_constraint(), clean_constraint(), _constraint(), normalize(), override_intent(), TypedConstraint, Fast Memory state and deterministic observable-message parsing.  The organizer (+7 more)
+Cohesion: 0.47
+Nodes (5): clean_constraint(), _constraint(), normalize(), TypedConstraint, _StateUpdater
 
 ### Community 135 - "VisualizerHTTPHandler"
-Cohesion: 0.04
-Nodes (74): _arguments(), main(), Namespace, Path, Validate a downloaded TechJam BGE catalogue cache against production code., sha256_file(), main(), Path (+66 more)
+Cohesion: 0.06
+Nodes (54): _arguments(), main(), Namespace, Path, Validate a downloaded TechJam BGE catalogue cache against production code., sha256_file(), main(), Path (+46 more)
 
 ### Community 136 - "user_profile"
 Cohesion: 0.12
@@ -822,11 +833,11 @@ Nodes (15): Architecture, Baselines, Buyer-specific rationale, Core hypothesis, 
 
 ### Community 137 - "user_profile"
 Cohesion: 0.06
-Nodes (53): DenseQuerySnapshot, DenseRetrievalError, DenseRetrievalResult, ExperimentConfig, ForensicRankingSnapshot, Raised when a precomputed query cannot be scored in the M0 space., Aligned output from the canonical M0 catalogue dot-product scorer., One replayable current-query input; target ID is evaluation metadata only. (+45 more)
+Nodes (56): DenseQuerySnapshot, DenseRetrievalError, DenseRetrievalResult, ExperimentConfig, ForensicRankingSnapshot, Raised when a precomputed query cannot be scored in the M0 space., Aligned output from the canonical M0 catalogue dot-product scorer., One replayable current-query input; target ID is evaluation metadata only. (+48 more)
 
 ### Community 138 - "agent_openai.py"
-Cohesion: 0.11
-Nodes (10): MemorySystem, Own active Fast Memory and completed per-user Slow Memory episodes., catalog_embeddings(), FailingEmbeddingProvider, KeywordEmbeddingProvider, ndarray, TemporaryCatalog, CountingProvider (+2 more)
+Cohesion: 0.14
+Nodes (8): catalog_embeddings(), FailingEmbeddingProvider, KeywordEmbeddingProvider, ndarray, TemporaryCatalog, CountingProvider, IntegrationTests, ndarray
 
 ### Community 139 - "Phase 3 on Google Colab"
 Cohesion: 0.17
@@ -853,16 +864,16 @@ Cohesion: 0.13
 Nodes (14): File map, Messy-Input Benchmark (Phase A) Implementation Plan, Self-review, Task 0: Environment, Task 10: Full scoring and first report, Task 1: `prompts.py` — content words, forbidden list, relation, Task 2: `prompts.build_system_prompt` tests, Task 3: `covariates.py` — pure scoring functions (+6 more)
 
 ### Community 145 - "BaselineAgent"
-Cohesion: 0.17
-Nodes (9): Protocol, FastMemoryUpdate, Update Fast Memory once, using semantic output or deterministic parsing., Authoritative typed result supplied by an optional semantic parser.      Omitt, Return an authoritative update, or ``None`` for fallback parsing., SemanticParser, update_state(), FastMemoryTests (+1 more)
+Cohesion: 0.20
+Nodes (7): FastMemoryUpdate, Update Fast Memory once, using semantic output or deterministic parsing., Authoritative typed result supplied by an optional semantic parser.      Omitt, Return an authoritative update, or ``None`` for fallback parsing., update_state(), FastMemoryTests, StubSemanticParser
 
 ### Community 146 - "EmbeddingBakeoffTests"
 Cohesion: 0.17
 Nodes (15): contradictions(), _mentions(), Which hard constraints / negatives does this product CONTRADICT? Empty = keep., hit(), main(), mrr(), rank_of(), Gate 2, forced: run the evaluator's OWN turn-1 messages through the fall-through (+7 more)
 
 ### Community 147 - "run_longitudinal_eval.py"
-Cohesion: 0.06
-Nodes (77): disclosure_diagnostics(), file_hashes(), grouped_metrics(), leakage_diagnostics(), main(), markdown_table(), metrics_by_sequence(), metrics_by_user() (+69 more)
+Cohesion: 0.13
+Nodes (40): _annotations(), _call_shopper(), _close_agent(), compare_fixed_transcript_conditions(), _json_safe(), _latest_route(), load_fixture(), _load_public_samples() (+32 more)
 
 ### Community 148 - "BGE over OpenAI: Phase 3 embedding bake-off"
 Cohesion: 0.14
@@ -873,8 +884,8 @@ Cohesion: 0.14
 Nodes (13): 1. Agent and retrieval pipeline, 2. Technical documentation, 3. Product image data, 4. Visualizer server, 5. Visualizer UI, Commit history represented in the pull, Intent-override changes, Main Pull Changes — 2026-08-30 (+5 more)
 
 ### Community 150 - ".test_12_stored_items_feed_existing_qlmp_helpers_directly"
-Cohesion: 0.10
-Nodes (25): main(), Explicitly build or validate the billable OpenAI catalogue embedding cache., _cosine_threshold(), _env_bool(), _load_env_file(), load_runtime_config(), _positive_float(), _positive_int() (+17 more)
+Cohesion: 0.09
+Nodes (37): main(), Explicitly build or validate the billable OpenAI catalogue embedding cache., _cosine_threshold(), _env_bool(), _load_env_file(), load_runtime_config(), memory_store_path(), _positive_float() (+29 more)
 
 ### Community 151 - "M0OpenAITests"
 Cohesion: 0.14
@@ -905,8 +916,8 @@ Cohesion: 0.33
 Nodes (12): _audit(), build(), main(), _probe(), Any, Path, Build the frozen v2 fixture from catalogue evidence, never from M3 ranks., _scopes() (+4 more)
 
 ### Community 158 - "properties"
-Cohesion: 0.11
-Nodes (17): JsonFileVectorMemoryStore, Any, Path, The existing store semantics with an atomic JSON snapshot on commit., bare_agent(), Agent, structured(), test_cancel_session_and_ended_trace_retention_and_consumption() (+9 more)
+Cohesion: 0.24
+Nodes (12): bare_agent(), Agent, structured(), test_cancel_session_and_ended_trace_retention_and_consumption(), test_dashboard_rejects_script_image_urls_and_catalog_reads_do_not_take_lifecycle_lock(), test_explicit_category_change_clears_only_category_specific_state(), test_failed_respond_restores_session_state_but_retains_instrumentation(), test_later_negation_removes_positive_slot_and_committed_text() (+4 more)
 
 ### Community 159 - "shop_agent.py"
 Cohesion: 0.53
@@ -922,7 +933,7 @@ Nodes (11): Artifacts, Complete M0–M4 table, Frozen experiment, Interpretation
 
 ### Community 162 - "5. Current-session parsing"
 Cohesion: 0.10
-Nodes (27): AdaptiveHybridRanker, candidate_attribute_value(), choose_question(), classify_typed_constraint(), deterministic_reranker_score(), entropy_question(), _first_word_value(), meaningful_attribute_values() (+19 more)
+Nodes (29): compare_sessions(), _outcomes(), AdaptiveHybridRanker, candidate_attribute_value(), choose_question(), classify_typed_constraint(), deterministic_reranker_score(), entropy_question() (+21 more)
 
 ### Community 163 - "Phase 5 longitudinal fixture"
 Cohesion: 0.17
@@ -967,6 +978,10 @@ Nodes (10): Active longitudinal system, Current codebase summary, Documentation 
 ### Community 174 - "build_probe30.py"
 Cohesion: 0.33
 Nodes (11): _comparison(), _evaluate(), _latency(), _load_agent_class(), _metric_sets(), _metrics(), _plot(), Any (+3 more)
+
+### Community 175 - "user_profile"
+Cohesion: 0.12
+Nodes (12): Protocol, EmbeddingProvider, EmbeddingService, Embeds completed episodes and exposes compatible cached products., Return one embedding row for every input text., MemorySystem, Any, ndarray (+4 more)
 
 ### Community 176 - "Frozen v2 relevance-threshold calibration"
 Cohesion: 0.33
@@ -1066,7 +1081,7 @@ Nodes (27): ClarificationSelector, EmbeddingBackend, InMemoryUserMemoryStore, Mo
 
 ### Community 204 - "ModelError"
 Cohesion: 0.05
-Nodes (67): ModelCall, ModelError, RuntimeError, ModelCall, ModelError, Provider-neutral chat model contracts used by every active LLM role., Base class for an exhausted provider call., _configured_model() (+59 more)
+Nodes (53): ModelError, RuntimeError, ModelCall, ModelError, Any, Provider-neutral chat model contracts used by every active LLM role., Base class for an exhausted provider call., ExperimentConfig (+45 more)
 
 ### Community 205 - "intent_clf.py"
 Cohesion: 0.16
@@ -1117,8 +1132,8 @@ Cohesion: 0.40
 Nodes (4): Harshith Retriever, How To Connect Later, Notes, What Is Here
 
 ### Community 217 - "SERVER.md"
-Cohesion: 0.17
-Nodes (13): Agent, Agent, The deployed agent + bolt-on, as a module the visualizer can load directly:, _SafeParser, BoltOnAgent, rank_of(), Plug the bolt-on into the DEPLOYED agent (starter/agent.py) and measure.  Bolt, run_bench() (+5 more)
+Cohesion: 0.15
+Nodes (14): Agent, Agent, The deployed agent + bolt-on, as a module the visualizer can load directly:, _SafeParser, Yang Xu's live front end (experiment_1/visualizer) driving the BOLT-ON agent., BoltOnAgent, rank_of(), Plug the bolt-on into the DEPLOYED agent (starter/agent.py) and measure.  Bolt (+6 more)
 
 ### Community 218 - "build_projector_fixture.py"
 Cohesion: 0.60
@@ -1173,8 +1188,8 @@ Cohesion: 0.50
 Nodes (3): Experiments, Reading the results, Shared modules
 
 ### Community 232 - "config.py"
-Cohesion: 0.10
-Nodes (21): Validated configuration for isolated QLMP geometry and steering., _cosine_threshold(), _env_bool(), _load_env_file(), load_runtime_config(), memory_store_path(), _positive_float(), _positive_int() (+13 more)
+Cohesion: 0.16
+Nodes (18): _cosine_threshold(), _env_bool(), _load_env_file(), load_runtime_config(), memory_store_path(), _positive_float(), _positive_int(), Path (+10 more)
 
 ### Community 233 - "build_sft.py"
 Cohesion: 0.67
@@ -1189,52 +1204,92 @@ Cohesion: 0.67
 Nodes (3): M0, Q. Freeze manifest, QLMP
 
 ### Community 253 - "local_evaluator.py"
-Cohesion: 0.21
-Nodes (19): behavior_for(), catalog_index(), classify_constraint(), _clean_constraint(), coarse_category(), customer_reply(), evaluate(), _flatten_values() (+11 more)
+Cohesion: 0.09
+Nodes (26): Path, test_official_constructor_routes_catalog_and_cache(), behavior_for(), catalog_index(), classify_constraint(), _clean_constraint(), coarse_category(), customer_reply() (+18 more)
+
+### Community 254 - "run_b0_shadow_validation.py"
+Cohesion: 0.24
+Nodes (20): disclosure_diagnostics(), file_hashes(), grouped_metrics(), leakage_diagnostics(), main(), markdown_table(), metrics_by_sequence(), metrics_by_user() (+12 more)
 
 ### Community 255 - "shopper_agent.py"
-Cohesion: 0.26
-Nodes (8): evaluate_v2(), main(), call_shopper_llm(), main(), make_system_prompt(), _normalize_constraint(), Tracks which simulated shopper preferences remain active after an override., ShopperIntentState
+Cohesion: 0.15
+Nodes (14): _basis_contract_tolerance(), LocalSubspace, MemoryProjection, Any, FloatArray, Small, validated data models for Phase 1 QLMP., SVD-derived tangent basis and the diagnostics needed to audit it., Projection of a query-memory tangent residual into a local subspace. (+6 more)
+
+### Community 256 - "JsonFileVectorMemoryStore"
+Cohesion: 0.15
+Nodes (9): JsonFileVectorMemoryStore, LongTermMemoryCommit, The existing store semantics with an atomic JSON snapshot on commit., OfflineBGEBackend, ndarray, Fast offline end-to-end check of the real 50,000-row demo path., test_complete_demo_flow_uses_cache_persistence_isolation_and_reset(), test_json_commit_persistence_failure_rolls_back_and_is_retryable() (+1 more)
+
+### Community 257 - "simulator.py"
+Cohesion: 0.21
+Nodes (15): Agent, JsonFileVectorMemoryStore, Path, behavior_for(), _clean(), _flatten(), intent_card(), load_samples() (+7 more)
 
 ### Community 258 - "BaselineAgent"
-Cohesion: 0.16
-Nodes (6): _clean_constraint(), generate_triplets(), _get_bucket(), main(), BaselineAgent, Path
+Cohesion: 0.70
+Nodes (4): _clean_constraint(), generate_triplets(), _get_bucket(), main()
+
+### Community 259 - "InMemoryVectorMemoryStore"
+Cohesion: 0.13
+Nodes (11): InMemoryVectorMemoryStore, User-isolated vector states with strict monotonic session chronology., Release an active session without recording a longitudinal commit., Return the next valid longitudinal sequence for ``user_id``., Reset exactly one user without touching any other user's memory., SessionCommit, test_failed_snapshot_import_leaves_store_empty(), test_filtered_snapshot_restores_prefix_vector() (+3 more)
+
+### Community 260 - "aggregate_slow_vector"
+Cohesion: 0.21
+Nodes (8): Optionally apply the one and only Slow Memory rerank., aggregate_slow_vector(), ndarray, Return the normalized exponentially weighted visible history vector., Apply reciprocal baseline rank plus cosine Slow Memory affinity., rerank_with_slow_memory(), episode(), SlowMemoryTests
 
 ### Community 261 - "Catalogue"
 Cohesion: 0.13
 Nodes (17): allowed_departments(), Catalogue, contains_phrase(), Eligibility, FTSRoute, _normalize(), Any, Path (+9 more)
 
 ### Community 262 - "VisualizerHTTPHandler"
-Cohesion: 0.24
-Nodes (5): materialize_hidden_fields(), run_server(), VisualizerHTTPHandler, Yang Xu's live front end (experiment_1/visualizer) driving the BOLT-ON agent., SimpleHTTPRequestHandler
+Cohesion: 0.27
+Nodes (5): ActiveSession, InMemoryMemoryStore, Process-lifetime Slow Memory storage with chronology and leakage guards., A deterministic store partitioned solely by stable ``user_id``., SlowMemoryEpisode
 
 ### Community 263 - "ASTRA method and disclosure report"
 Cohesion: 0.17
 Nodes (11): Architecture, ASTRA method and disclosure report, Controlled evidence, Demonstration, Feasibility disclosure, Limitations, Method, Models and dependencies (+3 more)
 
 ### Community 264 - "shop_agent.py"
-Cohesion: 0.20
-Nodes (4): evaluate_custom(), main(), Any, standardize_department()
+Cohesion: 0.22
+Nodes (6): ndarray, Return the float32 M0-boundary vector after contract validation.          Inpu, Score a precomputed normalized q against the existing M0 matrix.          This, Embed text once, then delegate to the canonical vector scorer., Compatibility wrapper returning row indices for the current M0 route., The owned, read-only canonical float32 M0 query.
 
 ### Community 265 - "ASTRA TechJam submission — BGE/Ollama release"
 Cohesion: 0.18
 Nodes (10): 1. Requirements, 2. Start the local model, 3. Install the BGE catalogue cache, 4. Run tests, 5. Run the unmodified official evaluator, 6. Required Agent contract, 7. Runtime environment variables, 8. Failure behavior (+2 more)
 
 ### Community 266 - "Index"
-Cohesion: 0.20
-Nodes (6): field_texts(), Index, Path, Catalog plus the derived structures every experiment needs., Score every bucket by IDF-weighted overlap. No anchor phrase required., write_result()
+Cohesion: 0.25
+Nodes (8): build_parser(), ArgumentParser, test_cli_and_server_configuration_have_no_embedding_mode_switch(), _catalog_family(), Dashboard adapter for the canonical longitudinal shopping agent., Assign exactly one dashboard family from leaf-to-root category components., run_server(), _whole_keyword()
+
+### Community 267 - "_nonempty"
+Cohesion: 0.36
+Nodes (5): LongTermMemoryState, _nonempty(), ndarray, _sequence(), _unit_vector()
 
 ### Community 268 - ".__init__"
 Cohesion: 0.18
 Nodes (6): ClarificationSelector, EmbeddingBackend, InMemoryUserMemoryStore, ModelClient, Path, Deprecated compatibility alias for :attr:`llm_client`.
 
+### Community 269 - "MemoryStoreSnapshot"
+Cohesion: 0.22
+Nodes (4): MemoryStoreSnapshot, Any, Path, Return vector-free state suitable for a demo/debug display.
+
 ### Community 270 - "user_profile"
+Cohesion: 0.25
+Nodes (8): session_id, user_profile, properties, minLength, type, additionalProperties, required, type
+
+### Community 271 - "user_profile"
 Cohesion: 0.25
 Nodes (8): session_id, user_profile, properties, minLength, type, additionalProperties, required, type
 
 ### Community 272 - "prompts.py"
 Cohesion: 0.40
 Nodes (4): Random, Utterance-axis text: styles, modifiers, the forbidden list, and the system promp, A recipient consistent with the target's department - never a contradiction., relation_for()
+
+### Community 273 - "properties"
+Cohesion: 0.33
+Nodes (6): properties, minLength, type, parent_asin, score, type
+
+### Community 274 - "exp07_turn1_category_channel.py"
+Cohesion: 0.50
+Nodes (4): main(), parse_turn1(), EXP07 - The turn-1 message hands you the target's bucket string verbatim.  `lo, Split the simulator's turn-1 grammar into (category_phrase, constraint).
 
 ### Community 275 - "install_artifact.py"
 Cohesion: 0.60
@@ -1252,12 +1307,12 @@ Nodes (4): main(), Path, Verify the allowlisted runtime snapshot against bundle_
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Agent` connect `Experiment 1 Sandbox: Shopping Copilot` to `_StateUpdater`, `source_snapshot.py`, `Catalogue`, `VisualizerHTTPHandler`, `user_profile`, `.__init__`, `experiment_08_intent_routed_dense_browsing.py`, `.test_12_stored_items_feed_existing_qlmp_helpers_directly`, `WARPRetriever`, `properties`, `finetune_embedder.py`, `frozen_artifact_hashes`, `packages`, `5. Nickolas research system`, `exp07_turn1_category_channel.py`, `ModelError`, `shopper_agent.py`, `parse_session_file`, `4. Shop Agent Architecture`, `config.py`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `Agent` connect `Experiment 1 Sandbox: Shopping Copilot` to `_StateUpdater`, `JsonFileVectorMemoryStore`, `source_snapshot.py`, `Catalogue`, `VisualizerHTTPHandler`, `shop_agent.py`, `user_profile`, `Index`, `.__init__`, `experiment_08_intent_routed_dense_browsing.py`, `.test_12_stored_items_feed_existing_qlmp_helpers_directly`, `WARPRetriever`, `properties`, `finetune_embedder.py`, `frozen_artifact_hashes`, `packages`, `Complete Architecture Audit: Post-Pull Source of Truth`, `exp07_turn1_category_channel.py`, `ModelError`, `parse_session_file`, `4. Shop Agent Architecture`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `FastMemoryState` connect `5. Current-session parsing` to `.update`, `VisualizerHTTPHandler`, `user_profile`, `BaselineAgent`, `run_10`, `8. Embeddings / Fine-Tuned BGE`?**
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **Why does `Harness` connect `calibration` to `experiment_07_residual_failure_analysis.py`, `5. Current-session parsing`, `directives.py`, `run_08`, `ObservableRetrievalInput`, `user_profile`, `user_profile`, `build_probe30.py`, `properties`, `BaselineAgent`, `__init__.py`, `sources`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
-- **Why does `FastMemoryState` connect `.update` to `VisualizerHTTPHandler`, `5. Current-session parsing`, `agent_openai.py`, `user_profile`, `BaselineAgent`, `run_10`, `8. Embeddings / Fine-Tuned BGE`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Are the 10 inferred relationships involving `Harness` (e.g. with `FrozenTurnRanking` and `RetrievalInput`) actually correct?**
   _`Harness` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 31 inferred relationships involving `Agent` (e.g. with `Catalogue` and `BGEEmbeddingBackend`) actually correct?**

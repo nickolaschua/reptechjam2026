@@ -290,7 +290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval",
-      "community": 264,
+      "community": 69,
       "norm_label": "run_eval.py"
     },
     {
@@ -300,7 +300,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_evaluate_custom",
-      "community": 264,
+      "community": 69,
       "norm_label": "evaluate_custom()"
     },
     {
@@ -310,7 +310,7 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_main",
-      "community": 264,
+      "community": 69,
       "norm_label": "main()"
     },
     {
@@ -320,7 +320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2",
-      "community": 255,
+      "community": 69,
       "norm_label": "run_eval_v2.py"
     },
     {
@@ -330,7 +330,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2_evaluate_v2",
-      "community": 255,
+      "community": 69,
       "norm_label": "evaluate_v2()"
     },
     {
@@ -340,7 +340,7 @@
       "source_location": "L199",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_run_eval_v2_main",
-      "community": 255,
+      "community": 69,
       "norm_label": "main()"
     },
     {
@@ -350,7 +350,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent",
-      "community": 264,
+      "community": 69,
       "norm_label": "shop_agent.py"
     },
     {
@@ -360,7 +360,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_load_env_file",
-      "community": 264,
+      "community": 69,
       "norm_label": "_load_env_file()"
     },
     {
@@ -380,7 +380,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_standardize_department",
-      "community": 264,
+      "community": 69,
       "norm_label": "standardize_department()"
     },
     {
@@ -390,7 +390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_py_any",
-      "community": 264,
+      "community": 69,
       "norm_label": "any"
     },
     {
@@ -400,7 +400,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_text",
-      "community": 264,
+      "community": 69,
       "norm_label": "_text()"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_terms",
-      "community": 264,
+      "community": 69,
       "norm_label": "_terms()"
     },
     {
@@ -430,7 +430,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_init",
-      "community": 258,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_py_path",
-      "community": 258,
+      "community": 69,
       "norm_label": "path"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_fts5_index",
-      "community": 258,
+      "community": 69,
       "norm_label": "._build_fts5_index()"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L226",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_category_index",
-      "community": 264,
+      "community": 69,
       "norm_label": "._build_category_index()"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L303",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_build_vector_index",
-      "community": 258,
+      "community": 69,
       "norm_label": "._build_vector_index()"
     },
     {
@@ -600,7 +600,7 @@
       "source_location": "L812",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_agent_reset",
-      "community": 258,
+      "community": 69,
       "norm_label": ".reset()"
     },
     {
@@ -680,7 +680,7 @@
       "source_location": "L1946",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent",
-      "community": 258,
+      "community": 69,
       "norm_label": "baselineagent"
     },
     {
@@ -700,7 +700,7 @@
       "source_location": "L1964",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_text",
-      "community": 258,
+      "community": 69,
       "norm_label": "._text()"
     },
     {
@@ -710,7 +710,7 @@
       "source_location": "L1973",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_init",
-      "community": 258,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -720,7 +720,7 @@
       "source_location": "L1979",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_build_index",
-      "community": 258,
+      "community": 69,
       "norm_label": "._build_index()"
     },
     {
@@ -730,7 +730,7 @@
       "source_location": "L2045",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_reset",
-      "community": 258,
+      "community": 69,
       "norm_label": ".reset()"
     },
     {
@@ -740,7 +740,7 @@
       "source_location": "L2058",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_classify_constraint_locally",
-      "community": 258,
+      "community": 69,
       "norm_label": "._classify_constraint_locally()"
     },
     {
@@ -750,7 +750,7 @@
       "source_location": "L2069",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_rebuild_accumulated_terms",
-      "community": 258,
+      "community": 69,
       "norm_label": "._rebuild_accumulated_terms()"
     },
     {
@@ -760,7 +760,7 @@
       "source_location": "L2090",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_erase_attribute_memory",
-      "community": 258,
+      "community": 69,
       "norm_label": "._erase_attribute_memory()"
     },
     {
@@ -770,7 +770,7 @@
       "source_location": "L2097",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_parse_message_locally",
-      "community": 258,
+      "community": 69,
       "norm_label": "._parse_message_locally()"
     },
     {
@@ -780,7 +780,7 @@
       "source_location": "L2145",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shop_agent_baselineagent_respond",
-      "community": 258,
+      "community": 69,
       "norm_label": ".respond()"
     },
     {
@@ -820,7 +820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent",
-      "community": 255,
+      "community": 69,
       "norm_label": "shopper_agent.py"
     },
     {
@@ -830,7 +830,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_normalize_constraint",
-      "community": 255,
+      "community": 69,
       "norm_label": "_normalize_constraint()"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate",
-      "community": 255,
+      "community": 69,
       "norm_label": "shopperintentstate"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_init",
-      "community": 255,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_from_sample",
-      "community": 255,
+      "community": 69,
       "norm_label": ".from_sample()"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_record_constraint",
-      "community": 255,
+      "community": 69,
       "norm_label": ".record_constraint()"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_apply_override",
-      "community": 255,
+      "community": 69,
       "norm_label": ".apply_override()"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_active_values",
-      "community": 255,
+      "community": 69,
       "norm_label": ".active_values()"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_shopperintentstate_revoked_values",
-      "community": 255,
+      "community": 69,
       "norm_label": ".revoked_values()"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_materialize_hidden_fields",
-      "community": 262,
+      "community": 69,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_call_shopper_llm",
-      "community": 255,
+      "community": 69,
       "norm_label": "call_shopper_llm()"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L239",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_make_system_prompt",
-      "community": 255,
+      "community": 69,
       "norm_label": "make_system_prompt()"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L322",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_main",
-      "community": 255,
+      "community": 69,
       "norm_label": "main()"
     },
     {
@@ -950,7 +950,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_shopper_agent_rationale_35",
-      "community": 255,
+      "community": 69,
       "norm_label": "tracks which simulated shopper preferences remain active after an override."
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_starter_agent",
-      "community": 264,
+      "community": 69,
       "norm_label": "agent.py"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server",
-      "community": 262,
+      "community": 69,
       "norm_label": "server.py"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler",
-      "community": 262,
+      "community": 69,
       "norm_label": "visualizerhttphandler"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "simplehttprequesthandler",
-      "community": 262,
+      "community": 69,
       "norm_label": "simplehttprequesthandler"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_init",
-      "community": 262,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_do_get",
-      "community": 262,
+      "community": 69,
       "norm_label": ".do_get()"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_json_response",
-      "community": 262,
+      "community": 69,
       "norm_label": ".send_json_response()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_json_error",
-      "community": 262,
+      "community": 69,
       "norm_label": ".send_json_error()"
     },
     {
@@ -1090,7 +1090,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_sessions_list",
-      "community": 262,
+      "community": 69,
       "norm_label": ".handle_sessions_list()"
     },
     {
@@ -1100,7 +1100,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_manual_start",
-      "community": 262,
+      "community": 69,
       "norm_label": ".handle_manual_start()"
     },
     {
@@ -1110,7 +1110,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_manual_step",
-      "community": 262,
+      "community": 69,
       "norm_label": ".handle_manual_step()"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_handle_stream",
-      "community": 262,
+      "community": 69,
       "norm_label": ".handle_stream()"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_visualizerhttphandler_send_sse",
-      "community": 262,
+      "community": 69,
       "norm_label": ".send_sse()"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L367",
       "_origin": "ast",
       "id": "archive_legacy_hybrid_agent_visualizer_server_run_server",
-      "community": 262,
+      "community": 69,
       "norm_label": "run_server()"
     },
     {
@@ -2120,7 +2120,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "protocol",
-      "community": 145,
+      "community": 175,
       "norm_label": "protocol"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_portabilityjudgeerror",
-      "community": 98,
+      "community": 38,
       "norm_label": "portabilityjudgeerror"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_portabilityjudgeerror_init",
-      "community": 98,
+      "community": 38,
       "norm_label": ".__init__()"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L445",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_openaiportabilityjudge",
-      "community": 98,
+      "community": 38,
       "norm_label": "openaiportabilityjudge"
     },
     {
@@ -2470,7 +2470,7 @@
       "source_location": "L448",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_openaiportabilityjudge_init",
-      "community": 98,
+      "community": 38,
       "norm_label": ".__init__()"
     },
     {
@@ -2770,7 +2770,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_rationale_147",
-      "community": 98,
+      "community": 38,
       "norm_label": "hosted judge failed without provider or model fallback."
     },
     {
@@ -2830,7 +2830,7 @@
       "source_location": "L446",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_portability_eval_rationale_446",
-      "community": 98,
+      "community": 38,
       "norm_label": "one explicit openai model, strict structured output, and no fallback."
     },
     {
@@ -3950,7 +3950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation",
-      "community": 147,
+      "community": 254,
       "norm_label": "run_b0_shadow_validation.py"
     },
     {
@@ -3960,7 +3960,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_write_json",
-      "community": 147,
+      "community": 254,
       "norm_label": "write_json()"
     },
     {
@@ -3970,7 +3970,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_py_path",
-      "community": 147,
+      "community": 254,
       "norm_label": "path"
     },
     {
@@ -3980,7 +3980,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_py_any",
-      "community": 147,
+      "community": 254,
       "norm_label": "any"
     },
     {
@@ -3990,7 +3990,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_file_hashes",
-      "community": 147,
+      "community": 254,
       "norm_label": "file_hashes()"
     },
     {
@@ -4000,7 +4000,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_validate_output_directory",
-      "community": 147,
+      "community": 254,
       "norm_label": "validate_output_directory()"
     },
     {
@@ -4010,7 +4010,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_preflight_runtime",
-      "community": 147,
+      "community": 254,
       "norm_label": "preflight_runtime()"
     },
     {
@@ -4020,7 +4020,7 @@
       "source_location": "L115",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_grouped_metrics",
-      "community": 147,
+      "community": 254,
       "norm_label": "grouped_metrics()"
     },
     {
@@ -4030,7 +4030,7 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_overall_metrics",
-      "community": 147,
+      "community": 254,
       "norm_label": "overall_metrics()"
     },
     {
@@ -4040,7 +4040,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_metrics_by_user",
-      "community": 147,
+      "community": 254,
       "norm_label": "metrics_by_user()"
     },
     {
@@ -4050,7 +4050,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_metrics_by_sequence",
-      "community": 147,
+      "community": 254,
       "norm_label": "metrics_by_sequence()"
     },
     {
@@ -4060,7 +4060,7 @@
       "source_location": "L192",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_probe_sessions",
-      "community": 147,
+      "community": 254,
       "norm_label": "probe_sessions()"
     },
     {
@@ -4070,7 +4070,7 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_disclosure_diagnostics",
-      "community": 147,
+      "community": 254,
       "norm_label": "disclosure_diagnostics()"
     },
     {
@@ -4080,7 +4080,7 @@
       "source_location": "L269",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_leakage_diagnostics",
-      "community": 147,
+      "community": 254,
       "norm_label": "leakage_diagnostics()"
     },
     {
@@ -4090,7 +4090,7 @@
       "source_location": "L291",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_old_vs_new",
-      "community": 147,
+      "community": 254,
       "norm_label": "old_vs_new()"
     },
     {
@@ -4100,7 +4100,7 @@
       "source_location": "L338",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_markdown_table",
-      "community": 147,
+      "community": 254,
       "norm_label": "markdown_table()"
     },
     {
@@ -4110,7 +4110,7 @@
       "source_location": "L347",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_run_summary",
-      "community": 147,
+      "community": 254,
       "norm_label": "run_summary()"
     },
     {
@@ -4120,7 +4120,7 @@
       "source_location": "L435",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_parse_args",
-      "community": 147,
+      "community": 254,
       "norm_label": "parse_args()"
     },
     {
@@ -4130,7 +4130,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_py_namespace",
-      "community": 147,
+      "community": 254,
       "norm_label": "namespace"
     },
     {
@@ -4140,7 +4140,7 @@
       "source_location": "L456",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_main",
-      "community": 147,
+      "community": 254,
       "norm_label": "main()"
     },
     {
@@ -4150,7 +4150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_experiments_run_b0_shadow_validation_rationale_1",
-      "community": 147,
+      "community": 254,
       "norm_label": "phase 6.1 b0 calibration and fixed-transcript shadow parity runner."
     },
     {
@@ -4480,7 +4480,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_candidateuniverse",
-      "community": 62,
+      "community": 14,
       "norm_label": "candidateuniverse"
     },
     {
@@ -4500,7 +4500,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_invalidreason",
-      "community": 49,
+      "community": 14,
       "norm_label": "invalidreason"
     },
     {
@@ -4610,7 +4610,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_qlmpintegrationconfig",
-      "community": 62,
+      "community": 49,
       "norm_label": "qlmpintegrationconfig"
     },
     {
@@ -4620,7 +4620,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_qlmpintegrationconfig_post_init",
-      "community": 62,
+      "community": 14,
       "norm_label": ".__post_init__()"
     },
     {
@@ -4810,7 +4810,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_integration_qlmp_integration_rationale_114",
-      "community": 62,
+      "community": 49,
       "norm_label": "one explicit switch/configuration for the component boundary."
     },
     {
@@ -4890,7 +4890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_init",
-      "community": 40,
+      "community": 9,
       "norm_label": "__init__.py"
     },
     {
@@ -4900,7 +4900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_init_rationale_1",
-      "community": 40,
+      "community": 9,
       "norm_label": "numpy-only geometry and bounded memory steering for qlmp."
     },
     {
@@ -4910,7 +4910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_aggregation",
-      "community": 17,
+      "community": 9,
       "norm_label": "aggregation.py"
     },
     {
@@ -5000,7 +5000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_aggregation_rationale_1",
-      "community": 17,
+      "community": 9,
       "norm_label": "reusable weighted aggregation for raw and projected memory residuals."
     },
     {
@@ -5200,7 +5200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_config",
-      "community": 232,
+      "community": 37,
       "norm_label": "config.py"
     },
     {
@@ -5210,7 +5210,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_config_projectionconfig",
-      "community": 62,
+      "community": 37,
       "norm_label": "projectionconfig"
     },
     {
@@ -5220,7 +5220,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_config_projectionconfig_post_init",
-      "community": 62,
+      "community": 37,
       "norm_label": ".__post_init__()"
     },
     {
@@ -5280,7 +5280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_config_rationale_1",
-      "community": 232,
+      "community": 37,
       "norm_label": "validated configuration for isolated qlmp geometry and steering."
     },
     {
@@ -5290,7 +5290,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_config_rationale_11",
-      "community": 62,
+      "community": 37,
       "norm_label": "numerical controls for qlmp.      the defaults are engineering starting points"
     },
     {
@@ -5750,7 +5750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models",
-      "community": 40,
+      "community": 255,
       "norm_label": "models.py"
     },
     {
@@ -5780,7 +5780,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_readonly_vector",
-      "community": 40,
+      "community": 255,
       "norm_label": "_readonly_vector()"
     },
     {
@@ -5790,7 +5790,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_py_any",
-      "community": 40,
+      "community": 255,
       "norm_label": "any"
     },
     {
@@ -5800,7 +5800,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_py_floatarray",
-      "community": 40,
+      "community": 255,
       "norm_label": "floatarray"
     },
     {
@@ -5810,7 +5810,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_readonly_matrix",
-      "community": 40,
+      "community": 255,
       "norm_label": "_readonly_matrix()"
     },
     {
@@ -5820,7 +5820,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_basis_contract_tolerance",
-      "community": 40,
+      "community": 255,
       "norm_label": "_basis_contract_tolerance()"
     },
     {
@@ -5830,7 +5830,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_validate_basis_contract",
-      "community": 40,
+      "community": 255,
       "norm_label": "_validate_basis_contract()"
     },
     {
@@ -5860,7 +5860,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_localsubspace",
-      "community": 40,
+      "community": 255,
       "norm_label": "localsubspace"
     },
     {
@@ -5870,7 +5870,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_localsubspace_post_init",
-      "community": 40,
+      "community": 255,
       "norm_label": ".__post_init__()"
     },
     {
@@ -5880,7 +5880,7 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_memoryprojection",
-      "community": 40,
+      "community": 255,
       "norm_label": "memoryprojection"
     },
     {
@@ -5890,7 +5890,7 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_memoryprojection_post_init",
-      "community": 40,
+      "community": 255,
       "norm_label": ".__post_init__()"
     },
     {
@@ -5900,7 +5900,7 @@
       "source_location": "L248",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_memoryprojection_raw_cosine",
-      "community": 40,
+      "community": 255,
       "norm_label": ".raw_cosine()"
     },
     {
@@ -5910,7 +5910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_1",
-      "community": 40,
+      "community": 255,
       "norm_label": "small, validated data models for phase 1 qlmp."
     },
     {
@@ -5940,7 +5940,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_68",
-      "community": 40,
+      "community": 255,
       "norm_label": "return the dimension-scaled float64 tolerance for a tangent basis."
     },
     {
@@ -5950,7 +5950,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_80",
-      "community": 40,
+      "community": 255,
       "norm_label": "require spectral-norm orthonormality and, when supplied, tangency."
     },
     {
@@ -5970,7 +5970,7 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_155",
-      "community": 40,
+      "community": 255,
       "norm_label": "svd-derived tangent basis and the diagnostics needed to audit it."
     },
     {
@@ -5980,7 +5980,7 @@
       "source_location": "L210",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_210",
-      "community": 40,
+      "community": 255,
       "norm_label": "projection of a query-memory tangent residual into a local subspace."
     },
     {
@@ -5990,7 +5990,7 @@
       "source_location": "L249",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_models_rationale_249",
-      "community": 40,
+      "community": 255,
       "norm_label": "concise alias for ``raw_query_memory_cosine``."
     },
     {
@@ -6650,7 +6650,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_tests_test_geometry_normalizeandcosinetests_test_projection_config_validation_and_not_tuned_defaults",
-      "community": 62,
+      "community": 37,
       "norm_label": ".test_projection_config_validation_and_not_tuned_defaults()"
     },
     {
@@ -6800,7 +6800,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_tests_test_geometry_localsubspacetests_test_local_subspace_rejects_scaled_nonorthonormal_basis",
-      "community": 40,
+      "community": 255,
       "norm_label": ".test_local_subspace_rejects_scaled_nonorthonormal_basis()"
     },
     {
@@ -6860,7 +6860,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_tests_test_projection_controlledprojectiontests_setupclass",
-      "community": 78,
+      "community": 9,
       "norm_label": ".setupclass()"
     },
     {
@@ -7020,7 +7020,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "archive_legacy_qlmp_library_tests_test_projection_randomprojectioninvarianttests_test_fixed_seed_randomized_projection_invariants",
-      "community": 9,
+      "community": 78,
       "norm_label": ".test_fixed_seed_randomized_projection_invariants()"
     },
     {
@@ -7920,7 +7920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_init",
-      "community": 147,
+      "community": 91,
       "norm_label": "__init__.py"
     },
     {
@@ -7930,7 +7930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_init_rationale_1",
-      "community": 147,
+      "community": 91,
       "norm_label": "phase 6 longitudinal benchmark helpers."
     },
     {
@@ -8320,7 +8320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives",
-      "community": 147,
+      "community": 91,
       "norm_label": "directives.py"
     },
     {
@@ -8330,7 +8330,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_shoppercallresult",
-      "community": 147,
+      "community": 91,
       "norm_label": "shoppercallresult"
     },
     {
@@ -8340,7 +8340,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_shopperllmclient",
-      "community": 147,
+      "community": 91,
       "norm_label": "shopperllmclient"
     },
     {
@@ -8350,7 +8350,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_shopperllmclient_init",
-      "community": 147,
+      "community": 91,
       "norm_label": ".__init__()"
     },
     {
@@ -8360,7 +8360,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_shopperllmclient_credential",
-      "community": 147,
+      "community": 91,
       "norm_label": "._credential()"
     },
     {
@@ -8370,7 +8370,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_shopperllmclient_call",
-      "community": 147,
+      "community": 91,
       "norm_label": ".__call__()"
     },
     {
@@ -8380,7 +8380,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_validated_directive",
-      "community": 147,
+      "community": 91,
       "norm_label": "_validated_directive()"
     },
     {
@@ -8390,7 +8390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_py_any",
-      "community": 147,
+      "community": 91,
       "norm_label": "any"
     },
     {
@@ -8400,7 +8400,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_established_facts_before",
-      "community": 147,
+      "community": 91,
       "norm_label": "established_facts_before()"
     },
     {
@@ -8410,7 +8410,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_build_directive_system_prompt",
-      "community": 147,
+      "community": 91,
       "norm_label": "build_directive_system_prompt()"
     },
     {
@@ -8420,7 +8420,7 @@
       "source_location": "L171",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_build_first_turn_prompt",
-      "community": 147,
+      "community": 91,
       "norm_label": "build_first_turn_prompt()"
     },
     {
@@ -8430,7 +8430,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_tokens",
-      "community": 147,
+      "community": 91,
       "norm_label": "_tokens()"
     },
     {
@@ -8440,7 +8440,7 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_semantic_match",
-      "community": 147,
+      "community": 91,
       "norm_label": "_semantic_match()"
     },
     {
@@ -8450,7 +8450,7 @@
       "source_location": "L248",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_semantic_disclosure_validation",
-      "community": 147,
+      "community": 91,
       "norm_label": "semantic_disclosure_validation()"
     },
     {
@@ -8460,7 +8460,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_target_leakage",
-      "community": 147,
+      "community": 91,
       "norm_label": "target_leakage()"
     },
     {
@@ -8470,7 +8470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_rationale_1",
-      "community": 147,
+      "community": 91,
       "norm_label": "evaluator-private longitudinal shopper controls and diagnostics."
     },
     {
@@ -8480,7 +8480,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_rationale_25",
-      "community": 147,
+      "community": 91,
       "norm_label": "small explicit-provider shopper client; no credential fallthrough."
     },
     {
@@ -8490,7 +8490,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_rationale_125",
-      "community": 147,
+      "community": 91,
       "norm_label": "return only facts whose disclosure was scheduled in an earlier session."
     },
     {
@@ -8500,7 +8500,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_rationale_145",
-      "community": 147,
+      "community": 91,
       "norm_label": "add private controls to the shopper prompt, never to the shopping agent."
     },
     {
@@ -8510,7 +8510,7 @@
       "source_location": "L243",
       "_origin": "ast",
       "id": "archive_research_evaluation_memory_longitudinal_eval_directives_rationale_243",
-      "community": 147,
+      "community": 91,
       "norm_label": "public diagnostic matcher; never used for retrieval or ranking."
     },
     {
@@ -11210,7 +11210,7 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_07_residual_failure_analysis_load_frozen_split",
-      "community": 0,
+      "community": 130,
       "norm_label": "load_frozen_split()"
     },
     {
@@ -11710,7 +11710,7 @@
       "source_location": "L348",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_08_intent_routed_dense_browsing_outcomes",
-      "community": 0,
+      "community": 162,
       "norm_label": "_outcomes()"
     },
     {
@@ -11740,7 +11740,7 @@
       "source_location": "L390",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_experiment_08_intent_routed_dense_browsing_compare_sessions",
-      "community": 0,
+      "community": 162,
       "norm_label": "compare_sessions()"
     },
     {
@@ -13360,7 +13360,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "archive_research_evaluation_retrieval_experiments_harness_sha256",
-      "community": 0,
+      "community": 130,
       "norm_label": "sha256()"
     },
     {
@@ -18780,7 +18780,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_field_texts",
-      "community": 266,
+      "community": 63,
       "norm_label": "field_texts()"
     },
     {
@@ -18790,7 +18790,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_index",
-      "community": 266,
+      "community": 63,
       "norm_label": "index"
     },
     {
@@ -18800,7 +18800,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_index_init",
-      "community": 266,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
@@ -18810,7 +18810,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_py_path",
-      "community": 266,
+      "community": 63,
       "norm_label": "path"
     },
     {
@@ -18820,7 +18820,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_index_samples",
-      "community": 266,
+      "community": 63,
       "norm_label": ".samples()"
     },
     {
@@ -18830,7 +18830,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_index_idf_of",
-      "community": 266,
+      "community": 63,
       "norm_label": ".idf_of()"
     },
     {
@@ -18840,7 +18840,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_index_resolve_bucket",
-      "community": 266,
+      "community": 63,
       "norm_label": ".resolve_bucket()"
     },
     {
@@ -18860,7 +18860,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_write_result",
-      "community": 266,
+      "community": 63,
       "norm_label": "write_result()"
     },
     {
@@ -18880,7 +18880,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_rationale_45",
-      "community": 266,
+      "community": 63,
       "norm_label": "catalog plus the derived structures every experiment needs."
     },
     {
@@ -18890,7 +18890,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "archive_winston_experiments_common_rationale_76",
-      "community": 266,
+      "community": 63,
       "norm_label": "score every bucket by idf-weighted overlap. no anchor phrase required."
     },
     {
@@ -19200,7 +19200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp07_turn1_category_channel",
-      "community": 63,
+      "community": 274,
       "norm_label": "exp07_turn1_category_channel.py"
     },
     {
@@ -19210,7 +19210,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp07_turn1_category_channel_parse_turn1",
-      "community": 63,
+      "community": 274,
       "norm_label": "parse_turn1()"
     },
     {
@@ -19220,7 +19220,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp07_turn1_category_channel_main",
-      "community": 63,
+      "community": 274,
       "norm_label": "main()"
     },
     {
@@ -19230,7 +19230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp07_turn1_category_channel_rationale_1",
-      "community": 63,
+      "community": 274,
       "norm_label": "exp07 - the turn-1 message hands you the target's bucket string verbatim.  `lo"
     },
     {
@@ -19240,7 +19240,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "archive_winston_experiments_exp07_turn1_category_channel_rationale_29",
-      "community": 63,
+      "community": 274,
       "norm_label": "split the simulator's turn-1 grammar into (category_phrase, constraint)."
     },
     {
@@ -19640,7 +19640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_frontend_bolt_on",
-      "community": 262,
+      "community": 217,
       "norm_label": "frontend_bolt_on.py"
     },
     {
@@ -19650,7 +19650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "archive_winston_lab_bench_frontend_bolt_on_rationale_1",
-      "community": 262,
+      "community": 217,
       "norm_label": "yang xu's live front end (experiment_1/visualizer) driving the bolt-on agent."
     },
     {
@@ -22808,7 +22808,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "archive_winston_lab_test_bolt_on_testparserandstate",
-      "community": 134,
+      "community": 105,
       "norm_label": "testparserandstate"
     },
     {
@@ -22818,7 +22818,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "archive_winston_lab_test_bolt_on_testparserandstate_test_none_on_template_and_update_state_integration",
-      "community": 134,
+      "community": 105,
       "norm_label": ".test_none_on_template_and_update_state_integration()"
     },
     {
@@ -26458,7 +26458,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelerror_instrumentation",
-      "community": 232,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -26468,7 +26468,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_py_any",
-      "community": 232,
+      "community": 204,
       "norm_label": "any"
     },
     {
@@ -26498,7 +26498,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelcall_instrumentation",
-      "community": 232,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -26508,7 +26508,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelclient",
-      "community": 232,
+      "community": 137,
       "norm_label": "modelclient"
     },
     {
@@ -26518,7 +26518,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelclient_chat_result",
-      "community": 232,
+      "community": 204,
       "norm_label": ".chat_result()"
     },
     {
@@ -26528,7 +26528,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelclient_chat",
-      "community": 232,
+      "community": 204,
       "norm_label": ".chat()"
     },
     {
@@ -26538,7 +26538,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_model_client_modelclient_instrumentation",
-      "community": 232,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -26568,7 +26568,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollama_client.py"
     },
     {
@@ -26578,7 +26578,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaerror",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamaerror"
     },
     {
@@ -26598,7 +26598,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaerror_init",
-      "community": 204,
+      "community": 75,
       "norm_label": ".__init__()"
     },
     {
@@ -26608,7 +26608,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaconfigurationerror",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamaconfigurationerror"
     },
     {
@@ -26618,7 +26618,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamarequesterror",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamarequesterror"
     },
     {
@@ -26628,7 +26628,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamatimeouterror",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamatimeouterror"
     },
     {
@@ -26638,7 +26638,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaresponseerror",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamaresponseerror"
     },
     {
@@ -26648,7 +26648,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamacall",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamacall"
     },
     {
@@ -26658,7 +26658,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "modelcall",
-      "community": 204,
+      "community": 75,
       "norm_label": "modelcall"
     },
     {
@@ -26668,7 +26668,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamacall_instrumentation",
-      "community": 204,
+      "community": 75,
       "norm_label": ".instrumentation()"
     },
     {
@@ -26678,7 +26678,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_py_any",
-      "community": 204,
+      "community": 75,
       "norm_label": "any"
     },
     {
@@ -26688,7 +26688,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_environment_timeout",
-      "community": 204,
+      "community": 75,
       "norm_label": "_environment_timeout()"
     },
     {
@@ -26698,7 +26698,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_environment_host",
-      "community": 204,
+      "community": 75,
       "norm_label": "_environment_host()"
     },
     {
@@ -26708,7 +26708,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_configured_model",
-      "community": 204,
+      "community": 75,
       "norm_label": "_configured_model()"
     },
     {
@@ -26718,7 +26718,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient",
-      "community": 204,
+      "community": 75,
       "norm_label": "ollamaclient"
     },
     {
@@ -26728,7 +26728,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_init",
-      "community": 204,
+      "community": 75,
       "norm_label": ".__init__()"
     },
     {
@@ -26738,7 +26738,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_py_transport",
-      "community": 204,
+      "community": 75,
       "norm_label": "transport"
     },
     {
@@ -26748,7 +26748,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_urlopen_transport",
-      "community": 204,
+      "community": 75,
       "norm_label": "._urlopen_transport()"
     },
     {
@@ -26758,7 +26758,7 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_decode_response",
-      "community": 204,
+      "community": 75,
       "norm_label": "._decode_response()"
     },
     {
@@ -26768,7 +26768,7 @@
       "source_location": "L174",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_is_timeout",
-      "community": 204,
+      "community": 75,
       "norm_label": "._is_timeout()"
     },
     {
@@ -26778,7 +26778,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_py_baseexception",
-      "community": 204,
+      "community": 75,
       "norm_label": "baseexception"
     },
     {
@@ -26788,7 +26788,7 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_record",
-      "community": 204,
+      "community": 75,
       "norm_label": "._record()"
     },
     {
@@ -26798,7 +26798,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_chat_result",
-      "community": 204,
+      "community": 75,
       "norm_label": ".chat_result()"
     },
     {
@@ -26808,7 +26808,7 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_chat",
-      "community": 204,
+      "community": 75,
       "norm_label": ".chat()"
     },
     {
@@ -26818,7 +26818,7 @@
       "source_location": "L277",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_ollamaclient_instrumentation",
-      "community": 204,
+      "community": 75,
       "norm_label": ".instrumentation()"
     },
     {
@@ -26828,7 +26828,7 @@
       "source_location": "L286",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_get_default_ollama_client",
-      "community": 204,
+      "community": 75,
       "norm_label": "get_default_ollama_client()"
     },
     {
@@ -26838,7 +26838,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_1",
-      "community": 204,
+      "community": 75,
       "norm_label": "shared, local-only ollama chat transport for every active llm role."
     },
     {
@@ -26848,7 +26848,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_31",
-      "community": 204,
+      "community": 75,
       "norm_label": "base class for exhausted ollama calls."
     },
     {
@@ -26858,7 +26858,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_49",
-      "community": 204,
+      "community": 75,
       "norm_label": "raised when local model settings are invalid or conflict with legacy settings."
     },
     {
@@ -26868,7 +26868,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_53",
-      "community": 204,
+      "community": 75,
       "norm_label": "raised when all transport attempts fail."
     },
     {
@@ -26878,7 +26878,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_57",
-      "community": 204,
+      "community": 75,
       "norm_label": "raised when the final failed transport attempt is a timeout."
     },
     {
@@ -26888,7 +26888,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_61",
-      "community": 204,
+      "community": 75,
       "norm_label": "raised when ollama repeatedly returns an invalid response."
     },
     {
@@ -26898,7 +26898,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_104",
-      "community": 204,
+      "community": 75,
       "norm_label": "small ollama `/api/chat` client with one retry and structured telemetry."
     },
     {
@@ -26908,7 +26908,7 @@
       "source_location": "L287",
       "_origin": "ast",
       "id": "submission_system_shopping_agent_ollama_client_rationale_287",
-      "community": 204,
+      "community": 75,
       "norm_label": "return the process-wide client used by active local llm roles."
     },
     {
@@ -27088,7 +27088,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint",
-      "community": 28,
+      "community": 253,
       "norm_label": "test_entrypoint.py"
     },
     {
@@ -27098,7 +27098,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint_test_entrypoint_forces_bge_ollama_provider",
-      "community": 28,
+      "community": 253,
       "norm_label": "test_entrypoint_forces_bge_ollama_provider()"
     },
     {
@@ -27108,7 +27108,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint_test_official_constructor_routes_catalog_and_cache",
-      "community": 28,
+      "community": 253,
       "norm_label": "test_official_constructor_routes_catalog_and_cache()"
     },
     {
@@ -27118,7 +27118,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint_py_path",
-      "community": 28,
+      "community": 253,
       "norm_label": "path"
     },
     {
@@ -27128,7 +27128,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint_test_provider_injection_is_rejected",
-      "community": 28,
+      "community": 253,
       "norm_label": "test_provider_injection_is_rejected()"
     },
     {
@@ -27138,7 +27138,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "submission_tests_test_entrypoint_test_required_contract_methods_are_inherited",
-      "community": 28,
+      "community": 253,
       "norm_label": "test_required_contract_methods_are_inherited()"
     },
     {
@@ -27168,7 +27168,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_init",
-      "community": 75,
+      "community": 135,
       "norm_label": "__init__.py"
     },
     {
@@ -27178,7 +27178,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_init_rationale_1",
-      "community": 75,
+      "community": 135,
       "norm_label": "public shopping-agent lifecycle."
     },
     {
@@ -27208,7 +27208,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_experimentconfig",
-      "community": 75,
+      "community": 204,
       "norm_label": "experimentconfig"
     },
     {
@@ -27228,7 +27228,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_experimentconfig_condition_name",
-      "community": 75,
+      "community": 204,
       "norm_label": ".condition_name()"
     },
     {
@@ -27278,7 +27278,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_py_ndarray",
-      "community": 135,
+      "community": 264,
       "norm_label": "ndarray"
     },
     {
@@ -27318,7 +27318,7 @@
       "source_location": "L403",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_denseretrievalresult",
-      "community": 135,
+      "community": 137,
       "norm_label": "denseretrievalresult"
     },
     {
@@ -27368,7 +27368,7 @@
       "source_location": "L477",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_densequerysnapshot_q_m0",
-      "community": 135,
+      "community": 264,
       "norm_label": ".q_m0()"
     },
     {
@@ -27808,7 +27808,7 @@
       "source_location": "L1491",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_can_use_fast_path",
-      "community": 4,
+      "community": 48,
       "norm_label": "._can_use_fast_path()"
     },
     {
@@ -27858,7 +27858,7 @@
       "source_location": "L1655",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_validate_dense_query_embedding",
-      "community": 135,
+      "community": 264,
       "norm_label": "._validate_dense_query_embedding()"
     },
     {
@@ -27878,7 +27878,7 @@
       "source_location": "L1703",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_dense_retrieve_vector",
-      "community": 135,
+      "community": 264,
       "norm_label": ".dense_retrieve_vector()"
     },
     {
@@ -27888,7 +27888,7 @@
       "source_location": "L1737",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_dense_retrieve_text",
-      "community": 135,
+      "community": 264,
       "norm_label": ".dense_retrieve_text()"
     },
     {
@@ -27898,7 +27898,7 @@
       "source_location": "L1764",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_agent_dense_retrieve",
-      "community": 135,
+      "community": 264,
       "norm_label": "._dense_retrieve()"
     },
     {
@@ -27968,7 +27968,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_99",
-      "community": 75,
+      "community": 204,
       "norm_label": "the two ablation factors plus deterministic generation controls."
     },
     {
@@ -28038,7 +28038,7 @@
       "source_location": "L404",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_404",
-      "community": 135,
+      "community": 137,
       "norm_label": "aligned output from the canonical m0 catalogue dot-product scorer."
     },
     {
@@ -28068,7 +28068,7 @@
       "source_location": "L478",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_478",
-      "community": 135,
+      "community": 264,
       "norm_label": "the owned, read-only canonical float32 m0 query."
     },
     {
@@ -28268,7 +28268,7 @@
       "source_location": "L1659",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_1659",
-      "community": 135,
+      "community": 264,
       "norm_label": "return the float32 m0-boundary vector after contract validation.          inpu"
     },
     {
@@ -28288,7 +28288,7 @@
       "source_location": "L1708",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_1708",
-      "community": 135,
+      "community": 264,
       "norm_label": "score a precomputed normalized q against the existing m0 matrix.          this"
     },
     {
@@ -28298,7 +28298,7 @@
       "source_location": "L1742",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_1742",
-      "community": 135,
+      "community": 264,
       "norm_label": "embed text once, then delegate to the canonical vector scorer."
     },
     {
@@ -28308,7 +28308,7 @@
       "source_location": "L1765",
       "_origin": "ast",
       "id": "system_shopping_agent_agent_rationale_1765",
-      "community": 135,
+      "community": 264,
       "norm_label": "compatibility wrapper returning row indices for the current m0 route."
     },
     {
@@ -28668,7 +28668,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "system_shopping_agent_clarification_select_fixed_priority_attributes",
-      "community": 75,
+      "community": 67,
       "norm_label": "select_fixed_priority_attributes()"
     },
     {
@@ -28698,7 +28698,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "system_shopping_agent_clarification_rationale_188",
-      "community": 75,
+      "community": 67,
       "norm_label": "select the first still-unasked attributes in the established intent order."
     },
     {
@@ -28788,7 +28788,7 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "system_shopping_agent_config_memory_store_path",
-      "community": 135,
+      "community": 150,
       "norm_label": "memory_store_path()"
     },
     {
@@ -28798,7 +28798,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_config_py_path",
-      "community": 135,
+      "community": 150,
       "norm_label": "path"
     },
     {
@@ -29058,7 +29058,7 @@
       "source_location": "L256",
       "_origin": "ast",
       "id": "system_shopping_agent_demo_build_parser",
-      "community": 73,
+      "community": 266,
       "norm_label": "build_parser()"
     },
     {
@@ -29068,7 +29068,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_demo_py_argumentparser",
-      "community": 73,
+      "community": 266,
       "norm_label": "argumentparser"
     },
     {
@@ -29398,7 +29398,7 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_openaiembeddingresponseerror",
-      "community": 135,
+      "community": 150,
       "norm_label": "openaiembeddingresponseerror"
     },
     {
@@ -29408,7 +29408,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_openaiembeddingbackend",
-      "community": 135,
+      "community": 150,
       "norm_label": "openaiembeddingbackend"
     },
     {
@@ -29438,7 +29438,7 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_openaiembeddingbackend_urlopen_transport",
-      "community": 135,
+      "community": 150,
       "norm_label": "._urlopen_transport()"
     },
     {
@@ -29568,7 +29568,7 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_305",
-      "community": 135,
+      "community": 150,
       "norm_label": "the endpoint returned malformed, reordered, or incompatible vectors."
     },
     {
@@ -29578,7 +29578,7 @@
       "source_location": "L312",
       "_origin": "ast",
       "id": "system_shopping_agent_embedding_backends_rationale_312",
-      "community": 135,
+      "community": 150,
       "norm_label": "batched, normalized openai embeddings with strict row-order validation."
     },
     {
@@ -29728,7 +29728,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store",
-      "community": 132,
+      "community": 135,
       "norm_label": "memory_store.py"
     },
     {
@@ -29738,7 +29738,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_nonempty",
-      "community": 132,
+      "community": 267,
       "norm_label": "_nonempty()"
     },
     {
@@ -29748,7 +29748,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_sequence",
-      "community": 132,
+      "community": 267,
       "norm_label": "_sequence()"
     },
     {
@@ -29758,7 +29758,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_unit_vector",
-      "community": 132,
+      "community": 267,
       "norm_label": "_unit_vector()"
     },
     {
@@ -29768,7 +29768,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_py_ndarray",
-      "community": 132,
+      "community": 267,
       "norm_label": "ndarray"
     },
     {
@@ -29778,7 +29778,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdatemode",
-      "community": 132,
+      "community": 14,
       "norm_label": "memoryupdatemode"
     },
     {
@@ -29798,7 +29798,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdatepolicy_post_init",
-      "community": 132,
+      "community": 14,
       "norm_label": ".__post_init__()"
     },
     {
@@ -29828,7 +29828,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdateresult",
-      "community": 132,
+      "community": 277,
       "norm_label": "memoryupdateresult"
     },
     {
@@ -29838,7 +29838,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memoryupdateresult_post_init",
-      "community": 132,
+      "community": 277,
       "norm_label": ".__post_init__()"
     },
     {
@@ -29858,7 +29858,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorystate",
-      "community": 132,
+      "community": 267,
       "norm_label": "longtermmemorystate"
     },
     {
@@ -29868,7 +29868,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorystate_post_init",
-      "community": 132,
+      "community": 267,
       "norm_label": ".__post_init__()"
     },
     {
@@ -29878,7 +29878,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_sessioncommit",
-      "community": 132,
+      "community": 259,
       "norm_label": "sessioncommit"
     },
     {
@@ -29888,7 +29888,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_longtermmemorycommit",
-      "community": 132,
+      "community": 256,
       "norm_label": "longtermmemorycommit"
     },
     {
@@ -29898,7 +29898,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot",
-      "community": 132,
+      "community": 269,
       "norm_label": "memorystoresnapshot"
     },
     {
@@ -29908,7 +29908,7 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot_filtered",
-      "community": 132,
+      "community": 267,
       "norm_label": ".filtered()"
     },
     {
@@ -29918,7 +29918,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot_to_payload",
-      "community": 158,
+      "community": 269,
       "norm_label": ".to_payload()"
     },
     {
@@ -29928,7 +29928,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_py_any",
-      "community": 158,
+      "community": 269,
       "norm_label": "any"
     },
     {
@@ -29938,7 +29938,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_memorystoresnapshot_from_payload",
-      "community": 132,
+      "community": 269,
       "norm_label": ".from_payload()"
     },
     {
@@ -29948,7 +29948,7 @@
       "source_location": "L216",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore",
-      "community": 132,
+      "community": 259,
       "norm_label": "inmemoryvectormemorystore"
     },
     {
@@ -29958,7 +29958,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_init",
-      "community": 132,
+      "community": 259,
       "norm_label": ".__init__()"
     },
     {
@@ -29968,7 +29968,7 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_validate_new_session",
-      "community": 132,
+      "community": 267,
       "norm_label": ".validate_new_session()"
     },
     {
@@ -29978,7 +29978,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_begin_session",
-      "community": 132,
+      "community": 267,
       "norm_label": ".begin_session()"
     },
     {
@@ -29988,7 +29988,7 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_get_state",
-      "community": 132,
+      "community": 267,
       "norm_label": ".get_state()"
     },
     {
@@ -29998,7 +29998,7 @@
       "source_location": "L254",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_commit",
-      "community": 132,
+      "community": 267,
       "norm_label": ".commit()"
     },
     {
@@ -30008,7 +30008,7 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_cancel_session",
-      "community": 132,
+      "community": 259,
       "norm_label": ".cancel_session()"
     },
     {
@@ -30018,7 +30018,7 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_commits_for_user",
-      "community": 132,
+      "community": 259,
       "norm_label": ".commits_for_user()"
     },
     {
@@ -30028,7 +30028,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_next_sequence_index",
-      "community": 132,
+      "community": 259,
       "norm_label": ".next_sequence_index()"
     },
     {
@@ -30038,7 +30038,7 @@
       "source_location": "L322",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_describe_user",
-      "community": 132,
+      "community": 269,
       "norm_label": ".describe_user()"
     },
     {
@@ -30048,7 +30048,7 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_export_snapshot",
-      "community": 132,
+      "community": 269,
       "norm_label": ".export_snapshot()"
     },
     {
@@ -30058,7 +30058,7 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_import_snapshot",
-      "community": 158,
+      "community": 269,
       "norm_label": ".import_snapshot()"
     },
     {
@@ -30068,7 +30068,7 @@
       "source_location": "L380",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_clear",
-      "community": 158,
+      "community": 256,
       "norm_label": ".clear()"
     },
     {
@@ -30078,7 +30078,7 @@
       "source_location": "L383",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_inmemoryvectormemorystore_clear_user",
-      "community": 132,
+      "community": 259,
       "norm_label": ".clear_user()"
     },
     {
@@ -30088,7 +30088,7 @@
       "source_location": "L396",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore",
-      "community": 158,
+      "community": 256,
       "norm_label": "jsonfilevectormemorystore"
     },
     {
@@ -30098,7 +30098,7 @@
       "source_location": "L399",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_init",
-      "community": 158,
+      "community": 269,
       "norm_label": ".__init__()"
     },
     {
@@ -30108,7 +30108,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_py_path",
-      "community": 158,
+      "community": 269,
       "norm_label": "path"
     },
     {
@@ -30118,7 +30118,7 @@
       "source_location": "L406",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_persist",
-      "community": 158,
+      "community": 269,
       "norm_label": "._persist()"
     },
     {
@@ -30128,7 +30128,7 @@
       "source_location": "L416",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_transaction",
-      "community": 158,
+      "community": 256,
       "norm_label": "._transaction()"
     },
     {
@@ -30138,7 +30138,7 @@
       "source_location": "L434",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_commit",
-      "community": 158,
+      "community": 256,
       "norm_label": ".commit()"
     },
     {
@@ -30148,7 +30148,7 @@
       "source_location": "L437",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_clear",
-      "community": 158,
+      "community": 256,
       "norm_label": ".clear()"
     },
     {
@@ -30158,7 +30158,7 @@
       "source_location": "L440",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_jsonfilevectormemorystore_clear_user",
-      "community": 158,
+      "community": 256,
       "norm_label": ".clear_user()"
     },
     {
@@ -30168,7 +30168,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_1",
-      "community": 132,
+      "community": 135,
       "norm_label": "versioned user-isolated storage for one normalized vector per user."
     },
     {
@@ -30178,7 +30178,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_41",
-      "community": 132,
+      "community": 14,
       "norm_label": "supported one-vector long-term-memory update strategies."
     },
     {
@@ -30198,7 +30198,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_88",
-      "community": 132,
+      "community": 277,
       "norm_label": "vector result and vector-free diagnostics for one evidence observation."
     },
     {
@@ -30218,7 +30218,7 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_217",
-      "community": 132,
+      "community": 259,
       "norm_label": "user-isolated vector states with strict monotonic session chronology."
     },
     {
@@ -30228,7 +30228,7 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_305",
-      "community": 132,
+      "community": 259,
       "norm_label": "release an active session without recording a longitudinal commit."
     },
     {
@@ -30238,7 +30238,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_317",
-      "community": 132,
+      "community": 259,
       "norm_label": "return the next valid longitudinal sequence for ``user_id``."
     },
     {
@@ -30248,7 +30248,7 @@
       "source_location": "L323",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_323",
-      "community": 132,
+      "community": 269,
       "norm_label": "return vector-free state suitable for a demo/debug display."
     },
     {
@@ -30258,7 +30258,7 @@
       "source_location": "L384",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_384",
-      "community": 132,
+      "community": 259,
       "norm_label": "reset exactly one user without touching any other user's memory."
     },
     {
@@ -30268,7 +30268,7 @@
       "source_location": "L397",
       "_origin": "ast",
       "id": "system_shopping_agent_memory_store_rationale_397",
-      "community": 158,
+      "community": 256,
       "norm_label": "the existing store semantics with an atomic json snapshot on commit."
     },
     {
@@ -30308,7 +30308,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelerror_instrumentation",
-      "community": 150,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -30318,7 +30318,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_py_any",
-      "community": 150,
+      "community": 204,
       "norm_label": "any"
     },
     {
@@ -30348,7 +30348,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelcall_instrumentation",
-      "community": 150,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -30358,7 +30358,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelclient",
-      "community": 150,
+      "community": 204,
       "norm_label": "modelclient"
     },
     {
@@ -30368,7 +30368,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelclient_chat_result",
-      "community": 150,
+      "community": 204,
       "norm_label": ".chat_result()"
     },
     {
@@ -30378,7 +30378,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelclient_chat",
-      "community": 150,
+      "community": 204,
       "norm_label": ".chat()"
     },
     {
@@ -30388,7 +30388,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "system_shopping_agent_model_client_modelclient_instrumentation",
-      "community": 150,
+      "community": 204,
       "norm_label": ".instrumentation()"
     },
     {
@@ -31328,7 +31328,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_ablation_experiment.py"
     },
     {
@@ -31338,7 +31338,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient",
-      "community": 75,
+      "community": 67,
       "norm_label": "recordingclient"
     },
     {
@@ -31348,7 +31348,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_init",
-      "community": 75,
+      "community": 67,
       "norm_label": ".__init__()"
     },
     {
@@ -31358,7 +31358,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat_result",
-      "community": 75,
+      "community": 67,
       "norm_label": ".chat_result()"
     },
     {
@@ -31368,7 +31368,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_chat",
-      "community": 75,
+      "community": 67,
       "norm_label": ".chat()"
     },
     {
@@ -31378,7 +31378,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_recordingclient_instrumentation",
-      "community": 75,
+      "community": 67,
       "norm_label": ".instrumentation()"
     },
     {
@@ -31388,7 +31388,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_production_experiment_defaults_are_unchanged",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_production_experiment_defaults_are_unchanged()"
     },
     {
@@ -31398,7 +31398,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_four_conditions_vary_only_the_two_registered_factors",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_four_conditions_vary_only_the_two_registered_factors()"
     },
     {
@@ -31408,7 +31408,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_fixed_priority_is_deterministic_and_intent_specific",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_fixed_priority_is_deterministic_and_intent_specific()"
     },
     {
@@ -31418,7 +31418,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_shadow_memory_is_loaded_but_never_passed_to_score_catalog",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_shadow_memory_is_loaded_but_never_passed_to_score_catalog()"
     },
     {
@@ -31428,7 +31428,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_temperature_and_seed_reach_agent_and_shopper_calls",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_temperature_and_seed_reach_agent_and_shopper_calls()"
     },
     {
@@ -31438,7 +31438,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_row",
-      "community": 75,
+      "community": 67,
       "norm_label": "_row()"
     },
     {
@@ -31448,7 +31448,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ablation_experiment_test_paired_deltas_and_factorial_interaction_on_known_results",
-      "community": 75,
+      "community": 67,
       "norm_label": "test_paired_deltas_and_factorial_interaction_on_known_results()"
     },
     {
@@ -32068,7 +32068,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke",
-      "community": 95,
+      "community": 256,
       "norm_label": "test_demo_smoke.py"
     },
     {
@@ -32078,7 +32078,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend",
-      "community": 95,
+      "community": 256,
       "norm_label": "offlinebgebackend"
     },
     {
@@ -32088,7 +32088,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_embed_catalog",
-      "community": 95,
+      "community": 256,
       "norm_label": ".embed_catalog()"
     },
     {
@@ -32098,7 +32098,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_embed_query",
-      "community": 95,
+      "community": 256,
       "norm_label": ".embed_query()"
     },
     {
@@ -32108,7 +32108,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_py_ndarray",
-      "community": 95,
+      "community": 256,
       "norm_label": "ndarray"
     },
     {
@@ -32118,7 +32118,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_offlinebgebackend_usage_snapshot",
-      "community": 95,
+      "community": 256,
       "norm_label": ".usage_snapshot()"
     },
     {
@@ -32128,7 +32128,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_test_complete_demo_flow_uses_cache_persistence_isolation_and_reset",
-      "community": 95,
+      "community": 256,
       "norm_label": "test_complete_demo_flow_uses_cache_persistence_isolation_and_reset()"
     },
     {
@@ -32138,7 +32138,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_demo_smoke_rationale_1",
-      "community": 95,
+      "community": 256,
       "norm_label": "fast offline end-to-end check of the real 50,000-row demo path."
     },
     {
@@ -32368,7 +32368,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_embedding_mode",
-      "community": 73,
+      "community": 266,
       "norm_label": "test_embedding_mode.py"
     },
     {
@@ -32398,7 +32398,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_embedding_mode_test_cli_and_server_configuration_have_no_embedding_mode_switch",
-      "community": 73,
+      "community": 266,
       "norm_label": "test_cli_and_server_configuration_have_no_embedding_mode_switch()"
     },
     {
@@ -32478,7 +32478,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_ollama_client_test_state_editor_assistant_and_shopper_share_the_same_model_and_transport",
-      "community": 75,
+      "community": 204,
       "norm_label": "test_state_editor_assistant_and_shopper_share_the_same_model_and_transport()"
     },
     {
@@ -32498,7 +32498,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_openai_mode.py"
     },
     {
@@ -32508,7 +32508,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_config",
-      "community": 135,
+      "community": 150,
       "norm_label": "config()"
     },
     {
@@ -32518,7 +32518,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_py_runtimeconfig",
-      "community": 135,
+      "community": 150,
       "norm_label": "runtimeconfig"
     },
     {
@@ -32528,7 +32528,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_factory_selects_both_providers_without_network",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_factory_selects_both_providers_without_network()"
     },
     {
@@ -32538,7 +32538,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_openai_response_payload_structured_output_retry_and_usage",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_openai_response_payload_structured_output_retry_and_usage()"
     },
     {
@@ -32548,7 +32548,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_openai_invalid_output_is_typed",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_openai_invalid_output_is_typed()"
     },
     {
@@ -32558,7 +32558,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_openai_embeddings_batch_order_normalization_usage_and_identity",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_openai_embeddings_batch_order_normalization_usage_and_identity()"
     },
     {
@@ -32568,7 +32568,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_openai_embeddings_reject_reordered_rows_and_memory_isolation",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_openai_embeddings_reject_reordered_rows_and_memory_isolation()"
     },
     {
@@ -32578,7 +32578,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_openai_mode_test_normal_openai_startup_never_builds_missing_cache",
-      "community": 135,
+      "community": 150,
       "norm_label": "test_normal_openai_startup_never_builds_missing_cache()"
     },
     {
@@ -32768,7 +32768,7 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_stability_regressions_test_json_commit_persistence_failure_rolls_back_and_is_retryable",
-      "community": 158,
+      "community": 256,
       "norm_label": "test_json_commit_persistence_failure_rolls_back_and_is_retryable()"
     },
     {
@@ -32778,7 +32778,7 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_stability_regressions_test_json_reset_persistence_failure_restores_memory",
-      "community": 158,
+      "community": 256,
       "norm_label": "test_json_reset_persistence_failure_restores_memory()"
     },
     {
@@ -32818,7 +32818,7 @@
       "source_location": "L213",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_stability_regressions_test_dashboard_rejects_script_image_urls_and_catalog_reads_do_not_take_lifecycle_lock",
-      "community": 73,
+      "community": 158,
       "norm_label": "test_dashboard_rejects_script_image_urls_and_catalog_reads_do_not_take_lifecycle_lock()"
     },
     {
@@ -33188,7 +33188,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_redundant_evidence_increments_count_without_geometric_change",
-      "community": 132,
+      "community": 259,
       "norm_label": "test_redundant_evidence_increments_count_without_geometric_change()"
     },
     {
@@ -33208,7 +33208,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_store_chronology_space_and_snapshot_contracts",
-      "community": 132,
+      "community": 259,
       "norm_label": "test_store_chronology_space_and_snapshot_contracts()"
     },
     {
@@ -33218,7 +33218,7 @@
       "source_location": "L184",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_snapshot_and_state_vectors_are_immutable",
-      "community": 132,
+      "community": 259,
       "norm_label": "test_snapshot_and_state_vectors_are_immutable()"
     },
     {
@@ -33228,7 +33228,7 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_filtered_snapshot_restores_prefix_vector",
-      "community": 132,
+      "community": 259,
       "norm_label": "test_filtered_snapshot_restores_prefix_vector()"
     },
     {
@@ -33238,7 +33238,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_failed_snapshot_import_leaves_store_empty",
-      "community": 132,
+      "community": 259,
       "norm_label": "test_failed_snapshot_import_leaves_store_empty()"
     },
     {
@@ -33258,7 +33258,7 @@
       "source_location": "L229",
       "_origin": "ast",
       "id": "system_shopping_agent_tests_test_vector_memory_test_json_store_persists_isolates_and_resets_users",
-      "community": 158,
+      "community": 132,
       "norm_label": "test_json_store_persists_isolates_and_resets_users()"
     },
     {
@@ -33378,7 +33378,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server",
-      "community": 73,
+      "community": 266,
       "norm_label": "server.py"
     },
     {
@@ -33388,7 +33388,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_synchronized",
-      "community": 73,
+      "community": 266,
       "norm_label": "_synchronized()"
     },
     {
@@ -33398,7 +33398,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_whole_keyword",
-      "community": 73,
+      "community": 266,
       "norm_label": "_whole_keyword()"
     },
     {
@@ -33408,7 +33408,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_catalog_family",
-      "community": 73,
+      "community": 266,
       "norm_label": "_catalog_family()"
     },
     {
@@ -33418,7 +33418,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_safe_image_url",
-      "community": 73,
+      "community": 158,
       "norm_label": "_safe_image_url()"
     },
     {
@@ -33468,7 +33468,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_browserapplication_init",
-      "community": 73,
+      "community": 257,
       "norm_label": ".__init__()"
     },
     {
@@ -33478,7 +33478,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_py_path",
-      "community": 73,
+      "community": 257,
       "norm_label": "path"
     },
     {
@@ -33488,7 +33488,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_py_agent",
-      "community": 73,
+      "community": 257,
       "norm_label": "agent"
     },
     {
@@ -33498,7 +33498,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_py_jsonfilevectormemorystore",
-      "community": 73,
+      "community": 257,
       "norm_label": "jsonfilevectormemorystore"
     },
     {
@@ -33778,7 +33778,7 @@
       "source_location": "L527",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_run_server",
-      "community": 73,
+      "community": 266,
       "norm_label": "run_server()"
     },
     {
@@ -33788,7 +33788,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_rationale_1",
-      "community": 73,
+      "community": 266,
       "norm_label": "dashboard adapter for the canonical longitudinal shopping agent."
     },
     {
@@ -33798,7 +33798,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_server_rationale_72",
-      "community": 73,
+      "community": 266,
       "norm_label": "assign exactly one dashboard family from leaf-to-root category components."
     },
     {
@@ -33818,7 +33818,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator",
-      "community": 20,
+      "community": 257,
       "norm_label": "simulator.py"
     },
     {
@@ -33828,7 +33828,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_flatten",
-      "community": 20,
+      "community": 257,
       "norm_label": "_flatten()"
     },
     {
@@ -33838,7 +33838,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_clean",
-      "community": 20,
+      "community": 257,
       "norm_label": "_clean()"
     },
     {
@@ -33848,7 +33848,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_searchable_text",
-      "community": 20,
+      "community": 257,
       "norm_label": "searchable_text()"
     },
     {
@@ -33858,7 +33858,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_any",
-      "community": 20,
+      "community": 257,
       "norm_label": "any"
     },
     {
@@ -33868,7 +33868,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_intent_card",
-      "community": 20,
+      "community": 257,
       "norm_label": "intent_card()"
     },
     {
@@ -33878,7 +33878,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_behavior_for",
-      "community": 20,
+      "community": 257,
       "norm_label": "behavior_for()"
     },
     {
@@ -33888,7 +33888,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_random",
-      "community": 20,
+      "community": 257,
       "norm_label": "random"
     },
     {
@@ -33898,7 +33898,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_materialize_hidden_fields",
-      "community": 20,
+      "community": 257,
       "norm_label": "materialize_hidden_fields()"
     },
     {
@@ -33918,7 +33918,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_make_system_prompt",
-      "community": 20,
+      "community": 257,
       "norm_label": "make_system_prompt()"
     },
     {
@@ -33928,7 +33928,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_call_shopper_llm",
-      "community": 75,
+      "community": 204,
       "norm_label": "call_shopper_llm()"
     },
     {
@@ -33938,7 +33938,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_modelclient",
-      "community": 75,
+      "community": 204,
       "norm_label": "modelclient"
     },
     {
@@ -33948,7 +33948,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_load_samples",
-      "community": 20,
+      "community": 257,
       "norm_label": "load_samples()"
     },
     {
@@ -33958,7 +33958,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_py_path",
-      "community": 20,
+      "community": 257,
       "norm_label": "path"
     },
     {
@@ -33968,7 +33968,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_rationale_1",
-      "community": 20,
+      "community": 257,
       "norm_label": "self-contained public-sample and shopper-simulation helpers for the dashboard."
     },
     {
@@ -33978,7 +33978,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "system_shopping_agent_visualizer_simulator_rationale_107",
-      "community": 75,
+      "community": 204,
       "norm_label": "generate shopper text through the same local model used by the agent."
     },
     {
@@ -34188,7 +34188,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_preference_tags",
-      "community": 42,
+      "community": 31,
       "norm_label": "preference_tags"
     },
     {
@@ -34198,7 +34198,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_preference_tags_type",
-      "community": 42,
+      "community": 31,
       "norm_label": "type"
     },
     {
@@ -34208,7 +34208,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_preference_tags_items",
-      "community": 42,
+      "community": 31,
       "norm_label": "items"
     },
     {
@@ -34218,7 +34218,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_items_type",
-      "community": 42,
+      "community": 31,
       "norm_label": "type"
     },
     {
@@ -34268,7 +34268,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request",
-      "community": 43,
+      "community": 54,
       "norm_label": "turn_request"
     },
     {
@@ -34278,7 +34278,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_type",
-      "community": 43,
+      "community": 54,
       "norm_label": "type"
     },
     {
@@ -34288,7 +34288,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_required",
-      "community": 43,
+      "community": 54,
       "norm_label": "required"
     },
     {
@@ -34388,7 +34388,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_request_additionalproperties",
-      "community": 43,
+      "community": 54,
       "norm_label": "additionalproperties"
     },
     {
@@ -34398,7 +34398,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response",
-      "community": 54,
+      "community": 61,
       "norm_label": "turn_response"
     },
     {
@@ -34408,7 +34408,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_type",
-      "community": 54,
+      "community": 61,
       "norm_label": "type"
     },
     {
@@ -34418,7 +34418,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_required",
-      "community": 54,
+      "community": 61,
       "norm_label": "required"
     },
     {
@@ -34538,7 +34538,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_items_properties",
-      "community": 31,
+      "community": 273,
       "norm_label": "properties"
     },
     {
@@ -34548,7 +34548,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_parent_asin",
-      "community": 31,
+      "community": 273,
       "norm_label": "parent_asin"
     },
     {
@@ -34558,7 +34558,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_parent_asin_type",
-      "community": 31,
+      "community": 273,
       "norm_label": "type"
     },
     {
@@ -34568,7 +34568,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_parent_asin_minlength",
-      "community": 31,
+      "community": 273,
       "norm_label": "minlength"
     },
     {
@@ -34578,7 +34578,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_score",
-      "community": 31,
+      "community": 273,
       "norm_label": "score"
     },
     {
@@ -34588,7 +34588,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_score_type",
-      "community": 31,
+      "community": 273,
       "norm_label": "type"
     },
     {
@@ -34608,7 +34608,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_properties_usage",
-      "community": 61,
+      "community": 55,
       "norm_label": "usage"
     },
     {
@@ -34618,7 +34618,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_type",
-      "community": 61,
+      "community": 55,
       "norm_label": "type"
     },
     {
@@ -34628,7 +34628,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_required",
-      "community": 61,
+      "community": 55,
       "norm_label": "required"
     },
     {
@@ -34708,7 +34708,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_usage_additionalproperties",
-      "community": 61,
+      "community": 55,
       "norm_label": "additionalproperties"
     },
     {
@@ -34718,7 +34718,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_docs_agent_api_contract_turn_response_additionalproperties",
-      "community": 54,
+      "community": 61,
       "norm_label": "additionalproperties"
     },
     {
@@ -34968,7 +34968,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent",
-      "community": 91,
+      "community": 253,
       "norm_label": "agent.py"
     },
     {
@@ -34978,7 +34978,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_text",
-      "community": 91,
+      "community": 253,
       "norm_label": "_text()"
     },
     {
@@ -34988,7 +34988,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_terms",
-      "community": 91,
+      "community": 253,
       "norm_label": "_terms()"
     },
     {
@@ -34998,7 +34998,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent",
-      "community": 91,
+      "community": 253,
       "norm_label": "agent"
     },
     {
@@ -35008,7 +35008,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_init",
-      "community": 91,
+      "community": 253,
       "norm_label": ".__init__()"
     },
     {
@@ -35018,7 +35018,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_py_path",
-      "community": 91,
+      "community": 253,
       "norm_label": "path"
     },
     {
@@ -35028,7 +35028,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_build_index",
-      "community": 91,
+      "community": 253,
       "norm_label": "._build_index()"
     },
     {
@@ -35038,7 +35038,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_reset",
-      "community": 91,
+      "community": 253,
       "norm_label": ".reset()"
     },
     {
@@ -35048,7 +35048,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_agent_respond",
-      "community": 91,
+      "community": 253,
       "norm_label": ".respond()"
     },
     {
@@ -35058,7 +35058,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_participant_kit_starter_agent_rationale_36",
-      "community": 91,
+      "community": 253,
       "norm_label": "editable weak baseline: stateless bm25 retrieval with no llm dependency."
     },
     {
@@ -35218,7 +35218,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_reset_request_properties",
-      "community": 65,
+      "community": 271,
       "norm_label": "properties"
     },
     {
@@ -35228,7 +35228,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_session_id",
-      "community": 65,
+      "community": 271,
       "norm_label": "session_id"
     },
     {
@@ -35238,7 +35238,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_session_id_type",
-      "community": 65,
+      "community": 271,
       "norm_label": "type"
     },
     {
@@ -35248,7 +35248,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_session_id_minlength",
-      "community": 65,
+      "community": 271,
       "norm_label": "minlength"
     },
     {
@@ -35258,7 +35258,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_properties_user_profile",
-      "community": 41,
+      "community": 271,
       "norm_label": "user_profile"
     },
     {
@@ -35268,7 +35268,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_type",
-      "community": 41,
+      "community": 271,
       "norm_label": "type"
     },
     {
@@ -35278,7 +35278,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_required",
-      "community": 41,
+      "community": 271,
       "norm_label": "required"
     },
     {
@@ -35418,7 +35418,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "techjam_conversational_search_docs_agent_api_contract_user_profile_additionalproperties",
-      "community": 41,
+      "community": 271,
       "norm_label": "additionalproperties"
     },
     {
@@ -36138,7 +36138,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_config",
-      "community": 7,
+      "community": 105,
       "norm_label": "config.py"
     },
     {
@@ -36168,7 +36168,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_config_memory_config_for_mode",
-      "community": 7,
+      "community": 105,
       "norm_label": "memory_config_for_mode()"
     },
     {
@@ -36178,7 +36178,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_config_rationale_1",
-      "community": 7,
+      "community": 105,
       "norm_label": "configuration for the fast/slow longitudinal-memory baseline."
     },
     {
@@ -36198,7 +36198,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_config_rationale_37",
-      "community": 7,
+      "community": 105,
       "norm_label": "return the m0 (write-only) or m1 (read/write) baseline config."
     },
     {
@@ -36238,7 +36238,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_embeddingprovider",
-      "community": 7,
+      "community": 175,
       "norm_label": "embeddingprovider"
     },
     {
@@ -36248,7 +36248,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_embeddingprovider_embed",
-      "community": 7,
+      "community": 175,
       "norm_label": ".embed()"
     },
     {
@@ -36408,7 +36408,7 @@
       "source_location": "L210",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_embeddingservice",
-      "community": 7,
+      "community": 175,
       "norm_label": "embeddingservice"
     },
     {
@@ -36428,7 +36428,7 @@
       "source_location": "L237",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_embeddingservice_space_id",
-      "community": 7,
+      "community": 175,
       "norm_label": ".space_id()"
     },
     {
@@ -36458,7 +36458,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_rationale_40",
-      "community": 7,
+      "community": 175,
       "norm_label": "return one embedding row for every input text."
     },
     {
@@ -36498,7 +36498,7 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_embeddings_rationale_211",
-      "community": 7,
+      "community": 175,
       "norm_label": "embeds completed episodes and exposes compatible cached products."
     },
     {
@@ -36518,7 +36518,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory",
-      "community": 134,
+      "community": 105,
       "norm_label": "fast_memory.py"
     },
     {
@@ -36548,7 +36548,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_classify_constraint",
-      "community": 134,
+      "community": 105,
       "norm_label": "classify_constraint()"
     },
     {
@@ -36568,7 +36568,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_semanticparser",
-      "community": 145,
+      "community": 105,
       "norm_label": "semanticparser"
     },
     {
@@ -36618,7 +36618,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_stateupdater_init",
-      "community": 134,
+      "community": 105,
       "norm_label": ".__init__()"
     },
     {
@@ -36718,7 +36718,7 @@
       "source_location": "L418",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_override_intent",
-      "community": 134,
+      "community": 105,
       "norm_label": "override_intent()"
     },
     {
@@ -36728,7 +36728,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_rationale_1",
-      "community": 134,
+      "community": 105,
       "norm_label": "fast memory state and deterministic observable-message parsing.  the organizer"
     },
     {
@@ -36768,7 +36768,7 @@
       "source_location": "L425",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_fast_memory_rationale_425",
-      "community": 134,
+      "community": 105,
       "norm_label": "apply an explicit upstream topic/intent override."
     },
     {
@@ -36788,7 +36788,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem",
-      "community": 138,
+      "community": 175,
       "norm_label": "memorysystem"
     },
     {
@@ -36798,7 +36798,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_init",
-      "community": 7,
+      "community": 175,
       "norm_label": ".__init__()"
     },
     {
@@ -36808,7 +36808,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_path",
-      "community": 7,
+      "community": 175,
       "norm_label": "path"
     },
     {
@@ -36828,7 +36828,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_py_ndarray",
-      "community": 7,
+      "community": 175,
       "norm_label": "ndarray"
     },
     {
@@ -36848,7 +36848,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_update_session",
-      "community": 145,
+      "community": 175,
       "norm_label": ".update_session()"
     },
     {
@@ -36858,7 +36858,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_override_intent",
-      "community": 138,
+      "community": 175,
       "norm_label": ".override_intent()"
     },
     {
@@ -36868,7 +36868,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_rerank_candidates",
-      "community": 105,
+      "community": 260,
       "norm_label": ".rerank_candidates()"
     },
     {
@@ -36878,7 +36878,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_end_session",
-      "community": 105,
+      "community": 175,
       "norm_label": ".end_session()"
     },
     {
@@ -36888,7 +36888,7 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_memorysystem_get_debug_trace",
-      "community": 138,
+      "community": 175,
       "norm_label": ".get_debug_trace()"
     },
     {
@@ -36908,7 +36908,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_rationale_20",
-      "community": 138,
+      "community": 175,
       "norm_label": "own active fast memory and completed per-user slow memory episodes."
     },
     {
@@ -36928,7 +36928,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_rationale_109",
-      "community": 105,
+      "community": 260,
       "norm_label": "optionally apply the one and only slow memory rerank."
     },
     {
@@ -36938,7 +36938,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_integration_rationale_173",
-      "community": 105,
+      "community": 175,
       "norm_label": "distill, embed once, and commit; lifecycle outcomes are ignored."
     },
     {
@@ -37058,7 +37058,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_slow_memory_aggregate_slow_vector",
-      "community": 105,
+      "community": 260,
       "norm_label": "aggregate_slow_vector()"
     },
     {
@@ -37068,7 +37068,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_slow_memory_py_ndarray",
-      "community": 105,
+      "community": 260,
       "norm_label": "ndarray"
     },
     {
@@ -37078,7 +37078,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_slow_memory_rerank_with_slow_memory",
-      "community": 105,
+      "community": 260,
       "norm_label": "rerank_with_slow_memory()"
     },
     {
@@ -37108,7 +37108,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_slow_memory_rationale_37",
-      "community": 105,
+      "community": 260,
       "norm_label": "return the normalized exponentially weighted visible history vector."
     },
     {
@@ -37118,7 +37118,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_slow_memory_rationale_77",
-      "community": 105,
+      "community": 260,
       "norm_label": "apply reciprocal baseline rank plus cosine slow memory affinity."
     },
     {
@@ -37128,7 +37128,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store",
-      "community": 105,
+      "community": 262,
       "norm_label": "store.py"
     },
     {
@@ -37138,7 +37138,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_activesession",
-      "community": 105,
+      "community": 262,
       "norm_label": "activesession"
     },
     {
@@ -37148,7 +37148,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore",
-      "community": 105,
+      "community": 262,
       "norm_label": "inmemorymemorystore"
     },
     {
@@ -37158,7 +37158,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_init",
-      "community": 105,
+      "community": 262,
       "norm_label": ".__init__()"
     },
     {
@@ -37168,7 +37168,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_begin_session",
-      "community": 105,
+      "community": 262,
       "norm_label": ".begin_session()"
     },
     {
@@ -37178,7 +37178,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_active_session",
-      "community": 105,
+      "community": 262,
       "norm_label": ".active_session()"
     },
     {
@@ -37188,7 +37188,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_visible_episodes",
-      "community": 105,
+      "community": 262,
       "norm_label": ".visible_episodes()"
     },
     {
@@ -37198,7 +37198,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_commit",
-      "community": 105,
+      "community": 262,
       "norm_label": ".commit()"
     },
     {
@@ -37208,7 +37208,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_episodes_for_user",
-      "community": 105,
+      "community": 262,
       "norm_label": ".episodes_for_user()"
     },
     {
@@ -37218,7 +37218,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_inmemorymemorystore_session_user",
-      "community": 105,
+      "community": 262,
       "norm_label": ".session_user()"
     },
     {
@@ -37228,7 +37228,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_rationale_1",
-      "community": 105,
+      "community": 262,
       "norm_label": "process-lifetime slow memory storage with chronology and leakage guards."
     },
     {
@@ -37238,7 +37238,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_store_rationale_20",
-      "community": 105,
+      "community": 262,
       "norm_label": "a deterministic store partitioned solely by stable ``user_id``."
     },
     {
@@ -37548,7 +37548,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_integration",
-      "community": 138,
+      "community": 253,
       "norm_label": "test_integration.py"
     },
     {
@@ -37728,7 +37728,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_integration_integrationtests_test_agent_rejects_ambiguous_or_legacy_configuration",
-      "community": 138,
+      "community": 7,
       "norm_label": ".test_agent_rejects_ambiguous_or_legacy_configuration()"
     },
     {
@@ -37738,7 +37738,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory",
-      "community": 105,
+      "community": 260,
       "norm_label": "test_slow_memory.py"
     },
     {
@@ -37748,7 +37748,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_episode",
-      "community": 105,
+      "community": 260,
       "norm_label": "episode()"
     },
     {
@@ -37758,7 +37758,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests",
-      "community": 105,
+      "community": 260,
       "norm_label": "slowmemorytests"
     },
     {
@@ -37768,7 +37768,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_summary_has_fixed_group_order_and_typed_facts",
-      "community": 134,
+      "community": 105,
       "norm_label": ".test_summary_has_fixed_group_order_and_typed_facts()"
     },
     {
@@ -37778,7 +37778,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_no_history_returns_none",
-      "community": 105,
+      "community": 260,
       "norm_label": ".test_no_history_returns_none()"
     },
     {
@@ -37788,7 +37788,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_one_episode_is_normalized",
-      "community": 105,
+      "community": 260,
       "norm_label": ".test_one_episode_is_normalized()"
     },
     {
@@ -37798,7 +37798,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_multiple_episodes_use_exponential_age_and_newer_has_more_influence",
-      "community": 105,
+      "community": 260,
       "norm_label": ".test_multiple_episodes_use_exponential_age_and_newer_has_more_influence()"
     },
     {
@@ -37808,7 +37808,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_user_sequence_and_space_filters",
-      "community": 105,
+      "community": 260,
       "norm_label": ".test_user_sequence_and_space_filters()"
     },
     {
@@ -37818,7 +37818,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_tests_test_slow_memory_slowmemorytests_test_rerank_uses_one_based_baseline_rank_and_deterministic_ties",
-      "community": 105,
+      "community": 260,
       "norm_label": ".test_rerank_uses_one_based_baseline_rank_and_deterministic_ties()"
     },
     {
@@ -37838,7 +37838,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_constraintkind",
-      "community": 134,
+      "community": 105,
       "norm_label": "constraintkind"
     },
     {
@@ -37848,7 +37848,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_typedconstraint",
-      "community": 134,
+      "community": 105,
       "norm_label": "typedconstraint"
     },
     {
@@ -37858,7 +37858,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate",
-      "community": 134,
+      "community": 105,
       "norm_label": "fastmemorystate"
     },
     {
@@ -37868,7 +37868,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_active_constraints",
-      "community": 134,
+      "community": 105,
       "norm_label": ".active_constraints()"
     },
     {
@@ -37878,7 +37878,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_constraint_values",
-      "community": 134,
+      "community": 105,
       "norm_label": ".constraint_values()"
     },
     {
@@ -37888,7 +37888,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_phrases",
-      "community": 134,
+      "community": 105,
       "norm_label": ".phrases()"
     },
     {
@@ -37898,7 +37898,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_query_text",
-      "community": 134,
+      "community": 105,
       "norm_label": ".query_text()"
     },
     {
@@ -37908,7 +37908,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_constraints_by_kind",
-      "community": 134,
+      "community": 105,
       "norm_label": ".constraints_by_kind()"
     },
     {
@@ -37918,7 +37918,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_fastmemorystate_facts",
-      "community": 134,
+      "community": 105,
       "norm_label": ".facts()"
     },
     {
@@ -37928,7 +37928,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_slowmemoryepisode",
-      "community": 105,
+      "community": 262,
       "norm_label": "slowmemoryepisode"
     },
     {
@@ -37968,7 +37968,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_rationale_38",
-      "community": 134,
+      "community": 105,
       "norm_label": "observable, structured state for one active conversation."
     },
     {
@@ -37978,7 +37978,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "techjam_conversational_search_memory_types_rationale_89",
-      "community": 134,
+      "community": 105,
       "norm_label": "return positive and negative facts in a typed slot."
     },
     {
@@ -53308,17 +53308,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "archive/winston/lab/bench/frontend_bolt_on.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "archive_winston_lab_bench_frontend_bolt_on",
-      "target": "archive_legacy_hybrid_agent_visualizer_server",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "indirect_call",
       "context": "argument",
       "confidence": "INFERRED",
@@ -60892,7 +60881,7 @@
       "source_location": "L38",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_experiments_qlmp_component_eval",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -60903,7 +60892,7 @@
       "source_location": "L39",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_experiments_qlmp_component_eval",
-      "target": "submission_system_shopping_agent_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -63080,7 +63069,7 @@
       "source_location": "L19",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_experiments_run_b0_shadow_validation",
-      "target": "submission_system_shopping_agent_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -64242,7 +64231,7 @@
       "source_location": "L37",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_integration_qlmp_integration",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -67068,72 +67057,6 @@
       "source_location": "L10",
       "weight": 1.0,
       "source": "archive_legacy_qlmp_library_steering",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "submission_system_shopping_agent_agent",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/system/shopping_agent/runtime.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "submission_system_shopping_agent_runtime",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/system/shopping_agent/vector_memory.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "submission_system_shopping_agent_vector_memory",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/runtime.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "system_shopping_agent_runtime",
-      "target": "archive_legacy_qlmp_library_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/vector_memory.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "system_shopping_agent_vector_memory",
       "target": "archive_legacy_qlmp_library_config",
       "confidence_score": 1.0
     },
@@ -71644,7 +71567,7 @@
       "source_location": "L45",
       "weight": 1.0,
       "source": "archive_research_evaluation_embedding_and_baselines_scripts_compare_embeddings",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -72572,7 +72495,7 @@
       "source_location": "L39",
       "weight": 1.0,
       "source": "archive_research_evaluation_embedding_and_baselines_scripts_run_m0",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -72933,7 +72856,7 @@
       "source_location": "L14",
       "weight": 1.0,
       "source": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_bge",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -73047,7 +72970,7 @@
       "source_location": "L13",
       "weight": 1.0,
       "source": "archive_research_evaluation_embedding_and_baselines_wrappers_agent_openai",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -77775,7 +77698,7 @@
       "source_location": "L43",
       "weight": 1.0,
       "source": "archive_research_evaluation_memory_scripts_run_longitudinal_eval",
-      "target": "submission_system_shopping_agent_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -78892,6 +78815,72 @@
       "source_location": "L25",
       "weight": 1.0,
       "source": "archive_research_evaluation_retrieval_experiments_run_all",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/agent.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_agent",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/runtime.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_runtime",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/vector_memory.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_vector_memory",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/runtime.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "system_shopping_agent_runtime",
+      "target": "archive_research_evaluation_retrieval_experiments_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/vector_memory.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "system_shopping_agent_vector_memory",
       "target": "archive_research_evaluation_retrieval_experiments_config",
       "confidence_score": 1.0
     },
@@ -102861,6 +102850,17 @@
       "target": "archive_winston_lab_bench_covariates_load_all"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "archive/winston/lab/bench/frontend_bolt_on.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "archive_winston_lab_bench_frontend_bolt_on",
+      "target": "system_shopping_agent_visualizer_server",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "archive/winston/lab/bench/frontend_bolt_on.py",
@@ -104051,7 +104051,7 @@
       "source_location": "L28",
       "weight": 1.0,
       "source": "archive_winston_lab_bench_plug_check",
-      "target": "submission_starter_agent",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
       "confidence_score": 1.0
     },
     {
@@ -110373,50 +110373,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/tests/test_entrypoint.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "submission_tests_test_entrypoint",
-      "target": "submission_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_evaluator_local_evaluator",
-      "target": "submission_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_memory_tests_test_integration",
-      "target": "submission_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
-      "target": "submission_starter_agent",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -110609,10 +110565,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L36",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_clarification",
+      "target": "system_shopping_agent_clarification",
       "confidence_score": 1.0
     },
     {
@@ -110620,10 +110576,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L14",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_embedding_backends",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -110631,10 +110587,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L40",
+      "source_location": "L75",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_memory_store",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -110642,10 +110598,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L76",
+      "source_location": "L41",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
-      "target": "system_shopping_agent_model_client",
+      "target": "submission_system_shopping_agent_model_client",
       "confidence_score": 1.0
     },
     {
@@ -110832,6 +110788,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/agent.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_agent",
+      "target": "submission_system_shopping_agent_clarification",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -110862,6 +110829,17 @@
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
       "target": "submission_system_shopping_agent_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/agent.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_agent",
+      "target": "submission_system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -110986,6 +110964,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/agent.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_agent",
+      "target": "submission_system_shopping_agent_memory_store",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -110994,17 +110983,6 @@
       "weight": 1.0,
       "source": "submission_system_shopping_agent_agent",
       "target": "submission_system_shopping_agent_memory_store_memoryupdatepolicy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/system/shopping_agent/agent.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "source": "submission_system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_model_client",
       "confidence_score": 1.0
     },
     {
@@ -114741,17 +114719,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L71",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_clarification",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -115275,28 +115242,6 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_runtime",
-      "target": "submission_system_shopping_agent_embedding_backends",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_embedding_backends",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/runtime.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "system_shopping_agent_runtime",
       "target": "submission_system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
@@ -116523,28 +116468,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "submission_system_shopping_agent_memory_store",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/vector_memory.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "system_shopping_agent_vector_memory",
-      "target": "submission_system_shopping_agent_memory_store",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -117717,6 +117640,50 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "submission_system_shopping_agent_model_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/ollama_client.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "system_shopping_agent_ollama_client",
+      "target": "submission_system_shopping_agent_model_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/openai_client.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "system_shopping_agent_openai_client",
+      "target": "submission_system_shopping_agent_model_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/runtime.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "system_shopping_agent_runtime",
+      "target": "submission_system_shopping_agent_model_client",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/model_client.py",
@@ -118424,17 +118391,6 @@
       "source": "system_shopping_agent_runtime_runtimeproviders",
       "target": "submission_system_shopping_agent_model_client_modelclient",
       "confidence_score": 0.5
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "submission/system/shopping_agent/ollama_client.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "submission_system_shopping_agent_ollama_client",
-      "target": "system_shopping_agent_model_client",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -119147,10 +119103,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "submission/system/shopping_agent/runtime.py",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "submission_system_shopping_agent_runtime",
-      "target": "system_shopping_agent_model_client",
+      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -119255,6 +119211,17 @@
       "weight": 1.0,
       "source": "submission_system_shopping_agent_runtime_rationale_33",
       "target": "submission_system_shopping_agent_runtime_create_runtime_providers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/system/shopping_agent/vector_memory.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "submission_system_shopping_agent_vector_memory",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -119421,6 +119388,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "submission/tests/test_entrypoint.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "submission_tests_test_entrypoint",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "submission/tests/test_entrypoint.py",
@@ -119540,10 +119518,32 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L41",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_model_client",
+      "target": "system_shopping_agent_clarification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "system_shopping_agent_embedding_backends",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "system_shopping_agent_memory_store",
       "confidence_score": 1.0
     },
     {
@@ -119741,17 +119741,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_clarification",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -119782,17 +119771,6 @@
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
       "target": "system_shopping_agent_config",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_embedding_backends",
       "confidence_score": 1.0
     },
     {
@@ -119917,17 +119895,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "system/shopping_agent/agent.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "system_shopping_agent_agent",
-      "target": "system_shopping_agent_memory_store",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -119936,6 +119903,17 @@
       "weight": 1.0,
       "source": "system_shopping_agent_agent",
       "target": "system_shopping_agent_memory_store_memoryupdatepolicy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "system/shopping_agent/agent.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "system_shopping_agent_agent",
+      "target": "system_shopping_agent_model_client",
       "confidence_score": 1.0
     },
     {
@@ -137889,6 +137867,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_participant_kit_evaluator_local_evaluator",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "techjam-conversational-search-participant-kit/evaluator/local_evaluator.py",
@@ -138364,6 +138353,28 @@
       "weight": 1.0,
       "source": "techjam_conversational_search_participant_kit_starter_init_rationale_1",
       "target": "techjam_conversational_search_participant_kit_starter_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/evaluator/local_evaluator.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_evaluator_local_evaluator",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "techjam-conversational-search/memory/tests/test_integration.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "techjam_conversational_search_memory_tests_test_integration",
+      "target": "techjam_conversational_search_participant_kit_starter_agent",
       "confidence_score": 1.0
     },
     {

@@ -3435,8 +3435,8 @@
     "semantic_hash": ""
   },
   "submission/bundle_manifest.json": {
-    "mtime": 1788208495.9010935,
-    "ast_hash": "f1dd200b438627df80f4580b7efbc1ea",
+    "mtime": 1788208824.1482124,
+    "ast_hash": "0a5f684aa336bf4ace322555dc79a342",
     "semantic_hash": ""
   },
   "submission/scripts/install_artifact.py": {

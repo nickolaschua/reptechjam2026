@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/agent.py": {
-    "mtime": 1788201142.9635766,
-    "ast_hash": "08eb7956d9b51beacfef264332173f97",
+    "mtime": 1788208888.7343695,
+    "ast_hash": "34191df51194959490c48506fc61f117",
     "semantic_hash": ""
   },
   "system/shopping_agent/catalogue.py": {
@@ -350,8 +350,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_browser_lifecycle.py": {
-    "mtime": 1788208677.4187973,
-    "ast_hash": "1175958e222dc5a5e5ecc0fd45ca7533",
+    "mtime": 1788208888.7421956,
+    "ast_hash": "08e1b5e027ff17bd569d3abe79ea7154",
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_catalogue_layers.py": {
@@ -395,8 +395,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/visualizer/server.py": {
-    "mtime": 1788193173.6861944,
-    "ast_hash": "9cc1f5695344c8c5cb596ccc88a69b4d",
+    "mtime": 1788208888.7385695,
+    "ast_hash": "0fbaf696ad1c036fd92039c5d6790f7b",
     "semantic_hash": ""
   },
   "system/shopping_agent/visualizer/simulator.py": {
