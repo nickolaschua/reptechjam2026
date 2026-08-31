@@ -13,6 +13,11 @@ from typing import Any, Callable, Mapping, Sequence
 import urllib.error
 import urllib.request
 
+try:
+    from .model_client import ModelCall, ModelError
+except ImportError:
+    from model_client import ModelCall, ModelError
+
 
 DEFAULT_OLLAMA_HOST = "http://localhost:11434"
 DEFAULT_OLLAMA_MODEL = "llama3.1:8b"
@@ -22,7 +27,7 @@ DEFAULT_OLLAMA_RETRIES = 1
 Transport = Callable[[str, bytes, float], object]
 
 
-class OllamaError(RuntimeError):
+class OllamaError(ModelError):
     """Base class for exhausted Ollama calls."""
 
     def __init__(
@@ -35,25 +40,9 @@ class OllamaError(RuntimeError):
         role: str,
         cause_type: str,
     ) -> None:
-        super().__init__(message)
-        self.model = str(model)
-        self.latency_seconds = float(latency_seconds)
-        self.attempts = int(attempts)
-        self.retry_count = max(0, self.attempts - 1)
-        self.role = str(role)
-        self.cause_type = str(cause_type)
-
-    def instrumentation(self) -> dict[str, Any]:
-        return {
-            "role": self.role,
-            "model": self.model,
-            "latency_seconds": self.latency_seconds,
-            "attempts": self.attempts,
-            "retry_count": self.retry_count,
-            "success": False,
-            "error_type": type(self).__name__,
-            "cause_type": self.cause_type,
-        }
+        super().__init__(message, model=model, latency_seconds=latency_seconds,
+                         attempts=attempts, role=role, cause_type=cause_type,
+                         provider="ollama")
 
 
 class OllamaConfigurationError(OllamaError):
@@ -73,27 +62,14 @@ class OllamaResponseError(OllamaError):
 
 
 @dataclass(frozen=True)
-class OllamaCall:
-    content: str
-    model: str
-    latency_seconds: float
-    attempts: int
-    role: str
-
-    @property
-    def retry_count(self) -> int:
-        return max(0, self.attempts - 1)
-
+class OllamaCall(ModelCall):
     def instrumentation(self) -> dict[str, Any]:
+        # Preserve the historical Ollama telemetry shape for compatibility.
         return {
-            "role": self.role,
-            "model": self.model,
-            "latency_seconds": self.latency_seconds,
-            "attempts": self.attempts,
-            "retry_count": self.retry_count,
-            "success": True,
-            "error_type": None,
-            "cause_type": None,
+            "role": self.role, "model": self.model,
+            "latency_seconds": self.latency_seconds, "attempts": self.attempts,
+            "retry_count": self.retry_count, "success": True,
+            "error_type": None, "cause_type": None,
         }
 
 
@@ -132,6 +108,8 @@ def _configured_model(explicit_model: str | None) -> str:
 
 class OllamaClient:
     """Small Ollama `/api/chat` client with one retry and structured telemetry."""
+
+    provider = "ollama"
 
     def __init__(
         self,
@@ -256,6 +234,7 @@ class OllamaClient:
                     latency_seconds=time.perf_counter() - started,
                     attempts=attempt,
                     role=role,
+                    provider=self.provider,
                 )
                 self._record(call.instrumentation())
                 return call

@@ -11,7 +11,7 @@ import sys
 from .category_resolver import CategoryResolver
 from .catalogue import Catalogue
 from .config import CATALOG_PATH, PROJECT_ROOT
-from .ollama_client import OllamaClient
+from .runtime import get_runtime_providers
 from .turn_parser import WinstonTurnParser
 
 
@@ -51,7 +51,7 @@ def main() -> int:
     catalogue = Catalogue(CATALOG_PATH)
     try:
         resolver = CategoryResolver(catalogue)
-        client = OllamaClient()
+        client = get_runtime_providers().llm_client
         turn_parser = WinstonTurnParser(resolver, client=client)
         predictions = []
         scores = []

@@ -11,7 +11,10 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from typing import Any, Callable, Sequence
+import time
+from threading import Lock
+from typing import Any, Callable, Mapping, Sequence
+import urllib.request
 
 import numpy as np
 
@@ -88,7 +91,12 @@ def fingerprint_file(path: str | Path) -> str:
     return digest.hexdigest()
 
 
-def cache_filename(backend_id: str) -> str:
+def cache_filename(backend_id: str, model_id: str | None = None,
+                   vector_dimension: int | None = None) -> str:
+    if backend_id == "openai":
+        identity = f"openai-{model_id or 'unknown'}-d{int(vector_dimension or 0)}"
+        safe = re.sub(r"[^a-zA-Z0-9_.-]", "_", identity)
+        return f"catalog_cache_{safe}.npz"
     safe = re.sub(r"[^a-zA-Z0-9_.-]", "_", backend_id)
     return f"catalog_cache_{safe}.npz"
 
@@ -289,6 +297,103 @@ class BGEEmbeddingBackend(EmbeddingBackend):
         return normalize_vector(vector)
 
 
+class OpenAIEmbeddingError(EmbeddingError):
+    """Typed failure from the OpenAI embeddings endpoint."""
+
+
+class OpenAIEmbeddingResponseError(OpenAIEmbeddingError):
+    """The endpoint returned malformed, reordered, or incompatible vectors."""
+
+
+OpenAIEmbeddingTransport = Callable[[str, bytes, float, Mapping[str, str]], object]
+
+
+class OpenAIEmbeddingBackend(EmbeddingBackend):
+    """Batched, normalized OpenAI embeddings with strict row-order validation."""
+
+    backend_id = "openai"
+
+    def __init__(self, *, api_key: str, model: str = "text-embedding-3-small",
+                 vector_dimension: int = 1536, timeout_seconds: float = 30,
+                 batch_size: int = 256, transport: OpenAIEmbeddingTransport | None = None,
+                 base_url: str = "https://api.openai.com/v1") -> None:
+        self.api_key = str(api_key).strip()
+        self.model_id = str(model).strip()
+        self.vector_dimension = int(vector_dimension)
+        self.timeout_seconds = float(timeout_seconds)
+        self.batch_size = int(batch_size)
+        self.base_url = str(base_url).strip().rstrip("/")
+        if not self.api_key: raise OpenAIEmbeddingError("OPENAI_API_KEY is required")
+        if not self.model_id: raise OpenAIEmbeddingError("embedding model must be non-empty")
+        if self.vector_dimension != 1536:
+            raise OpenAIEmbeddingError("text-embedding-3-small output must be 1536 dimensions")
+        if self.timeout_seconds <= 0 or self.batch_size <= 0:
+            raise OpenAIEmbeddingError("timeout and batch size must be greater than zero")
+        self.embedding_space_id = make_embedding_space_id(
+            self.backend_id, self.model_id, self.vector_dimension)
+        self._transport = transport or self._urlopen_transport
+        self._usage = {"request_count": 0, "input_tokens": 0,
+                       "request_latencies_seconds": []}
+        self._lock = Lock()
+
+    @staticmethod
+    def _urlopen_transport(url: str, body: bytes, timeout: float,
+                           headers: Mapping[str, str]) -> bytes:
+        request = urllib.request.Request(url, data=body, headers=dict(headers), method="POST")
+        with urllib.request.urlopen(request, timeout=timeout) as response: return response.read()
+
+    def _embed_batch(self, texts: Sequence[str]) -> np.ndarray:
+        payload = {"model": self.model_id, "input": list(texts),
+                   "dimensions": self.vector_dimension, "encoding_format": "float"}
+        started = time.perf_counter()
+        try:
+            raw = self._transport(f"{self.base_url}/embeddings",
+                json.dumps(payload).encode("utf-8"), self.timeout_seconds,
+                {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"})
+            if isinstance(raw, bytes): raw = raw.decode("utf-8")
+            if isinstance(raw, str): raw = json.loads(raw)
+            if not isinstance(raw, Mapping) or not isinstance(raw.get("data"), list):
+                raise ValueError("OpenAI embedding response is missing data")
+            rows = raw["data"]
+            if len(rows) != len(texts): raise ValueError("embedding response row count changed")
+            vectors = []
+            for expected, item in enumerate(rows):
+                if not isinstance(item, Mapping) or item.get("index") != expected:
+                    raise ValueError("embedding response row order is invalid")
+                vector = item.get("embedding")
+                if not isinstance(vector, list) or len(vector) != self.vector_dimension:
+                    raise ValueError(f"embedding row must have {self.vector_dimension} dimensions")
+                vectors.append(vector)
+            matrix = normalize_rows(np.asarray(vectors, dtype=np.float32))
+            usage = raw.get("usage")
+            tokens = int(usage.get("total_tokens", usage.get("prompt_tokens", 0))) if isinstance(usage, Mapping) else 0
+        except OpenAIEmbeddingError: raise
+        except Exception as exc:
+            raise OpenAIEmbeddingResponseError(f"OpenAI embedding request failed: {exc}") from exc
+        finally:
+            latency = time.perf_counter() - started
+        with self._lock:
+            self._usage["request_count"] += 1
+            self._usage["input_tokens"] += tokens
+            self._usage["request_latencies_seconds"].append(latency)
+        return matrix
+
+    def embed_catalog(self, texts: Sequence[str]) -> np.ndarray:
+        values = [str(text) for text in texts]
+        if not values: return np.empty((0, self.vector_dimension), dtype=np.float32)
+        return np.vstack([self._embed_batch(values[i:i+self.batch_size])
+                          for i in range(0, len(values), self.batch_size)])
+
+    def embed_query(self, text: str) -> np.ndarray:
+        return self._embed_batch([str(text)])[0]
+
+    def usage_snapshot(self) -> dict[str, Any]:
+        with self._lock:
+            return {"request_count": self._usage["request_count"],
+                    "input_tokens": self._usage["input_tokens"],
+                    "request_latencies_seconds": list(self._usage["request_latencies_seconds"])}
+
+
 __all__ = [
     "BGEEmbeddingBackend",
     "BGE_EMBEDDING_SPACE_ID",
@@ -299,6 +404,9 @@ __all__ = [
     "CatalogCacheMissError",
     "EmbeddingBackend",
     "EmbeddingError",
+    "OpenAIEmbeddingBackend",
+    "OpenAIEmbeddingError",
+    "OpenAIEmbeddingResponseError",
     "PRODUCT_TEXT_VERSION",
     "cache_filename",
     "fingerprint_file",

@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788172284.9877386,
-    "ast_hash": "a98b9deca0b011af8cf704ca019da1a4",
+    "mtime": 1788174799.7151415,
+    "ast_hash": "84f65edf409866fa7fd8bc4ecba97034",
     "semantic_hash": ""
   },
   "compute_server_guide.md": {
@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/agent.py": {
-    "mtime": 1788172939.4190977,
-    "ast_hash": "3c676fcdd0fbf08887f53968dd839090",
+    "mtime": 1788176630.910618,
+    "ast_hash": "42db308dca33942ae3b985ec4047fce5",
     "semantic_hash": ""
   },
   "system/shopping_agent/catalogue.py": {
@@ -320,13 +320,13 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/config.py": {
-    "mtime": 1788170669.2345302,
-    "ast_hash": "f70f547faf11e01425eb782f0c239e0d",
+    "mtime": 1788174987.8930714,
+    "ast_hash": "1da1eba01109b41f3aa54da74c78b084",
     "semantic_hash": ""
   },
   "system/shopping_agent/demo.py": {
-    "mtime": 1788171216.4774196,
-    "ast_hash": "6d9327072362862cdde0e22b1f5ef0df",
+    "mtime": 1788174657.746919,
+    "ast_hash": "331d0b29a80e49b38eaab0581287dbf8",
     "semantic_hash": ""
   },
   "system/shopping_agent/demo_scenarios.json": {
@@ -335,8 +335,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/embedding_backends.py": {
-    "mtime": 1788172717.313186,
-    "ast_hash": "05beffb9baf402e5cd76a0981a826300",
+    "mtime": 1788174559.6346219,
+    "ast_hash": "99bd7f744d3c20afd085647c63207ba9",
     "semantic_hash": ""
   },
   "system/shopping_agent/memory_store.py": {
@@ -395,13 +395,13 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/visualizer/server.py": {
-    "mtime": 1788171205.8870053,
-    "ast_hash": "8ea1eafa30831e3eb9a812d27b143d31",
+    "mtime": 1788174663.0755608,
+    "ast_hash": "e9fb7e5910ee15a219df24470d7ff5fa",
     "semantic_hash": ""
   },
   "system/shopping_agent/visualizer/simulator.py": {
-    "mtime": 1788171184.333387,
-    "ast_hash": "88c3a1858b06a05eddbd33b630893fe3",
+    "mtime": 1788174589.320455,
+    "ast_hash": "5e6d3280f7efa27ac9bf1520c3f90d8f",
     "semantic_hash": ""
   },
   "system/MEMORY_ARCHITECTURE.md": {
@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/visualizer/conversation.html": {
-    "mtime": 1788172284.9964275,
-    "ast_hash": "6c5e4518b764858c7fb5bb0e638cb40a",
+    "mtime": 1788174657.7517147,
+    "ast_hash": "e8ab828c16b651583aa8d76049e73240",
     "semantic_hash": ""
   },
   "issues.md": {
@@ -460,8 +460,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_embedding_mode.py": {
-    "mtime": 1788172870.9073744,
-    "ast_hash": "18d9ff169589556b27dcd6c8398657e8",
+    "mtime": 1788174960.3426409,
+    "ast_hash": "852f4404bff42247612069794ac6e13b",
     "semantic_hash": ""
   },
   "system/shopping_agent/category_resolver.py": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_winston_state_adapter.py": {
-    "mtime": 1788171508.8466847,
-    "ast_hash": "5c02b7c7a4a3552fa936b0ee26336973",
+    "mtime": 1788176504.5200977,
+    "ast_hash": "044a2b889a32bac21d8e8fb4108817f6",
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_winston_turn_parser.py": {
@@ -485,8 +485,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/turn_parser.py": {
-    "mtime": 1788170893.0487747,
-    "ast_hash": "7640f3d3468ebd06b6489c25ec3e687d",
+    "mtime": 1788174589.320455,
+    "ast_hash": "ec10df8fe3988a40e9cc3a97d0f8232c",
     "semantic_hash": ""
   },
   "archive/harshith/__init__.py": {
@@ -1865,13 +1865,13 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/ollama_client.py": {
-    "mtime": 1788172357.7633271,
-    "ast_hash": "2709345c62f88d2249bed67c91f6461b",
+    "mtime": 1788174691.649898,
+    "ast_hash": "5f2832e2fe7f40090d9fc8cbc582bf50",
     "semantic_hash": ""
   },
   "system/shopping_agent/tests/test_ollama_client.py": {
-    "mtime": 1788172597.4621472,
-    "ast_hash": "ba724c9f43993ba676b2c5104aa3600a",
+    "mtime": 1788174848.798996,
+    "ast_hash": "c3d9fd52948e297808fd10f8d11571f4",
     "semantic_hash": ""
   },
   "archive/CURRENT_BEST_ARCHITECTURE.md": {
@@ -3380,8 +3380,8 @@
     "semantic_hash": ""
   },
   "system/shopping_agent/benchmark_parser.py": {
-    "mtime": 1788172285.0022957,
-    "ast_hash": "da014a4e9344195e6f4630ff6e390ef0",
+    "mtime": 1788174663.077481,
+    "ast_hash": "bddfe664d3b4b0147c71613acceb76f0",
     "semantic_hash": ""
   },
   "colab/README.md": {
@@ -3392,6 +3392,36 @@
   "colab/requirements.txt": {
     "mtime": 1788171796.7508066,
     "ast_hash": "9bd8478b181e6b5ded557b9f61a1c8c2",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/build_embedding_cache.py": {
+    "mtime": 1788175037.27465,
+    "ast_hash": "8221dca87348194375ef142613ac4c10",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/model_client.py": {
+    "mtime": 1788174490.1481068,
+    "ast_hash": "ff1f73607b2810eb0ad3a839966c2115",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/openai_client.py": {
+    "mtime": 1788174691.6478865,
+    "ast_hash": "af11818a8c16c662248ccf7ab7af1b77",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/runtime.py": {
+    "mtime": 1788174691.6438599,
+    "ast_hash": "b9eb490ac23601b43103caef05ef47ec",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/tests/test_openai_mode.py": {
+    "mtime": 1788175188.7530754,
+    "ast_hash": "1dfd105b2259a38bc4489da1b6a1a85c",
+    "semantic_hash": ""
+  },
+  "system/shopping_agent/tests/test_runtime_config.py": {
+    "mtime": 1788174960.3446534,
+    "ast_hash": "97f0a020b0377730f7c77745993ec563",
     "semantic_hash": ""
   }
 }

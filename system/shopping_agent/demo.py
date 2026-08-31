@@ -10,7 +10,7 @@ from typing import Any
 from uuid import uuid4
 
 from .agent import Agent
-from .config import ALLOW_CATALOG_EMBEDDING, DEMO_TOP_K, MEMORY_STORE_PATH
+from .config import ACTIVE_MEMORY_STORE_PATH, ALLOW_CATALOG_EMBEDDING, DEMO_TOP_K
 from .memory_store import JsonFileVectorMemoryStore
 from .vector_memory import BuyerMode
 
@@ -53,7 +53,7 @@ class DemoApplication:
     def __init__(
         self,
         *,
-        memory_path: str | Path = MEMORY_STORE_PATH,
+        memory_path: str | Path = ACTIVE_MEMORY_STORE_PATH,
         top_k: int = DEMO_TOP_K,
         allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
         agent: Agent | None = None,
@@ -257,7 +257,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--user", default="demo-user", help="initial interactive user ID")
     parser.add_argument("--debug", action="store_true", help="show concise structured traces")
     parser.add_argument("--scripted", action="store_true", help="run the deterministic two-user presentation")
-    parser.add_argument("--memory-file", type=Path, default=MEMORY_STORE_PATH)
+    parser.add_argument("--memory-file", type=Path, default=ACTIVE_MEMORY_STORE_PATH)
     parser.add_argument("--top-k", type=int, default=DEMO_TOP_K)
     parser.add_argument("--inspect", metavar="USER_ID", help="inspect memory without loading the agent")
     parser.add_argument("--reset-user", metavar="USER_ID", help="reset one user without loading the agent")

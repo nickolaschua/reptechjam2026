@@ -221,56 +221,22 @@ def test_session_only_and_negative_facts_never_enter_ltm_text():
     assert all(value not in trace["preference_text"] for value in ("nike", "leather", "men", "90"))
 
 
-def test_low_confidence_first_turn_asks_category_and_skips_embedding_and_generation():
+def test_low_confidence_first_turn_proceeds_without_category_clarification():
     parser = QueueParser(
         turn("something", slots=(slot("use_case", "winter trip"),), confidence=0.19)
     )
     agent, embedded = ranking_agent(parser)
-    generated = []
-    agent._call_llm = lambda *args, **kwargs: generated.append(True) or "unexpected"
     response = agent.respond("s", "I need something for a winter trip", 1, 2, debug=True)
-    assert response["ask_attribute"] == "category"
-    assert response["recommendations"] == []
-    assert response["message"] == "What specific kind of product are you looking for?"
-    assert embedded == []
-    assert generated == []
-    assert agent._sessions["s"]["disclosed_slots"]["use_case"] == {"winter trip"}
-    assert agent.instrumentation["turns"][-1]["route"] == "category-clarification"
-    assert response["debug"]["memory_trace"]["catalog_rows_scored"] == 0
-    assert response["debug"]["memory_trace"]["returned"] == []
-
-
-def test_pending_category_answer_resumes_retrieval_even_with_flat_confidence():
-    parser = QueueParser(
-        turn("something", confidence=0.1),
-        turn("shoes", confidence=0.0, message_type="product_type"),
-    )
-    agent, embedded = ranking_agent(parser)
-    first = agent.respond("s", "show me something nice", 1, 2)
-    second = agent.respond("s", "shoes", 2, 2, debug=True)
-    assert first["ask_attribute"] == "category"
-    assert second["recommendations"]
+    assert response["ask_attribute"] != "category"
+    assert response["recommendations"]
     assert embedded
-    assert agent._sessions["s"]["category"] == "shoes"
-    assert agent._sessions["s"]["pending_category"] is False
+    assert agent._sessions["s"]["disclosed_slots"]["use_case"] == {"winter trip"}
+    assert agent.instrumentation["turns"][-1]["route"] == "vector-memory"
+    assert response["debug"]["memory_trace"]["catalog_rows_scored"] == 2
 
 
-def test_pending_category_reply_without_a_category_asks_again():
-    parser = QueueParser(
-        turn("something", confidence=0.1),
-        turn(None, slots=(slot("color", "black"),), confidence=0.0),
-    )
-    agent, embedded = ranking_agent(parser)
-    agent.respond("s", "show me something", 1, 2)
-    repeated = agent.respond("s", "black would be nice", 2, 2)
-    assert repeated["ask_attribute"] == "category"
-    assert repeated["recommendations"] == []
-    assert embedded == []
-    assert agent._sessions["s"]["disclosed_slots"]["color"] == {"black"}
-
-
-@pytest.mark.parametrize("confidence", [0.20, 0.8])
-def test_confidence_boundary_and_high_confidence_proceed(confidence):
+@pytest.mark.parametrize("confidence", [0.0, 0.19, 0.20, 0.8])
+def test_resolver_confidence_does_not_gate_retrieval(confidence):
     parser = QueueParser(turn("boots", confidence=confidence, message_type="product_type"))
     agent, embedded = ranking_agent(parser)
     response = agent.respond("s", "boots", 1, 2)

@@ -247,23 +247,8 @@ def test_assistant_failure_triggers_full_turn_rollback_and_records_provider_erro
     assert error["rollback"] is True
 
 
-def test_active_source_has_no_hosted_provider_or_parser_specific_runtime_path():
+def test_parser_has_no_parser_specific_runtime_configuration():
     root = Path(__file__).resolve().parents[1]
-    active = "\n".join(
-        path.read_text(encoding="utf-8")
-        for path in root.rglob("*.py")
-        if "tests" not in path.parts
-    )
-    for forbidden in (
-        "OPENAI_API_KEY",
-        "DEEPSEEK_API_KEY",
-        "GEMINI_API_KEY",
-        "google.generativeai",
-        "import openai",
-        "api.deepseek.com",
-        "api.openai.com",
-    ):
-        assert forbidden not in active
     turn_parser = (root / "turn_parser.py").read_text(encoding="utf-8")
     assert "WINSTON_PARSER_MODEL" not in turn_parser
     assert "WINSTON_PARSER_TIMEOUT_SECONDS" not in turn_parser

@@ -30,8 +30,9 @@ def test_agent_test_mode_is_a_deprecated_noop_selecting_bge(monkeypatch):
     monkeypatch.setattr("system.shopping_agent.agent.catalog_bucket_set", lambda _: frozenset())
     monkeypatch.setattr(Agent, "catalogue", object(), raising=False)
 
-    with pytest.warns(DeprecationWarning, match="BGE remains selected"):
-        agent = Agent(test_mode=True, turn_parser=OfflineParser())
+    with pytest.warns(DeprecationWarning, match="environment selection remains active"):
+        agent = Agent(test_mode=True, embedding_backend=BGEEmbeddingBackend(),
+                      turn_parser=OfflineParser())
 
     assert isinstance(agent.embedding_backend, BGEEmbeddingBackend)
 

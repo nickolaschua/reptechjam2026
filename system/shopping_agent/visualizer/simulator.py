@@ -8,7 +8,8 @@ import re
 from pathlib import Path
 from typing import Any
 
-from ..ollama_client import OllamaClient, get_default_ollama_client
+from ..model_client import ModelClient
+from ..runtime import get_runtime_providers
 
 
 MATERIAL_RE = re.compile(r"\b(cotton|polyester|nylon|leather|wool|spandex|silk|rayon|fabric)\b", re.I)
@@ -99,12 +100,12 @@ def call_shopper_llm(
     prompt: str,
     system_prompt: str,
     *,
-    client: OllamaClient | None = None,
+    client: ModelClient | None = None,
 ) -> str:
     """Generate shopper text through the same local model used by the agent."""
 
-    ollama = client or get_default_ollama_client()
-    return ollama.chat(
+    llm = client or get_runtime_providers().llm_client
+    return llm.chat(
         [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt},

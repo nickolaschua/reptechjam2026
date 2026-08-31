@@ -36,7 +36,7 @@ try:
     )
     from .memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
     from .category_resolver import CategoryResolver, catalog_bucket_set
-    from .ollama_client import OllamaClient, OllamaError, get_default_ollama_client
+    from .model_client import ModelClient, ModelError
     from .turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from .vector_memory import (
         BuyerMode,
@@ -71,7 +71,7 @@ except ImportError:
     )
     from memory_store import InMemoryUserMemoryStore, SNAPSHOT_VERSION
     from category_resolver import CategoryResolver, catalog_bucket_set
-    from ollama_client import OllamaClient, OllamaError, get_default_ollama_client
+    from model_client import ModelClient, ModelError
     from turn_parser import ParsedTurn, TurnParser, TurnParserError, WinstonTurnParser
     from vector_memory import (
         BuyerMode,
@@ -307,6 +307,16 @@ def _json_safe_state(value: Any) -> Any:
 
 class Agent:
     """Canonical short-term dialogue and gated vector-memory shopping agent."""
+
+    @property
+    def ollama_client(self) -> ModelClient:
+        """Deprecated compatibility alias for :attr:`llm_client`."""
+        return self.llm_client
+
+    @ollama_client.setter
+    def ollama_client(self, value: ModelClient) -> None:
+        self.llm_client = value
+
     def __init__(
         self,
         catalog_path: str | Path = None,
@@ -314,10 +324,12 @@ class Agent:
         *,
         test_mode: bool | None = None,
         allow_catalog_embedding: bool = False,
+        explicit_cache_build: bool = False,
         embedding_cache_dir: str | Path | None = None,
         memory_store: InMemoryUserMemoryStore | None = None,
         turn_parser: TurnParser | None = None,
-        ollama_client: OllamaClient | None = None,
+        llm_client: ModelClient | None = None,
+        ollama_client: ModelClient | None = None,
     ) -> None:
         initialization_started = time.perf_counter()
         self.instrumentation = {
@@ -342,20 +354,31 @@ class Agent:
         if test_mode is not None:
             warnings.warn(
                 "Agent(test_mode=...) is deprecated and no longer changes the "
-                "embedding provider; BGE remains selected",
+                "provider; environment selection remains active",
                 DeprecationWarning,
                 stacklevel=2,
             )
-        self.embedding_backend = embedding_backend or BGEEmbeddingBackend()
+        if llm_client is not None and ollama_client is not None and llm_client is not ollama_client:
+            raise ValueError("llm_client and deprecated ollama_client must reference the same client")
+        if ollama_client is not None:
+            warnings.warn("ollama_client is deprecated; use llm_client", DeprecationWarning,
+                          stacklevel=2)
+        runtime = None
+        if embedding_backend is None or (llm_client is None and ollama_client is None):
+            try: from .runtime import get_runtime_providers
+            except ImportError: from runtime import get_runtime_providers
+            runtime = get_runtime_providers()
+        self.embedding_backend = embedding_backend or runtime.embedding_backend
         self.embedding_backend_id = self.embedding_backend.backend_id
         self.embedding_model_id = self.embedding_backend.model_id
         self.embedding_space_id = self.embedding_backend.embedding_space_id
         self.model_path = self.embedding_model_id
         self.model = getattr(self.embedding_backend, "_model", None)
         self.allow_catalog_embedding = bool(allow_catalog_embedding)
+        self.explicit_cache_build = bool(explicit_cache_build)
         self.embedding_cache_dir = Path(embedding_cache_dir or EMBEDDING_CACHE_DIR)
         self.memory_store = memory_store or InMemoryUserMemoryStore()
-        self.ollama_client = ollama_client or get_default_ollama_client()
+        self.llm_client = llm_client or ollama_client or runtime.llm_client
         self.vector_memory_config = DEFAULT_VECTOR_MEMORY_CONFIG
         self._active_lifecycle: dict[str, dict[str, Any]] = {}
         self._ended_lifecycle: dict[str, dict[str, Any]] = {}
@@ -372,7 +395,7 @@ class Agent:
         self._build_category_index()
         if turn_parser is None:
             resolver = CategoryResolver(self.catalogue)
-            self.turn_parser = WinstonTurnParser(resolver, client=self.ollama_client)
+            self.turn_parser = WinstonTurnParser(resolver, client=self.llm_client)
             self._template_buckets = resolver.bucket_names
         else:
             self.turn_parser = turn_parser
@@ -385,6 +408,8 @@ class Agent:
             f"[Hybrid Agent] Embedding backend: {self.embedding_backend_id} "
             f"({self.embedding_model_id})"
         )
+        print(f"[Hybrid Agent] Model provider: "
+              f"{getattr(self.llm_client, 'provider', 'unknown')} ({self.llm_client.model})")
         self._build_vector_index()
 
         self.instrumentation["initialization"]["total_seconds"] = (
@@ -430,7 +455,9 @@ class Agent:
             vector_dimension=getattr(self.embedding_backend, "vector_dimension", None),
             normalized=True,
         )
-        cache_path = self.embedding_cache_dir / cache_filename(self.embedding_backend_id)
+        cache_path = self.embedding_cache_dir / cache_filename(
+            self.embedding_backend_id, self.embedding_model_id,
+            getattr(self.embedding_backend, "vector_dimension", None))
         self.embedding_cache_path = cache_path
 
         if cache_path.exists():
@@ -450,10 +477,15 @@ class Agent:
                 )
                 print(f"[Hybrid Agent] Rejecting incompatible embedding cache: {exc}")
 
-        if not self.allow_catalog_embedding:
+        openai_requires_command = (
+            self.embedding_backend_id == "openai" and not self.explicit_cache_build
+        )
+        if not self.allow_catalog_embedding or openai_requires_command:
             raise CatalogCacheMissError(
                 f"No valid {self.embedding_backend_id} catalog cache at {cache_path}. "
-                "Catalog generation is disabled; run the explicit benchmark cache-build command."
+                "Catalog generation is disabled; run "
+                "`python -m system.shopping_agent.build_embedding_cache` when using OpenAI, "
+                "or provision the documented BGE artifact."
             )
 
         count = len(self.catalog_texts)
@@ -490,20 +522,20 @@ class Agent:
         session_id: str | None = None,
         response_json: bool = False,
     ) -> str:
-        """Generate one assistant response through the shared local Ollama client."""
+        """Generate one assistant response through the process-wide selected client."""
 
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
         try:
-            call = self.ollama_client.chat_result(
+            call = self.llm_client.chat_result(
                 messages,
                 format="json" if response_json else None,
                 options={"temperature": 0.4, "num_predict": 150},
                 role="assistant",
             )
-        except OllamaError as exc:
+        except ModelError as exc:
             trace = exc.instrumentation()
             trace.update({"session_id": session_id, "rolled_back": False})
             self.instrumentation.setdefault("llm_calls", []).append(trace)
@@ -1488,8 +1520,10 @@ class Agent:
         snapshot["model_id"] = self.embedding_model_id
         snapshot["embedding_space_id"] = self.embedding_space_id
         snapshot["embedding_api"] = self.embedding_backend.usage_snapshot()
-        client = getattr(self, "ollama_client", None)
-        snapshot["ollama"] = [] if client is None else client.instrumentation()
+        client = getattr(self, "llm_client", None)
+        snapshot["model_provider"] = getattr(client, "provider", "unknown")
+        snapshot["model_calls"] = [] if client is None else client.instrumentation()
+        snapshot["ollama"] = snapshot["model_calls"] if snapshot["model_provider"] == "ollama" else []
         return snapshot
 
     @staticmethod
@@ -1611,7 +1645,7 @@ class Agent:
         user_message: str,
         turn: int,
     ) -> bool:
-        """Merge one validated turn and return whether category clarification is due."""
+        """Merge one validated turn; resolver confidence remains telemetry-only."""
 
         state["resolver_candidates"] = list(parsed.resolver_candidates[:3])
         state["resolver_confidence"] = float(parsed.resolver_confidence)
@@ -1620,38 +1654,18 @@ class Agent:
         state["intent_source"] = "winston_parser"
         state["_intent_detection_succeeded"] = True
 
-        pending = bool(state.get("pending_category"))
         usable_category = self._usable_category_phrase(parsed.category)
         established = bool(state.get("category_established"))
         category_differs = usable_category and _normalize(parsed.category) != _normalize(state.get("category"))
         explicit_change = bool(
             established and category_differs and self._has_explicit_product_change(user_message)
         )
-        category_event = pending or not established or explicit_change
-        has_bound = parsed.price_min is not None or parsed.price_max is not None
-        exempt_type = parsed.message_type in {"exact", "compatibility"}
-        clarify = bool(
-            category_event
-            and not pending
-            and float(parsed.resolver_confidence) < 0.20
-            and not parsed.has_trusted_hard_constraint
-            and not has_bound
-            and not exempt_type
-        )
 
         if explicit_change:
             self._clear_category_specific_state(state, turn)
-            state["pending_category_change"] = clarify
-
-        if pending and usable_category:
-            state["pending_category"] = False
             state["pending_category_change"] = False
-            state["category"] = str(parsed.category).strip()
-            state["category_established"] = True
-            product_department = self._product_department_for_category(state["category"])
-            if product_department:
-                state["department"] = product_department
-        elif not clarify and usable_category and (not established or explicit_change):
+
+        if usable_category and (not established or explicit_change):
             state["category"] = str(parsed.category).strip()
             state["category_established"] = True
             product_department = self._product_department_for_category(state["category"])
@@ -1740,12 +1754,6 @@ class Agent:
         self._reconcile_negated_state(state, turn)
         self._rebuild_active_terms(state)
 
-        if pending and not usable_category:
-            state["pending_category"] = True
-            return True
-        if clarify:
-            state["pending_category"] = True
-            return True
         return False
 
     def _update_state_via_llm(
@@ -1909,6 +1917,9 @@ class Agent:
             state["debug_info"]["memory_trace"] = memory_trace
             debug_data = {
                 "model": "Deterministic category clarification",
+                "model_provider": getattr(getattr(self, "llm_client", None), "provider", "unknown"),
+                "embedding_model": getattr(self, "embedding_model_id", "unknown"),
+                "embedding_space_id": self.embedding_space_id,
                 "category": state["category"],
                 "department": state["department"],
                 "price_min": state.get("price_min", 0.0),
@@ -2122,6 +2133,9 @@ class Agent:
             state["debug_info"]["memory_trace"]["best_entropy_attributes"] = []
             debug_data = {
                 "model": "Deterministic no-result clarification",
+                "model_provider": getattr(getattr(self, "llm_client", None), "provider", "unknown"),
+                "embedding_model": getattr(self, "embedding_model_id", "unknown"),
+                "embedding_space_id": self.embedding_space_id,
                 "category": state["category"], "department": state["department"],
                 "price_min": state.get("price_min", 0.0),
                 "price_max": state["price_max"],
@@ -2212,13 +2226,16 @@ class Agent:
 
         # Populate debug data
         state["debug_info"].setdefault(
-            "model", getattr(getattr(self, "ollama_client", None), "model", "unknown")
+            "model", getattr(getattr(self, "llm_client", None), "model", "unknown")
         )
         state["debug_info"].setdefault("system_prompt", sys_prompt)
         state["debug_info"].setdefault("user_prompt", prompt)
 
         debug_data = {
             "model": state["debug_info"].get("model", "None"),
+            "model_provider": getattr(getattr(self, "llm_client", None), "provider", "unknown"),
+            "embedding_model": getattr(self, "embedding_model_id", "unknown"),
+            "embedding_space_id": self.embedding_space_id,
             "llm_latency_seconds": state["debug_info"].get("llm_latency_seconds"),
             "llm_retry_count": state["debug_info"].get("llm_retry_count"),
             "llm_error_type": state["debug_info"].get("llm_error_type"),

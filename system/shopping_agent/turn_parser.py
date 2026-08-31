@@ -17,14 +17,12 @@ from typing import Any, Literal, Mapping, Protocol
 
 try:
     from .category_resolver import CategoryResolver
-    from .ollama_client import (
-        OllamaClient,
-        OllamaError,
-        get_default_ollama_client,
-    )
+    from .model_client import ModelClient, ModelError
+    from .runtime import get_runtime_providers
 except ImportError:  # pragma: no cover - direct script compatibility
     from category_resolver import CategoryResolver
-    from ollama_client import OllamaClient, OllamaError, get_default_ollama_client
+    from model_client import ModelClient, ModelError
+    from runtime import get_runtime_providers
 
 
 ALLOWED_ATTRIBUTES = (
@@ -474,11 +472,11 @@ class WinstonTurnParser:
         self,
         resolver: CategoryResolver,
         *,
-        client: OllamaClient | None = None,
+        client: ModelClient | None = None,
         catalog_stores: frozenset[str] | None = None,
     ) -> None:
         self.resolver = resolver
-        self.client = client or get_default_ollama_client()
+        self.client = client or get_runtime_providers().llm_client
         self.model = self.client.model
         self.last_call: dict[str, Any] | None = None
         if catalog_stores is None:
@@ -505,7 +503,7 @@ class WinstonTurnParser:
         started = time.perf_counter()
         try:
             raw = self._request_parse(message)
-        except OllamaError as exc:
+        except ModelError as exc:
             self.last_call = exc.instrumentation()
             raise ParserRequestError(
                 f"constrained parser failed: {exc}",

@@ -12,30 +12,44 @@ Open <http://localhost:8080> for Yangxu's ASTRA product catalog, or <http://loca
 
 ```text
 catalog landing page or conversation dashboard -> live Buying/Browsing state
-          -> exact evaluator template parser OR constrained local Llama 3.1 free-text parser
+          -> exact evaluator template parser OR constrained selected-model free-text parser
           -> soft-slot category resolver -> low-confidence open category clarification
           -> intent-aware FTS5 AND/weighted-OR routing -> hard eligibility
-          -> BGE v1/v2 gate and full 50,000-row s1/s2/s3 scoring
+          -> selected embedding-space v1/v2 gate and full 50,000-row s1/s2/s3 scoring
           -> keyword pool or 150-row vector fallback -> entropy clarification
-          -> local Llama 3.1 response/cards -> end-session EWMA memory commit
+          -> selected model response/cards -> end-session EWMA memory commit
 ```
 
-FTS5 controls candidate routing only. `s3` is the authoritative rank score. Minimum/maximum price, demographic, rating, review-count, brand/store, and negative filters are session-local and are never silently relaxed. The category resolver controls only the pre-retrieval ambiguity question; its candidates never filter, boost, or rerank products. Query, catalogue, and longitudinal-memory vectors all use normalized 768-dimensional `BAAI/bge-base-en-v1.5` embeddings.
+FTS5 controls candidate routing only. `s3` is the authoritative rank score. Minimum/maximum price, demographic, rating, review-count, brand/store, and negative filters are session-local and are never silently relaxed. The category resolver controls only the pre-retrieval ambiguity question; its candidates never filter, boost, or rerank products. Query, catalogue, and longitudinal-memory vectors always come from the same selected, normalized embedding space.
 
 Copy `system/shopping_agent/.env.example` to `.env` when overrides are needed:
 
 ```dotenv
+TEST_MODE=false
+
+OPENAI_API_KEY=
+OPENAI_CHAT_MODEL=gpt-4o-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+OPENAI_EMBEDDING_DIMENSIONS=1536
+OPENAI_TIMEOUT_SECONDS=30
+
 OLLAMA_HOST=http://localhost:11434
 OLLAMA_MODEL=llama3.1:8b
 OLLAMA_TIMEOUT_SECONDS=30
 ALLOW_CATALOG_EMBEDDING=false
 ```
 
-The constrained parser, assistant response generator, and streamed shopper simulator share this one Ollama client and model. A failed or invalid response is retried once; exhausted failures are typed and the affected agent turn rolls back.
+`TEST_MODE=false` (or unset) selects local BGE embeddings and one shared Ollama client. `TEST_MODE=true` requires `OPENAI_API_KEY` and selects `text-embedding-3-small` plus one shared OpenAI Responses API client for parsing, assistant text, and shopper simulation. A failed or invalid response is retried once; exhausted failures are typed and the affected agent turn rolls back. There is no provider fallback, and changing `.env` requires a process restart.
 
 Production deployment must provision and validate
 `system/shopping_agent/embedding_cache/catalog_cache_bge-base-en-v1.5.npz`; the file is
-an external asset and is not stored in Git.
+an external asset and is not stored in Git. OpenAI uses a separate model-and-dimension cache and separate longitudinal-memory file, so its vectors never overwrite or reuse BGE artifacts. Build or validate the billable 50,000-row OpenAI cache explicitly with:
+
+```powershell
+python -m system.shopping_agent.build_embedding_cache
+```
+
+The command refuses to run unless `TEST_MODE=true`. Normal startup never builds a missing OpenAI cache.
 
 Live intent is re-evaluated each turn. Buying uses Yangxu's `15/10` lexical thresholds; Browsing uses `30/15`. The existing `buyer_mode` argument remains a failure fallback, while live intent selects the frozen Buying/Browsing weights and clarification priority.
 
@@ -47,8 +61,9 @@ Work in `system/shopping_agent/` for the active application:
 | --- | --- |
 | `visualizer/server.py` | Canonical browser entry point, HTTP routes, and browser-session lifecycle |
 | `agent.py` | Main shopping-agent API and turn orchestration |
-| `ollama_client.py` | Shared local Llama 3.1 transport, retry policy, typed failures, and telemetry |
-| `turn_parser.py` | Constrained Llama 3.1 parse, deterministic validation, and typed free-text turns |
+| `model_client.py` / `runtime.py` | Provider-neutral contracts and process-start provider selection |
+| `ollama_client.py` / `openai_client.py` | Provider transports, retry policy, typed failures, and telemetry |
+| `turn_parser.py` | Constrained structured parse, deterministic validation, and typed free-text turns |
 | `category_resolver.py` | Soft-slot category candidates and ambiguity confidence |
 | `catalogue.py` | Catalogue loading, FTS5 candidate routing, and hard eligibility filters |
 | `clarification.py` | Entropy-based clarification selection |
@@ -73,7 +88,7 @@ python -m system.shopping_agent.demo --reset-user alice
 python -m system.shopping_agent.demo --reset-all
 ```
 
-Install Ollama, run `ollama pull llama3.1:8b`, and provision the BGE cache with `colab/bge_pipeline.ipynb`. No hosted-provider API key is read by the active runtime.
+For local mode, install Ollama, run `ollama pull llama3.1:8b`, and provision the BGE cache with `colab/bge_pipeline.ipynb`. For OpenAI mode, set the API key, restart, run the explicit cache command above, and then use the same CLI and browser commands.
 
 Run active tests with:
 
