@@ -224,22 +224,7 @@ longitudinal memory is not committed across evaluator sessions.
 - Provider selection is frozen to BGE/Ollama in the evaluator entry module, and
   the official evaluator is executed unchanged by the included launcher.
 
-## 9. Before the Devpost freeze
-
-1. Publish the BGE cache, insert its URL above, and verify it from a clean
-   download.
-2. Rebuild `bundle_manifest.json` from the final clean source commit; the current
-   manifest truthfully records that the first bundle was built from a dirty
-   development worktree.
-3. Run the bundle tests, bundle verification, and the real smoke test.
-4. Run the unmodified public evaluator and refresh the Public evaluation and
-   Feasibility sections below from the frozen commit.
-5. Review `git status`, ensure no `.env`, `.npz`, results, model weights, or
-   secret is staged, then record the full submission commit SHA.
-6. After the final package is released, check out that SHA and do not modify the
-   Agent, prompts, indexes, cache, model configuration, or other solution files.
-
-## 10. Limitations and future work
+## 9. Limitations and future work
 
 - Ranking, not retrieval, is the bottleneck: the hidden target lands in the
   top 10 almost every session but often mid-list. A learned reranker over the
@@ -266,7 +251,7 @@ longitudinal memory is not committed across evaluator sessions.
   edge cases, and the confidence gate can improve rank quality while delaying
   the first hit.
 
-## 11. Team contributions
+## 10. Team contributions
 
 | Team member | Owned |
 | --- | --- |
@@ -276,7 +261,7 @@ longitudinal memory is not committed across evaluator sessions.
 | Judith | Short-term session state: constraints, provenance, override and boundary handling |
 | Harshith | Retrieval and filtering: FTS5 keyword layer, categorical masks, vector similarity, confidence gate |
 
-## 12. Method
+## 11. Method
 
 ASTRA is a multi-turn conversational product-retrieval agent for the frozen
 50,000-product Clothing, Shoes and Jewelry catalogue. It maintains structured
@@ -313,7 +298,7 @@ Startup verifies the exact catalogue hash, ASIN row order, product-text
 fingerprint, dimension, normalization, and cache metadata. It cannot silently
 regenerate or accept a mismatched cache.
 
-## 13. Public evaluation
+## 12. Public evaluation
 
 Reference results (`results/eval_v1_results.json`, 200 public sessions through
 the unmodified organizer evaluator):
@@ -342,7 +327,7 @@ memory versus `0.019327` with memory at the frozen configuration (relevance
 gate ROC AUC `0.97`), and the adaptive update has not passed the required
 dormant-interest evaluation.
 
-## 14. Feasibility disclosure
+## 13. Feasibility disclosure
 
 - Hardware and operating system: Apple Silicon Mac, macOS 15 (Darwin 24.6)
 - Ollama model disk size: 4.9 GB (`llama3.1:8b`); BGE cache: 136 MB
@@ -355,7 +340,7 @@ dormant-interest evaluation.
   run time, and the frozen submission commit SHA: **TODO — fill from the final
   frozen-commit run**
 
-## 15. Demonstration
+## 14. Demonstration
 
 One complete multi-turn session showing customer messages, structured
 `ask_attribute` values, ordered recommendations, and the target hit, without
