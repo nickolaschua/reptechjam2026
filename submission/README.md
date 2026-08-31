@@ -219,7 +219,11 @@ longitudinal memory is not committed across evaluator sessions.
   call; a session never fails because DeepSeek is unavailable.
 - Failed turns restore the pre-turn state and do not advance the successful-turn
   lifecycle.
-- There is no hosted-provider fallback; Ollama availability is required.
+- There is no hosted-provider chat fallback; Ollama availability is required.
+- Failed turns roll back session state; conversation state is isolated by
+  evaluator session ID.
+- Provider selection is frozen to BGE/Ollama in the evaluator entry module, and
+  the official evaluator is executed unchanged by the included launcher.
 
 ## 9. Before the Devpost freeze
 
@@ -229,8 +233,8 @@ longitudinal memory is not committed across evaluator sessions.
    manifest truthfully records that the first bundle was built from a dirty
    development worktree.
 3. Run the bundle tests, bundle verification, and the real smoke test.
-4. Run the unmodified public evaluator and complete `REPORT.md` with results,
-   latency, hardware, and team contributions.
+4. Run the unmodified public evaluator and refresh the Public evaluation and
+   Feasibility sections below from the frozen commit.
 5. Review `git status`, ensure no `.env`, `.npz`, results, model weights, or
    secret is staged, then record the full submission commit SHA.
 6. After the final package is released, check out that SHA and do not modify the
@@ -259,6 +263,9 @@ longitudinal memory is not committed across evaluator sessions.
   accounting reads zero.
 - Heuristics are tuned to the official evaluator's fixed English templates;
   robustness to free-form paraphrase rests on the LLM fallback path.
+- Keyword scoring contains handcrafted weights with known substring-matching
+  edge cases, and the confidence gate can improve rank quality while delaying
+  the first hit.
 
 ## 11. Team contributions
 
@@ -269,3 +276,90 @@ longitudinal memory is not committed across evaluator sessions.
 | Winston | Intent detection and state routing, DeepSeek/Ollama parsing plumbing |
 | Judith | Short-term session state: constraints, provenance, override and boundary handling |
 | Harshith | Retrieval and filtering: FTS5 keyword layer, categorical masks, vector similarity, confidence gate |
+
+## 12. Method
+
+ASTRA is a multi-turn conversational product-retrieval agent for the frozen
+50,000-product Clothing, Shoes and Jewelry catalogue. It maintains structured
+session state, re-evaluates Buying versus Browsing intent each turn, routes
+through an FTS5 keyword path when lexical evidence is sufficient, and otherwise
+uses a 150-row dense fallback. Hard eligibility constraints are applied before
+ranking. Previously returned products are removed, a fixed top-10 pool is gated
+by current-query BGE cosine similarity, and surviving products receive a
+rank-preserving diversity pass. When confidence is insufficient, the agent asks
+an entropy-selected structured clarification question.
+
+State parsing and intent detection attempt the DeepSeek API first when
+`DEEPSEEK_API_KEY` is set and fall back to local Ollama per call; chat replies
+always stay on the local model.
+
+The demonstration runtime contains a gated single-centroid longitudinal memory,
+but the official evaluator supplies independent anonymous sessions without the
+identity and sequence information needed to commit or read cross-session
+memory, so evaluator performance does not rely on hidden identity inference.
+
+```text
+official Agent contract
+  -> structured state update and live intent (deterministic -> DeepSeek -> Ollama)
+  -> FTS5 AND / weighted-OR candidate routing
+  -> session-local hard eligibility masks
+  -> BGE current-query scoring and gated memory equations
+  -> handcrafted keyword ranking OR s3 dense fallback
+  -> seen removal -> fixed top-10 confidence gate -> diversity
+  -> recommendations and/or entropy-selected clarification
+```
+
+The catalogue/query vectors share one validated embedding-space identifier.
+Startup verifies the exact catalogue hash, ASIN row order, product-text
+fingerprint, dimension, normalization, and cache metadata. It cannot silently
+regenerate or accept a mismatched cache.
+
+## 13. Public evaluation
+
+Reference results (`results/eval_v1_results.json`, 200 public sessions through
+the unmodified organizer evaluator):
+
+| Metric | Value |
+| --- | ---: |
+| Hit Rate@10 | 1.000 |
+| MRR | 0.6820 |
+| MTTC | 1.785 |
+| Efficiency | 0.9215 |
+| TechnicalScore | 0.8889 |
+
+| Scenario | n | Hit@10 | MRR | MTTC |
+| --- | ---: | ---: | ---: | ---: |
+| Buying | 80 | 1.000 | 0.7006 | 1.34 |
+| Browsing | 80 | 1.000 | 0.6474 | 1.43 |
+| Intent override | 30 | 1.000 | 0.7845 | 4.00 |
+| Boundary | 10 | 1.000 | 0.5028 | 1.60 |
+
+Controlled evidence: the confidence-gate ablation preserved Hit Rate@10 at
+`0.98`, improved MRR from `0.5566` to `0.6116`, and improved the composite score
+by `0.010`, while worsening MTTC by `0.325` turns; the tradeoff is presented
+alongside the gain. Long-term-memory evidence is not claimed as a performance
+improvement: archived evaluation found relevant-set MRR `0.021452` without
+memory versus `0.019327` with memory at the frozen configuration (relevance
+gate ROC AUC `0.97`), and the adaptive update has not passed the required
+dormant-interest evaluation.
+
+## 14. Feasibility disclosure
+
+- Hardware and operating system: Apple Silicon Mac, macOS 15 (Darwin 24.6)
+- Ollama model disk size: 4.9 GB (`llama3.1:8b`); BGE cache: 136 MB
+- Catalogue SHA-256: `da979b05a68af864cb0dcf9ee6a81c010c7e66a57978ad286c7a2e005fc69a67`
+- BGE cache SHA-256: `a05b1dcee3c40bb254ccf73ab437e8d08fc33d28d444a32c812158842526191f`
+  (release asset `bge-cache-v1`)
+- API/model cost: `0` in API fees on the local path; DeepSeek parsing, when
+  enabled, bills per state-update call
+- Agent initialization time, response-latency percentiles, peak memory, total
+  run time, and the frozen submission commit SHA: **TODO — fill from the final
+  frozen-commit run**
+
+## 15. Demonstration
+
+One complete multi-turn session showing customer messages, structured
+`ask_attribute` values, ordered recommendations, and the target hit, without
+exposing the hidden target or intent card to the Agent.
+
+Demo recording/link: **TODO**
