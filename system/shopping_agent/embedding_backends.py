@@ -18,14 +18,24 @@ from typing import Any, Callable, Sequence
 import numpy as np
 
 try:
-    from .config import OPENAI_EMBEDDING_DIMENSIONS, OPENAI_EMBEDDING_MODEL
+    from .config import (
+        OPENAI_EMBEDDING_DIMENSIONS,
+        OPENAI_EMBEDDING_MODEL,
+        OPENAI_SMALL_EMBEDDING_DIMENSIONS,
+        OPENAI_SMALL_EMBEDDING_MODEL,
+    )
 except ImportError:
-    from config import OPENAI_EMBEDDING_DIMENSIONS, OPENAI_EMBEDDING_MODEL
+    from config import (
+        OPENAI_EMBEDDING_DIMENSIONS,
+        OPENAI_EMBEDDING_MODEL,
+        OPENAI_SMALL_EMBEDDING_DIMENSIONS,
+        OPENAI_SMALL_EMBEDDING_MODEL,
+    )
 
 
 BGE_MODEL = "BAAI/bge-base-en-v1.5"
 OPENAI_MODEL = OPENAI_EMBEDDING_MODEL
-OPENAI_SMALL_MODEL = "text-embedding-3-small"
+OPENAI_SMALL_MODEL = OPENAI_SMALL_EMBEDDING_MODEL
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 PRODUCT_TEXT_VERSION = "patch2-product-text-v1"
 
@@ -56,6 +66,11 @@ BGE_EMBEDDING_SPACE_ID = make_embedding_space_id(
 )
 OPENAI_EMBEDDING_SPACE_ID = make_embedding_space_id(
     "openai-text-embedding-3-large", OPENAI_MODEL, OPENAI_EMBEDDING_DIMENSIONS
+)
+OPENAI_SMALL_EMBEDDING_SPACE_ID = make_embedding_space_id(
+    "openai-text-embedding-3-small",
+    OPENAI_SMALL_MODEL,
+    OPENAI_SMALL_EMBEDDING_DIMENSIONS,
 )
 
 
@@ -399,3 +414,14 @@ class OpenAIEmbeddingBackend(EmbeddingBackend):
             "input_tokens": self._input_tokens,
             "request_latencies_seconds": list(self._request_latencies),
         }
+
+
+def embedding_backend_for_mode(test_mode: bool) -> EmbeddingBackend:
+    """Select the canonical embedder for the main workflow mode."""
+    if bool(test_mode):
+        return OpenAIEmbeddingBackend(
+            model_id=OPENAI_SMALL_MODEL,
+            backend_id="openai-text-embedding-3-small",
+            vector_dimension=OPENAI_SMALL_EMBEDDING_DIMENSIONS,
+        )
+    return BGEEmbeddingBackend()

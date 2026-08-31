@@ -10,7 +10,7 @@ from typing import Any
 from uuid import uuid4
 
 from .agent import Agent
-from .config import DEMO_TOP_K, MEMORY_STORE_PATH
+from .config import ALLOW_CATALOG_EMBEDDING, DEMO_TOP_K, MEMORY_STORE_PATH, TEST_MODE
 from .memory_store import JsonFileVectorMemoryStore
 from .vector_memory import BuyerMode
 
@@ -55,11 +55,17 @@ class DemoApplication:
         *,
         memory_path: str | Path = MEMORY_STORE_PATH,
         top_k: int = DEMO_TOP_K,
+        test_mode: bool = TEST_MODE,
+        allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
         agent: Agent | None = None,
         store: JsonFileVectorMemoryStore | None = None,
     ) -> None:
         self.store = store or JsonFileVectorMemoryStore(memory_path)
-        self.agent = agent or Agent(memory_store=self.store, allow_catalog_embedding=False)
+        self.agent = agent or Agent(
+            memory_store=self.store,
+            test_mode=test_mode,
+            allow_catalog_embedding=allow_catalog_embedding,
+        )
         self.top_k = int(top_k)
         self.active: ActiveDemoSession | None = None
 
@@ -274,7 +280,10 @@ def main() -> None:
         else:
             print(json.dumps(store.describe_user(args.inspect), indent=2, sort_keys=True))
         return
-    app = DemoApplication(memory_path=args.memory_file, top_k=args.top_k)
+    app = DemoApplication(
+        memory_path=args.memory_file,
+        top_k=args.top_k,
+    )
     try:
         if args.scripted:
             run_scripted(app, show_debug=True)

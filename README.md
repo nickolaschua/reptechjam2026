@@ -13,12 +13,24 @@ Open <http://localhost:8080> for Yangxu's ASTRA product catalog, or <http://loca
 ```text
 catalog landing page or conversation dashboard -> live Buying/Browsing state
           -> intent-aware FTS5 AND/weighted-OR routing -> hard eligibility
-          -> frozen OpenAI v1/v2 gate and full 50,000-row s1/s2/s3 scoring
+          -> mode-selected BGE/OpenAI v1/v2 gate and full 50,000-row s1/s2/s3 scoring
           -> keyword pool or 150-row vector fallback -> entropy clarification
           -> response/cards -> end-session EWMA memory commit
 ```
 
-FTS5 controls candidate routing only. `s3` is the authoritative rank score. Price, demographic, rating, review-count, brand/store, and negative filters are session-local and are never silently relaxed. The 50,000-product OpenAI matrix is a fixed validated cache; there is no continual fine-tuning in the active path.
+FTS5 controls candidate routing only. `s3` is the authoritative rank score. Price, demographic, rating, review-count, brand/store, and negative filters are session-local and are never silently relaxed. Each embedding mode uses its own fixed, validated 50,000-product matrix; embedding caches are never shared across models.
+
+Set the embedding mode in `system/shopping_agent/.env`:
+
+```dotenv
+# false = local BAAI/bge-base-en-v1.5; true = OpenAI text-embedding-3-small
+TEST_MODE=false
+
+# Set true once if the selected 50,000-product catalogue cache is missing.
+ALLOW_CATALOG_EMBEDDING=false
+```
+
+OpenAI test mode also requires `OPENAI_API_KEY`. Each mode has an isolated catalogue cache in `system/shopping_agent/embedding_cache/`; caches are never reused across embedding spaces.
 
 Live intent is re-evaluated each turn. Buying uses Yangxu's `15/10` lexical thresholds; Browsing uses `30/15`. The existing `buyer_mode` argument remains a failure fallback, while live intent selects the frozen OpenAI Buying/Browsing weights and clarification priority.
 

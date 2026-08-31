@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 from dataclasses import dataclass
 from functools import wraps
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -15,7 +16,13 @@ import urllib.parse
 from uuid import uuid4
 
 from ..agent import Agent
-from ..config import CATALOG_PATH, MEMORY_STORE_PATH, PROJECT_ROOT
+from ..config import (
+    ALLOW_CATALOG_EMBEDDING,
+    CATALOG_PATH,
+    MEMORY_STORE_PATH,
+    PROJECT_ROOT,
+    TEST_MODE,
+)
 from ..memory_store import JsonFileVectorMemoryStore
 from ..vector_memory import BuyerMode
 from .simulator import (
@@ -117,11 +124,17 @@ class BrowserApplication:
         self,
         *,
         memory_path: str | Path = MEMORY_STORE_PATH,
+        test_mode: bool = TEST_MODE,
+        allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
         agent: Agent | None = None,
         store: JsonFileVectorMemoryStore | None = None,
     ) -> None:
         self.store = store or JsonFileVectorMemoryStore(memory_path)
-        self.agent = agent or Agent(memory_store=self.store, allow_catalog_embedding=False)
+        self.agent = agent or Agent(
+            memory_store=self.store,
+            test_mode=test_mode,
+            allow_catalog_embedding=allow_catalog_embedding,
+        )
         self.samples = {sample["sample_id"]: sample for sample in load_samples(PUBLIC_SET_PATH)}
         self.products = {product["parent_asin"]: product for product in self.agent.catalog_products}
         self.catalog_ids = set(self.products)
@@ -501,10 +514,19 @@ class VisualizerHTTPHandler(SimpleHTTPRequestHandler):
                     self.app.discard(sample_id)
 
 
-def run_server(port: int = 8080) -> None:
+def run_server(
+    port: int = 8080,
+    *,
+    test_mode: bool = TEST_MODE,
+    allow_catalog_embedding: bool = ALLOW_CATALOG_EMBEDDING,
+) -> None:
     global APPLICATION
-    print("[Server] Loading the 50,000-row catalogue, FTS5 index, and frozen OpenAI matrix...")
-    APPLICATION = BrowserApplication()
+    mode = "OpenAI text-embedding-3-small" if test_mode else "local BGE"
+    print(f"[Server] Loading the 50,000-row catalogue and {mode} matrix...")
+    APPLICATION = BrowserApplication(
+        test_mode=test_mode,
+        allow_catalog_embedding=allow_catalog_embedding,
+    )
     server = ThreadingHTTPServer(("0.0.0.0", int(port)), VisualizerHTTPHandler)
     print(f"[Server] Yangxu dashboard: http://localhost:{port}")
     try:
@@ -517,4 +539,7 @@ def run_server(port: int = 8080) -> None:
 
 
 if __name__ == "__main__":
-    run_server()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--port", type=int, default=8080)
+    arguments = parser.parse_args()
+    run_server(arguments.port)

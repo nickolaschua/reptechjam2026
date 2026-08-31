@@ -17,15 +17,15 @@ try:
         CacheValidationError,
         CatalogCacheMissError,
         EmbeddingBackend,
-        OpenAIEmbeddingBackend,
         PRODUCT_TEXT_VERSION,
         cache_filename,
+        embedding_backend_for_mode,
         fingerprint_file,
         fingerprint_texts,
         load_embedding_cache,
         save_embedding_cache,
     )
-    from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR
+    from .config import CATALOG_PATH, EMBEDDING_CACHE_DIR, TEST_MODE
     from .catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -48,15 +48,15 @@ except ImportError:
         CacheValidationError,
         CatalogCacheMissError,
         EmbeddingBackend,
-        OpenAIEmbeddingBackend,
         PRODUCT_TEXT_VERSION,
         cache_filename,
+        embedding_backend_for_mode,
         fingerprint_file,
         fingerprint_texts,
         load_embedding_cache,
         save_embedding_cache,
     )
-    from config import CATALOG_PATH, EMBEDDING_CACHE_DIR
+    from config import CATALOG_PATH, EMBEDDING_CACHE_DIR, TEST_MODE
     from catalogue import (
         BROWSING_FTS_OR_THRESHOLD, BROWSING_KEYWORD_ROUTE_THRESHOLD,
         BUYING_FTS_OR_THRESHOLD, BUYING_KEYWORD_ROUTE_THRESHOLD,
@@ -87,22 +87,6 @@ try:
 except ImportError:
     HAS_GEMINI = False
     genai = None
-
-current_dir = Path(__file__).resolve().parent
-
-def _load_env_file():
-    env_path = current_dir / ".env"
-    if not env_path.exists():
-        env_path = current_dir.parent / ".env"
-    if env_path.exists():
-        with open(env_path, "r", encoding="utf-8") as f:
-            for line in f:
-                if "=" in line and not line.strip().startswith("#"):
-                    key, val = line.strip().split("=", 1)
-                    val = val.strip().strip("'\"")
-                    os.environ.setdefault(key, val)
-
-_load_env_file()
 
 def _normalize(value: object) -> str:
     return re.sub(r"\s+", " ", str(value or "").lower()).strip()
@@ -320,6 +304,7 @@ class Agent:
         catalog_path: str | Path = None,
         embedding_backend: EmbeddingBackend | None = None,
         *,
+        test_mode: bool = TEST_MODE,
         allow_catalog_embedding: bool = False,
         embedding_cache_dir: str | Path | None = None,
         memory_store: InMemoryUserMemoryStore | None = None,
@@ -343,7 +328,10 @@ class Agent:
             catalog_path = CATALOG_PATH
         self.catalog_path = Path(catalog_path)
 
-        self.embedding_backend = embedding_backend or OpenAIEmbeddingBackend()
+        self.test_mode = bool(test_mode)
+        self.embedding_backend = embedding_backend or embedding_backend_for_mode(
+            self.test_mode
+        )
         self.embedding_backend_id = self.embedding_backend.backend_id
         self.embedding_model_id = self.embedding_backend.model_id
         self.embedding_space_id = self.embedding_backend.embedding_space_id
